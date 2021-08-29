@@ -11,11 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
-idloc IDLOC 5 200000 200000 20 1
-init CODE 0 1A 1A 4 1
-reset_vec CODE 0 0 0 4 1
-config CONFIG 4 300000 300000 24 1
 $dist/default/production\ETC.X.production.o
 ivt0x8 CODE 0 8 8 12 1
 cinit CODE 0 2A16 2A16 20 1
@@ -56,6 +51,11 @@ text31 CODE 0 2AF2 2AF2 2 1
 cstackCOMRAM COMRAM 1 53B 53B 3 1
 smallconst SMALLCONST 0 2600 2600 34 1
 bssCOMRAM COMRAM 1 501 501 34 1
+config CONFIG 4 300000 300000 24 1
+$C:\Users\panze\AppData\Local\Temp\sqr4.o
+idloc IDLOC 5 200000 200000 20 1
+init CODE 0 1A 1A 4 1
+reset_vec CODE 0 0 0 4 1
 config CONFIG 4 300000 300000 24 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -124,269 +124,269 @@ MEDIUMCONST 2AF4-FFFF 1
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\ETC.X.production.o
-2AF2 text31 CODE >99:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AF2 text31 CODE >101:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AF0 text30 CODE >95:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AF0 text30 CODE >97:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AEE text29 CODE >91:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AEE text29 CODE >93:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AEC text28 CODE >103:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AEC text28 CODE >105:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AEA text27 CODE >107:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AEA text27 CODE >109:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2634 text26 CODE >282:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2634 text26 CODE >284:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2644 text26 CODE >286:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-265C text26 CODE >287:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2660 text26 CODE >290:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-266E text26 CODE >292:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2686 text26 CODE >293:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-268A text26 CODE >296:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2698 text26 CODE >298:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-26B0 text26 CODE >299:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-26B4 text26 CODE >302:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-26C2 text26 CODE >304:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-26DA text26 CODE >305:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-26DE text26 CODE >308:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-26EC text26 CODE >310:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2704 text26 CODE >311:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2708 text26 CODE >314:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-270A text26 CODE >315:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-29F4 text25 CODE >58:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
-29F4 text25 CODE >61:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
-2A10 text25 CODE >63:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
-2A14 text25 CODE >69:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
-2A4E text24 CODE >113:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2A4E text24 CODE >116:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2A54 text24 CODE >119:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2A58 text24 CODE >122:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2A5C text24 CODE >125:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2A60 text24 CODE >127:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2ADC text23 CODE >267:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2ADC text23 CODE >269:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AE4 text23 CODE >270:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AD2 text22 CODE >262:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AD2 text22 CODE >264:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2ADA text22 CODE >265:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AC8 text21 CODE >257:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AC8 text21 CODE >259:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AD0 text21 CODE >260:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2ABE text20 CODE >272:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2ABE text20 CODE >274:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AC6 text20 CODE >275:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AB4 text19 CODE >277:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AB4 text19 CODE >279:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2ABC text19 CODE >280:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-28E2 text18 CODE >129:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-28E2 text18 CODE >131:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-28EE text18 CODE >132:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-28FA text18 CODE >133:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2906 text18 CODE >134:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2912 text18 CODE >135:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-291E text18 CODE >136:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2920 text18 CODE >139:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2926 text18 CODE >142:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-292A text18 CODE >145:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-292E text18 CODE >148:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2932 text18 CODE >150:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2934 text18 CODE >151:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AAA text17 CODE >207:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AAA text17 CODE >209:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2AB2 text17 CODE >210:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-270C text16 CODE >178:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-270E text16 CODE >180:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2712 text16 CODE >181:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2718 text16 CODE >183:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-274C text16 CODE >187:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2758 text16 CODE >189:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-275C text16 CODE >192:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-276A text16 CODE >194:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-276E text16 CODE >195:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2772 text16 CODE >189:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-278C text16 CODE >201:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2790 text16 CODE >202:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2790 text16 CODE >204:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2792 text16 CODE >205:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2936 text15 CODE >153:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2936 text15 CODE >156:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-293A text15 CODE >158:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2950 text15 CODE >161:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2962 text15 CODE >164:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2966 text15 CODE >167:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-296A text15 CODE >170:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-296E text15 CODE >172:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2972 text15 CODE >173:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-2976 text15 CODE >174:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-297C text15 CODE >176:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-297E text14 CODE >183:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-297E text14 CODE >186:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-2984 text14 CODE >188:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-2988 text14 CODE >190:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-298C text14 CODE >192:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-2990 text14 CODE >194:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-2994 text14 CODE >196:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-2998 text14 CODE >198:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-299C text14 CODE >200:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-29A0 text14 CODE >201:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-29A4 text14 CODE >203:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-29A8 text14 CODE >205:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-2AE6 text13 CODE >52:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
-2AE6 text13 CODE >55:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
-2AE8 text13 CODE >56:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
-2A36 text12 CODE >62:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2A36 text12 CODE >65:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2A3C text12 CODE >67:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2A40 text12 CODE >69:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2A44 text12 CODE >71:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2A48 text12 CODE >73:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2A4C text12 CODE >74:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2794 text11 CODE >55:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-2794 text11 CODE >60:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-2798 text11 CODE >61:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-279C text11 CODE >62:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27A0 text11 CODE >67:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27A4 text11 CODE >68:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27A6 text11 CODE >69:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27AA text11 CODE >70:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27AE text11 CODE >75:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27B4 text11 CODE >76:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27B8 text11 CODE >77:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27BA text11 CODE >82:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27BE text11 CODE >83:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27C2 text11 CODE >84:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27C6 text11 CODE >85:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27CA text11 CODE >90:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27CE text11 CODE >91:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27D2 text11 CODE >92:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27D6 text11 CODE >97:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27D8 text11 CODE >98:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27DA text11 CODE >99:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27DC text11 CODE >104:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27DE text11 CODE >105:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27E0 text11 CODE >106:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27E2 text11 CODE >107:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27E6 text11 CODE >116:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27EC text11 CODE >117:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27F0 text11 CODE >118:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27F4 text11 CODE >119:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27F8 text11 CODE >120:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-27FC text11 CODE >121:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-2800 text11 CODE >122:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-2804 text11 CODE >123:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
-29AA text10 CODE >76:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29AA text10 CODE >79:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29B0 text10 CODE >81:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29B4 text10 CODE >83:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29B8 text10 CODE >85:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29BC text10 CODE >87:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29C0 text10 CODE >89:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29C4 text10 CODE >91:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29C8 text10 CODE >93:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29CC text10 CODE >95:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29D0 text10 CODE >96:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2AA0 text9 CODE >202:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2AA0 text9 CODE >204:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2AA8 text9 CODE >205:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2A96 text8 CODE >192:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2A96 text8 CODE >194:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2A9E text8 CODE >195:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2A8C text7 CODE >197:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2A8C text7 CODE >199:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2A94 text7 CODE >200:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2874 text6 CODE >63:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2874 text6 CODE >66:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2878 text6 CODE >69:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-287C text6 CODE >72:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2880 text6 CODE >75:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2884 text6 CODE >78:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2888 text6 CODE >81:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-288C text6 CODE >84:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2890 text6 CODE >87:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2894 text6 CODE >90:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2898 text6 CODE >93:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-289C text6 CODE >96:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28A0 text6 CODE >99:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28A4 text6 CODE >102:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28A8 text6 CODE >105:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28AC text6 CODE >108:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28AE text6 CODE >111:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28B0 text6 CODE >114:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28B2 text6 CODE >117:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28B4 text6 CODE >120:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28B6 text6 CODE >123:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28B8 text6 CODE >126:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28C4 text6 CODE >127:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28D0 text6 CODE >128:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28DC text6 CODE >131:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-28E0 text6 CODE >132:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-2A82 text5 CODE >202:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A82 text5 CODE >204:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A8A text5 CODE >205:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A78 text4 CODE >192:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A78 text4 CODE >194:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A80 text4 CODE >195:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A6E text3 CODE >197:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A6E text3 CODE >199:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2A76 text3 CODE >200:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2806 text2 CODE >63:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2806 text2 CODE >66:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-280A text2 CODE >69:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-280E text2 CODE >72:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2812 text2 CODE >75:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2816 text2 CODE >78:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-281A text2 CODE >81:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-281E text2 CODE >84:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2822 text2 CODE >87:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2826 text2 CODE >90:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-282A text2 CODE >93:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-282E text2 CODE >96:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2832 text2 CODE >99:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2836 text2 CODE >102:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-283A text2 CODE >105:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-283E text2 CODE >108:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2840 text2 CODE >111:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2842 text2 CODE >114:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2844 text2 CODE >117:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2846 text2 CODE >120:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2848 text2 CODE >123:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-284A text2 CODE >126:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2856 text2 CODE >127:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2862 text2 CODE >128:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-286E text2 CODE >131:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-2872 text2 CODE >132:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-29D2 text1 CODE >50:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29D2 text1 CODE >52:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29D6 text1 CODE >53:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29DA text1 CODE >54:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29DE text1 CODE >55:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29E2 text1 CODE >56:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29E6 text1 CODE >57:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29EA text1 CODE >58:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29EE text1 CODE >59:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-29F2 text1 CODE >60:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
-2A62 text0 CODE >49:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
-2A62 text0 CODE >52:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
-2A66 text0 CODE >64:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
-2A66 text0 CODE >67:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
-2A16 cinit CODE >19429:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A16 cinit CODE >19431:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A16 cinit CODE >19434:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A16 cinit CODE >19462:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A1A cinit CODE >19463:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A1C cinit CODE >19464:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A1C cinit CODE >19465:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A1E cinit CODE >19466:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A20 cinit CODE >19467:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A22 cinit CODE >19475:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A24 cinit CODE >19476:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A26 cinit CODE >19477:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A28 cinit CODE >19478:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A2A cinit CODE >19479:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A2C cinit CODE >19480:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A2E cinit CODE >19481:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A30 cinit CODE >19487:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A30 cinit CODE >19489:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
-2A32 cinit CODE >19490:C:\Users\ruben\AppData\Local\Temp\xcAsou8.s
+2AF2 text31 CODE >99:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AF2 text31 CODE >101:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AF0 text30 CODE >95:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AF0 text30 CODE >97:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AEE text29 CODE >91:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AEE text29 CODE >93:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AEC text28 CODE >103:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AEC text28 CODE >105:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AEA text27 CODE >107:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AEA text27 CODE >109:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2634 text26 CODE >282:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2634 text26 CODE >284:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2644 text26 CODE >286:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+265C text26 CODE >287:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2660 text26 CODE >290:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+266E text26 CODE >292:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2686 text26 CODE >293:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+268A text26 CODE >296:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2698 text26 CODE >298:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+26B0 text26 CODE >299:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+26B4 text26 CODE >302:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+26C2 text26 CODE >304:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+26DA text26 CODE >305:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+26DE text26 CODE >308:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+26EC text26 CODE >310:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2704 text26 CODE >311:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2708 text26 CODE >314:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+270A text26 CODE >315:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+29F4 text25 CODE >58:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+29F4 text25 CODE >61:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+2A10 text25 CODE >63:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+2A14 text25 CODE >69:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+2A4E text24 CODE >113:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2A4E text24 CODE >116:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2A54 text24 CODE >119:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2A58 text24 CODE >122:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2A5C text24 CODE >125:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2A60 text24 CODE >127:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2ADC text23 CODE >267:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2ADC text23 CODE >269:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AE4 text23 CODE >270:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AD2 text22 CODE >262:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AD2 text22 CODE >264:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2ADA text22 CODE >265:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AC8 text21 CODE >257:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AC8 text21 CODE >259:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AD0 text21 CODE >260:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2ABE text20 CODE >272:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2ABE text20 CODE >274:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AC6 text20 CODE >275:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AB4 text19 CODE >277:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AB4 text19 CODE >279:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2ABC text19 CODE >280:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+28E2 text18 CODE >129:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+28E2 text18 CODE >131:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+28EE text18 CODE >132:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+28FA text18 CODE >133:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2906 text18 CODE >134:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2912 text18 CODE >135:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+291E text18 CODE >136:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2920 text18 CODE >139:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2926 text18 CODE >142:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+292A text18 CODE >145:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+292E text18 CODE >148:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2932 text18 CODE >150:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2934 text18 CODE >151:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AAA text17 CODE >207:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AAA text17 CODE >209:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2AB2 text17 CODE >210:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+270C text16 CODE >178:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+270E text16 CODE >180:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2712 text16 CODE >181:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2718 text16 CODE >183:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+274C text16 CODE >187:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2758 text16 CODE >189:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+275C text16 CODE >192:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+276A text16 CODE >194:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+276E text16 CODE >195:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2772 text16 CODE >189:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+278C text16 CODE >201:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2790 text16 CODE >202:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2790 text16 CODE >204:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2792 text16 CODE >205:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2936 text15 CODE >153:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2936 text15 CODE >156:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+293A text15 CODE >158:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2950 text15 CODE >161:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2962 text15 CODE >164:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2966 text15 CODE >167:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+296A text15 CODE >170:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+296E text15 CODE >172:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2972 text15 CODE >173:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+2976 text15 CODE >174:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+297C text15 CODE >176:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+297E text14 CODE >183:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+297E text14 CODE >186:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+2984 text14 CODE >188:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+2988 text14 CODE >190:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+298C text14 CODE >192:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+2990 text14 CODE >194:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+2994 text14 CODE >196:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+2998 text14 CODE >198:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+299C text14 CODE >200:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+29A0 text14 CODE >201:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+29A4 text14 CODE >203:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+29A8 text14 CODE >205:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+2AE6 text13 CODE >52:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+2AE6 text13 CODE >55:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+2AE8 text13 CODE >56:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+2A36 text12 CODE >62:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2A36 text12 CODE >65:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2A3C text12 CODE >67:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2A40 text12 CODE >69:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2A44 text12 CODE >71:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2A48 text12 CODE >73:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2A4C text12 CODE >74:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2794 text11 CODE >55:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+2794 text11 CODE >60:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+2798 text11 CODE >61:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+279C text11 CODE >62:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27A0 text11 CODE >67:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27A4 text11 CODE >68:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27A6 text11 CODE >69:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27AA text11 CODE >70:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27AE text11 CODE >75:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27B4 text11 CODE >76:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27B8 text11 CODE >77:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27BA text11 CODE >82:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27BE text11 CODE >83:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27C2 text11 CODE >84:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27C6 text11 CODE >85:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27CA text11 CODE >90:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27CE text11 CODE >91:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27D2 text11 CODE >92:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27D6 text11 CODE >97:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27D8 text11 CODE >98:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27DA text11 CODE >99:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27DC text11 CODE >104:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27DE text11 CODE >105:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27E0 text11 CODE >106:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27E2 text11 CODE >107:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27E6 text11 CODE >116:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27EC text11 CODE >117:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27F0 text11 CODE >118:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27F4 text11 CODE >119:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27F8 text11 CODE >120:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+27FC text11 CODE >121:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+2800 text11 CODE >122:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+2804 text11 CODE >123:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+29AA text10 CODE >76:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29AA text10 CODE >79:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29B0 text10 CODE >81:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29B4 text10 CODE >83:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29B8 text10 CODE >85:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29BC text10 CODE >87:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29C0 text10 CODE >89:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29C4 text10 CODE >91:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29C8 text10 CODE >93:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29CC text10 CODE >95:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29D0 text10 CODE >96:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2AA0 text9 CODE >202:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2AA0 text9 CODE >204:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2AA8 text9 CODE >205:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2A96 text8 CODE >192:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2A96 text8 CODE >194:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2A9E text8 CODE >195:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2A8C text7 CODE >197:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2A8C text7 CODE >199:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2A94 text7 CODE >200:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2874 text6 CODE >63:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2874 text6 CODE >66:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2878 text6 CODE >69:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+287C text6 CODE >72:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2880 text6 CODE >75:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2884 text6 CODE >78:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2888 text6 CODE >81:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+288C text6 CODE >84:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2890 text6 CODE >87:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2894 text6 CODE >90:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2898 text6 CODE >93:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+289C text6 CODE >96:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28A0 text6 CODE >99:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28A4 text6 CODE >102:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28A8 text6 CODE >105:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28AC text6 CODE >108:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28AE text6 CODE >111:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28B0 text6 CODE >114:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28B2 text6 CODE >117:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28B4 text6 CODE >120:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28B6 text6 CODE >123:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28B8 text6 CODE >126:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28C4 text6 CODE >127:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28D0 text6 CODE >128:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28DC text6 CODE >131:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+28E0 text6 CODE >132:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+2A82 text5 CODE >202:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A82 text5 CODE >204:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A8A text5 CODE >205:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A78 text4 CODE >192:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A78 text4 CODE >194:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A80 text4 CODE >195:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A6E text3 CODE >197:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A6E text3 CODE >199:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2A76 text3 CODE >200:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2806 text2 CODE >63:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2806 text2 CODE >66:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+280A text2 CODE >69:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+280E text2 CODE >72:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2812 text2 CODE >75:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2816 text2 CODE >78:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+281A text2 CODE >81:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+281E text2 CODE >84:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2822 text2 CODE >87:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2826 text2 CODE >90:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+282A text2 CODE >93:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+282E text2 CODE >96:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2832 text2 CODE >99:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2836 text2 CODE >102:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+283A text2 CODE >105:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+283E text2 CODE >108:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2840 text2 CODE >111:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2842 text2 CODE >114:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2844 text2 CODE >117:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2846 text2 CODE >120:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2848 text2 CODE >123:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+284A text2 CODE >126:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2856 text2 CODE >127:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2862 text2 CODE >128:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+286E text2 CODE >131:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+2872 text2 CODE >132:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+29D2 text1 CODE >50:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29D2 text1 CODE >52:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29D6 text1 CODE >53:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29DA text1 CODE >54:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29DE text1 CODE >55:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29E2 text1 CODE >56:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29E6 text1 CODE >57:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29EA text1 CODE >58:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29EE text1 CODE >59:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+29F2 text1 CODE >60:C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+2A62 text0 CODE >49:C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
+2A62 text0 CODE >52:C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
+2A66 text0 CODE >64:C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
+2A66 text0 CODE >67:C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
+2A16 cinit CODE >19428:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A16 cinit CODE >19430:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A16 cinit CODE >19433:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A16 cinit CODE >19461:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A1A cinit CODE >19462:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A1C cinit CODE >19463:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A1C cinit CODE >19464:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A1E cinit CODE >19465:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A20 cinit CODE >19466:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A22 cinit CODE >19474:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A24 cinit CODE >19475:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A26 cinit CODE >19476:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A28 cinit CODE >19477:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A2A cinit CODE >19478:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A2C cinit CODE >19479:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A2E cinit CODE >19480:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A30 cinit CODE >19486:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A30 cinit CODE >19488:C:\Users\panze\AppData\Local\Temp\sqr4.s
+2A32 cinit CODE >19489:C:\Users\panze\AppData\Local\Temp\sqr4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -433,7 +433,7 @@ _PWM2LDS 471 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRH 473 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRL 472 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\ETC.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\panze\AppData\Local\Temp\sqr4.o
 _CAN1_SetBusWakeUpActivityInterruptHandler 2AD2 0 CODE 0 text22 dist/default/production\ETC.X.production.o
 _PWM2PIPOS 475 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2S1CFG 479 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -466,10 +466,10 @@ _WPUA 401 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUB 409 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUC 411 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUE 421 0 ABS 0 - dist/default/production\ETC.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+___sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\sqr4.o
 _main 2A62 0 CODE 0 text0 dist/default/production\ETC.X.production.o
 _CAN1_Initialize 2936 0 CODE 0 text15 dist/default/production\ETC.X.production.o
-start 1A 0 CODE 0 init C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+start 1A 0 CODE 0 init C:\Users\panze\AppData\Local\Temp\sqr4.o
 _DefaultBusErrorHandler 2AF2 0 CODE 0 text31 dist/default/production\ETC.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 CAN1_SetBusWakeUpActivityInterruptHandler@handler 53B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
@@ -491,11 +491,11 @@ _I2C1_DO_RX_EMPTY 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __LnvCOMRAM 0 0 ABS 0 nvCOMRAM dist/default/production\ETC.X.production.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-__accesstop 560 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
-intlevel0 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
-intlevel1 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
-intlevel2 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
-intlevel3 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+__accesstop 560 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\sqr4.o
+intlevel0 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sqr4.o
+intlevel1 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sqr4.o
+intlevel2 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sqr4.o
+intlevel3 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sqr4.o
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\ETC.X.production.o
 __LnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\ETC.X.production.o
 __size_of_CAN1_ISR 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -511,14 +511,14 @@ _ANSELB 408 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ANSELC 410 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_I2C1_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_PWM1_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\sqr4.o
 _I2C1BAUD 29D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTH 28D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTL 28C 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON0 294 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON1 295 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON2 296 0 ABS 0 - dist/default/production\ETC.X.production.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\sqr4.o
 PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler 53B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_of_DefaultModeChangeHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _C1CONH 101 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -577,7 +577,6 @@ _C1INTLbits 11C 0 ABS 0 - dist/default/production\ETC.X.production.o
 _C1INTTbits 11F 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_CAN1_SetSystemErrorInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __end_of_DefaultModeChangeHandler 2AEE 0 CODE 0 text28 dist/default/production\ETC.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
 __size_of_PWM2_16BIT_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1_Status 501 0 COMRAM 1 bssCOMRAM dist/default/production\ETC.X.production.o
 PWM2_16BIT_Period_SetInterruptHandler@InterruptHandler 53B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
@@ -638,7 +637,7 @@ __Hbank37 0 0 ABS 0 bank37 dist/default/production\ETC.X.production.o
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\ETC.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\ETC.X.production.o
 __size_of_PWM2_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\panze\AppData\Local\Temp\sqr4.o
 __Hcomram 0 0 ABS 0 comram dist/default/production\ETC.X.production.o
 __Hconfig 300024 0 CONFIG 4 config dist/default/production\ETC.X.production.o
 __size_of_CAN1_ErrorNotificationInterruptEnable 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -839,11 +838,10 @@ _I2C1SDAPPS 270 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Lfarbss 0 0 FARRAM 0 farbss dist/default/production\ETC.X.production.o
 __size_of_CAN1_SetModeChangeInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\ETC.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
 __size_of_CAN1_SetInvalidMessageInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _CAN1_ModeChangeHandler 52D 0 COMRAM 1 bssCOMRAM dist/default/production\ETC.X.production.o
-stackhi 25FF 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
-stacklo 560 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+stackhi 25FF 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\sqr4.o
+stacklo 560 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\sqr4.o
 __end_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler 2A82 0 CODE 0 text4 dist/default/production\ETC.X.production.o
 CAN1_OperationModeSet@opMode 53B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _OSCCON1 AD 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -918,7 +916,7 @@ __Ltext29 0 0 ABS 0 text29 dist/default/production\ETC.X.production.o
 __Ltext30 0 0 ABS 0 text30 dist/default/production\ETC.X.production.o
 __Ltext31 0 0 ABS 0 text31 dist/default/production\ETC.X.production.o
 __Ltext32 0 0 ABS 0 text32 dist/default/production\ETC.X.production.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\ruben\AppData\Local\Temp\xcAsou8.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\panze\AppData\Local\Temp\sqr4.o
 __size_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Lpowerup 0 0 CODE 0 powerup dist/default/production\ETC.X.production.o
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production\ETC.X.production.o

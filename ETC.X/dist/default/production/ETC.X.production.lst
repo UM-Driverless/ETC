@@ -1,9 +1,9 @@
 
 
-Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Thu Aug 26 21:09:38 2021
+Microchip MPLAB XC8 Assembler V2.31 build 20201012212115 
+                                                                                               Sat Jul 31 22:06:53 2021
 
-Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
+Microchip MPLAB XC8 C Compiler v2.31 (Free license) build 20201012212115 Og1 
      1                           	processor	18F26Q84
      2                           	fnconf	rparam,??,?,0
      3                           	pagewidth 120
@@ -505,7 +505,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
    483 ;;Total ram usage:        0 bytes
-   484 ;; Hardware stack levels required when called: 7
+   484 ;; Hardware stack levels required when called:    7
    485 ;; This function calls:
    486 ;;		_SYSTEM_Initialize
    487 ;; This function is called by:
@@ -558,8 +558,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
    526 ;;Total ram usage:        0 bytes
-   527 ;; Hardware stack levels used: 1
-   528 ;; Hardware stack levels required when called: 6
+   527 ;; Hardware stack levels used:    1
+   528 ;; Hardware stack levels required when called:    6
    529 ;; This function calls:
    530 ;;		_CAN1_Initialize
    531 ;;		_I2C1_Initialize
@@ -638,8 +638,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
    596 ;;Total ram usage:        0 bytes
-   597 ;; Hardware stack levels used: 1
-   598 ;; Hardware stack levels required when called: 4
+   597 ;; Hardware stack levels used:    1
+   598 ;; Hardware stack levels required when called:    4
    599 ;; This function calls:
    600 ;;		_PWM2_16BIT_Period_SetInterruptHandler
    601 ;;		_PWM2_16BIT_Slice1Output1_SetInterruptHandler
@@ -792,8 +792,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
    737 ;;Total ram usage:        2 bytes
-   738 ;; Hardware stack levels used: 1
-   739 ;; Hardware stack levels required when called: 3
+   738 ;; Hardware stack levels used:    1
+   739 ;; Hardware stack levels required when called:    3
    740 ;; This function calls:
    741 ;;		Nothing
    742 ;; This function is called by:
@@ -851,8 +851,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
    781 ;;Total ram usage:        2 bytes
-   782 ;; Hardware stack levels used: 1
-   783 ;; Hardware stack levels required when called: 3
+   782 ;; Hardware stack levels used:    1
+   783 ;; Hardware stack levels required when called:    3
    784 ;; This function calls:
    785 ;;		Nothing
    786 ;; This function is called by:
@@ -910,8 +910,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
    825 ;;Total ram usage:        2 bytes
-   826 ;; Hardware stack levels used: 1
-   827 ;; Hardware stack levels required when called: 3
+   826 ;; Hardware stack levels used:    1
+   827 ;; Hardware stack levels required when called:    3
    828 ;; This function calls:
    829 ;;		Nothing
    830 ;; This function is called by:
@@ -967,8 +967,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
    868 ;;Total ram usage:        0 bytes
-   869 ;; Hardware stack levels used: 1
-   870 ;; Hardware stack levels required when called: 4
+   869 ;; Hardware stack levels used:    1
+   870 ;; Hardware stack levels required when called:    4
    871 ;; This function calls:
    872 ;;		_PWM1_16BIT_Period_SetInterruptHandler
    873 ;;		_PWM1_16BIT_Slice1Output1_SetInterruptHandler
@@ -1121,8 +1121,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1009 ;;Total ram usage:        2 bytes
-  1010 ;; Hardware stack levels used: 1
-  1011 ;; Hardware stack levels required when called: 3
+  1010 ;; Hardware stack levels used:    1
+  1011 ;; Hardware stack levels required when called:    3
   1012 ;; This function calls:
   1013 ;;		Nothing
   1014 ;; This function is called by:
@@ -1180,8 +1180,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1053 ;;Total ram usage:        2 bytes
-  1054 ;; Hardware stack levels used: 1
-  1055 ;; Hardware stack levels required when called: 3
+  1054 ;; Hardware stack levels used:    1
+  1055 ;; Hardware stack levels required when called:    3
   1056 ;; This function calls:
   1057 ;;		Nothing
   1058 ;; This function is called by:
@@ -1239,8 +1239,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1097 ;;Total ram usage:        2 bytes
-  1098 ;; Hardware stack levels used: 1
-  1099 ;; Hardware stack levels required when called: 3
+  1098 ;; Hardware stack levels used:    1
+  1099 ;; Hardware stack levels required when called:    3
   1100 ;; This function calls:
   1101 ;;		Nothing
   1102 ;; This function is called by:
@@ -1296,8 +1296,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1140 ;;Total ram usage:        0 bytes
-  1141 ;; Hardware stack levels used: 1
-  1142 ;; Hardware stack levels required when called: 3
+  1141 ;; Hardware stack levels used:    1
+  1142 ;; Hardware stack levels required when called:    3
   1143 ;; This function calls:
   1144 ;;		Nothing
   1145 ;; This function is called by:
@@ -1384,8 +1384,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1218 ;;Total ram usage:        0 bytes
-  1219 ;; Hardware stack levels used: 1
-  1220 ;; Hardware stack levels required when called: 3
+  1219 ;; Hardware stack levels used:    1
+  1220 ;; Hardware stack levels required when called:    3
   1221 ;; This function calls:
   1222 ;;		Nothing
   1223 ;; This function is called by:
@@ -1560,8 +1560,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1384 ;;Total ram usage:        0 bytes
-  1385 ;; Hardware stack levels used: 1
-  1386 ;; Hardware stack levels required when called: 3
+  1385 ;; Hardware stack levels used:    1
+  1386 ;; Hardware stack levels required when called:    3
   1387 ;; This function calls:
   1388 ;;		Nothing
   1389 ;; This function is called by:
@@ -1632,8 +1632,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1446 ;;Total ram usage:        0 bytes
-  1447 ;; Hardware stack levels used: 1
-  1448 ;; Hardware stack levels required when called: 3
+  1447 ;; Hardware stack levels used:    1
+  1448 ;; Hardware stack levels required when called:    3
   1449 ;; This function calls:
   1450 ;;		Nothing
   1451 ;; This function is called by:
@@ -1684,8 +1684,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1488 ;;Total ram usage:        0 bytes
-  1489 ;; Hardware stack levels used: 1
-  1490 ;; Hardware stack levels required when called: 3
+  1489 ;; Hardware stack levels used:    1
+  1490 ;; Hardware stack levels required when called:    3
   1491 ;; This function calls:
   1492 ;;		Nothing
   1493 ;; This function is called by:
@@ -1776,8 +1776,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1570 ;;Total ram usage:        0 bytes
-  1571 ;; Hardware stack levels used: 1
-  1572 ;; Hardware stack levels required when called: 5
+  1571 ;; Hardware stack levels used:    1
+  1572 ;; Hardware stack levels required when called:    5
   1573 ;; This function calls:
   1574 ;;		_CAN1_BitRateConfiguration
   1575 ;;		_CAN1_ErrorNotificationInterruptEnable
@@ -1882,8 +1882,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1664 ;;Total ram usage:        3 bytes
-  1665 ;; Hardware stack levels used: 1
-  1666 ;; Hardware stack levels required when called: 4
+  1665 ;; Hardware stack levels used:    1
+  1666 ;; Hardware stack levels required when called:    4
   1667 ;; This function calls:
   1668 ;;		_CAN1_OperationModeGet
   1669 ;; This function is called by:
@@ -2029,8 +2029,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1795 ;;Total ram usage:        0 bytes
-  1796 ;; Hardware stack levels used: 1
-  1797 ;; Hardware stack levels required when called: 3
+  1796 ;; Hardware stack levels used:    1
+  1797 ;; Hardware stack levels required when called:    3
   1798 ;; This function calls:
   1799 ;;		Nothing
   1800 ;; This function is called by:
@@ -2086,8 +2086,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1842 ;;Total ram usage:        0 bytes
-  1843 ;; Hardware stack levels used: 1
-  1844 ;; Hardware stack levels required when called: 4
+  1843 ;; Hardware stack levels used:    1
+  1844 ;; Hardware stack levels required when called:    4
   1845 ;; This function calls:
   1846 ;;		_CAN1_SetBusErrorInterruptHandler
   1847 ;;		_CAN1_SetBusWakeUpActivityInterruptHandler
@@ -2209,8 +2209,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1950 ;;Total ram usage:        2 bytes
-  1951 ;; Hardware stack levels used: 1
-  1952 ;; Hardware stack levels required when called: 3
+  1951 ;; Hardware stack levels used:    1
+  1952 ;; Hardware stack levels required when called:    3
   1953 ;; This function calls:
   1954 ;;		Nothing
   1955 ;; This function is called by:
@@ -2265,8 +2265,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   1994 ;;Total ram usage:        2 bytes
-  1995 ;; Hardware stack levels used: 1
-  1996 ;; Hardware stack levels required when called: 3
+  1995 ;; Hardware stack levels used:    1
+  1996 ;; Hardware stack levels required when called:    3
   1997 ;; This function calls:
   1998 ;;		Nothing
   1999 ;; This function is called by:
@@ -2321,8 +2321,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2038 ;;Total ram usage:        2 bytes
-  2039 ;; Hardware stack levels used: 1
-  2040 ;; Hardware stack levels required when called: 3
+  2039 ;; Hardware stack levels used:    1
+  2040 ;; Hardware stack levels required when called:    3
   2041 ;; This function calls:
   2042 ;;		Nothing
   2043 ;; This function is called by:
@@ -2377,8 +2377,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2082 ;;Total ram usage:        2 bytes
-  2083 ;; Hardware stack levels used: 1
-  2084 ;; Hardware stack levels required when called: 3
+  2083 ;; Hardware stack levels used:    1
+  2084 ;; Hardware stack levels required when called:    3
   2085 ;; This function calls:
   2086 ;;		Nothing
   2087 ;; This function is called by:
@@ -2434,8 +2434,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2126 ;;Total ram usage:        2 bytes
-  2127 ;; Hardware stack levels used: 1
-  2128 ;; Hardware stack levels required when called: 3
+  2127 ;; Hardware stack levels used:    1
+  2128 ;; Hardware stack levels required when called:    3
   2129 ;; This function calls:
   2130 ;;		Nothing
   2131 ;; This function is called by:
@@ -2489,8 +2489,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2169 ;;Total ram usage:        0 bytes
-  2170 ;; Hardware stack levels used: 1
-  2171 ;; Hardware stack levels required when called: 3
+  2170 ;; Hardware stack levels used:    1
+  2171 ;; Hardware stack levels required when called:    3
   2172 ;; This function calls:
   2173 ;;		Nothing
   2174 ;; This function is called by:
@@ -2557,8 +2557,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2227 ;;Total ram usage:        0 bytes
-  2228 ;; Hardware stack levels used: 1
-  2229 ;; Hardware stack levels required when called: 2
+  2228 ;; Hardware stack levels used:    1
+  2229 ;; Hardware stack levels required when called:    2
   2230 ;; This function calls:
   2231 ;;		_CAN1_ISR
   2232 ;; This function is called by:
@@ -2626,8 +2626,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2284 ;;Total ram usage:        0 bytes
-  2285 ;; Hardware stack levels used: 1
-  2286 ;; Hardware stack levels required when called: 1
+  2285 ;; Hardware stack levels used:    1
+  2286 ;; Hardware stack levels required when called:    1
   2287 ;; This function calls:
   2288 ;;		Absolute function
   2289 ;;		_DefaultBusErrorHandler
@@ -2841,7 +2841,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2484 ;;Total ram usage:        0 bytes
-  2485 ;; Hardware stack levels used: 1
+  2485 ;; Hardware stack levels used:    1
   2486 ;; This function calls:
   2487 ;;		Nothing
   2488 ;; This function is called by:
@@ -2890,7 +2890,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2523 ;;Total ram usage:        0 bytes
-  2524 ;; Hardware stack levels used: 1
+  2524 ;; Hardware stack levels used:    1
   2525 ;; This function calls:
   2526 ;;		Nothing
   2527 ;; This function is called by:
@@ -2939,7 +2939,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2562 ;;Total ram usage:        0 bytes
-  2563 ;; Hardware stack levels used: 1
+  2563 ;; Hardware stack levels used:    1
   2564 ;; This function calls:
   2565 ;;		Nothing
   2566 ;; This function is called by:
@@ -2988,7 +2988,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2601 ;;Total ram usage:        0 bytes
-  2602 ;; Hardware stack levels used: 1
+  2602 ;; Hardware stack levels used:    1
   2603 ;; This function calls:
   2604 ;;		Nothing
   2605 ;; This function is called by:
@@ -3037,7 +3037,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
       +0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       
       +0       0       0       0       0       0       0
   2640 ;;Total ram usage:        0 bytes
-  2641 ;; Hardware stack levels used: 1
+  2641 ;; Hardware stack levels used:    1
   2642 ;; This function calls:
   2643 ;;		Nothing
   2644 ;; This function is called by:
@@ -4221,8 +4221,8 @@ DATA                 0      0      3D       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
-Microchip Technology PIC18 Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Thu Aug 26 21:09:38 2021
+Microchip Technology PIC18 Macro Assembler V2.31 build 20201012212115 
+Symbol Table                                                                                   Sat Jul 31 22:06:53 2021
 
                                                           u30 272A  
                                                           u31 2726  
@@ -4478,7 +4478,6 @@ Symbol Table                                                                    
                                  ??_CAN1_BitRateConfiguration 053B  
                           __size_of_DefaultSystemErrorHandler 0002  
                                                       clear_0 2A1C  
-                                                      isa$std 000001  
                    CAN1_SetModeChangeInterruptHandler@handler 053B  
                                                    ?_CAN1_ISR 053B  
                                        _I2C1_DO_SEND_ADR_READ 000000  
@@ -4789,7 +4788,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 053B
                                  CAN1_OperationModeSet@status 053C  
                                     _I2C1_CallbackReturnReset 000000  
                                                __size_of_main 000C  
-                                                    isa$xinst 000000  
                           _PWM1_16BIT_Period_InterruptHandler 0525  
                           __end_of_INTERRUPT_InterruptManager 2A16  
                                   _INTERRUPT_InterruptManager 29F4  

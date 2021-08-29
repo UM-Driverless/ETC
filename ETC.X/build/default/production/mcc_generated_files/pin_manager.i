@@ -37484,9 +37484,9 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\xc.h" 2 3
 # 54 "mcc_generated_files/pin_manager.h" 2
-# 138 "mcc_generated_files/pin_manager.h"
+# 414 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 150 "mcc_generated_files/pin_manager.h"
+# 426 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 49 "mcc_generated_files/pin_manager.c" 2
 
@@ -37508,16 +37508,16 @@ void PIN_MANAGER_Initialize(void)
 
 
     TRISE = 0x08;
-    TRISA = 0xFF;
-    TRISB = 0xEE;
-    TRISC = 0xE7;
+    TRISA = 0xDE;
+    TRISB = 0xCC;
+    TRISC = 0x07;
 
 
 
 
     ANSELC = 0xE7;
-    ANSELB = 0xF7;
-    ANSELA = 0xFF;
+    ANSELB = 0xE3;
+    ANSELA = 0xFC;
 
 
 
@@ -37549,9 +37549,12 @@ void PIN_MANAGER_Initialize(void)
     INLVLC = 0xFF;
     INLVLE = 0x08;
 # 116 "mcc_generated_files/pin_manager.c"
+    PWM1ERSPPS = 0x00;
+    ADACTPPS = 0x0C;
     I2C1SDAPPS = 0x14;
+    RB1PPS = 0x1A;
     RC3PPS = 0x37;
-    RB0PPS = 0x19;
+    RB0PPS = 0x18;
     RC4PPS = 0x38;
     CANRXPPS = 0x0B;
     RB4PPS = 0x46;

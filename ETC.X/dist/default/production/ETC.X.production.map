@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt \
   -pivt0x8=08h -cn -h+dist/default/production\ETC.X.production.sym \
   --cmf=dist/default/production\ETC.X.production.cmf -z -Q18F26Q84 \
-  -oC:\Users\panze\AppData\Local\Temp\sqr4.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\panze\AppData\Local\Temp\s2uk.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ETC.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0560h-025FFh -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=02600h-026FFhx218 \
@@ -31,7 +31,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\panze\AppData\Local\Temp\sqr4.o \
+  C:\Users\panze\AppData\Local\Temp\s2uk.o \
   dist/default/production\ETC.X.production.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 18F26Q84
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\panze\AppData\Local\Temp\sqr4.o
+C:\Users\panze\AppData\Local\Temp\s2uk.o
                 idloc                            200000   200000       20        0       5
                 config                           300000   300000       24        0       4
                 init                                 1A       1A        4        4       0
@@ -51,42 +51,46 @@ dist/default/production\ETC.X.production.o
                 config                           300000   300000       24        0       4
                 smallconst                         2600     2600       34     1300       0
                 ivt0x8                                8        8       12        4       0
-                text31                             2AF2     2AF2        2     131A       0
-                text30                             2AF0     2AF0        2     131A       0
-                text29                             2AEE     2AEE        2     131A       0
-                text28                             2AEC     2AEC        2     131A       0
-                text27                             2AEA     2AEA        2     131A       0
-                text26                             2634     2634       D8     131A       0
-                text25                             29F4     29F4       22     131A       0
-                text24                             2A4E     2A4E       14     131A       0
-                text23                             2ADC     2ADC        A     131A       0
-                text22                             2AD2     2AD2        A     131A       0
-                text21                             2AC8     2AC8        A     131A       0
-                text20                             2ABE     2ABE        A     131A       0
-                text19                             2AB4     2AB4        A     131A       0
-                text18                             28E2     28E2       54     131A       0
-                text17                             2AAA     2AAA        A     131A       0
-                text16                             270C     270C       88     131A       0
-                text15                             2936     2936       48     131A       0
-                text14                             297E     297E       2C     131A       0
-                text13                             2AE6     2AE6        4     131A       0
-                text12                             2A36     2A36       18     131A       0
-                text11                             2794     2794       72     131A       0
-                text10                             29AA     29AA       28     131A       0
-                text9                              2AA0     2AA0        A     131A       0
-                text8                              2A96     2A96        A     131A       0
-                text7                              2A8C     2A8C        A     131A       0
-                text6                              2874     2874       6E     131A       0
-                text5                              2A82     2A82        A     131A       0
-                text4                              2A78     2A78        A     131A       0
-                text3                              2A6E     2A6E        A     131A       0
-                text2                              2806     2806       6E     131A       0
-                text1                              29D2     29D2       22     131A       0
-                text0                              2A62     2A62        C     131A       0
-                cstackCOMRAM                        53B      53B        3      501       1
+                text35                             2BD0     2BD0        2     131A       0
+                text34                             2BCE     2BCE        2     131A       0
+                text33                             2BCC     2BCC        2     131A       0
+                text32                             2BCA     2BCA        2     131A       0
+                text31                             2BC8     2BC8        2     131A       0
+                text30                             2634     2634       D8     131A       0
+                text29                             2AB4     2AB4       22     131A       0
+                text28                             2BBA     2BBA        A     131A       0
+                text27                             2BB0     2BB0        A     131A       0
+                text26                             2BA6     2BA6        A     131A       0
+                text25                             270C     270C       AC     131A       0
+                text24                             2B0E     2B0E       14     131A       0
+                text23                             2B9C     2B9C        A     131A       0
+                text22                             2B92     2B92        A     131A       0
+                text21                             2B88     2B88        A     131A       0
+                text20                             2B7E     2B7E        A     131A       0
+                text19                             2B74     2B74        A     131A       0
+                text18                             299E     299E       54     131A       0
+                text17                             2B6A     2B6A        A     131A       0
+                text16                             27B8     27B8       88     131A       0
+                text15                             29F2     29F2       48     131A       0
+                text14                             2A3A     2A3A       2C     131A       0
+                text13                             2BC4     2BC4        4     131A       0
+                text12                             2AF6     2AF6       18     131A       0
+                text11                             2840     2840       82     131A       0
+                text10                             2A66     2A66       28     131A       0
+                text9                              2B60     2B60        A     131A       0
+                text8                              2B56     2B56        A     131A       0
+                text7                              2B4C     2B4C        A     131A       0
+                text6                              2930     2930       6E     131A       0
+                text5                              2B42     2B42        A     131A       0
+                text4                              2B38     2B38        A     131A       0
+                text3                              2B2E     2B2E        A     131A       0
+                text2                              28C2     28C2       6E     131A       0
+                text1                              2A8E     2A8E       26     131A       0
+                text0                              2B22     2B22        C     131A       0
+                cstackCOMRAM                        541      541        3      501       1
                 bssCOMRAM                           501      501       34      501       1
-                cinit                              2A16     2A16       20     131A       0
-                nvCOMRAM                            535      535        6      501       1
+                cinit                              2AD6     2AD6       20     131A       0
+                nvCOMRAM                            535      535        C      501       1
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -95,39 +99,43 @@ TOTAL           Name                               Link     Load   Length     Sp
                 init                                 1A       1A        4         0
                 reset_vec                             0        0        4         0
                 ivt0x8                                8        8       12         0
-                text31                             2AF2     2AF2        2         0
-                text30                             2AF0     2AF0        2         0
-                text29                             2AEE     2AEE        2         0
-                text28                             2AEC     2AEC        2         0
-                text27                             2AEA     2AEA        2         0
-                text26                             2634     2634       D8         0
-                text25                             29F4     29F4       22         0
-                text24                             2A4E     2A4E       14         0
-                text23                             2ADC     2ADC        A         0
-                text22                             2AD2     2AD2        A         0
-                text21                             2AC8     2AC8        A         0
-                text20                             2ABE     2ABE        A         0
-                text19                             2AB4     2AB4        A         0
-                text18                             28E2     28E2       54         0
-                text17                             2AAA     2AAA        A         0
-                text16                             270C     270C       88         0
-                text15                             2936     2936       48         0
-                text14                             297E     297E       2C         0
-                text13                             2AE6     2AE6        4         0
-                text12                             2A36     2A36       18         0
-                text11                             2794     2794       72         0
-                text10                             29AA     29AA       28         0
-                text9                              2AA0     2AA0        A         0
-                text8                              2A96     2A96        A         0
-                text7                              2A8C     2A8C        A         0
-                text6                              2874     2874       6E         0
-                text5                              2A82     2A82        A         0
-                text4                              2A78     2A78        A         0
-                text3                              2A6E     2A6E        A         0
-                text2                              2806     2806       6E         0
-                text1                              29D2     29D2       22         0
-                text0                              2A62     2A62        C         0
-                cinit                              2A16     2A16       20         0
+                text35                             2BD0     2BD0        2         0
+                text34                             2BCE     2BCE        2         0
+                text33                             2BCC     2BCC        2         0
+                text32                             2BCA     2BCA        2         0
+                text31                             2BC8     2BC8        2         0
+                text30                             2634     2634       D8         0
+                text29                             2AB4     2AB4       22         0
+                text28                             2BBA     2BBA        A         0
+                text27                             2BB0     2BB0        A         0
+                text26                             2BA6     2BA6        A         0
+                text25                             270C     270C       AC         0
+                text24                             2B0E     2B0E       14         0
+                text23                             2B9C     2B9C        A         0
+                text22                             2B92     2B92        A         0
+                text21                             2B88     2B88        A         0
+                text20                             2B7E     2B7E        A         0
+                text19                             2B74     2B74        A         0
+                text18                             299E     299E       54         0
+                text17                             2B6A     2B6A        A         0
+                text16                             27B8     27B8       88         0
+                text15                             29F2     29F2       48         0
+                text14                             2A3A     2A3A       2C         0
+                text13                             2BC4     2BC4        4         0
+                text12                             2AF6     2AF6       18         0
+                text11                             2840     2840       82         0
+                text10                             2A66     2A66       28         0
+                text9                              2B60     2B60        A         0
+                text8                              2B56     2B56        A         0
+                text7                              2B4C     2B4C        A         0
+                text6                              2930     2930       6E         0
+                text5                              2B42     2B42        A         0
+                text4                              2B38     2B38        A         0
+                text3                              2B2E     2B2E        A         0
+                text2                              28C2     28C2       6E         0
+                text1                              2A8E     2A8E       26         0
+                text0                              2B22     2B22        C         0
+                cinit                              2AD6     2AD6       20         0
 
         CLASS   CONST          
 
@@ -137,9 +145,9 @@ TOTAL           Name                               Link     Load   Length     Sp
         CLASS   MEDIUMCONST    
 
         CLASS   COMRAM         
-                cstackCOMRAM                        53B      53B        3         1
+                cstackCOMRAM                        541      541        3         1
                 bssCOMRAM                           501      501       34         1
-                nvCOMRAM                            535      535        6         1
+                nvCOMRAM                            535      535        C         1
 
         CLASS   ABS1           
 
@@ -231,9 +239,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 ivt0x8                         000008  000016  00001E         4       0  CODE    
-                bssCOMRAM                      000501  00003D  00053E       501       1  COMRAM  
+                bssCOMRAM                      000501  000043  000544       501       1  COMRAM  
                 smallconst                     002600  000034  002634      1300       0  SMALLCON
-                text26                         002634  0004C0  002AF4      131A       0  CODE    
+                text30                         002634  00059E  002BD2      131A       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -272,40 +280,97 @@ UNUSED ADDRESS RANGES
         BANK7            000700-0007FF              100
         BANK8            000800-0008FF              100
         BANK9            000900-0009FF              100
-        BIGRAM           00053E-0025FF             20C2
+        BIGRAM           000544-0025FF             20BC
         CODE             000004-000007                4
                          00001E-0025FF             25E2
-                         002AF4-00FFFF             D50C
-        COMRAM           00053E-00055F               22
+                         002BD2-00FFFF             D42E
+        COMRAM           000544-00055F               1C
         CONST            000004-000007                4
                          00001E-0025FF             25E2
-                         002AF4-00FFFF             D50C
+                         002BD2-00FFFF             D42E
         EEDATA           380000-3803FF              400
-        MEDIUMCONST      002AF4-00FFFF             D50C
+        MEDIUMCONST      002BD2-00FFFF             D42E
         RAM              000560-0025FF              100
         SFR              000000-0004FF              100
-        SMALLCONST       002AF4-00FFFF              100
+        SMALLCONST       002BD2-00FFFF              100
         STACK            000560-0025FF             20A0
 
                                   Symbol Table
 
-CAN1_OperationModeSet@opMode                                  cstackCOMRAM 00053B
-CAN1_OperationModeSet@requestMode                             cstackCOMRAM 00053D
-CAN1_OperationModeSet@status                                  cstackCOMRAM 00053C
-CAN1_SetBusErrorInterruptHandler@handler                      cstackCOMRAM 00053B
-CAN1_SetBusWakeUpActivityInterruptHandler@handler             cstackCOMRAM 00053B
-CAN1_SetInvalidMessageInterruptHandler@handler                cstackCOMRAM 00053B
-CAN1_SetModeChangeInterruptHandler@handler                    cstackCOMRAM 00053B
-CAN1_SetSystemErrorInterruptHandler@handler                   cstackCOMRAM 00053B
+ADC_SetADIInterruptHandler@InterruptHandler                   cstackCOMRAM 000541
+ADC_SetActiveClockTuningInterruptHandler@InterruptHandler     cstackCOMRAM 000541
+ADC_SetContext1ThresholdInterruptHandler@InterruptHandler     cstackCOMRAM 000541
+CAN1_OperationModeSet@opMode                                  cstackCOMRAM 000541
+CAN1_OperationModeSet@requestMode                             cstackCOMRAM 000543
+CAN1_OperationModeSet@status                                  cstackCOMRAM 000542
+CAN1_SetBusErrorInterruptHandler@handler                      cstackCOMRAM 000541
+CAN1_SetBusWakeUpActivityInterruptHandler@handler             cstackCOMRAM 000541
+CAN1_SetInvalidMessageInterruptHandler@handler                cstackCOMRAM 000541
+CAN1_SetModeChangeInterruptHandler@handler                    cstackCOMRAM 000541
+CAN1_SetSystemErrorInterruptHandler@handler                   cstackCOMRAM 000541
 IVTBASEH                                                      (abs)        00045E
 IVTBASEL                                                      (abs)        00045D
 IVTBASEU                                                      (abs)        00045F
-PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler        cstackCOMRAM 00053B
-PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler cstackCOMRAM 00053B
-PWM1_16BIT_Slice1Output2_SetInterruptHandler@InterruptHandler cstackCOMRAM 00053B
-PWM2_16BIT_Period_SetInterruptHandler@InterruptHandler        cstackCOMRAM 00053B
-PWM2_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler cstackCOMRAM 00053B
-PWM2_16BIT_Slice1Output2_SetInterruptHandler@InterruptHandler cstackCOMRAM 00053B
+PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler        cstackCOMRAM 000541
+PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler cstackCOMRAM 000541
+PWM1_16BIT_Slice1Output2_SetInterruptHandler@InterruptHandler cstackCOMRAM 000541
+PWM2_16BIT_Period_SetInterruptHandler@InterruptHandler        cstackCOMRAM 000541
+PWM2_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler cstackCOMRAM 000541
+PWM2_16BIT_Slice1Output2_SetInterruptHandler@InterruptHandler cstackCOMRAM 000541
+_ADACCH                                                       (abs)        0003E4
+_ADACCL                                                       (abs)        0003E3
+_ADACCU                                                       (abs)        0003E5
+_ADACQH                                                       (abs)        0003EF
+_ADACQL                                                       (abs)        0003EE
+_ADACT                                                        (abs)        0003F9
+_ADACTPPS                                                     (abs)        000269
+_ADCAP                                                        (abs)        0003F0
+_ADCLK                                                        (abs)        0003FA
+_ADCNT                                                        (abs)        0003E6
+_ADCON0                                                       (abs)        0003F3
+_ADCON0bits                                                   (abs)        0003F3
+_ADCON1                                                       (abs)        0003F4
+_ADCON1bits                                                   (abs)        0003F4
+_ADCON2                                                       (abs)        0003F5
+_ADCON2bits                                                   (abs)        0003F5
+_ADCON3                                                       (abs)        0003F6
+_ADCON3bits                                                   (abs)        0003F6
+_ADCP                                                         (abs)        0003D8
+_ADCPbits                                                     (abs)        0003D8
+_ADCSEL1                                                      (abs)        0003FC
+_ADCSEL1bits                                                  (abs)        0003FC
+_ADCTX                                                        (abs)        0003FB
+_ADC_ActiveClockTuning_ISR                                    nvCOMRAM     000535
+_ADC_Context1Thereshld_ISR                                    nvCOMRAM     000537
+_ADC_ConversionComplete_ISR                                   nvCOMRAM     000539
+_ADC_DefaultADI_ISR                                           (abs)        000000
+_ADC_DefaultActiveClockTuning_ISR                             (abs)        000000
+_ADC_DefaultContext1Threshold_ISR                             (abs)        000000
+_ADC_Initialize                                               text25       00270C
+_ADC_SetADIInterruptHandler                                   text28       002BBA
+_ADC_SetActiveClockTuningInterruptHandler                     text27       002BB0
+_ADC_SetContext1ThresholdInterruptHandler                     text26       002BA6
+_ADERRH                                                       (abs)        0003DE
+_ADERRL                                                       (abs)        0003DD
+_ADFLTRH                                                      (abs)        0003E2
+_ADFLTRL                                                      (abs)        0003E1
+_ADLTHH                                                       (abs)        0003DA
+_ADLTHL                                                       (abs)        0003D9
+_ADPCH                                                        (abs)        0003EC
+_ADPREH                                                       (abs)        0003F2
+_ADPREL                                                       (abs)        0003F1
+_ADPREVH                                                      (abs)        0003E9
+_ADPREVL                                                      (abs)        0003E8
+_ADREF                                                        (abs)        0003F8
+_ADRESH                                                       (abs)        0003EB
+_ADRESL                                                       (abs)        0003EA
+_ADRPT                                                        (abs)        0003E7
+_ADSTAT                                                       (abs)        0003F7
+_ADSTATbits                                                   (abs)        0003F7
+_ADSTPTH                                                      (abs)        0003E0
+_ADSTPTL                                                      (abs)        0003DF
+_ADUTHH                                                       (abs)        0003DC
+_ADUTHL                                                       (abs)        0003DB
 _ANSELA                                                       (abs)        000400
 _ANSELB                                                       (abs)        000408
 _ANSELC                                                       (abs)        000410
@@ -328,28 +393,28 @@ _C1NBTCFGL                                                    (abs)        00010
 _C1NBTCFGT                                                    (abs)        000107
 _C1NBTCFGU                                                    (abs)        000106
 _C1TRECUbits                                                  (abs)        000136
-_CAN1_BitRateConfiguration                                    text24       002A4E
+_CAN1_BitRateConfiguration                                    text24       002B0E
 _CAN1_BusErrorHandler                                         bssCOMRAM    00052F
 _CAN1_BusWakeUpActivityHandler                                bssCOMRAM    000531
-_CAN1_ErrorNotificationInterruptEnable                        text18       0028E2
-_CAN1_ISR                                                     text26       002634
-_CAN1_Initialize                                              text15       002936
+_CAN1_ErrorNotificationInterruptEnable                        text18       00299E
+_CAN1_ISR                                                     text30       002634
+_CAN1_Initialize                                              text15       0029F2
 _CAN1_InvalidMessageHandler                                   bssCOMRAM    000533
 _CAN1_ModeChangeHandler                                       bssCOMRAM    00052D
-_CAN1_OperationModeGet                                        text17       002AAA
-_CAN1_OperationModeSet                                        text16       00270C
-_CAN1_SetBusErrorInterruptHandler                             text23       002ADC
-_CAN1_SetBusWakeUpActivityInterruptHandler                    text22       002AD2
-_CAN1_SetInvalidMessageInterruptHandler                       text21       002AC8
-_CAN1_SetModeChangeInterruptHandler                           text20       002ABE
-_CAN1_SetSystemErrorInterruptHandler                          text19       002AB4
+_CAN1_OperationModeGet                                        text17       002B6A
+_CAN1_OperationModeSet                                        text16       0027B8
+_CAN1_SetBusErrorInterruptHandler                             text23       002B9C
+_CAN1_SetBusWakeUpActivityInterruptHandler                    text22       002B92
+_CAN1_SetInvalidMessageInterruptHandler                       text21       002B88
+_CAN1_SetModeChangeInterruptHandler                           text20       002B7E
+_CAN1_SetSystemErrorInterruptHandler                          text19       002B74
 _CAN1_SystemErrorHandler                                      bssCOMRAM    00052B
 _CANRXPPS                                                     (abs)        00023D
-_DefaultBusErrorHandler                                       text31       002AF2
-_DefaultBusWakeUpActivityHandler                              text30       002AF0
-_DefaultInvalidMessageHandler                                 text29       002AEE
-_DefaultModeChangeHandler                                     text28       002AEC
-_DefaultSystemErrorHandler                                    text27       002AEA
+_DefaultBusErrorHandler                                       text35       002BD0
+_DefaultBusWakeUpActivityHandler                              text34       002BCE
+_DefaultInvalidMessageHandler                                 text33       002BCC
+_DefaultModeChangeHandler                                     text32       002BCA
+_DefaultSystemErrorHandler                                    text31       002BC8
 _I2C1BAUD                                                     (abs)        00029D
 _I2C1CLK                                                      (abs)        00029E
 _I2C1CNTH                                                     (abs)        00028D
@@ -391,15 +456,15 @@ _I2C1_DO_SEND_STOP                                            (abs)        00000
 _I2C1_DO_TX                                                   (abs)        000000
 _I2C1_DO_TX_ACK                                               (abs)        000000
 _I2C1_DO_TX_EMPTY                                             (abs)        000000
-_I2C1_Initialize                                              text14       00297E
+_I2C1_Initialize                                              text14       002A3A
 _I2C1_Status                                                  bssCOMRAM    000501
 _INLVLA                                                       (abs)        000404
 _INLVLB                                                       (abs)        00040C
 _INLVLC                                                       (abs)        000414
 _INLVLE                                                       (abs)        000424
 _INTCON0bits                                                  (abs)        0004D6
-_INTERRUPT_Initialize                                         text13       002AE6
-_INTERRUPT_InterruptManager                                   text25       0029F4
+_INTERRUPT_Initialize                                         text13       002BC4
+_INTERRUPT_InterruptManager                                   text29       002AB4
 _LATA                                                         (abs)        0004BE
 _LATB                                                         (abs)        0004BF
 _LATC                                                         (abs)        0004C0
@@ -410,14 +475,16 @@ _OSCCON1                                                      (abs)        0000A
 _OSCCON3                                                      (abs)        0000AF
 _OSCEN                                                        (abs)        0000B3
 _OSCFRQ                                                       (abs)        0000B1
-_OSCILLATOR_Initialize                                        text12       002A36
+_OSCILLATOR_Initialize                                        text12       002AF6
 _OSCTUNE                                                      (abs)        0000B0
 _PIE0bits                                                     (abs)        00049E
 _PIE4bits                                                     (abs)        0004A2
 _PIE5bits                                                     (abs)        0004A3
 _PIE7bits                                                     (abs)        0004A5
-_PIN_MANAGER_Initialize                                       text11       002794
+_PIN_MANAGER_Initialize                                       text11       002840
 _PIR0bits                                                     (abs)        0004AE
+_PIR1bits                                                     (abs)        0004AF
+_PIR2bits                                                     (abs)        0004B0
 _PIR4bits                                                     (abs)        0004B2
 _PIR5bits                                                     (abs)        0004B3
 _PIR7bits                                                     (abs)        0004B5
@@ -430,12 +497,13 @@ _PMD5                                                         (abs)        00006
 _PMD6                                                         (abs)        000066
 _PMD7                                                         (abs)        000067
 _PMD8                                                         (abs)        000068
-_PMD_Initialize                                               text10       0029AA
+_PMD_Initialize                                               text10       002A66
 _PWM1CLK                                                      (abs)        000461
 _PWM1CON                                                      (abs)        000469
 _PWM1CONbits                                                  (abs)        000469
 _PWM1CPRE                                                     (abs)        000465
 _PWM1ERS                                                      (abs)        000460
+_PWM1ERSPPS                                                   (abs)        000253
 _PWM1GIE                                                      (abs)        000468
 _PWM1GIEbits                                                  (abs)        000468
 _PWM1GIR                                                      (abs)        000467
@@ -449,16 +517,16 @@ _PWM1S1P1H                                                    (abs)        00046
 _PWM1S1P1L                                                    (abs)        00046B
 _PWM1S1P2H                                                    (abs)        00046E
 _PWM1S1P2L                                                    (abs)        00046D
-_PWM1_16BIT_Initialize                                        text6        002874
+_PWM1_16BIT_Initialize                                        text6        002930
 _PWM1_16BIT_Period_DefaultInterruptHandler                    (abs)        000000
 _PWM1_16BIT_Period_InterruptHandler                           bssCOMRAM    000525
-_PWM1_16BIT_Period_SetInterruptHandler                        text9        002AA0
+_PWM1_16BIT_Period_SetInterruptHandler                        text9        002B60
 _PWM1_16BIT_Slice1Output1_DefaultInterruptHandler             (abs)        000000
 _PWM1_16BIT_Slice1Output1_InterruptHandler                    bssCOMRAM    000529
-_PWM1_16BIT_Slice1Output1_SetInterruptHandler                 text8        002A96
+_PWM1_16BIT_Slice1Output1_SetInterruptHandler                 text8        002B56
 _PWM1_16BIT_Slice1Output2_DefaultInterruptHandler             (abs)        000000
 _PWM1_16BIT_Slice1Output2_InterruptHandler                    bssCOMRAM    000527
-_PWM1_16BIT_Slice1Output2_SetInterruptHandler                 text7        002A8C
+_PWM1_16BIT_Slice1Output2_SetInterruptHandler                 text7        002B4C
 _PWM2CLK                                                      (abs)        000470
 _PWM2CON                                                      (abs)        000478
 _PWM2CONbits                                                  (abs)        000478
@@ -477,24 +545,25 @@ _PWM2S1P1H                                                    (abs)        00047
 _PWM2S1P1L                                                    (abs)        00047A
 _PWM2S1P2H                                                    (abs)        00047D
 _PWM2S1P2L                                                    (abs)        00047C
-_PWM2_16BIT_Initialize                                        text2        002806
+_PWM2_16BIT_Initialize                                        text2        0028C2
 _PWM2_16BIT_Period_DefaultInterruptHandler                    (abs)        000000
-_PWM2_16BIT_Period_InterruptHandler                           nvCOMRAM     000535
-_PWM2_16BIT_Period_SetInterruptHandler                        text5        002A82
+_PWM2_16BIT_Period_InterruptHandler                           nvCOMRAM     00053B
+_PWM2_16BIT_Period_SetInterruptHandler                        text5        002B42
 _PWM2_16BIT_Slice1Output1_DefaultInterruptHandler             (abs)        000000
-_PWM2_16BIT_Slice1Output1_InterruptHandler                    nvCOMRAM     000539
-_PWM2_16BIT_Slice1Output1_SetInterruptHandler                 text4        002A78
+_PWM2_16BIT_Slice1Output1_InterruptHandler                    nvCOMRAM     00053F
+_PWM2_16BIT_Slice1Output1_SetInterruptHandler                 text4        002B38
 _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler             (abs)        000000
-_PWM2_16BIT_Slice1Output2_InterruptHandler                    nvCOMRAM     000537
-_PWM2_16BIT_Slice1Output2_SetInterruptHandler                 text3        002A6E
+_PWM2_16BIT_Slice1Output2_InterruptHandler                    nvCOMRAM     00053D
+_PWM2_16BIT_Slice1Output2_SetInterruptHandler                 text3        002B2E
 _RB0PPS                                                       (abs)        000209
+_RB1PPS                                                       (abs)        00020A
 _RB4PPS                                                       (abs)        00020D
 _RC3PPS                                                       (abs)        000214
 _RC4PPS                                                       (abs)        000215
 _SLRCONA                                                      (abs)        000403
 _SLRCONB                                                      (abs)        00040B
 _SLRCONC                                                      (abs)        000413
-_SYSTEM_Initialize                                            text1        0029D2
+_SYSTEM_Initialize                                            text1        002A8E
 _TRISA                                                        (abs)        0004C6
 _TRISB                                                        (abs)        0004C7
 _TRISC                                                        (abs)        0004C8
@@ -577,8 +646,8 @@ __Hreset_vec                                                  reset_vec    00000
 __Hrparam                                                     rparam       000000
 __Hsfr                                                        sfr          000000
 __Hsmallconst                                                 smallconst   002634
-__Hspace_0                                                    (abs)        002AF4
-__Hspace_1                                                    (abs)        00053E
+__Hspace_0                                                    (abs)        002BD2
+__Hspace_1                                                    (abs)        000544
 __Hspace_2                                                    (abs)        000000
 __Hspace_4                                                    (abs)        600024
 __Hstack                                                      stack        000000
@@ -612,6 +681,10 @@ __Htext3                                                      text3        00000
 __Htext30                                                     text30       000000
 __Htext31                                                     text31       000000
 __Htext32                                                     text32       000000
+__Htext33                                                     text33       000000
+__Htext34                                                     text34       000000
+__Htext35                                                     text35       000000
+__Htext36                                                     text36       000000
 __Htext4                                                      text4        000000
 __Htext5                                                      text5        000000
 __Htext6                                                      text6        000000
@@ -727,14 +800,18 @@ __Ltext3                                                      text3        00000
 __Ltext30                                                     text30       000000
 __Ltext31                                                     text31       000000
 __Ltext32                                                     text32       000000
+__Ltext33                                                     text33       000000
+__Ltext34                                                     text34       000000
+__Ltext35                                                     text35       000000
+__Ltext36                                                     text36       000000
 __Ltext4                                                      text4        000000
 __Ltext5                                                      text5        000000
 __Ltext6                                                      text6        000000
 __Ltext7                                                      text7        000000
 __Ltext8                                                      text8        000000
 __Ltext9                                                      text9        000000
-__S0                                                          (abs)        002AF4
-__S1                                                          (abs)        00053E
+__S0                                                          (abs)        002BD2
+__S1                                                          (abs)        000544
 __S2                                                          (abs)        000000
 __S4                                                          (abs)        000000
 __S5                                                          (abs)        000000
@@ -745,84 +822,96 @@ ___rparam_used                                                (abs)        00000
 ___sp                                                         stack        000000
 __accesstop                                                   (abs)        000560
 __activetblptr                                                (abs)        000003
-__end_of_CAN1_BitRateConfiguration                            text24       002A62
-__end_of_CAN1_ErrorNotificationInterruptEnable                text18       002936
-__end_of_CAN1_ISR                                             text26       00270C
-__end_of_CAN1_Initialize                                      text15       00297E
-__end_of_CAN1_OperationModeGet                                text17       002AB4
-__end_of_CAN1_OperationModeSet                                text16       002794
-__end_of_CAN1_SetBusErrorInterruptHandler                     text23       002AE6
-__end_of_CAN1_SetBusWakeUpActivityInterruptHandler            text22       002ADC
-__end_of_CAN1_SetInvalidMessageInterruptHandler               text21       002AD2
-__end_of_CAN1_SetModeChangeInterruptHandler                   text20       002AC8
-__end_of_CAN1_SetSystemErrorInterruptHandler                  text19       002ABE
+__end_of_ADC_Initialize                                       text25       0027B8
+__end_of_ADC_SetADIInterruptHandler                           text28       002BC4
+__end_of_ADC_SetActiveClockTuningInterruptHandler             text27       002BBA
+__end_of_ADC_SetContext1ThresholdInterruptHandler             text26       002BB0
+__end_of_CAN1_BitRateConfiguration                            text24       002B22
+__end_of_CAN1_ErrorNotificationInterruptEnable                text18       0029F2
+__end_of_CAN1_ISR                                             text30       00270C
+__end_of_CAN1_Initialize                                      text15       002A3A
+__end_of_CAN1_OperationModeGet                                text17       002B74
+__end_of_CAN1_OperationModeSet                                text16       002840
+__end_of_CAN1_SetBusErrorInterruptHandler                     text23       002BA6
+__end_of_CAN1_SetBusWakeUpActivityInterruptHandler            text22       002B9C
+__end_of_CAN1_SetInvalidMessageInterruptHandler               text21       002B92
+__end_of_CAN1_SetModeChangeInterruptHandler                   text20       002B88
+__end_of_CAN1_SetSystemErrorInterruptHandler                  text19       002B7E
 __end_of_DLC_BYTES                                            smallconst   002630
-__end_of_DefaultBusErrorHandler                               text31       002AF4
-__end_of_DefaultBusWakeUpActivityHandler                      text30       002AF2
-__end_of_DefaultInvalidMessageHandler                         text29       002AF0
-__end_of_DefaultModeChangeHandler                             text28       002AEE
-__end_of_DefaultSystemErrorHandler                            text27       002AEC
+__end_of_DefaultBusErrorHandler                               text35       002BD2
+__end_of_DefaultBusWakeUpActivityHandler                      text34       002BD0
+__end_of_DefaultInvalidMessageHandler                         text33       002BCE
+__end_of_DefaultModeChangeHandler                             text32       002BCC
+__end_of_DefaultSystemErrorHandler                            text31       002BCA
 __end_of_FIFO                                                 smallconst   002632
-__end_of_I2C1_Initialize                                      text14       0029AA
-__end_of_INTERRUPT_Initialize                                 text13       002AEA
-__end_of_INTERRUPT_InterruptManager                           text25       002A16
-__end_of_OSCILLATOR_Initialize                                text12       002A4E
-__end_of_PIN_MANAGER_Initialize                               text11       002806
-__end_of_PMD_Initialize                                       text10       0029D2
-__end_of_PWM1_16BIT_Initialize                                text6        0028E2
-__end_of_PWM1_16BIT_Period_SetInterruptHandler                text9        002AAA
-__end_of_PWM1_16BIT_Slice1Output1_SetInterruptHandler         text8        002AA0
-__end_of_PWM1_16BIT_Slice1Output2_SetInterruptHandler         text7        002A96
-__end_of_PWM2_16BIT_Initialize                                text2        002874
-__end_of_PWM2_16BIT_Period_SetInterruptHandler                text5        002A8C
-__end_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler         text4        002A82
-__end_of_PWM2_16BIT_Slice1Output2_SetInterruptHandler         text3        002A78
-__end_of_SYSTEM_Initialize                                    text1        0029F4
-__end_of__initialization                                      cinit        002A30
+__end_of_I2C1_Initialize                                      text14       002A66
+__end_of_INTERRUPT_Initialize                                 text13       002BC8
+__end_of_INTERRUPT_InterruptManager                           text29       002AD6
+__end_of_OSCILLATOR_Initialize                                text12       002B0E
+__end_of_PIN_MANAGER_Initialize                               text11       0028C2
+__end_of_PMD_Initialize                                       text10       002A8E
+__end_of_PWM1_16BIT_Initialize                                text6        00299E
+__end_of_PWM1_16BIT_Period_SetInterruptHandler                text9        002B6A
+__end_of_PWM1_16BIT_Slice1Output1_SetInterruptHandler         text8        002B60
+__end_of_PWM1_16BIT_Slice1Output2_SetInterruptHandler         text7        002B56
+__end_of_PWM2_16BIT_Initialize                                text2        002930
+__end_of_PWM2_16BIT_Period_SetInterruptHandler                text5        002B4C
+__end_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler         text4        002B42
+__end_of_PWM2_16BIT_Slice1Output2_SetInterruptHandler         text3        002B38
+__end_of_SYSTEM_Initialize                                    text1        002AB4
+__end_of__initialization                                      cinit        002AF0
 __end_of_i2c1_fsmStateTable                                   smallconst   002627
-__end_of_main                                                 text0        002A6E
-__initialization                                              cinit        002A16
+__end_of_main                                                 text0        002B2E
+__initialization                                              cinit        002AD6
 __mediumconst                                                 mediumconst  000000
 __pbssCOMRAM                                                  bssCOMRAM    000501
-__pcinit                                                      cinit        002A16
-__pcstackCOMRAM                                               cstackCOMRAM 00053B
+__pcinit                                                      cinit        002AD6
+__pcstackCOMRAM                                               cstackCOMRAM 000541
 __pivt0x8                                                     ivt0x8       000008
 __pnvCOMRAM                                                   nvCOMRAM     000535
 __psmallconst                                                 smallconst   002600
-__ptext0                                                      text0        002A62
-__ptext1                                                      text1        0029D2
-__ptext10                                                     text10       0029AA
-__ptext11                                                     text11       002794
-__ptext12                                                     text12       002A36
-__ptext13                                                     text13       002AE6
-__ptext14                                                     text14       00297E
-__ptext15                                                     text15       002936
-__ptext16                                                     text16       00270C
-__ptext17                                                     text17       002AAA
-__ptext18                                                     text18       0028E2
-__ptext19                                                     text19       002AB4
-__ptext2                                                      text2        002806
-__ptext20                                                     text20       002ABE
-__ptext21                                                     text21       002AC8
-__ptext22                                                     text22       002AD2
-__ptext23                                                     text23       002ADC
-__ptext24                                                     text24       002A4E
-__ptext25                                                     text25       0029F4
-__ptext26                                                     text26       002634
-__ptext27                                                     text27       002AEA
-__ptext28                                                     text28       002AEC
-__ptext29                                                     text29       002AEE
-__ptext3                                                      text3        002A6E
-__ptext30                                                     text30       002AF0
-__ptext31                                                     text31       002AF2
-__ptext32                                                     text32       000000
-__ptext4                                                      text4        002A78
-__ptext5                                                      text5        002A82
-__ptext6                                                      text6        002874
-__ptext7                                                      text7        002A8C
-__ptext8                                                      text8        002A96
-__ptext9                                                      text9        002AA0
+__ptext0                                                      text0        002B22
+__ptext1                                                      text1        002A8E
+__ptext10                                                     text10       002A66
+__ptext11                                                     text11       002840
+__ptext12                                                     text12       002AF6
+__ptext13                                                     text13       002BC4
+__ptext14                                                     text14       002A3A
+__ptext15                                                     text15       0029F2
+__ptext16                                                     text16       0027B8
+__ptext17                                                     text17       002B6A
+__ptext18                                                     text18       00299E
+__ptext19                                                     text19       002B74
+__ptext2                                                      text2        0028C2
+__ptext20                                                     text20       002B7E
+__ptext21                                                     text21       002B88
+__ptext22                                                     text22       002B92
+__ptext23                                                     text23       002B9C
+__ptext24                                                     text24       002B0E
+__ptext25                                                     text25       00270C
+__ptext26                                                     text26       002BA6
+__ptext27                                                     text27       002BB0
+__ptext28                                                     text28       002BBA
+__ptext29                                                     text29       002AB4
+__ptext3                                                      text3        002B2E
+__ptext30                                                     text30       002634
+__ptext31                                                     text31       002BC8
+__ptext32                                                     text32       002BCA
+__ptext33                                                     text33       002BCC
+__ptext34                                                     text34       002BCE
+__ptext35                                                     text35       002BD0
+__ptext36                                                     text36       000000
+__ptext4                                                      text4        002B38
+__ptext5                                                      text5        002B42
+__ptext6                                                      text6        002930
+__ptext7                                                      text7        002B4C
+__ptext8                                                      text8        002B56
+__ptext9                                                      text9        002B60
 __ramtop                                                      ramtop       002600
+__size_of_ADC_Initialize                                      (abs)        000000
+__size_of_ADC_SetADIInterruptHandler                          (abs)        000000
+__size_of_ADC_SetActiveClockTuningInterruptHandler            (abs)        000000
+__size_of_ADC_SetContext1ThresholdInterruptHandler            (abs)        000000
 __size_of_CAN1_BitRateConfiguration                           (abs)        000000
 __size_of_CAN1_ErrorNotificationInterruptEnable               (abs)        000000
 __size_of_CAN1_ISR                                            (abs)        000000
@@ -857,13 +946,13 @@ __size_of_SYSTEM_Initialize                                   (abs)        00000
 __size_of_main                                                (abs)        000000
 __smallconst                                                  smallconst   002600
 _i2c1_fsmStateTable                                           smallconst   002601
-_main                                                         text0        002A62
+_main                                                         text0        002B22
 _rd1RegCompleteHandler                                        (abs)        000000
 _rd2RegCompleteHandler                                        (abs)        000000
 _rdBlkRegCompleteHandler                                      (abs)        000000
 _wr1RegCompleteHandler                                        (abs)        000000
 _wr2RegCompleteHandler                                        (abs)        000000
-end_of_initialization                                         cinit        002A30
+end_of_initialization                                         cinit        002AF0
 intlevel0                                                     text         000000
 intlevel1                                                     text         000000
 intlevel2                                                     text         000000
@@ -872,7 +961,7 @@ ivt0x8_base                                                   ivt0x8       00000
 stackhi                                                       (abs)        0025FF
 stacklo                                                       (abs)        000560
 start                                                         init         00001A
-start_initialization                                          cinit        002A16
+start_initialization                                          cinit        002AD6
 
 
 FUNCTION INFORMATION:
@@ -930,6 +1019,7 @@ Total ram usage:        0 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:    6
  This function calls:
+		_ADC_Initialize
 		_CAN1_Initialize
 		_I2C1_Initialize
 		_INTERRUPT_Initialize
@@ -1195,7 +1285,7 @@ Total ram usage:        2 bytes
 
  *************** function _PMD_Initialize *****************
  Defined at:
-		line 76 in file "mcc_generated_files/mcc.c"
+		line 77 in file "mcc_generated_files/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1255,7 +1345,7 @@ Total ram usage:        0 bytes
 
  *************** function _OSCILLATOR_Initialize *****************
  Defined at:
-		line 62 in file "mcc_generated_files/mcc.c"
+		line 63 in file "mcc_generated_files/mcc.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -1657,6 +1747,131 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
+ *************** function _ADC_Initialize *****************
+ Defined at:
+		line 65 in file "mcc_generated_files/adc.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK26  BANK27  BANK28  BANK29  BANK30  BANK31  BANK32  BANK33  BANK34  BANK35  BANK36  BANK37
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        0 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    4
+ This function calls:
+		_ADC_SetADIInterruptHandler
+		_ADC_SetActiveClockTuningInterruptHandler
+		_ADC_SetContext1ThresholdInterruptHandler
+ This function is called by:
+		_SYSTEM_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _ADC_SetContext1ThresholdInterruptHandler *****************
+ Defined at:
+		line 423 in file "mcc_generated_files/adc.c"
+ Parameters:    Size  Location     Type
+  InterruptHan    2    0[COMRAM] PTR FTN()void 
+		 -> ADC_DefaultContext1Threshold_ISR(1), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK26  BANK27  BANK28  BANK29  BANK30  BANK31  BANK32  BANK33  BANK34  BANK35  BANK36  BANK37
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_ADC_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _ADC_SetActiveClockTuningInterruptHandler *****************
+ Defined at:
+		line 428 in file "mcc_generated_files/adc.c"
+ Parameters:    Size  Location     Type
+  InterruptHan    2    0[COMRAM] PTR FTN()void 
+		 -> ADC_DefaultActiveClockTuning_ISR(1), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK26  BANK27  BANK28  BANK29  BANK30  BANK31  BANK32  BANK33  BANK34  BANK35  BANK36  BANK37
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_ADC_Initialize
+ This function uses a non-reentrant model
+
+
+ *************** function _ADC_SetADIInterruptHandler *****************
+ Defined at:
+		line 418 in file "mcc_generated_files/adc.c"
+ Parameters:    Size  Location     Type
+  InterruptHan    2    0[COMRAM] PTR FTN()void 
+		 -> ADC_DefaultADI_ISR(1), 
+ Auto vars:     Size  Location     Type
+		None
+ Return value:  Size  Location     Type
+                  1    wreg      void 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14  BANK15  BANK16  BANK17  BANK18  BANK19  BANK20  BANK21  BANK22  BANK23  BANK24  BANK25  BANK26  BANK27  BANK28  BANK29  BANK30  BANK31  BANK32  BANK33  BANK34  BANK35  BANK36  BANK37
+      Params:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         2       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        2 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    3
+ This function calls:
+		Nothing
+ This function is called by:
+		_ADC_Initialize
+ This function uses a non-reentrant model
+
+
  *************** function _INTERRUPT_InterruptManager *****************
  Defined at:
 		line 58 in file "mcc_generated_files/interrupt_manager.c"
@@ -1877,74 +2092,82 @@ MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
 mcc_generated_files/can1.c
-		_CAN1_BitRateConfiguration		CODE           	2A4E	0000	20
-		_CAN1_SetInvalidMessageInterruptHandler		CODE           	2AC8	0000	10
+		_CAN1_BitRateConfiguration		CODE           	2B0E	0000	20
+		_CAN1_SetInvalidMessageInterruptHandler		CODE           	2B88	0000	10
 		_CAN1_ISR      		CODE           	2634	0000	216
-		_DefaultBusErrorHandler		CODE           	2AF2	0000	2
-		_CAN1_OperationModeGet		CODE           	2AAA	0000	10
-		_CAN1_Initialize		CODE           	2936	0000	72
-		_DefaultInvalidMessageHandler		CODE           	2AEE	0000	2
-		_DefaultBusWakeUpActivityHandler		CODE           	2AF0	0000	2
-		_CAN1_SetBusErrorInterruptHandler		CODE           	2ADC	0000	10
-		_CAN1_SetSystemErrorInterruptHandler		CODE           	2AB4	0000	10
-		_DefaultSystemErrorHandler		CODE           	2AEA	0000	2
-		_CAN1_ErrorNotificationInterruptEnable		CODE           	28E2	0000	84
-		_CAN1_SetBusWakeUpActivityInterruptHandler		CODE           	2AD2	0000	10
-		_CAN1_OperationModeSet		CODE           	270C	0000	136
-		_CAN1_SetModeChangeInterruptHandler		CODE           	2ABE	0000	10
-		_DefaultModeChangeHandler		CODE           	2AEC	0000	2
+		_DefaultBusErrorHandler		CODE           	2BD0	0000	2
+		_CAN1_OperationModeGet		CODE           	2B6A	0000	10
+		_CAN1_Initialize		CODE           	29F2	0000	72
+		_DefaultInvalidMessageHandler		CODE           	2BCC	0000	2
+		_DefaultBusWakeUpActivityHandler		CODE           	2BCE	0000	2
+		_CAN1_SetBusErrorInterruptHandler		CODE           	2B9C	0000	10
+		_CAN1_SetSystemErrorInterruptHandler		CODE           	2B74	0000	10
+		_DefaultSystemErrorHandler		CODE           	2BC8	0000	2
+		_CAN1_ErrorNotificationInterruptEnable		CODE           	299E	0000	84
+		_CAN1_SetBusWakeUpActivityInterruptHandler		CODE           	2B92	0000	10
+		_CAN1_OperationModeSet		CODE           	27B8	0000	136
+		_CAN1_SetModeChangeInterruptHandler		CODE           	2B7E	0000	10
+		_DefaultModeChangeHandler		CODE           	2BCA	0000	2
 
 mcc_generated_files/can1.c estimated size: 598
 
 mcc_generated_files/pwm2_16bit.c
-		_PWM2_16BIT_Period_SetInterruptHandler		CODE           	2A82	0000	10
-		_PWM2_16BIT_Slice1Output1_SetInterruptHandler		CODE           	2A78	0000	10
-		_PWM2_16BIT_Slice1Output2_SetInterruptHandler		CODE           	2A6E	0000	10
-		_PWM2_16BIT_Initialize		CODE           	2806	0000	110
+		_PWM2_16BIT_Period_SetInterruptHandler		CODE           	2B42	0000	10
+		_PWM2_16BIT_Slice1Output1_SetInterruptHandler		CODE           	2B38	0000	10
+		_PWM2_16BIT_Slice1Output2_SetInterruptHandler		CODE           	2B2E	0000	10
+		_PWM2_16BIT_Initialize		CODE           	28C2	0000	110
 
 mcc_generated_files/pwm2_16bit.c estimated size: 140
 
 mcc_generated_files/i2c1_master.c
-		_I2C1_Initialize		CODE           	297E	0000	44
+		_I2C1_Initialize		CODE           	2A3A	0000	44
 
 mcc_generated_files/i2c1_master.c estimated size: 44
 
 mcc_generated_files/interrupt_manager.c
-		_INTERRUPT_Initialize		CODE           	2AE6	0000	4
-		_INTERRUPT_InterruptManager		CODE           	29F4	0000	34
+		_INTERRUPT_Initialize		CODE           	2BC4	0000	4
+		_INTERRUPT_InterruptManager		CODE           	2AB4	0000	34
 
 mcc_generated_files/interrupt_manager.c estimated size: 38
 
 mcc_generated_files/pin_manager.c
-		_PIN_MANAGER_Initialize		CODE           	2794	0000	114
+		_PIN_MANAGER_Initialize		CODE           	2840	0000	130
 
-mcc_generated_files/pin_manager.c estimated size: 114
+mcc_generated_files/pin_manager.c estimated size: 130
+
+mcc_generated_files/adc.c
+		_ADC_Initialize		CODE           	270C	0000	172
+		_ADC_SetActiveClockTuningInterruptHandler		CODE           	2BB0	0000	10
+		_ADC_SetADIInterruptHandler		CODE           	2BBA	0000	10
+		_ADC_SetContext1ThresholdInterruptHandler		CODE           	2BA6	0000	10
+
+mcc_generated_files/adc.c estimated size: 202
 
 mcc_generated_files/pwm1_16bit.c
-		_PWM1_16BIT_Period_SetInterruptHandler		CODE           	2AA0	0000	10
-		_PWM1_16BIT_Slice1Output1_SetInterruptHandler		CODE           	2A96	0000	10
-		_PWM1_16BIT_Slice1Output2_SetInterruptHandler		CODE           	2A8C	0000	10
-		_PWM1_16BIT_Initialize		CODE           	2874	0000	110
+		_PWM1_16BIT_Period_SetInterruptHandler		CODE           	2B60	0000	10
+		_PWM1_16BIT_Slice1Output1_SetInterruptHandler		CODE           	2B56	0000	10
+		_PWM1_16BIT_Slice1Output2_SetInterruptHandler		CODE           	2B4C	0000	10
+		_PWM1_16BIT_Initialize		CODE           	2930	0000	110
 
 mcc_generated_files/pwm1_16bit.c estimated size: 140
 
 shared
 		_FIFO          		SMALLCONST     	0000	0000	0
 		_DLC_BYTES     		SMALLCONST     	0000	0000	0
-		__initialization		CODE           	2A16	0000	26
+		__initialization		CODE           	2AD6	0000	26
 		_i2c1_fsmStateTable		SMALLCONST     	2601	0000	38
 
 shared estimated size: 64
 
 mcc_generated_files/mcc.c
-		_PMD_Initialize		CODE           	29AA	0000	40
-		_OSCILLATOR_Initialize		CODE           	2A36	0000	24
-		_SYSTEM_Initialize		CODE           	29D2	0000	34
+		_PMD_Initialize		CODE           	2A66	0000	40
+		_OSCILLATOR_Initialize		CODE           	2AF6	0000	24
+		_SYSTEM_Initialize		CODE           	2A8E	0000	38
 
-mcc_generated_files/mcc.c estimated size: 98
+mcc_generated_files/mcc.c estimated size: 102
 
 main.c
-		_main          		CODE           	2A62	0000	12
+		_main          		CODE           	2B22	0000	12
 
 main.c estimated size: 12
 

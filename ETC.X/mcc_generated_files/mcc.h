@@ -54,6 +54,7 @@
 #include <conio.h>
 #include "interrupt_manager.h"
 #include "i2c1_master.h"
+#include "adc.h"
 #include "pwm2_16bit.h"
 #include "can1.h"
 #include "pwm1_16bit.h"

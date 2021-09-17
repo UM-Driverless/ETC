@@ -74,11 +74,11 @@ void PWM1_16BIT_Initialize(void)
     //PWMPRL 15; 
     PWM1PRL = 0x0F;
 
-    //PWMPRH 39; 
-    PWM1PRH = 0x27;
+    //PWMPRH 3; 
+    PWM1PRH = 0x03;
 
-    //PWMCPRE No prescale; 
-    PWM1CPRE = 0x00;
+    //PWMCPRE Prescale by 255; 
+    PWM1CPRE = 0xFE;
 
     //PWMPIPOS No postscale; 
     PWM1PIPOS = 0x00;
@@ -95,14 +95,14 @@ void PWM1_16BIT_Initialize(void)
     //PWMS1P1L 136; 
     PWM1S1P1L = 0x88;
 
-    //PWMS1P1H 19; 
-    PWM1S1P1H = 0x13;
+    //PWMS1P1H 1; 
+    PWM1S1P1H = 0x01;
 
     //PWMS1P2L 136; 
     PWM1S1P2L = 0x88;
 
-    //PWMS1P2H 19; 
-    PWM1S1P2H = 0x13;
+    //PWMS1P2H 1; 
+    PWM1S1P2H = 0x01;
     
     //Clear PWM1_16BIT period interrupt flag
     PIR4bits.PWM1PIF = 0;

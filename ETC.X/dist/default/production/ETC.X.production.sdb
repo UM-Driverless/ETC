@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F26Q84 ]
 [d frameptr 1249 ]
-"67 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/examples/i2c1_master_example.c
+"67 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
 [e E355 . `uc
 I2C1_NOERR 0
 I2C1_BUSY 1
@@ -17,7 +17,11 @@ I2C1_RESTART_WRITE 3
 I2C1_CONTINUE 4
 I2C1_RESET_LINK 5
 ]
-"158 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/can1.c
+"101 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/can1.c
+[e E22386 . `uc
+FIFO1 1
+]
+"249
 [e E22356 . `uc
 CAN_OP_MODE_REQUEST_SUCCESS 0
 CAN_OP_MODE_REQUEST_FAIL 1
@@ -33,7 +37,67 @@ CAN_EXTERNAL_LOOPBACK_MODE 5
 CAN_NORMAL_2_0_MODE 6
 CAN_RESTRICTED_OPERATION_MODE 7
 ]
-"159 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/i2c1_master.c
+"312
+[e E22460 . `uc
+CAN_RX_MSG_NOT_AVAILABLE 0
+CAN_RX_MSG_AVAILABLE 1
+CAN_RX_MSG_OVERFLOW 8
+]
+"328
+[e E22328 . `uc
+CAN_FRAME_STD 0
+CAN_FRAME_EXT 1
+]
+"329
+[e E22332 . `uc
+CAN_FRAME_DATA 0
+CAN_FRAME_RTR 1
+]
+"330
+[e E22324 . `uc
+CAN_NON_BRS_MODE 0
+CAN_BRS_MODE 1
+]
+"466
+[e E22361 . `uc
+CAN_TX_FIFO_FULL 0
+CAN_TX_FIFO_AVAILABLE 1
+]
+"512
+[e E22340 . `uc
+CAN_TX_MSG_REQUEST_SUCCESS 0
+CAN_TX_MSG_REQUEST_DLC_EXCEED_ERROR 1
+CAN_TX_MSG_REQUEST_BRS_ERROR 2
+CAN_TX_MSG_REQUEST_FIFO_FULL 3
+]
+"523
+[e E22365 . `uc
+DLC_0 0
+DLC_1 1
+DLC_2 2
+DLC_3 3
+DLC_4 4
+DLC_5 5
+DLC_6 6
+DLC_7 7
+DLC_8 8
+DLC_12 9
+DLC_16 10
+DLC_20 11
+DLC_24 12
+DLC_32 13
+DLC_48 14
+DLC_64 15
+]
+[e E22336 . `uc
+CAN_2_0_FORMAT 0
+CAN_FD_FORMAT 1
+]
+"541
+[e E22383 . `uc
+TXQ 0
+]
+"159 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/i2c1_master.c
 [e E22532 . `uc
 I2C1_IDLE 0
 I2C1_SEND_ADR_READ 1
@@ -77,52 +141,89 @@ I2C1_DATA_NACK 3
 I2C1_TIMEOUT 4
 I2C1_NULL 5
 ]
-"455 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/adc.c
+"455 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/adc.c
 [e E22154 . `uc
-CONTEXT_1 0
-CONTEXT_2 1
-CONTEXT_3 2
-CONTEXT_4 3
+CONTEXT_TPS1 0
+CONTEXT_TPS2 1
+CONTEXT_APPS1 2
+CONTEXT_APPS2 3
 ]
 "502
 [e E22143 . `uc
-TPS2 4
-TPS1 16
-APPS2 17
-APPS1 18
+PICTPS2 4
+PICTPS1 16
+PICAPPS2 17
+PICAPPS1 18
 channel_VSS 59
 channel_Temp 60
 channel_DAC1 61
 channel_FVR_Buffer1 62
 channel_FVR_Buffer2 63
 ]
-"4 /opt/microchip/xc8/v2.32/pic/sources/c99/common/fleq.c
+"58 C:\Users\Ame\Downloads\ETC-main\ETC.X\MESSAGES.C
+[e E22718 . `uc
+CAN_2_0_FORMAT 0
+CAN_FD_FORMAT 1
+]
+"59
+[e E22706 . `uc
+CAN_NON_BRS_MODE 0
+CAN_BRS_MODE 1
+]
+"60
+[e E22714 . `uc
+CAN_FRAME_DATA 0
+CAN_FRAME_RTR 1
+]
+"61
+[e E22710 . `uc
+CAN_FRAME_STD 0
+CAN_FRAME_EXT 1
+]
+"86
+[e E22743 . `uc
+CAN_TX_FIFO_FULL 0
+CAN_TX_FIFO_AVAILABLE 1
+]
+[e E22765 . `uc
+TXQ 0
+]
+"88
+[e E22722 . `uc
+CAN_TX_MSG_REQUEST_SUCCESS 0
+CAN_TX_MSG_REQUEST_DLC_EXCEED_ERROR 1
+CAN_TX_MSG_REQUEST_BRS_ERROR 2
+CAN_TX_MSG_REQUEST_FIFO_FULL 3
+]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
-"62 /opt/microchip/xc8/v2.32/pic/sources/c99/common/float.c
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"86 /opt/microchip/xc8/v2.32/pic/sources/c99/common/ftadd.c
+"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
-"54 /opt/microchip/xc8/v2.32/pic/sources/c99/common/ftdiv.c
+"54 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 4 0 ]
-"62 /opt/microchip/xc8/v2.32/pic/sources/c99/common/ftmul.c
+"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
-"19 /opt/microchip/xc8/v2.32/pic/sources/c99/common/ftsub.c
+"19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"10 /opt/microchip/xc8/v2.32/pic/sources/c99/common/sprcadd.c
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"11 /opt/microchip/xc8/v2.32/pic/sources/c99/common/sprcdiv.c
+"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 /opt/microchip/xc8/v2.32/pic/sources/c99/common/sprcmul.c
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"15 /opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul32.c
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"91 /opt/microchip/xc8/v2.32/pic/sources/c99/common/Umul64.c
+"91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"49 /home/muny/MPLABXProjects/ETC/ETC.X/main.c
+"50 C:\Users\Ame\Downloads\ETC-main\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"71 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/adc.c
+"71 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "718
 [v _ADC_SetADIInterruptHandler ADC_SetADIInterruptHandler `(v  1 e 1 0 ]
@@ -148,43 +249,89 @@ channel_FVR_Buffer2 63
 [v _ADC_DefaultContext4Threshold_ISR ADC_DefaultContext4Threshold_ISR `(v  1 s 1 ADC_DefaultContext4Threshold_ISR ]
 "779
 [v _ADC_DefaultActiveClockTuning_ISR ADC_DefaultActiveClockTuning_ISR `(v  1 s 1 ADC_DefaultActiveClockTuning_ISR ]
-"91 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/can1.c
+"118 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/can1.c
+[v _DefaultFIFO1NotEmptyHandler DefaultFIFO1NotEmptyHandler `(v  1 s 1 DefaultFIFO1NotEmptyHandler ]
+"122
 [v _DefaultInvalidMessageHandler DefaultInvalidMessageHandler `(v  1 s 1 DefaultInvalidMessageHandler ]
-"95
+"126
 [v _DefaultBusWakeUpActivityHandler DefaultBusWakeUpActivityHandler `(v  1 s 1 DefaultBusWakeUpActivityHandler ]
-"99
+"130
 [v _DefaultBusErrorHandler DefaultBusErrorHandler `(v  1 s 1 DefaultBusErrorHandler ]
-"103
+"134
 [v _DefaultModeChangeHandler DefaultModeChangeHandler `(v  1 s 1 DefaultModeChangeHandler ]
-"107
+"138
 [v _DefaultSystemErrorHandler DefaultSystemErrorHandler `(v  1 s 1 DefaultSystemErrorHandler ]
-"113
+"142
+[v _DefaultTxAttemptHandler DefaultTxAttemptHandler `(v  1 s 1 DefaultTxAttemptHandler ]
+"146
+[v _DefaultRxBufferOverflowHandler DefaultRxBufferOverflowHandler `(v  1 s 1 DefaultRxBufferOverflowHandler ]
+"150
+[v _CAN1_RX_FIFO_ResetInfo CAN1_RX_FIFO_ResetInfo `(v  1 e 1 0 ]
+"160
+[v _CAN1_RX_FIFO_Configuration CAN1_RX_FIFO_Configuration `(v  1 s 1 CAN1_RX_FIFO_Configuration ]
+"182
+[v _CAN1_RX_FIFO_FilterMaskConfiguration CAN1_RX_FIFO_FilterMaskConfiguration `(v  1 s 1 CAN1_RX_FIFO_FilterMaskConfiguration ]
+"186
+[v _CAN1_TX_FIFO_Configuration CAN1_TX_FIFO_Configuration `(v  1 s 1 CAN1_TX_FIFO_Configuration ]
+"202
 [v _CAN1_BitRateConfiguration CAN1_BitRateConfiguration `(v  1 s 1 CAN1_BitRateConfiguration ]
-"129
+"218
 [v _CAN1_ErrorNotificationInterruptEnable CAN1_ErrorNotificationInterruptEnable `(v  1 s 1 CAN1_ErrorNotificationInterruptEnable ]
-"153
+"244
 [v _CAN1_Initialize CAN1_Initialize `(v  1 e 1 0 ]
-"178
+"273
 [v _CAN1_OperationModeSet CAN1_OperationModeSet `(E22356  1 e 1 0 ]
-"207
+"302
 [v _CAN1_OperationModeGet CAN1_OperationModeGet `(E22346  1 e 1 0 ]
-"219
+"307
+[v _GetRxFifoDepth GetRxFifoDepth `(uc  1 s 1 GetRxFifoDepth ]
+"312
+[v _GetRxFifoStatus GetRxFifoStatus `(E22460  1 s 1 GetRxFifoStatus ]
+"317
+[v _ReadMessageFromFifo ReadMessageFromFifo `(v  1 s 1 ReadMessageFromFifo ]
+"351
+[v _Receive Receive `(a  1 s 1 Receive ]
+"383
+[v _CAN1_Receive CAN1_Receive `(a  1 e 1 0 ]
+"418
+[v _CAN1_ReceivedMessageCountGet CAN1_ReceivedMessageCountGet `(uc  1 e 1 0 ]
+"461
+[v _isTxChannel isTxChannel `(a  1 s 1 isTxChannel ]
+"466
+[v _GetTxFifoStatus GetTxFifoStatus `(E22361  1 s 1 GetTxFifoStatus ]
+"471
+[v _WriteMessageToFifo WriteMessageToFifo `(v  1 s 1 WriteMessageToFifo ]
+"512
+[v _ValidateTransmission ValidateTransmission `(E22340  1 s 1 ValidateTransmission ]
+"541
+[v _CAN1_Transmit CAN1_Transmit `(E22340  1 e 1 0 ]
+"563
+[v _CAN1_TransmitFIFOStatusGet CAN1_TransmitFIFOStatusGet `(E22361  1 e 1 0 ]
+"580
 [v _CAN1_IsRxErrorPassive CAN1_IsRxErrorPassive `(a  1 e 1 0 ]
-"234
+"595
 [v _CAN1_IsTxErrorPassive CAN1_IsTxErrorPassive `(a  1 e 1 0 ]
-"257
+"618
 [v _CAN1_SetInvalidMessageInterruptHandler CAN1_SetInvalidMessageInterruptHandler `(v  1 e 1 0 ]
-"262
+"623
 [v _CAN1_SetBusWakeUpActivityInterruptHandler CAN1_SetBusWakeUpActivityInterruptHandler `(v  1 e 1 0 ]
-"267
+"628
 [v _CAN1_SetBusErrorInterruptHandler CAN1_SetBusErrorInterruptHandler `(v  1 e 1 0 ]
-"272
+"633
 [v _CAN1_SetModeChangeInterruptHandler CAN1_SetModeChangeInterruptHandler `(v  1 e 1 0 ]
-"277
+"638
 [v _CAN1_SetSystemErrorInterruptHandler CAN1_SetSystemErrorInterruptHandler `(v  1 e 1 0 ]
-"282
+"643
+[v _CAN1_SetTxAttemptInterruptHandler CAN1_SetTxAttemptInterruptHandler `(v  1 e 1 0 ]
+"648
+[v _CAN1_SetRxBufferOverFlowInterruptHandler CAN1_SetRxBufferOverFlowInterruptHandler `(v  1 e 1 0 ]
+"653
 [v _CAN1_ISR CAN1_ISR `(v  1 e 1 0 ]
-"142 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/examples/i2c1_master_example.c
+"706
+[v _CAN1_SetFIFO1NotEmptyHandler CAN1_SetFIFO1NotEmptyHandler `(v  1 e 1 0 ]
+"712
+[v _CAN1_RXI_ISR CAN1_RXI_ISR `(v  1 e 1 0 ]
+"142 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
 [v _rd1RegCompleteHandler rd1RegCompleteHandler `(E360  1 s 1 rd1RegCompleteHandler ]
 "149
 [v _rd2RegCompleteHandler rd2RegCompleteHandler `(E360  1 s 1 rd2RegCompleteHandler ]
@@ -194,7 +341,7 @@ channel_FVR_Buffer2 63
 [v _wr2RegCompleteHandler wr2RegCompleteHandler `(E360  1 s 1 wr2RegCompleteHandler ]
 "170
 [v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
-"183 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/i2c1_master.c
+"183 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/i2c1_master.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 "207
 [v _I2C1_Open I2C1_Open `(E355  1 e 1 0 ]
@@ -314,19 +461,19 @@ channel_FVR_Buffer2 63
 [v _I2C1_MasterClearIrq I2C1_MasterClearIrq `T(v  1 s 1 I2C1_MasterClearIrq ]
 "816
 [v _I2C1_MasterWaitForEvent I2C1_MasterWaitForEvent `T(v  1 s 1 I2C1_MasterWaitForEvent ]
-"52 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/interrupt_manager.c
+"52 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 "58
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
-"50 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/mcc.c
+"50 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "65
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "79
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
-"55 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pin_manager.c
+"55 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pwm1_16bit.c
+"63 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v _PWM1_16BIT_Initialize PWM1_16BIT_Initialize `(v  1 e 1 0 ]
 "192
 [v _PWM1_16BIT_Slice1Output1_SetInterruptHandler PWM1_16BIT_Slice1Output1_SetInterruptHandler `(v  1 e 1 0 ]
@@ -340,7 +487,7 @@ channel_FVR_Buffer2 63
 [v _PWM1_16BIT_Slice1Output2_DefaultInterruptHandler PWM1_16BIT_Slice1Output2_DefaultInterruptHandler `(v  1 s 1 PWM1_16BIT_Slice1Output2_DefaultInterruptHandler ]
 "219
 [v _PWM1_16BIT_Period_DefaultInterruptHandler PWM1_16BIT_Period_DefaultInterruptHandler `(v  1 s 1 PWM1_16BIT_Period_DefaultInterruptHandler ]
-"63 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pwm2_16bit.c
+"63 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_Initialize PWM2_16BIT_Initialize `(v  1 e 1 0 ]
 "192
 [v _PWM2_16BIT_Slice1Output1_SetInterruptHandler PWM2_16BIT_Slice1Output1_SetInterruptHandler `(v  1 e 1 0 ]
@@ -354,7 +501,7 @@ channel_FVR_Buffer2 63
 [v _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler PWM2_16BIT_Slice1Output2_DefaultInterruptHandler `(v  1 s 1 PWM2_16BIT_Slice1Output2_DefaultInterruptHandler ]
 "219
 [v _PWM2_16BIT_Period_DefaultInterruptHandler PWM2_16BIT_Period_DefaultInterruptHandler `(v  1 s 1 PWM2_16BIT_Period_DefaultInterruptHandler ]
-"61 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr0.c
+"61 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "121
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -364,7 +511,7 @@ channel_FVR_Buffer2 63
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "154
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"65 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr1.c
+"65 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "128
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
@@ -376,7 +523,21 @@ channel_FVR_Buffer2 63
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 "198
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
-[s S205 . 1 `uc 1 SWIF 1 0 :1:0 
+"46 C:\Users\Ame\Downloads\ETC-main\ETC.X\MESSAGES.C
+[v _CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
+[s S476 . 1 `uc 1 idType 1 0 :1:0 
+`uc 1 frameType 1 0 :1:1 
+`uc 1 dlc 1 0 :4:2 
+`uc 1 formatType 1 0 :1:6 
+`uc 1 brs 1 0 :1:7 
+]
+"22 C:\Users\Ame\Downloads\ETC-main\ETC.X/MESSAGES.h
+[u S482 . 1 `uc 1 msgfields 1 0 `S476 1 . 1 0 ]
+[s S485 . 7 `ul 1 msgId 4 0 `S482 1 field 1 4 `*.39uc 1 data 2 5 ]
+[v _msgTransmit msgTransmit `S485  1 e 7 0 ]
+"23
+[v _msgReceipt msgReceipt `S485  1 e 7 0 ]
+[s S295 . 1 `uc 1 SWIF 1 0 :1:0 
 `uc 1 HLVDIF 1 0 :1:1 
 `uc 1 OSFIF 1 0 :1:2 
 `uc 1 CSWIF 1 0 :1:3 
@@ -385,10 +546,10 @@ channel_FVR_Buffer2 63
 `uc 1 CANIF 1 0 :1:6 
 `uc 1 IOCIF 1 0 :1:7 
 ]
-"506 /opt/microchip/xc8/v2.32/pic/include/proc/pic18f26q84.h
-[u S214 . 1 `S205 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES214  1 e 1 @1198 ]
-[s S1972 . 1 `uc 1 INT0IF 1 0 :1:0 
+"506 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f26q84.h
+[u S304 . 1 `S295 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES304  1 e 1 @1198 ]
+[s S2361 . 1 `uc 1 INT0IF 1 0 :1:0 
 `uc 1 ZCDIF 1 0 :1:1 
 `uc 1 ADIF 1 0 :1:2 
 `uc 1 ACTIF 1 0 :1:3 
@@ -398,9 +559,9 @@ channel_FVR_Buffer2 63
 `uc 1 SMT1PWAIF 1 0 :1:7 
 ]
 "568
-[u S1981 . 1 `S1972 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES1981  1 e 1 @1199 ]
-[s S1993 . 1 `uc 1 ADTIF 1 0 :1:0 
+[u S2370 . 1 `S2361 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES2370  1 e 1 @1199 ]
+[s S2382 . 1 `uc 1 ADTIF 1 0 :1:0 
 `uc 1 ADCH2IF 1 0 :1:1 
 `uc 1 ADCH3IF 1 0 :1:2 
 `uc 1 ADCH4IF 1 0 :1:3 
@@ -410,11 +571,11 @@ channel_FVR_Buffer2 63
 `uc 1 DMA1AIF 1 0 :1:7 
 ]
 "633
-[s S2002 . 1 `uc 1 ADCH1IF 1 0 :1:0 
+[s S2391 . 1 `uc 1 ADCH1IF 1 0 :1:0 
 ]
-[u S2004 . 1 `S1993 1 . 1 0 `S2002 1 . 1 0 ]
-[v _PIR2bits PIR2bits `VES2004  1 e 1 @1200 ]
-[s S596 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
+[u S2393 . 1 `S2382 1 . 1 0 `S2391 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES2393  1 e 1 @1200 ]
+[s S993 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
 `uc 1 SPI1TXIF 1 0 :1:1 
 `uc 1 SPI1IF 1 0 :1:2 
 `uc 1 TMR2IF 1 0 :1:3 
@@ -424,9 +585,9 @@ channel_FVR_Buffer2 63
 `uc 1 TMR0IF 1 0 :1:7 
 ]
 "700
-[u S605 . 1 `S596 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES605  1 e 1 @1201 ]
-[s S1582 . 1 `uc 1 U1RXIF 1 0 :1:0 
+[u S1002 . 1 `S993 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES1002  1 e 1 @1201 ]
+[s S204 . 1 `uc 1 U1RXIF 1 0 :1:0 
 `uc 1 U1TXIF 1 0 :1:1 
 `uc 1 U1EIF 1 0 :1:2 
 `uc 1 U1IF 1 0 :1:3 
@@ -436,9 +597,9 @@ channel_FVR_Buffer2 63
 `uc 1 PWM1IF 1 0 :1:7 
 ]
 "762
-[u S1591 . 1 `S1582 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES1591  1 e 1 @1202 ]
-[s S1766 . 1 `uc 1 SPI2RXIF 1 0 :1:0 
+[u S213 . 1 `S204 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES213  1 e 1 @1202 ]
+[s S2155 . 1 `uc 1 SPI2RXIF 1 0 :1:0 
 `uc 1 SPI2TXIF 1 0 :1:1 
 `uc 1 SPI2IF 1 0 :1:2 
 `uc 1 TU16BIF 1 0 :1:3 
@@ -448,9 +609,9 @@ channel_FVR_Buffer2 63
 `uc 1 PWM2IF 1 0 :1:7 
 ]
 "824
-[u S1775 . 1 `S1766 1 . 1 0 ]
-[v _PIR5bits PIR5bits `VES1775  1 e 1 @1203 ]
-[s S1307 . 1 `uc 1 I2C1RXIF 1 0 :1:0 
+[u S2164 . 1 `S2155 1 . 1 0 ]
+[v _PIR5bits PIR5bits `VES2164  1 e 1 @1203 ]
+[s S1730 . 1 `uc 1 I2C1RXIF 1 0 :1:0 
 `uc 1 I2C1TXIF 1 0 :1:1 
 `uc 1 I2C1IF 1 0 :1:2 
 `uc 1 I2C1EIF 1 0 :1:3 
@@ -460,8 +621,8 @@ channel_FVR_Buffer2 63
 `uc 1 PWM3IF 1 0 :1:7 
 ]
 "948
-[u S1316 . 1 `S1307 1 . 1 0 ]
-[v _PIR7bits PIR7bits `VES1316  1 e 1 @1205 ]
+[u S1739 . 1 `S1730 1 . 1 0 ]
+[v _PIR7bits PIR7bits `VES1739  1 e 1 @1205 ]
 "1339
 [v _PMD0 PMD0 `VEuc  1 e 1 @96 ]
 "1405
@@ -470,7 +631,7 @@ channel_FVR_Buffer2 63
 [v _PMD2 PMD2 `VEuc  1 e 1 @98 ]
 "1474
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S2891 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S3258 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -480,8 +641,8 @@ channel_FVR_Buffer2 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1491
-[u S2900 . 1 `S2891 1 . 1 0 ]
-[v _LATAbits LATAbits `VES2900  1 e 1 @1214 ]
+[u S3267 . 1 `S3258 1 . 1 0 ]
+[v _LATAbits LATAbits `VES3267  1 e 1 @1214 ]
 "1514
 [v _PMD3 PMD3 `VEuc  1 e 1 @99 ]
 "1536
@@ -506,7 +667,7 @@ channel_FVR_Buffer2 63
 [v _PMD8 PMD8 `VEuc  1 e 1 @104 ]
 "1846
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
-[s S549 . 1 `uc 1 INT0EDG 1 0 :1:0 
+[s S946 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
@@ -515,11 +676,11 @@ channel_FVR_Buffer2 63
 `uc 1 GIE 1 0 :1:7 
 ]
 "2094
-[s S557 . 1 `uc 1 . 1 0 :7:0 
+[s S954 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S560 . 1 `S549 1 . 1 0 `S557 1 . 1 0 ]
-[v _INTCON0bits INTCON0bits `VES560  1 e 1 @1238 ]
+[u S957 . 1 `S946 1 . 1 0 `S954 1 . 1 0 ]
+[v _INTCON0bits INTCON0bits `VES957  1 e 1 @1238 ]
 "5336
 [v _OSCCON1 OSCCON1 `VEuc  1 e 1 @173 ]
 "5476
@@ -534,7 +695,7 @@ channel_FVR_Buffer2 63
 [v _C1CONL C1CONL `VEuc  1 e 1 @256 ]
 "9014
 [v _C1CONH C1CONH `VEuc  1 e 1 @257 ]
-[s S251 . 1 `uc 1 WAKFIL 1 0 :1:0 
+[s S341 . 1 `uc 1 WAKFIL 1 0 :1:0 
 `uc 1 WFT 1 0 :2:1 
 `uc 1 BUSY 1 0 :1:3 
 `uc 1 BRSDIS 1 0 :1:4 
@@ -543,15 +704,15 @@ channel_FVR_Buffer2 63
 `uc 1 ON 1 0 :1:7 
 ]
 "9035
-[s S259 . 1 `uc 1 . 1 0 :1:0 
+[s S349 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 WFT0 1 0 :1:1 
 `uc 1 WFT1 1 0 :1:2 
 ]
-[u S263 . 1 `S251 1 . 1 0 `S259 1 . 1 0 ]
-[v _C1CONHbits C1CONHbits `VES263  1 e 1 @257 ]
+[u S353 . 1 `S341 1 . 1 0 `S349 1 . 1 0 ]
+[v _C1CONHbits C1CONHbits `VES353  1 e 1 @257 ]
 "9085
 [v _C1CONU C1CONU `VEuc  1 e 1 @258 ]
-[s S354 . 1 `uc 1 RTXAT 1 0 :1:0 
+[s S444 . 1 `uc 1 RTXAT 1 0 :1:0 
 `uc 1 ESIGM 1 0 :1:1 
 `uc 1 SERR2LOM 1 0 :1:2 
 `uc 1 STEF 1 0 :1:3 
@@ -559,19 +720,19 @@ channel_FVR_Buffer2 63
 `uc 1 OPMOD 1 0 :3:5 
 ]
 "9106
-[s S361 . 1 `uc 1 . 1 0 :5:0 
+[s S451 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 OPMOD0 1 0 :1:5 
 `uc 1 OPMOD1 1 0 :1:6 
 `uc 1 OPMOD2 1 0 :1:7 
 ]
-[u S366 . 1 `S354 1 . 1 0 `S361 1 . 1 0 ]
-[v _C1CONUbits C1CONUbits `VES366  1 e 1 @258 ]
-[s S305 . 1 `uc 1 REQOP 1 0 :3:0 
+[u S456 . 1 `S444 1 . 1 0 `S451 1 . 1 0 ]
+[v _C1CONUbits C1CONUbits `VES456  1 e 1 @258 ]
+[s S395 . 1 `uc 1 REQOP 1 0 :3:0 
 `uc 1 ABAT 1 0 :1:3 
 `uc 1 TXBWS 1 0 :4:4 
 ]
 "9178
-[s S309 . 1 `uc 1 REQOP0 1 0 :1:0 
+[s S399 . 1 `uc 1 REQOP0 1 0 :1:0 
 `uc 1 REQOP1 1 0 :1:1 
 `uc 1 REQOP2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -580,8 +741,8 @@ channel_FVR_Buffer2 63
 `uc 1 TXBWS2 1 0 :1:6 
 `uc 1 TXBWS3 1 0 :1:7 
 ]
-[u S318 . 1 `S305 1 . 1 0 `S309 1 . 1 0 ]
-[v _C1CONTbits C1CONTbits `VES318  1 e 1 @259 ]
+[u S408 . 1 `S395 1 . 1 0 `S399 1 . 1 0 ]
+[v _C1CONTbits C1CONTbits `VES408  1 e 1 @259 ]
 "9233
 [v _C1NBTCFGL C1NBTCFGL `VEuc  1 e 1 @260 ]
 "9297
@@ -592,18 +753,18 @@ channel_FVR_Buffer2 63
 [v _C1NBTCFGT C1NBTCFGT `VEuc  1 e 1 @263 ]
 "10407
 [v _C1INTL C1INTL `VEuc  1 e 1 @284 ]
-[s S428 . 1 `uc 1 TXIF 1 0 :1:0 
+[s S585 . 1 `uc 1 TXIF 1 0 :1:0 
 `uc 1 RXIF 1 0 :1:1 
 `uc 1 TBCIF 1 0 :1:2 
 `uc 1 MODIF 1 0 :1:3 
 `uc 1 TEFIF 1 0 :1:4 
 ]
 "10421
-[u S434 . 1 `S428 1 . 1 0 ]
-[v _C1INTLbits C1INTLbits `VES434  1 e 1 @284 ]
+[u S591 . 1 `S585 1 . 1 0 ]
+[v _C1INTLbits C1INTLbits `VES591  1 e 1 @284 ]
 "10451
 [v _C1INTH C1INTH `VEuc  1 e 1 @285 ]
-[s S335 . 1 `uc 1 . 1 0 :2:0 
+[s S425 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TXATIF 1 0 :1:2 
 `uc 1 RXOVIF 1 0 :1:3 
 `uc 1 SERRIF 1 0 :1:4 
@@ -612,13 +773,22 @@ channel_FVR_Buffer2 63
 `uc 1 IVMIF 1 0 :1:7 
 ]
 "10467
-[u S343 . 1 `S335 1 . 1 0 ]
-[v _C1INTHbits C1INTHbits `VES343  1 e 1 @285 ]
+[u S433 . 1 `S425 1 . 1 0 ]
+[v _C1INTHbits C1INTHbits `VES433  1 e 1 @285 ]
 "10502
 [v _C1INTU C1INTU `VEuc  1 e 1 @286 ]
+[s S189 . 1 `uc 1 TXIE 1 0 :1:0 
+`uc 1 RXIE 1 0 :1:1 
+`uc 1 TBCIE 1 0 :1:2 
+`uc 1 MODIE 1 0 :1:3 
+`uc 1 TEFIE 1 0 :1:4 
+]
+"10516
+[u S195 . 1 `S189 1 . 1 0 ]
+[v _C1INTUbits C1INTUbits `VES195  1 e 1 @286 ]
 "10546
 [v _C1INTT C1INTT `VEuc  1 e 1 @287 ]
-[s S399 . 1 `uc 1 . 1 0 :2:0 
+[s S552 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 TXATIE 1 0 :1:2 
 `uc 1 RXOVIE 1 0 :1:3 
 `uc 1 SERRIE 1 0 :1:4 
@@ -627,9 +797,9 @@ channel_FVR_Buffer2 63
 `uc 1 IVMIE 1 0 :1:7 
 ]
 "10562
-[u S407 . 1 `S399 1 . 1 0 ]
-[v _C1INTTbits C1INTTbits `VES407  1 e 1 @287 ]
-[s S382 . 1 `uc 1 EWARN 1 0 :1:0 
+[u S560 . 1 `S552 1 . 1 0 ]
+[v _C1INTTbits C1INTTbits `VES560  1 e 1 @287 ]
+[s S535 . 1 `uc 1 EWARN 1 0 :1:0 
 `uc 1 RXWARN 1 0 :1:1 
 `uc 1 TXWARN 1 0 :1:2 
 `uc 1 RXBP 1 0 :1:3 
@@ -637,10 +807,50 @@ channel_FVR_Buffer2 63
 `uc 1 TXBO 1 0 :1:5 
 ]
 "12179
-[u S389 . 1 `S382 1 . 1 0 ]
-[v _C1TRECUbits C1TRECUbits `VES389  1 e 1 @310 ]
+[u S542 . 1 `S535 1 . 1 0 ]
+[v _C1TRECUbits C1TRECUbits `VES542  1 e 1 @310 ]
 "13232
 [v _C1FIFOBA C1FIFOBA `VEul  1 e 4 @332 ]
+"13519
+[v _C1TXQCONL C1TXQCONL `VEuc  1 e 1 @336 ]
+"13560
+[v _C1TXQCONH C1TXQCONH `VEuc  1 e 1 @337 ]
+"13592
+[v _C1TXQCONU C1TXQCONU `VEuc  1 e 1 @338 ]
+"13662
+[v _C1TXQCONT C1TXQCONT `VEuc  1 e 1 @339 ]
+[s S600 . 1 `uc 1 TXQNIF 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 TXQEIF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 TXATIF 1 0 :1:4 
+`uc 1 TXERR 1 0 :1:5 
+`uc 1 TXLARB 1 0 :1:6 
+`uc 1 TXABT 1 0 :1:7 
+]
+"13755
+[u S609 . 1 `S600 1 . 1 0 ]
+[v _C1TXQSTALbits C1TXQSTALbits `VES609  1 e 1 @340 ]
+"14150
+[v _C1FIFOCON1L C1FIFOCON1L `VEuc  1 e 1 @348 ]
+"14212
+[v _C1FIFOCON1H C1FIFOCON1H `VEuc  1 e 1 @349 ]
+"14244
+[v _C1FIFOCON1U C1FIFOCON1U `VEuc  1 e 1 @350 ]
+"14314
+[v _C1FIFOCON1T C1FIFOCON1T `VEuc  1 e 1 @351 ]
+[s S621 . 1 `uc 1 TFNRFNIF 1 0 :1:0 
+`uc 1 TFHRFHIF 1 0 :1:1 
+`uc 1 TFERFFIF 1 0 :1:2 
+`uc 1 RXOVIF 1 0 :1:3 
+`uc 1 TXATIF 1 0 :1:4 
+`uc 1 TXERR 1 0 :1:5 
+`uc 1 TXLARB 1 0 :1:6 
+`uc 1 TXABT 1 0 :1:7 
+]
+"14414
+[u S630 . 1 `S621 1 . 1 0 ]
+[v _C1FIFOSTA1Lbits C1FIFOSTA1Lbits `VES630  1 e 1 @352 ]
 "24166
 [v _RB0PPS RB0PPS `VEuc  1 e 1 @521 ]
 "24216
@@ -669,7 +879,7 @@ channel_FVR_Buffer2 63
 [v _I2C1CNTH I2C1CNTH `VEuc  1 e 1 @653 ]
 "30567
 [v _I2C1CON0 I2C1CON0 `VEuc  1 e 1 @660 ]
-[s S1096 . 1 `uc 1 MODE 1 0 :3:0 
+[s S1519 . 1 `uc 1 MODE 1 0 :3:0 
 `uc 1 MDR 1 0 :1:3 
 `uc 1 CSTR 1 0 :1:4 
 `uc 1 S 1 0 :1:5 
@@ -677,17 +887,17 @@ channel_FVR_Buffer2 63
 `uc 1 EN 1 0 :1:7 
 ]
 "30589
-[s S1103 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S1526 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 I2CEN 1 0 :1:7 
 ]
-[u S1109 . 1 `S1096 1 . 1 0 `S1103 1 . 1 0 ]
-[v _I2C1CON0bits I2C1CON0bits `VES1109  1 e 1 @660 ]
+[u S1532 . 1 `S1519 1 . 1 0 `S1526 1 . 1 0 ]
+[v _I2C1CON0bits I2C1CON0bits `VES1532  1 e 1 @660 ]
 "30644
 [v _I2C1CON1 I2C1CON1 `VEuc  1 e 1 @661 ]
-[s S1149 . 1 `uc 1 CSD 1 0 :1:0 
+[s S1572 . 1 `uc 1 CSD 1 0 :1:0 
 `uc 1 TXU 1 0 :1:1 
 `uc 1 RXO 1 0 :1:2 
 `uc 1 P 1 0 :1:3 
@@ -697,13 +907,13 @@ channel_FVR_Buffer2 63
 `uc 1 ACKCNT 1 0 :1:7 
 ]
 "30661
-[u S1158 . 1 `S1149 1 . 1 0 ]
-[v _I2C1CON1bits I2C1CON1bits `VES1158  1 e 1 @661 ]
+[u S1581 . 1 `S1572 1 . 1 0 ]
+[v _I2C1CON1bits I2C1CON1bits `VES1581  1 e 1 @661 ]
 "30706
 [v _I2C1CON2 I2C1CON2 `VEuc  1 e 1 @662 ]
 "30782
 [v _I2C1ERR I2C1ERR `VEuc  1 e 1 @663 ]
-[s S1170 . 1 `uc 1 NACKIE 1 0 :1:0 
+[s S1593 . 1 `uc 1 NACKIE 1 0 :1:0 
 `uc 1 BCLIE 1 0 :1:1 
 `uc 1 BTOIE 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -712,7 +922,7 @@ channel_FVR_Buffer2 63
 `uc 1 BTOIF 1 0 :1:6 
 ]
 "30807
-[s S1178 . 1 `uc 1 NACK1IE 1 0 :1:0 
+[s S1601 . 1 `uc 1 NACK1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 BTO1IE 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -720,9 +930,9 @@ channel_FVR_Buffer2 63
 `uc 1 BCL1IF 1 0 :1:5 
 `uc 1 BTO1IF 1 0 :1:6 
 ]
-[u S1186 . 1 `S1170 1 . 1 0 `S1178 1 . 1 0 ]
-[v _I2C1ERRbits I2C1ERRbits `VES1186  1 e 1 @663 ]
-[s S1126 . 1 `uc 1 RXBF 1 0 :1:0 
+[u S1609 . 1 `S1593 1 . 1 0 `S1601 1 . 1 0 ]
+[v _I2C1ERRbits I2C1ERRbits `VES1609  1 e 1 @663 ]
+[s S1549 . 1 `uc 1 RXBF 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CLRBF 1 0 :1:2 
 `uc 1 RXRE 1 0 :1:3 
@@ -732,11 +942,11 @@ channel_FVR_Buffer2 63
 `uc 1 TXWE 1 0 :1:7 
 ]
 "30979
-[u S1135 . 1 `S1126 1 . 1 0 ]
-[v _I2C1STAT1bits I2C1STAT1bits `VES1135  1 e 1 @665 ]
+[u S1558 . 1 `S1549 1 . 1 0 ]
+[v _I2C1STAT1bits I2C1STAT1bits `VES1558  1 e 1 @665 ]
 "31009
 [v _I2C1PIR I2C1PIR `VEuc  1 e 1 @666 ]
-[s S1206 . 1 `uc 1 SCIF 1 0 :1:0 
+[s S1629 . 1 `uc 1 SCIF 1 0 :1:0 
 `uc 1 RSCIF 1 0 :1:1 
 `uc 1 PCIF 1 0 :1:2 
 `uc 1 ADRIF 1 0 :1:3 
@@ -746,7 +956,7 @@ channel_FVR_Buffer2 63
 `uc 1 CNTIF 1 0 :1:7 
 ]
 "31036
-[s S1215 . 1 `uc 1 SC1IF 1 0 :1:0 
+[s S1638 . 1 `uc 1 SC1IF 1 0 :1:0 
 `uc 1 RSC1IF 1 0 :1:1 
 `uc 1 PC1IF 1 0 :1:2 
 `uc 1 ADR1IF 1 0 :1:3 
@@ -755,11 +965,11 @@ channel_FVR_Buffer2 63
 `uc 1 ACKT1IF 1 0 :1:6 
 `uc 1 CNT1IF 1 0 :1:7 
 ]
-[u S1224 . 1 `S1206 1 . 1 0 `S1215 1 . 1 0 ]
-[v _I2C1PIRbits I2C1PIRbits `VES1224  1 e 1 @666 ]
+[u S1647 . 1 `S1629 1 . 1 0 `S1638 1 . 1 0 ]
+[v _I2C1PIRbits I2C1PIRbits `VES1647  1 e 1 @666 ]
 "31111
 [v _I2C1PIE I2C1PIE `VEuc  1 e 1 @667 ]
-[s S1267 . 1 `uc 1 SCIE 1 0 :1:0 
+[s S1690 . 1 `uc 1 SCIE 1 0 :1:0 
 `uc 1 RSCIE 1 0 :1:1 
 `uc 1 PCIE 1 0 :1:2 
 `uc 1 ADRIE 1 0 :1:3 
@@ -769,7 +979,7 @@ channel_FVR_Buffer2 63
 `uc 1 CNTIE 1 0 :1:7 
 ]
 "31138
-[s S1276 . 1 `uc 1 SC1IE 1 0 :1:0 
+[s S1699 . 1 `uc 1 SC1IE 1 0 :1:0 
 `uc 1 RSC1IE 1 0 :1:1 
 `uc 1 PC1IE 1 0 :1:2 
 `uc 1 ADR1IE 1 0 :1:3 
@@ -778,8 +988,8 @@ channel_FVR_Buffer2 63
 `uc 1 ACKT1IE 1 0 :1:6 
 `uc 1 CNT1IE 1 0 :1:7 
 ]
-[u S1285 . 1 `S1267 1 . 1 0 `S1276 1 . 1 0 ]
-[v _I2C1PIEbits I2C1PIEbits `VES1285  1 e 1 @667 ]
+[u S1708 . 1 `S1690 1 . 1 0 `S1699 1 . 1 0 ]
+[v _I2C1PIEbits I2C1PIEbits `VES1708  1 e 1 @667 ]
 "31283
 [v _I2C1BAUD I2C1BAUD `VEuc  1 e 1 @669 ]
 "31303
@@ -790,31 +1000,31 @@ channel_FVR_Buffer2 63
 [v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
 "38942
 [v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
-[s S2680 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S3047 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 MD16 1 0 :1:4 
 `uc 1 OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 EN 1 0 :1:7 
 ]
 "38970
-[s S2686 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+[s S3053 . 1 `uc 1 T0OUTPS 1 0 :4:0 
 `uc 1 T0MD16 1 0 :1:4 
 `uc 1 T0OUT 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 T0EN 1 0 :1:7 
 ]
 "38970
-[s S2692 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S3059 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
 `uc 1 T016BIT 1 0 :1:4 
 ]
 "38970
-[u S2698 . 1 `S2680 1 . 1 0 `S2686 1 . 1 0 `S2692 1 . 1 0 ]
+[u S3065 . 1 `S3047 1 . 1 0 `S3053 1 . 1 0 `S3059 1 . 1 0 ]
 "38970
 "38970
-[v _T0CON0bits T0CON0bits `VES2698  1 e 1 @794 ]
+[v _T0CON0bits T0CON0bits `VES3065  1 e 1 @794 ]
 "39040
 [v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
 "39182
@@ -823,14 +1033,14 @@ channel_FVR_Buffer2 63
 [v _TMR1H TMR1H `VEuc  1 e 1 @797 ]
 "39322
 [v _T1CON T1CON `VEuc  1 e 1 @798 ]
-[s S2791 . 1 `uc 1 ON 1 0 :1:0 
+[s S3158 . 1 `uc 1 ON 1 0 :1:0 
 `uc 1 RD16 1 0 :1:1 
 `uc 1 NOT_SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 CKPS 1 0 :2:4 
 ]
 "39358
-[s S2797 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S3164 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 T1RD16 1 0 :1:1 
 `uc 1 NOT_T1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -838,22 +1048,22 @@ channel_FVR_Buffer2 63
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
 "39358
-[s S2804 . 1 `uc 1 . 1 0 :4:0 
+[s S3171 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CKPS0 1 0 :1:4 
 `uc 1 CKPS1 1 0 :1:5 
 ]
 "39358
-[s S2808 . 1 `uc 1 . 1 0 :1:0 
+[s S3175 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RD161 1 0 :1:1 
 ]
 "39358
-[u S2811 . 1 `S2791 1 . 1 0 `S2797 1 . 1 0 `S2804 1 . 1 0 `S2808 1 . 1 0 ]
+[u S3178 . 1 `S3158 1 . 1 0 `S3164 1 . 1 0 `S3171 1 . 1 0 `S3175 1 . 1 0 ]
 "39358
 "39358
-[v _T1CONbits T1CONbits `VES2811  1 e 1 @798 ]
+[v _T1CONbits T1CONbits `VES3178  1 e 1 @798 ]
 "39512
 [v _T1GCON T1GCON `VEuc  1 e 1 @799 ]
-[s S2837 . 1 `uc 1 . 1 0 :2:0 
+[s S3204 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GVAL 1 0 :1:2 
 `uc 1 GGO 1 0 :1:3 
 `uc 1 GSPM 1 0 :1:4 
@@ -862,7 +1072,7 @@ channel_FVR_Buffer2 63
 `uc 1 GE 1 0 :1:7 
 ]
 "39550
-[s S2845 . 1 `uc 1 . 1 0 :2:0 
+[s S3212 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO 1 0 :1:3 
 `uc 1 T1GSPM 1 0 :1:4 
@@ -871,42 +1081,42 @@ channel_FVR_Buffer2 63
 `uc 1 T1GE 1 0 :1:7 
 ]
 "39550
-[s S2853 . 1 `uc 1 . 1 0 :3:0 
+[s S3220 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_DONE 1 0 :1:3 
 ]
 "39550
-[s S2856 . 1 `uc 1 . 1 0 :3:0 
+[s S3223 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_T1DONE 1 0 :1:3 
 ]
 "39550
-[u S2859 . 1 `S2837 1 . 1 0 `S2845 1 . 1 0 `S2853 1 . 1 0 `S2856 1 . 1 0 ]
+[u S3226 . 1 `S3204 1 . 1 0 `S3212 1 . 1 0 `S3220 1 . 1 0 `S3223 1 . 1 0 ]
 "39550
 "39550
-[v _T1GCONbits T1GCONbits `VES2859  1 e 1 @799 ]
+[v _T1GCONbits T1GCONbits `VES3226  1 e 1 @799 ]
 "39726
 [v _T1GATE T1GATE `VEuc  1 e 1 @800 ]
 "39892
 [v _T1CLK T1CLK `VEuc  1 e 1 @801 ]
 "54261
 [v _ADCP ADCP `VEuc  1 e 1 @984 ]
-[s S2416 . 1 `uc 1 CPRDY 1 0 :1:0 
+[s S2805 . 1 `uc 1 CPRDY 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 ON 1 0 :1:7 
 ]
 "54326
-[s S2420 . 1 `uc 1 ADCPRDY 1 0 :1:0 
+[s S2809 . 1 `uc 1 ADCPRDY 1 0 :1:0 
 `uc 1 . 1 0 :6:1 
 `uc 1 CPON 1 0 :1:7 
 ]
 "54326
-[s S2424 . 1 `uc 1 . 1 0 :7:0 
+[s S2813 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ADCPON 1 0 :1:7 
 ]
 "54326
-[u S2427 . 1 `S2416 1 . 1 0 `S2420 1 . 1 0 `S2424 1 . 1 0 ]
+[u S2816 . 1 `S2805 1 . 1 0 `S2809 1 . 1 0 `S2813 1 . 1 0 ]
 "54326
 "54326
-[v _ADCPbits ADCPbits `VES2427  1 e 1 @984 ]
+[v _ADCPbits ADCPbits `VES2816  1 e 1 @984 ]
 "54363
 [v _ADLTHL ADLTHL `VEuc  1 e 1 @985 ]
 "54491
@@ -959,7 +1169,7 @@ channel_FVR_Buffer2 63
 [v _ADPREH ADPREH `VEuc  1 e 1 @1010 ]
 "57330
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @1011 ]
-[s S2079 . 1 `uc 1 GO 1 0 :1:0 
+[s S2468 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM 1 0 :2:2 
 `uc 1 CS 1 0 :1:4 
@@ -968,7 +1178,7 @@ channel_FVR_Buffer2 63
 `uc 1 ON 1 0 :1:7 
 ]
 "57368
-[s S2087 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S2476 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -977,52 +1187,52 @@ channel_FVR_Buffer2 63
 `uc 1 ADON 1 0 :1:7 
 ]
 "57368
-[s S2095 . 1 `uc 1 DONE 1 0 :1:0 
+[s S2484 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 FM0 1 0 :1:2 
 ]
 "57368
-[s S2099 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+[s S2488 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
 ]
 "57368
-[s S2101 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S2490 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 ]
 "57368
-[u S2105 . 1 `S2079 1 . 1 0 `S2087 1 . 1 0 `S2095 1 . 1 0 `S2099 1 . 1 0 `S2101 1 . 1 0 ]
+[u S2494 . 1 `S2468 1 . 1 0 `S2476 1 . 1 0 `S2484 1 . 1 0 `S2488 1 . 1 0 `S2490 1 . 1 0 ]
 "57368
 "57368
-[v _ADCON0bits ADCON0bits `VES2105  1 e 1 @1011 ]
+[v _ADCON0bits ADCON0bits `VES2494  1 e 1 @1011 ]
 "57458
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @1012 ]
-[s S2388 . 1 `uc 1 DSEN 1 0 :1:0 
+[s S2777 . 1 `uc 1 DSEN 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 GPOL 1 0 :1:5 
 `uc 1 IPEN 1 0 :1:6 
 `uc 1 PPOL 1 0 :1:7 
 ]
 "57479
-[s S2394 . 1 `uc 1 ADDSEN 1 0 :1:0 
+[s S2783 . 1 `uc 1 ADDSEN 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 ADGPOL 1 0 :1:5 
 `uc 1 ADIPEN 1 0 :1:6 
 `uc 1 ADPPOL 1 0 :1:7 
 ]
 "57479
-[u S2400 . 1 `S2388 1 . 1 0 `S2394 1 . 1 0 ]
+[u S2789 . 1 `S2777 1 . 1 0 `S2783 1 . 1 0 ]
 "57479
 "57479
-[v _ADCON1bits ADCON1bits `VES2400  1 e 1 @1012 ]
+[v _ADCON1bits ADCON1bits `VES2789  1 e 1 @1012 ]
 "57524
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @1013 ]
-[s S2251 . 1 `uc 1 MODE 1 0 :3:0 
+[s S2640 . 1 `uc 1 MODE 1 0 :3:0 
 `uc 1 ACLR 1 0 :1:3 
 `uc 1 CRS 1 0 :3:4 
 `uc 1 PSIS 1 0 :1:7 
 ]
 "57572
-[s S2256 . 1 `uc 1 ADMD0 1 0 :1:0 
+[s S2645 . 1 `uc 1 ADMD0 1 0 :1:0 
 `uc 1 ADMD1 1 0 :1:1 
 `uc 1 ADMD2 1 0 :1:2 
 `uc 1 ADACLR 1 0 :1:3 
@@ -1032,12 +1242,12 @@ channel_FVR_Buffer2 63
 `uc 1 ADPSIS 1 0 :1:7 
 ]
 "57572
-[s S2265 . 1 `uc 1 ADMD 1 0 :3:0 
+[s S2654 . 1 `uc 1 ADMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCRS 1 0 :3:4 
 ]
 "57572
-[s S2269 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S2658 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -1046,29 +1256,29 @@ channel_FVR_Buffer2 63
 `uc 1 CRS2 1 0 :1:6 
 ]
 "57572
-[s S2277 . 1 `uc 1 MD 1 0 :3:0 
+[s S2666 . 1 `uc 1 MD 1 0 :3:0 
 ]
 "57572
-[s S2279 . 1 `uc 1 MD0 1 0 :1:0 
+[s S2668 . 1 `uc 1 MD0 1 0 :1:0 
 `uc 1 MD1 1 0 :1:1 
 `uc 1 MD2 1 0 :1:2 
 ]
 "57572
-[s S2283 . 1 `uc 1 ADMODE 1 0 :3:0 
+[s S2672 . 1 `uc 1 ADMODE 1 0 :3:0 
 ]
 "57572
-[u S2285 . 1 `S2251 1 . 1 0 `S2256 1 . 1 0 `S2265 1 . 1 0 `S2269 1 . 1 0 `S2277 1 . 1 0 `S2279 1 . 1 0 `S2283 1 . 1 0 ]
+[u S2674 . 1 `S2640 1 . 1 0 `S2645 1 . 1 0 `S2654 1 . 1 0 `S2658 1 . 1 0 `S2666 1 . 1 0 `S2668 1 . 1 0 `S2672 1 . 1 0 ]
 "57572
 "57572
-[v _ADCON2bits ADCON2bits `VES2285  1 e 1 @1013 ]
+[v _ADCON2bits ADCON2bits `VES2674  1 e 1 @1013 ]
 "57702
 [v _ADCON3 ADCON3 `VEuc  1 e 1 @1014 ]
-[s S2197 . 1 `uc 1 TMD 1 0 :3:0 
+[s S2586 . 1 `uc 1 TMD 1 0 :3:0 
 `uc 1 SOI 1 0 :1:3 
 `uc 1 CALC 1 0 :3:4 
 ]
 "57737
-[s S2201 . 1 `uc 1 ADTMD0 1 0 :1:0 
+[s S2590 . 1 `uc 1 ADTMD0 1 0 :1:0 
 `uc 1 ADTMD1 1 0 :1:1 
 `uc 1 ADTMD2 1 0 :1:2 
 `uc 1 ADSOI 1 0 :1:3 
@@ -1077,12 +1287,12 @@ channel_FVR_Buffer2 63
 `uc 1 ADCALC2 1 0 :1:6 
 ]
 "57737
-[s S2209 . 1 `uc 1 ADTMD 1 0 :3:0 
+[s S2598 . 1 `uc 1 ADTMD 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 ADCALC 1 0 :3:4 
 ]
 "57737
-[s S2213 . 1 `uc 1 TMD0 1 0 :1:0 
+[s S2602 . 1 `uc 1 TMD0 1 0 :1:0 
 `uc 1 TMD1 1 0 :1:1 
 `uc 1 TMD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -1091,13 +1301,13 @@ channel_FVR_Buffer2 63
 `uc 1 CALC2 1 0 :1:6 
 ]
 "57737
-[u S2221 . 1 `S2197 1 . 1 0 `S2201 1 . 1 0 `S2209 1 . 1 0 `S2213 1 . 1 0 ]
+[u S2610 . 1 `S2586 1 . 1 0 `S2590 1 . 1 0 `S2598 1 . 1 0 `S2602 1 . 1 0 ]
 "57737
 "57737
-[v _ADCON3bits ADCON3bits `VES2221  1 e 1 @1014 ]
+[v _ADCON3bits ADCON3bits `VES2610  1 e 1 @1014 ]
 "57832
 [v _ADSTAT ADSTAT `VEuc  1 e 1 @1015 ]
-[s S2328 . 1 `uc 1 STAT 1 0 :3:0 
+[s S2717 . 1 `uc 1 STAT 1 0 :3:0 
 `uc 1 . 1 0 :1:3 
 `uc 1 MATH 1 0 :1:4 
 `uc 1 LTHR 1 0 :1:5 
@@ -1105,7 +1315,7 @@ channel_FVR_Buffer2 63
 `uc 1 OV 1 0 :1:7 
 ]
 "57867
-[s S2335 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+[s S2724 . 1 `uc 1 ADSTAT0 1 0 :1:0 
 `uc 1 ADSTAT1 1 0 :1:1 
 `uc 1 ADSTAT2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -1115,20 +1325,20 @@ channel_FVR_Buffer2 63
 `uc 1 ADAOV 1 0 :1:7 
 ]
 "57867
-[s S2344 . 1 `uc 1 ADSTAT 1 0 :3:0 
+[s S2733 . 1 `uc 1 ADSTAT 1 0 :3:0 
 `uc 1 . 1 0 :4:3 
 `uc 1 ADOV 1 0 :1:7 
 ]
 "57867
-[s S2348 . 1 `uc 1 STAT0 1 0 :1:0 
+[s S2737 . 1 `uc 1 STAT0 1 0 :1:0 
 `uc 1 STAT1 1 0 :1:1 
 `uc 1 STAT2 1 0 :1:2 
 ]
 "57867
-[u S2352 . 1 `S2328 1 . 1 0 `S2335 1 . 1 0 `S2344 1 . 1 0 `S2348 1 . 1 0 ]
+[u S2741 . 1 `S2717 1 . 1 0 `S2724 1 . 1 0 `S2733 1 . 1 0 `S2737 1 . 1 0 ]
 "57867
 "57867
-[v _ADSTATbits ADSTATbits `VES2352  1 e 1 @1015 ]
+[v _ADSTATbits ADSTATbits `VES2741  1 e 1 @1015 ]
 "57957
 [v _ADREF ADREF `VEuc  1 e 1 @1016 ]
 "58039
@@ -1139,30 +1349,30 @@ channel_FVR_Buffer2 63
 [v _ADCTX ADCTX `VEuc  1 e 1 @1019 ]
 "58317
 [v _ADCSEL1 ADCSEL1 `VEuc  1 e 1 @1020 ]
-[s S2143 . 1 `uc 1 . 1 0 :6:0 
+[s S2532 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 SSI 1 0 :1:6 
 `uc 1 CHEN 1 0 :1:7 
 ]
 "58329
-[u S2147 . 1 `S2143 1 . 1 0 ]
+[u S2536 . 1 `S2532 1 . 1 0 ]
 "58329
 "58329
-[v _ADCSEL1bits ADCSEL1bits `VES2147  1 e 1 @1020 ]
+[v _ADCSEL1bits ADCSEL1bits `VES2536  1 e 1 @1020 ]
 "58344
 [v _ADCSEL2 ADCSEL2 `VEuc  1 e 1 @1021 ]
 "58356
 "58356
-[v _ADCSEL2bits ADCSEL2bits `VES2147  1 e 1 @1021 ]
+[v _ADCSEL2bits ADCSEL2bits `VES2536  1 e 1 @1021 ]
 "58371
 [v _ADCSEL3 ADCSEL3 `VEuc  1 e 1 @1022 ]
 "58383
 "58383
-[v _ADCSEL3bits ADCSEL3bits `VES2147  1 e 1 @1022 ]
+[v _ADCSEL3bits ADCSEL3bits `VES2536  1 e 1 @1022 ]
 "58398
 [v _ADCSEL4 ADCSEL4 `VEuc  1 e 1 @1023 ]
 "58410
 "58410
-[v _ADCSEL4bits ADCSEL4bits `VES2147  1 e 1 @1023 ]
+[v _ADCSEL4bits ADCSEL4bits `VES2536  1 e 1 @1023 ]
 "58425
 [v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
 "58487
@@ -1213,37 +1423,37 @@ channel_FVR_Buffer2 63
 [v _PWM1PIPOS PWM1PIPOS `VEuc  1 e 1 @1126 ]
 "63547
 [v _PWM1GIR PWM1GIR `VEuc  1 e 1 @1127 ]
-[s S1603 . 1 `uc 1 S1P1IF 1 0 :1:0 
+[s S2017 . 1 `uc 1 S1P1IF 1 0 :1:0 
 `uc 1 S1P2IF 1 0 :1:1 
 ]
 "63558
-[u S1606 . 1 `S1603 1 . 1 0 ]
+[u S2020 . 1 `S2017 1 . 1 0 ]
 "63558
 "63558
-[v _PWM1GIRbits PWM1GIRbits `VES1606  1 e 1 @1127 ]
+[v _PWM1GIRbits PWM1GIRbits `VES2020  1 e 1 @1127 ]
 "63573
 [v _PWM1GIE PWM1GIE `VEuc  1 e 1 @1128 ]
-[s S1679 . 1 `uc 1 S1P1IE 1 0 :1:0 
+[s S2084 . 1 `uc 1 S1P1IE 1 0 :1:0 
 `uc 1 S1P2IE 1 0 :1:1 
 ]
 "63584
-[u S1682 . 1 `S1679 1 . 1 0 ]
+[u S2087 . 1 `S2084 1 . 1 0 ]
 "63584
 "63584
-[v _PWM1GIEbits PWM1GIEbits `VES1682  1 e 1 @1128 ]
+[v _PWM1GIEbits PWM1GIEbits `VES2087  1 e 1 @1128 ]
 "63599
 [v _PWM1CON PWM1CON `VEuc  1 e 1 @1129 ]
-[s S1664 . 1 `uc 1 ERSNOW 1 0 :1:0 
+[s S2069 . 1 `uc 1 ERSNOW 1 0 :1:0 
 `uc 1 ERSPOL 1 0 :1:1 
 `uc 1 LD 1 0 :1:2 
 `uc 1 . 1 0 :4:3 
 `uc 1 EN 1 0 :1:7 
 ]
 "63613
-[u S1670 . 1 `S1664 1 . 1 0 ]
+[u S2075 . 1 `S2069 1 . 1 0 ]
 "63613
 "63613
-[v _PWM1CONbits PWM1CONbits `VES1670  1 e 1 @1129 ]
+[v _PWM1CONbits PWM1CONbits `VES2075  1 e 1 @1129 ]
 "63638
 [v _PWM1S1CFG PWM1S1CFG `VEuc  1 e 1 @1130 ]
 "63704
@@ -1272,17 +1482,17 @@ channel_FVR_Buffer2 63
 [v _PWM2GIR PWM2GIR `VEuc  1 e 1 @1142 ]
 "63949
 "63949
-[v _PWM2GIRbits PWM2GIRbits `VES1606  1 e 1 @1142 ]
+[v _PWM2GIRbits PWM2GIRbits `VES2020  1 e 1 @1142 ]
 "63964
 [v _PWM2GIE PWM2GIE `VEuc  1 e 1 @1143 ]
 "63975
 "63975
-[v _PWM2GIEbits PWM2GIEbits `VES1682  1 e 1 @1143 ]
+[v _PWM2GIEbits PWM2GIEbits `VES2087  1 e 1 @1143 ]
 "63990
 [v _PWM2CON PWM2CON `VEuc  1 e 1 @1144 ]
 "64004
 "64004
-[v _PWM2CONbits PWM2CONbits `VES1670  1 e 1 @1144 ]
+[v _PWM2CONbits PWM2CONbits `VES2075  1 e 1 @1144 ]
 "64029
 [v _PWM2S1CFG PWM2S1CFG `VEuc  1 e 1 @1145 ]
 "64095
@@ -1293,7 +1503,7 @@ channel_FVR_Buffer2 63
 [v _PWM2S1P2L PWM2S1P2L `VEuc  1 e 1 @1148 ]
 "64162
 [v _PWM2S1P2H PWM2S1P2H `VEuc  1 e 1 @1149 ]
-[s S230 . 1 `uc 1 SWIE 1 0 :1:0 
+[s S320 . 1 `uc 1 SWIE 1 0 :1:0 
 `uc 1 HLVDIE 1 0 :1:1 
 `uc 1 OSFIE 1 0 :1:2 
 `uc 1 CSWIE 1 0 :1:3 
@@ -1303,11 +1513,11 @@ channel_FVR_Buffer2 63
 `uc 1 IOCIE 1 0 :1:7 
 ]
 "65057
-[u S239 . 1 `S230 1 . 1 0 ]
+[u S329 . 1 `S320 1 . 1 0 ]
 "65057
 "65057
-[v _PIE0bits PIE0bits `VES239  1 e 1 @1182 ]
-[s S575 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
+[v _PIE0bits PIE0bits `VES329  1 e 1 @1182 ]
+[s S972 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
 `uc 1 SPI1TXIE 1 0 :1:1 
 `uc 1 SPI1IE 1 0 :1:2 
 `uc 1 TMR2IE 1 0 :1:3 
@@ -1317,11 +1527,11 @@ channel_FVR_Buffer2 63
 `uc 1 TMR0IE 1 0 :1:7 
 ]
 "65251
-[u S584 . 1 `S575 1 . 1 0 ]
+[u S981 . 1 `S972 1 . 1 0 ]
 "65251
 "65251
-[v _PIE3bits PIE3bits `VES584  1 e 1 @1185 ]
-[s S1612 . 1 `uc 1 U1RXIE 1 0 :1:0 
+[v _PIE3bits PIE3bits `VES981  1 e 1 @1185 ]
+[s S225 . 1 `uc 1 U1RXIE 1 0 :1:0 
 `uc 1 U1TXIE 1 0 :1:1 
 `uc 1 U1EIE 1 0 :1:2 
 `uc 1 U1IE 1 0 :1:3 
@@ -1331,11 +1541,11 @@ channel_FVR_Buffer2 63
 `uc 1 PWM1IE 1 0 :1:7 
 ]
 "65313
-[u S1621 . 1 `S1612 1 . 1 0 ]
+[u S234 . 1 `S225 1 . 1 0 ]
 "65313
 "65313
-[v _PIE4bits PIE4bits `VES1621  1 e 1 @1186 ]
-[s S1796 . 1 `uc 1 SPI2RXIE 1 0 :1:0 
+[v _PIE4bits PIE4bits `VES234  1 e 1 @1186 ]
+[s S2185 . 1 `uc 1 SPI2RXIE 1 0 :1:0 
 `uc 1 SPI2TXIE 1 0 :1:1 
 `uc 1 SPI2IE 1 0 :1:2 
 `uc 1 TU16BIE 1 0 :1:3 
@@ -1345,11 +1555,11 @@ channel_FVR_Buffer2 63
 `uc 1 PWM2IE 1 0 :1:7 
 ]
 "65375
-[u S1805 . 1 `S1796 1 . 1 0 ]
+[u S2194 . 1 `S2185 1 . 1 0 ]
 "65375
 "65375
-[v _PIE5bits PIE5bits `VES1805  1 e 1 @1187 ]
-[s S1246 . 1 `uc 1 I2C1RXIE 1 0 :1:0 
+[v _PIE5bits PIE5bits `VES2194  1 e 1 @1187 ]
+[s S1669 . 1 `uc 1 I2C1RXIE 1 0 :1:0 
 `uc 1 I2C1TXIE 1 0 :1:1 
 `uc 1 I2C1IE 1 0 :1:2 
 `uc 1 I2C1EIE 1 0 :1:3 
@@ -1359,11 +1569,11 @@ channel_FVR_Buffer2 63
 `uc 1 PWM3IE 1 0 :1:7 
 ]
 "65499
-[u S1255 . 1 `S1246 1 . 1 0 ]
+[u S1678 . 1 `S1669 1 . 1 0 ]
 "65499
 "65499
-[v _PIE7bits PIE7bits `VES1255  1 e 1 @1189 ]
-"56 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/adc.c
+[v _PIE7bits PIE7bits `VES1678  1 e 1 @1189 ]
+"56 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/adc.c
 [v _ADC_ConversionComplete_ISR ADC_ConversionComplete_ISR `*.37(v  1 s 2 ADC_ConversionComplete_ISR ]
 "57
 [v _ADC_Context1Thereshld_ISR ADC_Context1Thereshld_ISR `*.37(v  1 s 2 ADC_Context1Thereshld_ISR ]
@@ -1375,54 +1585,117 @@ channel_FVR_Buffer2 63
 [v _ADC_Context4Thereshld_ISR ADC_Context4Thereshld_ISR `*.37(v  1 s 2 ADC_Context4Thereshld_ISR ]
 "61
 [v _ADC_ActiveClockTuning_ISR ADC_ActiveClockTuning_ISR `*.37(v  1 s 2 ADC_ActiveClockTuning_ISR ]
-"85 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/can1.c
+"99 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/can1.c
+[v _rxMsgData rxMsgData `VE[8]uc  1 s 8 rxMsgData ]
+[s S157 CAN1_RX_FIFO 2 `E22386 1 channel 1 0 `VEuc 1 fifoHead 1 1 ]
+"101
+[v _rxFifos rxFifos `VE[1]S157  1 s 2 rxFifos ]
+"107
+[v _DLC_BYTES DLC_BYTES `C[9]uc  1 s 9 DLC_BYTES ]
+"109
+[v _CAN1_FIFO1NotEmptyHandler CAN1_FIFO1NotEmptyHandler `*.37(v  1 s 2 CAN1_FIFO1NotEmptyHandler ]
+"110
 [v _CAN1_InvalidMessageHandler CAN1_InvalidMessageHandler `*.37(v  1 s 2 CAN1_InvalidMessageHandler ]
-"86
+"111
 [v _CAN1_BusWakeUpActivityHandler CAN1_BusWakeUpActivityHandler `*.37(v  1 s 2 CAN1_BusWakeUpActivityHandler ]
-"87
+"112
 [v _CAN1_BusErrorHandler CAN1_BusErrorHandler `*.37(v  1 s 2 CAN1_BusErrorHandler ]
-"88
+"113
 [v _CAN1_ModeChangeHandler CAN1_ModeChangeHandler `*.37(v  1 s 2 CAN1_ModeChangeHandler ]
-"89
+"114
 [v _CAN1_SystemErrorHandler CAN1_SystemErrorHandler `*.37(v  1 s 2 CAN1_SystemErrorHandler ]
-"159 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/i2c1_master.c
+"115
+[v _CAN1_TxAttemptHandler CAN1_TxAttemptHandler `*.37(v  1 s 2 CAN1_TxAttemptHandler ]
+"116
+[v _CAN1_RxBufferOverflowHandler CAN1_RxBufferOverflowHandler `*.37(v  1 s 2 CAN1_RxBufferOverflowHandler ]
+"159 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/i2c1_master.c
 [v _i2c1_fsmStateTable i2c1_fsmStateTable `C[19]*.37(E22532  1 e 38 0 ]
-[s S880 . 36 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.39v 1 callbackPayload 12 12 `us 1 time_out 2 24 `us 1 time_out_value 2 26 `uc 1 address 1 28 `*.39uc 1 data_ptr 2 29 `ui 1 data_length 2 31 `E22532 1 state 1 33 `E355 1 error 1 34 `uc 1 addressNackCheck 1 35 :2:0 
+[s S1303 . 36 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.39v 1 callbackPayload 12 12 `us 1 time_out 2 24 `us 1 time_out_value 2 26 `uc 1 address 1 28 `*.39uc 1 data_ptr 2 29 `ui 1 data_length 2 31 `E22532 1 state 1 33 `E355 1 error 1 34 `uc 1 addressNackCheck 1 35 :2:0 
 `uc 1 busy 1 35 :1:2 
 `uc 1 inUse 1 35 :1:3 
 `uc 1 bufferFree 1 35 :1:4 
 ]
 "181
-[v _I2C1_Status I2C1_Status `S880  1 e 36 0 ]
-"56 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pwm1_16bit.c
+[v _I2C1_Status I2C1_Status `S1303  1 e 36 0 ]
+"56 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v _PWM1_16BIT_Slice1Output1_InterruptHandler PWM1_16BIT_Slice1Output1_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output1_InterruptHandler ]
 "57
 [v _PWM1_16BIT_Slice1Output2_InterruptHandler PWM1_16BIT_Slice1Output2_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output2_InterruptHandler ]
 "58
 [v _PWM1_16BIT_Period_InterruptHandler PWM1_16BIT_Period_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Period_InterruptHandler ]
-"56 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pwm2_16bit.c
+"56 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_Slice1Output1_InterruptHandler PWM2_16BIT_Slice1Output1_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Slice1Output1_InterruptHandler ]
 "57
 [v _PWM2_16BIT_Slice1Output2_InterruptHandler PWM2_16BIT_Slice1Output2_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Slice1Output2_InterruptHandler ]
 "58
 [v _PWM2_16BIT_Period_InterruptHandler PWM2_16BIT_Period_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Period_InterruptHandler ]
-"59 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr0.c
+"59 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr1.c
+"58 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "59
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"49 /home/muny/MPLABXProjects/ETC/ETC.X/main.c
+"12 C:\Users\Ame\Downloads\ETC-main\ETC.X\MESSAGES.C
+[v _CANDATAdata CANDATAdata `[8]uc  1 e 8 0 ]
+"14
+[v _ucTargetAccelerator ucTargetAccelerator `uc  1 e 1 0 ]
+"15
+[v _ucTargetClutch ucTargetClutch `uc  1 e 1 0 ]
+"16
+[v _ucTargetBrake ucTargetBrake `uc  1 e 1 0 ]
+"17
+[v _ucTargetDirection ucTargetDirection `uc  1 e 1 0 ]
+"18
+[v _ucTargetGear ucTargetGear `uc  1 e 1 0 ]
+"20
+[v _ucAS_state ucAS_state `uc  1 e 1 0 ]
+"21
+[v _ucEBS_state ucEBS_state `uc  1 e 1 0 ]
+"22
+[v _ucAMI_state ucAMI_state `uc  1 e 1 0 ]
+"23
+[v _ucSteering_state ucSteering_state `uc  1 e 1 0 ]
+"24
+[v _ucService_brake ucService_brake `uc  1 e 1 0 ]
+"25
+[v _ucLap_counter ucLap_counter `uc  1 e 1 0 ]
+"26
+[v _ucCones_count_actual ucCones_count_actual `uc  1 e 1 0 ]
+"27
+[v _uiCones_count_all uiCones_count_all `ui  1 e 2 0 ]
+"29
+[v _ucSpeed_actual ucSpeed_actual `uc  1 e 1 0 ]
+"30
+[v _ucSpeed_target ucSpeed_target `uc  1 e 1 0 ]
+"31
+[v _ucSteering_angle_actual ucSteering_angle_actual `uc  1 e 1 0 ]
+"32
+[v _ucSteering_angle_target ucSteering_angle_target `uc  1 e 1 0 ]
+"33
+[v _ucBrake_hydr_actual ucBrake_hydr_actual `uc  1 e 1 0 ]
+"34
+[v _ucBrake_hydr_target ucBrake_hydr_target `uc  1 e 1 0 ]
+"35
+[v _ucMotor_moment_actual ucMotor_moment_actual `uc  1 e 1 0 ]
+"36
+[v _ucMotor_moment_target ucMotor_moment_target `uc  1 e 1 0 ]
+"38
+[v _uiAcc_longitudinal uiAcc_longitudinal `ui  1 e 2 0 ]
+"39
+[v _uiAcc_lateral uiAcc_lateral `ui  1 e 2 0 ]
+"40
+[v _uiYaw_rate uiYaw_rate `ui  1 e 2 0 ]
+"50 C:\Users\Ame\Downloads\ETC-main\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"70
+"71
 } 0
-"50 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/mcc.c
+"50 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "63
 } 0
-"65 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr1.c
+"65 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "98
@@ -1433,7 +1706,7 @@ channel_FVR_Buffer2 63
 [v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "196
 } 0
-"61 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr0.c
+"61 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "85
@@ -1444,7 +1717,7 @@ channel_FVR_Buffer2 63
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "152
 } 0
-"63 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pwm2_16bit.c
+"63 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_Initialize PWM2_16BIT_Initialize `(v  1 e 1 0 ]
 {
 "132
@@ -1467,7 +1740,7 @@ channel_FVR_Buffer2 63
 [v PWM2_16BIT_Period_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "205
 } 0
-"63 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pwm1_16bit.c
+"63 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v _PWM1_16BIT_Initialize PWM1_16BIT_Initialize `(v  1 e 1 0 ]
 {
 "132
@@ -1490,96 +1763,131 @@ channel_FVR_Buffer2 63
 [v PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "205
 } 0
-"79 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/mcc.c
+"79 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/mcc.c
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 {
 "99
 } 0
-"55 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/pin_manager.c
+"55 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "125
 } 0
-"65 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/mcc.c
+"65 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
-"52 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/interrupt_manager.c
+"52 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 {
 "56
 } 0
-"183 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/i2c1_master.c
+"183 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/i2c1_master.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 {
 "205
 } 0
-"153 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/can1.c
+"244 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_Initialize CAN1_Initialize `(v  1 e 1 0 ]
 {
-"176
+"271
 } 0
-"178
+"186
+[v _CAN1_TX_FIFO_Configuration CAN1_TX_FIFO_Configuration `(v  1 s 1 CAN1_TX_FIFO_Configuration ]
+{
+"200
+} 0
+"150
+[v _CAN1_RX_FIFO_ResetInfo CAN1_RX_FIFO_ResetInfo `(v  1 e 1 0 ]
+{
+"152
+[v CAN1_RX_FIFO_ResetInfo@index index `uc  1 a 1 2 ]
+"158
+} 0
+"182
+[v _CAN1_RX_FIFO_FilterMaskConfiguration CAN1_RX_FIFO_FilterMaskConfiguration `(v  1 s 1 CAN1_RX_FIFO_FilterMaskConfiguration ]
+{
+"184
+} 0
+"160
+[v _CAN1_RX_FIFO_Configuration CAN1_RX_FIFO_Configuration `(v  1 s 1 CAN1_RX_FIFO_Configuration ]
+{
+"180
+} 0
+"706
+[v _CAN1_SetFIFO1NotEmptyHandler CAN1_SetFIFO1NotEmptyHandler `(v  1 e 1 0 ]
+{
+[v CAN1_SetFIFO1NotEmptyHandler@handler handler `*.37(v  1 p 2 2 ]
+"709
+} 0
+"273
 [v _CAN1_OperationModeSet CAN1_OperationModeSet `(E22356  1 e 1 0 ]
 {
 [v CAN1_OperationModeSet@requestMode requestMode `CE22346  1 a 1 wreg ]
-"180
+"275
 [v CAN1_OperationModeSet@status status `E22356  1 a 1 3 ]
-"181
+"276
 [v CAN1_OperationModeSet@opMode opMode `E22346  1 a 1 2 ]
-"178
+"273
 [v CAN1_OperationModeSet@requestMode requestMode `CE22346  1 a 1 wreg ]
-"180
+"275
 [v CAN1_OperationModeSet@requestMode requestMode `CE22346  1 a 1 4 ]
-"205
+"300
 } 0
-"207
-[v _CAN1_OperationModeGet CAN1_OperationModeGet `(E22346  1 e 1 0 ]
-{
-"210
-} 0
-"129
+"218
 [v _CAN1_ErrorNotificationInterruptEnable CAN1_ErrorNotificationInterruptEnable `(v  1 s 1 CAN1_ErrorNotificationInterruptEnable ]
 {
-"151
+"242
 } 0
-"277
+"643
+[v _CAN1_SetTxAttemptInterruptHandler CAN1_SetTxAttemptInterruptHandler `(v  1 e 1 0 ]
+{
+[v CAN1_SetTxAttemptInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
+"646
+} 0
+"638
 [v _CAN1_SetSystemErrorInterruptHandler CAN1_SetSystemErrorInterruptHandler `(v  1 e 1 0 ]
 {
 [v CAN1_SetSystemErrorInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
-"280
+"641
 } 0
-"272
+"648
+[v _CAN1_SetRxBufferOverFlowInterruptHandler CAN1_SetRxBufferOverFlowInterruptHandler `(v  1 e 1 0 ]
+{
+[v CAN1_SetRxBufferOverFlowInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
+"651
+} 0
+"633
 [v _CAN1_SetModeChangeInterruptHandler CAN1_SetModeChangeInterruptHandler `(v  1 e 1 0 ]
 {
 [v CAN1_SetModeChangeInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
-"275
+"636
 } 0
-"257
+"618
 [v _CAN1_SetInvalidMessageInterruptHandler CAN1_SetInvalidMessageInterruptHandler `(v  1 e 1 0 ]
 {
 [v CAN1_SetInvalidMessageInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
-"260
+"621
 } 0
-"262
+"623
 [v _CAN1_SetBusWakeUpActivityInterruptHandler CAN1_SetBusWakeUpActivityInterruptHandler `(v  1 e 1 0 ]
 {
 [v CAN1_SetBusWakeUpActivityInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
-"265
+"626
 } 0
-"267
+"628
 [v _CAN1_SetBusErrorInterruptHandler CAN1_SetBusErrorInterruptHandler `(v  1 e 1 0 ]
 {
 [v CAN1_SetBusErrorInterruptHandler@handler handler `*.37(v  1 p 2 2 ]
-"270
+"631
 } 0
-"113
+"202
 [v _CAN1_BitRateConfiguration CAN1_BitRateConfiguration `(v  1 s 1 CAN1_BitRateConfiguration ]
 {
-"127
+"216
 } 0
-"71 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/adc.c
+"71 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "438
@@ -1620,12 +1928,142 @@ channel_FVR_Buffer2 63
 [v ADC_SetADIInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 2 ]
 "721
 } 0
-"58 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/interrupt_manager.c
+"46 C:\Users\Ame\Downloads\ETC-main\ETC.X\MESSAGES.C
+[v _CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
+{
+[v CANWriteMessage@id id `ul  1 p 4 0 ]
+[v CANWriteMessage@dataLength dataLength `uc  1 p 1 4 ]
+[v CANWriteMessage@data1 data1 `uc  1 p 1 5 ]
+[v CANWriteMessage@data2 data2 `uc  1 p 1 6 ]
+[v CANWriteMessage@data3 data3 `uc  1 p 1 7 ]
+[v CANWriteMessage@data4 data4 `uc  1 p 1 8 ]
+[v CANWriteMessage@data5 data5 `uc  1 p 1 9 ]
+[v CANWriteMessage@data6 data6 `uc  1 p 1 10 ]
+[v CANWriteMessage@data7 data7 `uc  1 p 1 11 ]
+[v CANWriteMessage@data8 data8 `uc  1 p 1 12 ]
+"91
+} 0
+"563 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/can1.c
+[v _CAN1_TransmitFIFOStatusGet CAN1_TransmitFIFOStatusGet `(E22361  1 e 1 0 ]
+{
+[v CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
+"565
+[v CAN1_TransmitFIFOStatusGet@status status `E22361  1 a 1 4 ]
+"563
+[v CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
+"565
+[v CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 5 ]
+"573
+} 0
+"541
+[v _CAN1_Transmit CAN1_Transmit `(E22340  1 e 1 0 ]
+{
+[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
+"550
+[v CAN1_Transmit@txFifoObj txFifoObj `*.39uc  1 a 2 27 ]
+"543
+[v CAN1_Transmit@status status `E22340  1 a 1 26 ]
+"541
+[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
+[s S476 . 1 `uc 1 idType 1 0 :1:0 
+`uc 1 frameType 1 0 :1:1 
+`uc 1 dlc 1 0 :4:2 
+`uc 1 formatType 1 0 :1:6 
+`uc 1 brs 1 0 :1:7 
+]
+[u S482 . 1 `uc 1 msgfields 1 0 `S476 1 . 1 0 ]
+[s S485 . 7 `ul 1 msgId 4 0 `S482 1 field 1 4 `*.39uc 1 data 2 5 ]
+[v CAN1_Transmit@txCanMsg txCanMsg `*.39S485  1 p 2 24 ]
+[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 29 ]
+"561
+} 0
+"461
+[v _isTxChannel isTxChannel `(a  1 s 1 isTxChannel ]
+{
+[v isTxChannel@channel channel `uc  1 a 1 wreg ]
+[v isTxChannel@channel channel `uc  1 a 1 wreg ]
+"463
+[v isTxChannel@channel channel `uc  1 a 1 3 ]
+"464
+} 0
+"471
+[v _WriteMessageToFifo WriteMessageToFifo `(v  1 s 1 WriteMessageToFifo ]
+{
+"473
+[v WriteMessageToFifo@msgId msgId `ul  1 a 4 20 ]
+"474
+[v WriteMessageToFifo@status status `uc  1 a 1 19 ]
+"471
+[v WriteMessageToFifo@txFifoObj txFifoObj `*.39uc  1 p 2 13 ]
+[s S476 . 1 `uc 1 idType 1 0 :1:0 
+`uc 1 frameType 1 0 :1:1 
+`uc 1 dlc 1 0 :4:2 
+`uc 1 formatType 1 0 :1:6 
+`uc 1 brs 1 0 :1:7 
+]
+[u S482 . 1 `uc 1 msgfields 1 0 `S476 1 . 1 0 ]
+[s S485 . 7 `ul 1 msgId 4 0 `S482 1 field 1 4 `*.39uc 1 data 2 5 ]
+[v WriteMessageToFifo@txCanMsg txCanMsg `*.39S485  1 p 2 15 ]
+"510
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+"8
+[v memcpy@s s `*.39Cuc  1 a 2 10 ]
+"7
+[v memcpy@d d `*.39uc  1 a 2 8 ]
+"9
+[v memcpy@tmp tmp `uc  1 a 1 12 ]
+"4
+[v memcpy@d1 d1 `*.39v  1 p 2 2 ]
+[v memcpy@s1 s1 `*.39Cv  1 p 2 4 ]
+[v memcpy@n n `ui  1 p 2 6 ]
+"18
+} 0
+"512 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/can1.c
+[v _ValidateTransmission ValidateTransmission `(E22340  1 s 1 ValidateTransmission ]
+{
+[v ValidateTransmission@validChannel validChannel `uc  1 a 1 wreg ]
+[s S476 . 1 `uc 1 idType 1 0 :1:0 
+`uc 1 frameType 1 0 :1:1 
+`uc 1 dlc 1 0 :4:2 
+`uc 1 formatType 1 0 :1:6 
+`uc 1 brs 1 0 :1:7 
+]
+"515
+[u S482 . 1 `uc 1 msgfields 1 0 `S476 1 . 1 0 ]
+[v ValidateTransmission@field field `S482  1 a 1 10 ]
+"514
+[v ValidateTransmission@txMsgStatus txMsgStatus `E22340  1 a 1 9 ]
+"512
+[v ValidateTransmission@validChannel validChannel `uc  1 a 1 wreg ]
+[s S485 . 7 `ul 1 msgId 4 0 `S482 1 field 1 4 `*.39uc 1 data 2 5 ]
+[v ValidateTransmission@txCanMsg txCanMsg `*.39S485  1 p 2 3 ]
+"514
+[v ValidateTransmission@validChannel validChannel `uc  1 a 1 8 ]
+"539
+} 0
+"466
+[v _GetTxFifoStatus GetTxFifoStatus `(E22361  1 s 1 GetTxFifoStatus ]
+{
+[v GetTxFifoStatus@validChannel validChannel `uc  1 a 1 wreg ]
+[v GetTxFifoStatus@validChannel validChannel `uc  1 a 1 wreg ]
+"468
+[v GetTxFifoStatus@validChannel validChannel `uc  1 a 1 2 ]
+"469
+} 0
+"302
+[v _CAN1_OperationModeGet CAN1_OperationModeGet `(E22346  1 e 1 0 ]
+{
+"305
+} 0
+"58 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 {
-"77
+"81
 } 0
-"165 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr1.c
+"165 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
 "167
@@ -1648,7 +2086,7 @@ channel_FVR_Buffer2 63
 {
 "201
 } 0
-"121 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/tmr0.c
+"121 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "123
@@ -1665,33 +2103,53 @@ channel_FVR_Buffer2 63
 {
 "157
 } 0
-"282 /home/muny/MPLABXProjects/ETC/ETC.X/mcc_generated_files/can1.c
+"712 C:\Users\Ame\Downloads\ETC-main\ETC.X\mcc_generated_files/can1.c
+[v _CAN1_RXI_ISR CAN1_RXI_ISR `(v  1 e 1 0 ]
+{
+"720
+} 0
+"118
+[v _DefaultFIFO1NotEmptyHandler DefaultFIFO1NotEmptyHandler `(v  1 s 1 DefaultFIFO1NotEmptyHandler ]
+{
+"120
+} 0
+"653
 [v _CAN1_ISR CAN1_ISR `(v  1 e 1 0 ]
 {
-"315
+"704
 } 0
-"107
+"142
+[v _DefaultTxAttemptHandler DefaultTxAttemptHandler `(v  1 s 1 DefaultTxAttemptHandler ]
+{
+"144
+} 0
+"138
 [v _DefaultSystemErrorHandler DefaultSystemErrorHandler `(v  1 s 1 DefaultSystemErrorHandler ]
 {
-"109
+"140
 } 0
-"103
+"146
+[v _DefaultRxBufferOverflowHandler DefaultRxBufferOverflowHandler `(v  1 s 1 DefaultRxBufferOverflowHandler ]
+{
+"148
+} 0
+"134
 [v _DefaultModeChangeHandler DefaultModeChangeHandler `(v  1 s 1 DefaultModeChangeHandler ]
 {
-"105
+"136
 } 0
-"91
+"122
 [v _DefaultInvalidMessageHandler DefaultInvalidMessageHandler `(v  1 s 1 DefaultInvalidMessageHandler ]
 {
-"93
+"124
 } 0
-"95
+"126
 [v _DefaultBusWakeUpActivityHandler DefaultBusWakeUpActivityHandler `(v  1 s 1 DefaultBusWakeUpActivityHandler ]
 {
-"97
+"128
 } 0
-"99
+"130
 [v _DefaultBusErrorHandler DefaultBusErrorHandler `(v  1 s 1 DefaultBusErrorHandler ]
 {
-"101
+"132
 } 0

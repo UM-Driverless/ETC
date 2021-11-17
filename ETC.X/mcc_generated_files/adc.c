@@ -73,8 +73,8 @@ void ADC_Initialize(void)
     //ADACT TMR0; 
     ADACT = 0x02;
 
-    //ADCCS FOSC/128; 
-    ADCLK = 0x3F;
+    //ADCCS FOSC/2; 
+    ADCLK = 0x00;
     
     //ADC charge pump control
     ADCP = 0x00;
@@ -124,8 +124,8 @@ void ADC_Initialize(void)
     //ADRESH 0; 
     ADRESH = 0x00;
 
-    //ADCHS ANA4; 
-    ADPCH = 0x04;
+    //ADCHS ANC0; 
+    ADPCH = 0x10;
 
     //ADACQL 135; 
     ADACQL = 0x87;
@@ -207,8 +207,8 @@ void ADC_Initialize(void)
     //ADRESH 0; 
     ADRESH = 0x00;
 
-    //ADCHS ANC0; 
-    ADPCH = 0x10;
+    //ADCHS ANA4; 
+    ADPCH = 0x04;
 
     //ADACQL 135; 
     ADACQL = 0x87;
@@ -290,8 +290,8 @@ void ADC_Initialize(void)
     //ADRESH 0; 
     ADRESH = 0x00;
 
-    //ADCHS ANC1; 
-    ADPCH = 0x11;
+    //ADCHS ANC2; 
+    ADPCH = 0x12;
 
     //ADACQL 135; 
     ADACQL = 0x87;
@@ -373,8 +373,8 @@ void ADC_Initialize(void)
     //ADRESH 0; 
     ADRESH = 0x00;
 
-    //ADCHS ANC2; 
-    ADPCH = 0x12;
+    //ADCHS ANC1; 
+    ADPCH = 0x11;
 
     //ADACQL 135; 
     ADACQL = 0x87;
@@ -461,16 +461,16 @@ void ADC_EnableChannelScan(ADC_context_t context)
 {
     switch (context)
     {
-    case CONTEXT_1:
+    case CONTEXT_TPS1:
         ADCSEL1bits.CHEN = 1;
         break;
-    case CONTEXT_2:
+    case CONTEXT_TPS2:
         ADCSEL2bits.CHEN = 1;
         break;
-    case CONTEXT_3:
+    case CONTEXT_APPS1:
         ADCSEL3bits.CHEN = 1;
         break;
-    case CONTEXT_4:
+    case CONTEXT_APPS2:
         ADCSEL4bits.CHEN = 1;
         break;
     default:
@@ -482,16 +482,16 @@ void ADC_DisableChannelScan(ADC_context_t context)
 {
     switch (context)
     {
-    case CONTEXT_1:
+    case CONTEXT_TPS1:
         ADCSEL1bits.CHEN = 0;
         break;
-    case CONTEXT_2:
+    case CONTEXT_TPS2:
         ADCSEL2bits.CHEN = 0;
         break;
-    case CONTEXT_3:
+    case CONTEXT_APPS1:
         ADCSEL3bits.CHEN = 0;
         break;
-    case CONTEXT_4:
+    case CONTEXT_APPS2:
         ADCSEL4bits.CHEN = 0;
         break;
     default:

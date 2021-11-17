@@ -42,6 +42,7 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "MESSAGES.h"
 
 /*
                          Main application
@@ -64,7 +65,7 @@ void main(void)
     while (1)
     {
         // Add your application code
-        
+        CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         
     }
 }

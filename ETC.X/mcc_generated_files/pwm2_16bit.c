@@ -71,14 +71,14 @@ void PWM2_16BIT_Initialize(void)
     //PWMLDS Autoload disabled; 
     PWM2LDS = 0x00;
 
-    //PWMPRL 15; 
-    PWM2PRL = 0x0F;
+    //PWMPRL 124; 
+    PWM2PRL = 0x7C;
 
-    //PWMPRH 39; 
-    PWM2PRH = 0x27;
+    //PWMPRH 0; 
+    PWM2PRH = 0x00;
 
-    //PWMCPRE No prescale; 
-    PWM2CPRE = 0x00;
+    //PWMCPRE Prescale by 255; 
+    PWM2CPRE = 0xFE;
 
     //PWMPIPOS No postscale; 
     PWM2PIPOS = 0x00;
@@ -92,17 +92,17 @@ void PWM2_16BIT_Initialize(void)
     //PWMPOL2 disabled; PWMPOL1 disabled; PWMPPEN disabled; PWMMODE Left aligned mode; 
     PWM2S1CFG = 0x00;
 
-    //PWMS1P1L 136; 
-    PWM2S1P1L = 0x88;
+    //PWMS1P1L 62; 
+    PWM2S1P1L = 0x3E;
 
-    //PWMS1P1H 19; 
-    PWM2S1P1H = 0x13;
+    //PWMS1P1H 0; 
+    PWM2S1P1H = 0x00;
 
-    //PWMS1P2L 136; 
-    PWM2S1P2L = 0x88;
+    //PWMS1P2L 62; 
+    PWM2S1P2L = 0x3E;
 
-    //PWMS1P2H 19; 
-    PWM2S1P2H = 0x13;
+    //PWMS1P2H 0; 
+    PWM2S1P2H = 0x00;
     
     //Clear PWM2_16BIT period interrupt flag
     PIR5bits.PWM2PIF = 0;

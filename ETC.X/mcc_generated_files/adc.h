@@ -71,10 +71,10 @@ typedef uint16_t adc_result_t;
  */
 typedef enum
 {
-    TPS2 =  0x4,
-    TPS1 =  0x10,
-    APPS2 =  0x11,
-    APPS1 =  0x12,
+    PICTPS2 =  0x4,
+    PICTPS1 =  0x10,
+    PICAPPS2 =  0x11,
+    PICAPPS1 =  0x12,
     channel_VSS =  0x3B,
     channel_Temp =  0x3C,
     channel_DAC1 =  0x3D,
@@ -89,10 +89,10 @@ typedef enum
  */
 typedef enum
 {
-    CONTEXT_1,
-    CONTEXT_2,
-    CONTEXT_3,
-    CONTEXT_4,
+    CONTEXT_TPS1,
+    CONTEXT_TPS2,
+    CONTEXT_APPS1,
+    CONTEXT_APPS2,
 } ADC_context_t;
 
 /**

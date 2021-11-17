@@ -10,7 +10,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "56
 [p x CSWEN  =  ON     ]
 "57
-[p x JTAGEN  =  ON     ]
+[p x JTAGEN  =  OFF     ]
 "58
 [p x FCMEN  =  ON     ]
 "59
@@ -38,7 +38,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "74
 [p x STVREN  =  ON     ]
 "75
-[p x LVP  =  ON     ]
+[p x LVP  =  OFF     ]
 "76
 [p x XINST  =  OFF     ]
 "79

@@ -50,7 +50,7 @@
 
 #include <xc.h>
 #include "tmr1.h"
-#include "pin_manager.h"  //ASA 17.09.2021 LED
+#include "pin_manager.h"
 
 /**
   Section: Global Variables Definitions
@@ -93,8 +93,8 @@ void TMR1_Initialize(void)
     // Set Default Interrupt Handler
     TMR1_SetInterruptHandler(TMR1_DefaultInterruptHandler);
 
-    // CKPS 1:4; NOT_SYNC synchronize; TMR1ON enabled; T1RD16 disabled; 
-    T1CON = 0x21;
+    // CKPS 1:8; NOT_SYNC synchronize; TMR1ON enabled; T1RD16 disabled; 
+    T1CON = 0x31;
 }
 
 void TMR1_StartTimer(void)
@@ -183,8 +183,8 @@ void TMR1_ISR(void)
 
 void TMR1_CallBack(void)
 {
-    LED_Toggle();
     // Add your custom callback code here
+    LED_Toggle();
     if(TMR1_InterruptHandler)
     {
         TMR1_InterruptHandler();

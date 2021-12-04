@@ -51,6 +51,7 @@
 #include <xc.h>
 #include "tmr1.h"
 #include "pin_manager.h"
+#include "../TEMPORIZATIONS.h"
 
 /**
   Section: Global Variables Definitions
@@ -184,7 +185,36 @@ void TMR1_ISR(void)
 void TMR1_CallBack(void)
 {
     // Add your custom callback code here
-    LED_Toggle();
+    //EJECUTAR TEMPORACIZACIONES CADA 100ms
+    TEMPORIZATION_100ms();
+    
+    if ( ucCount500ms++ == t500ms )
+    {
+        ucCount500ms = 0;
+        TEMPORIZATION_500ms();
+    }
+    if ( ucCount1s++ == t1s )
+    {
+        ucCount1s = 0;
+        TEMPORIZATION_1s();
+    }
+    if ( ucCount10s++ == t10s )
+    {
+        ucCount10s = 0;
+        TEMPORIZATION_10s();
+    }
+    if ( uiCount30s++ == t30s )
+    {
+        uiCount30s = 0;
+        TEMPORIZATION_30s();
+    }
+    if ( uiCount1min++ == t1min )
+    {
+        uiCount1min = 0;
+        TEMPORIZATION_1mins();
+    }
+    
+    
     if(TMR1_InterruptHandler)
     {
         TMR1_InterruptHandler();

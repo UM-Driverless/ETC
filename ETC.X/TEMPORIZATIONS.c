@@ -7,6 +7,7 @@
 
 #include "../ETC.X/mcc_generated_files/pin_manager.h"
 #include "CLUTCH.h"
+#include "TEMPORIZATIONS.h"
 
 //VARIABLES
 unsigned char ucCount500ms;

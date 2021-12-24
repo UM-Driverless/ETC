@@ -187,9 +187,9 @@ void I2C1_Initialize()
     //ACKCNT Acknowledge; ACKDT Acknowledge; RXO 0; TXU 0; CSD Clock Stretching enabled; 
     I2C1CON1 = 0x80;
     //ACNT disabled; GCEN disabled; FME disabled; ABD enabled; SDAHT 300 ns hold time; BFRET 8 I2C Clock pulses; 
-    I2C1CON2 = 0x00;
-    //CLK Fosc/4; 
-    I2C1CLK = 0x00;
+    I2C1CON2 = 0x18;
+    //CLK MFINTOSC; 
+    I2C1CLK = 0x03;
     //CNTIF 0; ACKTIF 0; WRIF 0; ADRIF 0; PCIF 0; RSCIF 0; SCIF 0; 
     I2C1PIR = 0x00;
     //CNTIE disabled; ACKTIE disabled; WRIE disabled; ADRIE disabled; PCIE disabled; RSCIE disabled; SCIE disabled; 
@@ -199,8 +199,8 @@ void I2C1_Initialize()
     //Count register
     I2C1CNTL = 0x00;
     I2C1CNTH = 0x00;
-    //BAUD 9; 
-    I2C1BAUD = 0x09;
+    //BAUD 0; 
+    I2C1BAUD = 0x00;
     return;
 }
 
@@ -645,8 +645,8 @@ static inline bool I2C1_MasterOpen(void)
         //Count register
         I2C1CNTL = 0x00;
         I2C1CNTH = 0x00;
-        //BAUD 9; 
-        I2C1BAUD = 0x09;
+        //BAUD 0; 
+        I2C1BAUD = 0x00;
         //Enable I2C1
         I2C1CON0bits.EN = 1;
         return true;

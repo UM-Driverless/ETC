@@ -1,4 +1,4 @@
-# 1 "TEMPORIZATIONS.c"
+# 1 "ANALOG.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "TEMPORIZATIONS.c" 2
+# 1 "ANALOG.c" 2
 
 
 
@@ -14,8 +14,37 @@
 
 
 
-# 1 "./../ETC.X/mcc_generated_files/pin_manager.h" 1
-# 54 "./../ETC.X/mcc_generated_files/pin_manager.h"
+# 1 "./ANALOG.h" 1
+# 22 "./ANALOG.h"
+unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica);
+void ANALOGRead (void);
+# 8 "ANALOG.c" 2
+
+# 1 "./ETC.h" 1
+# 16 "./ETC.h"
+extern unsigned char ucAPPS1min;
+extern unsigned char ucAPPS1max;
+extern unsigned char ucAPPS2min;
+extern unsigned char ucAPPS2max;
+extern unsigned char ucTPS1min;
+extern unsigned char ucTPS1max;
+extern unsigned char ucTPS2min;
+extern unsigned char ucTPS2max;
+extern unsigned char ucAPPS1;
+extern unsigned char ucAPPS2;
+extern unsigned char ucTPS1;
+extern unsigned char ucTPS2;
+
+
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin (void);
+void APPSReadmax (void);
+void TPSReadmin (void);
+void TPSReadmax (void);
+# 9 "ANALOG.c" 2
+
+# 1 "./mcc_generated_files/adc.h" 1
+# 56 "./mcc_generated_files/adc.h"
 # 1 "C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -37489,88 +37518,264 @@ __attribute__((__unsupported__("The READTIMER" "3" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\xc.h" 2 3
-# 54 "./../ETC.X/mcc_generated_files/pin_manager.h" 2
-# 426 "./../ETC.X/mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 438 "./../ETC.X/mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 8 "TEMPORIZATIONS.c" 2
+# 56 "./mcc_generated_files/adc.h" 2
 
-# 1 "./CLUTCH.h" 1
-# 26 "./CLUTCH.h"
-extern unsigned char ucCLUTCHlmin;
-extern unsigned char ucCLUTCHlmax;
-extern unsigned char ucCLUTCHDuty;
-extern unsigned char ucCLUTCHState;
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
+# 58 "./mcc_generated_files/adc.h" 2
 
 
 
-void CLUTCH_Init (void);
-void CLUTCH_Move (unsigned char ucTargetMove);
-void CLUTCH_AnalyseState (void);
-# 9 "TEMPORIZATIONS.c" 2
-
-# 1 "./TEMPORIZATIONS.h" 1
-# 23 "./TEMPORIZATIONS.h"
-extern unsigned char ucCount500ms;
-extern unsigned char ucCount1s;
-extern unsigned char ucCount10s;
-extern unsigned int uiCount30s;
-extern unsigned int uiCount1min;
 
 
 
-void TEMPORIZATION_10ms (void);
-void TEMPORIZATION_100ms (void);
-void TEMPORIZATION_500ms (void);
-void TEMPORIZATION_1s (void);
-void TEMPORIZATION_10s (void);
-void TEMPORIZATION_30s (void);
-void TEMPORIZATION_1mins (void);
-# 10 "TEMPORIZATIONS.c" 2
+
+typedef uint16_t adc_result_t;
 
 
 
-unsigned char ucCount500ms;
-unsigned char ucCount1s;
-unsigned char ucCount10s;
-unsigned int uiCount30s;
-unsigned int uiCount1min;
 
 
 
-void TEMPORIZATION_10ms (void)
+typedef enum
 {
+    channel_ANA4 = 0x4,
+    channel_ANC0 = 0x10,
+    channel_ANC1 = 0x11,
+    channel_ANC2 = 0x12,
+    channel_VSS = 0x3B,
+    channel_Temp = 0x3C,
+    channel_DAC1 = 0x3D,
+    channel_FVR_Buffer1 = 0x3E,
+    channel_FVR_Buffer2 = 0x3F
+} ADC_channel_t;
+
+
+
+
+
+
+typedef enum
+{
+    CONTEXT_TPS1,
+    CONTEXT_TPS2,
+    CONTEXT_APPS1,
+    CONTEXT_APPS2,
+} ADC_context_t;
+# 119 "./mcc_generated_files/adc.h"
+void ADC_Initialize(void);
+# 150 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_EnableChannelSequencer(void);
+# 172 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_DisableChannelSequencer(void);
+# 204 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_StartChannelSequencer(void);
+# 227 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_SelectContext(ADC_context_t context);
+# 249 "./mcc_generated_files/adc.h"
+void ADC_EnableChannelScan(ADC_context_t context);
+# 273 "./mcc_generated_files/adc.h"
+void ADC_DisableChannelScan(ADC_context_t context);
+# 300 "./mcc_generated_files/adc.h"
+void ADC_StartConversion(ADC_channel_t channel);
+# 326 "./mcc_generated_files/adc.h"
+_Bool ADC_IsConversionDone(void);
+# 352 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetConversionResult(void);
+# 378 "./mcc_generated_files/adc.h"
+adc_result_t ADC_GetSingleConversion(ADC_channel_t channel);
+# 403 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_StopConversion(void);
+# 427 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_SetStopOnInterrupt(void);
+# 455 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_DischargeSampleCapacitor(void);
+# 479 "./mcc_generated_files/adc.h"
+void ADC_LoadAcquisitionRegister(uint16_t acquisitionValue);
+# 503 "./mcc_generated_files/adc.h"
+void ADC_SetPrechargeTime(uint16_t prechargeTime);
+# 527 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_SetRepeatCount(uint8_t repeatCount);
+# 551 "./mcc_generated_files/adc.h"
+uint8_t ADC_GetCurrentCountofConversions(void);
+# 574 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_ClearAccumulator(void);
+# 598 "./mcc_generated_files/adc.h"
+uint24_t ADC_GetAccumulatorValue(void);
+# 625 "./mcc_generated_files/adc.h"
+_Bool ADC_HasAccumulatorOverflowed(void);
+# 649 "./mcc_generated_files/adc.h"
+uint16_t ADC_GetFilterValue(void);
+# 673 "./mcc_generated_files/adc.h"
+uint16_t ADC_GetPreviousResult(void);
+# 697 "./mcc_generated_files/adc.h"
+void ADC_DefineSetPoint(uint16_t setPoint);
+# 721 "./mcc_generated_files/adc.h"
+void ADC_SetUpperThreshold(uint16_t upperThreshold);
+# 745 "./mcc_generated_files/adc.h"
+void ADC_SetLowerThreshold(uint16_t lowerThreshold);
+# 770 "./mcc_generated_files/adc.h"
+uint16_t ADC_GetErrorCalculation(void);
+# 794 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_EnableDoubleSampling(void);
+# 818 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_EnableContinuousConversion(void);
+# 842 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_DisableContinuousConversion(void);
+# 869 "./mcc_generated_files/adc.h"
+_Bool ADC_HasErrorCrossedUpperThreshold(void);
+# 896 "./mcc_generated_files/adc.h"
+_Bool ADC_HasErrorCrossedLowerThreshold(void);
+# 921 "./mcc_generated_files/adc.h"
+uint8_t ADC_GetConversionStageStatus(void);
+# 942 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_EnableChargePump(void);
+# 963 "./mcc_generated_files/adc.h"
+__attribute__((inline)) void ADC_DisableChargePump(void);
+
+
+
+
+
+
+
+void ADC_ADI_ISR(void);
+# 999 "./mcc_generated_files/adc.h"
+void ADC_SetADIInterruptHandler(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void ADC_ACTI_ISR(void);
+# 1035 "./mcc_generated_files/adc.h"
+void ADC_SetActiveClockTuningInterruptHandler(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void ADC_ADCH1_ISR(void);
+# 1071 "./mcc_generated_files/adc.h"
+void ADC_SetContext1ThresholdInterruptHandler(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void ADC_ADCH2_ISR(void);
+# 1107 "./mcc_generated_files/adc.h"
+void ADC_SetContext2ThresholdInterruptHandler(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void ADC_ADCH3_ISR(void);
+# 1143 "./mcc_generated_files/adc.h"
+void ADC_SetContext3ThresholdInterruptHandler(void (* InterruptHandler)(void));
+
+
+
+
+
+
+
+void ADC_ADCH4_ISR(void);
+# 1179 "./mcc_generated_files/adc.h"
+void ADC_SetContext4ThresholdInterruptHandler(void (* InterruptHandler)(void));
+# 10 "ANALOG.c" 2
+
+
+
+
+
+unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
+{
+    uint16_t uiValorAnalog;
+    uint16_t uiValorVoltage;
+    unsigned char ucFlag;
+
+    switch (ucEntradaAnalogica)
+    {
+        case 3:
+            ADC_DisableChannelSequencer();
+            ADC_SelectContext(CONTEXT_TPS1);
+            uiValorAnalog = ADC_GetSingleConversion(channel_ANC0);
+            ucFlag = 1;
+            break;
+        case 4:
+            ADC_DisableChannelSequencer();
+            ADC_SelectContext(CONTEXT_TPS2);
+            uiValorAnalog = ADC_GetSingleConversion(channel_ANA4);
+            ucFlag = 1;
+            break;
+        case 1:
+            ADC_DisableChannelSequencer();
+            ADC_SelectContext(CONTEXT_APPS1);
+            uiValorAnalog = ADC_GetSingleConversion(channel_ANC2);
+            ucFlag = 1;
+            break;
+        case 2:
+            ADC_DisableChannelSequencer();
+            ADC_SelectContext(CONTEXT_APPS2);
+            uiValorAnalog = ADC_GetSingleConversion(channel_ANC1);
+            ucFlag = 1;
+            break;
+        default:
+            ucFlag = 2;
+            break;
+    }
+
+    if ( ucFlag == 1 )
+    {
+        if ( uiValorAnalog <= 6 )
+        {
+            uiValorVoltage = 0;
+        }
+        else
+        {
+
+
+            uiValorVoltage = (1*uiValorAnalog);
+            uiValorVoltage = uiValorVoltage - 5;
+        }
+
+        if ( uiValorVoltage > 5000 )
+        {
+
+
+        }
+        else
+        {
+            return (uiValorVoltage);
+        }
+    }
+    else if ( ucFlag == 2 )
+    {
+
+
+    }
+    else
+    {
+
+    }
 
 }
 
-void TEMPORIZATION_100ms (void)
+
+void ANALOGRead (void)
 {
-
-    CLUTCH_AnalyseState();
-}
-
-void TEMPORIZATION_500ms (void)
-{
-    do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-}
-
-void TEMPORIZATION_1s (void)
-{
-
-}
-
-void TEMPORIZATION_10s (void)
-{
-
-}
-
-void TEMPORIZATION_30s (void)
-{
-
-}
-
-void TEMPORIZATION_1mins (void)
-{
-
+    ucAPPS1 = ANALOG_GetVoltage (1);
+    ucAPPS2 = ANALOG_GetVoltage (2);
+    ucTPS1 = ANALOG_GetVoltage (3);
+    ucTPS2 = ANALOG_GetVoltage (4);
 }

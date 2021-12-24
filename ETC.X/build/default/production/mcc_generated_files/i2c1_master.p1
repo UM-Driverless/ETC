@@ -3922,11 +3922,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/i2c1_master.c: 188:     I2C1CON1 = 0x80;
 [e = _I2C1CON1 -> -> 128 `i `uc ]
 "190
-[; ;mcc_generated_files/i2c1_master.c: 190:     I2C1CON2 = 0x00;
-[e = _I2C1CON2 -> -> 0 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 190:     I2C1CON2 = 0x18;
+[e = _I2C1CON2 -> -> 24 `i `uc ]
 "192
-[; ;mcc_generated_files/i2c1_master.c: 192:     I2C1CLK = 0x00;
-[e = _I2C1CLK -> -> 0 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 192:     I2C1CLK = 0x03;
+[e = _I2C1CLK -> -> 3 `i `uc ]
 "194
 [; ;mcc_generated_files/i2c1_master.c: 194:     I2C1PIR = 0x00;
 [e = _I2C1PIR -> -> 0 `i `uc ]
@@ -3943,8 +3943,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/i2c1_master.c: 201:     I2C1CNTH = 0x00;
 [e = _I2C1CNTH -> -> 0 `i `uc ]
 "203
-[; ;mcc_generated_files/i2c1_master.c: 203:     I2C1BAUD = 0x09;
-[e = _I2C1BAUD -> -> 9 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 203:     I2C1BAUD = 0x00;
+[e = _I2C1BAUD -> -> 0 `i `uc ]
 "204
 [; ;mcc_generated_files/i2c1_master.c: 204:     return;
 [e $UE 3179  ]
@@ -5424,8 +5424,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/i2c1_master.c: 647:         I2C1CNTH = 0x00;
 [e = _I2C1CNTH -> -> 0 `i `uc ]
 "649
-[; ;mcc_generated_files/i2c1_master.c: 649:         I2C1BAUD = 0x09;
-[e = _I2C1BAUD -> -> 9 `i `uc ]
+[; ;mcc_generated_files/i2c1_master.c: 649:         I2C1BAUD = 0x00;
+[e = _I2C1BAUD -> -> 0 `i `uc ]
 "651
 [; ;mcc_generated_files/i2c1_master.c: 651:         I2C1CON0bits.EN = 1;
 [e = . . _I2C1CON0bits 0 5 -> -> 1 `i `uc ]

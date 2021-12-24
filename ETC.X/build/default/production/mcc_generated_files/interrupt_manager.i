@@ -37758,10 +37758,10 @@ typedef uint16_t adc_result_t;
 
 typedef enum
 {
-    PICTPS2 = 0x4,
-    PICTPS1 = 0x10,
-    PICAPPS2 = 0x11,
-    PICAPPS1 = 0x12,
+    channel_ANA4 = 0x4,
+    channel_ANC0 = 0x10,
+    channel_ANC1 = 0x11,
+    channel_ANC2 = 0x12,
     channel_VSS = 0x3B,
     channel_Temp = 0x3C,
     channel_DAC1 = 0x3D,
@@ -38157,6 +38157,18 @@ void CAN1_ISR(void);
 void CAN1_RXI_ISR(void);
 # 61 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/drivers/i2c_simple_master.h" 1
+# 37 "mcc_generated_files/drivers/i2c_simple_master.h"
+uint8_t i2c_read1ByteRegister(i2c1_address_t address, uint8_t reg);
+uint16_t i2c_read2ByteRegister(i2c1_address_t address, uint8_t reg);
+void i2c_write1ByteRegister(i2c1_address_t address, uint8_t reg, uint8_t data);
+void i2c_write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
+
+void i2c_writeNBytes(i2c1_address_t address, void* data, size_t len);
+void i2c_readDataBlock(i2c1_address_t address, uint8_t reg, void *data, size_t len);
+void i2c_readNBytes(i2c1_address_t address, void *data, size_t len);
+# 62 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/pwm2_16bit.h" 1
 # 63 "mcc_generated_files/pwm2_16bit.h"
 void PWM2_16BIT_Initialize(void);
@@ -38197,7 +38209,17 @@ void PWM2_16BIT_Slice1Output1_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM2_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void));
 # 222 "mcc_generated_files/pwm2_16bit.h"
 void PWM2_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
-# 62 "mcc_generated_files/mcc.h" 2
+# 63 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/DAC3.h" 1
+# 29 "mcc_generated_files/DAC3.h"
+void DAC3_SetNonvolatile(uint16_t dacValue);
+
+
+void DAC3_Set(uint16_t dacValue);
+
+uint16_t DAC3_Read(uint16_t *dacNonvolatile);
+# 64 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/pwm1_16bit.h" 1
 # 63 "mcc_generated_files/pwm1_16bit.h"
@@ -38239,12 +38261,12 @@ void PWM1_16BIT_Slice1Output1_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM1_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void));
 # 222 "mcc_generated_files/pwm1_16bit.h"
 void PWM1_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
-# 63 "mcc_generated_files/mcc.h" 2
-# 78 "mcc_generated_files/mcc.h"
+# 65 "mcc_generated_files/mcc.h" 2
+# 80 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 91 "mcc_generated_files/mcc.h"
+# 93 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 104 "mcc_generated_files/mcc.h"
+# 106 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 

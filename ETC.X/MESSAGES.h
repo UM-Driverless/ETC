@@ -67,6 +67,10 @@ extern unsigned char ucASRequesState;
 #define DataLength_7        			7
 #define DataLength_8        			8
 
+//Modos conduccion
+#define ManualMode  1
+#define ASMode      2
+
 //CAN MESSAGES
 #define DV_SYSTEM_STATUS            0x500
 #define DV_DRIVING_DYNAMICS_1       0x501

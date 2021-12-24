@@ -37836,9 +37836,9 @@ void I2C1_Initialize()
 
     I2C1CON1 = 0x80;
 
-    I2C1CON2 = 0x00;
+    I2C1CON2 = 0x18;
 
-    I2C1CLK = 0x00;
+    I2C1CLK = 0x03;
 
     I2C1PIR = 0x00;
 
@@ -37849,7 +37849,7 @@ void I2C1_Initialize()
     I2C1CNTL = 0x00;
     I2C1CNTH = 0x00;
 
-    I2C1BAUD = 0x09;
+    I2C1BAUD = 0x00;
     return;
 }
 
@@ -38295,7 +38295,7 @@ static __attribute__((inline)) _Bool I2C1_MasterOpen(void)
         I2C1CNTL = 0x00;
         I2C1CNTH = 0x00;
 
-        I2C1BAUD = 0x09;
+        I2C1BAUD = 0x00;
 
         I2C1CON0bits.EN = 1;
         return 1;

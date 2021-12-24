@@ -1,17 +1,35 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"35 ./CLUTCH.h
-[; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
-[v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
-"1480 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
-[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
-[s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3061 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"1479
-[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1479:     struct {
-[u S3060 `S3061 1 ]
-[n S3060 . . ]
-"1491
-[v _LATAbits `VS3060 ~T0 @X0 0 e@1214 ]
+[v F22185 `(v ~T0 @X0 1 tf ]
+"172 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 172: __attribute__((inline)) void ADC_DisableChannelSequencer(void);
+[v _ADC_DisableChannelSequencer `TF22185 ~T0 @X0 0 e ]
+"25 ANALOG.c
+[; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
+[c E22175 0 1 2 3 .. ]
+[n E22175 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
+[v F22189 `(v ~T0 @X0 1 tf1`E22175 ]
+"227 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 227: __attribute__((inline)) void ADC_SelectContext(ADC_context_t context);
+[v _ADC_SelectContext `TF22189 ~T0 @X0 0 e ]
+"26 ANALOG.c
+[; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(channel_ANC0);
+[c E22164 4 16 17 18 59 60 61 62 63 .. ]
+[n E22164 . channel_ANA4 channel_ANC0 channel_ANC1 channel_ANC2 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+"378 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 378: adc_result_t ADC_GetSingleConversion(ADC_channel_t channel);
+[v _ADC_GetSingleConversion `(us ~T0 @X0 0 ef1`E22164 ]
+"24 ./ETC.h
+[; ;./ETC.h: 24: extern unsigned char ucAPPS1;
+[v _ucAPPS1 `uc ~T0 @X0 0 e ]
+"25
+[; ;./ETC.h: 25: extern unsigned char ucAPPS2;
+[v _ucAPPS2 `uc ~T0 @X0 0 e ]
+"26
+[; ;./ETC.h: 26: extern unsigned char ucTPS1;
+[v _ucTPS1 `uc ~T0 @X0 0 e ]
+"27
+[; ;./ETC.h: 27: extern unsigned char ucTPS2;
+[v _ucTPS2 `uc ~T0 @X0 0 e ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3528,112 +3546,236 @@ Version 4.0 HI-TECH Software Intermediate Code
 "68860
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 68860: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"13 TEMPORIZATIONS.c
-[; ;TEMPORIZATIONS.c: 13: unsigned char ucCount500ms;
-[v _ucCount500ms `uc ~T0 @X0 1 e ]
-"14
-[; ;TEMPORIZATIONS.c: 14: unsigned char ucCount1s;
-[v _ucCount1s `uc ~T0 @X0 1 e ]
-"15
-[; ;TEMPORIZATIONS.c: 15: unsigned char ucCount10s;
-[v _ucCount10s `uc ~T0 @X0 1 e ]
+"15 ANALOG.c
+[; ;ANALOG.c: 15: unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
+[v _ANALOG_GetVoltage `(ui ~T0 @X0 1 ef1`uc ]
 "16
-[; ;TEMPORIZATIONS.c: 16: unsigned int uiCount30s;
-[v _uiCount30s `ui ~T0 @X0 1 e ]
-"17
-[; ;TEMPORIZATIONS.c: 17: unsigned int uiCount1min;
-[v _uiCount1min `ui ~T0 @X0 1 e ]
-"21
-[; ;TEMPORIZATIONS.c: 21: void TEMPORIZATION_10ms (void)
-[v _TEMPORIZATION_10ms `(v ~T0 @X0 1 ef ]
-"22
-[; ;TEMPORIZATIONS.c: 22: {
+[; ;ANALOG.c: 16: {
 {
-[e :U _TEMPORIZATION_10ms ]
+[e :U _ANALOG_GetVoltage ]
+"15
+[; ;ANALOG.c: 15: unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
+[v _ucEntradaAnalogica `uc ~T0 @X0 1 r1 ]
+"16
+[; ;ANALOG.c: 16: {
 [f ]
+"17
+[; ;ANALOG.c: 17:     uint16_t uiValorAnalog;
+[v _uiValorAnalog `us ~T0 @X0 1 a ]
+"18
+[; ;ANALOG.c: 18:     uint16_t uiValorVoltage;
+[v _uiValorVoltage `us ~T0 @X0 1 a ]
+"19
+[; ;ANALOG.c: 19:     unsigned char ucFlag;
+[v _ucFlag `uc ~T0 @X0 1 a ]
+"21
+[; ;ANALOG.c: 21:     switch (ucEntradaAnalogica)
+[e $U 3178  ]
+"22
+[; ;ANALOG.c: 22:     {
+{
+"23
+[; ;ANALOG.c: 23:         case 3:
+[e :U 3179 ]
 "24
-[; ;TEMPORIZATIONS.c: 24: }
+[; ;ANALOG.c: 24:             ADC_DisableChannelSequencer();
+[e ( _ADC_DisableChannelSequencer ..  ]
+"25
+[; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
+[e ( _ADC_SelectContext (1 . `E22175 0 ]
+"26
+[; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(channel_ANC0);
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22164 1 ]
+"27
+[; ;ANALOG.c: 27:             ucFlag = 1;
+[e = _ucFlag -> -> 1 `i `uc ]
+"28
+[; ;ANALOG.c: 28:             break;
+[e $U 3177  ]
+"29
+[; ;ANALOG.c: 29:         case 4:
+[e :U 3180 ]
+"30
+[; ;ANALOG.c: 30:             ADC_DisableChannelSequencer();
+[e ( _ADC_DisableChannelSequencer ..  ]
+"31
+[; ;ANALOG.c: 31:             ADC_SelectContext(CONTEXT_TPS2);
+[e ( _ADC_SelectContext (1 . `E22175 1 ]
+"32
+[; ;ANALOG.c: 32:             uiValorAnalog = ADC_GetSingleConversion(channel_ANA4);
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22164 0 ]
+"33
+[; ;ANALOG.c: 33:             ucFlag = 1;
+[e = _ucFlag -> -> 1 `i `uc ]
+"34
+[; ;ANALOG.c: 34:             break;
+[e $U 3177  ]
+"35
+[; ;ANALOG.c: 35:         case 1:
+[e :U 3181 ]
+"36
+[; ;ANALOG.c: 36:             ADC_DisableChannelSequencer();
+[e ( _ADC_DisableChannelSequencer ..  ]
+"37
+[; ;ANALOG.c: 37:             ADC_SelectContext(CONTEXT_APPS1);
+[e ( _ADC_SelectContext (1 . `E22175 2 ]
+"38
+[; ;ANALOG.c: 38:             uiValorAnalog = ADC_GetSingleConversion(channel_ANC2);
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22164 3 ]
+"39
+[; ;ANALOG.c: 39:             ucFlag = 1;
+[e = _ucFlag -> -> 1 `i `uc ]
+"40
+[; ;ANALOG.c: 40:             break;
+[e $U 3177  ]
+"41
+[; ;ANALOG.c: 41:         case 2:
+[e :U 3182 ]
+"42
+[; ;ANALOG.c: 42:             ADC_DisableChannelSequencer();
+[e ( _ADC_DisableChannelSequencer ..  ]
+"43
+[; ;ANALOG.c: 43:             ADC_SelectContext(CONTEXT_APPS2);
+[e ( _ADC_SelectContext (1 . `E22175 3 ]
+"44
+[; ;ANALOG.c: 44:             uiValorAnalog = ADC_GetSingleConversion(channel_ANC1);
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22164 2 ]
+"45
+[; ;ANALOG.c: 45:             ucFlag = 1;
+[e = _ucFlag -> -> 1 `i `uc ]
+"46
+[; ;ANALOG.c: 46:             break;
+[e $U 3177  ]
+"47
+[; ;ANALOG.c: 47:         default:
+[e :U 3183 ]
+"48
+[; ;ANALOG.c: 48:             ucFlag = 2;
+[e = _ucFlag -> -> 2 `i `uc ]
+"49
+[; ;ANALOG.c: 49:             break;
+[e $U 3177  ]
+"50
+[; ;ANALOG.c: 50:     }
+}
+[e $U 3177  ]
+[e :U 3178 ]
+[e [\ -> _ucEntradaAnalogica `i , $ -> 3 `i 3179
+ , $ -> 4 `i 3180
+ , $ -> 1 `i 3181
+ , $ -> 2 `i 3182
+ 3183 ]
+[e :U 3177 ]
+"52
+[; ;ANALOG.c: 52:     if ( ucFlag == 1 )
+[e $ ! == -> _ucFlag `i -> 1 `i 3184  ]
+"53
+[; ;ANALOG.c: 53:     {
+{
+"54
+[; ;ANALOG.c: 54:         if ( uiValorAnalog <= 6 )
+[e $ ! <= -> _uiValorAnalog `ui -> -> 6 `i `ui 3185  ]
+"55
+[; ;ANALOG.c: 55:         {
+{
+"56
+[; ;ANALOG.c: 56:             uiValorVoltage = 0;
+[e = _uiValorVoltage -> -> 0 `i `us ]
+"57
+[; ;ANALOG.c: 57:         }
+}
+[e $U 3186  ]
+"58
+[; ;ANALOG.c: 58:         else
+[e :U 3185 ]
+"59
+[; ;ANALOG.c: 59:         {
+{
+"62
+[; ;ANALOG.c: 62:             uiValorVoltage = (1*uiValorAnalog);
+[e = _uiValorVoltage -> * -> -> 1 `i `ui -> _uiValorAnalog `ui `us ]
+"63
+[; ;ANALOG.c: 63:             uiValorVoltage = uiValorVoltage - 5;
+[e = _uiValorVoltage -> - -> _uiValorVoltage `ui -> -> 5 `i `ui `us ]
+"64
+[; ;ANALOG.c: 64:         }
+}
+[e :U 3186 ]
+"66
+[; ;ANALOG.c: 66:         if ( uiValorVoltage > 5000 )
+[e $ ! > -> _uiValorVoltage `ui -> -> 5000 `i `ui 3187  ]
+"67
+[; ;ANALOG.c: 67:         {
+{
+"70
+[; ;ANALOG.c: 70:         }
+}
+[e $U 3188  ]
+"71
+[; ;ANALOG.c: 71:         else
+[e :U 3187 ]
+"72
+[; ;ANALOG.c: 72:         {
+{
+"73
+[; ;ANALOG.c: 73:             return (uiValorVoltage);
+[e ) -> _uiValorVoltage `ui ]
+[e $UE 3176  ]
+"74
+[; ;ANALOG.c: 74:         }
+}
+[e :U 3188 ]
+"75
+[; ;ANALOG.c: 75:     }
+}
+[e $U 3189  ]
+"76
+[; ;ANALOG.c: 76:     else if ( ucFlag == 2 )
+[e :U 3184 ]
+[e $ ! == -> _ucFlag `i -> 2 `i 3190  ]
+"77
+[; ;ANALOG.c: 77:     {
+{
+"80
+[; ;ANALOG.c: 80:     }
+}
+[e $U 3191  ]
+"81
+[; ;ANALOG.c: 81:     else
+[e :U 3190 ]
+"82
+[; ;ANALOG.c: 82:     {
+{
+"84
+[; ;ANALOG.c: 84:     }
+}
+[e :U 3191 ]
+[e :U 3189 ]
+"86
+[; ;ANALOG.c: 86: }
 [e :UE 3176 ]
 }
-"26
-[; ;TEMPORIZATIONS.c: 26: void TEMPORIZATION_100ms (void)
-[v _TEMPORIZATION_100ms `(v ~T0 @X0 1 ef ]
-"27
-[; ;TEMPORIZATIONS.c: 27: {
+"89
+[; ;ANALOG.c: 89: void ANALOGRead (void)
+[v _ANALOGRead `(v ~T0 @X0 1 ef ]
+"90
+[; ;ANALOG.c: 90: {
 {
-[e :U _TEMPORIZATION_100ms ]
+[e :U _ANALOGRead ]
 [f ]
-"29
-[; ;TEMPORIZATIONS.c: 29:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
-"30
-[; ;TEMPORIZATIONS.c: 30: }
-[e :UE 3177 ]
-}
-"32
-[; ;TEMPORIZATIONS.c: 32: void TEMPORIZATION_500ms (void)
-[v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
-"33
-[; ;TEMPORIZATIONS.c: 33: {
-{
-[e :U _TEMPORIZATION_500ms ]
-[f ]
-"34
-[; ;TEMPORIZATIONS.c: 34:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-[e :U 3181 ]
-{
-[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
-}
-[e :U 3180 ]
-"35
-[; ;TEMPORIZATIONS.c: 35: }
-[e :UE 3178 ]
-}
-"37
-[; ;TEMPORIZATIONS.c: 37: void TEMPORIZATION_1s (void)
-[v _TEMPORIZATION_1s `(v ~T0 @X0 1 ef ]
-"38
-[; ;TEMPORIZATIONS.c: 38: {
-{
-[e :U _TEMPORIZATION_1s ]
-[f ]
-"40
-[; ;TEMPORIZATIONS.c: 40: }
-[e :UE 3182 ]
-}
-"42
-[; ;TEMPORIZATIONS.c: 42: void TEMPORIZATION_10s (void)
-[v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
-"43
-[; ;TEMPORIZATIONS.c: 43: {
-{
-[e :U _TEMPORIZATION_10s ]
-[f ]
-"45
-[; ;TEMPORIZATIONS.c: 45: }
-[e :UE 3183 ]
-}
-"47
-[; ;TEMPORIZATIONS.c: 47: void TEMPORIZATION_30s (void)
-[v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
-"48
-[; ;TEMPORIZATIONS.c: 48: {
-{
-[e :U _TEMPORIZATION_30s ]
-[f ]
-"50
-[; ;TEMPORIZATIONS.c: 50: }
-[e :UE 3184 ]
-}
-"52
-[; ;TEMPORIZATIONS.c: 52: void TEMPORIZATION_1mins (void)
-[v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
-"53
-[; ;TEMPORIZATIONS.c: 53: {
-{
-[e :U _TEMPORIZATION_1mins ]
-[f ]
-"55
-[; ;TEMPORIZATIONS.c: 55: }
-[e :UE 3185 ]
+"91
+[; ;ANALOG.c: 91:     ucAPPS1 = ANALOG_GetVoltage (1);
+[e = _ucAPPS1 -> ( _ANALOG_GetVoltage (1 -> -> 1 `i `uc `uc ]
+"92
+[; ;ANALOG.c: 92:     ucAPPS2 = ANALOG_GetVoltage (2);
+[e = _ucAPPS2 -> ( _ANALOG_GetVoltage (1 -> -> 2 `i `uc `uc ]
+"93
+[; ;ANALOG.c: 93:     ucTPS1 = ANALOG_GetVoltage (3);
+[e = _ucTPS1 -> ( _ANALOG_GetVoltage (1 -> -> 3 `i `uc `uc ]
+"94
+[; ;ANALOG.c: 94:     ucTPS2 = ANALOG_GetVoltage (4);
+[e = _ucTPS2 -> ( _ANALOG_GetVoltage (1 -> -> 4 `i `uc `uc ]
+"95
+[; ;ANALOG.c: 95: }
+[e :UE 3192 ]
 }

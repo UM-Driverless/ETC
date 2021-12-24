@@ -11,6 +11,8 @@ mcc_generated_files/tmr0.h  \
 mcc_generated_files/ext_int.h  \
 mcc_generated_files/can1.h  \
 mcc_generated_files/can_types.h  \
+mcc_generated_files/drivers/i2c_simple_master.h  \
 mcc_generated_files/pwm2_16bit.h  \
+mcc_generated_files/DAC3.h  \
 mcc_generated_files/pwm1_16bit.h  \
 MESSAGES.h 

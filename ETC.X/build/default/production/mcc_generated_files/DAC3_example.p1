@@ -1,17 +1,19 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"35 ./CLUTCH.h
-[; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
-[v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
-"1480 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
-[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
-[s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3061 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"1479
-[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1479:     struct {
-[u S3060 `S3061 1 ]
-[n S3060 . . ]
-"1491
-[v _LATAbits `VS3060 ~T0 @X0 0 e@1214 ]
+"29 mcc_generated_files/DAC3.h
+[; ;mcc_generated_files/DAC3.h: 29: void DAC3_SetNonvolatile(uint16_t dacValue);
+[v _DAC3_SetNonvolatile `(v ~T0 @X0 0 ef1`us ]
+"111 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\stdio.h
+[v _printf `(i ~T0 @X0 0 ev`*Cuc ]
+[v F183 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
+[v __delay `JF183 ~T0 @X0 0 e ]
+[p i __delay ]
+"32 mcc_generated_files/DAC3.h
+[; ;mcc_generated_files/DAC3.h: 32: void DAC3_Set(uint16_t dacValue);
+[v _DAC3_Set `(v ~T0 @X0 0 ef1`us ]
+"34
+[; ;mcc_generated_files/DAC3.h: 34: uint16_t DAC3_Read(uint16_t *dacNonvolatile);
+[v _DAC3_Read `(us ~T0 @X0 0 ef1`*us ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3528,112 +3530,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 "68860
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 68860: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"13 TEMPORIZATIONS.c
-[; ;TEMPORIZATIONS.c: 13: unsigned char ucCount500ms;
-[v _ucCount500ms `uc ~T0 @X0 1 e ]
-"14
-[; ;TEMPORIZATIONS.c: 14: unsigned char ucCount1s;
-[v _ucCount1s `uc ~T0 @X0 1 e ]
-"15
-[; ;TEMPORIZATIONS.c: 15: unsigned char ucCount10s;
-[v _ucCount10s `uc ~T0 @X0 1 e ]
-"16
-[; ;TEMPORIZATIONS.c: 16: unsigned int uiCount30s;
-[v _uiCount30s `ui ~T0 @X0 1 e ]
-"17
-[; ;TEMPORIZATIONS.c: 17: unsigned int uiCount1min;
-[v _uiCount1min `ui ~T0 @X0 1 e ]
-"21
-[; ;TEMPORIZATIONS.c: 21: void TEMPORIZATION_10ms (void)
-[v _TEMPORIZATION_10ms `(v ~T0 @X0 1 ef ]
-"22
-[; ;TEMPORIZATIONS.c: 22: {
-{
-[e :U _TEMPORIZATION_10ms ]
-[f ]
-"24
-[; ;TEMPORIZATIONS.c: 24: }
-[e :UE 3176 ]
-}
-"26
-[; ;TEMPORIZATIONS.c: 26: void TEMPORIZATION_100ms (void)
-[v _TEMPORIZATION_100ms `(v ~T0 @X0 1 ef ]
-"27
-[; ;TEMPORIZATIONS.c: 27: {
-{
-[e :U _TEMPORIZATION_100ms ]
-[f ]
+"28 mcc_generated_files/DAC3_example.c
+[; ;mcc_generated_files/DAC3_example.c: 28: void DAC3_example(void)
+[v _DAC3_example `(v ~T0 @X0 1 ef ]
 "29
-[; ;TEMPORIZATIONS.c: 29:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
+[; ;mcc_generated_files/DAC3_example.c: 29: {
+{
+[e :U _DAC3_example ]
+[f ]
 "30
-[; ;TEMPORIZATIONS.c: 30: }
-[e :UE 3177 ]
-}
-"32
-[; ;TEMPORIZATIONS.c: 32: void TEMPORIZATION_500ms (void)
-[v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
+[; ;mcc_generated_files/DAC3_example.c: 30:     float voltage;
+[v _voltage `f ~T0 @X0 1 a ]
+"31
+[; ;mcc_generated_files/DAC3_example.c: 31:     float readVoltage, readNonvolatileVoltage;
+[v _readVoltage `f ~T0 @X0 1 a ]
+[v _readNonvolatileVoltage `f ~T0 @X0 1 a ]
 "33
-[; ;TEMPORIZATIONS.c: 33: {
-{
-[e :U _TEMPORIZATION_500ms ]
-[f ]
-"34
-[; ;TEMPORIZATIONS.c: 34:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-[e :U 3181 ]
-{
-[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
-}
-[e :U 3180 ]
-"35
-[; ;TEMPORIZATIONS.c: 35: }
-[e :UE 3178 ]
-}
-"37
-[; ;TEMPORIZATIONS.c: 37: void TEMPORIZATION_1s (void)
-[v _TEMPORIZATION_1s `(v ~T0 @X0 1 ef ]
+[; ;mcc_generated_files/DAC3_example.c: 33:     uint16_t dacVoltage, dacNonvolatileVoltage;
+[v _dacVoltage `us ~T0 @X0 1 a ]
+[v _dacNonvolatileVoltage `us ~T0 @X0 1 a ]
+"36
+[; ;mcc_generated_files/DAC3_example.c: 36:     voltage = 1;
+[e = _voltage -> -> 1 `i `f ]
 "38
-[; ;TEMPORIZATIONS.c: 38: {
-{
-[e :U _TEMPORIZATION_1s ]
-[f ]
-"40
-[; ;TEMPORIZATIONS.c: 40: }
-[e :UE 3182 ]
-}
-"42
-[; ;TEMPORIZATIONS.c: 42: void TEMPORIZATION_10s (void)
-[v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
+[; ;mcc_generated_files/DAC3_example.c: 38:     dacNonvolatileVoltage = (4096*voltage)/5;
+[e = _dacNonvolatileVoltage -> / * -> -> 4096 `i `f _voltage -> -> 5 `i `f `us ]
+"39
+[; ;mcc_generated_files/DAC3_example.c: 39:     DAC3_SetNonvolatile(dacNonvolatileVoltage);
+[e ( _DAC3_SetNonvolatile (1 _dacNonvolatileVoltage ]
+"41
+[; ;mcc_generated_files/DAC3_example.c: 41:     printf("Set the non-volatile voltage to 1V \n");
+[e ( _printf :s 1C ]
 "43
-[; ;TEMPORIZATIONS.c: 43: {
-{
-[e :U _TEMPORIZATION_10s ]
-[f ]
-"45
-[; ;TEMPORIZATIONS.c: 45: }
-[e :UE 3183 ]
-}
+[; ;mcc_generated_files/DAC3_example.c: 43:     _delay((unsigned long)((100)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"46
+[; ;mcc_generated_files/DAC3_example.c: 46:     voltage = 2;
+[e = _voltage -> -> 2 `i `f ]
 "47
-[; ;TEMPORIZATIONS.c: 47: void TEMPORIZATION_30s (void)
-[v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
+[; ;mcc_generated_files/DAC3_example.c: 47:     dacVoltage = (4096*voltage)/5;
+[e = _dacVoltage -> / * -> -> 4096 `i `f _voltage -> -> 5 `i `f `us ]
 "48
-[; ;TEMPORIZATIONS.c: 48: {
-{
-[e :U _TEMPORIZATION_30s ]
-[f ]
+[; ;mcc_generated_files/DAC3_example.c: 48:     DAC3_Set(dacVoltage);
+[e ( _DAC3_Set (1 _dacVoltage ]
 "50
-[; ;TEMPORIZATIONS.c: 50: }
-[e :UE 3184 ]
-}
+[; ;mcc_generated_files/DAC3_example.c: 50:     _delay((unsigned long)((100)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
 "52
-[; ;TEMPORIZATIONS.c: 52: void TEMPORIZATION_1mins (void)
-[v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
-"53
-[; ;TEMPORIZATIONS.c: 53: {
-{
-[e :U _TEMPORIZATION_1mins ]
-[f ]
-"55
-[; ;TEMPORIZATIONS.c: 55: }
-[e :UE 3185 ]
+[; ;mcc_generated_files/DAC3_example.c: 52:     printf("Set the volatile voltage to 2V \n");
+[e ( _printf :s 2C ]
+"54
+[; ;mcc_generated_files/DAC3_example.c: 54:     dacVoltage = DAC3_Read(&dacNonvolatileVoltage);
+[e = _dacVoltage ( _DAC3_Read (1 &U _dacNonvolatileVoltage ]
+"57
+[; ;mcc_generated_files/DAC3_example.c: 57:     readVoltage = dacVoltage / 819.2;
+[e = _readVoltage -> / -> -> _dacVoltage `ui `d .819.2 `f ]
+"58
+[; ;mcc_generated_files/DAC3_example.c: 58:     readNonvolatileVoltage = dacNonvolatileVoltage / 819.2;
+[e = _readNonvolatileVoltage -> / -> -> _dacNonvolatileVoltage `ui `d .819.2 `f ]
+"60
+[; ;mcc_generated_files/DAC3_example.c: 60:     printf("Read: non-volatile voltage value %f, and volatile voltage value %f", readNonvolatileVoltage, readVoltage);
+[e ( _printf , , (. :s 3C -> _readNonvolatileVoltage `d -> _readVoltage `d ]
+"62
+[; ;mcc_generated_files/DAC3_example.c: 62:     _delay((unsigned long)((100)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"63
+[; ;mcc_generated_files/DAC3_example.c: 63: }
+[e :UE 3181 ]
 }
+[p f _printf 8396800 ]
+[a 3C 82 101 97 100 58 32 110 111 110 45 118 111 108 97 116 105 108 101 32 118 111 108 116 97 103 101 32 118 97 108 117 101 32 37 102 44 32 97 110 100 32 118 111 108 97 116 105 108 101 32 118 111 108 116 97 103 101 32 118 97 108 117 101 32 37 102 0 ]
+[a 2C 83 101 116 32 116 104 101 32 118 111 108 97 116 105 108 101 32 118 111 108 116 97 103 101 32 116 111 32 50 86 32 10 0 ]
+[a 1C 83 101 116 32 116 104 101 32 110 111 110 45 118 111 108 97 116 105 108 101 32 118 111 108 116 97 103 101 32 116 111 32 49 86 32 10 0 ]

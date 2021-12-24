@@ -7,6 +7,8 @@
 
 #include "MESSAGES.h"
 #include "mcc_generated_files/mcc.h"
+#include "ETC.h"
+#include "CLUTCH.h"
 
 //VARIABLES
 unsigned char CANDATAdata[8] = CAN_TX_BUFF;
@@ -131,8 +133,9 @@ void CANReadMessage (void)
                     ucTargetBrake = data3;
                     ucTargetDirection = data4;
                     ucTargetGear = data5;
-                    //APLY ucTargetBrake TO DUTYCYCLE SERVO
-                    //SERVICEBRAKE_Move(ucTargetBrake);
+                    //Mover embrague y APPS según lleguen
+                    //CLUTCH_Move(ucTargetClutch);
+                    //APPSSend(ucTargetAccelerator);
                     break;
                 case DV_SYSTEM_STATUS:
                     ucAS_state = ( data1 & 0x07 );
@@ -158,6 +161,9 @@ void CANReadMessage (void)
                     uiAcc_longitudinal = ( ( data2 << 8 ) | data1 );
                     uiAcc_lateral = ( ( data4 << 8 ) | data3 );
                     uiYaw_rate = ( ( data6 << 8 ) | data5 );;
+                    break;
+                case PMC_STATE:
+                    ucASMode = data1;
                     break;
                 default:
                     Nop();

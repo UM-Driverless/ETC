@@ -72,9 +72,9 @@ void TPSReadmax (void)
 }
 
 //Ejecutar cada vez que llegue el mensaje de modo autonomo
-void ETCModeSelect (unsigned char ucASmode)
+void ETCModeSelect (unsigned char ucModeSelect)
 {
-    switch (ucASmode)
+    switch (ucModeSelect)
     {
         case ASMode:
             //Iniciar con 0%

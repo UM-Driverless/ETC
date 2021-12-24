@@ -29,6 +29,7 @@
       <itemPath>GPIO.h</itemPath>
       <itemPath>PARAMETERS.h</itemPath>
       <itemPath>TEMPORIZATIONS.h</itemPath>
+      <itemPath>ETC.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -62,6 +63,7 @@
       <itemPath>GPIO.c</itemPath>
       <itemPath>PARAMETERS.c</itemPath>
       <itemPath>TEMPORIZATIONS.c</itemPath>
+      <itemPath>ETC.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

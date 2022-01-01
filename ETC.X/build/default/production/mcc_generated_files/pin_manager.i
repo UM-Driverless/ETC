@@ -37557,7 +37557,6 @@ void PIN_MANAGER_Initialize(void)
     RC4PPS = 0x38;
     CANRXPPS = 0x0B;
     RB4PPS = 0x46;
-    INT2PPS = 0x0A;
     I2C1SCLPPS = 0x13;
 }
 

@@ -37765,10 +37765,10 @@ typedef uint16_t adc_result_t;
 
 typedef enum
 {
-    channel_ANA4 = 0x4,
-    channel_ANC0 = 0x10,
-    channel_ANC1 = 0x11,
-    channel_ANC2 = 0x12,
+    TPS2 = 0x4,
+    TPS1 = 0x10,
+    APPS2 = 0x11,
+    APPS1 = 0x12,
     channel_VSS = 0x3B,
     channel_Temp = 0x3C,
     channel_DAC1 = 0x3D,
@@ -37974,21 +37974,6 @@ extern void (*TMR0_InterruptHandler)(void);
 void TMR0_DefaultInterruptHandler(void);
 # 59 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/ext_int.h" 1
-# 250 "./mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-# 272 "./mcc_generated_files/ext_int.h"
-void INT2_ISR(void);
-# 296 "./mcc_generated_files/ext_int.h"
-void INT2_CallBack(void);
-# 319 "./mcc_generated_files/ext_int.h"
-void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 343 "./mcc_generated_files/ext_int.h"
-extern void (*INT2_InterruptHandler)(void);
-# 367 "./mcc_generated_files/ext_int.h"
-void INT2_DefaultInterruptHandler(void);
-# 60 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/can1.h" 1
 # 56 "./mcc_generated_files/can1.h"
 # 1 "./mcc_generated_files/can_types.h" 1
@@ -38162,7 +38147,7 @@ void CAN1_SetTXQnullHandler(void (*handler)(void));
 
 void CAN1_ISR(void);
 void CAN1_RXI_ISR(void);
-# 61 "./mcc_generated_files/mcc.h" 2
+# 60 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
 # 37 "./mcc_generated_files/drivers/i2c_simple_master.h"
@@ -38174,7 +38159,7 @@ void i2c_write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
 void i2c_writeNBytes(i2c1_address_t address, void* data, size_t len);
 void i2c_readDataBlock(i2c1_address_t address, uint8_t reg, void *data, size_t len);
 void i2c_readNBytes(i2c1_address_t address, void *data, size_t len);
-# 62 "./mcc_generated_files/mcc.h" 2
+# 61 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pwm2_16bit.h" 1
 # 63 "./mcc_generated_files/pwm2_16bit.h"
@@ -38216,7 +38201,7 @@ void PWM2_16BIT_Slice1Output1_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM2_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void));
 # 222 "./mcc_generated_files/pwm2_16bit.h"
 void PWM2_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
-# 63 "./mcc_generated_files/mcc.h" 2
+# 62 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/DAC3.h" 1
 # 29 "./mcc_generated_files/DAC3.h"
@@ -38226,7 +38211,7 @@ void DAC3_SetNonvolatile(uint16_t dacValue);
 void DAC3_Set(uint16_t dacValue);
 
 uint16_t DAC3_Read(uint16_t *dacNonvolatile);
-# 64 "./mcc_generated_files/mcc.h" 2
+# 63 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/pwm1_16bit.h" 1
 # 63 "./mcc_generated_files/pwm1_16bit.h"
@@ -38268,12 +38253,12 @@ void PWM1_16BIT_Slice1Output1_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM1_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void));
 # 222 "./mcc_generated_files/pwm1_16bit.h"
 void PWM1_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
-# 65 "./mcc_generated_files/mcc.h" 2
-# 80 "./mcc_generated_files/mcc.h"
+# 64 "./mcc_generated_files/mcc.h" 2
+# 79 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 93 "./mcc_generated_files/mcc.h"
+# 92 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 106 "./mcc_generated_files/mcc.h"
+# 105 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 16 "./MESSAGES.h" 2
 
@@ -38284,6 +38269,7 @@ void PMD_Initialize(void);
 
 CAN_MSG_OBJ msgTransmit;
 CAN_MSG_OBJ msgReceipt;
+uint8_t CANDATAdata[8];
 
 
 extern unsigned char CANDATAdata[8];
@@ -38318,15 +38304,63 @@ extern unsigned int uiYaw_rate;
 
 extern unsigned char ucASBState;
 extern unsigned char ucASRequesState;
-# 84 "./MESSAGES.h"
+
+extern unsigned char ucASMode;
+
+extern unsigned char ucSTEER_WH_Clutch;
+# 95 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
 # 8 "MESSAGES.C" 2
 
 
+# 1 "./ETC.h" 1
+# 16 "./ETC.h"
+extern unsigned char ucAPPS1min;
+extern unsigned char ucAPPS1max;
+extern unsigned char ucAPPS2min;
+extern unsigned char ucAPPS2max;
+extern unsigned char ucTPS1min;
+extern unsigned char ucTPS1max;
+extern unsigned char ucTPS2min;
+extern unsigned char ucTPS2max;
+extern unsigned char ucAPPS1;
+extern unsigned char ucAPPS2;
+extern unsigned char ucTPS1;
+extern unsigned char ucTPS2;
 
 
-unsigned char CANDATAdata[8] = {0,0,0,0,0,0,0,0};
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin (void);
+void APPSReadmax (void);
+void TPSReadmin (void);
+void TPSReadmax (void);
+void ETCModeSelect (unsigned char ucModeSelect);
+void ETCRulesSupervision(void);
+# 10 "MESSAGES.C" 2
+
+# 1 "./CLUTCH.h" 1
+# 26 "./CLUTCH.h"
+extern unsigned char ucCLUTCHlmin;
+extern unsigned char ucCLUTCHlmax;
+extern unsigned char ucCLUTCHDuty;
+extern unsigned char ucCLUTCHState;
+
+
+
+void CLUTCH_Init (void);
+void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
+void CLUTCH_AnalyseState (void);
+# 11 "MESSAGES.C" 2
+
+# 1 "./PARAMETERS.h" 1
+# 12 "MESSAGES.C" 2
+
+
+
+
+uint8_t CANDATAdata[8];
+
 
 unsigned char ucTargetAccelerator;
 unsigned char ucTargetClutch;
@@ -38359,6 +38393,10 @@ unsigned int uiYaw_rate;
 unsigned char ucASBState;
 unsigned char ucASRequesState;
 
+unsigned char ucASMode;
+
+unsigned char ucSTEER_WH_Clutch;
+
 
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8)
 {
@@ -38375,10 +38413,27 @@ void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char d
     msgTransmit.field.formatType = CAN_2_0_FORMAT;
     msgTransmit.field.brs = CAN_NON_BRS_MODE;
     msgTransmit.field.frameType = CAN_FRAME_DATA;
-    msgTransmit.field.idType = CAN_FRAME_EXT;
+    msgTransmit.field.idType = CAN_FRAME_STD;
     msgTransmit.field.dlc = ( dataLength & 0x0F );
     msgTransmit.data = CANDATAdata;
-# 86 "MESSAGES.C"
+
+    if(CAN1_IsBusOff() == 0x01)
+    {
+        __nop();
+    }
+    if(CAN1_IsTxErrorPassive() == 0x01)
+    {
+        __nop();
+    }
+    if(CAN1_IsTxErrorWarning() == 0x01)
+    {
+        __nop();
+    }
+    if(CAN1_IsTxErrorActive() == 0x01)
+    {
+        __nop();
+    }
+
     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
     {
         CAN1_Transmit(TXQ, &msgTransmit);
@@ -38428,7 +38483,8 @@ void CANReadMessage (void)
                     ucTargetDirection = data4;
                     ucTargetGear = data5;
 
-
+                    CLUTCH_Move(ucTargetClutch, 1);
+                    APPSSend(ucTargetAccelerator);
                     break;
                 case 0x500:
                     ucAS_state = ( data1 & 0x07 );
@@ -38437,8 +38493,8 @@ void CANReadMessage (void)
                     ucSteering_state = ( data2 & 0x01 );
                     ucService_brake = ( data2 & 0x06 );
                     ucLap_counter = ( data2 & 0x78 );
-                    ucCones_count_actual = ( ( ( data3 & 0x7F ) << 1 ) | ( ( data2 & 0x80 ) >> 7 ) );
-                    uiCones_count_all = ( ( ( data5 & 0xFF ) << 8 ) | ( ( data4 & 0xFF ) << 1 ) | ( ( data3 & 0x80 ) >> 7 ) );
+
+
                     break;
                 case 0x501:
                     ucSpeed_actual = data1;
@@ -38451,9 +38507,17 @@ void CANReadMessage (void)
                     ucMotor_moment_target = data8;
                     break;
                 case 0x502:
-                    uiAcc_longitudinal = ( ( data2 << 8 ) | data1 );
-                    uiAcc_lateral = ( ( data4 << 8 ) | data3 );
-                    uiYaw_rate = ( ( data6 << 8 ) | data5 );;
+
+
+
+                    break;
+                case 0x345:
+                    ucASMode = data1;
+                    ETCModeSelect(ucASMode);
+                    break;
+                case 0x412:
+                    ucSTEER_WH_Clutch = data1;
+                    CLUTCH_Move(ucSTEER_WH_Clutch, 0);
                     break;
                 default:
                     __nop();

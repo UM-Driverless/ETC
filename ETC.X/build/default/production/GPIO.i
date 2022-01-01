@@ -16,6 +16,7 @@
 
 # 1 "./GPIO.h" 1
 # 16 "./GPIO.h"
+void GPIOInit (void);
 void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_INT2_desembragar (void);
 # 8 "GPIO.c" 2
@@ -37576,7 +37577,7 @@ extern unsigned char ucCLUTCHState;
 
 
 void CLUTCH_Init (void);
-void CLUTCH_Move (unsigned char ucTargetMove);
+void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState (void);
 # 12 "GPIO.c" 2
 
@@ -37588,6 +37589,19 @@ unsigned char ucCLUTCHlmax;
 unsigned char ucCLUTCHDuty;
 unsigned char ucCLUTCHState;
 
+
+
+void GPIOInit (void)
+{
+    do { TRISAbits.TRISA0 = 0; } while(0);
+    do { TRISBbits.TRISB2 = 1; } while(0);
+    do { TRISAbits.TRISA1 = 1; } while(0);
+    do { TRISAbits.TRISA5 = 0; } while(0);
+    do { TRISCbits.TRISC5 = 0; } while(0);
+    do { TRISCbits.TRISC6 = 0; } while(0);
+    do { TRISCbits.TRISC7 = 0; } while(0);
+    do { TRISBbits.TRISB5 = 0; } while(0);
+}
 
 
 
@@ -37610,6 +37624,7 @@ void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
     PWM1_16BIT_WritePeriodRegister(uiConvertedPeriod);
     PWM1_16BIT_LoadBufferRegisters();
 }
+
 
 
 void GPIO_INT2_desembragar (void)

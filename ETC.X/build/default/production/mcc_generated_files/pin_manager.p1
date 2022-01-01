@@ -89,9 +89,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24366
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 24366: extern volatile unsigned char RB4PPS __attribute__((address(0x20D)));
 [v _RB4PPS `Vuc ~T0 @X0 0 e@525 ]
-"25158
-[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 25158: extern volatile unsigned char INT2PPS __attribute__((address(0x240)));
-[v _INT2PPS `Vuc ~T0 @X0 0 e@576 ]
 "28975
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 28975: extern volatile unsigned char I2C1SCLPPS __attribute__((address(0x271)));
 [v _I2C1SCLPPS `Vuc ~T0 @X0 0 e@625 ]
@@ -3716,24 +3713,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 123:     RB4PPS = 0x46;
 [e = _RB4PPS -> -> 70 `i `uc ]
 "124
-[; ;mcc_generated_files/pin_manager.c: 124:     INT2PPS = 0x0A;
-[e = _INT2PPS -> -> 10 `i `uc ]
-"125
-[; ;mcc_generated_files/pin_manager.c: 125:     I2C1SCLPPS = 0x13;
+[; ;mcc_generated_files/pin_manager.c: 124:     I2C1SCLPPS = 0x13;
 [e = _I2C1SCLPPS -> -> 19 `i `uc ]
-"126
-[; ;mcc_generated_files/pin_manager.c: 126: }
+"125
+[; ;mcc_generated_files/pin_manager.c: 125: }
 [e :UE 3176 ]
 }
-"128
-[; ;mcc_generated_files/pin_manager.c: 128: void PIN_MANAGER_IOC(void)
+"127
+[; ;mcc_generated_files/pin_manager.c: 127: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"129
-[; ;mcc_generated_files/pin_manager.c: 129: {
+"128
+[; ;mcc_generated_files/pin_manager.c: 128: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"130
-[; ;mcc_generated_files/pin_manager.c: 130: }
+"129
+[; ;mcc_generated_files/pin_manager.c: 129: }
 [e :UE 3177 ]
 }

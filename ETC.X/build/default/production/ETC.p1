@@ -3546,6 +3546,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;./MESSAGES.h: 23: CAN_MSG_OBJ msgReceipt;
 [v _msgReceipt `S3180 ~T0 @X0 1 e ]
+"24
+[; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
+[v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
 "13 ETC.c
 [; ;ETC.c: 13: unsigned char ucAPPS1min;
 [v _ucAPPS1min `uc ~T0 @X0 1 e ]
@@ -3691,26 +3694,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 3185 ]
 }
 "75
-[; ;ETC.c: 75: void ETCModeSelect (unsigned char ucASmode)
+[; ;ETC.c: 75: void ETCModeSelect (unsigned char ucModeSelect)
 [v _ETCModeSelect `(v ~T0 @X0 1 ef1`uc ]
 "76
 [; ;ETC.c: 76: {
 {
 [e :U _ETCModeSelect ]
 "75
-[; ;ETC.c: 75: void ETCModeSelect (unsigned char ucASmode)
-[v _ucASmode `uc ~T0 @X0 1 r1 ]
+[; ;ETC.c: 75: void ETCModeSelect (unsigned char ucModeSelect)
+[v _ucModeSelect `uc ~T0 @X0 1 r1 ]
 "76
 [; ;ETC.c: 76: {
 [f ]
 "77
-[; ;ETC.c: 77:     switch (ucASmode)
+[; ;ETC.c: 77:     switch (ucModeSelect)
 [e $U 3188  ]
 "78
 [; ;ETC.c: 78:     {
 {
 "79
-[; ;ETC.c: 79:         case 2:
+[; ;ETC.c: 79:         case 1:
 [e :U 3189 ]
 "81
 [; ;ETC.c: 81:             APPSSend(0x00);
@@ -3726,7 +3729,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ETC.c: 83:             break;
 [e $U 3187  ]
 "84
-[; ;ETC.c: 84:         case 1:
+[; ;ETC.c: 84:         case 0:
 [e :U 3193 ]
 "85
 [; ;ETC.c: 85:             do { LATAbits.LATA5 = 0; } while(0);
@@ -3756,8 +3759,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 3187  ]
 [e :U 3188 ]
-[e [\ -> _ucASmode `i , $ -> 2 `i 3189
- , $ -> 1 `i 3193
+[e [\ -> _ucModeSelect `i , $ -> 1 `i 3189
+ , $ -> 0 `i 3193
  3197 ]
 [e :U 3187 ]
 "91

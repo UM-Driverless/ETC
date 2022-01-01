@@ -17,10 +17,11 @@ extern "C" {
     
     
 //DEFINICION DE CONSTANTES    
-#define CAN_TX_BUFF  {0,0,0,0,0,0,0,0}
+#define CAN_TX_BUFF  "BUFFERCAN"
  
 CAN_MSG_OBJ msgTransmit;
 CAN_MSG_OBJ msgReceipt;
+uint8_t CANDATAdata[8];
 
 //VARIABLES
 extern unsigned char CANDATAdata[8];
@@ -55,6 +56,10 @@ extern unsigned int uiYaw_rate;
 //ASB_STATE
 extern unsigned char ucASBState;
 extern unsigned char ucASRequesState;
+//PMC STATE
+extern unsigned char ucASMode;
+//STEERING WHEELL
+extern unsigned char ucSTEER_WH_Clutch;
 
 //DEFINICIONES
 #define DataLength_0        			0
@@ -80,6 +85,11 @@ extern unsigned char ucASRequesState;
 #define ASB_SIGNALS                 0x361
 #define ASB_STATE                   0x362
 #define PMC_STATE                   0x345
+//STEERING WHEELL 
+#define STEER_WH_CONT               0x412
+//ETC
+#define ETC_SIGNAL                  0x330
+#define ETC_STATE                   0x331
     
 //DEFINICION DE FUNCIONES    
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);

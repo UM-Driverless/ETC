@@ -71,8 +71,8 @@ void PWM2_16BIT_Initialize(void)
     //PWMLDS Autoload disabled; 
     PWM2LDS = 0x00;
 
-    //PWMPRL 124; 
-    PWM2PRL = 0x7C;
+    //PWMPRL 61; 
+    PWM2PRL = 0x3D;
 
     //PWMPRH 0; 
     PWM2PRH = 0x00;
@@ -92,14 +92,14 @@ void PWM2_16BIT_Initialize(void)
     //PWMPOL2 disabled; PWMPOL1 disabled; PWMPPEN disabled; PWMMODE Left aligned mode; 
     PWM2S1CFG = 0x00;
 
-    //PWMS1P1L 62; 
-    PWM2S1P1L = 0x3E;
+    //PWMS1P1L 31; 
+    PWM2S1P1L = 0x1F;
 
     //PWMS1P1H 0; 
     PWM2S1P1H = 0x00;
 
-    //PWMS1P2L 62; 
-    PWM2S1P2L = 0x3E;
+    //PWMS1P2L 31; 
+    PWM2S1P2L = 0x1F;
 
     //PWMS1P2H 0; 
     PWM2S1P2H = 0x00;

@@ -20,6 +20,19 @@ unsigned char ucCLUTCHState;
 
 
 //FUNCIONES
+void GPIOInit (void)
+{
+    LED_SetDigitalOutput();
+    FinCarrera1_SetDigitalInput();
+    FinCarrera2_SetDigitalInput();
+    APPSMODE_SetDigitalOutput();
+    START_SetDigitalOutput();
+    SDC_SetDigitalOutput();
+    OUTM_SetDigitalOutput();
+    STBY_SetDigitalOutput();
+}
+
+
 /****GPIO_PWM1_Control****/
 //uiDutyCycle 0 - 100% 
 //Servomotores van a 50Hz DC:2-12% GPIO_PWM1_Control(12, 50);
@@ -42,6 +55,7 @@ void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
 }
 
 
+//NO EJECUTAR
 void GPIO_INT2_desembragar (void)
 {
     //ANALIZAR SI REALMENTE ESTA HIGH

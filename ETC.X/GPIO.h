@@ -13,6 +13,7 @@ extern "C" {
 #endif
 
 //FUNCIONES
+void GPIOInit (void);
 void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_INT2_desembragar (void);
 

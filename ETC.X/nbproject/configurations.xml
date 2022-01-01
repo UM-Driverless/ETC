@@ -25,7 +25,6 @@
         <itemPath>mcc_generated_files/adc.h</itemPath>
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
         <itemPath>mcc_generated_files/tmr0.h</itemPath>
-        <itemPath>mcc_generated_files/ext_int.h</itemPath>
         <itemPath>mcc_generated_files/DAC3_example.h</itemPath>
         <itemPath>mcc_generated_files/DAC3.h</itemPath>
       </logicalFolder>
@@ -67,7 +66,6 @@
         <itemPath>mcc_generated_files/adc.c</itemPath>
         <itemPath>mcc_generated_files/tmr0.c</itemPath>
         <itemPath>mcc_generated_files/tmr1.c</itemPath>
-        <itemPath>mcc_generated_files/ext_int.c</itemPath>
         <itemPath>mcc_generated_files/DAC3_example.c</itemPath>
         <itemPath>mcc_generated_files/DAC3.c</itemPath>
       </logicalFolder>

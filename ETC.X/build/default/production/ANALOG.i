@@ -41,6 +41,8 @@ void APPSReadmin (void);
 void APPSReadmax (void);
 void TPSReadmin (void);
 void TPSReadmax (void);
+void ETCModeSelect (unsigned char ucModeSelect);
+void ETCRulesSupervision(void);
 # 9 "ANALOG.c" 2
 
 # 1 "./mcc_generated_files/adc.h" 1
@@ -37539,10 +37541,10 @@ typedef uint16_t adc_result_t;
 
 typedef enum
 {
-    channel_ANA4 = 0x4,
-    channel_ANC0 = 0x10,
-    channel_ANC1 = 0x11,
-    channel_ANC2 = 0x12,
+    TPS2 = 0x4,
+    TPS1 = 0x10,
+    APPS2 = 0x11,
+    APPS1 = 0x12,
     channel_VSS = 0x3B,
     channel_Temp = 0x3C,
     channel_DAC1 = 0x3D,
@@ -37709,25 +37711,25 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
         case 3:
             ADC_DisableChannelSequencer();
             ADC_SelectContext(CONTEXT_TPS1);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANC0);
+            uiValorAnalog = ADC_GetSingleConversion(TPS1);
             ucFlag = 1;
             break;
         case 4:
             ADC_DisableChannelSequencer();
             ADC_SelectContext(CONTEXT_TPS2);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANA4);
+            uiValorAnalog = ADC_GetSingleConversion(TPS2);
             ucFlag = 1;
             break;
         case 1:
             ADC_DisableChannelSequencer();
             ADC_SelectContext(CONTEXT_APPS1);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANC2);
+            uiValorAnalog = ADC_GetSingleConversion(APPS1);
             ucFlag = 1;
             break;
         case 2:
             ADC_DisableChannelSequencer();
             ADC_SelectContext(CONTEXT_APPS2);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANC1);
+            uiValorAnalog = ADC_GetSingleConversion(APPS2);
             ucFlag = 1;
             break;
         default:

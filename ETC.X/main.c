@@ -43,6 +43,8 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "MESSAGES.h"
+#include "CLUTCH.h"
+#include "GPIO.h"
 
 /*
                          Main application
@@ -61,11 +63,14 @@ void main(void)
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
+    
+    CLUTCH_Init();
+    GPIOInit();
 
     while (1)
     {
         // Add your application code
-        CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
+        //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         
     }
 }

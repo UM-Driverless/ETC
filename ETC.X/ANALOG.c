@@ -20,28 +20,28 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
     
     switch (ucEntradaAnalogica)
     {
-        case TPS1:
+        case ENT_TPS1:
             ADC_DisableChannelSequencer();    //Disable scanner
             ADC_SelectContext(CONTEXT_TPS1);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANC0);
+            uiValorAnalog = ADC_GetSingleConversion(TPS1);
             ucFlag = 1;
             break;
-        case TPS2:
+        case ENT_TPS2:
             ADC_DisableChannelSequencer();    //Disable scanner
             ADC_SelectContext(CONTEXT_TPS2);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANA4);
+            uiValorAnalog = ADC_GetSingleConversion(TPS2);
             ucFlag = 1;
             break;
-        case APPS1:
+        case ENT_APPS1:
             ADC_DisableChannelSequencer();    //Disable scanner
             ADC_SelectContext(CONTEXT_APPS1);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANC2);
+            uiValorAnalog = ADC_GetSingleConversion(APPS1);
             ucFlag = 1;
             break;
-        case APPS2:
+        case ENT_APPS2:
             ADC_DisableChannelSequencer();    //Disable scanner
             ADC_SelectContext(CONTEXT_APPS2);
-            uiValorAnalog = ADC_GetSingleConversion(channel_ANC1);
+            uiValorAnalog = ADC_GetSingleConversion(APPS2);
             ucFlag = 1;
             break;
         default:
@@ -85,11 +85,11 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
 
 }
 
-//EJECUTARLO CADA CIERTOS ms
+//EJECUTARLO CADA 10ms
 void ANALOGRead (void)
 {
-    ucAPPS1 = ANALOG_GetVoltage (APPS1);
-    ucAPPS2 = ANALOG_GetVoltage (APPS2);
-    ucTPS1 = ANALOG_GetVoltage (TPS1);
-    ucTPS2 = ANALOG_GetVoltage (TPS2);
+    ucAPPS1 = ANALOG_GetVoltage (ENT_APPS1);
+    ucAPPS2 = ANALOG_GetVoltage (ENT_APPS2);
+    ucTPS1 = ANALOG_GetVoltage (ENT_TPS1);
+    ucTPS2 = ANALOG_GetVoltage (ENT_TPS2);
 }

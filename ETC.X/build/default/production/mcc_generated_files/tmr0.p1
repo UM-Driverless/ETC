@@ -3600,8 +3600,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/tmr0.c: 67:     T0CON1 = 0x48;
 [e = _T0CON1 -> -> 72 `i `uc ]
 "70
-[; ;mcc_generated_files/tmr0.c: 70:     TMR0H = 0xC2;
-[e = _TMR0H -> -> 194 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 70:     TMR0H = 0x61;
+[e = _TMR0H -> -> 97 `i `uc ]
 "73
 [; ;mcc_generated_files/tmr0.c: 73:     TMR0L = 0x00;
 [e = _TMR0L -> -> 0 `i `uc ]

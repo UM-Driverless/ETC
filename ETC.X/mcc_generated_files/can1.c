@@ -48,6 +48,8 @@
 #include <stdint.h>
 #include <string.h>
 #include "can1.h"
+#include "../MESSAGES.h"
+#include "pin_manager.h"
 
 #define RX_FIFO_MSG_DATA                (8U)
 #define NUM_OF_RX_FIFO                  (1U)
@@ -117,6 +119,7 @@ static void (*CAN1_RxBufferOverflowHandler)(void);
 
 static void DefaultFIFO1NotEmptyHandler(void)
 {
+    CANReadMessage();
 }
 
 static void DefaultInvalidMessageHandler(void)
@@ -159,8 +162,8 @@ void CAN1_RX_FIFO_ResetInfo(void)
 
 static void CAN1_RX_FIFO_Configuration(void)
 {
-    // TXEN disabled; RTREN disabled; RXTSEN disabled; TXATIE disabled; RXOVIE enabled; TFERFFIE disabled; TFHRFHIE disabled; TFNRFNIE enabled; 
-    C1FIFOCON1L = 0x09;
+    // TXEN disabled; RTREN disabled; RXTSEN disabled; TXATIE enabled; RXOVIE enabled; TFERFFIE disabled; TFHRFHIE disabled; TFNRFNIE enabled; 
+    C1FIFOCON1L = 0x19;
     
     // FRESET enabled; TXREQ disabled; UINC disabled; 
     C1FIFOCON1H = 0x04;
@@ -182,16 +185,27 @@ static void CAN1_RX_FIFO_Configuration(void)
 static void CAN1_RX_FIFO_FilterMaskConfiguration(void)
 {
     // FLTEN0 enabled; F0BP FIFO 1; 
-    C1FLTOBJ0L = 0x5F;
-    C1FLTOBJ0H = 0xFF;
-    C1FLTOBJ0U = 0xFF;
-    C1FLTOBJ0T = 0xFF;
-    C1MASK0L = 0x00;
-    C1MASK0H = 0x00;
+    /*C1FLTOBJ0L = 0x01;
+    C1FLTOBJ0H = 0x00;
+    C1FLTOBJ0U = 0x00;
+    C1FLTOBJ0T = 0x00;
+    C1MASK0L = 0xFF;
+    C1MASK0H = 0x07;
     C1MASK0U = 0x00;
-    C1MASK0T = 0x00;
-    C1FLTCON0L = 0x81; 
+    C1MASK0T = 0x40;
+    C1FLTCON0L = 0x81; */
     
+    //U MOTORSPORT CONFIG
+    C1FLTOBJ1L = 0x5F;
+    C1FLTOBJ1H = 0xFF;
+    C1FLTOBJ1U = 0xFF;
+    C1FLTOBJ1T = 0xFF;
+    //permitir mask de extended y standard
+    C1MASK1L = 0x00;
+    C1MASK1H = 0x00;
+    C1MASK1U = 0x00;
+    C1MASK1T = 0x00; //EXT and STD
+    C1FLTCON0H = 0x81; 
 }
 
 static void CAN1_TX_FIFO_Configuration(void)
@@ -202,8 +216,8 @@ static void CAN1_TX_FIFO_Configuration(void)
     // FRESET enabled; UINC disabled; 
     C1TXQCONH = 0x04;
     
-    // TXAT 3; TXPRI 1; 
-    C1TXQCONU = 0x60;
+    // TXAT 3; TXPRI 2; 
+    C1TXQCONU = 0x61;
     
     // PLSIZE 8; FSIZE 6; 
     C1TXQCONT = 0x05;
@@ -212,14 +226,14 @@ static void CAN1_TX_FIFO_Configuration(void)
 
 static void CAN1_BitRateConfiguration(void)
 {
-    // SJW 3; 
-    C1NBTCFGL = 0x03;
+    // SJW 1; 
+    C1NBTCFGL = 0x01;
     
-    // TSEG2 3; 
-    C1NBTCFGH = 0x03;
+    // TSEG2 1; 
+    C1NBTCFGH = 0x01;
     
-    // TSEG1 14; 
-    C1NBTCFGU = 0x0E;
+    // TSEG1 6; 
+    C1NBTCFGU = 0x06;
     
     // BRP 0; 
     C1NBTCFGT = 0x00;
@@ -277,7 +291,11 @@ void CAN1_Initialize(void)
         CAN1_RX_FIFO_FilterMaskConfiguration();
         CAN1_RX_FIFO_ResetInfo();
         CAN1_ErrorNotificationInterruptEnable();
-        CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE);    
+        CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE);   
+        
+        //Inicializacion driver CAN LOW = HIGH SPEED MODE
+        STBY_SetDigitalOutput();
+        STBY_SetLow();
     }
 }
 

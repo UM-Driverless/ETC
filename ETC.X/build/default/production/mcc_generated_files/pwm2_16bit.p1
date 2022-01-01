@@ -3673,8 +3673,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pwm2_16bit.c: 72:     PWM2LDS = 0x00;
 [e = _PWM2LDS -> -> 0 `i `uc ]
 "75
-[; ;mcc_generated_files/pwm2_16bit.c: 75:     PWM2PRL = 0x7C;
-[e = _PWM2PRL -> -> 124 `i `uc ]
+[; ;mcc_generated_files/pwm2_16bit.c: 75:     PWM2PRL = 0x3D;
+[e = _PWM2PRL -> -> 61 `i `uc ]
 "78
 [; ;mcc_generated_files/pwm2_16bit.c: 78:     PWM2PRH = 0x00;
 [e = _PWM2PRH -> -> 0 `i `uc ]
@@ -3694,14 +3694,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pwm2_16bit.c: 93:     PWM2S1CFG = 0x00;
 [e = _PWM2S1CFG -> -> 0 `i `uc ]
 "96
-[; ;mcc_generated_files/pwm2_16bit.c: 96:     PWM2S1P1L = 0x3E;
-[e = _PWM2S1P1L -> -> 62 `i `uc ]
+[; ;mcc_generated_files/pwm2_16bit.c: 96:     PWM2S1P1L = 0x1F;
+[e = _PWM2S1P1L -> -> 31 `i `uc ]
 "99
 [; ;mcc_generated_files/pwm2_16bit.c: 99:     PWM2S1P1H = 0x00;
 [e = _PWM2S1P1H -> -> 0 `i `uc ]
 "102
-[; ;mcc_generated_files/pwm2_16bit.c: 102:     PWM2S1P2L = 0x3E;
-[e = _PWM2S1P2L -> -> 62 `i `uc ]
+[; ;mcc_generated_files/pwm2_16bit.c: 102:     PWM2S1P2L = 0x1F;
+[e = _PWM2S1P2L -> -> 31 `i `uc ]
 "105
 [; ;mcc_generated_files/pwm2_16bit.c: 105:     PWM2S1P2H = 0x00;
 [e = _PWM2S1P2H -> -> 0 `i `uc ]

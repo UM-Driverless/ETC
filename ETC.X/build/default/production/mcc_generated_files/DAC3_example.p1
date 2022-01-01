@@ -3562,8 +3562,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/DAC3_example.c: 41:     printf("Set the non-volatile voltage to 1V \n");
 [e ( _printf :s 1C ]
 "43
-[; ;mcc_generated_files/DAC3_example.c: 43:     _delay((unsigned long)((100)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;mcc_generated_files/DAC3_example.c: 43:     _delay((unsigned long)((100)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "46
 [; ;mcc_generated_files/DAC3_example.c: 46:     voltage = 2;
 [e = _voltage -> -> 2 `i `f ]
@@ -3574,8 +3574,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/DAC3_example.c: 48:     DAC3_Set(dacVoltage);
 [e ( _DAC3_Set (1 _dacVoltage ]
 "50
-[; ;mcc_generated_files/DAC3_example.c: 50:     _delay((unsigned long)((100)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;mcc_generated_files/DAC3_example.c: 50:     _delay((unsigned long)((100)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "52
 [; ;mcc_generated_files/DAC3_example.c: 52:     printf("Set the volatile voltage to 2V \n");
 [e ( _printf :s 2C ]
@@ -3592,8 +3592,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/DAC3_example.c: 60:     printf("Read: non-volatile voltage value %f, and volatile voltage value %f", readNonvolatileVoltage, readVoltage);
 [e ( _printf , , (. :s 3C -> _readNonvolatileVoltage `d -> _readVoltage `d ]
 "62
-[; ;mcc_generated_files/DAC3_example.c: 62:     _delay((unsigned long)((100)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+[; ;mcc_generated_files/DAC3_example.c: 62:     _delay((unsigned long)((100)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "63
 [; ;mcc_generated_files/DAC3_example.c: 63: }
 [e :UE 3181 ]

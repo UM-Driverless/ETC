@@ -32,6 +32,8 @@ void APPSReadmin (void);
 void APPSReadmax (void);
 void TPSReadmin (void);
 void TPSReadmax (void);
+void ETCModeSelect (unsigned char ucModeSelect);
+void ETCRulesSupervision(void);
 
 
 #ifdef	__cplusplus

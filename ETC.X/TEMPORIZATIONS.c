@@ -8,6 +8,9 @@
 #include "../ETC.X/mcc_generated_files/pin_manager.h"
 #include "CLUTCH.h"
 #include "TEMPORIZATIONS.h"
+#include "ANALOG.h"
+#include "MESSAGES.h"
+#include "ETC.h"
 
 //VARIABLES
 unsigned char ucCount500ms;
@@ -20,13 +23,14 @@ unsigned int uiCount1min;
 //FUNCIONES
 void TEMPORIZATION_10ms (void)
 {
-
+    ANALOGRead();
 }
 
 void TEMPORIZATION_100ms (void)
 {
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
     CLUTCH_AnalyseState();
+    CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);    //Falta meter los APPS target
 }
 
 void TEMPORIZATION_500ms (void)
@@ -36,7 +40,7 @@ void TEMPORIZATION_500ms (void)
 
 void TEMPORIZATION_1s (void)
 {
-    
+    CANWriteMessage(ETC_STATE, DataLength_3, 0, 0, 0, 0, 0, 0, 0, 0);  
 }
 
 void TEMPORIZATION_10s (void)

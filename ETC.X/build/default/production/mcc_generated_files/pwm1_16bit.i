@@ -37557,7 +37557,7 @@ void PWM1_16BIT_Initialize(void)
     PWM1LDS = 0x00;
 
 
-    PWM1PRL = 0x7C;
+    PWM1PRL = 0x3D;
 
 
     PWM1PRH = 0x00;
@@ -37578,13 +37578,13 @@ void PWM1_16BIT_Initialize(void)
     PWM1S1CFG = 0x00;
 
 
-    PWM1S1P1L = 0x3E;
+    PWM1S1P1L = 0x1F;
 
 
     PWM1S1P1H = 0x00;
 
 
-    PWM1S1P2L = 0x3E;
+    PWM1S1P2L = 0x1F;
 
 
     PWM1S1P2H = 0x00;

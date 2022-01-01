@@ -11,47 +11,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
-"58 MESSAGES.C
-[; ;MESSAGES.C: 58:     msgTransmit.field.formatType = CAN_2_0_FORMAT;
-[c E22728 0 1 .. ]
-[n E22728 . CAN_2_0_FORMAT CAN_FD_FORMAT  ]
-"59
-[; ;MESSAGES.C: 59:     msgTransmit.field.brs = CAN_NON_BRS_MODE;
-[c E22716 0 1 .. ]
-[n E22716 . CAN_NON_BRS_MODE CAN_BRS_MODE  ]
-"60
-[; ;MESSAGES.C: 60:     msgTransmit.field.frameType = CAN_FRAME_DATA;
-[c E22724 0 1 .. ]
-[n E22724 . CAN_FRAME_DATA CAN_FRAME_RTR  ]
-"61
-[; ;MESSAGES.C: 61:     msgTransmit.field.idType = CAN_FRAME_EXT;
-[c E22720 0 1 .. ]
-[n E22720 . CAN_FRAME_STD CAN_FRAME_EXT  ]
-"86
-[; ;MESSAGES.C: 86:     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
-[c E22753 0 1 .. ]
-[n E22753 . CAN_TX_FIFO_FULL CAN_TX_FIFO_AVAILABLE  ]
-[c E22775 0 .. ]
-[n E22775 . TXQ  ]
-"815 ./mcc_generated_files/can1.h
-[; ;./mcc_generated_files/can1.h: 815: CAN_TX_FIFO_STATUS CAN1_TransmitFIFOStatusGet(const CAN1_TX_FIFO_CHANNELS fifoChannel);
-[v _CAN1_TransmitFIFOStatusGet `(E22753 ~T0 @X0 0 ef1`CE22775 ]
-"88 MESSAGES.C
-[; ;MESSAGES.C: 88:         CAN1_Transmit(TXQ, &msgTransmit);
-[c E22732 0 1 2 3 .. ]
-[n E22732 . CAN_TX_MSG_REQUEST_SUCCESS CAN_TX_MSG_REQUEST_DLC_EXCEED_ERROR CAN_TX_MSG_REQUEST_BRS_ERROR CAN_TX_MSG_REQUEST_FIFO_FULL  ]
-"334 ./mcc_generated_files/can1.h
-[; ;./mcc_generated_files/can1.h: 334: CAN_TX_MSG_REQUEST_STATUS CAN1_Transmit(const CAN1_TX_FIFO_CHANNELS fifoChannel, CAN_MSG_OBJ *txCanMsg);
-[v _CAN1_Transmit `(E22732 ~T0 @X0 0 ef2`CE22775`*S3180 ]
+"67 MESSAGES.C
+[; ;MESSAGES.C: 67:     msgTransmit.field.formatType = CAN_2_0_FORMAT;
+[c E22718 0 1 .. ]
+[n E22718 . CAN_2_0_FORMAT CAN_FD_FORMAT  ]
+"68
+[; ;MESSAGES.C: 68:     msgTransmit.field.brs = CAN_NON_BRS_MODE;
+[c E22706 0 1 .. ]
+[n E22706 . CAN_NON_BRS_MODE CAN_BRS_MODE  ]
+"69
+[; ;MESSAGES.C: 69:     msgTransmit.field.frameType = CAN_FRAME_DATA;
+[c E22714 0 1 .. ]
+[n E22714 . CAN_FRAME_DATA CAN_FRAME_RTR  ]
+"70
+[; ;MESSAGES.C: 70:     msgTransmit.field.idType = CAN_FRAME_STD;
+[c E22710 0 1 .. ]
+[n E22710 . CAN_FRAME_STD CAN_FRAME_EXT  ]
+"390 ./mcc_generated_files/can1.h
+[; ;./mcc_generated_files/can1.h: 390: _Bool CAN1_IsBusOff(void);
+[v _CAN1_IsBusOff `(a ~T0 @X0 0 ef ]
 "8 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"857 ./mcc_generated_files/can1.h
+"448 ./mcc_generated_files/can1.h
+[; ;./mcc_generated_files/can1.h: 448: _Bool CAN1_IsTxErrorPassive(void);
+[v _CAN1_IsTxErrorPassive `(a ~T0 @X0 0 ef ]
+"507
+[; ;./mcc_generated_files/can1.h: 507: _Bool CAN1_IsTxErrorWarning(void);
+[v _CAN1_IsTxErrorWarning `(a ~T0 @X0 0 ef ]
+"566
+[; ;./mcc_generated_files/can1.h: 566: _Bool CAN1_IsTxErrorActive(void);
+[v _CAN1_IsTxErrorActive `(a ~T0 @X0 0 ef ]
+"91 MESSAGES.C
+[; ;MESSAGES.C: 91:     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
+[c E22743 0 1 .. ]
+[n E22743 . CAN_TX_FIFO_FULL CAN_TX_FIFO_AVAILABLE  ]
+[c E22765 0 .. ]
+[n E22765 . TXQ  ]
+"815 ./mcc_generated_files/can1.h
+[; ;./mcc_generated_files/can1.h: 815: CAN_TX_FIFO_STATUS CAN1_TransmitFIFOStatusGet(const CAN1_TX_FIFO_CHANNELS fifoChannel);
+[v _CAN1_TransmitFIFOStatusGet `(E22743 ~T0 @X0 0 ef1`CE22765 ]
+"93 MESSAGES.C
+[; ;MESSAGES.C: 93:         CAN1_Transmit(TXQ, &msgTransmit);
+[c E22722 0 1 2 3 .. ]
+[n E22722 . CAN_TX_MSG_REQUEST_SUCCESS CAN_TX_MSG_REQUEST_DLC_EXCEED_ERROR CAN_TX_MSG_REQUEST_BRS_ERROR CAN_TX_MSG_REQUEST_FIFO_FULL  ]
+"334 ./mcc_generated_files/can1.h
+[; ;./mcc_generated_files/can1.h: 334: CAN_TX_MSG_REQUEST_STATUS CAN1_Transmit(const CAN1_TX_FIFO_CHANNELS fifoChannel, CAN_MSG_OBJ *txCanMsg);
+[v _CAN1_Transmit `(E22722 ~T0 @X0 0 ef2`CE22765`*S3180 ]
+"857
 [; ;./mcc_generated_files/can1.h: 857: uint8_t CAN1_ReceivedMessageCountGet(void);
 [v _CAN1_ReceivedMessageCountGet `(uc ~T0 @X0 0 ef ]
 "235
 [; ;./mcc_generated_files/can1.h: 235: _Bool CAN1_Receive(CAN_MSG_OBJ *rxCanMsg);
 [v _CAN1_Receive `(a ~T0 @X0 0 ef1`*S3180 ]
+"34 ./CLUTCH.h
+[; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
+[v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
+"30 ./ETC.h
+[; ;./ETC.h: 30: void APPSSend (unsigned char ucPercent);
+[v _APPSSend `(v ~T0 @X0 0 ef1`uc ]
+"35
+[; ;./ETC.h: 35: void ETCModeSelect (unsigned char ucModeSelect);
+[v _ETCModeSelect `(v ~T0 @X0 0 ef1`uc ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3574,108 +3595,105 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23
 [; ;./MESSAGES.h: 23: CAN_MSG_OBJ msgReceipt;
 [v _msgReceipt `S3180 ~T0 @X0 1 e ]
-"12 MESSAGES.C
-[; ;MESSAGES.C: 12: unsigned char CANDATAdata[8] = {0,0,0,0,0,0,0,0};
-[v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
-[i _CANDATAdata
-:U ..
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-]
-"14
-[; ;MESSAGES.C: 14: unsigned char ucTargetAccelerator;
-[v _ucTargetAccelerator `uc ~T0 @X0 1 e ]
-"15
-[; ;MESSAGES.C: 15: unsigned char ucTargetClutch;
-[v _ucTargetClutch `uc ~T0 @X0 1 e ]
-"16
-[; ;MESSAGES.C: 16: unsigned char ucTargetBrake;
-[v _ucTargetBrake `uc ~T0 @X0 1 e ]
-"17
-[; ;MESSAGES.C: 17: unsigned char ucTargetDirection;
-[v _ucTargetDirection `uc ~T0 @X0 1 e ]
-"18
-[; ;MESSAGES.C: 18: unsigned char ucTargetGear;
-[v _ucTargetGear `uc ~T0 @X0 1 e ]
-"20
-[; ;MESSAGES.C: 20: unsigned char ucAS_state;
-[v _ucAS_state `uc ~T0 @X0 1 e ]
-"21
-[; ;MESSAGES.C: 21: unsigned char ucEBS_state;
-[v _ucEBS_state `uc ~T0 @X0 1 e ]
-"22
-[; ;MESSAGES.C: 22: unsigned char ucAMI_state;
-[v _ucAMI_state `uc ~T0 @X0 1 e ]
-"23
-[; ;MESSAGES.C: 23: unsigned char ucSteering_state;
-[v _ucSteering_state `uc ~T0 @X0 1 e ]
 "24
-[; ;MESSAGES.C: 24: unsigned char ucService_brake;
-[v _ucService_brake `uc ~T0 @X0 1 e ]
+[; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
+[v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"16 MESSAGES.C
+[; ;MESSAGES.C: 16: uint8_t CANDATAdata[8];
+[v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"19
+[; ;MESSAGES.C: 19: unsigned char ucTargetAccelerator;
+[v _ucTargetAccelerator `uc ~T0 @X0 1 e ]
+"20
+[; ;MESSAGES.C: 20: unsigned char ucTargetClutch;
+[v _ucTargetClutch `uc ~T0 @X0 1 e ]
+"21
+[; ;MESSAGES.C: 21: unsigned char ucTargetBrake;
+[v _ucTargetBrake `uc ~T0 @X0 1 e ]
+"22
+[; ;MESSAGES.C: 22: unsigned char ucTargetDirection;
+[v _ucTargetDirection `uc ~T0 @X0 1 e ]
+"23
+[; ;MESSAGES.C: 23: unsigned char ucTargetGear;
+[v _ucTargetGear `uc ~T0 @X0 1 e ]
 "25
-[; ;MESSAGES.C: 25: unsigned char ucLap_counter;
-[v _ucLap_counter `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 25: unsigned char ucAS_state;
+[v _ucAS_state `uc ~T0 @X0 1 e ]
 "26
-[; ;MESSAGES.C: 26: unsigned char ucCones_count_actual;
-[v _ucCones_count_actual `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 26: unsigned char ucEBS_state;
+[v _ucEBS_state `uc ~T0 @X0 1 e ]
 "27
-[; ;MESSAGES.C: 27: unsigned int uiCones_count_all;
-[v _uiCones_count_all `ui ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 27: unsigned char ucAMI_state;
+[v _ucAMI_state `uc ~T0 @X0 1 e ]
+"28
+[; ;MESSAGES.C: 28: unsigned char ucSteering_state;
+[v _ucSteering_state `uc ~T0 @X0 1 e ]
 "29
-[; ;MESSAGES.C: 29: unsigned char ucSpeed_actual;
-[v _ucSpeed_actual `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 29: unsigned char ucService_brake;
+[v _ucService_brake `uc ~T0 @X0 1 e ]
 "30
-[; ;MESSAGES.C: 30: unsigned char ucSpeed_target;
-[v _ucSpeed_target `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 30: unsigned char ucLap_counter;
+[v _ucLap_counter `uc ~T0 @X0 1 e ]
 "31
-[; ;MESSAGES.C: 31: unsigned char ucSteering_angle_actual;
-[v _ucSteering_angle_actual `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 31: unsigned char ucCones_count_actual;
+[v _ucCones_count_actual `uc ~T0 @X0 1 e ]
 "32
-[; ;MESSAGES.C: 32: unsigned char ucSteering_angle_target;
-[v _ucSteering_angle_target `uc ~T0 @X0 1 e ]
-"33
-[; ;MESSAGES.C: 33: unsigned char ucBrake_hydr_actual;
-[v _ucBrake_hydr_actual `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 32: unsigned int uiCones_count_all;
+[v _uiCones_count_all `ui ~T0 @X0 1 e ]
 "34
-[; ;MESSAGES.C: 34: unsigned char ucBrake_hydr_target;
-[v _ucBrake_hydr_target `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 34: unsigned char ucSpeed_actual;
+[v _ucSpeed_actual `uc ~T0 @X0 1 e ]
 "35
-[; ;MESSAGES.C: 35: unsigned char ucMotor_moment_actual;
-[v _ucMotor_moment_actual `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 35: unsigned char ucSpeed_target;
+[v _ucSpeed_target `uc ~T0 @X0 1 e ]
 "36
-[; ;MESSAGES.C: 36: unsigned char ucMotor_moment_target;
-[v _ucMotor_moment_target `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 36: unsigned char ucSteering_angle_actual;
+[v _ucSteering_angle_actual `uc ~T0 @X0 1 e ]
+"37
+[; ;MESSAGES.C: 37: unsigned char ucSteering_angle_target;
+[v _ucSteering_angle_target `uc ~T0 @X0 1 e ]
 "38
-[; ;MESSAGES.C: 38: unsigned int uiAcc_longitudinal;
-[v _uiAcc_longitudinal `ui ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 38: unsigned char ucBrake_hydr_actual;
+[v _ucBrake_hydr_actual `uc ~T0 @X0 1 e ]
 "39
-[; ;MESSAGES.C: 39: unsigned int uiAcc_lateral;
-[v _uiAcc_lateral `ui ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 39: unsigned char ucBrake_hydr_target;
+[v _ucBrake_hydr_target `uc ~T0 @X0 1 e ]
 "40
-[; ;MESSAGES.C: 40: unsigned int uiYaw_rate;
-[v _uiYaw_rate `ui ~T0 @X0 1 e ]
-"42
-[; ;MESSAGES.C: 42: unsigned char ucASBState;
-[v _ucASBState `uc ~T0 @X0 1 e ]
+[; ;MESSAGES.C: 40: unsigned char ucMotor_moment_actual;
+[v _ucMotor_moment_actual `uc ~T0 @X0 1 e ]
+"41
+[; ;MESSAGES.C: 41: unsigned char ucMotor_moment_target;
+[v _ucMotor_moment_target `uc ~T0 @X0 1 e ]
 "43
-[; ;MESSAGES.C: 43: unsigned char ucASRequesState;
-[v _ucASRequesState `uc ~T0 @X0 1 e ]
-"46
-[; ;MESSAGES.C: 46: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8)
-[v _CANWriteMessage `(v ~T0 @X0 1 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
+[; ;MESSAGES.C: 43: unsigned int uiAcc_longitudinal;
+[v _uiAcc_longitudinal `ui ~T0 @X0 1 e ]
+"44
+[; ;MESSAGES.C: 44: unsigned int uiAcc_lateral;
+[v _uiAcc_lateral `ui ~T0 @X0 1 e ]
+"45
+[; ;MESSAGES.C: 45: unsigned int uiYaw_rate;
+[v _uiYaw_rate `ui ~T0 @X0 1 e ]
 "47
-[; ;MESSAGES.C: 47: {
+[; ;MESSAGES.C: 47: unsigned char ucASBState;
+[v _ucASBState `uc ~T0 @X0 1 e ]
+"48
+[; ;MESSAGES.C: 48: unsigned char ucASRequesState;
+[v _ucASRequesState `uc ~T0 @X0 1 e ]
+"50
+[; ;MESSAGES.C: 50: unsigned char ucASMode;
+[v _ucASMode `uc ~T0 @X0 1 e ]
+"52
+[; ;MESSAGES.C: 52: unsigned char ucSTEER_WH_Clutch;
+[v _ucSTEER_WH_Clutch `uc ~T0 @X0 1 e ]
+"55
+[; ;MESSAGES.C: 55: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8)
+[v _CANWriteMessage `(v ~T0 @X0 1 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
+"56
+[; ;MESSAGES.C: 56: {
 {
 [e :U _CANWriteMessage ]
-"46
-[; ;MESSAGES.C: 46: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8)
+"55
+[; ;MESSAGES.C: 55: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8)
 [v _id `ul ~T0 @X0 1 r1 ]
 [v _dataLength `uc ~T0 @X0 1 r2 ]
 [v _data1 `uc ~T0 @X0 1 r3 ]
@@ -3686,294 +3704,363 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _data6 `uc ~T0 @X0 1 r8 ]
 [v _data7 `uc ~T0 @X0 1 r9 ]
 [v _data8 `uc ~T0 @X0 1 r10 ]
-"47
-[; ;MESSAGES.C: 47: {
+"56
+[; ;MESSAGES.C: 56: {
 [f ]
-"48
-[; ;MESSAGES.C: 48:     CANDATAdata [0] = data1;
-[e = *U + &U _CANDATAdata * -> -> -> 0 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data1 ]
-"49
-[; ;MESSAGES.C: 49:     CANDATAdata [1] = data2;
-[e = *U + &U _CANDATAdata * -> -> -> 1 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data2 ]
-"50
-[; ;MESSAGES.C: 50:     CANDATAdata [2] = data3;
-[e = *U + &U _CANDATAdata * -> -> -> 2 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data3 ]
-"51
-[; ;MESSAGES.C: 51:     CANDATAdata [3] = data4;
-[e = *U + &U _CANDATAdata * -> -> -> 3 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data4 ]
-"52
-[; ;MESSAGES.C: 52:     CANDATAdata [4] = data5;
-[e = *U + &U _CANDATAdata * -> -> -> 4 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data5 ]
-"53
-[; ;MESSAGES.C: 53:     CANDATAdata [5] = data6;
-[e = *U + &U _CANDATAdata * -> -> -> 5 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data6 ]
-"54
-[; ;MESSAGES.C: 54:     CANDATAdata [6] = data7;
-[e = *U + &U _CANDATAdata * -> -> -> 6 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data7 ]
-"55
-[; ;MESSAGES.C: 55:     CANDATAdata [7] = data8;
-[e = *U + &U _CANDATAdata * -> -> -> 7 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data8 ]
 "57
-[; ;MESSAGES.C: 57:     msgTransmit.msgId = id;
-[e = . _msgTransmit 0 _id ]
+[; ;MESSAGES.C: 57:     CANDATAdata [0] = data1;
+[e = *U + &U _CANDATAdata * -> -> -> 0 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data1 ]
 "58
-[; ;MESSAGES.C: 58:     msgTransmit.field.formatType = CAN_2_0_FORMAT;
-[e = . . . _msgTransmit 1 1 3 -> . `E22728 0 `uc ]
+[; ;MESSAGES.C: 58:     CANDATAdata [1] = data2;
+[e = *U + &U _CANDATAdata * -> -> -> 1 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data2 ]
 "59
-[; ;MESSAGES.C: 59:     msgTransmit.field.brs = CAN_NON_BRS_MODE;
-[e = . . . _msgTransmit 1 1 4 -> . `E22716 0 `uc ]
+[; ;MESSAGES.C: 59:     CANDATAdata [2] = data3;
+[e = *U + &U _CANDATAdata * -> -> -> 2 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data3 ]
 "60
-[; ;MESSAGES.C: 60:     msgTransmit.field.frameType = CAN_FRAME_DATA;
-[e = . . . _msgTransmit 1 1 1 -> . `E22724 0 `uc ]
+[; ;MESSAGES.C: 60:     CANDATAdata [3] = data4;
+[e = *U + &U _CANDATAdata * -> -> -> 3 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data4 ]
 "61
-[; ;MESSAGES.C: 61:     msgTransmit.field.idType = CAN_FRAME_EXT;
-[e = . . . _msgTransmit 1 1 0 -> . `E22720 1 `uc ]
+[; ;MESSAGES.C: 61:     CANDATAdata [4] = data5;
+[e = *U + &U _CANDATAdata * -> -> -> 4 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data5 ]
 "62
-[; ;MESSAGES.C: 62:     msgTransmit.field.dlc = ( dataLength & 0x0F );
-[e = . . . _msgTransmit 1 1 2 -> & -> _dataLength `i -> 15 `i `uc ]
+[; ;MESSAGES.C: 62:     CANDATAdata [5] = data6;
+[e = *U + &U _CANDATAdata * -> -> -> 5 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data6 ]
 "63
-[; ;MESSAGES.C: 63:     msgTransmit.data = CANDATAdata;
+[; ;MESSAGES.C: 63:     CANDATAdata [6] = data7;
+[e = *U + &U _CANDATAdata * -> -> -> 6 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data7 ]
+"64
+[; ;MESSAGES.C: 64:     CANDATAdata [7] = data8;
+[e = *U + &U _CANDATAdata * -> -> -> 7 `i `ui `ux -> -> # *U &U _CANDATAdata `ui `ux _data8 ]
+"66
+[; ;MESSAGES.C: 66:     msgTransmit.msgId = id;
+[e = . _msgTransmit 0 _id ]
+"67
+[; ;MESSAGES.C: 67:     msgTransmit.field.formatType = CAN_2_0_FORMAT;
+[e = . . . _msgTransmit 1 1 3 -> . `E22718 0 `uc ]
+"68
+[; ;MESSAGES.C: 68:     msgTransmit.field.brs = CAN_NON_BRS_MODE;
+[e = . . . _msgTransmit 1 1 4 -> . `E22706 0 `uc ]
+"69
+[; ;MESSAGES.C: 69:     msgTransmit.field.frameType = CAN_FRAME_DATA;
+[e = . . . _msgTransmit 1 1 1 -> . `E22714 0 `uc ]
+"70
+[; ;MESSAGES.C: 70:     msgTransmit.field.idType = CAN_FRAME_STD;
+[e = . . . _msgTransmit 1 1 0 -> . `E22710 0 `uc ]
+"71
+[; ;MESSAGES.C: 71:     msgTransmit.field.dlc = ( dataLength & 0x0F );
+[e = . . . _msgTransmit 1 1 2 -> & -> _dataLength `i -> 15 `i `uc ]
+"72
+[; ;MESSAGES.C: 72:     msgTransmit.data = CANDATAdata;
 [e = . _msgTransmit 2 &U _CANDATAdata ]
+"74
+[; ;MESSAGES.C: 74:     if(CAN1_IsBusOff() == 0x01)
+[e $ ! == -> ( _CAN1_IsBusOff ..  `i -> 1 `i 3182  ]
+"75
+[; ;MESSAGES.C: 75:     {
+{
+"76
+[; ;MESSAGES.C: 76:         __nop();
+[e ( ___nop ..  ]
+"77
+[; ;MESSAGES.C: 77:     }
+}
+[e :U 3182 ]
+"78
+[; ;MESSAGES.C: 78:     if(CAN1_IsTxErrorPassive() == 0x01)
+[e $ ! == -> ( _CAN1_IsTxErrorPassive ..  `i -> 1 `i 3183  ]
+"79
+[; ;MESSAGES.C: 79:     {
+{
+"80
+[; ;MESSAGES.C: 80:         __nop();
+[e ( ___nop ..  ]
+"81
+[; ;MESSAGES.C: 81:     }
+}
+[e :U 3183 ]
+"82
+[; ;MESSAGES.C: 82:     if(CAN1_IsTxErrorWarning() == 0x01)
+[e $ ! == -> ( _CAN1_IsTxErrorWarning ..  `i -> 1 `i 3184  ]
+"83
+[; ;MESSAGES.C: 83:     {
+{
+"84
+[; ;MESSAGES.C: 84:         __nop();
+[e ( ___nop ..  ]
+"85
+[; ;MESSAGES.C: 85:     }
+}
+[e :U 3184 ]
 "86
-[; ;MESSAGES.C: 86:     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
-[e $ ! == -> . `E22753 1 `ui & -> ( _CAN1_TransmitFIFOStatusGet (1 . `E22775 0 `ui -> . `E22753 1 `ui 3182  ]
+[; ;MESSAGES.C: 86:     if(CAN1_IsTxErrorActive() == 0x01)
+[e $ ! == -> ( _CAN1_IsTxErrorActive ..  `i -> 1 `i 3185  ]
 "87
 [; ;MESSAGES.C: 87:     {
 {
 "88
-[; ;MESSAGES.C: 88:         CAN1_Transmit(TXQ, &msgTransmit);
-[e ( _CAN1_Transmit (2 , . `E22775 0 &U _msgTransmit ]
-"89
-[; ;MESSAGES.C: 89:         __nop();
+[; ;MESSAGES.C: 88:         __nop();
 [e ( ___nop ..  ]
-"90
-[; ;MESSAGES.C: 90:     }
+"89
+[; ;MESSAGES.C: 89:     }
 }
-[e :U 3182 ]
+[e :U 3185 ]
 "91
-[; ;MESSAGES.C: 91: }
+[; ;MESSAGES.C: 91:     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
+[e $ ! == -> . `E22743 1 `ui & -> ( _CAN1_TransmitFIFOStatusGet (1 . `E22765 0 `ui -> . `E22743 1 `ui 3186  ]
+"92
+[; ;MESSAGES.C: 92:     {
+{
+"93
+[; ;MESSAGES.C: 93:         CAN1_Transmit(TXQ, &msgTransmit);
+[e ( _CAN1_Transmit (2 , . `E22765 0 &U _msgTransmit ]
+"94
+[; ;MESSAGES.C: 94:         __nop();
+[e ( ___nop ..  ]
+"95
+[; ;MESSAGES.C: 95:     }
+}
+[e :U 3186 ]
+"96
+[; ;MESSAGES.C: 96: }
 [e :UE 3181 ]
 }
-"95
-[; ;MESSAGES.C: 95: void CANReadMessage (void)
+"100
+[; ;MESSAGES.C: 100: void CANReadMessage (void)
 [v _CANReadMessage `(v ~T0 @X0 1 ef ]
-"96
-[; ;MESSAGES.C: 96: {
+"101
+[; ;MESSAGES.C: 101: {
 {
 [e :U _CANReadMessage ]
 [f ]
-"97
-[; ;MESSAGES.C: 97:     uint32_t id;
-[v _id `ul ~T0 @X0 1 a ]
-"98
-[; ;MESSAGES.C: 98:     unsigned char idType;
-[v _idType `uc ~T0 @X0 1 a ]
-"99
-[; ;MESSAGES.C: 99:     unsigned char dlc;
-[v _dlc `uc ~T0 @X0 1 a ]
-"100
-[; ;MESSAGES.C: 100:     unsigned char data1;
-[v _data1 `uc ~T0 @X0 1 a ]
-"101
-[; ;MESSAGES.C: 101:     unsigned char data2;
-[v _data2 `uc ~T0 @X0 1 a ]
 "102
-[; ;MESSAGES.C: 102:     unsigned char data3;
-[v _data3 `uc ~T0 @X0 1 a ]
+[; ;MESSAGES.C: 102:     uint32_t id;
+[v _id `ul ~T0 @X0 1 a ]
 "103
-[; ;MESSAGES.C: 103:     unsigned char data4;
-[v _data4 `uc ~T0 @X0 1 a ]
+[; ;MESSAGES.C: 103:     unsigned char idType;
+[v _idType `uc ~T0 @X0 1 a ]
 "104
-[; ;MESSAGES.C: 104:     unsigned char data5;
-[v _data5 `uc ~T0 @X0 1 a ]
+[; ;MESSAGES.C: 104:     unsigned char dlc;
+[v _dlc `uc ~T0 @X0 1 a ]
 "105
-[; ;MESSAGES.C: 105:     unsigned char data6;
-[v _data6 `uc ~T0 @X0 1 a ]
+[; ;MESSAGES.C: 105:     unsigned char data1;
+[v _data1 `uc ~T0 @X0 1 a ]
 "106
-[; ;MESSAGES.C: 106:     unsigned char data7;
-[v _data7 `uc ~T0 @X0 1 a ]
+[; ;MESSAGES.C: 106:     unsigned char data2;
+[v _data2 `uc ~T0 @X0 1 a ]
 "107
-[; ;MESSAGES.C: 107:     unsigned char data8;
-[v _data8 `uc ~T0 @X0 1 a ]
+[; ;MESSAGES.C: 107:     unsigned char data3;
+[v _data3 `uc ~T0 @X0 1 a ]
+"108
+[; ;MESSAGES.C: 108:     unsigned char data4;
+[v _data4 `uc ~T0 @X0 1 a ]
 "109
-[; ;MESSAGES.C: 109:     if(CAN1_ReceivedMessageCountGet() > 0)
-[e $ ! > -> ( _CAN1_ReceivedMessageCountGet ..  `i -> 0 `i 3184  ]
+[; ;MESSAGES.C: 109:     unsigned char data5;
+[v _data5 `uc ~T0 @X0 1 a ]
 "110
-[; ;MESSAGES.C: 110:     {
-{
+[; ;MESSAGES.C: 110:     unsigned char data6;
+[v _data6 `uc ~T0 @X0 1 a ]
 "111
-[; ;MESSAGES.C: 111:         if(1 == CAN1_Receive(&msgReceipt))
-[e $ ! == -> 1 `i -> ( _CAN1_Receive (1 &U _msgReceipt `i 3185  ]
+[; ;MESSAGES.C: 111:     unsigned char data7;
+[v _data7 `uc ~T0 @X0 1 a ]
 "112
-[; ;MESSAGES.C: 112:         {
-{
-"113
-[; ;MESSAGES.C: 113:             __nop();
-[e ( ___nop ..  ]
+[; ;MESSAGES.C: 112:     unsigned char data8;
+[v _data8 `uc ~T0 @X0 1 a ]
 "114
-[; ;MESSAGES.C: 114:             id = msgReceipt.msgId;
-[e = _id . _msgReceipt 0 ]
+[; ;MESSAGES.C: 114:     if(CAN1_ReceivedMessageCountGet() > 0)
+[e $ ! > -> ( _CAN1_ReceivedMessageCountGet ..  `i -> 0 `i 3188  ]
 "115
-[; ;MESSAGES.C: 115:             idType = msgReceipt.field.idType;
-[e = _idType . . . _msgReceipt 1 1 0 ]
-"116
-[; ;MESSAGES.C: 116:             dlc = msgReceipt.field.dlc;
-[e = _dlc . . . _msgReceipt 1 1 2 ]
-"117
-[; ;MESSAGES.C: 117:             data1 = msgReceipt.data[0];
-[e = _data1 *U + . _msgReceipt 2 * -> -> 0 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"118
-[; ;MESSAGES.C: 118:             data2 = msgReceipt.data[1];
-[e = _data2 *U + . _msgReceipt 2 * -> -> 1 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"119
-[; ;MESSAGES.C: 119:             data3 = msgReceipt.data[2];
-[e = _data3 *U + . _msgReceipt 2 * -> -> 2 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"120
-[; ;MESSAGES.C: 120:             data4 = msgReceipt.data[3];
-[e = _data4 *U + . _msgReceipt 2 * -> -> 3 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"121
-[; ;MESSAGES.C: 121:             data5 = msgReceipt.data[4];
-[e = _data5 *U + . _msgReceipt 2 * -> -> 4 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"122
-[; ;MESSAGES.C: 122:             data6 = msgReceipt.data[5];
-[e = _data6 *U + . _msgReceipt 2 * -> -> 5 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"123
-[; ;MESSAGES.C: 123:             data7 = msgReceipt.data[6];
-[e = _data7 *U + . _msgReceipt 2 * -> -> 6 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"124
-[; ;MESSAGES.C: 124:             data8 = msgReceipt.data[7];
-[e = _data8 *U + . _msgReceipt 2 * -> -> 7 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
-"126
-[; ;MESSAGES.C: 126:             switch (id)
-[e $U 3187  ]
-"127
-[; ;MESSAGES.C: 127:             {
+[; ;MESSAGES.C: 115:     {
 {
-"128
-[; ;MESSAGES.C: 128:                 case 0x320:
-[e :U 3188 ]
-"129
-[; ;MESSAGES.C: 129:                     ucTargetAccelerator = data1;
-[e = _ucTargetAccelerator _data1 ]
-"130
-[; ;MESSAGES.C: 130:                     ucTargetClutch = data2;
-[e = _ucTargetClutch _data2 ]
-"131
-[; ;MESSAGES.C: 131:                     ucTargetBrake = data3;
-[e = _ucTargetBrake _data3 ]
-"132
-[; ;MESSAGES.C: 132:                     ucTargetDirection = data4;
-[e = _ucTargetDirection _data4 ]
-"133
-[; ;MESSAGES.C: 133:                     ucTargetGear = data5;
-[e = _ucTargetGear _data5 ]
-"136
-[; ;MESSAGES.C: 136:                     break;
-[e $U 3186  ]
-"137
-[; ;MESSAGES.C: 137:                 case 0x500:
-[e :U 3189 ]
-"138
-[; ;MESSAGES.C: 138:                     ucAS_state = ( data1 & 0x07 );
-[e = _ucAS_state -> & -> _data1 `i -> 7 `i `uc ]
-"139
-[; ;MESSAGES.C: 139:                     ucEBS_state = ( data1 & 0x18 );
-[e = _ucEBS_state -> & -> _data1 `i -> 24 `i `uc ]
-"140
-[; ;MESSAGES.C: 140:                     ucAMI_state = ( data1 & 0xE0 );
-[e = _ucAMI_state -> & -> _data1 `i -> 224 `i `uc ]
-"141
-[; ;MESSAGES.C: 141:                     ucSteering_state = ( data2 & 0x01 );
-[e = _ucSteering_state -> & -> _data2 `i -> 1 `i `uc ]
-"142
-[; ;MESSAGES.C: 142:                     ucService_brake = ( data2 & 0x06 );
-[e = _ucService_brake -> & -> _data2 `i -> 6 `i `uc ]
-"143
-[; ;MESSAGES.C: 143:                     ucLap_counter = ( data2 & 0x78 );
-[e = _ucLap_counter -> & -> _data2 `i -> 120 `i `uc ]
-"144
-[; ;MESSAGES.C: 144:                     ucCones_count_actual = ( ( ( data3 & 0x7F ) << 1 ) | ( ( data2 & 0x80 ) >> 7 ) );
-[e = _ucCones_count_actual -> | << & -> _data3 `i -> 127 `i -> 1 `i >> & -> _data2 `i -> 128 `i -> 7 `i `uc ]
-"145
-[; ;MESSAGES.C: 145:                     uiCones_count_all = ( ( ( data5 & 0xFF ) << 8 ) | ( ( data4 & 0xFF ) << 1 ) | ( ( data3 & 0x80 ) >> 7 ) );
-[e = _uiCones_count_all -> | | << & -> _data5 `i -> 255 `i -> 8 `i << & -> _data4 `i -> 255 `i -> 1 `i >> & -> _data3 `i -> 128 `i -> 7 `i `ui ]
-"146
-[; ;MESSAGES.C: 146:                     break;
-[e $U 3186  ]
-"147
-[; ;MESSAGES.C: 147:                 case 0x501:
-[e :U 3190 ]
-"148
-[; ;MESSAGES.C: 148:                     ucSpeed_actual = data1;
-[e = _ucSpeed_actual _data1 ]
-"149
-[; ;MESSAGES.C: 149:                     ucSpeed_target = data2;
-[e = _ucSpeed_target _data2 ]
-"150
-[; ;MESSAGES.C: 150:                     ucSteering_angle_actual = data3;
-[e = _ucSteering_angle_actual _data3 ]
-"151
-[; ;MESSAGES.C: 151:                     ucSteering_angle_target = data4;
-[e = _ucSteering_angle_target _data4 ]
-"152
-[; ;MESSAGES.C: 152:                     ucBrake_hydr_actual = data5;
-[e = _ucBrake_hydr_actual _data5 ]
-"153
-[; ;MESSAGES.C: 153:                     ucBrake_hydr_target = data6;
-[e = _ucBrake_hydr_target _data6 ]
-"154
-[; ;MESSAGES.C: 154:                     ucMotor_moment_actual = data7;
-[e = _ucMotor_moment_actual _data7 ]
-"155
-[; ;MESSAGES.C: 155:                     ucMotor_moment_target = data8;
-[e = _ucMotor_moment_target _data8 ]
-"156
-[; ;MESSAGES.C: 156:                     break;
-[e $U 3186  ]
-"157
-[; ;MESSAGES.C: 157:                 case 0x502:
-[e :U 3191 ]
-"158
-[; ;MESSAGES.C: 158:                     uiAcc_longitudinal = ( ( data2 << 8 ) | data1 );
-[e = _uiAcc_longitudinal -> | << -> _data2 `i -> 8 `i -> _data1 `i `ui ]
-"159
-[; ;MESSAGES.C: 159:                     uiAcc_lateral = ( ( data4 << 8 ) | data3 );
-[e = _uiAcc_lateral -> | << -> _data4 `i -> 8 `i -> _data3 `i `ui ]
-"160
-[; ;MESSAGES.C: 160:                     uiYaw_rate = ( ( data6 << 8 ) | data5 );;
-[e = _uiYaw_rate -> | << -> _data6 `i -> 8 `i -> _data5 `i `ui ]
-"161
-[; ;MESSAGES.C: 161:                     break;
-[e $U 3186  ]
-"162
-[; ;MESSAGES.C: 162:                 default:
-[e :U 3192 ]
-"163
-[; ;MESSAGES.C: 163:                     __nop();
+"116
+[; ;MESSAGES.C: 116:         if(1 == CAN1_Receive(&msgReceipt))
+[e $ ! == -> 1 `i -> ( _CAN1_Receive (1 &U _msgReceipt `i 3189  ]
+"117
+[; ;MESSAGES.C: 117:         {
+{
+"118
+[; ;MESSAGES.C: 118:             __nop();
 [e ( ___nop ..  ]
-"164
-[; ;MESSAGES.C: 164:                     break;
-[e $U 3186  ]
-"165
-[; ;MESSAGES.C: 165:             }
-}
-[e $U 3186  ]
-[e :U 3187 ]
-[e [\ _id , $ -> -> -> 800 `i `l `ul 3188
- , $ -> -> -> 1280 `i `l `ul 3189
- , $ -> -> -> 1281 `i `l `ul 3190
- , $ -> -> -> 1282 `i `l `ul 3191
- 3192 ]
-[e :U 3186 ]
-"166
-[; ;MESSAGES.C: 166:         }
-}
-[e :U 3185 ]
+"119
+[; ;MESSAGES.C: 119:             id = msgReceipt.msgId;
+[e = _id . _msgReceipt 0 ]
+"120
+[; ;MESSAGES.C: 120:             idType = msgReceipt.field.idType;
+[e = _idType . . . _msgReceipt 1 1 0 ]
+"121
+[; ;MESSAGES.C: 121:             dlc = msgReceipt.field.dlc;
+[e = _dlc . . . _msgReceipt 1 1 2 ]
+"122
+[; ;MESSAGES.C: 122:             data1 = msgReceipt.data[0];
+[e = _data1 *U + . _msgReceipt 2 * -> -> 0 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"123
+[; ;MESSAGES.C: 123:             data2 = msgReceipt.data[1];
+[e = _data2 *U + . _msgReceipt 2 * -> -> 1 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"124
+[; ;MESSAGES.C: 124:             data3 = msgReceipt.data[2];
+[e = _data3 *U + . _msgReceipt 2 * -> -> 2 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"125
+[; ;MESSAGES.C: 125:             data4 = msgReceipt.data[3];
+[e = _data4 *U + . _msgReceipt 2 * -> -> 3 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"126
+[; ;MESSAGES.C: 126:             data5 = msgReceipt.data[4];
+[e = _data5 *U + . _msgReceipt 2 * -> -> 4 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"127
+[; ;MESSAGES.C: 127:             data6 = msgReceipt.data[5];
+[e = _data6 *U + . _msgReceipt 2 * -> -> 5 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"128
+[; ;MESSAGES.C: 128:             data7 = msgReceipt.data[6];
+[e = _data7 *U + . _msgReceipt 2 * -> -> 6 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"129
+[; ;MESSAGES.C: 129:             data8 = msgReceipt.data[7];
+[e = _data8 *U + . _msgReceipt 2 * -> -> 7 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
+"131
+[; ;MESSAGES.C: 131:             switch (id)
+[e $U 3191  ]
+"132
+[; ;MESSAGES.C: 132:             {
+{
+"133
+[; ;MESSAGES.C: 133:                 case 0x320:
+[e :U 3192 ]
+"134
+[; ;MESSAGES.C: 134:                     ucTargetAccelerator = data1;
+[e = _ucTargetAccelerator _data1 ]
+"135
+[; ;MESSAGES.C: 135:                     ucTargetClutch = data2;
+[e = _ucTargetClutch _data2 ]
+"136
+[; ;MESSAGES.C: 136:                     ucTargetBrake = data3;
+[e = _ucTargetBrake _data3 ]
+"137
+[; ;MESSAGES.C: 137:                     ucTargetDirection = data4;
+[e = _ucTargetDirection _data4 ]
+"138
+[; ;MESSAGES.C: 138:                     ucTargetGear = data5;
+[e = _ucTargetGear _data5 ]
+"140
+[; ;MESSAGES.C: 140:                     CLUTCH_Move(ucTargetClutch, 1);
+[e ( _CLUTCH_Move (2 , _ucTargetClutch -> -> 1 `i `uc ]
+"141
+[; ;MESSAGES.C: 141:                     APPSSend(ucTargetAccelerator);
+[e ( _APPSSend (1 _ucTargetAccelerator ]
+"142
+[; ;MESSAGES.C: 142:                     break;
+[e $U 3190  ]
+"143
+[; ;MESSAGES.C: 143:                 case 0x500:
+[e :U 3193 ]
+"144
+[; ;MESSAGES.C: 144:                     ucAS_state = ( data1 & 0x07 );
+[e = _ucAS_state -> & -> _data1 `i -> 7 `i `uc ]
+"145
+[; ;MESSAGES.C: 145:                     ucEBS_state = ( data1 & 0x18 );
+[e = _ucEBS_state -> & -> _data1 `i -> 24 `i `uc ]
+"146
+[; ;MESSAGES.C: 146:                     ucAMI_state = ( data1 & 0xE0 );
+[e = _ucAMI_state -> & -> _data1 `i -> 224 `i `uc ]
+"147
+[; ;MESSAGES.C: 147:                     ucSteering_state = ( data2 & 0x01 );
+[e = _ucSteering_state -> & -> _data2 `i -> 1 `i `uc ]
+"148
+[; ;MESSAGES.C: 148:                     ucService_brake = ( data2 & 0x06 );
+[e = _ucService_brake -> & -> _data2 `i -> 6 `i `uc ]
+"149
+[; ;MESSAGES.C: 149:                     ucLap_counter = ( data2 & 0x78 );
+[e = _ucLap_counter -> & -> _data2 `i -> 120 `i `uc ]
+"152
+[; ;MESSAGES.C: 152:                     break;
+[e $U 3190  ]
+"153
+[; ;MESSAGES.C: 153:                 case 0x501:
+[e :U 3194 ]
+"154
+[; ;MESSAGES.C: 154:                     ucSpeed_actual = data1;
+[e = _ucSpeed_actual _data1 ]
+"155
+[; ;MESSAGES.C: 155:                     ucSpeed_target = data2;
+[e = _ucSpeed_target _data2 ]
+"156
+[; ;MESSAGES.C: 156:                     ucSteering_angle_actual = data3;
+[e = _ucSteering_angle_actual _data3 ]
+"157
+[; ;MESSAGES.C: 157:                     ucSteering_angle_target = data4;
+[e = _ucSteering_angle_target _data4 ]
+"158
+[; ;MESSAGES.C: 158:                     ucBrake_hydr_actual = data5;
+[e = _ucBrake_hydr_actual _data5 ]
+"159
+[; ;MESSAGES.C: 159:                     ucBrake_hydr_target = data6;
+[e = _ucBrake_hydr_target _data6 ]
+"160
+[; ;MESSAGES.C: 160:                     ucMotor_moment_actual = data7;
+[e = _ucMotor_moment_actual _data7 ]
+"161
+[; ;MESSAGES.C: 161:                     ucMotor_moment_target = data8;
+[e = _ucMotor_moment_target _data8 ]
+"162
+[; ;MESSAGES.C: 162:                     break;
+[e $U 3190  ]
+"163
+[; ;MESSAGES.C: 163:                 case 0x502:
+[e :U 3195 ]
 "167
-[; ;MESSAGES.C: 167:     }
-}
-[e :U 3184 ]
+[; ;MESSAGES.C: 167:                     break;
+[e $U 3190  ]
 "168
-[; ;MESSAGES.C: 168: }
-[e :UE 3183 ]
+[; ;MESSAGES.C: 168:                 case 0x345:
+[e :U 3196 ]
+"169
+[; ;MESSAGES.C: 169:                     ucASMode = data1;
+[e = _ucASMode _data1 ]
+"170
+[; ;MESSAGES.C: 170:                     ETCModeSelect(ucASMode);
+[e ( _ETCModeSelect (1 _ucASMode ]
+"171
+[; ;MESSAGES.C: 171:                     break;
+[e $U 3190  ]
+"172
+[; ;MESSAGES.C: 172:                 case 0x412:
+[e :U 3197 ]
+"173
+[; ;MESSAGES.C: 173:                     ucSTEER_WH_Clutch = data1;
+[e = _ucSTEER_WH_Clutch _data1 ]
+"174
+[; ;MESSAGES.C: 174:                     CLUTCH_Move(ucSTEER_WH_Clutch, 0);
+[e ( _CLUTCH_Move (2 , _ucSTEER_WH_Clutch -> -> 0 `i `uc ]
+"175
+[; ;MESSAGES.C: 175:                     break;
+[e $U 3190  ]
+"176
+[; ;MESSAGES.C: 176:                 default:
+[e :U 3198 ]
+"177
+[; ;MESSAGES.C: 177:                     __nop();
+[e ( ___nop ..  ]
+"178
+[; ;MESSAGES.C: 178:                     break;
+[e $U 3190  ]
+"179
+[; ;MESSAGES.C: 179:             }
+}
+[e $U 3190  ]
+[e :U 3191 ]
+[e [\ _id , $ -> -> -> 800 `i `l `ul 3192
+ , $ -> -> -> 1280 `i `l `ul 3193
+ , $ -> -> -> 1281 `i `l `ul 3194
+ , $ -> -> -> 1282 `i `l `ul 3195
+ , $ -> -> -> 837 `i `l `ul 3196
+ , $ -> -> -> 1042 `i `l `ul 3197
+ 3198 ]
+[e :U 3190 ]
+"180
+[; ;MESSAGES.C: 180:         }
+}
+[e :U 3189 ]
+"181
+[; ;MESSAGES.C: 181:     }
+}
+[e :U 3188 ]
+"182
+[; ;MESSAGES.C: 182: }
+[e :UE 3187 ]
 }

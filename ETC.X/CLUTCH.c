@@ -10,7 +10,7 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "PARAMETERS.h"
 #include "GPIO.h"
-
+#include "MESSAGES.h"
 
 //VARIABLES
 unsigned char ucCLUTCHlmin;
@@ -27,7 +27,7 @@ void CLUTCH_Init (void)
 
 
 
-void CLUTCH_Move (unsigned char ucTargetMove)
+void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 {
     //CUANDO TENGAMOS LA IN1, ESTA COMPLETAMENTE EMBRAGADO, METER ESTADOS EMBRAGUE
     //ucCLUTCHState
@@ -36,16 +36,24 @@ void CLUTCH_Move (unsigned char ucTargetMove)
     uiCLUTCHDuty = ucTargetMove * 12;
     uiCLUTCHDuty = uiCLUTCHDuty / 100;
     uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
-    if ( uiCLUTCHDuty <= ucCLUTCHlmax )
+    //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
+    if ( ucMode == ucASMode ) 
     {
-        if ( ( uiCLUTCHDuty > 0 ) && ( uiCLUTCHDuty < 12 ) ) //0-180º con 50Hz
+        if ( uiCLUTCHDuty <= ucCLUTCHlmax )
         {
-            GPIO_PWM1_Control(uiCLUTCHDuty, 50);
+            if ( ( uiCLUTCHDuty > 0 ) && ( uiCLUTCHDuty < 12 ) ) //0-180º con 50Hz
+            {
+                GPIO_PWM1_Control(uiCLUTCHDuty, 50);
+            }
+        }
+        else
+        {
+            //generar error de rango
         }
     }
     else
     {
-        //generar error de rango
+        //generar error movimiento impedido por modo de conduccion
     }
     
 }
@@ -62,10 +70,12 @@ void CLUTCH_AnalyseState (void)
     if ( ( ucFDC1 == TRUE ) &&  ( ucFDC2 == FALSE ) ) //EMBRAGADO
     {
         ucCLUTCHState = CLUTCH_ENGAGE;
+        ucCLUTCHlmin = ucCLUTCHDuty;
     }
     else if ( ( ucFDC1 == FALSE ) &&  ( ucFDC2 == TRUE ) ) //DESAMBRAGADO
     {
         ucCLUTCHState = CLUTCH_DISENGAGE;
+        ucCLUTCHlmax = ucCLUTCHDuty;
     }
     else if ( ( ucFDC1 == FALSE ) &&  ( ucFDC2 == FALSE ) ) //RECORRIDO
     {

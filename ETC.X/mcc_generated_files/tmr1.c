@@ -50,7 +50,6 @@
 
 #include <xc.h>
 #include "tmr1.h"
-#include "pin_manager.h"
 #include "../TEMPORIZATIONS.h"
 
 /**
@@ -76,11 +75,11 @@ void TMR1_Initialize(void)
     //CS FOSC/4; 
     T1CLK = 0x01;
 
-    //TMR1H 11; 
-    TMR1H = 0x0B;
+    //TMR1H 133; 
+    TMR1H = 0x85;
 
-    //TMR1L 220; 
-    TMR1L = 0xDC;
+    //TMR1L 238; 
+    TMR1L = 0xEE;
 
     // Clearing IF flag before enabling the interrupt.
     PIR3bits.TMR1IF = 0;
@@ -185,6 +184,10 @@ void TMR1_ISR(void)
 void TMR1_CallBack(void)
 {
     // Add your custom callback code here
+    if(TMR1_InterruptHandler)
+    {
+        TMR1_InterruptHandler();
+    }
     //EJECUTAR TEMPORACIZACIONES CADA 100ms
     TEMPORIZATION_100ms();
     
@@ -214,11 +217,6 @@ void TMR1_CallBack(void)
         TEMPORIZATION_1mins();
     }
     
-    
-    if(TMR1_InterruptHandler)
-    {
-        TMR1_InterruptHandler();
-    }
 }
 
 void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){

@@ -37515,13 +37515,6 @@ extern void (*TMR1_InterruptHandler)(void);
 void TMR1_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/tmr1.c" 2
 
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 426 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 438 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 53 "mcc_generated_files/tmr1.c" 2
-
 # 1 "mcc_generated_files/../TEMPORIZATIONS.h" 1
 # 23 "mcc_generated_files/../TEMPORIZATIONS.h"
 extern unsigned char ucCount500ms;
@@ -37539,7 +37532,7 @@ void TEMPORIZATION_1s (void);
 void TEMPORIZATION_10s (void);
 void TEMPORIZATION_30s (void);
 void TEMPORIZATION_1mins (void);
-# 54 "mcc_generated_files/tmr1.c" 2
+# 53 "mcc_generated_files/tmr1.c" 2
 
 
 
@@ -37566,10 +37559,10 @@ void TMR1_Initialize(void)
     T1CLK = 0x01;
 
 
-    TMR1H = 0x0B;
+    TMR1H = 0x85;
 
 
-    TMR1L = 0xDC;
+    TMR1L = 0xEE;
 
 
     PIR3bits.TMR1IF = 0;
@@ -37674,6 +37667,10 @@ void TMR1_ISR(void)
 void TMR1_CallBack(void)
 {
 
+    if(TMR1_InterruptHandler)
+    {
+        TMR1_InterruptHandler();
+    }
 
     TEMPORIZATION_100ms();
 
@@ -37703,11 +37700,6 @@ void TMR1_CallBack(void)
         TEMPORIZATION_1mins();
     }
 
-
-    if(TMR1_InterruptHandler)
-    {
-        TMR1_InterruptHandler();
-    }
 }
 
 void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){

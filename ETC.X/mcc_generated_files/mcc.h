@@ -57,7 +57,6 @@
 #include "adc.h"
 #include "tmr1.h"
 #include "tmr0.h"
-#include "ext_int.h"
 #include "can1.h"
 #include "drivers/i2c_simple_master.h"
 #include "pwm2_16bit.h"

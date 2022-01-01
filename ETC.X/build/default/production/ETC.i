@@ -37799,10 +37799,10 @@ typedef uint16_t adc_result_t;
 
 typedef enum
 {
-    channel_ANA4 = 0x4,
-    channel_ANC0 = 0x10,
-    channel_ANC1 = 0x11,
-    channel_ANC2 = 0x12,
+    TPS2 = 0x4,
+    TPS1 = 0x10,
+    APPS2 = 0x11,
+    APPS1 = 0x12,
     channel_VSS = 0x3B,
     channel_Temp = 0x3C,
     channel_DAC1 = 0x3D,
@@ -38008,21 +38008,6 @@ extern void (*TMR0_InterruptHandler)(void);
 void TMR0_DefaultInterruptHandler(void);
 # 59 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/ext_int.h" 1
-# 250 "./mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-# 272 "./mcc_generated_files/ext_int.h"
-void INT2_ISR(void);
-# 296 "./mcc_generated_files/ext_int.h"
-void INT2_CallBack(void);
-# 319 "./mcc_generated_files/ext_int.h"
-void INT2_SetInterruptHandler(void (* InterruptHandler)(void));
-# 343 "./mcc_generated_files/ext_int.h"
-extern void (*INT2_InterruptHandler)(void);
-# 367 "./mcc_generated_files/ext_int.h"
-void INT2_DefaultInterruptHandler(void);
-# 60 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/can1.h" 1
 # 56 "./mcc_generated_files/can1.h"
 # 1 "./mcc_generated_files/can_types.h" 1
@@ -38196,7 +38181,7 @@ void CAN1_SetTXQnullHandler(void (*handler)(void));
 
 void CAN1_ISR(void);
 void CAN1_RXI_ISR(void);
-# 61 "./mcc_generated_files/mcc.h" 2
+# 60 "./mcc_generated_files/mcc.h" 2
 
 
 # 1 "./mcc_generated_files/pwm2_16bit.h" 1
@@ -38239,7 +38224,7 @@ void PWM2_16BIT_Slice1Output1_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM2_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void));
 # 222 "./mcc_generated_files/pwm2_16bit.h"
 void PWM2_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
-# 63 "./mcc_generated_files/mcc.h" 2
+# 62 "./mcc_generated_files/mcc.h" 2
 
 
 # 1 "./mcc_generated_files/pwm1_16bit.h" 1
@@ -38282,12 +38267,12 @@ void PWM1_16BIT_Slice1Output1_SetInterruptHandler(void (* InterruptHandler)(void
 void PWM1_16BIT_Slice1Output2_SetInterruptHandler(void (* InterruptHandler)(void));
 # 222 "./mcc_generated_files/pwm1_16bit.h"
 void PWM1_16BIT_Period_SetInterruptHandler(void (* InterruptHandler)(void));
-# 65 "./mcc_generated_files/mcc.h" 2
-# 80 "./mcc_generated_files/mcc.h"
+# 64 "./mcc_generated_files/mcc.h" 2
+# 79 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 93 "./mcc_generated_files/mcc.h"
+# 92 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 106 "./mcc_generated_files/mcc.h"
+# 105 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 16 "./MESSAGES.h" 2
 
@@ -38298,6 +38283,7 @@ void PMD_Initialize(void);
 
 CAN_MSG_OBJ msgTransmit;
 CAN_MSG_OBJ msgReceipt;
+uint8_t CANDATAdata[8];
 
 
 extern unsigned char CANDATAdata[8];
@@ -38332,7 +38318,11 @@ extern unsigned int uiYaw_rate;
 
 extern unsigned char ucASBState;
 extern unsigned char ucASRequesState;
-# 84 "./MESSAGES.h"
+
+extern unsigned char ucASMode;
+
+extern unsigned char ucSTEER_WH_Clutch;
+# 95 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
 # 10 "ETC.c" 2
@@ -38401,16 +38391,16 @@ void TPSReadmax (void)
 }
 
 
-void ETCModeSelect (unsigned char ucASmode)
+void ETCModeSelect (unsigned char ucModeSelect)
 {
-    switch (ucASmode)
+    switch (ucModeSelect)
     {
-        case 2:
+        case 1:
 
             APPSSend(0x00);
             do { LATAbits.LATA5 = 1; } while(0);
             break;
-        case 1:
+        case 0:
             do { LATAbits.LATA5 = 0; } while(0);
             break;
         default:

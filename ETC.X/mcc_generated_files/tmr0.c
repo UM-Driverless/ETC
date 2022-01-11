@@ -134,6 +134,7 @@ void TMR0_ISR(void)
         // reset ticker counter
         CountCallBack = 0;
     }
+    TEMPORIZATION_10ms();
 
     // add your TMR0 interrupt custom code
 }
@@ -141,7 +142,7 @@ void TMR0_ISR(void)
 void TMR0_CallBack(void)
 {
     // Add your custom callback code here
-    TEMPORIZATION_10ms();
+    
     if(TMR0_InterruptHandler)
     {
         TMR0_InterruptHandler();

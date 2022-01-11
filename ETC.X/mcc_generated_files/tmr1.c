@@ -174,11 +174,12 @@ void TMR1_ISR(void)
     if (++CountCallBack >= TMR1_INTERRUPT_TICKER_FACTOR)
     {
         // ticker function call
-        TMR1_CallBack();
+        
 
         // reset ticker counter
         CountCallBack = 0;
     }
+    TMR1_CallBack();
 }
 
 void TMR1_CallBack(void)

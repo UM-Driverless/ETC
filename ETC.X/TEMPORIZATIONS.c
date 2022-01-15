@@ -24,6 +24,7 @@ unsigned int uiCount1min;
 void TEMPORIZATION_10ms (void)
 {
     ANALOGRead();
+    CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
 }
 
 void TEMPORIZATION_100ms (void)

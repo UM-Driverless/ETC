@@ -1,5 +1,5 @@
 build/default/production/MESSAGES.p1:  \
-MESSAGES.c  \
+MESSAGES.C  \
 MESSAGES.h  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/device_config.h  \

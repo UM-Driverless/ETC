@@ -171,7 +171,7 @@ void CANReadMessage (void)
                     break;
                 case STEER_WH_CONT:
                     ucSTEER_WH_Clutch = data1;
-                    CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
+                    //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
                     break;
                 default:
                     Nop();

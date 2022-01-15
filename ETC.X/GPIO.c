@@ -7,6 +7,7 @@
 
 #include "GPIO.h"
 #include "mcc_generated_files/pwm1_16bit.h"
+#include "mcc_generated_files/pwm2_16bit.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "../ETC.X/PARAMETERS.h"
 #include "CLUTCH.h"
@@ -30,6 +31,8 @@ void GPIOInit (void)
     SDC_SetDigitalOutput();
     OUTM_SetDigitalOutput();
     STBY_SetDigitalOutput();
+    GPIO_PWM1_Control( 0, 50 );
+    GPIO_PWM2_Control( 0, 50 );
 }
 
 
@@ -52,6 +55,27 @@ void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
     PWM1_16BIT_SetSlice1Output1DutyCycleRegister(uiConvertedDC); 
     PWM1_16BIT_WritePeriodRegister(uiConvertedPeriod);
     PWM1_16BIT_LoadBufferRegisters();
+}
+
+/****GPIO_PWM2_Control****/
+//uiDutyCycle 0 - 100% 
+//Servomotores van a 50Hz DC:2-12% GPIO_PWM1_Control(12, 50);
+//uiFreq Hz
+void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
+{
+    unsigned int uiConvertedPeriod;
+    unsigned int uiConvertedDC;
+    
+    //Conversiones
+    uiConvertedPeriod = ( 39241/uiFreq );
+    uiConvertedPeriod = ( uiConvertedPeriod - 1.1508 );
+    uiConvertedDC = ( uiDutyCycle * 4 );
+    uiConvertedDC = ( uiConvertedDC * 100 );
+    uiConvertedDC = ( uiConvertedDC / uiFreq );
+    //Funciones
+    PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiConvertedDC); 
+    PWM2_16BIT_WritePeriodRegister(uiConvertedPeriod);
+    PWM2_16BIT_LoadBufferRegisters();
 }
 
 

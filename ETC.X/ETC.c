@@ -8,6 +8,7 @@
 #include "mcc_generated_files/DAC3.h"
 #include "mcc_generated_files/drivers/i2c_simple_master.h"
 #include "MESSAGES.h"
+#include "mcc_generated_files/DAC3_example.h"
 
 //VARIABLES    
 unsigned char ucAPPS1min;
@@ -27,7 +28,7 @@ unsigned char ucTPS2;
 void APPSSend (unsigned char ucPercent)
 {
     float voltage;
-    float dacAPPS1, dacAPPS2;
+    uint16_t dacAPPS1, dacAPPS2;
     
     //Funcion de transferencia de porcentaje a valor APPS
     
@@ -35,9 +36,10 @@ void APPSSend (unsigned char ucPercent)
     dacAPPS1 = (4096*ucPercent)/5;
     dacAPPS2 = (4096*ucPercent)/5;
     //APPS1 I2C ADRRS = 0x60
-    i2c_write2ByteRegister(0x60,0x60,dacAPPS1);
+    i2c_write2ByteRegister(0x60,(dacAPPS1>>8),dacAPPS1);
     //APPS2 I2C ADRRS = 0x61
-    i2c_write2ByteRegister(0x61,0x60,dacAPPS2);
+    i2c_write2ByteRegister(0x61,(dacAPPS2>>8),dacAPPS2);
+    DAC3_example();
 }
 
 

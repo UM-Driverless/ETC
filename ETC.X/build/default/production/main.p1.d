@@ -16,4 +16,5 @@ mcc_generated_files/DAC3.h  \
 mcc_generated_files/pwm1_16bit.h  \
 MESSAGES.h  \
 CLUTCH.h  \
-GPIO.h 
+GPIO.h  \
+ETC.h 

@@ -3558,39 +3558,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"52 main.c
-[; ;main.c: 52: void main(void)
+"53 main.c
+[; ;main.c: 53: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"53
-[; ;main.c: 53: {
+"54
+[; ;main.c: 54: {
 {
 [e :U _main ]
 [f ]
-"55
-[; ;main.c: 55:     SYSTEM_Initialize();
+"56
+[; ;main.c: 56:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"62
-[; ;main.c: 62:     (INTCON0bits.GIE = 1);
+"63
+[; ;main.c: 63:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"67
-[; ;main.c: 67:     CLUTCH_Init();
-[e ( _CLUTCH_Init ..  ]
 "68
-[; ;main.c: 68:     GPIOInit();
+[; ;main.c: 68:     CLUTCH_Init();
+[e ( _CLUTCH_Init ..  ]
+"69
+[; ;main.c: 69:     GPIOInit();
 [e ( _GPIOInit ..  ]
-"70
-[; ;main.c: 70:     while (1)
+"74
+[; ;main.c: 74:     while (1)
 [e :U 3183 ]
-"71
-[; ;main.c: 71:     {
-{
 "75
-[; ;main.c: 75:     }
+[; ;main.c: 75:     {
+{
+"79
+[; ;main.c: 79:     }
 }
 [e :U 3182 ]
 [e $U 3183  ]
 [e :U 3184 ]
-"76
-[; ;main.c: 76: }
+"80
+[; ;main.c: 80: }
 [e :UE 3181 ]
 }

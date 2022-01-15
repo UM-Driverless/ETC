@@ -45,6 +45,7 @@
 #include "MESSAGES.h"
 #include "CLUTCH.h"
 #include "GPIO.h"
+#include "ETC.h"
 
 /*
                          Main application
@@ -67,6 +68,9 @@ void main(void)
     CLUTCH_Init();
     GPIOInit();
 
+    //APPSMODE_SetHigh();
+    //APPSSend(0);
+            
     while (1)
     {
         // Add your application code

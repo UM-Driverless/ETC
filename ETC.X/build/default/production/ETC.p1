@@ -14,6 +14,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40 ./mcc_generated_files/drivers/i2c_simple_master.h
 [; ;./mcc_generated_files/drivers/i2c_simple_master.h: 40: void i2c_write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
 [v _i2c_write2ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`us ]
+"27 ./mcc_generated_files/DAC3_example.h
+[; ;./mcc_generated_files/DAC3_example.h: 27: void DAC3_example(void);
+[v _DAC3_example `(v ~T0 @X0 0 ef ]
 "1480 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
 [s S3063 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -3549,213 +3552,216 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
-"13 ETC.c
-[; ;ETC.c: 13: unsigned char ucAPPS1min;
+"14 ETC.c
+[; ;ETC.c: 14: unsigned char ucAPPS1min;
 [v _ucAPPS1min `uc ~T0 @X0 1 e ]
-"14
-[; ;ETC.c: 14: unsigned char ucAPPS1max;
-[v _ucAPPS1max `uc ~T0 @X0 1 e ]
 "15
-[; ;ETC.c: 15: unsigned char ucAPPS2min;
-[v _ucAPPS2min `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 15: unsigned char ucAPPS1max;
+[v _ucAPPS1max `uc ~T0 @X0 1 e ]
 "16
-[; ;ETC.c: 16: unsigned char ucAPPS2max;
-[v _ucAPPS2max `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 16: unsigned char ucAPPS2min;
+[v _ucAPPS2min `uc ~T0 @X0 1 e ]
 "17
-[; ;ETC.c: 17: unsigned char ucTPS1min;
-[v _ucTPS1min `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 17: unsigned char ucAPPS2max;
+[v _ucAPPS2max `uc ~T0 @X0 1 e ]
 "18
-[; ;ETC.c: 18: unsigned char ucTPS1max;
-[v _ucTPS1max `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 18: unsigned char ucTPS1min;
+[v _ucTPS1min `uc ~T0 @X0 1 e ]
 "19
-[; ;ETC.c: 19: unsigned char ucTPS2min;
-[v _ucTPS2min `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 19: unsigned char ucTPS1max;
+[v _ucTPS1max `uc ~T0 @X0 1 e ]
 "20
-[; ;ETC.c: 20: unsigned char ucTPS2max;
-[v _ucTPS2max `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 20: unsigned char ucTPS2min;
+[v _ucTPS2min `uc ~T0 @X0 1 e ]
 "21
-[; ;ETC.c: 21: unsigned char ucAPPS1;
-[v _ucAPPS1 `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 21: unsigned char ucTPS2max;
+[v _ucTPS2max `uc ~T0 @X0 1 e ]
 "22
-[; ;ETC.c: 22: unsigned char ucAPPS2;
-[v _ucAPPS2 `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 22: unsigned char ucAPPS1;
+[v _ucAPPS1 `uc ~T0 @X0 1 e ]
 "23
-[; ;ETC.c: 23: unsigned char ucTPS1;
-[v _ucTPS1 `uc ~T0 @X0 1 e ]
+[; ;ETC.c: 23: unsigned char ucAPPS2;
+[v _ucAPPS2 `uc ~T0 @X0 1 e ]
 "24
-[; ;ETC.c: 24: unsigned char ucTPS2;
+[; ;ETC.c: 24: unsigned char ucTPS1;
+[v _ucTPS1 `uc ~T0 @X0 1 e ]
+"25
+[; ;ETC.c: 25: unsigned char ucTPS2;
 [v _ucTPS2 `uc ~T0 @X0 1 e ]
-"27
-[; ;ETC.c: 27: void APPSSend (unsigned char ucPercent)
-[v _APPSSend `(v ~T0 @X0 1 ef1`uc ]
 "28
-[; ;ETC.c: 28: {
+[; ;ETC.c: 28: void APPSSend (unsigned char ucPercent)
+[v _APPSSend `(v ~T0 @X0 1 ef1`uc ]
+"29
+[; ;ETC.c: 29: {
 {
 [e :U _APPSSend ]
-"27
-[; ;ETC.c: 27: void APPSSend (unsigned char ucPercent)
-[v _ucPercent `uc ~T0 @X0 1 r1 ]
 "28
-[; ;ETC.c: 28: {
-[f ]
+[; ;ETC.c: 28: void APPSSend (unsigned char ucPercent)
+[v _ucPercent `uc ~T0 @X0 1 r1 ]
 "29
-[; ;ETC.c: 29:     float voltage;
-[v _voltage `f ~T0 @X0 1 a ]
+[; ;ETC.c: 29: {
+[f ]
 "30
-[; ;ETC.c: 30:     float dacAPPS1, dacAPPS2;
-[v _dacAPPS1 `f ~T0 @X0 1 a ]
-[v _dacAPPS2 `f ~T0 @X0 1 a ]
-"35
-[; ;ETC.c: 35:     dacAPPS1 = (4096*ucPercent)/5;
-[e = _dacAPPS1 -> / * -> 4096 `i -> _ucPercent `i -> 5 `i `f ]
+[; ;ETC.c: 30:     float voltage;
+[v _voltage `f ~T0 @X0 1 a ]
+"31
+[; ;ETC.c: 31:     uint16_t dacAPPS1, dacAPPS2;
+[v _dacAPPS1 `us ~T0 @X0 1 a ]
+[v _dacAPPS2 `us ~T0 @X0 1 a ]
 "36
-[; ;ETC.c: 36:     dacAPPS2 = (4096*ucPercent)/5;
-[e = _dacAPPS2 -> / * -> 4096 `i -> _ucPercent `i -> 5 `i `f ]
-"38
-[; ;ETC.c: 38:     i2c_write2ByteRegister(0x60,0x60,dacAPPS1);
-[e ( _i2c_write2ByteRegister (3 , , -> -> 96 `i `uc -> -> 96 `i `uc -> _dacAPPS1 `us ]
-"40
-[; ;ETC.c: 40:     i2c_write2ByteRegister(0x61,0x60,dacAPPS2);
-[e ( _i2c_write2ByteRegister (3 , , -> -> 97 `i `uc -> -> 96 `i `uc -> _dacAPPS2 `us ]
+[; ;ETC.c: 36:     dacAPPS1 = (4096*ucPercent)/5;
+[e = _dacAPPS1 -> / * -> 4096 `i -> _ucPercent `i -> 5 `i `us ]
+"37
+[; ;ETC.c: 37:     dacAPPS2 = (4096*ucPercent)/5;
+[e = _dacAPPS2 -> / * -> 4096 `i -> _ucPercent `i -> 5 `i `us ]
+"39
+[; ;ETC.c: 39:     i2c_write2ByteRegister(0x60,(dacAPPS1>>8),dacAPPS1);
+[e ( _i2c_write2ByteRegister (3 , , -> -> 96 `i `uc -> >> -> _dacAPPS1 `ui -> 8 `i `uc _dacAPPS1 ]
 "41
-[; ;ETC.c: 41: }
+[; ;ETC.c: 41:     i2c_write2ByteRegister(0x61,(dacAPPS2>>8),dacAPPS2);
+[e ( _i2c_write2ByteRegister (3 , , -> -> 97 `i `uc -> >> -> _dacAPPS2 `ui -> 8 `i `uc _dacAPPS2 ]
+"42
+[; ;ETC.c: 42:     DAC3_example();
+[e ( _DAC3_example ..  ]
+"43
+[; ;ETC.c: 43: }
 [e :UE 3181 ]
 }
-"46
-[; ;ETC.c: 46: void APPSReadmin (void)
+"48
+[; ;ETC.c: 48: void APPSReadmin (void)
 [v _APPSReadmin `(v ~T0 @X0 1 ef ]
-"47
-[; ;ETC.c: 47: {
+"49
+[; ;ETC.c: 49: {
 {
 [e :U _APPSReadmin ]
 [f ]
-"49
-[; ;ETC.c: 49:     ucAPPS1min = ucAPPS1;
-[e = _ucAPPS1min _ucAPPS1 ]
-"50
-[; ;ETC.c: 50:     ucAPPS2min = ucAPPS2;
-[e = _ucAPPS2min _ucAPPS2 ]
 "51
-[; ;ETC.c: 51: }
+[; ;ETC.c: 51:     ucAPPS1min = ucAPPS1;
+[e = _ucAPPS1min _ucAPPS1 ]
+"52
+[; ;ETC.c: 52:     ucAPPS2min = ucAPPS2;
+[e = _ucAPPS2min _ucAPPS2 ]
+"53
+[; ;ETC.c: 53: }
 [e :UE 3182 ]
 }
-"53
-[; ;ETC.c: 53: void APPSReadmax (void)
+"55
+[; ;ETC.c: 55: void APPSReadmax (void)
 [v _APPSReadmax `(v ~T0 @X0 1 ef ]
-"54
-[; ;ETC.c: 54: {
+"56
+[; ;ETC.c: 56: {
 {
 [e :U _APPSReadmax ]
 [f ]
-"56
-[; ;ETC.c: 56:     ucAPPS1max = ucAPPS1;
-[e = _ucAPPS1max _ucAPPS1 ]
-"57
-[; ;ETC.c: 57:     ucAPPS2max = ucAPPS2;
-[e = _ucAPPS2max _ucAPPS2 ]
 "58
-[; ;ETC.c: 58: }
+[; ;ETC.c: 58:     ucAPPS1max = ucAPPS1;
+[e = _ucAPPS1max _ucAPPS1 ]
+"59
+[; ;ETC.c: 59:     ucAPPS2max = ucAPPS2;
+[e = _ucAPPS2max _ucAPPS2 ]
+"60
+[; ;ETC.c: 60: }
 [e :UE 3183 ]
 }
-"60
-[; ;ETC.c: 60: void TPSReadmin (void)
+"62
+[; ;ETC.c: 62: void TPSReadmin (void)
 [v _TPSReadmin `(v ~T0 @X0 1 ef ]
-"61
-[; ;ETC.c: 61: {
+"63
+[; ;ETC.c: 63: {
 {
 [e :U _TPSReadmin ]
 [f ]
-"63
-[; ;ETC.c: 63:     ucTPS1min = ucTPS1;
-[e = _ucTPS1min _ucTPS1 ]
-"64
-[; ;ETC.c: 64:     ucTPS2min = ucTPS2;
-[e = _ucTPS2min _ucTPS2 ]
 "65
-[; ;ETC.c: 65: }
+[; ;ETC.c: 65:     ucTPS1min = ucTPS1;
+[e = _ucTPS1min _ucTPS1 ]
+"66
+[; ;ETC.c: 66:     ucTPS2min = ucTPS2;
+[e = _ucTPS2min _ucTPS2 ]
+"67
+[; ;ETC.c: 67: }
 [e :UE 3184 ]
 }
-"67
-[; ;ETC.c: 67: void TPSReadmax (void)
+"69
+[; ;ETC.c: 69: void TPSReadmax (void)
 [v _TPSReadmax `(v ~T0 @X0 1 ef ]
-"68
-[; ;ETC.c: 68: {
+"70
+[; ;ETC.c: 70: {
 {
 [e :U _TPSReadmax ]
 [f ]
-"70
-[; ;ETC.c: 70:     ucTPS1max = ucTPS1;
-[e = _ucTPS1max _ucTPS1 ]
-"71
-[; ;ETC.c: 71:     ucTPS2max = ucTPS2;
-[e = _ucTPS2max _ucTPS2 ]
 "72
-[; ;ETC.c: 72: }
+[; ;ETC.c: 72:     ucTPS1max = ucTPS1;
+[e = _ucTPS1max _ucTPS1 ]
+"73
+[; ;ETC.c: 73:     ucTPS2max = ucTPS2;
+[e = _ucTPS2max _ucTPS2 ]
+"74
+[; ;ETC.c: 74: }
 [e :UE 3185 ]
 }
-"75
-[; ;ETC.c: 75: void ETCModeSelect (unsigned char ucModeSelect)
+"77
+[; ;ETC.c: 77: void ETCModeSelect (unsigned char ucModeSelect)
 [v _ETCModeSelect `(v ~T0 @X0 1 ef1`uc ]
-"76
-[; ;ETC.c: 76: {
+"78
+[; ;ETC.c: 78: {
 {
 [e :U _ETCModeSelect ]
-"75
-[; ;ETC.c: 75: void ETCModeSelect (unsigned char ucModeSelect)
-[v _ucModeSelect `uc ~T0 @X0 1 r1 ]
-"76
-[; ;ETC.c: 76: {
-[f ]
 "77
-[; ;ETC.c: 77:     switch (ucModeSelect)
-[e $U 3188  ]
+[; ;ETC.c: 77: void ETCModeSelect (unsigned char ucModeSelect)
+[v _ucModeSelect `uc ~T0 @X0 1 r1 ]
 "78
-[; ;ETC.c: 78:     {
-{
+[; ;ETC.c: 78: {
+[f ]
 "79
-[; ;ETC.c: 79:         case 1:
-[e :U 3189 ]
+[; ;ETC.c: 79:     switch (ucModeSelect)
+[e $U 3188  ]
+"80
+[; ;ETC.c: 80:     {
+{
 "81
-[; ;ETC.c: 81:             APPSSend(0x00);
+[; ;ETC.c: 81:         case 1:
+[e :U 3189 ]
+"83
+[; ;ETC.c: 83:             APPSSend(0x00);
 [e ( _APPSSend (1 -> -> 0 `i `uc ]
-"82
-[; ;ETC.c: 82:             do { LATAbits.LATA5 = 1; } while(0);
+"84
+[; ;ETC.c: 84:             do { LATAbits.LATA5 = 1; } while(0);
 [e :U 3192 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 3191 ]
-"83
-[; ;ETC.c: 83:             break;
-[e $U 3187  ]
-"84
-[; ;ETC.c: 84:         case 0:
-[e :U 3193 ]
 "85
-[; ;ETC.c: 85:             do { LATAbits.LATA5 = 0; } while(0);
+[; ;ETC.c: 85:             break;
+[e $U 3187  ]
+"86
+[; ;ETC.c: 86:         case 0:
+[e :U 3193 ]
+"87
+[; ;ETC.c: 87:             do { LATAbits.LATA5 = 0; } while(0);
 [e :U 3196 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 3195 ]
-"86
-[; ;ETC.c: 86:             break;
-[e $U 3187  ]
-"87
-[; ;ETC.c: 87:         default:
-[e :U 3197 ]
 "88
-[; ;ETC.c: 88:             do { LATAbits.LATA5 = 0; } while(0);
+[; ;ETC.c: 88:             break;
+[e $U 3187  ]
+"89
+[; ;ETC.c: 89:         default:
+[e :U 3197 ]
+"90
+[; ;ETC.c: 90:             do { LATAbits.LATA5 = 0; } while(0);
 [e :U 3200 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 3199 ]
-"89
-[; ;ETC.c: 89:             break;
+"91
+[; ;ETC.c: 91:             break;
 [e $U 3187  ]
-"90
-[; ;ETC.c: 90:     }
+"92
+[; ;ETC.c: 92:     }
 }
 [e $U 3187  ]
 [e :U 3188 ]
@@ -3763,19 +3769,19 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 0 `i 3193
  3197 ]
 [e :U 3187 ]
-"91
-[; ;ETC.c: 91: }
+"93
+[; ;ETC.c: 93: }
 [e :UE 3186 ]
 }
-"94
-[; ;ETC.c: 94: void ETCRulesSupervision(void)
+"96
+[; ;ETC.c: 96: void ETCRulesSupervision(void)
 [v _ETCRulesSupervision `(v ~T0 @X0 1 ef ]
-"95
-[; ;ETC.c: 95: {
+"97
+[; ;ETC.c: 97: {
 {
 [e :U _ETCRulesSupervision ]
 [f ]
-"97
-[; ;ETC.c: 97: }
+"99
+[; ;ETC.c: 99: }
 [e :UE 3201 ]
 }

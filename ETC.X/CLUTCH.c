@@ -38,9 +38,9 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
     uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
     GPIO_PWM1_Control(uiCLUTCHDuty, 300);
     //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
-    /*if ( ucMode == ucASMode ) 
+    if ( ucMode == ucASMode ) 
     {
-        if ( uiCLUTCHDuty <= ucCLUTCHlmax )
+        /*if ( uiCLUTCHDuty <= ucCLUTCHlmax )
         {
             if ( ( uiCLUTCHDuty > 0 ) && ( uiCLUTCHDuty < 12 ) ) //0-180º con 50Hz
             {
@@ -50,6 +50,10 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
         else
         {
             //generar error de rango
+        }*/
+        if ( ucCLUTCHState < CLUTCH_ERROR )
+        {
+            GPIO_PWM1_Control(uiCLUTCHDuty, 300);
         }
     }
     else

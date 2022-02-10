@@ -138,7 +138,7 @@ void CANReadMessage (void)
                     ucTargetGear = data5;
                     //Mover embrague y APPS según lleguen
                     CLUTCH_Move(ucTargetClutch, ASMode);
-                    APPSSend(ucTargetAccelerator);
+                    //APPSSend(ucTargetAccelerator);
                     break;
                 case DV_SYSTEM_STATUS:
                     ucAS_state = ( data1 & 0x07 );
@@ -171,7 +171,7 @@ void CANReadMessage (void)
                     break;
                 case STEER_WH_CONT:
                     ucSTEER_WH_Clutch = data1;
-                    //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
+                    CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
                     break;
                 default:
                     Nop();

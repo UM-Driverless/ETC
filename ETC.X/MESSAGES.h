@@ -86,7 +86,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 #define ASB_SIGNALS                 0x361
 #define ASB_STATE                   0x362
 //PMC
-#define PMC_STATE                   0x345
+#define PMC_STATE                   0x347
 //STEERING WHEELL 
 #define STEER_WH_CONT               0x412
 //ETC

@@ -34,8 +34,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F23161 `(v ~T0 @X0 0 tf ]
 [v F23163 `(v ~T0 @X0 0 tf ]
 [v F23165 `(v ~T0 @X0 0 tf ]
-"96 mcc_generated_files/../MESSAGES.h
-[; ;mcc_generated_files/../MESSAGES.h: 96: void CANReadMessage (void);
+"98 mcc_generated_files/../MESSAGES.h
+[; ;mcc_generated_files/../MESSAGES.h: 98: void CANReadMessage (void);
 [v _CANReadMessage `(v ~T0 @X0 0 ef ]
 "14150 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 14150: extern volatile unsigned char C1FIFOCON1L __attribute__((address(0x15C)));
@@ -305,8 +305,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/can1.c: 359:     rxCanMsg->field.brs = (status & (1UL << (6U))) ? CAN_BRS_MODE : CAN_NON_BRS_MODE;
 [c E22324 0 1 .. ]
 [n E22324 . CAN_NON_BRS_MODE CAN_BRS_MODE  ]
-"27 C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\string.h
-[; ;C:\Program Files\Microchip\xc8\v2.30\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
+"27 C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h
+[; ;C:\Program Files\Microchip\xc8\v2.31\pic\include\c99\string.h: 27: void *memcpy (void *restrict, const void *restrict, size_t);
 [v _memcpy `(*v ~T0 @X0 0 ef3`*v`*Cv`ui ]
 "495 mcc_generated_files/can1.c
 [; ;mcc_generated_files/can1.c: 495: static CAN_TX_FIFO_STATUS GetTxFifoStatus(uint8_t validChannel)

@@ -4020,7 +4020,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MESSAGES.C: 171:                     break;
 [e $U 3190  ]
 "172
-[; ;MESSAGES.C: 172:                 case 0x345:
+[; ;MESSAGES.C: 172:                 case 0x347:
 [e :U 3197 ]
 "173
 [; ;MESSAGES.C: 173:                     ucASMode = data1;
@@ -4071,7 +4071,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> -> 1280 `i `l `ul 3194
  , $ -> -> -> 1281 `i `l `ul 3195
  , $ -> -> -> 1282 `i `l `ul 3196
- , $ -> -> -> 837 `i `l `ul 3197
+ , $ -> -> -> 839 `i `l `ul 3197
  , $ -> -> -> 1042 `i `l `ul 3198
  3200 ]
 [e :U 3190 ]

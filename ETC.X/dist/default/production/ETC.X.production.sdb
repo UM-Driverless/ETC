@@ -232,84 +232,50 @@ channel_FVR_Buffer2 63
 [v _ANALOG_GetVoltage ANALOG_GetVoltage `(ui  1 e 2 0 ]
 "89
 [v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\__fpclassifyf.c
-[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aldiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 [v i2___aldiv __aldiv `(l  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-"72 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
-[v _pad pad `(i  1 s 2 pad ]
-"332
-[v _efgtoa efgtoa `(i  1 s 2 efgtoa ]
-"692
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-"1390
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fleq.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\flneg.c
-[v ___flneg __flneg `(d  1 e 4 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\float.c
+"62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"3 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\floorf.c
-[v _floorf floorf `(f  1 e 4 0 ]
-"43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 [v i2___fltol __fltol `(l  1 e 4 0 ]
-"86 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftadd.c
+"86 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
-"54 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftdiv.c
+"54 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 4 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftmul.c
+"62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
-"19 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\ftsub.c
+"19 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\isupper.c
-[v _isupper isupper `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 [v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\memcpy.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\printf.c
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 [v i2___fladd __fladd `(d  1 e 4 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"11 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
+"11 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"3 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\strcpy.c
-[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-"3 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\strncmp.c
-[v _strncmp strncmp `(i  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\tolower.c
-[v _tolower tolower `(i  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul32.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"91 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul64.c
+"91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
 "22 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
@@ -318,9 +284,7 @@ channel_FVR_Buffer2 63
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 "68
 [v _CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
-"31 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
-[v _APPSSend APPSSend `(v  1 e 1 0 ]
-"80
+"80 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 "105
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
@@ -1849,14 +1813,6 @@ channel_FVR_Buffer2 63
 "65499
 "65499
 [v _PIE7bits PIE7bits `VES1851  1 e 1 @1189 ]
-"55 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
-[v _flags flags `i  1 s 2 flags ]
-[v _prec prec `i  1 s 2 prec ]
-[v _width width `i  1 s 2 width ]
-"66
-[v _dbuf dbuf `[80]uc  1 s 80 dbuf ]
-"69
-[v _nout nout `i  1 s 2 nout ]
 "18 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _uiCLUTCHDuty uiCLUTCHDuty `ui  1 e 2 0 ]
 "16 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
@@ -2304,7 +2260,7 @@ channel_FVR_Buffer2 63
 [v GPIO_PWM1_Control@uiFreq uiFreq `ui  1 p 2 42 ]
 "58
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -2319,7 +2275,7 @@ channel_FVR_Buffer2 63
 [v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -2329,7 +2285,7 @@ channel_FVR_Buffer2 63
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -2341,7 +2297,7 @@ channel_FVR_Buffer2 63
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
@@ -2351,7 +2307,7 @@ channel_FVR_Buffer2 63
 [v ___fltol@f1 f1 `d  1 p 4 30 ]
 "70
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
@@ -2367,7 +2323,7 @@ channel_FVR_Buffer2 63
 [v ___fladd@a a `d  1 p 4 18 ]
 "237
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aldiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
@@ -2678,23 +2634,23 @@ channel_FVR_Buffer2 63
 [v _CANReadMessage CANReadMessage `(v  1 e 1 0 ]
 {
 "102
-[v CANReadMessage@id id `ul  1 a 4 117 ]
+[v CANReadMessage@id id `ul  1 a 4 58 ]
 "105
-[v CANReadMessage@data1 data1 `uc  1 a 1 128 ]
+[v CANReadMessage@data1 data1 `uc  1 a 1 69 ]
 "106
-[v CANReadMessage@data2 data2 `uc  1 a 1 127 ]
+[v CANReadMessage@data2 data2 `uc  1 a 1 68 ]
 "109
-[v CANReadMessage@data5 data5 `uc  1 a 1 126 ]
+[v CANReadMessage@data5 data5 `uc  1 a 1 67 ]
 "108
-[v CANReadMessage@data4 data4 `uc  1 a 1 125 ]
+[v CANReadMessage@data4 data4 `uc  1 a 1 66 ]
 "107
-[v CANReadMessage@data3 data3 `uc  1 a 1 124 ]
+[v CANReadMessage@data3 data3 `uc  1 a 1 65 ]
 "112
-[v CANReadMessage@data8 data8 `uc  1 a 1 123 ]
+[v CANReadMessage@data8 data8 `uc  1 a 1 64 ]
 "111
-[v CANReadMessage@data7 data7 `uc  1 a 1 122 ]
+[v CANReadMessage@data7 data7 `uc  1 a 1 63 ]
 "110
-[v CANReadMessage@data6 data6 `uc  1 a 1 121 ]
+[v CANReadMessage@data6 data6 `uc  1 a 1 62 ]
 "189
 } 0
 "105 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
@@ -2702,21 +2658,21 @@ channel_FVR_Buffer2 63
 {
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
-[v ETCMove@ucMode ucMode `uc  1 p 1 70 ]
+[v ETCMove@ucMode ucMode `uc  1 p 1 50 ]
 "108
-[v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 71 ]
-"129
+[v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 51 ]
+"127
 } 0
 "64 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 {
 "67
-[v i2GPIO_PWM2_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 68 ]
+[v i2GPIO_PWM2_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
 "66
-[v i2GPIO_PWM2_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 66 ]
+[v i2GPIO_PWM2_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 46 ]
 "64
-[v i2GPIO_PWM2_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 60 ]
-[v i2GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 62 ]
+[v i2GPIO_PWM2_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 40 ]
+[v i2GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 42 ]
 "79
 } 0
 "144 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
@@ -2741,777 +2697,32 @@ channel_FVR_Buffer2 63
 {
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
-[v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 94 ]
+[v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 2 ]
 "96
-} 0
-"31
-[v _APPSSend APPSSend `(v  1 e 1 0 ]
-{
-[v APPSSend@ucPercent ucPercent `uc  1 a 1 wreg ]
-"34
-[v APPSSend@dacAPPS2 dacAPPS2 `us  1 a 2 106 ]
-[v APPSSend@dacAPPS1 dacAPPS1 `us  1 a 2 104 ]
-"31
-[v APPSSend@ucPercent ucPercent `uc  1 a 1 wreg ]
-"39
-[v APPSSend@ucPercent ucPercent `uc  1 a 1 108 ]
-"46
-} 0
-"28 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3_example.c
-[v _DAC3_example DAC3_example `(v  1 e 1 0 ]
-{
-"30
-[v DAC3_example@voltage voltage `f  1 a 4 96 ]
-"31
-[v DAC3_example@readNonvolatileVoltage readNonvolatileVoltage `f  1 a 4 92 ]
-[v DAC3_example@readVoltage readVoltage `f  1 a 4 88 ]
-"33
-[v DAC3_example@dacNonvolatileVoltage dacNonvolatileVoltage `us  1 a 2 102 ]
-[v DAC3_example@dacVoltage dacVoltage `us  1 a 2 100 ]
-"63
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\printf.c
-[v _printf printf `(i  1 e 2 0 ]
-{
-"8
-[v printf@ap ap `[1]*.39v  1 a 2 84 ]
-"5
-[v printf@fmt fmt `*.32Cuc  1 p 2 72 ]
-"13
-} 0
-"1390 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
-[v _vfprintf vfprintf `(i  1 e 2 0 ]
-{
-"1393
-[v vfprintf@cfmt cfmt `*.32uc  1 a 2 92 ]
-[s S4595 _IO_FILE 0 ]
-"1390
-[v vfprintf@fp fp `*.2S4595  1 p 2 66 ]
-[v vfprintf@fmt fmt `*.32Cuc  1 p 2 68 ]
-[v vfprintf@ap ap `*.39*.39v  1 p 2 70 ]
-"1404
-} 0
-"692
-[v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
-{
-"698
-[v vfpfcnvrt@f f `d  1 a 4 58 ]
-"694
-[v vfpfcnvrt@ct ct `[3]uc  1 a 3 62 ]
-[v vfpfcnvrt@c c `uc  1 a 1 65 ]
-[s S4595 _IO_FILE 0 ]
-"692
-[v vfpfcnvrt@fp fp `*.2S4595  1 p 2 82 ]
-[v vfpfcnvrt@fmt fmt `*.39*.32uc  1 p 2 84 ]
-[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 86 ]
-"1387
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\strncmp.c
-[v _strncmp strncmp `(i  1 e 2 0 ]
-{
-"5
-[v strncmp@r r `*.32Cuc  1 a 2 9 ]
-[v strncmp@l l `*.39Cuc  1 a 2 7 ]
-"3
-[v strncmp@_l _l `*.39Cuc  1 p 2 0 ]
-[v strncmp@_r _r `*.32Cuc  1 p 2 2 ]
-[v strncmp@n n `ui  1 p 2 4 ]
-"9
-} 0
-"332 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
-[v _efgtoa efgtoa `(i  1 s 2 efgtoa ]
-{
-"336
-[v efgtoa@u u `d  1 a 4 52 ]
-[v efgtoa@g g `d  1 a 4 44 ]
-[v efgtoa@l l `d  1 a 4 38 ]
-[v efgtoa@h h `d  1 a 4 34 ]
-[v efgtoa@ou ou `d  1 a 4 20 ]
-"335
-[v efgtoa@n n `i  1 a 2 50 ]
-[v efgtoa@e e `i  1 a 2 48 ]
-[v efgtoa@i i `i  1 a 2 42 ]
-[v efgtoa@w w `i  1 a 2 30 ]
-[v efgtoa@p p `i  1 a 2 28 ]
-[v efgtoa@sign sign `i  1 a 2 26 ]
-[v efgtoa@d d `i  1 a 2 24 ]
-[v efgtoa@m m `i  1 a 2 18 ]
-[v efgtoa@ne ne `i  1 a 2 16 ]
-[v efgtoa@pp pp `i  1 a 2 14 ]
-[v efgtoa@t t `i  1 a 2 12 ]
-"334
-[v efgtoa@mode mode `uc  1 a 1 33 ]
-[v efgtoa@nmode nmode `uc  1 a 1 32 ]
-[s S4595 _IO_FILE 0 ]
-"332
-[v efgtoa@fp fp `*.2S4595  1 p 2 70 ]
-[v efgtoa@f f `d  1 p 4 72 ]
-[v efgtoa@c c `uc  1 p 1 76 ]
-"525
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\tolower.c
-[v _tolower tolower `(i  1 e 2 0 ]
-{
-[v tolower@c c `i  1 p 2 6 ]
-"8
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\isupper.c
-[v _isupper isupper `(i  1 e 2 0 ]
-{
-[v isupper@c c `i  1 p 2 0 ]
-"8
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\strcpy.c
-[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
-{
-"6
-[v strcpy@d d `*.39uc  1 a 2 8 ]
-"5
-[v strcpy@s s `*.34Cuc  1 a 2 6 ]
-"3
-[v strcpy@dest dest `*.39uc  1 p 2 0 ]
-[v strcpy@src src `*.34Cuc  1 p 2 2 ]
-"9
-} 0
-"72 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\doprnt.c
-[v _pad pad `(i  1 s 2 pad ]
-{
-"74
-[v pad@w w `i  1 a 2 25 ]
-[v pad@i i `i  1 a 2 23 ]
-[s S4595 _IO_FILE 0 ]
-"72
-[v pad@fp fp `*.2S4595  1 p 2 16 ]
-[v pad@buf buf `*.39uc  1 p 2 18 ]
-[v pad@p p `i  1 p 2 20 ]
-"95
-} 0
-"5 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\strlen.c
-[v _strlen strlen `(ui  1 e 2 0 ]
-{
-"7
-[v strlen@a a `*.39Cuc  1 a 2 2 ]
-"5
-[v strlen@s s `*.39Cuc  1 p 2 0 ]
-"12
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\nf_fputs.c
-[v _fputs fputs `(i  1 e 2 0 ]
-{
-"11
-[v fputs@i i `i  1 a 2 14 ]
-"10
-[v fputs@c c `uc  1 a 1 13 ]
-"8
-[v fputs@s s `*.39Cuc  1 p 2 9 ]
-[s S4579 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputs@fp fp `*.2S4579  1 p 2 11 ]
-"19
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\nf_fputc.c
-[v _fputc fputc `(i  1 e 2 0 ]
-{
-[v fputc@c c `i  1 p 2 0 ]
-[s S4579 _IO_FILE 6 `*.2uc 1 buffer 2 0 `i 1 count 2 2 `i 1 limit 2 4 ]
-[v fputc@fp fp `*.2S4579  1 p 2 2 ]
-"24
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\putch.c
-[v _putch putch `(v  1 e 1 0 ]
-{
-"9
-} 0
-"3 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\floorf.c
-[v _floorf floorf `(f  1 e 4 0 ]
-{
-[u S4725 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
-"5
-[v floorf@u u `S4725  1 a 4 66 ]
-"7
-[v floorf@m m `ul  1 a 4 60 ]
-"6
-[v floorf@e e `i  1 a 2 64 ]
-"3
-[v floorf@x x `f  1 p 4 50 ]
-"4
-[v floorf@F527 F527 `S4725  1 s 4 F527 ]
-"27
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\__fpclassifyf.c
-[v ___fpclassifyf __fpclassifyf `(i  1 e 2 0 ]
-{
-[u S4725 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
-"6
-[v ___fpclassifyf@u u `S4725  1 a 4 10 ]
-"7
-[v ___fpclassifyf@e e `i  1 a 2 8 ]
-"4
-[v ___fpclassifyf@x x `f  1 p 4 0 ]
-"5
-[v ___fpclassifyf@F465 F465 `S4725  1 s 4 F465 ]
-"11
-} 0
-"245 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcadd.c
-[v ___flsub __flsub `(d  1 e 4 0 ]
-{
-[v ___flsub@b b `d  1 p 4 30 ]
-[v ___flsub@a a `d  1 p 4 34 ]
-"250
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\flneg.c
-[v ___flneg __flneg `(d  1 e 4 0 ]
-{
-[v ___flneg@f1 f1 `d  1 p 4 0 ]
-"20
-} 0
-"8 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S4433 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S4438 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S4441 . 4 `l 1 i 4 0 `d 1 f 4 0 `S4433 1 fAsBytes 4 0 `S4438 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S4441  1 a 4 19 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 13 ]
-[s S4509 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S4512 . 2 `s 1 i 2 0 `us 1 n 2 0 `S4509 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S4512  1 a 2 23 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 18 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 17 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 12 ]
-"8
-[v ___flmul@b b `d  1 p 4 0 ]
-[v ___flmul@a a `d  1 p 4 4 ]
-"205
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-{
-[v ___flge@ff1 ff1 `d  1 p 4 25 ]
-[v ___flge@ff2 ff2 `d  1 p 4 29 ]
-"19
-} 0
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fleq.c
-[v ___fleq __fleq `(b  1 e 0 0 ]
-{
-[v ___fleq@ff1 ff1 `d  1 p 4 0 ]
-[v ___fleq@ff2 ff2 `d  1 p 4 4 ]
-"12
-} 0
-"11 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 44 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 37 ]
-"20
-[v ___fldiv@new_exp new_exp `s  1 a 2 42 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 49 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 48 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 41 ]
-"11
-[v ___fldiv@b b `d  1 p 4 25 ]
-[v ___fldiv@a a `d  1 p 4 29 ]
-"185
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awmod.c
-[v ___awmod __awmod `(i  1 e 2 0 ]
-{
-"10
-[v ___awmod@sign sign `uc  1 a 1 5 ]
-[v ___awmod@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awmod@dividend dividend `i  1 p 2 0 ]
-[v ___awmod@divisor divisor `i  1 p 2 2 ]
-"34
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 12 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 11 ]
-[v ___awdiv@counter counter `uc  1 a 1 10 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 6 ]
-[v ___awdiv@divisor divisor `i  1 p 2 8 ]
-"41
-} 0
-"31 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3.c
-[v _DAC3_SetNonvolatile DAC3_SetNonvolatile `(v  1 e 1 0 ]
-{
-[v DAC3_SetNonvolatile@dacValue dacValue `us  1 p 2 25 ]
-"34
-} 0
-"168 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
-[v _i2c_write2ByteRegister i2c_write2ByteRegister `(v  1 e 1 0 ]
-{
-[v i2c_write2ByteRegister@address address `uc  1 a 1 wreg ]
-[v i2c_write2ByteRegister@address address `uc  1 a 1 wreg ]
-[v i2c_write2ByteRegister@reg reg `uc  1 p 1 21 ]
-[v i2c_write2ByteRegister@data data `us  1 p 2 22 ]
-[v i2c_write2ByteRegister@address address `uc  1 a 1 24 ]
-"176
-} 0
-"26 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3.c
-[v _DAC3_Set DAC3_Set `(v  1 e 1 0 ]
-{
-[v DAC3_Set@dacValue dacValue `us  1 p 2 24 ]
-"29
-} 0
-"51 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
-[v _i2c_write1ByteRegister i2c_write1ByteRegister `(v  1 e 1 0 ]
-{
-[v i2c_write1ByteRegister@address address `uc  1 a 1 wreg ]
-[v i2c_write1ByteRegister@address address `uc  1 a 1 wreg ]
-[v i2c_write1ByteRegister@reg reg `uc  1 p 1 21 ]
-[v i2c_write1ByteRegister@data data `uc  1 p 1 22 ]
-[v i2c_write1ByteRegister@address address `uc  1 a 1 23 ]
-"59
-} 0
-"316 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-[v _I2C1_SetAddressNackCallback I2C1_SetAddressNackCallback `(v  1 e 1 0 ]
-{
-[v I2C1_SetAddressNackCallback@cb cb `*.37(E360  1 p 2 5 ]
-[v I2C1_SetAddressNackCallback@ptr ptr `*.2v  1 p 2 7 ]
-"319
-} 0
-"284
-[v _I2C1_MasterWrite I2C1_MasterWrite `(E355  1 e 1 0 ]
-{
-"287
-} 0
-"36 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3.c
-[v _DAC3_Read DAC3_Read `(us  1 e 2 0 ]
-{
-[s S3544 . 6 `uc 1 volStatus 1 0 `uc 1 volatileVoltByte1 1 1 `uc 1 volatileVoltByte2 1 2 `uc 1 nvStatus 1 3 `uc 1 nonvolatileVoltByte1 1 4 `uc 1 nonvolatileVoltByte2 1 5 ]
-"39
-[v DAC3_Read@data data `S3544  1 a 6 33 ]
-"38
-[v DAC3_Read@dacVolatile dacVolatile `us  1 a 2 31 ]
-"36
-[v DAC3_Read@dacNonvolatile dacNonvolatile `*.39us  1 p 2 26 ]
-"52
-} 0
-"228 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
-[v _i2c_readNBytes i2c_readNBytes `(v  1 e 1 0 ]
-{
-[v i2c_readNBytes@address address `uc  1 a 1 wreg ]
-[v i2c_readNBytes@address address `uc  1 a 1 wreg ]
-[v i2c_readNBytes@data data `*.39v  1 p 2 21 ]
-[v i2c_readNBytes@len len `ui  1 p 2 23 ]
-[v i2c_readNBytes@address address `uc  1 a 1 25 ]
-"234
-} 0
-"207 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-[v _I2C1_Open I2C1_Open `(E355  1 e 1 0 ]
-{
-[v I2C1_Open@address address `uc  1 a 1 wreg ]
-"209
-[v I2C1_Open@returnValue returnValue `E355  1 a 1 1 ]
-"207
-[v I2C1_Open@address address `uc  1 a 1 wreg ]
-"209
-[v I2C1_Open@address address `uc  1 a 1 0 ]
-"238
-} 0
-"635
-[v _I2C1_MasterOpen I2C1_MasterOpen `T(a  1 s 1 I2C1_MasterOpen ]
-{
-"655
-} 0
-"279
-[v _I2C1_MasterRead I2C1_MasterRead `(E355  1 e 1 0 ]
-{
-"282
-} 0
-"255
-[v _I2C1_MasterOperation I2C1_MasterOperation `(E355  1 e 1 0 ]
-{
-[v I2C1_MasterOperation@read read `a  1 a 1 wreg ]
-"257
-[v I2C1_MasterOperation@returnValue returnValue `E355  1 a 1 20 ]
-"255
-[v I2C1_MasterOperation@read read `a  1 a 1 wreg ]
-"257
-[v I2C1_MasterOperation@read read `a  1 a 1 19 ]
-"277
-} 0
-"345
-[v _I2C1_Poller I2C1_Poller `(v  1 s 1 I2C1_Poller ]
-{
-"352
-} 0
-"816
-[v _I2C1_MasterWaitForEvent I2C1_MasterWaitForEvent `T(v  1 s 1 I2C1_MasterWaitForEvent ]
-{
-"841
-} 0
-"354
-[v _I2C1_MasterFsm I2C1_MasterFsm `T(v  1 s 1 I2C1_MasterFsm ]
-{
-"363
-} 0
-"598
-[v _I2C1_DO_BUS_ERROR I2C1_DO_BUS_ERROR `(E22532  1 s 1 I2C1_DO_BUS_ERROR ]
-{
-"604
-} 0
-"582
-[v _I2C1_DO_BUS_COLLISION I2C1_DO_BUS_COLLISION `(E22532  1 s 1 I2C1_DO_BUS_COLLISION ]
-{
-"596
-} 0
-"567
-[v _I2C1_DO_ADDRESS_NACK I2C1_DO_ADDRESS_NACK `(E22532  1 s 1 I2C1_DO_ADDRESS_NACK ]
-{
-"580
-} 0
-"560
-[v _I2C1_DO_RESET I2C1_DO_RESET `(E22532  1 s 1 I2C1_DO_RESET ]
-{
-"566
-} 0
-"554
-[v _I2C1_DO_RX_NACK_RESTART I2C1_DO_RX_NACK_RESTART `(E22532  1 s 1 I2C1_DO_RX_NACK_RESTART ]
-{
-"558
-} 0
-"547
-[v _I2C1_DO_RX_NACK_STOP I2C1_DO_RX_NACK_STOP `(E22532  1 s 1 I2C1_DO_RX_NACK_STOP ]
-{
-"552
-} 0
-"535
-[v _I2C1_DO_RX_ACK I2C1_DO_RX_ACK `(E22532  1 s 1 I2C1_DO_RX_ACK ]
-{
-"539
-} 0
-"524
-[v _I2C1_DO_SEND_STOP I2C1_DO_SEND_STOP `(E22532  1 s 1 I2C1_DO_SEND_STOP ]
-{
-"533
-} 0
-"519
-[v _I2C1_DO_SEND_RESTART I2C1_DO_SEND_RESTART `(E22532  1 s 1 I2C1_DO_SEND_RESTART ]
-{
-"522
-} 0
-"513
-[v _I2C1_DO_SEND_RESTART_WRITE I2C1_DO_SEND_RESTART_WRITE `(E22532  1 s 1 I2C1_DO_SEND_RESTART_WRITE ]
-{
-"516
-} 0
-"507
-[v _I2C1_DO_SEND_RESTART_READ I2C1_DO_SEND_RESTART_READ `(E22532  1 s 1 I2C1_DO_SEND_RESTART_READ ]
-{
-"511
-} 0
-"482
-[v _I2C1_DO_RX_EMPTY I2C1_DO_RX_EMPTY `(E22532  1 s 1 I2C1_DO_RX_EMPTY ]
-{
-"505
-} 0
-"463
-[v _I2C1_DO_TX_EMPTY I2C1_DO_TX_EMPTY `(E22532  1 s 1 I2C1_DO_TX_EMPTY ]
-{
-"480
-} 0
-"439
-[v _I2C1_DO_RX I2C1_DO_RX `(E22532  1 s 1 I2C1_DO_RX ]
-{
-"457
-[v I2C1_DO_RX@retFsmState retFsmState `E22532  1 a 1 15 ]
-"461
-} 0
-"406
-[v _I2C1_DO_TX I2C1_DO_TX `(E22532  1 s 1 I2C1_DO_TX ]
-{
-"429
-[v I2C1_DO_TX@retFsmState retFsmState `E22532  1 a 1 16 ]
-"428
-[v I2C1_DO_TX@dataTx dataTx `uc  1 a 1 15 ]
-"437
-} 0
-"399
-[v _I2C1_DO_SEND_ADR_WRITE I2C1_DO_SEND_ADR_WRITE `(E22532  1 s 1 I2C1_DO_SEND_ADR_WRITE ]
-{
-"404
-} 0
-"388
-[v _I2C1_DO_SEND_ADR_READ I2C1_DO_SEND_ADR_READ `(E22532  1 s 1 I2C1_DO_SEND_ADR_READ ]
-{
-"397
-} 0
-"381
-[v _I2C1_DO_IDLE I2C1_DO_IDLE `(E22532  1 s 1 I2C1_DO_IDLE ]
-{
-"386
-} 0
-"541
-[v _I2C1_DO_TX_ACK I2C1_DO_TX_ACK `(E22532  1 s 1 I2C1_DO_TX_ACK ]
-{
-"545
-} 0
-"743
-[v _I2C1_MasterIsTxBufEmpty I2C1_MasterIsTxBufEmpty `T(a  1 s 1 I2C1_MasterIsTxBufEmpty ]
-{
-"746
-} 0
-"716
-[v _I2C1_MasterIsNack I2C1_MasterIsNack `T(a  1 s 1 I2C1_MasterIsNack ]
-{
-"719
-} 0
-"677
-[v _I2C1_MasterGetCounter I2C1_MasterGetCounter `T(uc  1 s 1 I2C1_MasterGetCounter ]
-{
-"680
-} 0
-"710
-[v _I2C1_MasterStop I2C1_MasterStop `T(v  1 s 1 I2C1_MasterStop ]
-{
-"714
-} 0
-"726
-[v _I2C1_MasterSendNack I2C1_MasterSendNack `T(v  1 s 1 I2C1_MasterSendNack ]
-{
-"729
-} 0
-"721
-[v _I2C1_MasterSendAck I2C1_MasterSendAck `T(v  1 s 1 I2C1_MasterSendAck ]
-{
-"724
-} 0
-"738
-[v _I2C1_MasterIsRxBufFull I2C1_MasterIsRxBufFull `T(a  1 s 1 I2C1_MasterIsRxBufFull ]
-{
-"741
-} 0
-"667
-[v _I2C1_MasterGetRxData I2C1_MasterGetRxData `T(uc  1 s 1 I2C1_MasterGetRxData ]
-{
-"670
-} 0
-"672
-[v _I2C1_MasterSendTxData I2C1_MasterSendTxData `T(v  1 s 1 I2C1_MasterSendTxData ]
-{
-[v I2C1_MasterSendTxData@data data `uc  1 a 1 wreg ]
-[v I2C1_MasterSendTxData@data data `uc  1 a 1 wreg ]
-"674
-[v I2C1_MasterSendTxData@data data `uc  1 a 1 0 ]
-"675
-} 0
-"682
-[v _I2C1_MasterSetCounter I2C1_MasterSetCounter `T(v  1 s 1 I2C1_MasterSetCounter ]
-{
-[v I2C1_MasterSetCounter@counter counter `uc  1 a 1 wreg ]
-[v I2C1_MasterSetCounter@counter counter `uc  1 a 1 wreg ]
-"684
-[v I2C1_MasterSetCounter@counter counter `uc  1 a 1 0 ]
-"686
-} 0
-"698
-[v _I2C1_MasterEnableRestart I2C1_MasterEnableRestart `T(v  1 s 1 I2C1_MasterEnableRestart ]
-{
-"702
-} 0
-"704
-[v _I2C1_MasterDisableRestart I2C1_MasterDisableRestart `T(v  1 s 1 I2C1_MasterDisableRestart ]
-{
-"708
-} 0
-"688
-[v _I2C1_MasterResetBus I2C1_MasterResetBus `T(v  1 s 1 I2C1_MasterResetBus ]
-{
-"696
-} 0
-"617
-[v _I2C1_CallbackReturnReset I2C1_CallbackReturnReset `(E360  1 e 1 0 ]
-{
-[v I2C1_CallbackReturnReset@funPtr funPtr `*.39v  1 p 2 9 ]
-"620
-} 0
-"612
-[v _I2C1_CallbackReturnStop I2C1_CallbackReturnStop `(E360  1 e 1 0 ]
-{
-"615
-} 0
-"170 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
-[v _rdBlkRegCompleteHandler@i2c1_master_example$F179 rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
-{
-[v rdBlkRegCompleteHandler@i2c1_master_example$F179@ptr ptr `*.39v  1 p 2 9 ]
-"175
-} 0
-"156
-[v _wr1RegCompleteHandler@i2c1_master_example$F162 wr1RegCompleteHandler `(E360  1 s 1 wr1RegCompleteHandler ]
-{
-[v wr1RegCompleteHandler@i2c1_master_example$F162@ptr ptr `*.39v  1 p 2 9 ]
-"161
-} 0
-"149
-[v _rd2RegCompleteHandler@i2c1_master_example$F156 rd2RegCompleteHandler `(E360  1 s 1 rd2RegCompleteHandler ]
-{
-[v rd2RegCompleteHandler@i2c1_master_example$F156@ptr ptr `*.39v  1 p 2 9 ]
-"154
-} 0
-"142
-[v _rd1RegCompleteHandler@i2c1_master_example$F145 rd1RegCompleteHandler `(E360  1 s 1 rd1RegCompleteHandler ]
-{
-[v rd1RegCompleteHandler@i2c1_master_example$F145@ptr ptr `*.39v  1 p 2 9 ]
-"147
-} 0
-"185 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
-[v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
-{
-[v rdBlkRegCompleteHandler@p p `*.39v  1 p 2 9 ]
-"190
-} 0
-"151
-[v _wr2RegCompleteHandler wr2RegCompleteHandler `(E360  1 s 1 wr2RegCompleteHandler ]
-{
-[v wr2RegCompleteHandler@p p `*.39v  1 p 2 9 ]
-"156
-} 0
-"119
-[v _rd2RegCompleteHandler rd2RegCompleteHandler `(E360  1 s 1 rd2RegCompleteHandler ]
-{
-[v rd2RegCompleteHandler@p p `*.39v  1 p 2 9 ]
-"124
-} 0
-"81
-[v _rd1RegCompleteHandler rd1RegCompleteHandler `(E360  1 s 1 rd1RegCompleteHandler ]
-{
-[v rd1RegCompleteHandler@p p `*.39v  1 p 2 9 ]
-"86
-} 0
-"34
-[v _wr1RegCompleteHandler wr1RegCompleteHandler `(E360  1 s 1 wr1RegCompleteHandler ]
-{
-[v wr1RegCompleteHandler@p p `*.39v  1 p 2 9 ]
-"39
-} 0
-"163 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
-[v _wr2RegCompleteHandler@i2c1_master_example$F168 wr2RegCompleteHandler `(E360  1 s 1 wr2RegCompleteHandler ]
-{
-[v wr2RegCompleteHandler@i2c1_master_example$F168@ptr ptr `*.39v  1 p 2 9 ]
-"168
-} 0
-"306 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
-[v _I2C1_SetDataCompleteCallback I2C1_SetDataCompleteCallback `(v  1 e 1 0 ]
-{
-[v I2C1_SetDataCompleteCallback@cb cb `*.37(E360  1 p 2 5 ]
-[v I2C1_SetDataCompleteCallback@ptr ptr `*.39v  1 p 2 7 ]
-"309
-} 0
-"331
-[v _I2C1_SetCallback I2C1_SetCallback `(v  1 s 1 I2C1_SetCallback ]
-{
-[v I2C1_SetCallback@idx idx `E22553  1 a 1 wreg ]
-[v I2C1_SetCallback@idx idx `E22553  1 a 1 wreg ]
-[v I2C1_SetCallback@cb cb `*.37(E360  1 p 2 0 ]
-[v I2C1_SetCallback@ptr ptr `*.39v  1 p 2 2 ]
-"333
-[v I2C1_SetCallback@idx idx `E22553  1 a 1 4 ]
-"343
-} 0
-"296
-[v _I2C1_SetBuffer I2C1_SetBuffer `(v  1 e 1 0 ]
-{
-[v I2C1_SetBuffer@buffer buffer `*.39v  1 p 2 0 ]
-[v I2C1_SetBuffer@bufferSize bufferSize `ui  1 p 2 2 ]
-"304
-} 0
-"365
-[v _I2C1_ClearInterruptFlags I2C1_ClearInterruptFlags `T(v  1 s 1 I2C1_ClearInterruptFlags ]
-{
-"379
-} 0
-"748
-[v _I2C1_MasterIsStopFlagSet I2C1_MasterIsStopFlagSet `T(a  1 s 1 I2C1_MasterIsStopFlagSet ]
-{
-"751
-} 0
-"758
-[v _I2C1_MasterIsNackFlagSet I2C1_MasterIsNackFlagSet `T(a  1 s 1 I2C1_MasterIsNackFlagSet ]
-{
-"761
-} 0
-"753
-[v _I2C1_MasterIsCountFlagSet I2C1_MasterIsCountFlagSet `T(a  1 s 1 I2C1_MasterIsCountFlagSet ]
-{
-"756
-} 0
-"763
-[v _I2C1_MasterClearStopFlag I2C1_MasterClearStopFlag `T(v  1 s 1 I2C1_MasterClearStopFlag ]
-{
-"766
-} 0
-"773
-[v _I2C1_MasterClearNackFlag I2C1_MasterClearNackFlag `T(v  1 s 1 I2C1_MasterClearNackFlag ]
-{
-"776
-} 0
-"768
-[v _I2C1_MasterClearCountFlag I2C1_MasterClearCountFlag `T(v  1 s 1 I2C1_MasterClearCountFlag ]
-{
-"771
-} 0
-"240
-[v _I2C1_Close I2C1_Close `(E355  1 e 1 0 ]
-{
-"242
-[v I2C1_Close@returnValue returnValue `E355  1 a 1 0 ]
-"253
-} 0
-"795
-[v _I2C1_MasterDisableIrq I2C1_MasterDisableIrq `T(v  1 s 1 I2C1_MasterDisableIrq ]
-{
-"809
-} 0
-"657
-[v _I2C1_MasterClose I2C1_MasterClose `T(v  1 s 1 I2C1_MasterClose ]
-{
-"665
-} 0
-"811
-[v _I2C1_MasterClearIrq I2C1_MasterClearIrq `T(v  1 s 1 I2C1_MasterClearIrq ]
-{
-"814
 } 0
 "30 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 {
 [v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
-[v CLUTCH_Move@ucMode ucMode `uc  1 p 1 70 ]
+[v CLUTCH_Move@ucMode ucMode `uc  1 p 1 50 ]
 "36
-[v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 71 ]
+[v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 51 ]
 "65
 } 0
 "43 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
 {
 "46
-[v i2GPIO_PWM1_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 68 ]
+[v i2GPIO_PWM1_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
 "45
-[v i2GPIO_PWM1_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 66 ]
+[v i2GPIO_PWM1_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 46 ]
 "43
-[v i2GPIO_PWM1_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 60 ]
-[v i2GPIO_PWM1_Control@uiFreq uiFreq `ui  1 p 2 62 ]
+[v i2GPIO_PWM1_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 40 ]
+[v i2GPIO_PWM1_Control@uiFreq uiFreq `ui  1 p 2 42 ]
 "58
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v i2___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -3526,7 +2737,7 @@ channel_FVR_Buffer2 63
 [v i2___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -3536,7 +2747,7 @@ channel_FVR_Buffer2 63
 [v i2___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -3548,17 +2759,17 @@ channel_FVR_Buffer2 63
 [v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c
 [v i2___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v i2___fltol@exp1 exp1 `uc  1 a 1 59 ]
-[v i2___fltol@sign1 sign1 `uc  1 a 1 58 ]
+[v i2___fltol@exp1 exp1 `uc  1 a 1 39 ]
+[v i2___fltol@sign1 sign1 `uc  1 a 1 38 ]
 "43
-[v i2___fltol@f1 f1 `d  1 p 4 50 ]
+[v i2___fltol@f1 f1 `d  1 p 4 30 ]
 "70
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v i2___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
@@ -3574,7 +2785,7 @@ channel_FVR_Buffer2 63
 [v i2___fladd@a a `d  1 p 4 18 ]
 "237
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\aldiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aldiv.c
 [v i2___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
@@ -3688,7 +2899,7 @@ channel_FVR_Buffer2 63
 [v ReadMessageFromFifo@rxCanMsg rxCanMsg `*.39S243  1 p 2 13 ]
 "378
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.30\pic\sources\c99\common\memcpy.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
 {
 "8

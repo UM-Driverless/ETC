@@ -3733,9 +3733,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "84
 [; ;ETC.c: 84:         case 1:
 [e :U 3189 ]
-"86
-[; ;ETC.c: 86:             APPSSend(0x00);
-[e ( _APPSSend (1 -> -> 0 `i `uc ]
 "87
 [; ;ETC.c: 87:             do { LATAbits.LATA5 = 1; } while(0);
 [e :U 3192 ]
@@ -3812,58 +3809,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ETC.c: 106: {
 [f ]
 "108
-[; ;ETC.c: 108:     uiETCDuty = ucTargetMove * 60;
-[e = _uiETCDuty -> * -> _ucTargetMove `i -> 60 `i `ui ]
-"109
-[; ;ETC.c: 109:     uiETCDuty = uiETCDuty / 100;
-[e = _uiETCDuty / _uiETCDuty -> -> 100 `i `ui ]
+[; ;ETC.c: 108:     uiETCDuty = ucTargetMove + 25;
+[e = _uiETCDuty -> + -> _ucTargetMove `i -> 25 `i `ui ]
 "110
-[; ;ETC.c: 110:     uiETCDuty = (uiETCDuty & 0xFF);
-[e = _uiETCDuty & _uiETCDuty -> -> 255 `i `ui ]
-"112
-[; ;ETC.c: 112:     if ( ucMode == ucASMode )
+[; ;ETC.c: 110:     if ( ucMode == ucASMode )
 [e $ ! == -> _ucMode `i -> _ucASMode `i 3203  ]
+"111
+[; ;ETC.c: 111:     {
+{
+"112
+[; ;ETC.c: 112:         if ( ucMode == 1 )
+[e $ ! == -> _ucMode `i -> 1 `i 3204  ]
 "113
-[; ;ETC.c: 113:     {
+[; ;ETC.c: 113:         {
 {
 "114
-[; ;ETC.c: 114:         if ( ucMode == 1 )
-[e $ ! == -> _ucMode `i -> 1 `i 3204  ]
-"115
-[; ;ETC.c: 115:         {
-{
-"116
-[; ;ETC.c: 116:             GPIO_PWM2_Control(uiETCDuty, 300);
+[; ;ETC.c: 114:             GPIO_PWM2_Control(uiETCDuty, 300);
 [e ( _GPIO_PWM2_Control (2 , _uiETCDuty -> -> 300 `i `ui ]
-"117
-[; ;ETC.c: 117:         }
+"115
+[; ;ETC.c: 115:         }
 }
 [e $U 3205  ]
-"118
-[; ;ETC.c: 118:         else
+"116
+[; ;ETC.c: 116:         else
 [e :U 3204 ]
-"119
-[; ;ETC.c: 119:         {
+"117
+[; ;ETC.c: 117:         {
 {
-"121
-[; ;ETC.c: 121:         }
+"119
+[; ;ETC.c: 119:         }
 }
 [e :U 3205 ]
-"123
-[; ;ETC.c: 123:     }
+"121
+[; ;ETC.c: 121:     }
 }
 [e $U 3206  ]
-"124
-[; ;ETC.c: 124:     else
+"122
+[; ;ETC.c: 122:     else
 [e :U 3203 ]
-"125
-[; ;ETC.c: 125:     {
+"123
+[; ;ETC.c: 123:     {
 {
-"127
-[; ;ETC.c: 127:     }
+"125
+[; ;ETC.c: 125:     }
 }
 [e :U 3206 ]
-"129
-[; ;ETC.c: 129: }
+"127
+[; ;ETC.c: 127: }
 [e :UE 3202 ]
 }

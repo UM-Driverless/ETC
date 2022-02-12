@@ -83,7 +83,7 @@ void ETCModeSelect (unsigned char ucModeSelect)
     {
         case ASMode:
             //Iniciar con 0%
-            APPSSend(0x00);
+            //APPSSend(0x00); //da error el I2C generando inf interrupciones
             APPSMODE_SetHigh();
             break;
         case ManualMode:
@@ -105,9 +105,7 @@ void ETCRulesSupervision(void)
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 {
     //HACER CONVERSION DE 0-100% A 2-12 DUTY
-    uiETCDuty = ucTargetMove * 60;
-    uiETCDuty = uiETCDuty / 100;
-    uiETCDuty = (uiETCDuty & 0xFF);
+    uiETCDuty = ucTargetMove + 25;
     //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
     if ( ucMode == ucASMode )
     {

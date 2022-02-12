@@ -137,7 +137,11 @@ void CANReadMessage (void)
                     ucTargetDirection = data4;
                     ucTargetGear = data5;
                     //Mover embrague y APPS según lleguen
-                    CLUTCH_Move(ucTargetClutch, ASMode);
+                    if ( ucASMode == ASMode )
+                    {
+                        CLUTCH_Move(ucTargetClutch, ASMode);
+                        ETCMove(ucTargetAccelerator, ASMode);
+                    }
                     //APPSSend(ucTargetAccelerator);
                     break;
                 case DV_SYSTEM_STATUS:
@@ -171,7 +175,10 @@ void CANReadMessage (void)
                     break;
                 case STEER_WH_CONT:
                     ucSTEER_WH_Clutch = data1;
-                    CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
+                    if ( ucASMode == ManualMode )
+                    {
+                        CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
+                    }
                     break;
                 default:
                     Nop();

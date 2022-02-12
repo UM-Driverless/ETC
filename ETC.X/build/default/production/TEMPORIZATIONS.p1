@@ -3567,6 +3567,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"28 ./ETC.h
+[; ;./ETC.h: 28: unsigned int uiETCDuty;
+[v _uiETCDuty `ui ~T0 @X0 1 e ]
 "16 TEMPORIZATIONS.c
 [; ;TEMPORIZATIONS.c: 16: unsigned char ucCount500ms;
 [v _ucCount500ms `uc ~T0 @X0 1 e ]

@@ -9,6 +9,8 @@
 #include "mcc_generated_files/drivers/i2c_simple_master.h"
 #include "MESSAGES.h"
 #include "mcc_generated_files/DAC3_example.h"
+#include "ETC.h"
+#include "GPIO.h"
 
 //VARIABLES    
 unsigned char ucAPPS1min;
@@ -23,6 +25,7 @@ unsigned char ucAPPS1;
 unsigned char ucAPPS2;    
 unsigned char ucTPS1;
 unsigned char ucTPS2; 
+unsigned int uiETCDuty;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent)
@@ -95,5 +98,32 @@ void ETCModeSelect (unsigned char ucModeSelect)
 //Funcion supervision de normativa
 void ETCRulesSupervision(void)
 {
+    
+}
+
+//Funcion para mover directamente el servo con PWM
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
+{
+    //HACER CONVERSION DE 0-100% A 2-12 DUTY
+    uiETCDuty = ucTargetMove * 60;
+    uiETCDuty = uiETCDuty / 100;
+    uiETCDuty = (uiETCDuty & 0xFF);
+    //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
+    if ( ucMode == ucASMode )
+    {
+        if ( ucMode == ASMode ) 
+        {
+            GPIO_PWM2_Control(uiETCDuty, 300); //lo muevo sin comprobar nada
+        }
+        else
+        {
+            //hay que ver como meter aqui la conexion con TPS y APPS
+        }
+        
+    }
+    else
+    {
+        //generar error movimiento impedido por modo de conduccion
+    }
     
 }

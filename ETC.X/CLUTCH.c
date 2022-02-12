@@ -36,10 +36,10 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
     uiCLUTCHDuty = ucTargetMove * 60;
     uiCLUTCHDuty = uiCLUTCHDuty / 100;
     uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
-    GPIO_PWM1_Control(uiCLUTCHDuty, 300);
     //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
-    /*if ( ucMode == ucASMode ) 
+    if ( ucMode == ucASMode ) 
     {
+        //proteccion frente a corrupcion de datos
         /*if ( uiCLUTCHDuty <= ucCLUTCHlmax )
         {
             if ( ( uiCLUTCHDuty > 0 ) && ( uiCLUTCHDuty < 12 ) ) //0-180º con 50Hz
@@ -50,7 +50,8 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
         else
         {
             //generar error de rango
-        }
+        }*/
+        //proteccion frente a posicion fisica erronea del embrague
         if ( ucCLUTCHState < CLUTCH_ERROR )
         {
             GPIO_PWM1_Control(uiCLUTCHDuty, 300);
@@ -59,7 +60,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
     else
     {
         //generar error movimiento impedido por modo de conduccion
-    }*/
+    }
     
 }
 

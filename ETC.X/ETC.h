@@ -25,6 +25,7 @@ extern unsigned char ucAPPS1;
 extern unsigned char ucAPPS2;    
 extern unsigned char ucTPS1;
 extern unsigned char ucTPS2; 
+unsigned int uiETCDuty;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);
@@ -34,6 +35,7 @@ void TPSReadmin (void);
 void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
 
 
 #ifdef	__cplusplus

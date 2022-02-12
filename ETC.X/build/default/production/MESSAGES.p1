@@ -67,8 +67,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34 ./CLUTCH.h
 [; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
-"35 ./ETC.h
-[; ;./ETC.h: 35: void ETCModeSelect (unsigned char ucModeSelect);
+"38 ./ETC.h
+[; ;./ETC.h: 38: void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+[v _ETCMove `(v ~T0 @X0 0 ef2`uc`uc ]
+"36
+[; ;./ETC.h: 36: void ETCModeSelect (unsigned char ucModeSelect);
 [v _ETCModeSelect `(v ~T0 @X0 0 ef1`uc ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
@@ -3595,6 +3598,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"28 ./ETC.h
+[; ;./ETC.h: 28: unsigned int uiETCDuty;
+[v _uiETCDuty `ui ~T0 @X0 1 e ]
 "16 MESSAGES.C
 [; ;MESSAGES.C: 16: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
@@ -3935,126 +3941,149 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MESSAGES.C: 138:                     ucTargetGear = data5;
 [e = _ucTargetGear _data5 ]
 "140
-[; ;MESSAGES.C: 140:                     CLUTCH_Move(ucTargetClutch, 1);
-[e ( _CLUTCH_Move (2 , _ucTargetClutch -> -> 1 `i `uc ]
+[; ;MESSAGES.C: 140:                     if ( ucASMode == 1 )
+[e $ ! == -> _ucASMode `i -> 1 `i 3193  ]
+"141
+[; ;MESSAGES.C: 141:                     {
+{
 "142
-[; ;MESSAGES.C: 142:                     break;
-[e $U 3190  ]
+[; ;MESSAGES.C: 142:                         CLUTCH_Move(ucTargetClutch, 1);
+[e ( _CLUTCH_Move (2 , _ucTargetClutch -> -> 1 `i `uc ]
 "143
-[; ;MESSAGES.C: 143:                 case 0x500:
-[e :U 3193 ]
+[; ;MESSAGES.C: 143:                         ETCMove(ucTargetAccelerator, 1);
+[e ( _ETCMove (2 , _ucTargetAccelerator -> -> 1 `i `uc ]
 "144
-[; ;MESSAGES.C: 144:                     ucAS_state = ( data1 & 0x07 );
-[e = _ucAS_state -> & -> _data1 `i -> 7 `i `uc ]
-"145
-[; ;MESSAGES.C: 145:                     ucEBS_state = ( data1 & 0x18 );
-[e = _ucEBS_state -> & -> _data1 `i -> 24 `i `uc ]
+[; ;MESSAGES.C: 144:                     }
+}
+[e :U 3193 ]
 "146
-[; ;MESSAGES.C: 146:                     ucAMI_state = ( data1 & 0xE0 );
-[e = _ucAMI_state -> & -> _data1 `i -> 224 `i `uc ]
+[; ;MESSAGES.C: 146:                     break;
+[e $U 3190  ]
 "147
-[; ;MESSAGES.C: 147:                     ucSteering_state = ( data2 & 0x01 );
-[e = _ucSteering_state -> & -> _data2 `i -> 1 `i `uc ]
-"148
-[; ;MESSAGES.C: 148:                     ucService_brake = ( data2 & 0x06 );
-[e = _ucService_brake -> & -> _data2 `i -> 6 `i `uc ]
-"149
-[; ;MESSAGES.C: 149:                     ucLap_counter = ( data2 & 0x78 );
-[e = _ucLap_counter -> & -> _data2 `i -> 120 `i `uc ]
-"152
-[; ;MESSAGES.C: 152:                     break;
-[e $U 3190  ]
-"153
-[; ;MESSAGES.C: 153:                 case 0x501:
+[; ;MESSAGES.C: 147:                 case 0x500:
 [e :U 3194 ]
-"154
-[; ;MESSAGES.C: 154:                     ucSpeed_actual = data1;
-[e = _ucSpeed_actual _data1 ]
-"155
-[; ;MESSAGES.C: 155:                     ucSpeed_target = data2;
-[e = _ucSpeed_target _data2 ]
+"148
+[; ;MESSAGES.C: 148:                     ucAS_state = ( data1 & 0x07 );
+[e = _ucAS_state -> & -> _data1 `i -> 7 `i `uc ]
+"149
+[; ;MESSAGES.C: 149:                     ucEBS_state = ( data1 & 0x18 );
+[e = _ucEBS_state -> & -> _data1 `i -> 24 `i `uc ]
+"150
+[; ;MESSAGES.C: 150:                     ucAMI_state = ( data1 & 0xE0 );
+[e = _ucAMI_state -> & -> _data1 `i -> 224 `i `uc ]
+"151
+[; ;MESSAGES.C: 151:                     ucSteering_state = ( data2 & 0x01 );
+[e = _ucSteering_state -> & -> _data2 `i -> 1 `i `uc ]
+"152
+[; ;MESSAGES.C: 152:                     ucService_brake = ( data2 & 0x06 );
+[e = _ucService_brake -> & -> _data2 `i -> 6 `i `uc ]
+"153
+[; ;MESSAGES.C: 153:                     ucLap_counter = ( data2 & 0x78 );
+[e = _ucLap_counter -> & -> _data2 `i -> 120 `i `uc ]
 "156
-[; ;MESSAGES.C: 156:                     ucSteering_angle_actual = data3;
-[e = _ucSteering_angle_actual _data3 ]
+[; ;MESSAGES.C: 156:                     break;
+[e $U 3190  ]
 "157
-[; ;MESSAGES.C: 157:                     ucSteering_angle_target = data4;
-[e = _ucSteering_angle_target _data4 ]
-"158
-[; ;MESSAGES.C: 158:                     ucBrake_hydr_actual = data5;
-[e = _ucBrake_hydr_actual _data5 ]
-"159
-[; ;MESSAGES.C: 159:                     ucBrake_hydr_target = data6;
-[e = _ucBrake_hydr_target _data6 ]
-"160
-[; ;MESSAGES.C: 160:                     ucMotor_moment_actual = data7;
-[e = _ucMotor_moment_actual _data7 ]
-"161
-[; ;MESSAGES.C: 161:                     ucMotor_moment_target = data8;
-[e = _ucMotor_moment_target _data8 ]
-"162
-[; ;MESSAGES.C: 162:                     break;
-[e $U 3190  ]
-"163
-[; ;MESSAGES.C: 163:                 case 0x502:
+[; ;MESSAGES.C: 157:                 case 0x501:
 [e :U 3195 ]
-"167
-[; ;MESSAGES.C: 167:                     break;
+"158
+[; ;MESSAGES.C: 158:                     ucSpeed_actual = data1;
+[e = _ucSpeed_actual _data1 ]
+"159
+[; ;MESSAGES.C: 159:                     ucSpeed_target = data2;
+[e = _ucSpeed_target _data2 ]
+"160
+[; ;MESSAGES.C: 160:                     ucSteering_angle_actual = data3;
+[e = _ucSteering_angle_actual _data3 ]
+"161
+[; ;MESSAGES.C: 161:                     ucSteering_angle_target = data4;
+[e = _ucSteering_angle_target _data4 ]
+"162
+[; ;MESSAGES.C: 162:                     ucBrake_hydr_actual = data5;
+[e = _ucBrake_hydr_actual _data5 ]
+"163
+[; ;MESSAGES.C: 163:                     ucBrake_hydr_target = data6;
+[e = _ucBrake_hydr_target _data6 ]
+"164
+[; ;MESSAGES.C: 164:                     ucMotor_moment_actual = data7;
+[e = _ucMotor_moment_actual _data7 ]
+"165
+[; ;MESSAGES.C: 165:                     ucMotor_moment_target = data8;
+[e = _ucMotor_moment_target _data8 ]
+"166
+[; ;MESSAGES.C: 166:                     break;
 [e $U 3190  ]
-"168
-[; ;MESSAGES.C: 168:                 case 0x345:
+"167
+[; ;MESSAGES.C: 167:                 case 0x502:
 [e :U 3196 ]
-"169
-[; ;MESSAGES.C: 169:                     ucASMode = data1;
-[e = _ucASMode _data1 ]
-"170
-[; ;MESSAGES.C: 170:                     ETCModeSelect(ucASMode);
-[e ( _ETCModeSelect (1 _ucASMode ]
 "171
 [; ;MESSAGES.C: 171:                     break;
 [e $U 3190  ]
 "172
-[; ;MESSAGES.C: 172:                 case 0x412:
+[; ;MESSAGES.C: 172:                 case 0x345:
 [e :U 3197 ]
 "173
-[; ;MESSAGES.C: 173:                     ucSTEER_WH_Clutch = data1;
-[e = _ucSTEER_WH_Clutch _data1 ]
+[; ;MESSAGES.C: 173:                     ucASMode = data1;
+[e = _ucASMode _data1 ]
 "174
-[; ;MESSAGES.C: 174:                     CLUTCH_Move(ucSTEER_WH_Clutch, 0);
-[e ( _CLUTCH_Move (2 , _ucSTEER_WH_Clutch -> -> 0 `i `uc ]
+[; ;MESSAGES.C: 174:                     ETCModeSelect(ucASMode);
+[e ( _ETCModeSelect (1 _ucASMode ]
 "175
 [; ;MESSAGES.C: 175:                     break;
 [e $U 3190  ]
 "176
-[; ;MESSAGES.C: 176:                 default:
+[; ;MESSAGES.C: 176:                 case 0x412:
 [e :U 3198 ]
 "177
-[; ;MESSAGES.C: 177:                     __nop();
-[e ( ___nop ..  ]
+[; ;MESSAGES.C: 177:                     ucSTEER_WH_Clutch = data1;
+[e = _ucSTEER_WH_Clutch _data1 ]
 "178
-[; ;MESSAGES.C: 178:                     break;
-[e $U 3190  ]
+[; ;MESSAGES.C: 178:                     if ( ucASMode == 0 )
+[e $ ! == -> _ucASMode `i -> 0 `i 3199  ]
 "179
-[; ;MESSAGES.C: 179:             }
+[; ;MESSAGES.C: 179:                     {
+{
+"180
+[; ;MESSAGES.C: 180:                         CLUTCH_Move(ucSTEER_WH_Clutch, 0);
+[e ( _CLUTCH_Move (2 , _ucSTEER_WH_Clutch -> -> 0 `i `uc ]
+"181
+[; ;MESSAGES.C: 181:                     }
+}
+[e :U 3199 ]
+"182
+[; ;MESSAGES.C: 182:                     break;
+[e $U 3190  ]
+"183
+[; ;MESSAGES.C: 183:                 default:
+[e :U 3200 ]
+"184
+[; ;MESSAGES.C: 184:                     __nop();
+[e ( ___nop ..  ]
+"185
+[; ;MESSAGES.C: 185:                     break;
+[e $U 3190  ]
+"186
+[; ;MESSAGES.C: 186:             }
 }
 [e $U 3190  ]
 [e :U 3191 ]
 [e [\ _id , $ -> -> -> 800 `i `l `ul 3192
- , $ -> -> -> 1280 `i `l `ul 3193
- , $ -> -> -> 1281 `i `l `ul 3194
- , $ -> -> -> 1282 `i `l `ul 3195
- , $ -> -> -> 837 `i `l `ul 3196
- , $ -> -> -> 1042 `i `l `ul 3197
- 3198 ]
+ , $ -> -> -> 1280 `i `l `ul 3194
+ , $ -> -> -> 1281 `i `l `ul 3195
+ , $ -> -> -> 1282 `i `l `ul 3196
+ , $ -> -> -> 837 `i `l `ul 3197
+ , $ -> -> -> 1042 `i `l `ul 3198
+ 3200 ]
 [e :U 3190 ]
-"180
-[; ;MESSAGES.C: 180:         }
+"187
+[; ;MESSAGES.C: 187:         }
 }
 [e :U 3189 ]
-"181
-[; ;MESSAGES.C: 181:     }
+"188
+[; ;MESSAGES.C: 188:     }
 }
 [e :U 3188 ]
-"182
-[; ;MESSAGES.C: 182: }
+"189
+[; ;MESSAGES.C: 189: }
 [e :UE 3187 ]
 }

@@ -210,14 +210,14 @@ CAN_TX_MSG_REQUEST_BRS_ERROR 2
 CAN_TX_MSG_REQUEST_FIFO_FULL 3
 ]
 "25 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ANALOG.c
-[e E22182 . `uc
+[e E22183 . `uc
 CONTEXT_TPS1 0
 CONTEXT_TPS2 1
 CONTEXT_APPS1 2
 CONTEXT_APPS2 3
 ]
 "26
-[e E22171 . `uc
+[e E22172 . `uc
 TPS2 4
 TPS1 16
 APPS2 17
@@ -288,6 +288,8 @@ channel_FVR_Buffer2 63
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 "105
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
+"131
+[v _ETCInitMove ETCInitMove `(v  1 e 1 0 ]
 "24 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
 "43
@@ -364,7 +366,6 @@ channel_FVR_Buffer2 63
 [v _CAN1_OperationModeSet CAN1_OperationModeSet `(E22356  1 e 1 0 ]
 "331
 [v _CAN1_OperationModeGet CAN1_OperationModeGet `(E22346  1 e 1 0 ]
-[v i2_CAN1_OperationModeGet CAN1_OperationModeGet `(E22346  1 e 1 0 ]
 "336
 [v _GetRxFifoDepth GetRxFifoDepth `(uc  1 s 1 GetRxFifoDepth ]
 "341
@@ -653,9 +654,7 @@ channel_FVR_Buffer2 63
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 "227
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"55 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
-[v _CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
-"100
+"100 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v _CANReadMessage CANReadMessage `(v  1 e 1 0 ]
 "24 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_10ms TEMPORIZATION_10ms `(v  1 e 1 0 ]
@@ -781,7 +780,7 @@ channel_FVR_Buffer2 63
 [v _PMD2 PMD2 `VEuc  1 e 1 @98 ]
 "1474
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S3986 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S3985 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -791,8 +790,8 @@ channel_FVR_Buffer2 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1491
-[u S3995 . 1 `S3986 1 . 1 0 ]
-[v _LATAbits LATAbits `VES3995  1 e 1 @1214 ]
+[u S3994 . 1 `S3985 1 . 1 0 ]
+[v _LATAbits LATAbits `VES3994  1 e 1 @1214 ]
 "1514
 [v _PMD3 PMD3 `VEuc  1 e 1 @99 ]
 "1536
@@ -817,7 +816,7 @@ channel_FVR_Buffer2 63
 [v _PMD5 PMD5 `VEuc  1 e 1 @101 ]
 "1660
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S3846 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S3850 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -827,8 +826,8 @@ channel_FVR_Buffer2 63
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1677
-[u S3855 . 1 `S3846 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES3855  1 e 1 @1222 ]
+[u S3859 . 1 `S3850 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES3859  1 e 1 @1222 ]
 "1678
 [v _PMD6 PMD6 `VEuc  1 e 1 @102 ]
 "1722
@@ -849,7 +848,7 @@ channel_FVR_Buffer2 63
 [v _PMD7 PMD7 `VEuc  1 e 1 @103 ]
 "1784
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
-[s S3879 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S3883 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -859,13 +858,13 @@ channel_FVR_Buffer2 63
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1801
-[u S3888 . 1 `S3879 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES3888  1 e 1 @1224 ]
+[u S3892 . 1 `S3883 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES3892  1 e 1 @1224 ]
 "1802
 [v _PMD8 PMD8 `VEuc  1 e 1 @104 ]
 "1846
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
-[s S3794 . 1 `uc 1 RA0 1 0 :1:0 
+[s S3798 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -875,9 +874,9 @@ channel_FVR_Buffer2 63
 `uc 1 RA7 1 0 :1:7 
 ]
 "1884
-[u S3803 . 1 `S3794 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES3803  1 e 1 @1230 ]
-[s S3773 . 1 `uc 1 RB0 1 0 :1:0 
+[u S3807 . 1 `S3798 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES3807  1 e 1 @1230 ]
+[s S3777 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -887,8 +886,8 @@ channel_FVR_Buffer2 63
 `uc 1 RB7 1 0 :1:7 
 ]
 "1946
-[u S3782 . 1 `S3773 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES3782  1 e 1 @1231 ]
+[u S3786 . 1 `S3777 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3786  1 e 1 @1231 ]
 [s S1119 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -1964,7 +1963,7 @@ channel_FVR_Buffer2 63
 "53 C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"80
+"83
 } 0
 "50 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -2214,7 +2213,12 @@ channel_FVR_Buffer2 63
 {
 "36
 } 0
-"64
+"131 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
+[v _ETCInitMove ETCInitMove `(v  1 e 1 0 ]
+{
+"139
+} 0
+"64 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 {
 "67
@@ -2419,141 +2423,6 @@ channel_FVR_Buffer2 63
 "70
 [v CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
 "98
-} 0
-"55 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
-[v _CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
-{
-[v CANWriteMessage@id id `ul  1 p 4 29 ]
-[v CANWriteMessage@dataLength dataLength `uc  1 p 1 33 ]
-[v CANWriteMessage@data1 data1 `uc  1 p 1 34 ]
-[v CANWriteMessage@data2 data2 `uc  1 p 1 35 ]
-[v CANWriteMessage@data3 data3 `uc  1 p 1 36 ]
-[v CANWriteMessage@data4 data4 `uc  1 p 1 37 ]
-[v CANWriteMessage@data5 data5 `uc  1 p 1 38 ]
-[v CANWriteMessage@data6 data6 `uc  1 p 1 39 ]
-[v CANWriteMessage@data7 data7 `uc  1 p 1 40 ]
-[v CANWriteMessage@data8 data8 `uc  1 p 1 41 ]
-"96
-} 0
-"592 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
-[v _CAN1_TransmitFIFOStatusGet CAN1_TransmitFIFOStatusGet `(E22361  1 e 1 0 ]
-{
-[v CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
-"594
-[v CAN1_TransmitFIFOStatusGet@status status `E22361  1 a 1 2 ]
-"592
-[v CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
-"594
-[v CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 3 ]
-"602
-} 0
-"570
-[v _CAN1_Transmit CAN1_Transmit `(E22340  1 e 1 0 ]
-{
-[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
-"579
-[v CAN1_Transmit@txFifoObj txFifoObj `*.39uc  1 a 2 26 ]
-"572
-[v CAN1_Transmit@status status `E22340  1 a 1 25 ]
-"570
-[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
-[s S234 . 1 `uc 1 idType 1 0 :1:0 
-`uc 1 frameType 1 0 :1:1 
-`uc 1 dlc 1 0 :4:2 
-`uc 1 formatType 1 0 :1:6 
-`uc 1 brs 1 0 :1:7 
-]
-[u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
-[s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
-[v CAN1_Transmit@txCanMsg txCanMsg `*.39S243  1 p 2 23 ]
-[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 28 ]
-"590
-} 0
-"490
-[v _isTxChannel isTxChannel `(a  1 s 1 isTxChannel ]
-{
-[v isTxChannel@channel channel `uc  1 a 1 wreg ]
-[v isTxChannel@channel channel `uc  1 a 1 wreg ]
-"492
-[v isTxChannel@channel channel `uc  1 a 1 1 ]
-"493
-} 0
-"500
-[v _WriteMessageToFifo WriteMessageToFifo `(v  1 s 1 WriteMessageToFifo ]
-{
-"502
-[v WriteMessageToFifo@msgId msgId `ul  1 a 4 19 ]
-"503
-[v WriteMessageToFifo@status status `uc  1 a 1 18 ]
-"500
-[v WriteMessageToFifo@txFifoObj txFifoObj `*.39uc  1 p 2 11 ]
-[s S234 . 1 `uc 1 idType 1 0 :1:0 
-`uc 1 frameType 1 0 :1:1 
-`uc 1 dlc 1 0 :4:2 
-`uc 1 formatType 1 0 :1:6 
-`uc 1 brs 1 0 :1:7 
-]
-[u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
-[s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
-[v WriteMessageToFifo@txCanMsg txCanMsg `*.39S243  1 p 2 13 ]
-"539
-} 0
-"541
-[v _ValidateTransmission ValidateTransmission `(E22340  1 s 1 ValidateTransmission ]
-{
-[v ValidateTransmission@validChannel validChannel `uc  1 a 1 wreg ]
-[s S234 . 1 `uc 1 idType 1 0 :1:0 
-`uc 1 frameType 1 0 :1:1 
-`uc 1 dlc 1 0 :4:2 
-`uc 1 formatType 1 0 :1:6 
-`uc 1 brs 1 0 :1:7 
-]
-"544
-[u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
-[v ValidateTransmission@field field `S240  1 a 1 9 ]
-"543
-[v ValidateTransmission@txMsgStatus txMsgStatus `E22340  1 a 1 8 ]
-"541
-[v ValidateTransmission@validChannel validChannel `uc  1 a 1 wreg ]
-[s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
-[v ValidateTransmission@txCanMsg txCanMsg `*.39S243  1 p 2 1 ]
-"543
-[v ValidateTransmission@validChannel validChannel `uc  1 a 1 6 ]
-"568
-} 0
-"331
-[v i2_CAN1_OperationModeGet CAN1_OperationModeGet `(E22346  1 e 1 0 ]
-{
-"334
-} 0
-"495
-[v _GetTxFifoStatus GetTxFifoStatus `(E22361  1 s 1 GetTxFifoStatus ]
-{
-[v GetTxFifoStatus@validChannel validChannel `uc  1 a 1 wreg ]
-[v GetTxFifoStatus@validChannel validChannel `uc  1 a 1 wreg ]
-"497
-[v GetTxFifoStatus@validChannel validChannel `uc  1 a 1 0 ]
-"498
-} 0
-"629
-[v _CAN1_IsTxErrorWarning CAN1_IsTxErrorWarning `(a  1 e 1 0 ]
-{
-"632
-} 0
-"634
-[v _CAN1_IsTxErrorActive CAN1_IsTxErrorActive `(a  1 e 1 0 ]
-{
-"637
-} 0
-"624
-[v _CAN1_IsTxErrorPassive CAN1_IsTxErrorPassive `(a  1 e 1 0 ]
-{
-"627
-} 0
-"604
-[v _CAN1_IsBusOff CAN1_IsBusOff `(a  1 e 1 0 ]
-{
-"607
 } 0
 "122 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]

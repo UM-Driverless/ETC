@@ -70,7 +70,10 @@ void main(void)
 
     //APPSMODE_SetHigh();
     //APPSSend(0);
-            
+    
+    //Mover ETC en init
+    ETCInitMove();
+    
     while (1)
     {
         // Add your application code

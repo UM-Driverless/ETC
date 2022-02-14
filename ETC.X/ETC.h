@@ -36,7 +36,7 @@ void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-
+void ETCInitMove(void);
 
 #ifdef	__cplusplus
 }

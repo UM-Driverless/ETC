@@ -17,21 +17,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35 ./CLUTCH.h
 [; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
-"97 ./MESSAGES.h
-[; ;./MESSAGES.h: 97: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
-[v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
-"24 ./ETC.h
-[; ;./ETC.h: 24: extern unsigned char ucAPPS1;
-[v _ucAPPS1 `uc ~T0 @X0 0 e ]
-"25
-[; ;./ETC.h: 25: extern unsigned char ucAPPS2;
-[v _ucAPPS2 `uc ~T0 @X0 0 e ]
-"26
-[; ;./ETC.h: 26: extern unsigned char ucTPS1;
-[v _ucTPS1 `uc ~T0 @X0 0 e ]
-"27
-[; ;./ETC.h: 27: extern unsigned char ucTPS2;
-[v _ucTPS2 `uc ~T0 @X0 0 e ]
 "1480 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
 [s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -3611,9 +3596,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33
 [; ;TEMPORIZATIONS.c: 33:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
-"34
-[; ;TEMPORIZATIONS.c: 34:     CANWriteMessage(0x330, 6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);
-[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc _ucAPPS1 _ucAPPS2 _ucTPS1 _ucTPS2 -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "35
 [; ;TEMPORIZATIONS.c: 35: }
 [e :UE 3182 ]
@@ -3645,9 +3627,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _TEMPORIZATION_1s ]
 [f ]
-"44
-[; ;TEMPORIZATIONS.c: 44:     CANWriteMessage(0x331, 3, 0, 0, 0, 0, 0, 0, 0, 0);
-[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 817 `i `l `ul -> -> 3 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "45
 [; ;TEMPORIZATIONS.c: 45: }
 [e :UE 3187 ]

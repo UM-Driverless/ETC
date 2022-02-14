@@ -38339,6 +38339,7 @@ void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETCInitMove(void);
 # 10 "MESSAGES.C" 2
 
 # 1 "./CLUTCH.h" 1

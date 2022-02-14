@@ -45,6 +45,7 @@ void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETCInitMove(void);
 # 9 "ANALOG.c" 2
 
 # 1 "./mcc_generated_files/adc.h" 1

@@ -38378,6 +38378,7 @@ void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETCInitMove(void);
 # 13 "TEMPORIZATIONS.c" 2
 
 
@@ -38400,7 +38401,7 @@ void TEMPORIZATION_100ms (void)
 {
 
     CLUTCH_AnalyseState();
-    CANWriteMessage(0x330, 6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);
+
 }
 
 void TEMPORIZATION_500ms (void)
@@ -38410,7 +38411,7 @@ void TEMPORIZATION_500ms (void)
 
 void TEMPORIZATION_1s (void)
 {
-    CANWriteMessage(0x331, 3, 0, 0, 0, 0, 0, 0, 0, 0);
+
 }
 
 void TEMPORIZATION_10s (void)

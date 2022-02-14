@@ -33,6 +33,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18 ./GPIO.h
 [; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
+[v F606 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
+[v __delay `JF606 ~T0 @X0 0 e ]
+[p i __delay ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3809,8 +3813,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ETC.c: 106: {
 [f ]
 "108
-[; ;ETC.c: 108:     uiETCDuty = ucTargetMove + 25;
-[e = _uiETCDuty -> + -> _ucTargetMove `i -> 25 `i `ui ]
+[; ;ETC.c: 108:     uiETCDuty = ucTargetMove;
+[e = _uiETCDuty -> _ucTargetMove `ui ]
 "110
 [; ;ETC.c: 110:     if ( ucMode == ucASMode )
 [e $ ! == -> _ucMode `i -> _ucASMode `i 3203  ]
@@ -3857,4 +3861,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "127
 [; ;ETC.c: 127: }
 [e :UE 3202 ]
+}
+"131
+[; ;ETC.c: 131: void ETCInitMove(void)
+[v _ETCInitMove `(v ~T0 @X0 1 ef ]
+"132
+[; ;ETC.c: 132: {
+{
+[e :U _ETCInitMove ]
+[f ]
+"133
+[; ;ETC.c: 133:      GPIO_PWM2_Control(0, 300);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
+"134
+[; ;ETC.c: 134:      _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"135
+[; ;ETC.c: 135:      GPIO_PWM2_Control(100, 300);
+[e ( _GPIO_PWM2_Control (2 , -> -> 100 `i `ui -> -> 300 `i `ui ]
+"136
+[; ;ETC.c: 136:      _delay((unsigned long)((500)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"137
+[; ;ETC.c: 137:      GPIO_PWM2_Control(0, 300);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
+"139
+[; ;ETC.c: 139: }
+[e :UE 3207 ]
 }

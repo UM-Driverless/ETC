@@ -38357,6 +38357,7 @@ void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETCInitMove(void);
 # 12 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
@@ -38461,7 +38462,7 @@ void ETCRulesSupervision(void)
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 {
 
-    uiETCDuty = ucTargetMove + 25;
+    uiETCDuty = ucTargetMove;
 
     if ( ucMode == ucASMode )
     {
@@ -38479,5 +38480,17 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
     {
 
     }
+
+}
+
+
+
+void ETCInitMove(void)
+{
+     GPIO_PWM2_Control(0, 300);
+     _delay((unsigned long)((200)*(10000000/4000.0)));
+     GPIO_PWM2_Control(100, 300);
+     _delay((unsigned long)((500)*(10000000/4000.0)));
+     GPIO_PWM2_Control(0, 300);
 
 }

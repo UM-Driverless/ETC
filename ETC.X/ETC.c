@@ -105,7 +105,7 @@ void ETCRulesSupervision(void)
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 {
     //HACER CONVERSION DE 0-100% A 2-12 DUTY
-    uiETCDuty = ucTargetMove + 25;
+    uiETCDuty = ucTargetMove;
     //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
     if ( ucMode == ucASMode )
     {
@@ -124,4 +124,16 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
         //generar error movimiento impedido por modo de conduccion
     }
     
+}
+
+
+//Probar movimiento de ETB en arranques
+void ETCInitMove(void)
+{
+     GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
+     __delay_ms(200);
+     GPIO_PWM2_Control(100, 300); //lo muevo sin comprobar nada
+     __delay_ms(500);
+     GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
+     
 }

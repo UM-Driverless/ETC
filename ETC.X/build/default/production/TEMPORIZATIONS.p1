@@ -11,12 +11,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./../ETC.X/mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
-"35 ./CLUTCH.h
-[; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
-[v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
 "23 ./ANALOG.h
 [; ;./ANALOG.h: 23: void ANALOGRead (void);
 [v _ANALOGRead `(v ~T0 @X0 0 ef ]
+"35 ./CLUTCH.h
+[; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
+[v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
 "1480 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
 [s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -3587,46 +3587,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _TEMPORIZATION_100ms ]
 [f ]
-"32
-[; ;TEMPORIZATIONS.c: 32:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
-"34
-[; ;TEMPORIZATIONS.c: 34:     ANALOGRead();
+"31
+[; ;TEMPORIZATIONS.c: 31:     ANALOGRead();
 [e ( _ANALOGRead ..  ]
-"35
-[; ;TEMPORIZATIONS.c: 35: }
+"32
+[; ;TEMPORIZATIONS.c: 32: }
 [e :UE 3182 ]
 }
-"37
-[; ;TEMPORIZATIONS.c: 37: void TEMPORIZATION_500ms (void)
+"34
+[; ;TEMPORIZATIONS.c: 34: void TEMPORIZATION_500ms (void)
 [v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
-"38
-[; ;TEMPORIZATIONS.c: 38: {
+"35
+[; ;TEMPORIZATIONS.c: 35: {
 {
 [e :U _TEMPORIZATION_500ms ]
 [f ]
+"38
+[; ;TEMPORIZATIONS.c: 38:     CLUTCH_AnalyseState();
+[e ( _CLUTCH_AnalyseState ..  ]
 "39
-[; ;TEMPORIZATIONS.c: 39:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-[e :U 3186 ]
-{
-[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
-}
-[e :U 3185 ]
-"40
-[; ;TEMPORIZATIONS.c: 40: }
+[; ;TEMPORIZATIONS.c: 39: }
 [e :UE 3183 ]
 }
-"42
-[; ;TEMPORIZATIONS.c: 42: void TEMPORIZATION_1s (void)
+"41
+[; ;TEMPORIZATIONS.c: 41: void TEMPORIZATION_1s (void)
 [v _TEMPORIZATION_1s `(v ~T0 @X0 1 ef ]
-"43
-[; ;TEMPORIZATIONS.c: 43: {
+"42
+[; ;TEMPORIZATIONS.c: 42: {
 {
 [e :U _TEMPORIZATION_1s ]
 [f ]
+"43
+[; ;TEMPORIZATIONS.c: 43:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+[e :U 3187 ]
+{
+[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
+}
+[e :U 3186 ]
 "45
 [; ;TEMPORIZATIONS.c: 45: }
-[e :UE 3187 ]
+[e :UE 3184 ]
 }
 "47
 [; ;TEMPORIZATIONS.c: 47: void TEMPORIZATION_10s (void)

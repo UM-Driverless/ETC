@@ -210,14 +210,14 @@ CAN_TX_MSG_REQUEST_BRS_ERROR 2
 CAN_TX_MSG_REQUEST_FIFO_FULL 3
 ]
 "25 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ANALOG.c
-[e E22191 . `uc
+[e E22193 . `uc
 CONTEXT_TPS1 0
 CONTEXT_TPS2 1
 CONTEXT_APPS1 2
 CONTEXT_APPS2 3
 ]
 "26
-[e E22180 . `uc
+[e E22182 . `uc
 TPS2 4
 TPS1 16
 APPS2 17
@@ -287,17 +287,17 @@ channel_FVR_Buffer2 63
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 "101
 [v _CLUTCHInitMove CLUTCHInitMove `(v  1 e 1 0 ]
-"70 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
+"72 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _TPSReadmin TPSReadmin `(v  1 e 1 0 ]
-"77
+"79
 [v _TPSReadmax TPSReadmax `(v  1 e 1 0 ]
-"85
+"87
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
-"111
+"113
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
-"137
+"139
 [v _ETCInitMove ETCInitMove `(v  1 e 1 0 ]
-"150
+"152
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
 "24 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
@@ -669,9 +669,9 @@ channel_FVR_Buffer2 63
 [v _TEMPORIZATION_10ms TEMPORIZATION_10ms `(v  1 e 1 0 ]
 "29
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]
-"37
+"34
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
-"42
+"41
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
 "47
 [v _TEMPORIZATION_10s TEMPORIZATION_10s `(v  1 e 1 0 ]
@@ -1841,19 +1841,19 @@ channel_FVR_Buffer2 63
 [v _ucAPPS1 ucAPPS1 `uc  1 e 1 0 ]
 "26
 [v _ucAPPS2 ucAPPS2 `uc  1 e 1 0 ]
-"27
-[v _ucTPS1 ucTPS1 `uc  1 e 1 0 ]
 "28
-[v _ucTPS2 ucTPS2 `uc  1 e 1 0 ]
+[v _ucTPS1 ucTPS1 `uc  1 e 1 0 ]
 "29
-[v _ucTPS1calc ucTPS1calc `uc  1 e 1 0 ]
+[v _ucTPS2 ucTPS2 `uc  1 e 1 0 ]
 "30
-[v _ucTPS2calc ucTPS2calc `uc  1 e 1 0 ]
+[v _ucTPS1calc ucTPS1calc `uc  1 e 1 0 ]
 "31
+[v _ucTPS2calc ucTPS2calc `uc  1 e 1 0 ]
+"32
 [v _ucTPS_STATE ucTPS_STATE `uc  1 e 1 0 ]
-"34
-[v _ucTPS_Volts_STATE ucTPS_Volts_STATE `uc  1 e 1 0 ]
 "35
+[v _ucTPS_Volts_STATE ucTPS_Volts_STATE `uc  1 e 1 0 ]
+"36
 [v _uiETCDuty uiETCDuty `ui  1 e 2 0 ]
 "17 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _ucCLUTCHlmin ucCLUTCHlmin `uc  1 e 1 0 ]
@@ -2230,20 +2230,20 @@ channel_FVR_Buffer2 63
 {
 "36
 } 0
-"137 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
+"139 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCInitMove ETCInitMove `(v  1 e 1 0 ]
 {
-"148
+"150
 } 0
-"70
+"72
 [v _TPSReadmin TPSReadmin `(v  1 e 1 0 ]
 {
-"75
-} 0
 "77
+} 0
+"79
 [v _TPSReadmax TPSReadmax `(v  1 e 1 0 ]
 {
-"82
+"84
 } 0
 "64 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
@@ -2426,17 +2426,26 @@ channel_FVR_Buffer2 63
 {
 "230
 } 0
-"37 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"34 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
 {
-"40
+"39
 } 0
-"52
+"68 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+[v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
+{
+"71
+[v i2CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
+"70
+[v i2CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
+"98
+} 0
+"52 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
 {
 "55
 } 0
-"42
+"41
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
 {
 "45
@@ -2454,16 +2463,7 @@ channel_FVR_Buffer2 63
 "29
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]
 {
-"35
-} 0
-"68 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
-[v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
-{
-"71
-[v i2CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
-"70
-[v i2CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
-"98
+"32
 } 0
 "89 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ANALOG.c
 [v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
@@ -2563,15 +2563,15 @@ channel_FVR_Buffer2 63
 [v CANReadMessage@data6 data6 `uc  1 a 1 62 ]
 "189
 } 0
-"111 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
+"113 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
 {
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v ETCMove@ucMode ucMode `uc  1 p 1 50 ]
-"114
+"116
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 51 ]
-"133
+"135
 } 0
 "64 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
@@ -2602,13 +2602,13 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"85 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
+"87 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 {
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 2 ]
-"101
+"103
 } 0
 "30 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]

@@ -33,7 +33,6 @@ void TEMPORIZATION_100ms (void)
 
 void TEMPORIZATION_500ms (void)
 {
-    LED_Toggle();
     //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);    //Falta meter los APPS target
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
     CLUTCH_AnalyseState();
@@ -41,7 +40,8 @@ void TEMPORIZATION_500ms (void)
 
 void TEMPORIZATION_1s (void)
 {
-    //CANWriteMessage(ETC_STATE, DataLength_3, 0, 0, 0, 0, 0, 0, 0, 0);  
+    LED_Toggle();
+    //CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
 }
 
 void TEMPORIZATION_10s (void)

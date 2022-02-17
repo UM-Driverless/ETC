@@ -23,7 +23,8 @@ unsigned char ucTPS1max;
 unsigned char ucTPS2min;
 unsigned char ucTPS2max; 
 unsigned char ucAPPS1;
-unsigned char ucAPPS2;    
+unsigned char ucAPPS2; 
+unsigned char ucAPPS_STATE; 
 unsigned char ucTPS1;
 unsigned char ucTPS2; 
 unsigned char ucTPS1calc;
@@ -33,6 +34,7 @@ unsigned char ucTPS1_STATE;
 unsigned char ucTPS2_STATE; 
 unsigned char ucTPS_Volts_STATE; 
 unsigned int uiETCDuty;
+unsigned char ucETB_STATE; 
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent)

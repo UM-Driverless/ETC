@@ -38366,6 +38366,7 @@ extern unsigned char ucTPS2min;
 extern unsigned char ucTPS2max;
 extern unsigned char ucAPPS1;
 extern unsigned char ucAPPS2;
+extern unsigned char ucAPPS_STATE;
 extern unsigned char ucTPS1;
 extern unsigned char ucTPS2;
 extern unsigned char ucTPS1calc;
@@ -38375,6 +38376,7 @@ extern unsigned char ucTPS1_STATE;
 extern unsigned char ucTPS2_STATE;
 extern unsigned char ucTPS_Volts_STATE;
 extern unsigned int uiETCDuty;
+extern unsigned char ucETB_STATE;
 
 
 void APPSSend (unsigned char ucPercent);
@@ -38407,19 +38409,19 @@ void TEMPORIZATION_10ms (void)
 
 void TEMPORIZATION_100ms (void)
 {
-
-    CLUTCH_AnalyseState();
-
     ANALOGRead();
 }
 
 void TEMPORIZATION_500ms (void)
 {
-    do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+
+
+    CLUTCH_AnalyseState();
 }
 
 void TEMPORIZATION_1s (void)
 {
+    do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 
 }
 

@@ -38344,6 +38344,7 @@ extern unsigned char ucTPS2min;
 extern unsigned char ucTPS2max;
 extern unsigned char ucAPPS1;
 extern unsigned char ucAPPS2;
+extern unsigned char ucAPPS_STATE;
 extern unsigned char ucTPS1;
 extern unsigned char ucTPS2;
 extern unsigned char ucTPS1calc;
@@ -38353,6 +38354,7 @@ extern unsigned char ucTPS1_STATE;
 extern unsigned char ucTPS2_STATE;
 extern unsigned char ucTPS_Volts_STATE;
 extern unsigned int uiETCDuty;
+extern unsigned char ucETB_STATE;
 
 
 void APPSSend (unsigned char ucPercent);
@@ -38391,6 +38393,7 @@ unsigned char ucTPS2min;
 unsigned char ucTPS2max;
 unsigned char ucAPPS1;
 unsigned char ucAPPS2;
+unsigned char ucAPPS_STATE;
 unsigned char ucTPS1;
 unsigned char ucTPS2;
 unsigned char ucTPS1calc;
@@ -38400,6 +38403,7 @@ unsigned char ucTPS1_STATE;
 unsigned char ucTPS2_STATE;
 unsigned char ucTPS_Volts_STATE;
 unsigned int uiETCDuty;
+unsigned char ucETB_STATE;
 
 
 void APPSSend (unsigned char ucPercent)

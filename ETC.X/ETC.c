@@ -11,6 +11,7 @@
 #include "mcc_generated_files/DAC3_example.h"
 #include "ETC.h"
 #include "GPIO.h"
+#include "PARAMETERS.h"
 
 //VARIABLES    
 unsigned char ucAPPS1min;
@@ -25,6 +26,12 @@ unsigned char ucAPPS1;
 unsigned char ucAPPS2;    
 unsigned char ucTPS1;
 unsigned char ucTPS2; 
+unsigned char ucTPS1calc;
+unsigned char ucTPS2calc; 
+unsigned char ucTPS_STATE; 
+unsigned char ucTPS1_STATE; 
+unsigned char ucTPS2_STATE; 
+unsigned char ucTPS_Volts_STATE; 
 unsigned int uiETCDuty;
 
 //FUNCIONES
@@ -34,8 +41,6 @@ void APPSSend (unsigned char ucPercent)
     uint16_t dacAPPS1, dacAPPS2;
     
     //Funcion de transferencia de porcentaje a valor APPS
-    
-    
     dacAPPS1 = (4096*ucPercent)/5;
     dacAPPS2 = (4096*ucPercent)/5;
     //APPS1 I2C ADRRS = 0x60
@@ -98,6 +103,7 @@ void ETCModeSelect (unsigned char ucModeSelect)
 //Funcion supervision de normativa
 void ETCRulesSupervision(void)
 {
+    TPSAnalysis();
     
 }
 
@@ -130,10 +136,98 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 //Probar movimiento de ETB en arranques
 void ETCInitMove(void)
 {
-     GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
-     __delay_ms(200);
-     GPIO_PWM2_Control(100, 300); //lo muevo sin comprobar nada
-     __delay_ms(500);
-     GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
-     
+    //Analizar aqui valores minimos de APPS
+    TPSReadmin();
+    GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
+    __delay_ms(200);
+    GPIO_PWM2_Control(100, 300); //lo muevo sin comprobar nada
+    __delay_ms(1000);
+    TPSReadmax();
+    __delay_ms(200);
+    GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
+}
+
+void TPSAnalysis (void)
+{
+    //Analisis TPS1
+    if ( ucTPS1min < ucTPS1max )    //TPS1 voltaje no invertido
+    {
+        ucTPS1calc = ( ( ucTPS1max - ucTPS1min ) * uiETCDuty ) + ucTPS1min;
+        ucTPS_Volts_STATE = TPS1_NO_INVERTED;
+    }
+    else    //TPS1 voltaje invertido
+    {
+        ucTPS1calc = ( ucTPS1min - ( ( ucTPS1min - ucTPS1max ) * uiETCDuty ) );
+        ucTPS_Volts_STATE = TPS1_INVERTED;
+    }
+    
+    //Analisis TPS2
+    if ( ucTPS2min < ucTPS2max )    //TPS2 voltaje no invertido
+    {
+        ucTPS2calc = ( ( ucTPS2max - ucTPS2min ) * uiETCDuty ) + ucTPS2min;
+        ucTPS_Volts_STATE = TPS2_NO_INVERTED;
+    }
+    else    //TPS2 voltaje invertido
+    {
+        ucTPS2calc = ( ucTPS2min - ( ( ucTPS2min - ucTPS2max ) * uiETCDuty ) );
+        ucTPS_Volts_STATE = TPS2_INVERTED;
+    }
+    
+    //analisis de fallos TPS por salida de márgenes
+    if ( ( ucTPS1calc > ucTPS1 + TPSMARGEN ) || ( ucTPS1calc < ucTPS1 - TPSMARGEN ) )
+    {
+        //apuntar fallo de TPS1
+        ucTPS_STATE |= TPS1_ERROR;
+    }
+    else
+    {
+        //quitar error TPS1
+        ucTPS_STATE |= QUITAR_ERROR_TPS1;
+    }
+    
+    if ( ( ucTPS2calc > ucTPS2 + TPSMARGEN ) || ( ucTPS2calc < ucTPS2 - TPSMARGEN ) )
+    {
+        //apuntar fallo de TPS2
+        ucTPS_STATE |= TPS2_ERROR;
+    }
+    else
+    {
+        //quitar error TPS1
+        ucTPS_STATE |= QUITAR_ERROR_TPS2;
+    }
+    
+    //analisis por inversiones de voltaje 
+    if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_NO_INVERTED )
+    {
+        ucTPS_STATE |= TPS_Volt_ERROR;
+    }
+    else if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_INVERTED )
+    {
+        //todo OK, eliminar erro de estado
+        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
+    }
+    else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_NO_INVERTED )
+    {
+        //todo OK, eliminar erro de estado
+        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
+    }
+    else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_INVERTED )
+    {
+        ucTPS_STATE |= TPS_Volt_ERROR;
+    }
+    else
+    {
+        ucTPS_STATE |= TPS_Volt_ERROR;
+    }
+    
+    //analisis por diferencias entre TPS1 y TPS2
+    
+    
+}
+
+
+
+void APPSAnalysis (void)
+{
+    
 }

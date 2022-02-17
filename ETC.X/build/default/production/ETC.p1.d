@@ -17,4 +17,5 @@ mcc_generated_files/pwm2_16bit.h  \
 mcc_generated_files/pwm1_16bit.h  \
 mcc_generated_files/DAC3_example.h  \
 ETC.h  \
-GPIO.h 
+GPIO.h  \
+PARAMETERS.h 

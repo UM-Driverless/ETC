@@ -96,3 +96,23 @@ void CLUTCH_AnalyseState (void)
         ucCLUTCHState = CLUTCH_CORRUPT;
     }
 }
+
+
+void CLUTCHInitMove(void)
+{
+    GPIO_PWM1_Control(0, 300); //lo muevo a 0 sin comprobar nada
+    __delay_ms(200);
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == CLUTCH_ENGAGE )
+    {
+        GPIO_PWM1_Control(100, 300); //desembrago
+    
+    }
+    __delay_ms(1500);
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == CLUTCH_DISENGAGE )
+    {
+        __delay_ms(200);
+        GPIO_PWM1_Control(0, 300); //lo muevo a 0 sin comprobar nada
+    }
+}

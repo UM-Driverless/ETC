@@ -14,6 +14,10 @@ extern "C" {
 
 #define FALSE   0x00
 #define TRUE    0x01
+    
+    
+#define TPSMARGEN 20
+#define APPSMARGEN 20
 
 
 

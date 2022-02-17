@@ -11,6 +11,28 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    
+    
+//CONSTANTES
+#define TPS_OK              0
+//errores por salidad de margenes
+#define TPS1_ERROR          1
+#define TPS2_ERROR          2
+#define TPS1_TPS2_ERROR     3
+#define TPS_Volt_ERROR      4
+#define QUITAR_ERROR_TPS1  0xFE    
+#define QUITAR_ERROR_TPS2  0xFD   
+//inversion de voltaje
+#define TPS1_NO_INVERTED    1  
+#define TPS1_INVERTED       2
+#define TPS2_NO_INVERTED    4  
+#define TPS2_INVERTED       8
+#define TPS1_NO_INVERTED_TPS2_NO_INVERTED       5
+#define TPS1_NO_INVERTED_TPS2_INVERTED          9  
+#define TPS1_INVERTED_TPS2_NO_INVERTED          6  
+#define TPS1_INVERTED_TPS2_INVERTED             10  
+#define QUITAR_ERROR_VOLTS                      0xFB       
+    
 
 //VARIABLES    
 extern unsigned char ucAPPS1min;
@@ -25,7 +47,13 @@ extern unsigned char ucAPPS1;
 extern unsigned char ucAPPS2;    
 extern unsigned char ucTPS1;
 extern unsigned char ucTPS2; 
-unsigned int uiETCDuty;
+extern unsigned char ucTPS1calc;
+extern unsigned char ucTPS2calc; 
+extern unsigned char ucTPS_STATE; 
+extern unsigned char ucTPS1_STATE; 
+extern unsigned char ucTPS2_STATE; 
+extern unsigned char ucTPS_Volts_STATE; 
+extern unsigned int uiETCDuty;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);
@@ -37,6 +65,8 @@ void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
 void ETCInitMove(void);
+void TPSAnalysis (void);
+void APPSAnalysis (void);
 
 #ifdef	__cplusplus
 }

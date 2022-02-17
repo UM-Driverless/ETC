@@ -11,12 +11,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./../ETC.X/mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
-"23 ./ANALOG.h
-[; ;./ANALOG.h: 23: void ANALOGRead (void);
-[v _ANALOGRead `(v ~T0 @X0 0 ef ]
 "35 ./CLUTCH.h
 [; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
+"23 ./ANALOG.h
+[; ;./ANALOG.h: 23: void ANALOGRead (void);
+[v _ANALOGRead `(v ~T0 @X0 0 ef ]
 "1480 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
 [s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -3552,9 +3552,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
-"28 ./ETC.h
-[; ;./ETC.h: 28: unsigned int uiETCDuty;
-[v _uiETCDuty `ui ~T0 @X0 1 e ]
 "16 TEMPORIZATIONS.c
 [; ;TEMPORIZATIONS.c: 16: unsigned char ucCount500ms;
 [v _ucCount500ms `uc ~T0 @X0 1 e ]
@@ -3578,24 +3575,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _TEMPORIZATION_10ms ]
 [f ]
-"26
-[; ;TEMPORIZATIONS.c: 26:     ANALOGRead();
-[e ( _ANALOGRead ..  ]
-"28
-[; ;TEMPORIZATIONS.c: 28: }
+"27
+[; ;TEMPORIZATIONS.c: 27: }
 [e :UE 3181 ]
 }
-"30
-[; ;TEMPORIZATIONS.c: 30: void TEMPORIZATION_100ms (void)
+"29
+[; ;TEMPORIZATIONS.c: 29: void TEMPORIZATION_100ms (void)
 [v _TEMPORIZATION_100ms `(v ~T0 @X0 1 ef ]
-"31
-[; ;TEMPORIZATIONS.c: 31: {
+"30
+[; ;TEMPORIZATIONS.c: 30: {
 {
 [e :U _TEMPORIZATION_100ms ]
 [f ]
-"33
-[; ;TEMPORIZATIONS.c: 33:     CLUTCH_AnalyseState();
+"32
+[; ;TEMPORIZATIONS.c: 32:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
+"34
+[; ;TEMPORIZATIONS.c: 34:     ANALOGRead();
+[e ( _ANALOGRead ..  ]
 "35
 [; ;TEMPORIZATIONS.c: 35: }
 [e :UE 3182 ]

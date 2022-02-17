@@ -23,7 +23,6 @@ unsigned int uiCount1min;
 //FUNCIONES
 void TEMPORIZATION_10ms (void)
 {
-    ANALOGRead();
     //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
 }
 
@@ -32,6 +31,7 @@ void TEMPORIZATION_100ms (void)
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
     CLUTCH_AnalyseState();
     //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);    //Falta meter los APPS target
+    ANALOGRead();
 }
 
 void TEMPORIZATION_500ms (void)

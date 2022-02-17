@@ -73,6 +73,7 @@ void main(void)
     
     //Mover ETC en init
     ETCInitMove();
+    CLUTCHInitMove();
     
     while (1)
     {

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.30\pic\dat\en_msgs.txt \
   -pivt0x8=08h -cn -h+dist/default/production\ETC.X.production.sym \
   --cmf=dist/default/production\ETC.X.production.cmf -z -Q18F26Q84 \
-  -oC:\Users\panze\AppData\Local\Temp\smc8x2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\panze\AppData\Local\Temp\sj2kx2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ETC.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=0636h-025FFh -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=02600h-026FFhx218 \
@@ -31,7 +31,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\panze\AppData\Local\Temp\smc8x8.o \
+  C:\Users\panze\AppData\Local\Temp\sj2kx8.o \
   dist/default/production\ETC.X.production.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 18F26Q84
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\panze\AppData\Local\Temp\smc8x8.o
+C:\Users\panze\AppData\Local\Temp\sj2kx8.o
                 idloc                            200000   200000       20        0       5
                 config                           300000   300000       24        0       4
                 init                                 1A       1A        4        4       0

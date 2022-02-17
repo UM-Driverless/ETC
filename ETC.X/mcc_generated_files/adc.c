@@ -73,8 +73,8 @@ void ADC_Initialize(void)
     //ADACT TMR0; 
     ADACT = 0x02;
 
-    //ADCCS FOSC/2; 
-    ADCLK = 0x00;
+    //ADCCS FOSC/128; 
+    ADCLK = 0x3F;
     
     //ADC charge pump control
     ADCP = 0x00;
@@ -127,11 +127,11 @@ void ADC_Initialize(void)
     //ADCHS ANC0; 
     ADPCH = 0x10;
 
-    //ADACQL 135; 
-    ADACQL = 0x87;
+    //ADACQL 100; 
+    ADACQL = 0x64;
 
-    //ADACQH 1; 
-    ADACQH = 0x01;
+    //ADACQH 0; 
+    ADACQH = 0x00;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;
@@ -210,11 +210,11 @@ void ADC_Initialize(void)
     //ADCHS ANA4; 
     ADPCH = 0x04;
 
-    //ADACQL 135; 
-    ADACQL = 0x87;
+    //ADACQL 100; 
+    ADACQL = 0x64;
 
-    //ADACQH 1; 
-    ADACQH = 0x01;
+    //ADACQH 0; 
+    ADACQH = 0x00;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;
@@ -293,11 +293,11 @@ void ADC_Initialize(void)
     //ADCHS ANC2; 
     ADPCH = 0x12;
 
-    //ADACQL 135; 
-    ADACQL = 0x87;
+    //ADACQL 100; 
+    ADACQL = 0x64;
 
-    //ADACQH 1; 
-    ADACQH = 0x01;
+    //ADACQH 0; 
+    ADACQH = 0x00;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;
@@ -376,11 +376,11 @@ void ADC_Initialize(void)
     //ADCHS ANC1; 
     ADPCH = 0x11;
 
-    //ADACQL 135; 
-    ADACQL = 0x87;
+    //ADACQL 100; 
+    ADACQL = 0x64;
 
-    //ADACQH 1; 
-    ADACQH = 0x01;
+    //ADACQH 0; 
+    ADACQH = 0x00;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;

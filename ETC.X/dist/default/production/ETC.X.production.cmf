@@ -11,11 +11,6 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\panze\AppData\Local\Temp\smc8x8.o
-idloc IDLOC 5 200000 200000 20 1
-init CODE 0 1A 1A 4 1
-reset_vec CODE 0 0 0 4 1
-config CONFIG 4 300000 300000 24 1
 $dist/default/production\ETC.X.production.o
 ivt0x8 CODE 0 8 8 12 1
 cinit CODE 0 4F32 4F32 54 1
@@ -150,6 +145,11 @@ text117 CODE 0 562A 562A 2 1
 text118 CODE 0 562C 562C 2 1
 text119 CODE 0 562E 562E 2 1
 bssCOMRAM COMRAM 1 54B 54B 15 1
+config CONFIG 4 300000 300000 24 1
+$C:\Users\panze\AppData\Local\Temp\sj2kx8.o
+idloc IDLOC 5 200000 200000 20 1
+init CODE 0 1A 1A 4 1
+reset_vec CODE 0 0 0 4 1
 config CONFIG 4 300000 300000 24 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -1602,47 +1602,47 @@ $dist/default/production\ETC.X.production.o
 53DE text0 CODE >76:C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
 53E2 text0 CODE >78:C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
 53E2 text0 CODE >83:C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
-4F32 cinit CODE >43443:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F32 cinit CODE >43445:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F32 cinit CODE >43448:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F32 cinit CODE >43691:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F34 cinit CODE >43692:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F36 cinit CODE >43693:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F38 cinit CODE >43694:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F3A cinit CODE >43695:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F3C cinit CODE >43696:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F3E cinit CODE >43697:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F40 cinit CODE >43698:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F46 cinit CODE >43699:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F48 cinit CODE >43700:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F4E cinit CODE >43704:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F52 cinit CODE >43705:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F54 cinit CODE >43706:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F54 cinit CODE >43707:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F56 cinit CODE >43708:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F58 cinit CODE >43709:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F5A cinit CODE >43712:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F5E cinit CODE >43713:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F60 cinit CODE >43714:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F60 cinit CODE >43715:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F62 cinit CODE >43716:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F64 cinit CODE >43717:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F66 cinit CODE >43720:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F6A cinit CODE >43721:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F6C cinit CODE >43722:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F6C cinit CODE >43723:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F6E cinit CODE >43724:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F70 cinit CODE >43725:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F72 cinit CODE >43733:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F74 cinit CODE >43734:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F76 cinit CODE >43735:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F78 cinit CODE >43736:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F7A cinit CODE >43737:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F7C cinit CODE >43738:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F7E cinit CODE >43739:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F80 cinit CODE >43745:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F80 cinit CODE >43747:C:\Users\panze\AppData\Local\Temp\smc8x.s
-4F82 cinit CODE >43748:C:\Users\panze\AppData\Local\Temp\smc8x.s
+4F32 cinit CODE >43443:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F32 cinit CODE >43445:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F32 cinit CODE >43448:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F32 cinit CODE >43691:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F34 cinit CODE >43692:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F36 cinit CODE >43693:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F38 cinit CODE >43694:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F3A cinit CODE >43695:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F3C cinit CODE >43696:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F3E cinit CODE >43697:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F40 cinit CODE >43698:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F46 cinit CODE >43699:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F48 cinit CODE >43700:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F4E cinit CODE >43704:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F52 cinit CODE >43705:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F54 cinit CODE >43706:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F54 cinit CODE >43707:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F56 cinit CODE >43708:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F58 cinit CODE >43709:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F5A cinit CODE >43712:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F5E cinit CODE >43713:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F60 cinit CODE >43714:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F60 cinit CODE >43715:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F62 cinit CODE >43716:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F64 cinit CODE >43717:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F66 cinit CODE >43720:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F6A cinit CODE >43721:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F6C cinit CODE >43722:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F6C cinit CODE >43723:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F6E cinit CODE >43724:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F70 cinit CODE >43725:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F72 cinit CODE >43733:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F74 cinit CODE >43734:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F76 cinit CODE >43735:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F78 cinit CODE >43736:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F7A cinit CODE >43737:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F7C cinit CODE >43738:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F7E cinit CODE >43739:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F80 cinit CODE >43745:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F80 cinit CODE >43747:C:\Users\panze\AppData\Local\Temp\sj2kx.s
+4F82 cinit CODE >43748:C:\Users\panze\AppData\Local\Temp\sj2kx.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1714,7 +1714,7 @@ _PWM2LDS 471 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRH 473 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRL 472 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\ETC.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\panze\AppData\Local\Temp\smc8x8.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 __end_of_PWM1_16BIT_SetSlice1Output1DutyCycleRegister 54B4 0 CODE 0 text61 dist/default/production\ETC.X.production.o
 _CAN1_SetBusWakeUpActivityInterruptHandler 557A 0 CODE 0 text33 dist/default/production\ETC.X.production.o
 _PWM2PIPOS 475 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -1759,11 +1759,11 @@ _WPUA 401 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUB 409 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUC 411 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUE 421 0 ABS 0 - dist/default/production\ETC.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\smc8x8.o
+___sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 _main 53CC 0 CODE 0 text0 dist/default/production\ETC.X.production.o
 i2_PWM2_16BIT_SetSlice1Output1DutyCycleRegister 54C0 0 CODE 0 text91 dist/default/production\ETC.X.production.o
 _CAN1_Initialize 4E7C 0 CODE 0 text19 dist/default/production\ETC.X.production.o
-start 1A 0 CODE 0 init C:\Users\panze\AppData\Local\Temp\smc8x8.o
+start 1A 0 CODE 0 init C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 PWM2_16BIT_WritePeriodRegister@periodCount 5B4 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __end_ofi2_CLUTCH_AnalyseState 4956 0 CODE 0 text75 dist/default/production\ETC.X.production.o
 i2___lwdiv@quotient 505 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
@@ -1818,11 +1818,11 @@ CAN1_Receive@rxCanMsg 522 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.
 _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 TMR0_SetInterruptHandler@InterruptHandler 5B4 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _ADC_SetContext1ThresholdInterruptHandler 55AC 0 CODE 0 text40 dist/default/production\ETC.X.production.o
-__accesstop 560 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\smc8x8.o
-intlevel0 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\smc8x8.o
-intlevel1 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\smc8x8.o
-intlevel2 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\smc8x8.o
-intlevel3 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\smc8x8.o
+__accesstop 560 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\sj2kx8.o
+intlevel0 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sj2kx8.o
+intlevel1 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sj2kx8.o
+intlevel2 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sj2kx8.o
+intlevel3 0 0 CODE 0 text C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 __ptext100 2B7E 0 CODE 0 text100 dist/default/production\ETC.X.production.o
 __ptext101 3DB2 0 CODE 0 text101 dist/default/production\ETC.X.production.o
 __ptext102 54CC 0 CODE 0 text102 dist/default/production\ETC.X.production.o
@@ -1918,14 +1918,14 @@ _C1FIFOCON1T 15F 0 ABS 0 - dist/default/production\ETC.X.production.o
 _C1FIFOCON1U 15E 0 ABS 0 - dist/default/production\ETC.X.production.o
 _TMR0_DefaultInterruptHandler 561E 0 CODE 0 text83 dist/default/production\ETC.X.production.o
 __size_of_PWM1_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\smc8x8.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 _I2C1BAUD 29D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTH 28D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTL 28C 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON0 294 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON1 295 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON2 296 0 ABS 0 - dist/default/production\ETC.X.production.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\smc8x8.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 __size_ofi2___wmul 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler 5B4 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __size_of_DefaultModeChangeHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2186,7 +2186,7 @@ __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\ETC.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\ETC.X.production.o
 __size_of_PWM2_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADC_Context4Thereshld_ISR 5EE 0 BANK5 1 nvBANK5 dist/default/production\ETC.X.production.o
-__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\panze\AppData\Local\Temp\smc8x8.o
+__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 _ucTargetGear 5A3 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 ___xxtofl@arg 5BE 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 ___xxtofl@exp 5BD 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
@@ -2704,8 +2704,8 @@ _ucTPS2 550 0 COMRAM 1 bssCOMRAM dist/default/production\ETC.X.production.o
 PWM1_16BIT_SetSlice1Output1DutyCycleRegister@registerValue 5B4 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __size_of_CAN1_SetInvalidMessageInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _CAN1_ModeChangeHandler 57E 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
-stackhi 25FF 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\smc8x8.o
-stacklo 636 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\smc8x8.o
+stackhi 25FF 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\sj2kx8.o
+stacklo 636 0 ABS 0 - C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 ANALOG_GetVoltage@uiValorVoltage 50E 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _ADC_SetContext4ThresholdInterruptHandler 558E 0 CODE 0 text37 dist/default/production\ETC.X.production.o
 __end_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler 550C 0 CODE 0 text8 dist/default/production\ETC.X.production.o
@@ -2919,7 +2919,7 @@ __Ltext99 0 0 ABS 0 text99 dist/default/production\ETC.X.production.o
 __size_of_TPSReadmax 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_TPSReadmin 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADC_DefaultContext1Threshold_ISR 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\panze\AppData\Local\Temp\smc8x8.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\panze\AppData\Local\Temp\sj2kx8.o
 ___aldiv@dividend 5B4 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __end_of_CLUTCH_AnalyseState 4898 0 CODE 0 text63 dist/default/production\ETC.X.production.o
 __end_of_CAN1_RX_FIFO_FilterMaskConfiguration 53AA 0 CODE 0 text22 dist/default/production\ETC.X.production.o

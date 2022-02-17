@@ -37682,7 +37682,7 @@ void ADC_Initialize(void)
     ADACT = 0x02;
 
 
-    ADCLK = 0x00;
+    ADCLK = 0x3F;
 
 
     ADCP = 0x00;
@@ -37736,10 +37736,10 @@ void ADC_Initialize(void)
     ADPCH = 0x10;
 
 
-    ADACQL = 0x87;
+    ADACQL = 0x64;
 
 
-    ADACQH = 0x01;
+    ADACQH = 0x00;
 
 
     ADCAP = 0x00;
@@ -37819,10 +37819,10 @@ void ADC_Initialize(void)
     ADPCH = 0x04;
 
 
-    ADACQL = 0x87;
+    ADACQL = 0x64;
 
 
-    ADACQH = 0x01;
+    ADACQH = 0x00;
 
 
     ADCAP = 0x00;
@@ -37902,10 +37902,10 @@ void ADC_Initialize(void)
     ADPCH = 0x12;
 
 
-    ADACQL = 0x87;
+    ADACQL = 0x64;
 
 
-    ADACQH = 0x01;
+    ADACQH = 0x00;
 
 
     ADCAP = 0x00;
@@ -37985,10 +37985,10 @@ void ADC_Initialize(void)
     ADPCH = 0x11;
 
 
-    ADACQL = 0x87;
+    ADACQL = 0x64;
 
 
-    ADACQH = 0x01;
+    ADACQH = 0x00;
 
 
     ADCAP = 0x00;

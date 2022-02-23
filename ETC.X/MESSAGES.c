@@ -141,6 +141,7 @@ void CANReadMessage (void)
                     {
                         CLUTCH_Move(ucTargetClutch, ASMode);
                         ETCMove(ucTargetAccelerator, ASMode);
+                        ucETCBeatSupervisor = TRUE;
                     }
                     //APPSSend(ucTargetAccelerator);
                     break;

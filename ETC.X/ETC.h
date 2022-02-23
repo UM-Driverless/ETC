@@ -56,6 +56,8 @@ extern unsigned char ucTPS2_STATE;
 extern unsigned char ucTPS_Volts_STATE; 
 extern unsigned int uiETCDuty;
 extern unsigned char ucETB_STATE; 
+extern unsigned char ucETCBeatSupervisor; 
+extern unsigned char ucETCFlagSupervisor; 
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);
@@ -69,6 +71,7 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
 void ETCInitMove(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);
+void ETCSupervisor (void);
 
 #ifdef	__cplusplus
 }

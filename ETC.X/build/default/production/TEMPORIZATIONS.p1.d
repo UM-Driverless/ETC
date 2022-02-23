@@ -18,4 +18,5 @@ mcc_generated_files/mcc.h  \
 ../ETC.X/mcc_generated_files/pwm2_16bit.h  \
 ../ETC.X/mcc_generated_files/DAC3.h  \
 ../ETC.X/mcc_generated_files/pwm1_16bit.h  \
-ETC.h 
+ETC.h  \
+PARAMETERS.h 

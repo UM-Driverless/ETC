@@ -17,4 +17,5 @@ mcc_generated_files/can_types.h  \
 mcc_generated_files/drivers/i2c_simple_master.h  \
 mcc_generated_files/pwm2_16bit.h  \
 mcc_generated_files/DAC3.h  \
-mcc_generated_files/pwm1_16bit.h 
+mcc_generated_files/pwm1_16bit.h  \
+ETC.h 

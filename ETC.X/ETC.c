@@ -35,6 +35,8 @@ unsigned char ucTPS2_STATE;
 unsigned char ucTPS_Volts_STATE; 
 unsigned int uiETCDuty;
 unsigned char ucETB_STATE; 
+unsigned char ucETCBeatSupervisor = FALSE; 
+unsigned char ucETCFlagSupervisor = FALSE; 
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent)
@@ -112,26 +114,29 @@ void ETCRulesSupervision(void)
 //Funcion para mover directamente el servo con PWM
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 {
-    //HACER CONVERSION DE 0-100% A 2-12 DUTY
-    uiETCDuty = ucTargetMove;
-    //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
-    if ( ucMode == ucASMode )
+    //Depender de beat constante en CAN
+    if ( ucETCFlagSupervisor == TRUE )
     {
-        if ( ucMode == ASMode ) 
+        //HACER CONVERSION DE 0-100% A 2-12 DUTY
+        uiETCDuty = ucTargetMove;
+        //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
+        if ( ucMode == ucASMode )
         {
-            GPIO_PWM2_Control(uiETCDuty, 300); //lo muevo sin comprobar nada
+            if ( ucMode == ASMode ) 
+            {
+                GPIO_PWM2_Control(uiETCDuty, 300); //lo muevo sin comprobar nada
+            }
+            else
+            {
+                //hay que ver como meter aqui la conexion con TPS y APPS
+            }
+
         }
         else
         {
-            //hay que ver como meter aqui la conexion con TPS y APPS
+            //generar error movimiento impedido por modo de conduccion
         }
-        
     }
-    else
-    {
-        //generar error movimiento impedido por modo de conduccion
-    }
-    
 }
 
 
@@ -231,5 +236,19 @@ void TPSAnalysis (void)
 
 void APPSAnalysis (void)
 {
+    
+}
+
+
+void ETCSupervisor (void)
+{
+    if ( ucETCBeatSupervisor == TRUE )
+    {
+        ucETCFlagSupervisor = TRUE; //PERMITO MOVIMIENTO
+    }
+    else
+    {
+        ucETCFlagSupervisor = FALSE; //NO PERMITO MOVER 
+    }
     
 }

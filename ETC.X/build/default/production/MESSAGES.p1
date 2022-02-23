@@ -67,11 +67,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34 ./CLUTCH.h
 [; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
-"68 ./ETC.h
-[; ;./ETC.h: 68: void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+"70 ./ETC.h
+[; ;./ETC.h: 70: void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
 [v _ETCMove `(v ~T0 @X0 0 ef2`uc`uc ]
-"66
-[; ;./ETC.h: 66: void ETCModeSelect (unsigned char ucModeSelect);
+"59
+[; ;./ETC.h: 59: extern unsigned char ucETCBeatSupervisor;
+[v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
+"68
+[; ;./ETC.h: 68: void ETCModeSelect (unsigned char ucModeSelect);
 [v _ETCModeSelect `(v ~T0 @X0 0 ef1`uc ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
@@ -3950,117 +3953,120 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MESSAGES.C: 143:                         ETCMove(ucTargetAccelerator, 1);
 [e ( _ETCMove (2 , _ucTargetAccelerator -> -> 1 `i `uc ]
 "144
-[; ;MESSAGES.C: 144:                     }
+[; ;MESSAGES.C: 144:                         ucETCBeatSupervisor = 0x01;
+[e = _ucETCBeatSupervisor -> -> 1 `i `uc ]
+"145
+[; ;MESSAGES.C: 145:                     }
 }
 [e :U 3193 ]
-"146
-[; ;MESSAGES.C: 146:                     break;
-[e $U 3190  ]
 "147
-[; ;MESSAGES.C: 147:                 case 0x500:
-[e :U 3194 ]
+[; ;MESSAGES.C: 147:                     break;
+[e $U 3190  ]
 "148
-[; ;MESSAGES.C: 148:                     ucAS_state = ( data1 & 0x07 );
-[e = _ucAS_state -> & -> _data1 `i -> 7 `i `uc ]
+[; ;MESSAGES.C: 148:                 case 0x500:
+[e :U 3194 ]
 "149
-[; ;MESSAGES.C: 149:                     ucEBS_state = ( data1 & 0x18 );
-[e = _ucEBS_state -> & -> _data1 `i -> 24 `i `uc ]
+[; ;MESSAGES.C: 149:                     ucAS_state = ( data1 & 0x07 );
+[e = _ucAS_state -> & -> _data1 `i -> 7 `i `uc ]
 "150
-[; ;MESSAGES.C: 150:                     ucAMI_state = ( data1 & 0xE0 );
-[e = _ucAMI_state -> & -> _data1 `i -> 224 `i `uc ]
+[; ;MESSAGES.C: 150:                     ucEBS_state = ( data1 & 0x18 );
+[e = _ucEBS_state -> & -> _data1 `i -> 24 `i `uc ]
 "151
-[; ;MESSAGES.C: 151:                     ucSteering_state = ( data2 & 0x01 );
-[e = _ucSteering_state -> & -> _data2 `i -> 1 `i `uc ]
+[; ;MESSAGES.C: 151:                     ucAMI_state = ( data1 & 0xE0 );
+[e = _ucAMI_state -> & -> _data1 `i -> 224 `i `uc ]
 "152
-[; ;MESSAGES.C: 152:                     ucService_brake = ( data2 & 0x06 );
-[e = _ucService_brake -> & -> _data2 `i -> 6 `i `uc ]
+[; ;MESSAGES.C: 152:                     ucSteering_state = ( data2 & 0x01 );
+[e = _ucSteering_state -> & -> _data2 `i -> 1 `i `uc ]
 "153
-[; ;MESSAGES.C: 153:                     ucLap_counter = ( data2 & 0x78 );
+[; ;MESSAGES.C: 153:                     ucService_brake = ( data2 & 0x06 );
+[e = _ucService_brake -> & -> _data2 `i -> 6 `i `uc ]
+"154
+[; ;MESSAGES.C: 154:                     ucLap_counter = ( data2 & 0x78 );
 [e = _ucLap_counter -> & -> _data2 `i -> 120 `i `uc ]
-"156
-[; ;MESSAGES.C: 156:                     break;
-[e $U 3190  ]
 "157
-[; ;MESSAGES.C: 157:                 case 0x501:
-[e :U 3195 ]
+[; ;MESSAGES.C: 157:                     break;
+[e $U 3190  ]
 "158
-[; ;MESSAGES.C: 158:                     ucSpeed_actual = data1;
-[e = _ucSpeed_actual _data1 ]
+[; ;MESSAGES.C: 158:                 case 0x501:
+[e :U 3195 ]
 "159
-[; ;MESSAGES.C: 159:                     ucSpeed_target = data2;
-[e = _ucSpeed_target _data2 ]
+[; ;MESSAGES.C: 159:                     ucSpeed_actual = data1;
+[e = _ucSpeed_actual _data1 ]
 "160
-[; ;MESSAGES.C: 160:                     ucSteering_angle_actual = data3;
-[e = _ucSteering_angle_actual _data3 ]
+[; ;MESSAGES.C: 160:                     ucSpeed_target = data2;
+[e = _ucSpeed_target _data2 ]
 "161
-[; ;MESSAGES.C: 161:                     ucSteering_angle_target = data4;
-[e = _ucSteering_angle_target _data4 ]
+[; ;MESSAGES.C: 161:                     ucSteering_angle_actual = data3;
+[e = _ucSteering_angle_actual _data3 ]
 "162
-[; ;MESSAGES.C: 162:                     ucBrake_hydr_actual = data5;
-[e = _ucBrake_hydr_actual _data5 ]
+[; ;MESSAGES.C: 162:                     ucSteering_angle_target = data4;
+[e = _ucSteering_angle_target _data4 ]
 "163
-[; ;MESSAGES.C: 163:                     ucBrake_hydr_target = data6;
-[e = _ucBrake_hydr_target _data6 ]
+[; ;MESSAGES.C: 163:                     ucBrake_hydr_actual = data5;
+[e = _ucBrake_hydr_actual _data5 ]
 "164
-[; ;MESSAGES.C: 164:                     ucMotor_moment_actual = data7;
-[e = _ucMotor_moment_actual _data7 ]
+[; ;MESSAGES.C: 164:                     ucBrake_hydr_target = data6;
+[e = _ucBrake_hydr_target _data6 ]
 "165
-[; ;MESSAGES.C: 165:                     ucMotor_moment_target = data8;
-[e = _ucMotor_moment_target _data8 ]
+[; ;MESSAGES.C: 165:                     ucMotor_moment_actual = data7;
+[e = _ucMotor_moment_actual _data7 ]
 "166
-[; ;MESSAGES.C: 166:                     break;
-[e $U 3190  ]
+[; ;MESSAGES.C: 166:                     ucMotor_moment_target = data8;
+[e = _ucMotor_moment_target _data8 ]
 "167
-[; ;MESSAGES.C: 167:                 case 0x502:
+[; ;MESSAGES.C: 167:                     break;
+[e $U 3190  ]
+"168
+[; ;MESSAGES.C: 168:                 case 0x502:
 [e :U 3196 ]
-"171
-[; ;MESSAGES.C: 171:                     break;
-[e $U 3190  ]
 "172
-[; ;MESSAGES.C: 172:                 case 0x347:
-[e :U 3197 ]
-"173
-[; ;MESSAGES.C: 173:                     ucASMode = data1;
-[e = _ucASMode _data1 ]
-"174
-[; ;MESSAGES.C: 174:                     ETCModeSelect(ucASMode);
-[e ( _ETCModeSelect (1 _ucASMode ]
-"175
-[; ;MESSAGES.C: 175:                     break;
+[; ;MESSAGES.C: 172:                     break;
 [e $U 3190  ]
+"173
+[; ;MESSAGES.C: 173:                 case 0x347:
+[e :U 3197 ]
+"174
+[; ;MESSAGES.C: 174:                     ucASMode = data1;
+[e = _ucASMode _data1 ]
+"175
+[; ;MESSAGES.C: 175:                     ETCModeSelect(ucASMode);
+[e ( _ETCModeSelect (1 _ucASMode ]
 "176
-[; ;MESSAGES.C: 176:                 case 0x412:
-[e :U 3198 ]
+[; ;MESSAGES.C: 176:                     break;
+[e $U 3190  ]
 "177
-[; ;MESSAGES.C: 177:                     ucSTEER_WH_Clutch = data1;
-[e = _ucSTEER_WH_Clutch _data1 ]
+[; ;MESSAGES.C: 177:                 case 0x412:
+[e :U 3198 ]
 "178
-[; ;MESSAGES.C: 178:                     if ( ucASMode == 0 )
-[e $ ! == -> _ucASMode `i -> 0 `i 3199  ]
+[; ;MESSAGES.C: 178:                     ucSTEER_WH_Clutch = data1;
+[e = _ucSTEER_WH_Clutch _data1 ]
 "179
-[; ;MESSAGES.C: 179:                     {
-{
+[; ;MESSAGES.C: 179:                     if ( ucASMode == 0 )
+[e $ ! == -> _ucASMode `i -> 0 `i 3199  ]
 "180
-[; ;MESSAGES.C: 180:                         CLUTCH_Move(ucSTEER_WH_Clutch, 0);
-[e ( _CLUTCH_Move (2 , _ucSTEER_WH_Clutch -> -> 0 `i `uc ]
+[; ;MESSAGES.C: 180:                     {
+{
 "181
-[; ;MESSAGES.C: 181:                     }
+[; ;MESSAGES.C: 181:                         CLUTCH_Move(ucSTEER_WH_Clutch, 0);
+[e ( _CLUTCH_Move (2 , _ucSTEER_WH_Clutch -> -> 0 `i `uc ]
+"182
+[; ;MESSAGES.C: 182:                     }
 }
 [e :U 3199 ]
-"182
-[; ;MESSAGES.C: 182:                     break;
-[e $U 3190  ]
 "183
-[; ;MESSAGES.C: 183:                 default:
-[e :U 3200 ]
-"184
-[; ;MESSAGES.C: 184:                     __nop();
-[e ( ___nop ..  ]
-"185
-[; ;MESSAGES.C: 185:                     break;
+[; ;MESSAGES.C: 183:                     break;
 [e $U 3190  ]
+"184
+[; ;MESSAGES.C: 184:                 default:
+[e :U 3200 ]
+"185
+[; ;MESSAGES.C: 185:                     __nop();
+[e ( ___nop ..  ]
 "186
-[; ;MESSAGES.C: 186:             }
+[; ;MESSAGES.C: 186:                     break;
+[e $U 3190  ]
+"187
+[; ;MESSAGES.C: 187:             }
 }
 [e $U 3190  ]
 [e :U 3191 ]
@@ -4072,15 +4078,15 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> -> -> 1042 `i `l `ul 3198
  3200 ]
 [e :U 3190 ]
-"187
-[; ;MESSAGES.C: 187:         }
+"188
+[; ;MESSAGES.C: 188:         }
 }
 [e :U 3189 ]
-"188
-[; ;MESSAGES.C: 188:     }
+"189
+[; ;MESSAGES.C: 189:     }
 }
 [e :U 3188 ]
-"189
-[; ;MESSAGES.C: 189: }
+"190
+[; ;MESSAGES.C: 190: }
 [e :UE 3187 ]
 }

@@ -11,6 +11,7 @@
 #include "PARAMETERS.h"
 #include "GPIO.h"
 #include "MESSAGES.h"
+#include "ETC.h"
 
 //VARIABLES
 unsigned char ucCLUTCHlmin;
@@ -29,37 +30,41 @@ void CLUTCH_Init (void)
 
 void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 {
-    //CUANDO TENGAMOS LA IN1, ESTA COMPLETAMENTE EMBRAGADO, METER ESTADOS EMBRAGUE
-    //ucCLUTCHState
-    //ANALIZAR SI SE PUEDE MOVER HASTA EL RANGO MAX LEIDO POR LA INT2
-    //HACER CONVERSION DE 0-100% A 2-12 DUTY
-    uiCLUTCHDuty = ucTargetMove * 60;
-    uiCLUTCHDuty = uiCLUTCHDuty / 100;
-    uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
-    //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
-    if ( ucMode == ucASMode ) 
+    //Depender de beat constante en CAN
+    if ( ucETCFlagSupervisor == TRUE )
     {
-        //proteccion frente a corrupcion de datos
-        /*if ( uiCLUTCHDuty <= ucCLUTCHlmax )
+        //CUANDO TENGAMOS LA IN1, ESTA COMPLETAMENTE EMBRAGADO, METER ESTADOS EMBRAGUE
+        //ucCLUTCHState
+        //ANALIZAR SI SE PUEDE MOVER HASTA EL RANGO MAX LEIDO POR LA INT2
+        //HACER CONVERSION DE 0-100% A 2-12 DUTY
+        uiCLUTCHDuty = ucTargetMove * 60;
+        uiCLUTCHDuty = uiCLUTCHDuty / 100;
+        uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
+        //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
+        if ( ucMode == ucASMode ) 
         {
-            if ( ( uiCLUTCHDuty > 0 ) && ( uiCLUTCHDuty < 12 ) ) //0-180º con 50Hz
+            //proteccion frente a corrupcion de datos
+            /*if ( uiCLUTCHDuty <= ucCLUTCHlmax )
             {
-                GPIO_PWM1_Control(uiCLUTCHDuty, 250);
+                if ( ( uiCLUTCHDuty > 0 ) && ( uiCLUTCHDuty < 12 ) ) //0-180º con 50Hz
+                {
+                    GPIO_PWM1_Control(uiCLUTCHDuty, 250);
+                }
+            }
+            else
+            {
+                //generar error de rango
+            }*/
+            //proteccion frente a posicion fisica erronea del embrague
+            if ( ucCLUTCHState < CLUTCH_ERROR )
+            {
+                GPIO_PWM1_Control(uiCLUTCHDuty, 300);
             }
         }
         else
         {
-            //generar error de rango
-        }*/
-        //proteccion frente a posicion fisica erronea del embrague
-        if ( ucCLUTCHState < CLUTCH_ERROR )
-        {
-            GPIO_PWM1_Control(uiCLUTCHDuty, 300);
+            //generar error movimiento impedido por modo de conduccion
         }
-    }
-    else
-    {
-        //generar error movimiento impedido por modo de conduccion
     }
     
 }

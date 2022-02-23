@@ -11,6 +11,7 @@
 #include "ANALOG.h"
 #include "MESSAGES.h"
 #include "ETC.h"
+#include "PARAMETERS.h"
 
 //VARIABLES
 unsigned char ucCount500ms;
@@ -36,6 +37,10 @@ void TEMPORIZATION_500ms (void)
     //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);    //Falta meter los APPS target
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
     CLUTCH_AnalyseState();
+    
+    ETCSupervisor();
+    ucETCBeatSupervisor = FALSE;
+    
 }
 
 void TEMPORIZATION_1s (void)

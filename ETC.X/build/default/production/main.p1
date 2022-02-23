@@ -32,8 +32,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./GPIO.h
 [; ;./GPIO.h: 16: void GPIOInit (void);
 [v _GPIOInit `(v ~T0 @X0 0 ef ]
-"69 ./ETC.h
-[; ;./ETC.h: 69: void ETCInitMove(void);
+"71 ./ETC.h
+[; ;./ETC.h: 71: void ETCInitMove(void);
 [v _ETCInitMove `(v ~T0 @X0 0 ef ]
 "36 ./CLUTCH.h
 [; ;./CLUTCH.h: 36: void CLUTCHInitMove(void);

@@ -73,6 +73,8 @@ void CLUTCH_AnalyseState (void)
     ucFDC1 = FinCarrera1_GetValue(); 
     ucFDC2 = FinCarrera2_GetValue();
     
+    Nop();
+    
     if ( ( ucFDC1 == TRUE ) &&  ( ucFDC2 == FALSE ) ) //EMBRAGADO
     {
         ucCLUTCHState = CLUTCH_ENGAGE;
@@ -100,19 +102,28 @@ void CLUTCH_AnalyseState (void)
 
 void CLUTCHInitMove(void)
 {
-    GPIO_PWM1_Control(0, 300); //lo muevo a 0 sin comprobar nada
-    __delay_ms(200);
+    CLUTCH_Move(0, ASMode);
     CLUTCH_AnalyseState();
     if ( ucCLUTCHState == CLUTCH_ENGAGE )
     {
-        GPIO_PWM1_Control(100, 300); //desembrago
-    
+        CLUTCH_Move(30, ASMode);
+        __delay_ms(200);
+        CLUTCH_Move(50, ASMode);
+        __delay_ms(200);
     }
-    __delay_ms(1500);
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == CLUTCH_INTRAVEL )
+    {
+        //__delay_ms(200);
+        CLUTCH_Move(70, ASMode);
+        __delay_ms(200);
+        CLUTCH_Move(100, ASMode);
+        __delay_ms(150);
+    }
     CLUTCH_AnalyseState();
     if ( ucCLUTCHState == CLUTCH_DISENGAGE )
     {
-        __delay_ms(200);
-        GPIO_PWM1_Control(0, 300); //lo muevo a 0 sin comprobar nada
+        //__delay_ms(200);
+        CLUTCH_Move(0, ASMode);
     }
 }

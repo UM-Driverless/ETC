@@ -66,6 +66,10 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
             //generar error movimiento impedido por modo de conduccion
         }
     }
+    else
+    {
+        GPIO_PWM1_Control(0, 300);
+    }
     
 }
 

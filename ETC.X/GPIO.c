@@ -31,8 +31,8 @@ void GPIOInit (void)
     SDC_SetDigitalOutput();
     OUTM_SetDigitalOutput();
     STBY_SetDigitalOutput();
-    GPIO_PWM1_Control( 0, 50 );
-    GPIO_PWM2_Control( 0, 50 );
+    GPIO_PWM1_Control( 0, 300 );
+    GPIO_PWM2_Control( 0, 600 );
 }
 
 

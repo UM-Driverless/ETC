@@ -124,7 +124,8 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
         {
             if ( ucMode == ASMode ) 
             {
-                GPIO_PWM2_Control(uiETCDuty, 300); //lo muevo sin comprobar nada
+                //aumentar un 10% para asegurar un ralenti siempre, quiza ajustarlo con rpm
+                GPIO_PWM2_Control(uiETCDuty + 34, 300); //lo muevo sin comprobar nada
             }
             else
             {
@@ -136,6 +137,10 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
         {
             //generar error movimiento impedido por modo de conduccion
         }
+    } 
+    else 
+    {
+        GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
     }
 }
 
@@ -145,13 +150,13 @@ void ETCInitMove(void)
 {
     //Analizar aqui valores minimos de APPS
     TPSReadmin();
-    GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
+    GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
     __delay_ms(200);
-    GPIO_PWM2_Control(100, 300); //lo muevo sin comprobar nada
+    GPIO_PWM2_Control(100, 600); //lo muevo sin comprobar nada
     __delay_ms(1000);
     TPSReadmax();
     __delay_ms(200);
-    GPIO_PWM2_Control(0, 300); //lo muevo sin comprobar nada
+    GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
 }
 
 void TPSAnalysis (void)
@@ -242,6 +247,7 @@ void APPSAnalysis (void)
 
 void ETCSupervisor (void)
 {
+    Nop();
     if ( ucETCBeatSupervisor == TRUE )
     {
         ucETCFlagSupervisor = TRUE; //PERMITO MOVIMIENTO
@@ -249,6 +255,9 @@ void ETCSupervisor (void)
     else
     {
         ucETCFlagSupervisor = FALSE; //NO PERMITO MOVER 
+        //poner embrague y ETC a cero
+        GPIO_PWM1_Control(0, 300);
+        GPIO_PWM2_Control(0, 600);
     }
     
 }

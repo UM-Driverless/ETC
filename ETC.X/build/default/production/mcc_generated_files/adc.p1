@@ -3995,11 +3995,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 128:     ADPCH = 0x10;
 [e = _ADPCH -> -> 16 `i `uc ]
 "131
-[; ;mcc_generated_files/adc.c: 131:     ADACQL = 0x64;
-[e = _ADACQL -> -> 100 `i `uc ]
+[; ;mcc_generated_files/adc.c: 131:     ADACQL = 0xE8;
+[e = _ADACQL -> -> 232 `i `uc ]
 "134
-[; ;mcc_generated_files/adc.c: 134:     ADACQH = 0x00;
-[e = _ADACQH -> -> 0 `i `uc ]
+[; ;mcc_generated_files/adc.c: 134:     ADACQH = 0x03;
+[e = _ADACQH -> -> 3 `i `uc ]
 "137
 [; ;mcc_generated_files/adc.c: 137:     ADCAP = 0x00;
 [e = _ADCAP -> -> 0 `i `uc ]
@@ -4025,8 +4025,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 158:     ADSTAT = 0x00;
 [e = _ADSTAT -> -> 0 `i `uc ]
 "161
-[; ;mcc_generated_files/adc.c: 161:     ADREF = 0x12;
-[e = _ADREF -> -> 18 `i `uc ]
+[; ;mcc_generated_files/adc.c: 161:     ADREF = 0x00;
+[e = _ADREF -> -> 0 `i `uc ]
 "164
 [; ;mcc_generated_files/adc.c: 164:     ADCSEL1 = 0x00;
 [e = _ADCSEL1 -> -> 0 `i `uc ]
@@ -4076,11 +4076,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 211:     ADPCH = 0x04;
 [e = _ADPCH -> -> 4 `i `uc ]
 "214
-[; ;mcc_generated_files/adc.c: 214:     ADACQL = 0x64;
-[e = _ADACQL -> -> 100 `i `uc ]
+[; ;mcc_generated_files/adc.c: 214:     ADACQL = 0xE8;
+[e = _ADACQL -> -> 232 `i `uc ]
 "217
-[; ;mcc_generated_files/adc.c: 217:     ADACQH = 0x00;
-[e = _ADACQH -> -> 0 `i `uc ]
+[; ;mcc_generated_files/adc.c: 217:     ADACQH = 0x03;
+[e = _ADACQH -> -> 3 `i `uc ]
 "220
 [; ;mcc_generated_files/adc.c: 220:     ADCAP = 0x00;
 [e = _ADCAP -> -> 0 `i `uc ]
@@ -4157,11 +4157,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 294:     ADPCH = 0x12;
 [e = _ADPCH -> -> 18 `i `uc ]
 "297
-[; ;mcc_generated_files/adc.c: 297:     ADACQL = 0x64;
-[e = _ADACQL -> -> 100 `i `uc ]
+[; ;mcc_generated_files/adc.c: 297:     ADACQL = 0xE8;
+[e = _ADACQL -> -> 232 `i `uc ]
 "300
-[; ;mcc_generated_files/adc.c: 300:     ADACQH = 0x00;
-[e = _ADACQH -> -> 0 `i `uc ]
+[; ;mcc_generated_files/adc.c: 300:     ADACQH = 0x03;
+[e = _ADACQH -> -> 3 `i `uc ]
 "303
 [; ;mcc_generated_files/adc.c: 303:     ADCAP = 0x00;
 [e = _ADCAP -> -> 0 `i `uc ]
@@ -4238,11 +4238,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 377:     ADPCH = 0x11;
 [e = _ADPCH -> -> 17 `i `uc ]
 "380
-[; ;mcc_generated_files/adc.c: 380:     ADACQL = 0x64;
-[e = _ADACQL -> -> 100 `i `uc ]
+[; ;mcc_generated_files/adc.c: 380:     ADACQL = 0xE8;
+[e = _ADACQL -> -> 232 `i `uc ]
 "383
-[; ;mcc_generated_files/adc.c: 383:     ADACQH = 0x00;
-[e = _ADACQH -> -> 0 `i `uc ]
+[; ;mcc_generated_files/adc.c: 383:     ADACQH = 0x03;
+[e = _ADACQH -> -> 3 `i `uc ]
 "386
 [; ;mcc_generated_files/adc.c: 386:     ADCAP = 0x00;
 [e = _ADCAP -> -> 0 `i `uc ]

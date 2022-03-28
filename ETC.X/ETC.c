@@ -14,21 +14,29 @@
 #include "PARAMETERS.h"
 
 //VARIABLES    
-unsigned char ucAPPS1min;
-unsigned char ucAPPS1max;    
-unsigned char ucAPPS2min;
-unsigned char ucAPPS2max;
-unsigned char ucTPS1min;
-unsigned char ucTPS1max;    
-unsigned char ucTPS2min;
-unsigned char ucTPS2max; 
-unsigned char ucAPPS1;
-unsigned char ucAPPS2; 
+unsigned int uiAPPS1min;
+unsigned int uiAPPS1max;    
+unsigned int uiAPPS2min;
+unsigned int uiAPPS2max;  
+unsigned int uiTPS1min;
+unsigned int uiTPS1max;    
+unsigned int uiTPS2min;
+unsigned int uiTPS2max; 
+unsigned int uiAPPS1;
+unsigned int uiAPPS2;   
 unsigned char ucAPPS_STATE; 
-unsigned char ucTPS1;
-unsigned char ucTPS2; 
-unsigned char ucTPS1calc;
-unsigned char ucTPS2calc; 
+unsigned long ulAPPS1calc;
+unsigned long ulAPPS2calc; 
+unsigned char ucAPPS1Perc;
+unsigned char ucAPPS2Perc; 
+unsigned char ucAPPS; 
+unsigned int uiTPS1;
+unsigned int uiTPS2; 
+unsigned long ulTPS1calc;
+unsigned long ulTPS2calc; 
+unsigned char ucTPS1Perc;
+unsigned char ucTPS2Perc; 
+unsigned char ucTPS; 
 unsigned char ucTPS_STATE; 
 unsigned char ucTPS1_STATE; 
 unsigned char ucTPS2_STATE; 
@@ -37,6 +45,7 @@ unsigned int uiETCDuty;
 unsigned char ucETB_STATE; 
 unsigned char ucETCBeatSupervisor = FALSE; 
 unsigned char ucETCFlagSupervisor = FALSE; 
+unsigned char ucAPPSManual;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent)
@@ -60,29 +69,29 @@ void APPSSend (unsigned char ucPercent)
 void APPSReadmin (void)
 {
     //Lo leido en sensores APPS se queda guardado como valor minimo
-    ucAPPS1min = ucAPPS1;
-    ucAPPS2min = ucAPPS2;
+    uiAPPS1min = uiAPPS1+APPSMARGEN;
+    uiAPPS2min = uiAPPS2-APPSMARGEN;
 }
 
 void APPSReadmax (void)
 {
     //Lo leido en sensores APPS se queda guardado como valor maximo
-    ucAPPS1max = ucAPPS1;
-    ucAPPS2max = ucAPPS2;
+    uiAPPS1max = APPS1max;
+    uiAPPS2max = APPS2max;
 }
 
 void TPSReadmin (void)
 {
     //Lo leido en sensores TPS se queda guardado como valor minimo
-    ucTPS1min = ucTPS1;
-    ucTPS2min = ucTPS2;
+    uiTPS1min = uiTPS1;
+    uiTPS2min = uiTPS2;
 }
 
 void TPSReadmax (void)
 {
     //Lo leido en sensores TPS se queda guardado como valor maximo
-    ucTPS1max = ucTPS1;
-    ucTPS2max = ucTPS2;
+    uiTPS1max = uiTPS1;
+    uiTPS2max = uiTPS2;
 }
 
 //Ejecutar cada vez que llegue el mensaje de modo autonomo
@@ -107,7 +116,7 @@ void ETCModeSelect (unsigned char ucModeSelect)
 //Funcion supervision de normativa
 void ETCRulesSupervision(void)
 {
-    TPSAnalysis();
+
     
 }
 
@@ -122,14 +131,19 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
         //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
         if ( ucMode == ucASMode )
         {
-            if ( ucMode == ASMode ) 
+            if ( ucASMode == ASMode ) 
             {
                 //aumentar un 10% para asegurar un ralenti siempre, quiza ajustarlo con rpm
                 GPIO_PWM2_Control(uiETCDuty + 34, 300); //lo muevo sin comprobar nada
             }
-            else
+            else if ( ucASMode == ManualMode )
             {
                 //hay que ver como meter aqui la conexion con TPS y APPS
+                GPIO_PWM2_Control(uiETCDuty, 300); //lo muevo sin comprobar nada
+            }
+            else
+            {
+                //la variable ucMode esta corrupto
             }
 
         }
@@ -150,43 +164,67 @@ void ETCInitMove(void)
 {
     //Analizar aqui valores minimos de APPS
     TPSReadmin();
+    Nop();
     GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
     __delay_ms(200);
     GPIO_PWM2_Control(100, 600); //lo muevo sin comprobar nada
     __delay_ms(1000);
     TPSReadmax();
+    __delay_ms(1000);
+    Nop();
     __delay_ms(200);
     GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
+    Nop();
 }
 
 void TPSAnalysis (void)
 {
     //Analisis TPS1
-    if ( ucTPS1min < ucTPS1max )    //TPS1 voltaje no invertido
+    if ( uiTPS1min < uiTPS1max )    //TPS1 voltaje no invertido
     {
-        ucTPS1calc = ( ( ucTPS1max - ucTPS1min ) * uiETCDuty ) + ucTPS1min;
+        //ulTPS1calc = ( ( uiTPS1max - uiTPS1min ) * uiETCDuty ) + uiTPS1min;
+        ulTPS1calc = ( uiTPS1max - uiTPS1min );
+        ulTPS1calc = ( ulTPS1calc * uiETCDuty );
+        ulTPS1calc = ( ( ulTPS1calc / 100 ) + uiTPS1min );
+        
         ucTPS_Volts_STATE = TPS1_NO_INVERTED;
     }
     else    //TPS1 voltaje invertido
     {
-        ucTPS1calc = ( ucTPS1min - ( ( ucTPS1min - ucTPS1max ) * uiETCDuty ) );
+        //ulTPS1calc = ( uiTPS1min - ( ( uiTPS1min - uiTPS1max ) * uiETCDuty ) );
+        ulTPS1calc = ( uiTPS1min - uiTPS1max );
+        ulTPS1calc = ( ulTPS1calc * uiETCDuty );
+        ulTPS1calc = ( ( uiTPS1min * 100 ) - ulTPS1calc );
+        
         ucTPS_Volts_STATE = TPS1_INVERTED;
     }
     
     //Analisis TPS2
-    if ( ucTPS2min < ucTPS2max )    //TPS2 voltaje no invertido
+    if ( uiTPS2min < uiTPS2max )    //TPS2 voltaje no invertido
     {
-        ucTPS2calc = ( ( ucTPS2max - ucTPS2min ) * uiETCDuty ) + ucTPS2min;
+        //ulTPS2calc = ( ( uiTPS2max - uiTPS2min ) * uiETCDuty ) + uiTPS2min;
+        ulTPS2calc = ( uiTPS2max - uiTPS2min );
+        ulTPS2calc = ( ulTPS2calc * uiETCDuty );
+        ulTPS2calc = ( ( ulTPS2calc / 100 ) + uiTPS2min );
         ucTPS_Volts_STATE = TPS2_NO_INVERTED;
     }
     else    //TPS2 voltaje invertido
     {
-        ucTPS2calc = ( ucTPS2min - ( ( ucTPS2min - ucTPS2max ) * uiETCDuty ) );
+        //ulTPS2calc = ( uiTPS2min - ( ( uiTPS2min - uiTPS2max ) * uiETCDuty ) );
+        ulTPS2calc = ( uiTPS2min - uiTPS2max );
+        ulTPS2calc = ( ulTPS2calc * uiETCDuty );
+        ulTPS2calc = ( ( uiTPS2min * 100 ) - ulTPS2calc );
         ucTPS_Volts_STATE = TPS2_INVERTED;
     }
     
+    ucTPS1Perc = ( ulTPS1calc & 0x00007F );
+    ucTPS2Perc = ( ulTPS2calc & 0x00007F );
+    ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
+    Nop();
+    
+    
     //analisis de fallos TPS por salida de márgenes
-    if ( ( ucTPS1calc > ucTPS1 + TPSMARGEN ) || ( ucTPS1calc < ucTPS1 - TPSMARGEN ) )
+    if ( ( ulTPS1calc > uiTPS1 + TPSMARGEN ) || ( ulTPS1calc < uiTPS1 - TPSMARGEN ) )
     {
         //apuntar fallo de TPS1
         ucTPS_STATE |= TPS1_ERROR;
@@ -197,7 +235,7 @@ void TPSAnalysis (void)
         ucTPS_STATE |= QUITAR_ERROR_TPS1;
     }
     
-    if ( ( ucTPS2calc > ucTPS2 + TPSMARGEN ) || ( ucTPS2calc < ucTPS2 - TPSMARGEN ) )
+    if ( ( ulTPS2calc > uiTPS2 + TPSMARGEN ) || ( ulTPS2calc < uiTPS2 - TPSMARGEN ) )
     {
         //apuntar fallo de TPS2
         ucTPS_STATE |= TPS2_ERROR;
@@ -241,23 +279,76 @@ void TPSAnalysis (void)
 
 void APPSAnalysis (void)
 {
+    //Analisis APPS1
+    Nop();
+    __delay_ms(50);
+    Nop();
+    Nop();
+    Nop();
+    if ( uiAPPS1min < uiAPPS1max )    //APPS1 voltaje no invertido
+    {
+        //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
+        //ulAPPS1calc = ((uiAPPS1-uiAPPS1min)/(uiAPPS1min-uiAPPS1max))*100;
+        ulAPPS1calc = (uiAPPS1-uiAPPS1min);
+        ulAPPS1calc = ulAPPS1calc*100;
+        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
+    }
+    else    //APPS1 voltaje invertido
+    {
+        //ulAPPS1calc = ((uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max))*100;
+        ulAPPS1calc = (uiAPPS1min-uiAPPS1);
+        ulAPPS1calc = ulAPPS1calc*100;
+        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
+    }
+    //Analisis APPS2
+    if ( uiAPPS2min < uiAPPS2max )    //APPS2 voltaje no invertido
+    {
+        //ulAPPS2calc = ((uiAPPS2-uiAPPS2min)/(uiAPPS2max-uiAPPS2min))*100;
+        ulAPPS2calc = (uiAPPS2-uiAPPS2min);
+        ulAPPS2calc = ulAPPS2calc*100;
+        ulAPPS2calc = (ulAPPS2calc/(uiAPPS2max-uiAPPS2min));
+    }
+    else    //APPS2 voltaje invertido
+    {
+        //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
+        //ulAPPS2calc = ((uiAPPS2min-uiAPPS2)/(uiAPPS2min-uiAPPS2max))*100;
+        ulAPPS2calc = (uiAPPS2min-uiAPPS2);
+        ulAPPS2calc = ulAPPS2calc*100;
+        ulAPPS2calc = (ulAPPS2calc/(uiAPPS2min-uiAPPS2max));
+    }
     
+    ucAPPS1Perc = ( ulAPPS1calc & 0x00007F );
+    ucAPPS2Perc = ( ulAPPS2calc & 0x00007F );
+    ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
+    Nop();
 }
 
 
 void ETCSupervisor (void)
 {
     Nop();
-    if ( ucETCBeatSupervisor == TRUE )
+    if ( ucASMode == ASMode )
     {
-        ucETCFlagSupervisor = TRUE; //PERMITO MOVIMIENTO
-    }
-    else
-    {
-        ucETCFlagSupervisor = FALSE; //NO PERMITO MOVER 
-        //poner embrague y ETC a cero
-        GPIO_PWM1_Control(0, 300);
-        GPIO_PWM2_Control(0, 600);
+        if ( ucETCBeatSupervisor == TRUE )
+        {
+            ucETCFlagSupervisor = TRUE; //PERMITO MOVIMIENTO
+        }
+        else
+        {
+            ucETCFlagSupervisor = FALSE; //NO PERMITO MOVER 
+            //poner embrague y ETC a cero
+            GPIO_PWM1_Control(0, 300);
+            GPIO_PWM2_Control(0, 600);
+        }
     }
     
+}
+
+
+void ETCManual (unsigned char ucTargetManual)
+{
+    if ( ucASMode == ManualMode )
+    {
+        ETCMove(ucTargetManual, ManualMode);
+    }
 }

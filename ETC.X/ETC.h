@@ -35,21 +35,29 @@ extern "C" {
     
 
 //VARIABLES    
-extern unsigned char ucAPPS1min;
-extern unsigned char ucAPPS1max;    
-extern unsigned char ucAPPS2min;
-extern unsigned char ucAPPS2max;  
-extern unsigned char ucTPS1min;
-extern unsigned char ucTPS1max;    
-extern unsigned char ucTPS2min;
-extern unsigned char ucTPS2max; 
-extern unsigned char ucAPPS1;
-extern unsigned char ucAPPS2;   
+extern unsigned int uiAPPS1min;
+extern unsigned int uiAPPS1max;    
+extern unsigned int uiAPPS2min;
+extern unsigned int uiAPPS2max;  
+extern unsigned int uiTPS1min;
+extern unsigned int uiTPS1max;    
+extern unsigned int uiTPS2min;
+extern unsigned int uiTPS2max; 
+extern unsigned int uiAPPS1;
+extern unsigned int uiAPPS2;   
 extern unsigned char ucAPPS_STATE; 
-extern unsigned char ucTPS1;
-extern unsigned char ucTPS2; 
-extern unsigned char ucTPS1calc;
-extern unsigned char ucTPS2calc; 
+extern unsigned long ulAPPS1calc;
+extern unsigned long ulAPPS2calc; 
+extern unsigned char ucAPPS1Perc;
+extern unsigned char ucAPPS2Perc; 
+extern unsigned char ucAPPS; 
+extern unsigned int uiTPS1;
+extern unsigned int uiTPS2; 
+extern unsigned long ulTPS1calc;
+extern unsigned long ulTPS2calc; 
+extern unsigned char ucTPS1Perc;
+extern unsigned char ucTPS2Perc; 
+extern unsigned char ucTPS; 
 extern unsigned char ucTPS_STATE; 
 extern unsigned char ucTPS1_STATE; 
 extern unsigned char ucTPS2_STATE; 
@@ -58,6 +66,7 @@ extern unsigned int uiETCDuty;
 extern unsigned char ucETB_STATE; 
 extern unsigned char ucETCBeatSupervisor; 
 extern unsigned char ucETCFlagSupervisor; 
+extern unsigned char ucAPPSManual;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);
@@ -72,6 +81,7 @@ void ETCInitMove(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);
 void ETCSupervisor (void);
+void ETCManual (unsigned char ucTargetManual);
 
 #ifdef	__cplusplus
 }

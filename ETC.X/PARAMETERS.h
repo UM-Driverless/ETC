@@ -17,9 +17,9 @@ extern "C" {
     
 //PARAMETROS CONSTANTES    
 #define TPSMARGEN 20
-#define APPSMARGEN 20
-#define APPS1max 20 //0.1v
-#define APPS2max 20 //0.1v
+#define APPSMARGEN 100
+#define APPS1max 160 //0.001v
+#define APPS2max 1930 //0.001v
 
 
 #ifdef	__cplusplus

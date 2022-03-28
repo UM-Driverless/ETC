@@ -46,6 +46,7 @@
 #include "CLUTCH.h"
 #include "GPIO.h"
 #include "ETC.h"
+#include "ANALOG.h"
 
 /*
                          Main application
@@ -65,6 +66,12 @@ void main(void)
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
     
+    //Tarar sensores TPS y APPS a minimos
+    ANALOGRead();
+    APPSReadmin();
+    APPSReadmax();
+    TPSReadmin();
+    
     CLUTCH_Init();
     GPIOInit();
 
@@ -79,7 +86,8 @@ void main(void)
     {
         // Add your application code
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
-        
+        LED_Toggle();
+        __delay_ms(1000);
     }
 }
 /**

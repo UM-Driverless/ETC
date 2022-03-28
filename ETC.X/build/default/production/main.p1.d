@@ -17,4 +17,5 @@ mcc_generated_files/pwm1_16bit.h  \
 MESSAGES.h  \
 CLUTCH.h  \
 GPIO.h  \
-ETC.h 
+ETC.h  \
+ANALOG.h 

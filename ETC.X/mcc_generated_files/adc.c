@@ -127,11 +127,11 @@ void ADC_Initialize(void)
     //ADCHS ANC0; 
     ADPCH = 0x10;
 
-    //ADACQL 100; 
-    ADACQL = 0x64;
+    //ADACQL 232; 
+    ADACQL = 0xE8;
 
-    //ADACQH 0; 
-    ADACQH = 0x00;
+    //ADACQH 3; 
+    ADACQH = 0x03;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;
@@ -157,8 +157,8 @@ void ADC_Initialize(void)
     //ADMATH registers not updated; 
     ADSTAT = 0x00;
 
-    //ADNREF external; ADPREF external; 
-    ADREF = 0x12;
+    //ADNREF VSS; ADPREF VDD; 
+    ADREF = 0x00;
     
     //CHEN channel content is not included; SSI scan sequence continues; 
     ADCSEL1 = 0x00;
@@ -210,11 +210,11 @@ void ADC_Initialize(void)
     //ADCHS ANA4; 
     ADPCH = 0x04;
 
-    //ADACQL 100; 
-    ADACQL = 0x64;
+    //ADACQL 232; 
+    ADACQL = 0xE8;
 
-    //ADACQH 0; 
-    ADACQH = 0x00;
+    //ADACQH 3; 
+    ADACQH = 0x03;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;
@@ -293,11 +293,11 @@ void ADC_Initialize(void)
     //ADCHS ANC2; 
     ADPCH = 0x12;
 
-    //ADACQL 100; 
-    ADACQL = 0x64;
+    //ADACQL 232; 
+    ADACQL = 0xE8;
 
-    //ADACQH 0; 
-    ADACQH = 0x00;
+    //ADACQH 3; 
+    ADACQH = 0x03;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;
@@ -376,11 +376,11 @@ void ADC_Initialize(void)
     //ADCHS ANC1; 
     ADPCH = 0x11;
 
-    //ADACQL 100; 
-    ADACQL = 0x64;
+    //ADACQL 232; 
+    ADACQL = 0xE8;
 
-    //ADACQH 0; 
-    ADACQH = 0x00;
+    //ADACQH 3; 
+    ADACQH = 0x03;
 
     //ADCAP Additional uC disabled; 
     ADCAP = 0x00;

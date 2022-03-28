@@ -1,35 +1,41 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F22206 `(v ~T0 @X0 1 tf ]
+[v F22217 `(v ~T0 @X0 1 tf ]
 "172 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 172: __attribute__((inline)) void ADC_DisableChannelSequencer(void);
-[v _ADC_DisableChannelSequencer `TF22206 ~T0 @X0 0 e ]
+[v _ADC_DisableChannelSequencer `TF22217 ~T0 @X0 0 e ]
 "25 ANALOG.c
 [; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
-[c E22196 0 1 2 3 .. ]
-[n E22196 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
-[v F22210 `(v ~T0 @X0 1 tf1`E22196 ]
+[c E22207 0 1 2 3 .. ]
+[n E22207 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
+[v F22221 `(v ~T0 @X0 1 tf1`E22207 ]
 "227 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 227: __attribute__((inline)) void ADC_SelectContext(ADC_context_t context);
-[v _ADC_SelectContext `TF22210 ~T0 @X0 0 e ]
+[v _ADC_SelectContext `TF22221 ~T0 @X0 0 e ]
 "26 ANALOG.c
 [; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(TPS1);
-[c E22185 4 16 17 18 59 60 61 62 63 .. ]
-[n E22185 . TPS2 TPS1 APPS2 APPS1 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+[c E22196 4 16 17 18 59 60 61 62 63 .. ]
+[n E22196 . TPS2 TPS1 APPS2 APPS1 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
 "378 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 378: adc_result_t ADC_GetSingleConversion(ADC_channel_t channel);
-[v _ADC_GetSingleConversion `(us ~T0 @X0 0 ef1`E22185 ]
+[v _ADC_GetSingleConversion `(us ~T0 @X0 0 ef1`E22196 ]
 "46 ./ETC.h
-[; ;./ETC.h: 46: extern unsigned char ucAPPS1;
-[v _ucAPPS1 `uc ~T0 @X0 0 e ]
+[; ;./ETC.h: 46: extern unsigned int uiAPPS1;
+[v _uiAPPS1 `ui ~T0 @X0 0 e ]
 "47
-[; ;./ETC.h: 47: extern unsigned char ucAPPS2;
-[v _ucAPPS2 `uc ~T0 @X0 0 e ]
-"49
-[; ;./ETC.h: 49: extern unsigned char ucTPS1;
-[v _ucTPS1 `uc ~T0 @X0 0 e ]
-"50
-[; ;./ETC.h: 50: extern unsigned char ucTPS2;
-[v _ucTPS2 `uc ~T0 @X0 0 e ]
+[; ;./ETC.h: 47: extern unsigned int uiAPPS2;
+[v _uiAPPS2 `ui ~T0 @X0 0 e ]
+"54
+[; ;./ETC.h: 54: extern unsigned int uiTPS1;
+[v _uiTPS1 `ui ~T0 @X0 0 e ]
+"55
+[; ;./ETC.h: 55: extern unsigned int uiTPS2;
+[v _uiTPS2 `ui ~T0 @X0 0 e ]
+"81
+[; ;./ETC.h: 81: void TPSAnalysis (void);
+[v _TPSAnalysis `(v ~T0 @X0 0 ef ]
+"82
+[; ;./ETC.h: 82: void APPSAnalysis (void);
+[v _APPSAnalysis `(v ~T0 @X0 0 ef ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3582,10 +3588,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "25
 [; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
-[e ( _ADC_SelectContext (1 . `E22196 0 ]
+[e ( _ADC_SelectContext (1 . `E22207 0 ]
 "26
 [; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(TPS1);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22185 1 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 1 ]
 "27
 [; ;ANALOG.c: 27:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]
@@ -3600,10 +3606,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "31
 [; ;ANALOG.c: 31:             ADC_SelectContext(CONTEXT_TPS2);
-[e ( _ADC_SelectContext (1 . `E22196 1 ]
+[e ( _ADC_SelectContext (1 . `E22207 1 ]
 "32
 [; ;ANALOG.c: 32:             uiValorAnalog = ADC_GetSingleConversion(TPS2);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22185 0 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 0 ]
 "33
 [; ;ANALOG.c: 33:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]
@@ -3618,10 +3624,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "37
 [; ;ANALOG.c: 37:             ADC_SelectContext(CONTEXT_APPS1);
-[e ( _ADC_SelectContext (1 . `E22196 2 ]
+[e ( _ADC_SelectContext (1 . `E22207 2 ]
 "38
 [; ;ANALOG.c: 38:             uiValorAnalog = ADC_GetSingleConversion(APPS1);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22185 3 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 3 ]
 "39
 [; ;ANALOG.c: 39:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]
@@ -3636,10 +3642,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "43
 [; ;ANALOG.c: 43:             ADC_SelectContext(CONTEXT_APPS2);
-[e ( _ADC_SelectContext (1 . `E22196 3 ]
+[e ( _ADC_SelectContext (1 . `E22207 3 ]
 "44
 [; ;ANALOG.c: 44:             uiValorAnalog = ADC_GetSingleConversion(APPS2);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22185 2 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 2 ]
 "45
 [; ;ANALOG.c: 45:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]
@@ -3764,18 +3770,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _ANALOGRead ]
 [f ]
 "91
-[; ;ANALOG.c: 91:     ucAPPS1 = ANALOG_GetVoltage (1);
-[e = _ucAPPS1 -> ( _ANALOG_GetVoltage (1 -> -> 1 `i `uc `uc ]
+[; ;ANALOG.c: 91:     uiAPPS1 = ANALOG_GetVoltage (1);
+[e = _uiAPPS1 ( _ANALOG_GetVoltage (1 -> -> 1 `i `uc ]
 "92
-[; ;ANALOG.c: 92:     ucAPPS2 = ANALOG_GetVoltage (2);
-[e = _ucAPPS2 -> ( _ANALOG_GetVoltage (1 -> -> 2 `i `uc `uc ]
+[; ;ANALOG.c: 92:     uiAPPS2 = ANALOG_GetVoltage (2);
+[e = _uiAPPS2 ( _ANALOG_GetVoltage (1 -> -> 2 `i `uc ]
 "93
-[; ;ANALOG.c: 93:     ucTPS1 = ANALOG_GetVoltage (3);
-[e = _ucTPS1 -> ( _ANALOG_GetVoltage (1 -> -> 3 `i `uc `uc ]
+[; ;ANALOG.c: 93:     uiTPS1 = ANALOG_GetVoltage (3);
+[e = _uiTPS1 ( _ANALOG_GetVoltage (1 -> -> 3 `i `uc ]
 "94
-[; ;ANALOG.c: 94:     ucTPS2 = ANALOG_GetVoltage (4);
-[e = _ucTPS2 -> ( _ANALOG_GetVoltage (1 -> -> 4 `i `uc `uc ]
-"95
-[; ;ANALOG.c: 95: }
+[; ;ANALOG.c: 94:     uiTPS2 = ANALOG_GetVoltage (4);
+[e = _uiTPS2 ( _ANALOG_GetVoltage (1 -> -> 4 `i `uc ]
+"96
+[; ;ANALOG.c: 96:     TPSAnalysis();
+[e ( _TPSAnalysis ..  ]
+"97
+[; ;ANALOG.c: 97:     APPSAnalysis();
+[e ( _APPSAnalysis ..  ]
+"98
+[; ;ANALOG.c: 98: }
 [e :UE 3192 ]
 }

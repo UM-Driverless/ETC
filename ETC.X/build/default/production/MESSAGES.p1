@@ -67,14 +67,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34 ./CLUTCH.h
 [; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
-"70 ./ETC.h
-[; ;./ETC.h: 70: void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+"79 ./ETC.h
+[; ;./ETC.h: 79: void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
 [v _ETCMove `(v ~T0 @X0 0 ef2`uc`uc ]
-"59
-[; ;./ETC.h: 59: extern unsigned char ucETCBeatSupervisor;
+"67
+[; ;./ETC.h: 67: extern unsigned char ucETCBeatSupervisor;
 [v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
-"68
-[; ;./ETC.h: 68: void ETCModeSelect (unsigned char ucModeSelect);
+"77
+[; ;./ETC.h: 77: void ETCModeSelect (unsigned char ucModeSelect);
 [v _ETCModeSelect `(v ~T0 @X0 0 ef1`uc ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");

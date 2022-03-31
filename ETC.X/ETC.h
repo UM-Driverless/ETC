@@ -67,6 +67,8 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor; 
 extern unsigned char ucETCFlagSupervisor; 
 extern unsigned char ucAPPSManual;
+extern signed char scLastErrorPos;
+extern signed char scErrorPos;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);
@@ -82,6 +84,7 @@ void TPSAnalysis (void);
 void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
+void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 #ifdef	__cplusplus
 }

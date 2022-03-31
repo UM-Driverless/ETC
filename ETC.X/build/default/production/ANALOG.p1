@@ -1,23 +1,23 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F22217 `(v ~T0 @X0 1 tf ]
+[v F22222 `(v ~T0 @X0 1 tf ]
 "172 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 172: __attribute__((inline)) void ADC_DisableChannelSequencer(void);
-[v _ADC_DisableChannelSequencer `TF22217 ~T0 @X0 0 e ]
+[v _ADC_DisableChannelSequencer `TF22222 ~T0 @X0 0 e ]
 "25 ANALOG.c
 [; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
-[c E22207 0 1 2 3 .. ]
-[n E22207 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
-[v F22221 `(v ~T0 @X0 1 tf1`E22207 ]
+[c E22212 0 1 2 3 .. ]
+[n E22212 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
+[v F22226 `(v ~T0 @X0 1 tf1`E22212 ]
 "227 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 227: __attribute__((inline)) void ADC_SelectContext(ADC_context_t context);
-[v _ADC_SelectContext `TF22221 ~T0 @X0 0 e ]
+[v _ADC_SelectContext `TF22226 ~T0 @X0 0 e ]
 "26 ANALOG.c
 [; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(TPS1);
-[c E22196 4 16 17 18 59 60 61 62 63 .. ]
-[n E22196 . TPS2 TPS1 APPS2 APPS1 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+[c E22201 4 16 17 18 59 60 61 62 63 .. ]
+[n E22201 . TPS2 TPS1 APPS2 APPS1 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
 "378 ./mcc_generated_files/adc.h
 [; ;./mcc_generated_files/adc.h: 378: adc_result_t ADC_GetSingleConversion(ADC_channel_t channel);
-[v _ADC_GetSingleConversion `(us ~T0 @X0 0 ef1`E22196 ]
+[v _ADC_GetSingleConversion `(us ~T0 @X0 0 ef1`E22201 ]
 "46 ./ETC.h
 [; ;./ETC.h: 46: extern unsigned int uiAPPS1;
 [v _uiAPPS1 `ui ~T0 @X0 0 e ]
@@ -30,11 +30,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;./ETC.h: 55: extern unsigned int uiTPS2;
 [v _uiTPS2 `ui ~T0 @X0 0 e ]
-"81
-[; ;./ETC.h: 81: void TPSAnalysis (void);
+"83
+[; ;./ETC.h: 83: void TPSAnalysis (void);
 [v _TPSAnalysis `(v ~T0 @X0 0 ef ]
-"82
-[; ;./ETC.h: 82: void APPSAnalysis (void);
+"84
+[; ;./ETC.h: 84: void APPSAnalysis (void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
@@ -3588,10 +3588,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "25
 [; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
-[e ( _ADC_SelectContext (1 . `E22207 0 ]
+[e ( _ADC_SelectContext (1 . `E22212 0 ]
 "26
 [; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(TPS1);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 1 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22201 1 ]
 "27
 [; ;ANALOG.c: 27:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]
@@ -3606,10 +3606,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "31
 [; ;ANALOG.c: 31:             ADC_SelectContext(CONTEXT_TPS2);
-[e ( _ADC_SelectContext (1 . `E22207 1 ]
+[e ( _ADC_SelectContext (1 . `E22212 1 ]
 "32
 [; ;ANALOG.c: 32:             uiValorAnalog = ADC_GetSingleConversion(TPS2);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 0 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22201 0 ]
 "33
 [; ;ANALOG.c: 33:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]
@@ -3624,10 +3624,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "37
 [; ;ANALOG.c: 37:             ADC_SelectContext(CONTEXT_APPS1);
-[e ( _ADC_SelectContext (1 . `E22207 2 ]
+[e ( _ADC_SelectContext (1 . `E22212 2 ]
 "38
 [; ;ANALOG.c: 38:             uiValorAnalog = ADC_GetSingleConversion(APPS1);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 3 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22201 3 ]
 "39
 [; ;ANALOG.c: 39:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]
@@ -3642,10 +3642,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ADC_DisableChannelSequencer ..  ]
 "43
 [; ;ANALOG.c: 43:             ADC_SelectContext(CONTEXT_APPS2);
-[e ( _ADC_SelectContext (1 . `E22207 3 ]
+[e ( _ADC_SelectContext (1 . `E22212 3 ]
 "44
 [; ;ANALOG.c: 44:             uiValorAnalog = ADC_GetSingleConversion(APPS2);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22196 2 ]
+[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22201 2 ]
 "45
 [; ;ANALOG.c: 45:             ucFlag = 1;
 [e = _ucFlag -> -> 1 `i `uc ]

@@ -29,14 +29,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "23 ./ANALOG.h
 [; ;./ANALOG.h: 23: void ANALOGRead (void);
 [v _ANALOGRead `(v ~T0 @X0 0 ef ]
-"73 ./ETC.h
-[; ;./ETC.h: 73: void APPSReadmin (void);
+"75 ./ETC.h
+[; ;./ETC.h: 75: void APPSReadmin (void);
 [v _APPSReadmin `(v ~T0 @X0 0 ef ]
-"74
-[; ;./ETC.h: 74: void APPSReadmax (void);
+"76
+[; ;./ETC.h: 76: void APPSReadmax (void);
 [v _APPSReadmax `(v ~T0 @X0 0 ef ]
-"75
-[; ;./ETC.h: 75: void TPSReadmin (void);
+"77
+[; ;./ETC.h: 77: void TPSReadmin (void);
 [v _TPSReadmin `(v ~T0 @X0 0 ef ]
 "33 ./CLUTCH.h
 [; ;./CLUTCH.h: 33: void CLUTCH_Init (void);
@@ -44,8 +44,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./GPIO.h
 [; ;./GPIO.h: 16: void GPIOInit (void);
 [v _GPIOInit `(v ~T0 @X0 0 ef ]
-"80 ./ETC.h
-[; ;./ETC.h: 80: void ETCInitMove(void);
+"82 ./ETC.h
+[; ;./ETC.h: 82: void ETCInitMove(void);
 [v _ETCInitMove `(v ~T0 @X0 0 ef ]
 "36 ./CLUTCH.h
 [; ;./CLUTCH.h: 36: void CLUTCHInitMove(void);

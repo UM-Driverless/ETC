@@ -17,8 +17,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35 ./CLUTCH.h
 [; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
-"83 ./ETC.h
-[; ;./ETC.h: 83: void ETCSupervisor (void);
+"85 ./ETC.h
+[; ;./ETC.h: 85: void ETCSupervisor (void);
 [v _ETCSupervisor `(v ~T0 @X0 0 ef ]
 "67
 [; ;./ETC.h: 67: extern unsigned char ucETCBeatSupervisor;

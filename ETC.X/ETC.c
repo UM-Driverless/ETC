@@ -46,6 +46,8 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = FALSE; 
 unsigned char ucETCFlagSupervisor = FALSE; 
 unsigned char ucAPPSManual;
+signed char scLastErrorPos;
+signed char scErrorPos;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent)
@@ -350,5 +352,74 @@ void ETCManual (unsigned char ucTargetManual)
     if ( ucASMode == ManualMode )
     {
         ETCMove(ucTargetManual, ManualMode);
+    }
+}
+
+void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode)
+{
+    unsigned char ucCurrentPos;
+    signed char scIntegral;
+    signed char scDerivative;
+    signed char scPropPart;
+    signed char scIntPart;
+    signed char scDerPart;
+    signed char scMotorPWM;
+    
+    //Depender de beat constante en CAN
+    if ( ucETCFlagSupervisor == TRUE )
+    {              
+        ucCurrentPos = ucTPS;
+        scErrorPos = ucTargetMove - ucCurrentPos;
+        scIntegral += scErrorPos;
+        scDerivative = scErrorPos - scLastErrorPos;
+        scPropPart = ETC_KP * scErrorPos;
+        scIntPart = ETC_KI * scIntegral;
+        scDerPart = ETC_KD * scDerivative;
+        scMotorPWM = scPropPart + scIntPart + scDerPart;
+        
+        if ( scMotorPWM <= 0 )
+        {
+            scMotorPWM = 0;
+        }
+        else if ( ( scMotorPWM > 0 ) && ( scMotorPWM < 100 ) )
+        {
+            scMotorPWM = scMotorPWM;
+        }
+        else if ( scMotorPWM > 100 )
+        {
+            scMotorPWM = 100;
+        }
+        else   
+        {
+            //no debería entrar nunca, pero si lo hace ojo
+        }
+        
+        //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
+        if ( ucMode == ucASMode )
+        {
+            if ( ucASMode == ASMode ) 
+            {
+               ETCMove(scMotorPWM, ASMode);
+            }
+            else if ( ucASMode == ManualMode )
+            {
+               ETCManual(scMotorPWM);
+            }
+            else
+            {
+                //la variable ucMode esta corrupto
+            }
+
+        }
+        else
+        {
+            //generar error movimiento impedido por modo de conduccion
+        }
+        
+        scLastErrorPos = scErrorPos;
+    } 
+    else 
+    {
+        GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
     }
 }

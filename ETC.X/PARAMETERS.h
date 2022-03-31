@@ -20,7 +20,9 @@ extern "C" {
 #define APPSMARGEN 100
 #define APPS1max 160 //0.001v
 #define APPS2max 1930 //0.001v
-
+#define ETC_KP 10
+#define ETC_KI 10 
+#define ETC_KD 10 
 
 #ifdef	__cplusplus
 }

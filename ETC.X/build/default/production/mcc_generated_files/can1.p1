@@ -34,8 +34,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v F23161 `(v ~T0 @X0 0 tf ]
 [v F23163 `(v ~T0 @X0 0 tf ]
 [v F23165 `(v ~T0 @X0 0 tf ]
-"98 mcc_generated_files/../MESSAGES.h
-[; ;mcc_generated_files/../MESSAGES.h: 98: void CANReadMessage(void);
+"94 mcc_generated_files/../MESSAGES.h
+[; ;mcc_generated_files/../MESSAGES.h: 94: void CANReadMessage(void);
 [v _CANReadMessage `(v ~T0 @X0 0 ef ]
 "14150 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 14150: extern volatile unsigned char C1FIFOCON1L __attribute__((address(0x15C)));
@@ -3913,14 +3913,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "68860
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 68860: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"22 mcc_generated_files/../MESSAGES.h
-[; ;mcc_generated_files/../MESSAGES.h: 22: CAN_MSG_OBJ msgTransmit;
+"18 mcc_generated_files/../MESSAGES.h
+[; ;mcc_generated_files/../MESSAGES.h: 18: CAN_MSG_OBJ msgTransmit;
 [v _msgTransmit `S3179 ~T0 @X0 1 e ]
-"23
-[; ;mcc_generated_files/../MESSAGES.h: 23: CAN_MSG_OBJ msgReceipt;
+"19
+[; ;mcc_generated_files/../MESSAGES.h: 19: CAN_MSG_OBJ msgReceipt;
 [v _msgReceipt `S3179 ~T0 @X0 1 e ]
-"24
-[; ;mcc_generated_files/../MESSAGES.h: 24: uint8_t CANDATAdata[8];
+"20
+[; ;mcc_generated_files/../MESSAGES.h: 20: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
 "101 mcc_generated_files/can1.c
 [; ;mcc_generated_files/can1.c: 101: static volatile uint8_t rxMsgData[(8U)];

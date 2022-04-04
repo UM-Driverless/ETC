@@ -13,16 +13,16 @@
 extern "C" {
 #endif
     
-//CONSTANTES
+// CONSTANTS
 #define TPS_OK              0
-//errores por salidad de margenes
+// errores por salida de margenes
 #define TPS1_ERROR          1
 #define TPS2_ERROR          2
 #define TPS1_TPS2_ERROR     3
 #define TPS_Volt_ERROR      4
 #define QUITAR_ERROR_TPS1  0xFE    
 #define QUITAR_ERROR_TPS2  0xFD   
-//inversion de voltaje
+// inversion de voltaje
 #define TPS1_NO_INVERTED    1  
 #define TPS1_INVERTED       2
 #define TPS2_NO_INVERTED    4  
@@ -34,38 +34,41 @@ extern "C" {
 #define QUITAR_ERROR_VOLTS                      0xFB       
     
 
-//VARIABLES    
+// VARIABLES    
 extern unsigned int uiAPPS1min;
-extern unsigned int uiAPPS1max;    
-extern unsigned int uiAPPS2min;
-extern unsigned int uiAPPS2max;  
-extern unsigned int uiTPS1_default;
-extern unsigned int uiTPS1_opened;    
-extern unsigned int uiTPS2_default;
-extern unsigned int uiTPS2_opened; 
 extern unsigned int uiAPPS1;
-extern unsigned int uiAPPS2;   
-extern unsigned char ucAPPS_STATE; 
+extern unsigned int uiAPPS1max;
+
+extern unsigned int uiAPPS2min;
+extern unsigned int uiAPPS2;
+extern unsigned int uiAPPS2max;
+
+extern unsigned int uiTPS1_default;
+extern unsigned int uiTPS1_opened;
+extern unsigned int uiTPS2_default;
+extern unsigned int uiTPS2_opened;
+
+extern unsigned char ucAPPS_STATE;
 extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc; 
+extern unsigned long ulAPPS2calc;
 extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc; 
-extern unsigned char ucAPPS; 
+extern unsigned char ucAPPS2Perc;
+extern unsigned char ucAPPS;
 extern unsigned int uiTPS1;
-extern unsigned int uiTPS2; 
+extern unsigned int uiTPS2;
 extern unsigned long ulTPS1calc;
-extern unsigned long ulTPS2calc; 
+extern unsigned long ulTPS2calc;
 extern unsigned char ucTPS1Perc;
-extern unsigned char ucTPS2Perc; 
-extern unsigned char ucTPS; 
-extern unsigned char ucTPS_STATE; 
-extern unsigned char ucTPS1_STATE; 
-extern unsigned char ucTPS2_STATE; 
-extern unsigned char ucTPS_Volts_STATE; 
+extern unsigned char ucTPS2Perc;
+extern unsigned char ucTPS;
+extern unsigned char ucTPS_STATE;
+extern unsigned char ucTPS1_STATE;
+extern unsigned char ucTPS2_STATE;
+extern unsigned char ucTPS_Volts_STATE;
 extern unsigned int uiETCDuty;
-extern unsigned char ucETB_STATE; 
-extern unsigned char ucETCBeatSupervisor; 
-extern unsigned char ucETCFlagSupervisor; 
+extern unsigned char ucETB_STATE;
+extern unsigned char ucETCBeatSupervisor;
+extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
 extern signed char scLastErrorPos;
 extern signed char scErrorPos;

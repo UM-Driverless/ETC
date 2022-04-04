@@ -57,16 +57,16 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
         }
         else
         {
-            //EXTRAPOLACION LINEAL DE LA GRAFICA
-            //uiValorVoltage = ((1.1444*uiValorAnalog)-5.2658);
+            // EXTRAPOLACION LINEAL DE LA GRAFICA
+            // uiValorVoltage = ((1.1444*uiValorAnalog)-5.2658);
             uiValorVoltage = (1*uiValorAnalog);
             uiValorVoltage = uiValorVoltage - 5;
         }
         
         if ( uiValorVoltage > 5000 )
         {
-            //fallo de sobrevoltaje
-            //o variable da la vuelta
+            // fallo de sobrevoltaje
+            // o variable da la vuelta
         }
         else
         {
@@ -75,12 +75,12 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
     }
     else if ( ucFlag == 2 )
     {
-        //entrada analogica no valida
+        // entrada analogica no valida
         //return (0xFFFF);
     }
     else
     {
-        //fallo en ucFlag
+        // fallo en ucFlag
     }
 
 }

@@ -12,16 +12,16 @@
 #include "PARAMETERS.h"
 #include "ETC.h"
 
-//VARIABLES
+// VARIABLES
 uint8_t CANDATAdata[8];
 
-//TRAJECTORY_ACT
+// TRAJECTORY_ACT
 unsigned char ucTargetAccelerator;
 unsigned char ucTargetClutch;
 unsigned char ucTargetBrake;
 unsigned char ucTargetDirection;
 unsigned char ucTargetGear;
-//DV_SYSTEM_STATUS
+// DV_SYSTEM_STATUS
 unsigned char ucAS_state;
 unsigned char ucEBS_state;
 unsigned char ucAMI_state;
@@ -30,7 +30,7 @@ unsigned char ucService_brake;
 unsigned char ucLap_counter;
 unsigned char ucCones_count_actual;
 unsigned int uiCones_count_all;
-//DV_DRIVING_DYNAMICS_1
+// DV_DRIVING_DYNAMICS_1
 unsigned char ucSpeed_actual;
 unsigned char ucSpeed_target;
 unsigned char ucSteering_angle_actual;
@@ -39,16 +39,16 @@ unsigned char ucBrake_hydr_actual;
 unsigned char ucBrake_hydr_target;
 unsigned char ucMotor_moment_actual;
 unsigned char ucMotor_moment_target;
-//DV_DRIVING_DYNAMICS_2
+// DV_DRIVING_DYNAMICS_2
 unsigned int uiAcc_longitudinal;
 unsigned int uiAcc_lateral;
 unsigned int uiYaw_rate;
-//ASB_STATE
+// ASB_STATE
 unsigned char ucASBState;
 unsigned char ucASRequesState;
-//PMC STATE
-unsigned char ucASMode;
-//STEERING WHEELL
+// PMC STATE - Autonomous vs Manual according to the PMC
+unsigned char ucASMode; // Declare a local instance of the already-declared header variable, saving space for it. Each file that declares it gets an instance.
+// STEERING WHEEL
 unsigned char ucSTEER_WH_Clutch;
 
 //FUNCIONES
@@ -111,10 +111,8 @@ void CANReadMessage(void)
     unsigned char data7;
     unsigned char data8;
     
-    if(CAN1_ReceivedMessageCountGet() > 0) 
-    {
-        if(true == CAN1_Receive(&msgReceipt))
-        {
+    if(CAN1_ReceivedMessageCountGet() > 0) {
+        if(true == CAN1_Receive(&msgReceipt)) {
             Nop();
             id = msgReceipt.msgId;
             idType = msgReceipt.field.idType;
@@ -128,20 +126,18 @@ void CANReadMessage(void)
             data7 = msgReceipt.data[6];
             data8 = msgReceipt.data[7];
             
-            switch (id)
-            {
+            switch(id) {
                 case TRAJECTORY_ACT:
                     ucTargetAccelerator = data1;
                     ucTargetClutch = data2;
                     ucTargetBrake = data3;
                     ucTargetDirection = data4;
                     ucTargetGear = data5;
-                    //Mover embrague y APPS según lleguen
-                    if ( ucASMode == ASMode )
-                    {
+                    // Move clutch and APPS
+                    if ( ucASMode == ASMode ) {
                         CLUTCH_Move(ucTargetClutch, ASMode);
                         //ETCMove(ucTargetAccelerator, ASMode);
-                        ETC_PIDcontroller ( ucTargetAccelerator, ASMode);
+                        ETC_PIDcontroller( ucTargetAccelerator, ASMode);
                         ucETCBeatSupervisor = TRUE;
                     }
                     //APPSSend(ucTargetAccelerator);

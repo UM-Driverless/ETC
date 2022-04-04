@@ -69,7 +69,7 @@ void main(void)
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
 
     // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
+    // INTERRUPT_GlobalInterruptDisable();
     
     // Clutch to initial position
     CLUTCH_Init();
@@ -79,24 +79,37 @@ void main(void)
     //APPSMODE_SetHigh();
     //APPSSend(0);
     
-    //Mover ETC en init
+    // Mover ETC en init
     
     CLUTCHInitMove();
     
     
-    while (1)
+    while(1)
     {
         // Add your application code
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         LED_Toggle();
-        ETC_PIDcontroller (ucAPPS, ManualMode);
+        ucAPPS = 50; // Dummy value for testing
+        // uiAPPS1 updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
+        Nop();
+        ETC_PIDcontroller( ((float)(4000 - uiAPPS1)/(4000-1000))*100 , ManualMode);
+        
         //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, 0, 0, 0, 0);    //Falta meter los APPS target
     }
 }
-/**
+/*
  End of File
 */
 
 
 
 // TODO - Generic function that works for both TPS1 and TPS2, pass a value.
+// TODO - Make local any variables that don't need to be global.
+
+// TODO - Questions
+/*
+ What are the frequency limits of the ET Motor driver? Note in a comment
+ 
+ 
+ 
+ */

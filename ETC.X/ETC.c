@@ -3,6 +3,11 @@
  * Author: 93Urbano
  *
  * Created on December 24, 2021, 6:15 PM
+ * 
+ * ET = Electronic Throttle
+ * ETC = Electronic Throttle Control
+ * ETB = Electronic Throttle Body
+ * 
  */
 
 #include "mcc_generated_files/DAC3.h"
@@ -51,12 +56,12 @@ signed char scLastErrorPos;
 signed char scErrorPos;
 
 
-//FUNCIONES
+// FUNCIONES
 void APPSSend(unsigned char ucPercent)
 {
     float voltage;
     uint16_t dacAPPS1, dacAPPS2;
-    //Funcion de transferencia de porcentaje a valor APPS
+    // Funcion de transferencia de porcentaje a valor APPS
     dacAPPS1 = (4096*ucPercent)/5;
     dacAPPS2 = (4096*ucPercent)/5;
     //APPS1 I2C ADRRS = 0x60
@@ -67,12 +72,12 @@ void APPSSend(unsigned char ucPercent)
 }
 
 
-//Estableciendo los valores limite se puede establecer una relación lineal para
-//conseguir calcular la nueva función de transferencia cada vez que se tare el sistema
+// Estableciendo los valores limite se puede establecer una relación lineal para
+// conseguir calcular la nueva función de transferencia cada vez que se tare el sistema
 void APPSReadmin(void)
 {
     //ANALOGRead(); // Commented because you only need to read APPS, not TPS.
-    //Lo leido en sensores APPS se queda guardado como valor minimo
+    // Lo leido en sensores APPS se queda guardado como valor minimo
     uiAPPS1min = uiAPPS1+APPSMARGEN;
     uiAPPS2min = uiAPPS2-APPSMARGEN;
 }
@@ -84,20 +89,20 @@ void APPSReadmax(void)
     uiAPPS2max = APPS2max;
 }
 
-//Ejecutar cada vez que llegue el mensaje de modo autonomo
+// Ejecutar cada vez que llegue el mensaje de modo autonomo
 void ETCModeSelect(unsigned char ucModeSelect)
 {
     switch (ucModeSelect)
     {
         case ASMode:
-            //Iniciar con 0%
-            //APPSSend(0x00); //da error el I2C generando inf interrupciones
+            // Iniciar con 0%
+            //APPSSend(0x00); // da error el I2C generando inf interrupciones
             APPSMODE_SetHigh();
             break;
         case ManualMode:
             APPSMODE_SetLow();
             break;
-        default:    //poner modo manual porsi
+        default:    // poner modo manual porsi
             APPSMODE_SetLow();
             break;
     }
@@ -366,7 +371,7 @@ void ETCSupervisor(void)
         else
         {
             ucETCFlagSupervisor = FALSE; //NO PERMITO MOVER 
-            //poner embrague y ETC a cero
+            // poner embrague y ETC a cero
             GPIO_PWM1_Control(0, 300);
             GPIO_PWM2_Control(0, 600);
         }
@@ -386,70 +391,76 @@ void ETCManual(unsigned char ucTargetManual)
     }
 }
 
-void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode)
-{
-    unsigned char ucCurrentPos=0;
-    signed char scIntegral=0;
-    signed char scDerivative=0;
-    signed int scPropPart=0;
-    signed int scIntPart=0;
-    signed int scDerPart=0;
-    signed int scMotorPWM=0;
+void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
+    /*
+     *
+     * 
+     * ucTargetMove is the target position of the throttle, in 0-100% = default-fully opened?
+     * ucMode is the driving mode input to the function. It will be checked with the global variable 
+     */
+    
+//    unsigned char ucCurrentPos = 0;
+    signed char scIntegral = 0;
+    signed char scDerivative = 0;
+//    signed int scPropPart = 0;
+//    signed int scIntPart = 0;
+//    signed int scDerPart = 0;
+    unsigned int siMotorPWM = 0; // CHANGED!! TODO signed
     Nop();
-    //Depender de beat constante en CAN
-    if ( ucETCFlagSupervisor == TRUE )
-    {              
-        ucCurrentPos = ucTPS;
-        scErrorPos = ucTargetMove - ucCurrentPos;
+    
+    // Depender de beat constante en CAN
+    if ( ucETCFlagSupervisor == TRUE ) {              
+//        ucCurrentPos = ucTPS;
+//        scErrorPos = ucTargetMove - ucCurrentPos;
+//        scIntegral += scErrorPos;
+//        scDerivative = scErrorPos - scLastErrorPos;
+//        scPropPart = ETC_KP * scErrorPos;
+//        scIntPart = ETC_KI * scIntegral;
+//        scDerPart = ETC_KD * scDerivative;
+//        siMotorPWM = scPropPart + scIntPart + scDerPart;
+        
+        // calculate the position error, in % or what units? TODO RJM
+        scErrorPos = ucTargetMove - ucTPS; // ucTPS is the current position
         scIntegral += scErrorPos;
         scDerivative = scErrorPos - scLastErrorPos;
-        scPropPart = ETC_KP * scErrorPos;
-        scIntPart = ETC_KI * scIntegral;
-        scDerPart = ETC_KD * scDerivative;
-        scMotorPWM = scPropPart + scIntPart + scDerPart;
-        if ( scMotorPWM <= 0 )
-        {
-            scMotorPWM = 0;
+        
+        siMotorPWM = ETC_KP * scErrorPos + ETC_KI * scIntegral + ETC_KD * scDerivative;
+//        siMotorPWM /= 100;
+        
+        Nop();
+        
+        if ( siMotorPWM <= 0 ) {
+            siMotorPWM = 0;
         }
-        else if ( ( scMotorPWM > 0 ) && ( scMotorPWM < 100 ) )
-        {
-            scMotorPWM = scMotorPWM;
+        else if ( ( siMotorPWM > 0 ) && ( siMotorPWM < 100 ) ) {
+//            siMotorPWM = siMotorPWM; // RJM ?
         }
-        else if ( scMotorPWM > 100 )
-        {
-            scMotorPWM = 100;
+        else if ( siMotorPWM > 100 ) {
+            siMotorPWM = 100;
         }
-        else   
-        {
-            //no debería entrar nunca, pero si lo hace ojo
+        else {
+            // no debería entrar nunca, pero si lo hace ojo
         }
         
-        //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
-        if ( ucMode == ucASMode )
-        {
-            if ( ucASMode == ASMode ) 
-            {
-               ETCMove(scMotorPWM, ASMode);
+        // MAIN MOVEMENT - DEPENDS ON ASMode¡
+        if ( ucMode == ucASMode ) {
+            if ( ucASMode == ASMode ) {
+                ETCMove(siMotorPWM, ASMode);
             }
-            else if ( ucASMode == ManualMode )
-            {
-               ETCManual(scMotorPWM);
+            else if ( ucASMode == ManualMode ) {
+                ETCMove(siMotorPWM, ManualMode);
             }
-            else
-            {
-                //la variable ucMode esta corrupto
+            else {
+                // ERROR: Wrong value
             }
-
-        }
-        else
-        {
-            //generar error movimiento impedido por modo de conduccion
+        } else {
+            // ERROR: Movement prevented by driving mode
         }
         
         scLastErrorPos = scErrorPos;
     } 
-    else 
-    {
-        GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
+    else {
+        // ET Motor OFF
+        GPIO_PWM2_Control(0, 600);
     }
 }

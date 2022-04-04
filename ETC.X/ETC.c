@@ -205,7 +205,7 @@ void tps_read_opened(void)
     uiTPS2_opened = uiTPS2;
 }
 
-void TPSAnalysis(void)
+void TPSAnalysis(void) // Called by TEMPORIZATIONS.c
 {
     // Analysis TPS1
     Nop();
@@ -255,7 +255,7 @@ void TPSAnalysis(void)
     ucTPS2Perc = ( ulTPS2calc & 0x00007F );
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
     Nop();
-    //analisis de fallos TPS por salida de márgenes
+    // Analysis de fallos TPS por salida de márgenes
     if ( ( ulTPS1calc > uiTPS1 + TPSMARGEN ) || ( ulTPS1calc < uiTPS1 - TPSMARGEN ) )
     {
         //apuntar fallo de TPS1
@@ -278,7 +278,7 @@ void TPSAnalysis(void)
         ucTPS_STATE |= QUITAR_ERROR_TPS2;
     }
     
-    //analisis por inversiones de voltaje 
+    // Analysis by voltage inversion
     if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_NO_INVERTED )
     {
         ucTPS_STATE |= TPS_Volt_ERROR;
@@ -302,16 +302,14 @@ void TPSAnalysis(void)
         ucTPS_STATE |= TPS_Volt_ERROR;
     }
     
-    //analisis por diferencias entre TPS1 y TPS2
+    // Analysis by difference between TPS1 and TPS2
     
     
 }
 
-
-
-void APPSAnalysis(void)
+void APPSAnalysis(void) // Called by TEMPORIZATIONS.c
 {
-    //Analisis APPS1
+    // Analysis APPS1
     Nop();
     if ( uiAPPS1min < uiAPPS1max )    //APPS1 voltaje no invertido
     {
@@ -330,7 +328,7 @@ void APPSAnalysis(void)
         ulAPPS1calc = ulAPPS1calc*100;
         ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
     }
-    //Analisis APPS2
+    // Analysis APPS2
     if ( uiAPPS2min < uiAPPS2max )    //APPS2 voltaje no invertido
     {
         //ulAPPS2calc = ((uiAPPS2-uiAPPS2min)/(uiAPPS2max-uiAPPS2min))*100;

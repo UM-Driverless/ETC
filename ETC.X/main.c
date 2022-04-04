@@ -71,8 +71,9 @@ void main(void)
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
     
-    // Calibrate TPS and APPS sensors
+    // Clutch to initial position
     CLUTCH_Init();
+    
     GPIOInit();
 
     //APPSMODE_SetHigh();

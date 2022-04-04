@@ -20,7 +20,7 @@ extern "C" {
 
 //FUNCIONES
 unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica);
-void ANALOGRead (void);
+void ANALOGRead(void);
 
 #ifdef	__cplusplus
 }

@@ -8,10 +8,10 @@
 #ifndef ETC_H
 #define	ETC_H
 
+// If C++ code, this will tell the compiler to interpret the code inside as C.
 #ifdef	__cplusplus
 extern "C" {
 #endif
-    
     
 //CONSTANTES
 #define TPS_OK              0
@@ -39,10 +39,10 @@ extern unsigned int uiAPPS1min;
 extern unsigned int uiAPPS1max;    
 extern unsigned int uiAPPS2min;
 extern unsigned int uiAPPS2max;  
-extern unsigned int uiTPS1min;
-extern unsigned int uiTPS1max;    
-extern unsigned int uiTPS2min;
-extern unsigned int uiTPS2max; 
+extern unsigned int uiTPS1_default;
+extern unsigned int uiTPS1_opened;    
+extern unsigned int uiTPS2_default;
+extern unsigned int uiTPS2_opened; 
 extern unsigned int uiAPPS1;
 extern unsigned int uiAPPS2;   
 extern unsigned char ucAPPS_STATE; 
@@ -72,19 +72,20 @@ extern signed char scErrorPos;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);
-void APPSReadmin (void);
-void APPSReadmax (void);
-void TPSReadmin (void);
-void TPSReadmax (void);
+void APPSReadmin(void);
+void APPSReadmax(void);
+void tps_read_default(void);
+void tps_read_opened(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
 void ETCInitMove(void);
-void TPSAnalysis (void);
-void APPSAnalysis (void);
-void ETCSupervisor (void);
+void TPSAnalysis(void);
+void APPSAnalysis(void);
+void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+
 
 #ifdef	__cplusplus
 }

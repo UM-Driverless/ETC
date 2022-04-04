@@ -28,13 +28,13 @@ extern unsigned int uiCount1min;
 
 
 //FUNCIONES
-void TEMPORIZATION_10ms (void);
-void TEMPORIZATION_100ms (void);
-void TEMPORIZATION_500ms (void);
-void TEMPORIZATION_1s (void);
-void TEMPORIZATION_10s (void);
-void TEMPORIZATION_30s (void);
-void TEMPORIZATION_1mins (void);
+void TEMPORIZATION_10ms(void);
+void TEMPORIZATION_100ms(void);
+void TEMPORIZATION_500ms(void);
+void TEMPORIZATION_1s(void);
+void TEMPORIZATION_10s(void);
+void TEMPORIZATION_30s(void);
+void TEMPORIZATION_1mins(void);
 
 #ifdef	__cplusplus
 }

@@ -189,7 +189,6 @@ void TMR1_CallBack(void)
     {
         TMR1_InterruptHandler();
     }
-    //EJECUTAR TEMPORACIZACIONES CADA 100ms
     TEMPORIZATION_100ms();
     
     if ( ucCount500ms++ == t500ms )

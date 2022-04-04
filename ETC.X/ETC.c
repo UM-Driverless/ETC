@@ -12,49 +12,50 @@
 #include "ETC.h"
 #include "GPIO.h"
 #include "PARAMETERS.h"
+#include "ANALOG.h"
 
-//VARIABLES    
-unsigned int uiAPPS1min;
-unsigned int uiAPPS1max;    
+// VARIABLES
+unsigned int uiAPPS1min; // int -> 16 bit in MPLAB, PIC18. short = int here.
+unsigned int uiAPPS1max;
 unsigned int uiAPPS2min;
-unsigned int uiAPPS2max;  
-unsigned int uiTPS1min;
-unsigned int uiTPS1max;    
-unsigned int uiTPS2min;
-unsigned int uiTPS2max; 
+unsigned int uiAPPS2max;
+unsigned int uiTPS1_default;
+unsigned int uiTPS1_opened;
+unsigned int uiTPS2_default;
+unsigned int uiTPS2_opened;
 unsigned int uiAPPS1;
-unsigned int uiAPPS2;   
-unsigned char ucAPPS_STATE; 
+unsigned int uiAPPS2;
+unsigned char ucAPPS_STATE;
 unsigned long ulAPPS1calc;
-unsigned long ulAPPS2calc; 
+unsigned long ulAPPS2calc;
 unsigned char ucAPPS1Perc;
-unsigned char ucAPPS2Perc; 
-unsigned char ucAPPS; 
+unsigned char ucAPPS2Perc;
+unsigned char ucAPPS;
 unsigned int uiTPS1;
-unsigned int uiTPS2; 
+unsigned int uiTPS2;
 unsigned long ulTPS1calc;
-unsigned long ulTPS2calc; 
+unsigned long ulTPS2calc;
 unsigned char ucTPS1Perc;
-unsigned char ucTPS2Perc; 
-unsigned char ucTPS; 
-unsigned char ucTPS_STATE; 
-unsigned char ucTPS1_STATE; 
-unsigned char ucTPS2_STATE; 
-unsigned char ucTPS_Volts_STATE; 
+unsigned char ucTPS2Perc;
+unsigned char ucTPS;
+unsigned char ucTPS_STATE;
+unsigned char ucTPS1_STATE;
+unsigned char ucTPS2_STATE;
+unsigned char ucTPS_Volts_STATE;
 unsigned int uiETCDuty;
-unsigned char ucETB_STATE; 
-unsigned char ucETCBeatSupervisor = FALSE; 
-unsigned char ucETCFlagSupervisor = FALSE; 
+unsigned char ucETB_STATE;
+unsigned char ucETCBeatSupervisor = FALSE;
+unsigned char ucETCFlagSupervisor = FALSE;
 unsigned char ucAPPSManual;
 signed char scLastErrorPos;
 signed char scErrorPos;
 
+
 //FUNCIONES
-void APPSSend (unsigned char ucPercent)
+void APPSSend(unsigned char ucPercent)
 {
     float voltage;
     uint16_t dacAPPS1, dacAPPS2;
-    
     //Funcion de transferencia de porcentaje a valor APPS
     dacAPPS1 = (4096*ucPercent)/5;
     dacAPPS2 = (4096*ucPercent)/5;
@@ -68,36 +69,23 @@ void APPSSend (unsigned char ucPercent)
 
 //Estableciendo los valores limite se puede establecer una relación lineal para
 //conseguir calcular la nueva función de transferencia cada vez que se tare el sistema
-void APPSReadmin (void)
+void APPSReadmin(void)
 {
+    //ANALOGRead(); // Commented because you only need to read APPS, not TPS.
     //Lo leido en sensores APPS se queda guardado como valor minimo
     uiAPPS1min = uiAPPS1+APPSMARGEN;
     uiAPPS2min = uiAPPS2-APPSMARGEN;
 }
 
-void APPSReadmax (void)
+void APPSReadmax(void)
 {
     //Lo leido en sensores APPS se queda guardado como valor maximo
     uiAPPS1max = APPS1max;
     uiAPPS2max = APPS2max;
 }
 
-void TPSReadmin (void)
-{
-    //Lo leido en sensores TPS se queda guardado como valor minimo
-    uiTPS1min = uiTPS1;
-    uiTPS2min = uiTPS2;
-}
-
-void TPSReadmax (void)
-{
-    //Lo leido en sensores TPS se queda guardado como valor maximo
-    uiTPS1max = uiTPS1;
-    uiTPS2max = uiTPS2;
-}
-
 //Ejecutar cada vez que llegue el mensaje de modo autonomo
-void ETCModeSelect (unsigned char ucModeSelect)
+void ETCModeSelect(unsigned char ucModeSelect)
 {
     switch (ucModeSelect)
     {
@@ -161,70 +149,112 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 }
 
 
-//Probar movimiento de ETB en arranques
-void ETCInitMove(void)
-{
-    //Analizar aqui valores minimos de APPS
-    TPSReadmin();
+
+void ETCInitMove(void) {
+    /*
+     * Test the movement of the ETB (Electronic Throttle Body) at startup, 
+     * and Calibrate the minimum and maximum values of TPS1 and TPS2 (Throttle Position Sensor)
+     * of the car intake
+    */
+    
+    // ETB motor OFF - Barely Open - Engine Idle
+    GPIO_PWM2_Control(0, 600); // Motor OFF. 0% PWM at 600Hz 
+    __delay_ms(200); // Let it move
+    tps_read_default(); // Read TPS sensor at default position
+    __delay_ms(100); // Let it read
     Nop();
-    GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
+    
+    // ETB motor 100%
+    GPIO_PWM2_Control(100, 600); // 100% PWM at 600Hz, Motor to max power.
+    __delay_ms(500); // Let it move
+    tps_read_opened(); // Read TPS sensor at max opened position
+    __delay_ms(100); // Let it read
+    Nop();
+    
+    // Turn off after calibration
+    GPIO_PWM2_Control(0, 600); // 0% PWM at 600Hz, Motor OFF.
+
+    // Calibration sound
+    GPIO_PWM2_Control(50, 400);
     __delay_ms(200);
-    GPIO_PWM2_Control(100, 600); //lo muevo sin comprobar nada
-    __delay_ms(1000);
-    TPSReadmax();
-    __delay_ms(1000);
-    Nop();
+    GPIO_PWM2_Control(50, 600);
     __delay_ms(200);
-    GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
-    Nop();
 }
 
-void TPSAnalysis (void)
+void tps_read_default(void)
 {
-    //Analisis TPS1
-    if ( uiTPS1min < uiTPS1max )    //TPS1 voltaje no invertido
+    // Read TPS1 and TPS2 values
+    ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2
+    
+    // Define the values for default position
+    uiTPS1_default = uiTPS1; // uiTPS1 // ANALOG_GetVoltage(ENT_TPS1)
+    uiTPS2_default = uiTPS2; // uiTPS2 // ANALOG_GetVoltage(ENT_TPS2)
+    
+    /// RJM Why not this? Don't call ANALOGRead() and just update the important values. I don't understand why it goes crazy with the same default values.
+//    uiTPS1_default = ANALOG_GetVoltage(ENT_TPS1);
+//    uiTPS2_default = ANALOG_GetVoltage(ENT_TPS2);
+    
+}
+
+void tps_read_opened(void)
+{
+    ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2
+    
+    // Define the values for fully opened position
+    uiTPS1_opened = uiTPS1;
+    uiTPS2_opened = uiTPS2;
+}
+
+void TPSAnalysis(void)
+{
+    // Analysis TPS1
+    Nop();
+    if ( uiTPS1_default < uiTPS1_opened )    //TPS1 voltaje no invertido
     {
-        //ulTPS1calc = ( ( uiTPS1max - uiTPS1min ) * uiETCDuty ) + uiTPS1min;
-        ulTPS1calc = ( uiTPS1max - uiTPS1min );
+        //ulTPS1calc = ( ( uiTPS1_opened - uiTPS1_default ) * uiETCDuty ) + uiTPS1_default;
+        Nop();
+        /*ulTPS1calc = ( uiTPS1_opened - uiTPS1_default );
         ulTPS1calc = ( ulTPS1calc * uiETCDuty );
-        ulTPS1calc = ( ( ulTPS1calc / 100 ) + uiTPS1min );
-        
+        ulTPS1calc = ( ( ulTPS1calc / 100 ) + uiTPS1_default );
+         */
+        ulTPS1calc = ( uiTPS1 - uiTPS1_default );
+        ulTPS1calc *= 100;
+        ulTPS1calc = ( ulTPS1calc /  (uiTPS1_opened - uiTPS1_default ));
         ucTPS_Volts_STATE = TPS1_NO_INVERTED;
     }
     else    //TPS1 voltaje invertido
     {
-        //ulTPS1calc = ( uiTPS1min - ( ( uiTPS1min - uiTPS1max ) * uiETCDuty ) );
-        ulTPS1calc = ( uiTPS1min - uiTPS1max );
-        ulTPS1calc = ( ulTPS1calc * uiETCDuty );
-        ulTPS1calc = ( ( uiTPS1min * 100 ) - ulTPS1calc );
-        
+        Nop();
+        //ulTPS1calc = ( uiTPS1_default - ( ( uiTPS1_default - uiTPS1_opened ) * uiETCDuty ) );
+        ulTPS1calc = ( uiTPS1_default - uiTPS1 );
+        ulTPS1calc *= 100;
+        ulTPS1calc = ulTPS1calc / (uiTPS1_default - uiTPS1_opened);
         ucTPS_Volts_STATE = TPS1_INVERTED;
     }
     
-    //Analisis TPS2
-    if ( uiTPS2min < uiTPS2max )    //TPS2 voltaje no invertido
+    // Analysis TPS2
+    if ( uiTPS2_default < uiTPS2_opened )    //TPS2 voltaje no invertido
     {
-        //ulTPS2calc = ( ( uiTPS2max - uiTPS2min ) * uiETCDuty ) + uiTPS2min;
-        ulTPS2calc = ( uiTPS2max - uiTPS2min );
+        //ulTPS2calc = ( ( uiTPS2_opened - uiTPS2_default ) * uiETCDuty ) + uiTPS2_default;
+        ulTPS2calc = ( uiTPS2_opened - uiTPS2_default );
         ulTPS2calc = ( ulTPS2calc * uiETCDuty );
-        ulTPS2calc = ( ( ulTPS2calc / 100 ) + uiTPS2min );
+        ulTPS2calc = ( ( ulTPS2calc / 100 ) + uiTPS2_default );
         ucTPS_Volts_STATE = TPS2_NO_INVERTED;
     }
     else    //TPS2 voltaje invertido
     {
-        //ulTPS2calc = ( uiTPS2min - ( ( uiTPS2min - uiTPS2max ) * uiETCDuty ) );
-        ulTPS2calc = ( uiTPS2min - uiTPS2max );
-        ulTPS2calc = ( ulTPS2calc * uiETCDuty );
-        ulTPS2calc = ( ( uiTPS2min * 100 ) - ulTPS2calc );
-        ucTPS_Volts_STATE = TPS2_INVERTED;
+        Nop();
+        //ulTPS1calc = ( uiTPS1_default - ( ( uiTPS1_default - uiTPS1_opened ) * uiETCDuty ) );
+        ulTPS2calc = ( uiTPS2_default - uiTPS2 );
+        ulTPS2calc *= 100;
+        ulTPS2calc = ulTPS2calc / (uiTPS2_default - uiTPS2_opened);
+        ucTPS_Volts_STATE = TPS1_INVERTED;
     }
     
     ucTPS1Perc = ( ulTPS1calc & 0x00007F );
     ucTPS2Perc = ( ulTPS2calc & 0x00007F );
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
     Nop();
-    
-    
     //analisis de fallos TPS por salida de márgenes
     if ( ( ulTPS1calc > uiTPS1 + TPSMARGEN ) || ( ulTPS1calc < uiTPS1 - TPSMARGEN ) )
     {
@@ -279,21 +309,19 @@ void TPSAnalysis (void)
 
 
 
-void APPSAnalysis (void)
+void APPSAnalysis(void)
 {
     //Analisis APPS1
-    Nop();
-    __delay_ms(50);
-    Nop();
-    Nop();
     Nop();
     if ( uiAPPS1min < uiAPPS1max )    //APPS1 voltaje no invertido
     {
         //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
         //ulAPPS1calc = ((uiAPPS1-uiAPPS1min)/(uiAPPS1min-uiAPPS1max))*100;
+        Nop();
         ulAPPS1calc = (uiAPPS1-uiAPPS1min);
         ulAPPS1calc = ulAPPS1calc*100;
-        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
+//        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
+        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1max - uiAPPS1min));
     }
     else    //APPS1 voltaje invertido
     {
@@ -306,6 +334,7 @@ void APPSAnalysis (void)
     if ( uiAPPS2min < uiAPPS2max )    //APPS2 voltaje no invertido
     {
         //ulAPPS2calc = ((uiAPPS2-uiAPPS2min)/(uiAPPS2max-uiAPPS2min))*100;
+        Nop();
         ulAPPS2calc = (uiAPPS2-uiAPPS2min);
         ulAPPS2calc = ulAPPS2calc*100;
         ulAPPS2calc = (ulAPPS2calc/(uiAPPS2max-uiAPPS2min));
@@ -314,6 +343,7 @@ void APPSAnalysis (void)
     {
         //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
         //ulAPPS2calc = ((uiAPPS2min-uiAPPS2)/(uiAPPS2min-uiAPPS2max))*100;
+        Nop();
         ulAPPS2calc = (uiAPPS2min-uiAPPS2);
         ulAPPS2calc = ulAPPS2calc*100;
         ulAPPS2calc = (ulAPPS2calc/(uiAPPS2min-uiAPPS2max));
@@ -326,7 +356,7 @@ void APPSAnalysis (void)
 }
 
 
-void ETCSupervisor (void)
+void ETCSupervisor(void)
 {
     Nop();
     if ( ucASMode == ASMode )
@@ -343,11 +373,14 @@ void ETCSupervisor (void)
             GPIO_PWM2_Control(0, 600);
         }
     }
+    else if ( ucASMode == ManualMode) {
+        ucETCFlagSupervisor = TRUE; //PERMITO MOVIMIENTO
+    }
     
 }
 
 
-void ETCManual (unsigned char ucTargetManual)
+void ETCManual(unsigned char ucTargetManual)
 {
     if ( ucASMode == ManualMode )
     {
@@ -355,16 +388,16 @@ void ETCManual (unsigned char ucTargetManual)
     }
 }
 
-void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode)
+void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode)
 {
-    unsigned char ucCurrentPos;
-    signed char scIntegral;
-    signed char scDerivative;
-    signed char scPropPart;
-    signed char scIntPart;
-    signed char scDerPart;
-    signed char scMotorPWM;
-    
+    unsigned char ucCurrentPos=0;
+    signed char scIntegral=0;
+    signed char scDerivative=0;
+    signed int scPropPart=0;
+    signed int scIntPart=0;
+    signed int scDerPart=0;
+    signed int scMotorPWM=0;
+    Nop();
     //Depender de beat constante en CAN
     if ( ucETCFlagSupervisor == TRUE )
     {              
@@ -376,7 +409,6 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode)
         scIntPart = ETC_KI * scIntegral;
         scDerPart = ETC_KD * scDerivative;
         scMotorPWM = scPropPart + scIntPart + scDerPart;
-        
         if ( scMotorPWM <= 0 )
         {
             scMotorPWM = 0;

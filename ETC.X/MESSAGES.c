@@ -97,7 +97,7 @@ void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char d
 
 
 
-void CANReadMessage (void)
+void CANReadMessage(void)
 {
     uint32_t id;
     unsigned char idType;

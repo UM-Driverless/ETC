@@ -41,7 +41,7 @@
     SOFTWARE.
 */
 
-#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/mcc.h" // Initialize functions
 #include "MESSAGES.h"
 #include "CLUTCH.h"
 #include "GPIO.h"
@@ -49,29 +49,29 @@
 #include "ANALOG.h"
 
 /*
-                         Main application
+    Main application
  */
 void main(void)
 {
-    // Initialize the device
+    // Initialize the device - MCC Pins and configurations, still interrupts not Enabled.
     SYSTEM_Initialize();
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
-    // Use the following macros to:
-
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
+    
+    // Calibrate ETC - Apply 0% and 100% power to the throttle motor of intake, and read the sensors.
+    ETCInitMove();
+    // Calibrate APPS min - Default value when turning on = 0%
+    APPSReadmin();
+    APPSReadmax();
+    
+    // Enable Global Interrupts
+    INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
     
-    //Tarar sensores TPS y APPS a minimos
-    ANALOGRead();
-    APPSReadmin();
-    APPSReadmax();
-    TPSReadmin();
-    
+    // Calibrate TPS and APPS sensors
     CLUTCH_Init();
     GPIOInit();
 
@@ -79,17 +79,23 @@ void main(void)
     //APPSSend(0);
     
     //Mover ETC en init
-    ETCInitMove();
+    
     CLUTCHInitMove();
+    
     
     while (1)
     {
         // Add your application code
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         LED_Toggle();
-        __delay_ms(1000);
+        ETC_PIDcontroller (ucAPPS, ManualMode);
+        //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, 0, 0, 0, 0);    //Falta meter los APPS target
     }
 }
 /**
  End of File
 */
+
+
+
+// TODO - Generic function that works for both TPS1 and TPS2, pass a value.

@@ -22,22 +22,26 @@ unsigned int uiCount1min;
 
 
 //FUNCIONES
-void TEMPORIZATION_10ms (void)
+void TEMPORIZATION_10ms(void)
 {
     //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
 }
 
-void TEMPORIZATION_100ms (void)
+void TEMPORIZATION_100ms(void)
 {
-    //ANALOGRead();
+    ANALOGRead();
     //ETCManual(ucAPPSManual);
+    //ETC_PIDcontroller (ucAPPS, ManualMode);
+    //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, 0, 0, 0, 0);    //Falta meter los APPS target
+    TPSAnalysis();
+    APPSAnalysis();
 }
 
-void TEMPORIZATION_500ms (void)
+void TEMPORIZATION_500ms(void)
 {
-    //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);    //Falta meter los APPS target
+    CANWriteMessage(ETC_SIGNAL, DataLength_6,ulAPPS1calc, ulAPPS2calc, ulTPS1calc, ulTPS2calc, 0, 0, 0, 0);    //Falta meter los APPS target
+    //CANWriteMessage(ETC_SIGNAL, DataLength_6,uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);    //Falta meter los APPS target
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
-    ANALOGRead();
     CLUTCH_AnalyseState();
     
     ETCSupervisor();
@@ -45,23 +49,23 @@ void TEMPORIZATION_500ms (void)
     
 }
 
-void TEMPORIZATION_1s (void)
+void TEMPORIZATION_1s(void)
 {
     //LED_Toggle();
     //CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
 }
 
-void TEMPORIZATION_10s (void)
+void TEMPORIZATION_10s(void)
 {
 
 }
 
-void TEMPORIZATION_30s (void)
+void TEMPORIZATION_30s(void)
 {
 
 }
 
-void TEMPORIZATION_1mins (void)
+void TEMPORIZATION_1mins(void)
 {
     
 }

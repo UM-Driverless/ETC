@@ -11,14 +11,14 @@
 
 
 //**********ANALOG_GetVoltage***********//
-//Funcion que devuelve el valor del voltaje calculado de las analogicas)
+// Function that returns the analog voltage read.
 unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
 {
     uint16_t uiValorAnalog;
     uint16_t uiValorVoltage;
     unsigned char ucFlag;
     
-    switch (ucEntradaAnalogica)
+    switch (ucEntradaAnalogica) // Which sensor is being used
     {
         case ENT_TPS1:
             ADC_DisableChannelSequencer();    //Disable scanner
@@ -86,13 +86,10 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
 }
 
 //EJECUTARLO CADA 10ms
-void ANALOGRead (void)
+void ANALOGRead(void)
 {
-    uiAPPS1 = ANALOG_GetVoltage (ENT_APPS1);
-    uiAPPS2 = ANALOG_GetVoltage (ENT_APPS2);
-    uiTPS1 = ANALOG_GetVoltage (ENT_TPS1);
-    uiTPS2 = ANALOG_GetVoltage (ENT_TPS2);
-    
-    TPSAnalysis();
-    APPSAnalysis();
+    uiAPPS1 = ANALOG_GetVoltage(ENT_APPS1);
+    uiAPPS2 = ANALOG_GetVoltage(ENT_APPS2);
+    uiTPS1 = ANALOG_GetVoltage(ENT_TPS1);
+    uiTPS2 = ANALOG_GetVoltage(ENT_TPS2);
 }

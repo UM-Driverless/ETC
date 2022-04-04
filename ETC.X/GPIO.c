@@ -21,7 +21,7 @@ unsigned char ucCLUTCHState;
 
 
 //FUNCIONES
-void GPIOInit (void)
+void GPIOInit(void)
 {
     LED_SetDigitalOutput();
     FinCarrera1_SetDigitalInput();
@@ -80,7 +80,7 @@ void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
 
 
 //NO EJECUTAR
-void GPIO_INT2_desembragar (void)
+void GPIO_INT2_desembragar(void)
 {
     //ANALIZAR SI REALMENTE ESTA HIGH
     //SI ESTÁ SELECCIONAR EL VALOR DE DUTY QUE LE HEMOS APLICADO COMO EL MÁXIMO

@@ -20,7 +20,7 @@ unsigned int uiCLUTCHDuty;
 unsigned char ucCLUTCHState;
 
 //FUNCIONES
-void CLUTCH_Init (void)
+void CLUTCH_Init(void)
 {
     GPIO_PWM1_Control( 0, 50 );
     ucCLUTCHState = CLUTCH_NONE;
@@ -74,7 +74,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 }
 
 
-void CLUTCH_AnalyseState (void)
+void CLUTCH_AnalyseState(void)
 {
     unsigned char ucFDC1; //embragado
     unsigned char ucFDC2; //desembrgado

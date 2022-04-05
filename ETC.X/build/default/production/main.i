@@ -38362,8 +38362,8 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-extern signed char scLastErrorPos;
-extern signed char scErrorPos;
+extern signed int siLastErrorPos;
+extern signed long slErrorPos;
 
 
 void APPSSend (unsigned char ucPercent);
@@ -38380,6 +38380,11 @@ void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+
+
+void sensor_sound(void);
+extern signed int K_P;
+extern signed int K_I;
 # 48 "main.c" 2
 
 # 1 "./ANALOG.h" 1
@@ -38433,7 +38438,10 @@ void main(void)
         ucAPPS = 50;
 
         __nop();
-        ETC_PIDcontroller( ((float)(4000 - uiAPPS1)/(4000-1000))*100 , 0);
+        ETC_PIDcontroller( 30 , 0);
+
+
+
 
 
     }

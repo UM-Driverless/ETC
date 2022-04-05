@@ -90,9 +90,12 @@ void main(void)
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         LED_Toggle();
         ucAPPS = 50; // Dummy value for testing
-        // uiAPPS1 updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
+        
         Nop();
-        ETC_PIDcontroller( ((float)(4000 - uiAPPS1)/(4000-1000))*100 , ManualMode);
+        ETC_PIDcontroller( 30 , ManualMode); // uiAPPS1 updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
+        
+        // Play sound of uiAPPS1 value
+//        sensor_sound();
         
         //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, 0, 0, 0, 0);    //Falta meter los APPS target
     }
@@ -102,9 +105,10 @@ void main(void)
 */
 
 
-
+// TODO - Change the frequency of the ETB Motor according to the pedal to check delay and right data.
 // TODO - Generic function that works for both TPS1 and TPS2, pass a value.
 // TODO - Make local any variables that don't need to be global.
+// TODO - Local variables in main such as uiAPPS1max, and pass by reference, instead of global. Easy code flow analysis
 
 // TODO - Questions
 /*

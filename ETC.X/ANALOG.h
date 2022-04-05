@@ -12,13 +12,13 @@
 extern "C" {
 #endif
 
-//Entradas analógicas     
+// Analog inputs
 #define ENT_APPS1       1
 #define ENT_APPS2       2
 #define ENT_TPS1        3
 #define ENT_TPS2        4
 
-//FUNCIONES
+// FUNCTIONS
 unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica);
 void ANALOGRead(void);
 

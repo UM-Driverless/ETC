@@ -38375,8 +38375,8 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-extern signed char scLastErrorPos;
-extern signed char scErrorPos;
+extern signed int siLastErrorPos;
+extern signed long slErrorPos;
 
 
 void APPSSend (unsigned char ucPercent);
@@ -38393,6 +38393,11 @@ void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+
+
+void sensor_sound(void);
+extern signed int K_P;
+extern signed int K_I;
 # 14 "CLUTCH.c" 2
 
 
@@ -38410,7 +38415,6 @@ void CLUTCH_Init(void)
 }
 
 
-
 void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 {
 
@@ -38426,7 +38430,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 
         if ( ucMode == ucASMode )
         {
-# 59 "CLUTCH.c"
+# 58 "CLUTCH.c"
             if ( ucCLUTCHState < 4 )
             {
                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);

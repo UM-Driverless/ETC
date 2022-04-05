@@ -52,8 +52,12 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = FALSE;
 unsigned char ucETCFlagSupervisor = FALSE;
 unsigned char ucAPPSManual;
-signed char scLastErrorPos;
-signed char scErrorPos;
+signed int siLastErrorPos;
+signed long  slErrorPos;
+
+// TESTING
+signed int K_P; // TODO REMOVE AND CALIBRATE VALUES
+signed int K_I; // TODO REMOVE AND CALIBRATE VALUES
 
 
 // FUNCIONES
@@ -78,13 +82,16 @@ void APPSReadmin(void)
 {
     //ANALOGRead(); // Commented because you only need to read APPS, not TPS.
     // Lo leido en sensores APPS se queda guardado como valor minimo
-    uiAPPS1min = uiAPPS1+APPSMARGEN;
-    uiAPPS2min = uiAPPS2-APPSMARGEN;
+    
+        uiAPPS1min = uiAPPS1+APPSMARGEN;
+        uiAPPS2min = uiAPPS2-APPSMARGEN;
+
+    
 }
 
 void APPSReadmax(void)
 {
-    //Lo leido en sensores APPS se queda guardado como valor maximo
+    // We have to push the accelerator pedal to get these values, so assign constants for now.
     uiAPPS1max = APPS1max;
     uiAPPS2max = APPS2max;
 }
@@ -189,7 +196,7 @@ void ETCInitMove(void) {
 void tps_read_default(void)
 {
     // Read TPS1 and TPS2 values
-    ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2
+    ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2. ANALOGRead() is not called by interruptions until INTERRUPT_GlobalInterruptEnable();
     
     // Define the values for default position
     uiTPS1_default = uiTPS1; // uiTPS1 // ANALOG_GetVoltage(ENT_TPS1)
@@ -214,7 +221,7 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c
 {
     // Analysis TPS1
     Nop();
-    if ( uiTPS1_default < uiTPS1_opened )    //TPS1 voltaje no invertido
+    if ( uiTPS1_default < uiTPS1_opened ) // Plugged normally
     {
         //ulTPS1calc = ( ( uiTPS1_opened - uiTPS1_default ) * uiETCDuty ) + uiTPS1_default;
         Nop();
@@ -222,12 +229,10 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c
         ulTPS1calc = ( ulTPS1calc * uiETCDuty );
         ulTPS1calc = ( ( ulTPS1calc / 100 ) + uiTPS1_default );
          */
-        ulTPS1calc = ( uiTPS1 - uiTPS1_default );
-        ulTPS1calc *= 100;
-        ulTPS1calc = ( ulTPS1calc /  (uiTPS1_opened - uiTPS1_default ));
+        ulTPS1calc = ( uiTPS1 - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
         ucTPS_Volts_STATE = TPS1_NO_INVERTED;
     }
-    else    //TPS1 voltaje invertido
+    else // Plugged inverted
     {
         Nop();
         //ulTPS1calc = ( uiTPS1_default - ( ( uiTPS1_default - uiTPS1_opened ) * uiETCDuty ) );
@@ -316,22 +321,16 @@ void APPSAnalysis(void) // Called by TEMPORIZATIONS.c
 {
     // Analysis APPS1
     Nop();
-    if ( uiAPPS1min < uiAPPS1max )    //APPS1 voltaje no invertido
+    if ( uiAPPS1min < uiAPPS1max ) // Plugged normally
     {
         //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
-        //ulAPPS1calc = ((uiAPPS1-uiAPPS1min)/(uiAPPS1min-uiAPPS1max))*100;
         Nop();
-        ulAPPS1calc = (uiAPPS1-uiAPPS1min);
-        ulAPPS1calc = ulAPPS1calc*100;
-//        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
-        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1max - uiAPPS1min));
+        ulAPPS1calc = (uiAPPS1-uiAPPS1min)/(uiAPPS1max - uiAPPS1min)*100;
     }
-    else    //APPS1 voltaje invertido
+    else // Plugged inverted
     {
         //ulAPPS1calc = ((uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max))*100;
-        ulAPPS1calc = (uiAPPS1min-uiAPPS1);
-        ulAPPS1calc = ulAPPS1calc*100;
-        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
+        ulAPPS1calc = (uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max)*100;
     }
     // Analysis APPS2
     if ( uiAPPS2min < uiAPPS2max )    //APPS2 voltaje no invertido
@@ -400,55 +399,63 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
      */
     
 //    unsigned char ucCurrentPos = 0;
-    signed char scIntegral = 0;
-    signed char scDerivative = 0;
-//    signed int scPropPart = 0;
-//    signed int scIntPart = 0;
-//    signed int scDerPart = 0;
-    unsigned int siMotorPWM = 0; // CHANGED!! TODO signed
+    static signed long slIntegral = 0;
+    signed long slDerivative = 0;
+    signed long slMotorPWM = 0; // CHANGED!! TODO
+//    signed long auxiliar = 0; // TODO : THIS VARIABLE SHOULD NOT BE NEEDED
     Nop();
     
+    
     // Depender de beat constante en CAN
-    if ( ucETCFlagSupervisor == TRUE ) {              
+    if ( ucETCFlagSupervisor == TRUE ) {  
+        
+        /// MAIN CALCULATION
 //        ucCurrentPos = ucTPS;
-//        scErrorPos = ucTargetMove - ucCurrentPos;
-//        scIntegral += scErrorPos;
-//        scDerivative = scErrorPos - scLastErrorPos;
-//        scPropPart = ETC_KP * scErrorPos;
-//        scIntPart = ETC_KI * scIntegral;
-//        scDerPart = ETC_KD * scDerivative;
-//        siMotorPWM = scPropPart + scIntPart + scDerPart;
+//        slErrorPos = ucTargetMove - ucCurrentPos;
+//        slIntegral += slErrorPos;
+//        slDerivative = slErrorPos - siLastErrorPos;
+//        scPropPart = ETC_KP * slErrorPos;
+//        scIntPart = ETC_KI * slIntegral;
+//        scDerPart = ETC_KD * slDerivative;
+//        slMotorPWM = scPropPart + scIntPart + scDerPart;
         
         // calculate the position error, in % or what units? TODO RJM
-        scErrorPos = ucTargetMove - ucTPS; // ucTPS is the current position
-        scIntegral += scErrorPos;
-        scDerivative = scErrorPos - scLastErrorPos;
+        // TODO tps_map(ucTargetMove)... to map 16-55 to 0-100%
+        // ucTPS is the current position. Usually 16-55 for default-open.
+        // slErrorPos must be able to become negative!!!!
+        slErrorPos = (signed long)(ucTargetMove) - ( ( (signed long)(uiTPS1) - 1212 )*100 / (3126-1212) ); 
+        slIntegral += slErrorPos;
+        slDerivative = slErrorPos - siLastErrorPos;
         
-        siMotorPWM = ETC_KP * scErrorPos + ETC_KI * scIntegral + ETC_KD * scDerivative;
-//        siMotorPWM /= 100;
+//        slMotorPWM = ETC_KP * slErrorPos + ETC_KI * slIntegral + ETC_KD * slDerivative;
+        K_P = 1;
+        K_I = 1;
+        slMotorPWM = K_P * slErrorPos + K_I * slIntegral/1000; // TODO complete
+//        slMotorPWM /= 100;
         
-        Nop();
         
-        if ( siMotorPWM <= 0 ) {
-            siMotorPWM = 0;
+        
+        if ( slMotorPWM <= 0 ) {
+            slMotorPWM = 0;
         }
-        else if ( ( siMotorPWM > 0 ) && ( siMotorPWM < 100 ) ) {
-//            siMotorPWM = siMotorPWM; // RJM ?
-        }
-        else if ( siMotorPWM > 100 ) {
-            siMotorPWM = 100;
+        else if ( slMotorPWM > 100 ) {
+            slMotorPWM = 100;
         }
         else {
-            // no debería entrar nunca, pero si lo hace ojo
+            // between 0 and 100, ok
         }
         
+        Nop();
         // MAIN MOVEMENT - DEPENDS ON ASMode¡
         if ( ucMode == ucASMode ) {
             if ( ucASMode == ASMode ) {
-                ETCMove(siMotorPWM, ASMode);
+                //ETCMove(slMotorPWM, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
+                GPIO_PWM2_Control(slMotorPWM, 600);
             }
             else if ( ucASMode == ManualMode ) {
-                ETCMove(siMotorPWM, ManualMode);
+                //ETCMove(slMotorPWM, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
+//                ETCMove(slMotorPWM, ManualMode);
+                GPIO_PWM2_Control(slMotorPWM, 600);
             }
             else {
                 // ERROR: Wrong value
@@ -457,10 +464,20 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
             // ERROR: Movement prevented by driving mode
         }
         
-        scLastErrorPos = scErrorPos;
+         // Set error as last error for next iteration
+        siLastErrorPos = slErrorPos;
     } 
     else {
         // ET Motor OFF
         GPIO_PWM2_Control(0, 600);
     }
+}
+
+/// TESTING
+void sensor_sound(void){
+    GPIO_PWM2_Control(50, uiAPPS1); // Play as frequency the value of the accelerator pedal.
+//    GPIO_PWM2_Control(50, uiAPPS2); // Play as frequency the value of the accelerator pedal.
+    
+//    GPIO_PWM2_Control(50, uiTPS1); // Play as frequency the value of the Electronic Throttle Motor.
+//    GPIO_PWM2_Control(50, uiTPS2); // Play as frequency the value of the Electronic Throttle Motor.
 }

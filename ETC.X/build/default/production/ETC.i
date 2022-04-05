@@ -38360,8 +38360,8 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-extern signed char scLastErrorPos;
-extern signed char scErrorPos;
+extern signed int siLastErrorPos;
+extern signed long slErrorPos;
 
 
 void APPSSend (unsigned char ucPercent);
@@ -38378,6 +38378,11 @@ void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+
+
+void sensor_sound(void);
+extern signed int K_P;
+extern signed int K_I;
 # 17 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
@@ -38431,8 +38436,12 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = 0x00;
 unsigned char ucETCFlagSupervisor = 0x00;
 unsigned char ucAPPSManual;
-signed char scLastErrorPos;
-signed char scErrorPos;
+signed int siLastErrorPos;
+signed long slErrorPos;
+
+
+signed int K_P;
+signed int K_I;
 
 
 
@@ -38457,8 +38466,11 @@ void APPSReadmin(void)
 {
 
 
-    uiAPPS1min = uiAPPS1+100;
-    uiAPPS2min = uiAPPS2-100;
+
+        uiAPPS1min = uiAPPS1+100;
+        uiAPPS2min = uiAPPS2-100;
+
+
 }
 
 void APPSReadmax(void)
@@ -38601,9 +38613,7 @@ void TPSAnalysis(void)
 
 
 
-        ulTPS1calc = ( uiTPS1 - uiTPS1_default );
-        ulTPS1calc *= 100;
-        ulTPS1calc = ( ulTPS1calc / (uiTPS1_opened - uiTPS1_default ));
+        ulTPS1calc = ( uiTPS1 - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
         ucTPS_Volts_STATE = 1;
     }
     else
@@ -38698,19 +38708,13 @@ void APPSAnalysis(void)
     if ( uiAPPS1min < uiAPPS1max )
     {
 
-
         __nop();
-        ulAPPS1calc = (uiAPPS1-uiAPPS1min);
-        ulAPPS1calc = ulAPPS1calc*100;
-
-        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1max - uiAPPS1min));
+        ulAPPS1calc = (uiAPPS1-uiAPPS1min)/(uiAPPS1max - uiAPPS1min)*100;
     }
     else
     {
 
-        ulAPPS1calc = (uiAPPS1min-uiAPPS1);
-        ulAPPS1calc = ulAPPS1calc*100;
-        ulAPPS1calc = (ulAPPS1calc/(uiAPPS1min-uiAPPS1max));
+        ulAPPS1calc = (uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max)*100;
     }
 
     if ( uiAPPS2min < uiAPPS2max )
@@ -38771,47 +38775,49 @@ void ETCManual(unsigned char ucTargetManual)
 }
 
 void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
-# 403 "ETC.c"
-    signed char scIntegral = 0;
-    signed char scDerivative = 0;
-
-
-
-    unsigned int siMotorPWM = 0;
+# 402 "ETC.c"
+    static signed long slIntegral = 0;
+    signed long slDerivative = 0;
+    signed long slMotorPWM = 0;
     __nop();
 
 
+
     if ( ucETCFlagSupervisor == 0x01 ) {
-# 423 "ETC.c"
-        scErrorPos = ucTargetMove - ucTPS;
-        scIntegral += scErrorPos;
-        scDerivative = scErrorPos - scLastErrorPos;
-
-        siMotorPWM = 0.9 * scErrorPos + 0.1 * scIntegral + 0 * scDerivative;
+# 425 "ETC.c"
+        slErrorPos = (signed long)(ucTargetMove) - (signed long)((signed int)(uiTPS1-1212)*100/(3126-1212));
+        slIntegral += slErrorPos;
+        slDerivative = slErrorPos - siLastErrorPos;
 
 
-        __nop();
+        K_P = 1;
+        K_I = 1;
+        slMotorPWM = K_P * slErrorPos + K_I * slIntegral/1000;
 
-        if ( siMotorPWM <= 0 ) {
-            siMotorPWM = 0;
+
+
+
+        if ( slMotorPWM <= 0 ) {
+            slMotorPWM = 0;
         }
-        else if ( ( siMotorPWM > 0 ) && ( siMotorPWM < 100 ) ) {
-
-        }
-        else if ( siMotorPWM > 100 ) {
-            siMotorPWM = 100;
+        else if ( slMotorPWM > 100 ) {
+            slMotorPWM = 100;
         }
         else {
 
         }
 
+        __nop();
 
         if ( ucMode == ucASMode ) {
             if ( ucASMode == 1 ) {
-                ETCMove(siMotorPWM, 1);
+
+                GPIO_PWM2_Control(slMotorPWM, 600);
             }
             else if ( ucASMode == 0 ) {
-                ETCMove(siMotorPWM, 0);
+
+
+                GPIO_PWM2_Control(slMotorPWM, 600);
             }
             else {
 
@@ -38820,10 +38826,20 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
 
         }
 
-        scLastErrorPos = scErrorPos;
+
+        siLastErrorPos = slErrorPos;
     }
     else {
 
         GPIO_PWM2_Control(0, 600);
     }
+}
+
+
+void sensor_sound(void){
+    GPIO_PWM2_Control(50, uiAPPS1);
+
+
+
+
 }

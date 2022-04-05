@@ -70,8 +70,8 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-extern signed char scLastErrorPos;
-extern signed char scErrorPos;
+extern signed int siLastErrorPos;
+extern signed long slErrorPos;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);
@@ -88,6 +88,11 @@ void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+
+/// Testing
+void sensor_sound(void);
+extern signed int K_P; // TODO CALIBRATE CONSTANTS REALTIME CHANGE WITH DEBUGGER
+extern signed int K_I; // TODO REMOVE AND CALIBRATE VALUES
 
 
 #ifdef	__cplusplus

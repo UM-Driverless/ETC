@@ -38388,8 +38388,8 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-extern signed char scLastErrorPos;
-extern signed char scErrorPos;
+extern signed int siLastErrorPos;
+extern signed long slErrorPos;
 
 
 void APPSSend (unsigned char ucPercent);
@@ -38406,6 +38406,11 @@ void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+
+
+void sensor_sound(void);
+extern signed int K_P;
+extern signed int K_I;
 # 13 "TEMPORIZATIONS.c" 2
 
 # 1 "./PARAMETERS.h" 1
@@ -38438,7 +38443,9 @@ void TEMPORIZATION_100ms(void)
 
 void TEMPORIZATION_500ms(void)
 {
-    CANWriteMessage(0x330, 6,ulAPPS1calc, ulAPPS2calc, ulTPS1calc, ulTPS2calc, 0, 0, 0, 0);
+
+
+
 
 
     CLUTCH_AnalyseState();

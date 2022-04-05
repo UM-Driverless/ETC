@@ -20,21 +20,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "87
 [; ;./ETC.h: 87: void APPSAnalysis(void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
-"93 ./MESSAGES.h
-[; ;./MESSAGES.h: 93: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
-[v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
-"52 ./ETC.h
-[; ;./ETC.h: 52: extern unsigned long ulAPPS1calc;
-[v _ulAPPS1calc `ul ~T0 @X0 0 e ]
-"53
-[; ;./ETC.h: 53: extern unsigned long ulAPPS2calc;
-[v _ulAPPS2calc `ul ~T0 @X0 0 e ]
-"59
-[; ;./ETC.h: 59: extern unsigned long ulTPS1calc;
-[v _ulTPS1calc `ul ~T0 @X0 0 e ]
-"60
-[; ;./ETC.h: 60: extern unsigned long ulTPS2calc;
-[v _ulTPS2calc `ul ~T0 @X0 0 e ]
 "35 ./CLUTCH.h
 [; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState(void);
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
@@ -3625,67 +3610,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _TEMPORIZATION_500ms ]
 [f ]
-"42
-[; ;TEMPORIZATIONS.c: 42:     CANWriteMessage(0x330, 6,ulAPPS1calc, ulAPPS2calc, ulTPS1calc, ulTPS2calc, 0, 0, 0, 0);
-[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> _ulAPPS1calc `uc -> _ulAPPS2calc `uc -> _ulTPS1calc `uc -> _ulTPS2calc `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"45
-[; ;TEMPORIZATIONS.c: 45:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
 "47
-[; ;TEMPORIZATIONS.c: 47:     ETCSupervisor();
+[; ;TEMPORIZATIONS.c: 47:     CLUTCH_AnalyseState();
+[e ( _CLUTCH_AnalyseState ..  ]
+"49
+[; ;TEMPORIZATIONS.c: 49:     ETCSupervisor();
 [e ( _ETCSupervisor ..  ]
-"48
-[; ;TEMPORIZATIONS.c: 48:     ucETCBeatSupervisor = 0x00;
-[e = _ucETCBeatSupervisor -> -> 0 `i `uc ]
 "50
-[; ;TEMPORIZATIONS.c: 50: }
+[; ;TEMPORIZATIONS.c: 50:     ucETCBeatSupervisor = 0x00;
+[e = _ucETCBeatSupervisor -> -> 0 `i `uc ]
+"52
+[; ;TEMPORIZATIONS.c: 52: }
 [e :UE 3183 ]
 }
-"52
-[; ;TEMPORIZATIONS.c: 52: void TEMPORIZATION_1s(void)
+"54
+[; ;TEMPORIZATIONS.c: 54: void TEMPORIZATION_1s(void)
 [v _TEMPORIZATION_1s `(v ~T0 @X0 1 ef ]
-"53
-[; ;TEMPORIZATIONS.c: 53: {
+"55
+[; ;TEMPORIZATIONS.c: 55: {
 {
 [e :U _TEMPORIZATION_1s ]
 [f ]
-"56
-[; ;TEMPORIZATIONS.c: 56: }
+"58
+[; ;TEMPORIZATIONS.c: 58: }
 [e :UE 3184 ]
 }
-"58
-[; ;TEMPORIZATIONS.c: 58: void TEMPORIZATION_10s(void)
+"60
+[; ;TEMPORIZATIONS.c: 60: void TEMPORIZATION_10s(void)
 [v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
-"59
-[; ;TEMPORIZATIONS.c: 59: {
+"61
+[; ;TEMPORIZATIONS.c: 61: {
 {
 [e :U _TEMPORIZATION_10s ]
 [f ]
-"61
-[; ;TEMPORIZATIONS.c: 61: }
+"63
+[; ;TEMPORIZATIONS.c: 63: }
 [e :UE 3185 ]
 }
-"63
-[; ;TEMPORIZATIONS.c: 63: void TEMPORIZATION_30s(void)
+"65
+[; ;TEMPORIZATIONS.c: 65: void TEMPORIZATION_30s(void)
 [v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
-"64
-[; ;TEMPORIZATIONS.c: 64: {
+"66
+[; ;TEMPORIZATIONS.c: 66: {
 {
 [e :U _TEMPORIZATION_30s ]
 [f ]
-"66
-[; ;TEMPORIZATIONS.c: 66: }
+"68
+[; ;TEMPORIZATIONS.c: 68: }
 [e :UE 3186 ]
 }
-"68
-[; ;TEMPORIZATIONS.c: 68: void TEMPORIZATION_1mins(void)
+"70
+[; ;TEMPORIZATIONS.c: 70: void TEMPORIZATION_1mins(void)
 [v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
-"69
-[; ;TEMPORIZATIONS.c: 69: {
+"71
+[; ;TEMPORIZATIONS.c: 71: {
 {
 [e :U _TEMPORIZATION_1mins ]
 [f ]
-"71
-[; ;TEMPORIZATIONS.c: 71: }
+"73
+[; ;TEMPORIZATIONS.c: 73: }
 [e :UE 3187 ]
 }

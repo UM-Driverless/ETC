@@ -63,9 +63,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "90 ./ETC.h
 [; ;./ETC.h: 90: void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 [v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`uc`uc ]
-"39
-[; ;./ETC.h: 39: extern unsigned int uiAPPS1;
-[v _uiAPPS1 `ui ~T0 @X0 0 e ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3644,15 +3641,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 94:         __nop();
 [e ( ___nop ..  ]
 "95
-[; ;main.c: 95:         ETC_PIDcontroller( ((float)(4000 - uiAPPS1)/(4000-1000))*100 , 0);
-[e ( _ETC_PIDcontroller (2 , -> * / -> - -> -> 4000 `i `ui _uiAPPS1 `f -> - -> 4000 `i -> 1000 `i `f -> -> 100 `i `f `uc -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:     }
+[; ;main.c: 95:         ETC_PIDcontroller( 30 , 0);
+[e ( _ETC_PIDcontroller (2 , -> -> 30 `i `uc -> -> 0 `i `uc ]
+"101
+[; ;main.c: 101:     }
 }
 [e :U 3182 ]
 [e $U 3183  ]
 [e :U 3184 ]
-"99
-[; ;main.c: 99: }
+"102
+[; ;main.c: 102: }
 [e :UE 3181 ]
 }

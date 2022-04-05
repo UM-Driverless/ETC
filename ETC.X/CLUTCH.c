@@ -27,7 +27,6 @@ void CLUTCH_Init(void)
 }
 
 
-
 void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 {
     //Depender de beat constante en CAN

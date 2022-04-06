@@ -296,17 +296,17 @@ channel_FVR_Buffer2 63
 [v _apps_calibrate apps_calibrate `(v  1 e 1 0 ]
 "89
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
-"131
+"130
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
-"156
+"155
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
-"192
+"191
 [v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
-"234
+"233
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
-"333
+"341
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
-"362
+"370
 [v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 [v i2_ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 "24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
@@ -2009,10 +2009,10 @@ channel_FVR_Buffer2 63
 {
 "98
 } 0
-"192 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"191 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
 {
-"232
+"231
 } 0
 "15 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
 [v _ANALOG_GetVoltage ANALOG_GetVoltage `(ui  1 e 2 0 ]
@@ -2305,30 +2305,30 @@ channel_FVR_Buffer2 63
 {
 "36
 } 0
-"362 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"370 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 {
 [v ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
-"377
-[v ETC_PIDcontroller@slMotorPWM slMotorPWM `l  1 a 4 64 ]
-"376
-[v ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 60 ]
-"362
+"385
+[v ETC_PIDcontroller@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 64 ]
+"384
+[v ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 59 ]
+"370
 [v ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 50 ]
-"372
+"380
 [v ETC_PIDcontroller@K_P K_P `i  1 s 2 K_P ]
-"373
+"381
 [v ETC_PIDcontroller@K_I K_I `i  1 s 2 K_I ]
-"374
+"382
 [v ETC_PIDcontroller@K_D K_D `i  1 s 2 K_D ]
-"375
+"383
 [v ETC_PIDcontroller@slIntegral slIntegral `l  1 s 4 slIntegral ]
-"378
+"386
 [v ETC_PIDcontroller@slLastErrorPos slLastErrorPos `l  1 s 4 slLastErrorPos ]
-"377
-[v ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 59 ]
-"439
+"370
+[v ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 63 ]
+"444
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -2545,10 +2545,10 @@ channel_FVR_Buffer2 63
 [v i2CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
 "107
 } 0
-"333 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"341 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
 {
-"352
+"360
 } 0
 "65 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
@@ -2575,10 +2575,10 @@ channel_FVR_Buffer2 63
 {
 "38
 } 0
-"234 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"233 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
 {
-"331
+"339
 } 0
 "89
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
@@ -2708,20 +2708,19 @@ channel_FVR_Buffer2 63
 [v CANReadMessage@data6 data6 `uc  1 a 1 76 ]
 "187
 } 0
-"362 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"370 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v i2_ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 {
 [v i2ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
-"377
-[v i2ETC_PIDcontroller@slMotorPWM slMotorPWM `l  1 a 4 64 ]
-"376
-[v i2ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 60 ]
-"362
+"385
+[v i2ETC_PIDcontroller@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 64 ]
+"384
+[v i2ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 59 ]
+"370
 [v i2ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v i2ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 50 ]
-"377
-[v i2ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 59 ]
-"439
+[v i2ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 63 ]
+"444
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v i2___lmul __lmul `(ul  1 e 4 0 ]
@@ -2877,13 +2876,13 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"131 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"130 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 {
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 2 ]
-"146
+"145
 } 0
 "447 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_ReceivedMessageCountGet CAN1_ReceivedMessageCountGet `(uc  1 e 1 0 ]

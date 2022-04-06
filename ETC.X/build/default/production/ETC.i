@@ -38508,7 +38508,6 @@ void APPSAnalysis(void) {
 
 
 
-
 void ETCModeSelect(unsigned char ucModeSelect) {
     switch (ucModeSelect)
     {
@@ -38571,7 +38570,7 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode) {
 }
 
 void etc_calibrate(void) {
-# 202 "ETC.c"
+# 201 "ETC.c"
     GPIO_PWM2_Control(0, 600);
 
     _delay((unsigned long)((200)*(10000000/4000.0)));
@@ -38606,22 +38605,29 @@ void etc_calibrate(void) {
 
 void TPSAnalysis(void)
 {
-# 266 "ETC.c"
+# 267 "ETC.c"
     uc_tps1_perc = 100* (signed long)(ui_tps1_mv - ui_tps1_default) / (signed long)(uiTPS1_opened - ui_tps1_default);
     uc_tps2_perc = 100* (signed long)(ui_tps2_mv - ui_tps2_default) / (signed long)(uiTPS2_opened - ui_tps2_default);
 
 
 
 
-    uc_tps1_perc = (uc_tps1_perc & 0x0000007F);
-    uc_tps2_perc = (uc_tps2_perc & 0x0000007F);
+    if (uc_tps1_perc > 100){
+        uc_tps1_perc = 100;
+    } else if (uc_tps1_perc < 0){
+        uc_tps1_perc = 0;
+    }
 
-
+    if (uc_tps2_perc > 100){
+        uc_tps2_perc = 100;
+    } else if (uc_tps2_perc < 0){
+        uc_tps2_perc = 0;
+    }
 
     uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
 
     __nop();
-# 331 "ETC.c"
+# 339 "ETC.c"
 }
 
 void ETCSupervisor(void) {
@@ -38654,13 +38660,13 @@ void ETCManual(unsigned char ucTargetManual)
 }
 
 void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
-# 372 "ETC.c"
+# 380 "ETC.c"
     static signed int K_P = 1000;
     static signed int K_I = 1;
     static signed int K_D;
     static signed long slIntegral = 0;
-    signed long slDerivative = 0;
-    signed long slMotorPWM = 0;
+    signed long slDerivative;
+    signed long sl_motor_pwm_duty = 0;
     static signed long slLastErrorPos;
 
     __nop();
@@ -38680,20 +38686,17 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
         slDerivative = slErrorPos - slLastErrorPos;
 
 
-        slMotorPWM = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative;
-        slMotorPWM /= 1000;
+        sl_motor_pwm_duty = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative;
+        sl_motor_pwm_duty /= 1000;
 
 
 
 
-        if ( slMotorPWM <= 0 ) {
-            slMotorPWM = 0;
+        if ( sl_motor_pwm_duty < 0 ) {
+            sl_motor_pwm_duty = 0;
         }
-        else if ( slMotorPWM > 100 ) {
-            slMotorPWM = 100;
-        }
-        else {
-
+        else if ( sl_motor_pwm_duty > 100 ) {
+            sl_motor_pwm_duty = 100;
         }
 
         __nop();
@@ -38701,12 +38704,12 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
         if ( ucMode == ucASMode ) {
             if ( ucASMode == 1 ) {
 
-                GPIO_PWM2_Control(slMotorPWM, 600);
+                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
             }
             else if ( ucASMode == 0 ) {
 
 
-                GPIO_PWM2_Control(slMotorPWM, 600);
+                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
             }
             else {
 

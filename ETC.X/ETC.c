@@ -125,9 +125,8 @@ void APPSAnalysis(void) { // Called by TEMPORIZATIONS.c
     Nop();
 }
 
-/// Electronic Throttle
-
-// Ejecutar cada vez que llegue el mensaje de modo autonomo
+/// Electronic Throttle - Intake.
+// Run every time the autonomous mode message is received.
 void ETCModeSelect(unsigned char ucModeSelect) {
     switch (ucModeSelect)
     {
@@ -237,15 +236,15 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
      *
      */
     
-    /// Calculate ucTPS
-//    if ( ui_tps1_default < uiTPS1_opened ) // Plugged normally
+    /*
+     //    if ( ui_tps1_default < uiTPS1_opened ) // Plugged normally
 //    {
 //        //slTPS1calc = ( ( uiTPS1_opened - ui_tps1_default ) * uiETCDuty ) + ui_tps1_default;
 //        Nop();
-//        /*slTPS1calc = ( uiTPS1_opened - ui_tps1_default );
+//        slTPS1calc = ( uiTPS1_opened - ui_tps1_default );
 //        slTPS1calc = ( slTPS1calc * uiETCDuty );
 //        slTPS1calc = ( ( slTPS1calc / 100 ) + ui_tps1_default );
-//         */
+//        
 //        slTPS1calc = ( ui_tps1_mv - ui_tps1_default)*100/(uiTPS1_opened - ui_tps1_default);
 //        ucTPS_Volts_STATE = TPS1_NO_INVERTED;
 //    } // TODO else plugged inverted... Ignore for now
@@ -261,18 +260,27 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
 //        slTPS2calc = ( ( slTPS2calc / 100 ) + ui_tps2_default );
 //        ucTPS_Volts_STATE = TPS2_NO_INVERTED;
 //    }
+     */
+    
     
     // Calculate fraction of travel. Sensor 1 and 2 provide voltages of constant average. They move in opposite directions.
     uc_tps1_perc = 100* (signed long)(ui_tps1_mv - ui_tps1_default) / (signed long)(uiTPS1_opened - ui_tps1_default);
     uc_tps2_perc = 100* (signed long)(ui_tps2_mv - ui_tps2_default) / (signed long)(uiTPS2_opened - ui_tps2_default);
     
-    // TODO - CHECK THAT THEY MATCH.
+    // TODO - CHECK THAT THEY MATCH, If too different, CAN error.
     
-    // Just take the 7 last bits, which correspond to 255, the current max value.
-    uc_tps1_perc = (uc_tps1_perc & 0x0000007F);
-    uc_tps2_perc = (uc_tps2_perc & 0x0000007F);
+    // Crop values from 0 to 100. It's a percentage.
+    if (uc_tps1_perc > 100){
+        uc_tps1_perc = 100;
+    } else if (uc_tps1_perc < 0){
+        uc_tps1_perc = 0;
+    }
     
-    // uc_tps1_perc and uc_tps2_perc should match. If too different, CAN error. TODO
+    if (uc_tps2_perc > 100){
+        uc_tps2_perc = 100;
+    } else if (uc_tps2_perc < 0){
+        uc_tps2_perc = 0;
+    }
     // uc_tps_perc is the average.
     uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
     
@@ -373,8 +381,8 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
     static signed int K_I = 1;
     static signed int K_D;
     static signed long slIntegral = 0;
-    signed long slDerivative = 0;
-    signed long slMotorPWM = 0; // TODO CHANGED!!
+    signed long slDerivative;
+    signed long sl_motor_pwm_duty = 0; // TODO CHANGED!!
     static signed long slLastErrorPos;
     
     Nop();
@@ -385,42 +393,39 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
         
         /// MAIN CALCULATION
         
-        // TODO tps_map(ucTargetMove)... to map 16-55 to 0-100%
-        // ucTPS is the current position. Usually 16-55 for default-open.
-        // slErrorPos must be able to become negative!!!!
+        // TODO map_perc(value,min,max)... to map a value between min and max as a percentage
+        // ui_tp1_mv is the current position. Usually 16-55 for default-open.
         
+        // TODO ---- USE uc_tps_perc INSTEAD OF ui_tps1_mv
         slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);  // in % or what units? TODO RJM
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - slLastErrorPos;
         
-//        slMotorPWM = ETC_KP * slErrorPos + ETC_KI * slIntegral + ETC_KD * slDerivative;
-        slMotorPWM = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative; // TODO complete
-        slMotorPWM /= 1000; // Because the constants are long, not floats
-//        slMotorPWM /= 100;
+//        sl_motor_pwm_duty = ETC_KP * slErrorPos + ETC_KI * slIntegral + ETC_KD * slDerivative;
+        sl_motor_pwm_duty = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative; // TODO complete
+        sl_motor_pwm_duty /= 1000; // Because the constants are long, not floats
+//        sl_motor_pwm_duty /= 100;
         
         
-        
-        if ( slMotorPWM <= 0 ) {
-            slMotorPWM = 0;
+        // Crop between 0 and 100. It's a duty cycle.
+        if ( sl_motor_pwm_duty < 0 ) {
+            sl_motor_pwm_duty = 0;
         }
-        else if ( slMotorPWM > 100 ) {
-            slMotorPWM = 100;
-        }
-        else {
-            // between 0 and 100, ok
+        else if ( sl_motor_pwm_duty > 100 ) {
+            sl_motor_pwm_duty = 100;
         }
         
         Nop();
         // MAIN MOVEMENT - DEPENDS ON ASMode¡
         if ( ucMode == ucASMode ) {
             if ( ucASMode == ASMode ) {
-                //ETCMove(slMotorPWM, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
-                GPIO_PWM2_Control(slMotorPWM, 600);
+                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
+                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
             }
             else if ( ucASMode == ManualMode ) {
-                //ETCMove(slMotorPWM, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
-//                ETCMove(slMotorPWM, ManualMode);
-                GPIO_PWM2_Control(slMotorPWM, 600);
+                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
+//                ETCMove(sl_motor_pwm_duty, ManualMode);
+                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
             }
             else {
                 // ERROR: Wrong value

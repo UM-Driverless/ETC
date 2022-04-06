@@ -38361,23 +38361,17 @@ extern unsigned int uiAPPS2min;
 extern unsigned int uiAPPS2;
 extern unsigned int uiAPPS2max;
 
+
 extern unsigned int uiTPS1_default;
 extern unsigned int uiTPS1_opened;
 extern unsigned int uiTPS2_default;
 extern unsigned int uiTPS2_opened;
 
-extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
-extern unsigned int uiTPS1;
-extern unsigned int uiTPS2;
-extern signed long slTPS1calc;
-extern signed long slTPS2calc;
-extern unsigned char ucTPS1Perc;
-extern unsigned char ucTPS2Perc;
+
+extern unsigned int ui_tps1_mv;
+extern unsigned int ui_tps2_mv;
+extern unsigned char uc_tps1_perc;
+extern unsigned char uc_tps2_perc;
 extern unsigned char uc_tps_perc;
 extern unsigned char ucTPS_STATE;
 extern unsigned char ucTPS1_STATE;
@@ -38387,20 +38381,25 @@ extern unsigned int uiETCDuty;
 extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
+
+extern unsigned char ucAPPS_STATE;
+extern unsigned long ulAPPS1calc;
+extern unsigned long ulAPPS2calc;
+extern unsigned char ucAPPS1Perc;
+extern unsigned char ucAPPS2Perc;
+extern unsigned char ucAPPS;
+
+
 extern unsigned char ucAPPSManual;
-extern signed int siLastErrorPos;
 extern signed long slErrorPos;
 
 
 void APPSSend (unsigned char ucPercent);
-void APPSReadmin(void);
-void APPSReadmax(void);
-void tps_read_default(void);
-void tps_read_opened(void);
+void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETCInitMove(void);
+void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
@@ -38409,8 +38408,10 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
-extern signed int K_P;
-extern signed int K_I;
+
+signed int K_P;
+signed int K_I;
+signed int K_D;
 # 13 "TEMPORIZATIONS.c" 2
 
 # 1 "./PARAMETERS.h" 1

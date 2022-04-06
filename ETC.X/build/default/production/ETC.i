@@ -38333,23 +38333,17 @@ extern unsigned int uiAPPS2min;
 extern unsigned int uiAPPS2;
 extern unsigned int uiAPPS2max;
 
+
 extern unsigned int uiTPS1_default;
 extern unsigned int uiTPS1_opened;
 extern unsigned int uiTPS2_default;
 extern unsigned int uiTPS2_opened;
 
-extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
-extern unsigned int uiTPS1;
-extern unsigned int uiTPS2;
-extern signed long slTPS1calc;
-extern signed long slTPS2calc;
-extern unsigned char ucTPS1Perc;
-extern unsigned char ucTPS2Perc;
+
+extern unsigned int ui_tps1_mv;
+extern unsigned int ui_tps2_mv;
+extern unsigned char uc_tps1_perc;
+extern unsigned char uc_tps2_perc;
 extern unsigned char uc_tps_perc;
 extern unsigned char ucTPS_STATE;
 extern unsigned char ucTPS1_STATE;
@@ -38359,20 +38353,25 @@ extern unsigned int uiETCDuty;
 extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
+
+extern unsigned char ucAPPS_STATE;
+extern unsigned long ulAPPS1calc;
+extern unsigned long ulAPPS2calc;
+extern unsigned char ucAPPS1Perc;
+extern unsigned char ucAPPS2Perc;
+extern unsigned char ucAPPS;
+
+
 extern unsigned char ucAPPSManual;
-extern signed int siLastErrorPos;
 extern signed long slErrorPos;
 
 
 void APPSSend (unsigned char ucPercent);
-void APPSReadmin(void);
-void APPSReadmax(void);
-void tps_read_default(void);
-void tps_read_opened(void);
+void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETCInitMove(void);
+void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
@@ -38381,8 +38380,10 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
-extern signed int K_P;
-extern signed int K_I;
+
+signed int K_P;
+signed int K_I;
+signed int K_D;
 # 17 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
@@ -38404,14 +38405,20 @@ void ANALOGRead(void);
 
 
 
+void tps_read_default(void);
+void tps_read_opened(void);
+
+
 unsigned int uiAPPS1min;
 unsigned int uiAPPS1max;
 unsigned int uiAPPS2min;
 unsigned int uiAPPS2max;
+
 unsigned int uiTPS1_default;
 unsigned int uiTPS1_opened;
 unsigned int uiTPS2_default;
 unsigned int uiTPS2_opened;
+
 unsigned int uiAPPS1;
 unsigned int uiAPPS2;
 unsigned char ucAPPS_STATE;
@@ -38420,12 +38427,10 @@ unsigned long ulAPPS2calc;
 unsigned char ucAPPS1Perc;
 unsigned char ucAPPS2Perc;
 unsigned char ucAPPS;
-unsigned int uiTPS1;
-unsigned int uiTPS2;
-signed long slTPS1calc;
-signed long slTPS2calc;
-unsigned char ucTPS1Perc;
-unsigned char ucTPS2Perc;
+unsigned int ui_tps1_mv;
+unsigned int ui_tps2_mv;
+unsigned char uc_tps1_perc;
+unsigned char uc_tps2_perc;
 unsigned char uc_tps_perc;
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
@@ -38436,17 +38441,13 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = 0x00;
 unsigned char ucETCFlagSupervisor = 0x00;
 unsigned char ucAPPSManual;
-signed int siLastErrorPos;
 signed long slErrorPos;
 
 
-signed int K_P;
-signed int K_I;
 
 
 
-void APPSSend(unsigned char ucPercent)
-{
+void APPSSend(unsigned char ucPercent) {
     float voltage;
     uint16_t dacAPPS1, dacAPPS2;
 
@@ -38462,19 +38463,11 @@ void APPSSend(unsigned char ucPercent)
 
 
 
-void APPSReadmin(void)
-{
 
+void apps_calibrate(void){
+    uiAPPS1min = uiAPPS1+100;
+    uiAPPS2min = uiAPPS2-100;
 
-
-        uiAPPS1min = uiAPPS1+100;
-        uiAPPS2min = uiAPPS2-100;
-
-
-}
-
-void APPSReadmax(void)
-{
 
     uiAPPS1max = 160;
     uiAPPS2max = 1990;
@@ -38546,14 +38539,8 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 
 
 
-void ETCInitMove(void) {
-
-
-
-
-
-
-
+void etc_calibrate(void) {
+# 167 "ETC.c"
     GPIO_PWM2_Control(0, 600);
     _delay((unsigned long)((200)*(10000000/4000.0)));
     tps_read_default();
@@ -38564,6 +38551,7 @@ void ETCInitMove(void) {
     GPIO_PWM2_Control(100, 600);
     _delay((unsigned long)((500)*(10000000/4000.0)));
     tps_read_opened();
+
     _delay((unsigned long)((100)*(10000000/4000.0)));
     __nop();
 
@@ -38577,14 +38565,13 @@ void ETCInitMove(void) {
     _delay((unsigned long)((200)*(10000000/4000.0)));
 }
 
-void tps_read_default(void)
-{
+void tps_read_default(void) {
 
     ANALOGRead();
 
 
-    uiTPS1_default = uiTPS1;
-    uiTPS2_default = uiTPS2;
+    uiTPS1_default = ui_tps1_mv;
+    uiTPS2_default = ui_tps2_mv;
 
 
 
@@ -38592,31 +38579,30 @@ void tps_read_default(void)
 
 }
 
-void tps_read_opened(void)
-{
+void tps_read_opened(void) {
     ANALOGRead();
 
+    uiTPS1_opened = ui_tps1_mv;
+    uiTPS2_opened = ui_tps2_mv;
 
-    uiTPS1_opened = uiTPS1;
-    uiTPS2_opened = uiTPS2;
 }
 
 void TPSAnalysis(void)
 {
-# 252 "ETC.c"
-    ucTPS1Perc = 100* (signed long)(uiTPS1 - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
-    ucTPS2Perc = 100* (signed long)(uiTPS2 - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
+# 245 "ETC.c"
+    uc_tps1_perc = 100* (signed long)(ui_tps1_mv - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
+    uc_tps2_perc = 100* (signed long)(ui_tps2_mv - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
 
 
 
 
-    ucTPS1Perc = (ucTPS1Perc & 0x0000007F);
-    ucTPS2Perc = (ucTPS2Perc & 0x0000007F);
+    uc_tps1_perc = (uc_tps1_perc & 0x0000007F);
+    uc_tps2_perc = (uc_tps2_perc & 0x0000007F);
 
-    uc_tps_perc = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
+    uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
 
     __nop();
-# 315 "ETC.c"
+# 308 "ETC.c"
 }
 
 void APPSAnalysis(void)
@@ -38691,25 +38677,34 @@ void ETCManual(unsigned char ucTargetManual)
 }
 
 void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
-# 397 "ETC.c"
+# 391 "ETC.c"
+    static signed int K_P = 1000;
+    static signed int K_I = 1;
+    static signed int K_D;
     static signed long slIntegral = 0;
     signed long slDerivative = 0;
     signed long slMotorPWM = 0;
+    static signed long slLastErrorPos;
 
     __nop();
 
 
 
     if ( ucETCFlagSupervisor == 0x01 ) {
-# 421 "ETC.c"
-        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(uiTPS1) - 1212 )*100 / (3126-1212);
+
+
+
+
+
+
+
+        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);
         slIntegral += slErrorPos;
-        slDerivative = slErrorPos - siLastErrorPos;
+        slDerivative = slErrorPos - slLastErrorPos;
 
 
-        K_P = 1;
-        K_I = 1;
-        slMotorPWM = K_P * slErrorPos + K_I * slIntegral/1000;
+        slMotorPWM = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative;
+        slMotorPWM /= 1000;
 
 
 
@@ -38744,7 +38739,7 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
         }
 
 
-        siLastErrorPos = slErrorPos;
+        slLastErrorPos = slErrorPos;
     }
     else {
 

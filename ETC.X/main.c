@@ -60,10 +60,9 @@ void main(void)
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
     
     // Calibrate ETC - Apply 0% and 100% power to the throttle motor of intake, and read the sensors.
-    ETCInitMove();
+    etc_calibrate();
     // Calibrate APPS min - Default value when turning on = 0%
-    APPSReadmin();
-    APPSReadmax();
+    apps_calibrate();
     
     // Enable Global Interrupts
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
@@ -97,7 +96,7 @@ void main(void)
         // Play sound of uiAPPS1 value
 //        sensor_sound();
         
-        //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, 0, 0, 0, 0);    //Falta meter los APPS target
+        //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, uc_tps1_perc, uc_tps2_perc, 0, 0, 0, 0);    //Falta meter los APPS target
     }
 }
 /*

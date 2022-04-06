@@ -34,33 +34,27 @@ extern "C" {
 #define QUITAR_ERROR_VOLTS                      0xFB       
     
 
-// VARIABLES    
+/// VARIABLES    
 extern unsigned int uiAPPS1min;
-extern unsigned int uiAPPS1;
+extern unsigned int uiAPPS1; // Sent by CAN
 extern unsigned int uiAPPS1max;
 
 extern unsigned int uiAPPS2min;
-extern unsigned int uiAPPS2;
+extern unsigned int uiAPPS2; // Sent by CAN
 extern unsigned int uiAPPS2max;
 
-extern unsigned int uiTPS1_default;
-extern unsigned int uiTPS1_opened;
-extern unsigned int uiTPS2_default;
-extern unsigned int uiTPS2_opened;
+// Electronic Throttle (Body, Motor, Control, Sensor...)
+extern unsigned int uiTPS1_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int uiTPS1_opened; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int uiTPS2_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int uiTPS2_opened; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
 
-extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
-extern unsigned int uiTPS1;
-extern unsigned int uiTPS2;
-extern signed long slTPS1calc;
-extern signed long slTPS2calc;
-extern unsigned char ucTPS1Perc;
-extern unsigned char ucTPS2Perc;
-extern unsigned char uc_tps_perc; //ucTPS
+
+extern unsigned int ui_tps1_mv; // Sent by CAN
+extern unsigned int ui_tps2_mv; // Sent by CAN
+extern unsigned char uc_tps1_perc;
+extern unsigned char uc_tps2_perc;
+extern unsigned char uc_tps_perc;
 extern unsigned char ucTPS_STATE;
 extern unsigned char ucTPS1_STATE;
 extern unsigned char ucTPS2_STATE;
@@ -69,20 +63,25 @@ extern unsigned int uiETCDuty;
 extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
+
+extern unsigned char ucAPPS_STATE;
+extern unsigned long ulAPPS1calc;
+extern unsigned long ulAPPS2calc;
+extern unsigned char ucAPPS1Perc;
+extern unsigned char ucAPPS2Perc;
+extern unsigned char ucAPPS;
+
+
 extern unsigned char ucAPPSManual;
-extern signed int siLastErrorPos;
 extern signed long slErrorPos;
 
-//FUNCIONES
+/// Functions
 void APPSSend (unsigned char ucPercent);
-void APPSReadmin(void);
-void APPSReadmax(void);
-void tps_read_default(void);
-void tps_read_opened(void);
+void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETCInitMove(void);
+void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
@@ -91,9 +90,10 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 /// Testing
 void sensor_sound(void);
-extern signed int K_P; // TODO CALIBRATE CONSTANTS REALTIME CHANGE WITH DEBUGGER
-extern signed int K_I; // TODO REMOVE AND CALIBRATE VALUES
-
+// TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
+signed int K_P;
+signed int K_I;
+signed int K_D;
 
 #ifdef	__cplusplus
 }

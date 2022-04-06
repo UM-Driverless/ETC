@@ -19,29 +19,33 @@
 #include "PARAMETERS.h"
 #include "ANALOG.h"
 
-// VARIABLES
+/// Local functions
+void tps_read_default(void);
+void tps_read_opened(void);
+
+/// Global Variables
 unsigned int uiAPPS1min; // int -> 16 bit in MPLAB, PIC18. short = int here.
 unsigned int uiAPPS1max;
 unsigned int uiAPPS2min;
 unsigned int uiAPPS2max;
-unsigned int uiTPS1_default;
-unsigned int uiTPS1_opened;
-unsigned int uiTPS2_default;
-unsigned int uiTPS2_opened;
-unsigned int uiAPPS1;
-unsigned int uiAPPS2;
+
+unsigned int uiTPS1_default; // Called by TEMPORIZATIONS.c
+unsigned int uiTPS1_opened; // Called by TEMPORIZATIONS.c
+unsigned int uiTPS2_default; // Called by TEMPORIZATIONS.c
+unsigned int uiTPS2_opened; // Called by TEMPORIZATIONS.c
+
+unsigned int uiAPPS1; // Sent by CAN
+unsigned int uiAPPS2; // Sent by CAN
 unsigned char ucAPPS_STATE;
 unsigned long ulAPPS1calc;
 unsigned long ulAPPS2calc;
 unsigned char ucAPPS1Perc;
 unsigned char ucAPPS2Perc;
 unsigned char ucAPPS;
-unsigned int uiTPS1;
-unsigned int uiTPS2;
-signed long slTPS1calc;
-signed long slTPS2calc;
-unsigned char ucTPS1Perc;
-unsigned char ucTPS2Perc;
+unsigned int ui_tps1_mv; // Sent by CAN
+unsigned int ui_tps2_mv; // Sent by CAN
+unsigned char uc_tps1_perc;
+unsigned char uc_tps2_perc;
 unsigned char uc_tps_perc; //ucTPS
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
@@ -52,17 +56,13 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = FALSE;
 unsigned char ucETCFlagSupervisor = FALSE;
 unsigned char ucAPPSManual;
-signed int siLastErrorPos;
 signed long  slErrorPos;
 
-// TESTING
-signed int K_P; // TODO REMOVE AND CALIBRATE VALUES
-signed int K_I; // TODO REMOVE AND CALIBRATE VALUES
 
 
-// FUNCIONES
-void APPSSend(unsigned char ucPercent)
-{
+
+
+void APPSSend(unsigned char ucPercent) {
     float voltage;
     uint16_t dacAPPS1, dacAPPS2;
     // Funcion de transferencia de porcentaje a valor APPS
@@ -78,19 +78,11 @@ void APPSSend(unsigned char ucPercent)
 
 // Estableciendo los valores limite se puede establecer una relación lineal para
 // conseguir calcular la nueva función de transferencia cada vez que se tare el sistema
-void APPSReadmin(void)
-{
-    //ANALOGRead(); // Commented because you only need to read APPS, not TPS.
-    // Lo leido en sensores APPS se queda guardado como valor minimo
-    
-        uiAPPS1min = uiAPPS1+APPSMARGEN;
-        uiAPPS2min = uiAPPS2-APPSMARGEN;
 
+void apps_calibrate(void){
+    uiAPPS1min = uiAPPS1+APPSMARGEN;
+    uiAPPS2min = uiAPPS2-APPSMARGEN;
     
-}
-
-void APPSReadmax(void)
-{
     // We have to push the accelerator pedal to get these values, so assign constants for now.
     uiAPPS1max = APPS1max;
     uiAPPS2max = APPS2max;
@@ -162,24 +154,27 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 
 
 
-void ETCInitMove(void) {
+void etc_calibrate(void) {
     /*
      * Test the movement of the ETB (Electronic Throttle Body) at startup, 
      * and Calibrate the minimum and maximum values of TPS1 and TPS2 (Throttle Position Sensor)
      * of the car intake
     */
     
+    
+    
     // ETB motor OFF - Barely Open - Engine Idle
     GPIO_PWM2_Control(0, 600); // Motor OFF. 0% PWM at 600Hz 
     __delay_ms(200); // Let it move
-    tps_read_default(); // Read TPS sensor at default position
+    tps_read_default(); // Read TPS sensor at default position. Local function.
     __delay_ms(100); // Let it read
     Nop();
     
     // ETB motor 100%
     GPIO_PWM2_Control(100, 600); // 100% PWM at 600Hz, Motor to max power.
     __delay_ms(500); // Let it move
-    tps_read_opened(); // Read TPS sensor at max opened position
+    tps_read_opened(); // Read TPS sensor at max opened position. Local function.
+    
     __delay_ms(100); // Let it read
     Nop();
     
@@ -193,14 +188,13 @@ void ETCInitMove(void) {
     __delay_ms(200);
 }
 
-void tps_read_default(void)
-{
+void tps_read_default(void) {
     // Read TPS1 and TPS2 values
     ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2. ANALOGRead() is not called by interruptions until INTERRUPT_GlobalInterruptEnable();
     
     // Define the values for default position
-    uiTPS1_default = uiTPS1; // uiTPS1 // ANALOG_GetVoltage(ENT_TPS1)
-    uiTPS2_default = uiTPS2; // uiTPS2 // ANALOG_GetVoltage(ENT_TPS2)
+    uiTPS1_default = ui_tps1_mv; // ANALOG_GetVoltage(ENT_TPS1)
+    uiTPS2_default = ui_tps2_mv; // ANALOG_GetVoltage(ENT_TPS2)
     
     /// RJM Why not this? Don't call ANALOGRead() and just update the important values. I don't understand why it goes crazy with the same default values.
 //    uiTPS1_default = ANALOG_GetVoltage(ENT_TPS1);
@@ -208,13 +202,12 @@ void tps_read_default(void)
     
 }
 
-void tps_read_opened(void)
-{
+void tps_read_opened(void) {
     ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2
-    
     // Define the values for fully opened position
-    uiTPS1_opened = uiTPS1;
-    uiTPS2_opened = uiTPS2;
+    uiTPS1_opened = ui_tps1_mv;
+    uiTPS2_opened = ui_tps2_mv;
+    
 }
 
 void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead(). 
@@ -232,7 +225,7 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
 //        slTPS1calc = ( slTPS1calc * uiETCDuty );
 //        slTPS1calc = ( ( slTPS1calc / 100 ) + uiTPS1_default );
 //         */
-//        slTPS1calc = ( uiTPS1 - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
+//        slTPS1calc = ( ui_tps1_mv - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
 //        ucTPS_Volts_STATE = TPS1_NO_INVERTED;
 //    } // TODO else plugged inverted... Ignore for now
     // ucTPS_Volts_STATE = TPS1_NO_INVERTED;
@@ -249,21 +242,21 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
 //    }
     
     // Calculate fraction of travel. Sensor 1 and 2 provide voltages of constant average. They move in opposite directions.
-    ucTPS1Perc = 100* (signed long)(uiTPS1 - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
-    ucTPS2Perc = 100* (signed long)(uiTPS2 - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
+    uc_tps1_perc = 100* (signed long)(ui_tps1_mv - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
+    uc_tps2_perc = 100* (signed long)(ui_tps2_mv - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
     
     // TODO - CHECK THAT THEY MATCH.
     
     // Just take the 7 last bits, which correspond to 255, the current max value.
-    ucTPS1Perc = (ucTPS1Perc & 0x0000007F);
-    ucTPS2Perc = (ucTPS2Perc & 0x0000007F);
+    uc_tps1_perc = (uc_tps1_perc & 0x0000007F);
+    uc_tps2_perc = (uc_tps2_perc & 0x0000007F);
     
-    uc_tps_perc = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
+    uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
     
     Nop();
     
     /// Analysis of TPS error when out of range.
-//    if ( ( slTPS1calc > uiTPS1 + TPSMARGEN ) || ( slTPS1calc < uiTPS1 - TPSMARGEN ) )
+//    if ( ( slTPS1calc > ui_tps1_mv + TPSMARGEN ) || ( slTPS1calc < ui_tps1_mv - TPSMARGEN ) )
 //    {
 //        //apuntar fallo de TPS1
 //        ucTPS_STATE |= TPS1_ERROR;
@@ -274,7 +267,7 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
 //        ucTPS_STATE |= QUITAR_ERROR_TPS1;
 //    }
 //    
-//    if ( ( slTPS2calc > uiTPS2 + TPSMARGEN ) || ( slTPS2calc < uiTPS2 - TPSMARGEN ) )
+//    if ( ( slTPS2calc > ui_tps2_mv + TPSMARGEN ) || ( slTPS2calc < ui_tps2_mv - TPSMARGEN ) )
 //    {
 //        //apuntar fallo de TPS2
 //        ucTPS_STATE |= TPS2_ERROR;
@@ -393,11 +386,16 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
      * ucMode is the driving mode input to the function. It will be checked with the global variable 
      */
     
-//    unsigned char ucCurrentPos = 0;
+    // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
+    // Static K_P to change values at run time for calibration.
+    static signed int K_P = 1000;
+    static signed int K_I = 1;
+    static signed int K_D;
     static signed long slIntegral = 0;
     signed long slDerivative = 0;
-    signed long slMotorPWM = 0; // CHANGED!! TODO
-//    signed long auxiliar = 0; // TODO : THIS VARIABLE SHOULD NOT BE NEEDED
+    signed long slMotorPWM = 0; // TODO CHANGED!!
+    static signed long slLastErrorPos;
+    
     Nop();
     
     
@@ -405,27 +403,18 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
     if ( ucETCFlagSupervisor == TRUE ) {
         
         /// MAIN CALCULATION
-//        ucCurrentPos = ucTPS;
-//        slErrorPos = ucTargetMove - ucCurrentPos;
-//        slIntegral += slErrorPos;
-//        slDerivative = slErrorPos - siLastErrorPos;
-//        scPropPart = ETC_KP * slErrorPos;
-//        scIntPart = ETC_KI * slIntegral;
-//        scDerPart = ETC_KD * slDerivative;
-//        slMotorPWM = scPropPart + scIntPart + scDerPart;
         
-        // calculate the position error, in % or what units? TODO RJM
         // TODO tps_map(ucTargetMove)... to map 16-55 to 0-100%
         // ucTPS is the current position. Usually 16-55 for default-open.
         // slErrorPos must be able to become negative!!!!
-        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(uiTPS1) - 1212 )*100 / (3126-1212); 
+        
+        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);  // in % or what units? TODO RJM
         slIntegral += slErrorPos;
-        slDerivative = slErrorPos - siLastErrorPos;
+        slDerivative = slErrorPos - slLastErrorPos;
         
 //        slMotorPWM = ETC_KP * slErrorPos + ETC_KI * slIntegral + ETC_KD * slDerivative;
-        K_P = 1;
-        K_I = 1;
-        slMotorPWM = K_P * slErrorPos + K_I * slIntegral/1000; // TODO complete
+        slMotorPWM = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative; // TODO complete
+        slMotorPWM /= 1000; // Because the constants are long, not floats
 //        slMotorPWM /= 100;
         
         
@@ -460,7 +449,7 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
         }
         
          // Set error as last error for next iteration
-        siLastErrorPos = slErrorPos;
+        slLastErrorPos = slErrorPos;
     } 
     else {
         // ET Motor OFF
@@ -473,6 +462,6 @@ void sensor_sound(void){
     GPIO_PWM2_Control(50, uiAPPS1); // Play as frequency the value of the accelerator pedal.
 //    GPIO_PWM2_Control(50, uiAPPS2); // Play as frequency the value of the accelerator pedal.
     
-//    GPIO_PWM2_Control(50, uiTPS1); // Play as frequency the value of the Electronic Throttle Motor.
-//    GPIO_PWM2_Control(50, uiTPS2); // Play as frequency the value of the Electronic Throttle Motor.
+//    GPIO_PWM2_Control(50, ui_tps1_mv); // Play as frequency the value of the Electronic Throttle Motor.
+//    GPIO_PWM2_Control(50, ui_tps2_mv); // Play as frequency the value of the Electronic Throttle Motor.
 }

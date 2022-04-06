@@ -67,14 +67,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34 ./CLUTCH.h
 [; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
-"90 ./ETC.h
-[; ;./ETC.h: 90: void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+"89 ./ETC.h
+[; ;./ETC.h: 89: void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 [v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`uc`uc ]
-"70
-[; ;./ETC.h: 70: extern unsigned char ucETCBeatSupervisor;
+"64
+[; ;./ETC.h: 64: extern unsigned char ucETCBeatSupervisor;
 [v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
-"82
-[; ;./ETC.h: 82: void ETCModeSelect (unsigned char ucModeSelect);
+"81
+[; ;./ETC.h: 81: void ETCModeSelect (unsigned char ucModeSelect);
 [v _ETCModeSelect `(v ~T0 @X0 0 ef1`uc ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
@@ -3601,6 +3601,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./MESSAGES.h: 20: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"94 ./ETC.h
+[; ;./ETC.h: 94: signed int K_P;
+[v _K_P `i ~T0 @X0 1 e ]
+"95
+[; ;./ETC.h: 95: signed int K_I;
+[v _K_I `i ~T0 @X0 1 e ]
+"96
+[; ;./ETC.h: 96: signed int K_D;
+[v _K_D `i ~T0 @X0 1 e ]
 "16 MESSAGES.C
 [; ;MESSAGES.C: 16: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]

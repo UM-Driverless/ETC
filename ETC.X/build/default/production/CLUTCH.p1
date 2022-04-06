@@ -14,8 +14,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./GPIO.h
 [; ;./GPIO.h: 17: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM1_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-"71 ./ETC.h
-[; ;./ETC.h: 71: extern unsigned char ucETCFlagSupervisor;
+"65 ./ETC.h
+[; ;./ETC.h: 65: extern unsigned char ucETCFlagSupervisor;
 [v _ucETCFlagSupervisor `uc ~T0 @X0 0 e ]
 "56 ./MESSAGES.h
 [; ;./MESSAGES.h: 56: extern unsigned char ucASMode;
@@ -3577,6 +3577,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./MESSAGES.h: 20: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"94 ./ETC.h
+[; ;./ETC.h: 94: signed int K_P;
+[v _K_P `i ~T0 @X0 1 e ]
+"95
+[; ;./ETC.h: 95: signed int K_I;
+[v _K_I `i ~T0 @X0 1 e ]
+"96
+[; ;./ETC.h: 96: signed int K_D;
+[v _K_D `i ~T0 @X0 1 e ]
 "17 CLUTCH.c
 [; ;CLUTCH.c: 17: unsigned char ucCLUTCHlmin;
 [v _ucCLUTCHlmin `uc ~T0 @X0 1 e ]

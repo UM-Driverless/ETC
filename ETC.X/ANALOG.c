@@ -90,6 +90,6 @@ void ANALOGRead(void)
 {
     uiAPPS1 = ANALOG_GetVoltage(ENT_APPS1);
     uiAPPS2 = ANALOG_GetVoltage(ENT_APPS2);
-    uiTPS1 = ANALOG_GetVoltage(ENT_TPS1);
-    uiTPS2 = ANALOG_GetVoltage(ENT_TPS2);
+    ui_tps1_mv = ANALOG_GetVoltage(ENT_TPS1);
+    ui_tps2_mv = ANALOG_GetVoltage(ENT_TPS2);
 }

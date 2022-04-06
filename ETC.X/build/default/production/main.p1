@@ -15,15 +15,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"85 ./ETC.h
-[; ;./ETC.h: 85: void ETCInitMove(void);
-[v _ETCInitMove `(v ~T0 @X0 0 ef ]
-"78
-[; ;./ETC.h: 78: void APPSReadmin(void);
-[v _APPSReadmin `(v ~T0 @X0 0 ef ]
-"79
-[; ;./ETC.h: 79: void APPSReadmax(void);
-[v _APPSReadmax `(v ~T0 @X0 0 ef ]
+"84 ./ETC.h
+[; ;./ETC.h: 84: void etc_calibrate(void);
+[v _etc_calibrate `(v ~T0 @X0 0 ef ]
+"80
+[; ;./ETC.h: 80: void apps_calibrate(void);
+[v _apps_calibrate `(v ~T0 @X0 0 ef ]
 "2080 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [s S3083 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S3083 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
@@ -54,14 +51,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3060 . . ]
 "1491
 [v _LATAbits `VS3060 ~T0 @X0 0 e@1214 ]
-"56 ./ETC.h
-[; ;./ETC.h: 56: extern unsigned char ucAPPS;
+"72 ./ETC.h
+[; ;./ETC.h: 72: extern unsigned char ucAPPS;
 [v _ucAPPS `uc ~T0 @X0 0 e ]
 "8 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"90 ./ETC.h
-[; ;./ETC.h: 90: void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+"89 ./ETC.h
+[; ;./ETC.h: 89: void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 [v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`uc`uc ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
@@ -3588,6 +3585,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./MESSAGES.h: 20: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"94 ./ETC.h
+[; ;./ETC.h: 94: signed int K_P;
+[v _K_P `i ~T0 @X0 1 e ]
+"95
+[; ;./ETC.h: 95: signed int K_I;
+[v _K_I `i ~T0 @X0 1 e ]
+"96
+[; ;./ETC.h: 96: signed int K_D;
+[v _K_D `i ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "54 main.c
 [; ;main.c: 54: void main(void)
@@ -3601,55 +3607,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 57:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
 "63
-[; ;main.c: 63:     ETCInitMove();
-[e ( _ETCInitMove ..  ]
+[; ;main.c: 63:     etc_calibrate();
+[e ( _etc_calibrate ..  ]
 "65
-[; ;main.c: 65:     APPSReadmin();
-[e ( _APPSReadmin ..  ]
-"66
-[; ;main.c: 66:     APPSReadmax();
-[e ( _APPSReadmax ..  ]
-"69
-[; ;main.c: 69:     (INTCON0bits.GIE = 1);
+[; ;main.c: 65:     apps_calibrate();
+[e ( _apps_calibrate ..  ]
+"68
+[; ;main.c: 68:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"75
-[; ;main.c: 75:     CLUTCH_Init();
+"74
+[; ;main.c: 74:     CLUTCH_Init();
 [e ( _CLUTCH_Init ..  ]
-"77
-[; ;main.c: 77:     GPIOInit();
+"76
+[; ;main.c: 76:     GPIOInit();
 [e ( _GPIOInit ..  ]
-"84
-[; ;main.c: 84:     CLUTCHInitMove();
+"83
+[; ;main.c: 83:     CLUTCHInitMove();
 [e ( _CLUTCHInitMove ..  ]
-"87
-[; ;main.c: 87:     while(1)
+"86
+[; ;main.c: 86:     while(1)
 [e :U 3183 ]
-"88
-[; ;main.c: 88:     {
+"87
+[; ;main.c: 87:     {
 {
-"91
-[; ;main.c: 91:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+"90
+[; ;main.c: 90:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 [e :U 3187 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
 [e :U 3186 ]
-"92
-[; ;main.c: 92:         ucAPPS = 50;
+"91
+[; ;main.c: 91:         ucAPPS = 50;
 [e = _ucAPPS -> -> 50 `i `uc ]
-"94
-[; ;main.c: 94:         __nop();
+"93
+[; ;main.c: 93:         __nop();
 [e ( ___nop ..  ]
-"95
-[; ;main.c: 95:         ETC_PIDcontroller( 30 , 0);
+"94
+[; ;main.c: 94:         ETC_PIDcontroller( 30 , 0);
 [e ( _ETC_PIDcontroller (2 , -> -> 30 `i `uc -> -> 0 `i `uc ]
-"101
-[; ;main.c: 101:     }
+"100
+[; ;main.c: 100:     }
 }
 [e :U 3182 ]
 [e $U 3183  ]
 [e :U 3184 ]
-"102
-[; ;main.c: 102: }
+"101
+[; ;main.c: 101: }
 [e :UE 3181 ]
 }

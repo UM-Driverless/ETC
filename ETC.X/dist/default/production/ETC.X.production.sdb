@@ -210,14 +210,14 @@ CAN_TX_MSG_REQUEST_BRS_ERROR 2
 CAN_TX_MSG_REQUEST_FIFO_FULL 3
 ]
 "25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
-[e E22210 . `uc
+[e E22207 . `uc
 CONTEXT_TPS1 0
 CONTEXT_TPS2 1
 CONTEXT_APPS1 2
 CONTEXT_APPS2 3
 ]
 "26
-[e E22199 . `uc
+[e E22196 . `uc
 TPS2 4
 TPS1 16
 APPS2 17
@@ -233,7 +233,6 @@ channel_FVR_Buffer2 63
 [v i2_ANALOG_GetVoltage ANALOG_GetVoltage `(ui  1 e 2 0 ]
 "89
 [v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
-[v i2_ANALOGRead ANALOGRead `(v  1 e 1 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
@@ -285,33 +284,29 @@ channel_FVR_Buffer2 63
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
 "23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_Init CLUTCH_Init `(v  1 e 1 0 ]
-"30
+"29
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 [v i2_CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
-"76
+"75
 [v _CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
-"111
+"110
 [v _CLUTCHInitMove CLUTCHInitMove `(v  1 e 1 0 ]
-"82 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"74 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _apps_calibrate apps_calibrate `(v  1 e 1 0 ]
-"92
-[v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
-"118
-[v _ETCMove ETCMove `(v  1 e 1 0 ]
-"157
-[v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
-"191
-[v _tps_read_default tps_read_default `(v  1 e 1 0 ]
-"205
-[v _tps_read_opened tps_read_opened `(v  1 e 1 0 ]
-"213
-[v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
-"310
+"89
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
-"351
+"131
+[v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
+"156
+[v _ETCMove ETCMove `(v  1 e 1 0 ]
+"192
+[v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
+"234
+[v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
+"333
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
-"381
+"362
 [v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 [v i2_ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 "24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
@@ -841,7 +836,7 @@ channel_FVR_Buffer2 63
 [v _PMD5 PMD5 `VEuc  1 e 1 @101 ]
 "1660
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S3904 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S3895 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -851,8 +846,8 @@ channel_FVR_Buffer2 63
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1677
-[u S3913 . 1 `S3904 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES3913  1 e 1 @1222 ]
+[u S3904 . 1 `S3895 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES3904  1 e 1 @1222 ]
 "1678
 [v _PMD6 PMD6 `VEuc  1 e 1 @102 ]
 "1722
@@ -873,7 +868,7 @@ channel_FVR_Buffer2 63
 [v _PMD7 PMD7 `VEuc  1 e 1 @103 ]
 "1784
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
-[s S3937 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S3928 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -883,13 +878,13 @@ channel_FVR_Buffer2 63
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1801
-[u S3946 . 1 `S3937 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES3946  1 e 1 @1224 ]
+[u S3937 . 1 `S3928 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES3937  1 e 1 @1224 ]
 "1802
 [v _PMD8 PMD8 `VEuc  1 e 1 @104 ]
 "1846
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
-[s S3844 . 1 `uc 1 RA0 1 0 :1:0 
+[s S3838 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -899,9 +894,9 @@ channel_FVR_Buffer2 63
 `uc 1 RA7 1 0 :1:7 
 ]
 "1884
-[u S3853 . 1 `S3844 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES3853  1 e 1 @1230 ]
-[s S3823 . 1 `uc 1 RB0 1 0 :1:0 
+[u S3847 . 1 `S3838 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES3847  1 e 1 @1230 ]
+[s S3817 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -911,8 +906,8 @@ channel_FVR_Buffer2 63
 `uc 1 RB7 1 0 :1:7 
 ]
 "1946
-[u S3832 . 1 `S3823 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES3832  1 e 1 @1231 ]
+[u S3826 . 1 `S3817 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3826  1 e 1 @1231 ]
 [s S1119 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -1839,53 +1834,53 @@ channel_FVR_Buffer2 63
 [v _PIE7bits PIE7bits `VES1851  1 e 1 @1189 ]
 "19 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _uiCLUTCHDuty uiCLUTCHDuty `ui  1 e 2 0 ]
-"27 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _uiAPPS1min uiAPPS1min `ui  1 e 2 0 ]
-"28
+"24
 [v _uiAPPS1max uiAPPS1max `ui  1 e 2 0 ]
-"29
+"25
 [v _uiAPPS2min uiAPPS2min `ui  1 e 2 0 ]
-"30
+"26
 [v _uiAPPS2max uiAPPS2max `ui  1 e 2 0 ]
-"32
-[v _uiTPS1_default uiTPS1_default `ui  1 e 2 0 ]
-"33
+"28
+[v _ui_tps1_default ui_tps1_default `ui  1 e 2 0 ]
+"29
 [v _uiTPS1_opened uiTPS1_opened `ui  1 e 2 0 ]
-"34
-[v _uiTPS2_default uiTPS2_default `ui  1 e 2 0 ]
-"35
+"30
+[v _ui_tps2_default ui_tps2_default `ui  1 e 2 0 ]
+"31
 [v _uiTPS2_opened uiTPS2_opened `ui  1 e 2 0 ]
-"37
+"33
 [v _uiAPPS1 uiAPPS1 `ui  1 e 2 0 ]
-"38
+"34
 [v _uiAPPS2 uiAPPS2 `ui  1 e 2 0 ]
-"40
+"36
 [v _ulAPPS1calc ulAPPS1calc `ul  1 e 4 0 ]
-"41
+"37
 [v _ulAPPS2calc ulAPPS2calc `ul  1 e 4 0 ]
-"42
+"38
 [v _ucAPPS1Perc ucAPPS1Perc `uc  1 e 1 0 ]
-"43
+"39
 [v _ucAPPS2Perc ucAPPS2Perc `uc  1 e 1 0 ]
-"44
+"40
 [v _ucAPPS ucAPPS `uc  1 e 1 0 ]
-"45
+"41
 [v _ui_tps1_mv ui_tps1_mv `ui  1 e 2 0 ]
-"46
+"42
 [v _ui_tps2_mv ui_tps2_mv `ui  1 e 2 0 ]
-"47
+"43
 [v _uc_tps1_perc uc_tps1_perc `uc  1 e 1 0 ]
-"48
+"44
 [v _uc_tps2_perc uc_tps2_perc `uc  1 e 1 0 ]
-"49
+"45
 [v _uc_tps_perc uc_tps_perc `uc  1 e 1 0 ]
-"54
+"50
 [v _uiETCDuty uiETCDuty `ui  1 e 2 0 ]
-"56
+"52
 [v _ucETCBeatSupervisor ucETCBeatSupervisor `uc  1 e 1 0 ]
-"57
+"53
 [v _ucETCFlagSupervisor ucETCFlagSupervisor `uc  1 e 1 0 ]
-"59
+"55
 [v _slErrorPos slErrorPos `l  1 e 4 0 ]
 "17 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _ucCLUTCHlmin ucCLUTCHlmin `uc  1 e 1 0 ]
@@ -2012,29 +2007,14 @@ channel_FVR_Buffer2 63
 "54 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"101
+"98
 } 0
-"157 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"192 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
 {
-"189
+"232
 } 0
-"205
-[v _tps_read_opened tps_read_opened `(v  1 e 1 0 ]
-{
-"211
-} 0
-"191
-[v _tps_read_default tps_read_default `(v  1 e 1 0 ]
-{
-"203
-} 0
-"89 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
-[v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
-{
-"95
-} 0
-"15
+"15 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
 [v _ANALOG_GetVoltage ANALOG_GetVoltage `(ui  1 e 2 0 ]
 {
 [v ANALOG_GetVoltage@ucEntradaAnalogica ucEntradaAnalogica `uc  1 a 1 wreg ]
@@ -2072,10 +2052,10 @@ channel_FVR_Buffer2 63
 {
 "448
 } 0
-"82 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"74 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _apps_calibrate apps_calibrate `(v  1 e 1 0 ]
 {
-"89
+"87
 } 0
 "50 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -2325,30 +2305,30 @@ channel_FVR_Buffer2 63
 {
 "36
 } 0
-"381 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"362 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 {
 [v ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
-"396
+"377
 [v ETC_PIDcontroller@slMotorPWM slMotorPWM `l  1 a 4 64 ]
-"395
+"376
 [v ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 60 ]
-"381
+"362
 [v ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 50 ]
-"391
+"372
 [v ETC_PIDcontroller@K_P K_P `i  1 s 2 K_P ]
-"392
+"373
 [v ETC_PIDcontroller@K_I K_I `i  1 s 2 K_I ]
-"393
+"374
 [v ETC_PIDcontroller@K_D K_D `i  1 s 2 K_D ]
-"394
+"375
 [v ETC_PIDcontroller@slIntegral slIntegral `l  1 s 4 slIntegral ]
-"397
+"378
 [v ETC_PIDcontroller@slLastErrorPos slLastErrorPos `l  1 s 4 slLastErrorPos ]
-"396
+"377
 [v ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 59 ]
-"458
+"439
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -2394,20 +2374,20 @@ channel_FVR_Buffer2 63
 {
 "27
 } 0
-"111
+"110
 [v _CLUTCHInitMove CLUTCHInitMove `(v  1 e 1 0 ]
 {
-"137
+"136
 } 0
-"30
+"29
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 {
 [v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v CLUTCH_Move@ucMode ucMode `uc  1 p 1 50 ]
-"33
+"32
 [v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 51 ]
-"73
+"72
 } 0
 "43 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
@@ -2514,14 +2494,14 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"76 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"75 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 {
-"79
-[v CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
 "78
+[v CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
+"77
 [v CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
-"108
+"107
 } 0
 "58 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
@@ -2556,19 +2536,19 @@ channel_FVR_Buffer2 63
 {
 "52
 } 0
-"76 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"75 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 {
-"79
-[v i2CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
 "78
+[v i2CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
+"77
 [v i2CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
-"108
+"107
 } 0
-"351 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"333 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
 {
-"371
+"352
 } 0
 "65 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
@@ -2595,8 +2575,43 @@ channel_FVR_Buffer2 63
 {
 "38
 } 0
+"234 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+[v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
+{
+"331
+} 0
+"89
+[v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
+{
+"126
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 12 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
+"30
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
+} 0
 "89 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
-[v i2_ANALOGRead ANALOGRead `(v  1 e 1 0 ]
+[v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
 {
 "95
 } 0
@@ -2637,41 +2652,6 @@ channel_FVR_Buffer2 63
 [v i2_ADC_DisableChannelSequencer ADC_DisableChannelSequencer `T(v  1 e 1 0 ]
 {
 "448
-} 0
-"213 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-[v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
-{
-"308
-} 0
-"310
-[v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
-{
-"348
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\__lldiv.c
-[v ___lldiv __lldiv `(ul  1 e 4 0 ]
-{
-"10
-[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
-"11
-[v ___lldiv@counter counter `uc  1 a 1 12 ]
-"7
-[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
-[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
-"30
-} 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
 } 0
 "122 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -2728,20 +2708,20 @@ channel_FVR_Buffer2 63
 [v CANReadMessage@data6 data6 `uc  1 a 1 76 ]
 "187
 } 0
-"381 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"362 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v i2_ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
 {
 [v i2ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
-"396
+"377
 [v i2ETC_PIDcontroller@slMotorPWM slMotorPWM `l  1 a 4 64 ]
-"395
+"376
 [v i2ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 60 ]
-"381
+"362
 [v i2ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v i2ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 50 ]
-"396
+"377
 [v i2ETC_PIDcontroller@ucTargetMove ucTargetMove `uc  1 a 1 59 ]
-"458
+"439
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v i2___lmul __lmul `(ul  1 e 4 0 ]
@@ -2782,15 +2762,15 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"30 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"29 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v i2_CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 {
 [v i2CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v i2CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v i2CLUTCH_Move@ucMode ucMode `uc  1 p 1 50 ]
-"33
+"32
 [v i2CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 51 ]
-"73
+"72
 } 0
 "43 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
@@ -2897,13 +2877,13 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"92 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"131 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 {
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 2 ]
-"108
+"146
 } 0
 "447 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_ReceivedMessageCountGet CAN1_ReceivedMessageCountGet `(uc  1 e 1 0 ]

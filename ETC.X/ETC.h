@@ -44,9 +44,9 @@ extern unsigned int uiAPPS2; // Sent by CAN
 extern unsigned int uiAPPS2max;
 
 // Electronic Throttle (Body, Motor, Control, Sensor...)
-extern unsigned int uiTPS1_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int ui_tps1_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
 extern unsigned int uiTPS1_opened; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS2_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int ui_tps2_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
 extern unsigned int uiTPS2_opened; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
 
 
@@ -90,10 +90,6 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 /// Testing
 void sensor_sound(void);
-// TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
-signed int K_P;
-signed int K_I;
-signed int K_D;
 
 #ifdef	__cplusplus
 }

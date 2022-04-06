@@ -38349,9 +38349,9 @@ extern unsigned int uiAPPS2;
 extern unsigned int uiAPPS2max;
 
 
-extern unsigned int uiTPS1_default;
+extern unsigned int ui_tps1_default;
 extern unsigned int uiTPS1_opened;
-extern unsigned int uiTPS2_default;
+extern unsigned int ui_tps2_default;
 extern unsigned int uiTPS2_opened;
 
 
@@ -38395,10 +38395,6 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
-
-signed int K_P;
-signed int K_I;
-signed int K_D;
 # 14 "CLUTCH.c" 2
 
 
@@ -38415,7 +38411,6 @@ void CLUTCH_Init(void)
     ucCLUTCHState = 0;
 }
 
-
 void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 {
 
@@ -38431,7 +38426,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 
         if ( ucMode == ucASMode )
         {
-# 58 "CLUTCH.c"
+# 57 "CLUTCH.c"
             if ( ucCLUTCHState < 4 )
             {
                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);

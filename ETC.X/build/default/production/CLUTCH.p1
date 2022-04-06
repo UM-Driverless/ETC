@@ -3577,15 +3577,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./MESSAGES.h: 20: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
-"94 ./ETC.h
-[; ;./ETC.h: 94: signed int K_P;
-[v _K_P `i ~T0 @X0 1 e ]
-"95
-[; ;./ETC.h: 95: signed int K_I;
-[v _K_I `i ~T0 @X0 1 e ]
-"96
-[; ;./ETC.h: 96: signed int K_D;
-[v _K_D `i ~T0 @X0 1 e ]
 "17 CLUTCH.c
 [; ;CLUTCH.c: 17: unsigned char ucCLUTCHlmin;
 [v _ucCLUTCHlmin `uc ~T0 @X0 1 e ]
@@ -3616,271 +3607,271 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;CLUTCH.c: 27: }
 [e :UE 3181 ]
 }
-"30
-[; ;CLUTCH.c: 30: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
+"29
+[; ;CLUTCH.c: 29: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 [v _CLUTCH_Move `(v ~T0 @X0 1 ef2`uc`uc ]
-"31
-[; ;CLUTCH.c: 31: {
+"30
+[; ;CLUTCH.c: 30: {
 {
 [e :U _CLUTCH_Move ]
-"30
-[; ;CLUTCH.c: 30: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
+"29
+[; ;CLUTCH.c: 29: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 [v _ucTargetMove `uc ~T0 @X0 1 r1 ]
 [v _ucMode `uc ~T0 @X0 1 r2 ]
-"31
-[; ;CLUTCH.c: 31: {
+"30
+[; ;CLUTCH.c: 30: {
 [f ]
-"33
-[; ;CLUTCH.c: 33:     if ( ucETCFlagSupervisor == 0x01 )
+"32
+[; ;CLUTCH.c: 32:     if ( ucETCFlagSupervisor == 0x01 )
 [e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3183  ]
-"34
-[; ;CLUTCH.c: 34:     {
+"33
+[; ;CLUTCH.c: 33:     {
 {
-"39
-[; ;CLUTCH.c: 39:         uiCLUTCHDuty = ucTargetMove * 60;
+"38
+[; ;CLUTCH.c: 38:         uiCLUTCHDuty = ucTargetMove * 60;
 [e = _uiCLUTCHDuty -> * -> _ucTargetMove `i -> 60 `i `ui ]
-"40
-[; ;CLUTCH.c: 40:         uiCLUTCHDuty = uiCLUTCHDuty / 100;
+"39
+[; ;CLUTCH.c: 39:         uiCLUTCHDuty = uiCLUTCHDuty / 100;
 [e = _uiCLUTCHDuty / _uiCLUTCHDuty -> -> 100 `i `ui ]
-"41
-[; ;CLUTCH.c: 41:         uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
+"40
+[; ;CLUTCH.c: 40:         uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
 [e = _uiCLUTCHDuty & _uiCLUTCHDuty -> -> 255 `i `ui ]
-"43
-[; ;CLUTCH.c: 43:         if ( ucMode == ucASMode )
+"42
+[; ;CLUTCH.c: 42:         if ( ucMode == ucASMode )
 [e $ ! == -> _ucMode `i -> _ucASMode `i 3184  ]
-"44
-[; ;CLUTCH.c: 44:         {
+"43
+[; ;CLUTCH.c: 43:         {
 {
-"58
-[; ;CLUTCH.c: 58:             if ( ucCLUTCHState < 4 )
+"57
+[; ;CLUTCH.c: 57:             if ( ucCLUTCHState < 4 )
 [e $ ! < -> _ucCLUTCHState `i -> 4 `i 3185  ]
-"59
-[; ;CLUTCH.c: 59:             {
+"58
+[; ;CLUTCH.c: 58:             {
 {
-"60
-[; ;CLUTCH.c: 60:                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
+"59
+[; ;CLUTCH.c: 59:                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
 [e ( _GPIO_PWM1_Control (2 , _uiCLUTCHDuty -> -> 300 `i `ui ]
-"61
-[; ;CLUTCH.c: 61:             }
+"60
+[; ;CLUTCH.c: 60:             }
 }
 [e :U 3185 ]
-"62
-[; ;CLUTCH.c: 62:         }
+"61
+[; ;CLUTCH.c: 61:         }
 }
 [e $U 3186  ]
-"63
-[; ;CLUTCH.c: 63:         else
+"62
+[; ;CLUTCH.c: 62:         else
 [e :U 3184 ]
-"64
-[; ;CLUTCH.c: 64:         {
+"63
+[; ;CLUTCH.c: 63:         {
 {
-"66
-[; ;CLUTCH.c: 66:         }
+"65
+[; ;CLUTCH.c: 65:         }
 }
 [e :U 3186 ]
-"67
-[; ;CLUTCH.c: 67:     }
+"66
+[; ;CLUTCH.c: 66:     }
 }
 [e $U 3187  ]
-"68
-[; ;CLUTCH.c: 68:     else
+"67
+[; ;CLUTCH.c: 67:     else
 [e :U 3183 ]
-"69
-[; ;CLUTCH.c: 69:     {
+"68
+[; ;CLUTCH.c: 68:     {
 {
-"70
-[; ;CLUTCH.c: 70:         GPIO_PWM1_Control(0, 300);
+"69
+[; ;CLUTCH.c: 69:         GPIO_PWM1_Control(0, 300);
 [e ( _GPIO_PWM1_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
-"71
-[; ;CLUTCH.c: 71:     }
+"70
+[; ;CLUTCH.c: 70:     }
 }
 [e :U 3187 ]
-"73
-[; ;CLUTCH.c: 73: }
+"72
+[; ;CLUTCH.c: 72: }
 [e :UE 3182 ]
 }
-"76
-[; ;CLUTCH.c: 76: void CLUTCH_AnalyseState(void)
+"75
+[; ;CLUTCH.c: 75: void CLUTCH_AnalyseState(void)
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 1 ef ]
-"77
-[; ;CLUTCH.c: 77: {
+"76
+[; ;CLUTCH.c: 76: {
 {
 [e :U _CLUTCH_AnalyseState ]
 [f ]
-"78
-[; ;CLUTCH.c: 78:     unsigned char ucFDC1;
+"77
+[; ;CLUTCH.c: 77:     unsigned char ucFDC1;
 [v _ucFDC1 `uc ~T0 @X0 1 a ]
-"79
-[; ;CLUTCH.c: 79:     unsigned char ucFDC2;
+"78
+[; ;CLUTCH.c: 78:     unsigned char ucFDC2;
 [v _ucFDC2 `uc ~T0 @X0 1 a ]
-"81
-[; ;CLUTCH.c: 81:     ucFDC1 = PORTBbits.RB2;
+"80
+[; ;CLUTCH.c: 80:     ucFDC1 = PORTBbits.RB2;
 [e = _ucFDC1 . . _PORTBbits 0 2 ]
-"82
-[; ;CLUTCH.c: 82:     ucFDC2 = PORTAbits.RA1;
+"81
+[; ;CLUTCH.c: 81:     ucFDC2 = PORTAbits.RA1;
 [e = _ucFDC2 . . _PORTAbits 0 1 ]
-"84
-[; ;CLUTCH.c: 84:     __nop();
+"83
+[; ;CLUTCH.c: 83:     __nop();
 [e ( ___nop ..  ]
-"86
-[; ;CLUTCH.c: 86:     if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x00 ) )
+"85
+[; ;CLUTCH.c: 85:     if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x00 ) )
 [e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 0 `i 3189  ]
-"87
-[; ;CLUTCH.c: 87:     {
+"86
+[; ;CLUTCH.c: 86:     {
 {
-"88
-[; ;CLUTCH.c: 88:         ucCLUTCHState = 1;
+"87
+[; ;CLUTCH.c: 87:         ucCLUTCHState = 1;
 [e = _ucCLUTCHState -> -> 1 `i `uc ]
-"89
-[; ;CLUTCH.c: 89:         ucCLUTCHlmin = ucCLUTCHDuty;
+"88
+[; ;CLUTCH.c: 88:         ucCLUTCHlmin = ucCLUTCHDuty;
 [e = _ucCLUTCHlmin _ucCLUTCHDuty ]
-"90
-[; ;CLUTCH.c: 90:     }
+"89
+[; ;CLUTCH.c: 89:     }
 }
 [e $U 3190  ]
-"91
-[; ;CLUTCH.c: 91:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x01 ) )
+"90
+[; ;CLUTCH.c: 90:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x01 ) )
 [e :U 3189 ]
 [e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 1 `i 3191  ]
-"92
-[; ;CLUTCH.c: 92:     {
+"91
+[; ;CLUTCH.c: 91:     {
 {
-"93
-[; ;CLUTCH.c: 93:         ucCLUTCHState = 2;
+"92
+[; ;CLUTCH.c: 92:         ucCLUTCHState = 2;
 [e = _ucCLUTCHState -> -> 2 `i `uc ]
-"94
-[; ;CLUTCH.c: 94:         ucCLUTCHlmax = ucCLUTCHDuty;
+"93
+[; ;CLUTCH.c: 93:         ucCLUTCHlmax = ucCLUTCHDuty;
 [e = _ucCLUTCHlmax _ucCLUTCHDuty ]
-"95
-[; ;CLUTCH.c: 95:     }
+"94
+[; ;CLUTCH.c: 94:     }
 }
 [e $U 3192  ]
-"96
-[; ;CLUTCH.c: 96:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x00 ) )
+"95
+[; ;CLUTCH.c: 95:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x00 ) )
 [e :U 3191 ]
 [e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 0 `i 3193  ]
-"97
-[; ;CLUTCH.c: 97:     {
+"96
+[; ;CLUTCH.c: 96:     {
 {
-"98
-[; ;CLUTCH.c: 98:         ucCLUTCHState = 3;
+"97
+[; ;CLUTCH.c: 97:         ucCLUTCHState = 3;
 [e = _ucCLUTCHState -> -> 3 `i `uc ]
-"99
-[; ;CLUTCH.c: 99:     }
+"98
+[; ;CLUTCH.c: 98:     }
 }
 [e $U 3194  ]
-"100
-[; ;CLUTCH.c: 100:     else if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x01 ) )
+"99
+[; ;CLUTCH.c: 99:     else if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x01 ) )
 [e :U 3193 ]
 [e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 1 `i 3195  ]
-"101
-[; ;CLUTCH.c: 101:     {
+"100
+[; ;CLUTCH.c: 100:     {
 {
-"102
-[; ;CLUTCH.c: 102:         ucCLUTCHState = 4;
+"101
+[; ;CLUTCH.c: 101:         ucCLUTCHState = 4;
 [e = _ucCLUTCHState -> -> 4 `i `uc ]
-"103
-[; ;CLUTCH.c: 103:     }
+"102
+[; ;CLUTCH.c: 102:     }
 }
 [e $U 3196  ]
-"104
-[; ;CLUTCH.c: 104:     else
+"103
+[; ;CLUTCH.c: 103:     else
 [e :U 3195 ]
-"105
-[; ;CLUTCH.c: 105:     {
+"104
+[; ;CLUTCH.c: 104:     {
 {
-"106
-[; ;CLUTCH.c: 106:         ucCLUTCHState = 5;
+"105
+[; ;CLUTCH.c: 105:         ucCLUTCHState = 5;
 [e = _ucCLUTCHState -> -> 5 `i `uc ]
-"107
-[; ;CLUTCH.c: 107:     }
+"106
+[; ;CLUTCH.c: 106:     }
 }
 [e :U 3196 ]
 [e :U 3194 ]
 [e :U 3192 ]
 [e :U 3190 ]
-"108
-[; ;CLUTCH.c: 108: }
+"107
+[; ;CLUTCH.c: 107: }
 [e :UE 3188 ]
 }
-"111
-[; ;CLUTCH.c: 111: void CLUTCHInitMove(void)
+"110
+[; ;CLUTCH.c: 110: void CLUTCHInitMove(void)
 [v _CLUTCHInitMove `(v ~T0 @X0 1 ef ]
-"112
-[; ;CLUTCH.c: 112: {
+"111
+[; ;CLUTCH.c: 111: {
 {
 [e :U _CLUTCHInitMove ]
 [f ]
-"113
-[; ;CLUTCH.c: 113:     CLUTCH_Move(0, 1);
+"112
+[; ;CLUTCH.c: 112:     CLUTCH_Move(0, 1);
 [e ( _CLUTCH_Move (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"114
-[; ;CLUTCH.c: 114:     CLUTCH_AnalyseState();
+"113
+[; ;CLUTCH.c: 113:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
-"115
-[; ;CLUTCH.c: 115:     if ( ucCLUTCHState == 1 )
+"114
+[; ;CLUTCH.c: 114:     if ( ucCLUTCHState == 1 )
 [e $ ! == -> _ucCLUTCHState `i -> 1 `i 3198  ]
-"116
-[; ;CLUTCH.c: 116:     {
+"115
+[; ;CLUTCH.c: 115:     {
 {
-"117
-[; ;CLUTCH.c: 117:         CLUTCH_Move(30, 1);
+"116
+[; ;CLUTCH.c: 116:         CLUTCH_Move(30, 1);
 [e ( _CLUTCH_Move (2 , -> -> 30 `i `uc -> -> 1 `i `uc ]
+"117
+[; ;CLUTCH.c: 117:         _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "118
-[; ;CLUTCH.c: 118:         _delay((unsigned long)((200)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"119
-[; ;CLUTCH.c: 119:         CLUTCH_Move(50, 1);
+[; ;CLUTCH.c: 118:         CLUTCH_Move(50, 1);
 [e ( _CLUTCH_Move (2 , -> -> 50 `i `uc -> -> 1 `i `uc ]
-"120
-[; ;CLUTCH.c: 120:         _delay((unsigned long)((200)*(10000000/4000.0)));
+"119
+[; ;CLUTCH.c: 119:         _delay((unsigned long)((200)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"121
-[; ;CLUTCH.c: 121:     }
+"120
+[; ;CLUTCH.c: 120:     }
 }
 [e :U 3198 ]
-"122
-[; ;CLUTCH.c: 122:     CLUTCH_AnalyseState();
+"121
+[; ;CLUTCH.c: 121:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
-"123
-[; ;CLUTCH.c: 123:     if ( ucCLUTCHState == 3 )
+"122
+[; ;CLUTCH.c: 122:     if ( ucCLUTCHState == 3 )
 [e $ ! == -> _ucCLUTCHState `i -> 3 `i 3199  ]
-"124
-[; ;CLUTCH.c: 124:     {
+"123
+[; ;CLUTCH.c: 123:     {
 {
-"126
-[; ;CLUTCH.c: 126:         CLUTCH_Move(70, 1);
+"125
+[; ;CLUTCH.c: 125:         CLUTCH_Move(70, 1);
 [e ( _CLUTCH_Move (2 , -> -> 70 `i `uc -> -> 1 `i `uc ]
-"127
-[; ;CLUTCH.c: 127:         _delay((unsigned long)((200)*(10000000/4000.0)));
+"126
+[; ;CLUTCH.c: 126:         _delay((unsigned long)((200)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"128
-[; ;CLUTCH.c: 128:         CLUTCH_Move(100, 1);
+"127
+[; ;CLUTCH.c: 127:         CLUTCH_Move(100, 1);
 [e ( _CLUTCH_Move (2 , -> -> 100 `i `uc -> -> 1 `i `uc ]
-"129
-[; ;CLUTCH.c: 129:         _delay((unsigned long)((150)*(10000000/4000.0)));
+"128
+[; ;CLUTCH.c: 128:         _delay((unsigned long)((150)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 150 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"130
-[; ;CLUTCH.c: 130:     }
+"129
+[; ;CLUTCH.c: 129:     }
 }
 [e :U 3199 ]
-"131
-[; ;CLUTCH.c: 131:     CLUTCH_AnalyseState();
+"130
+[; ;CLUTCH.c: 130:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
-"132
-[; ;CLUTCH.c: 132:     if ( ucCLUTCHState == 2 )
+"131
+[; ;CLUTCH.c: 131:     if ( ucCLUTCHState == 2 )
 [e $ ! == -> _ucCLUTCHState `i -> 2 `i 3200  ]
-"133
-[; ;CLUTCH.c: 133:     {
+"132
+[; ;CLUTCH.c: 132:     {
 {
-"135
-[; ;CLUTCH.c: 135:         CLUTCH_Move(0, 1);
+"134
+[; ;CLUTCH.c: 134:         CLUTCH_Move(0, 1);
 [e ( _CLUTCH_Move (2 , -> -> 0 `i `uc -> -> 1 `i `uc ]
-"136
-[; ;CLUTCH.c: 136:     }
+"135
+[; ;CLUTCH.c: 135:     }
 }
 [e :U 3200 ]
-"137
-[; ;CLUTCH.c: 137: }
+"136
+[; ;CLUTCH.c: 136: }
 [e :UE 3197 ]
 }

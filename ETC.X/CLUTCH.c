@@ -13,19 +13,18 @@
 #include "MESSAGES.h"
 #include "ETC.h"
 
-//VARIABLES
+// Global variables
 unsigned char ucCLUTCHlmin;
 unsigned char ucCLUTCHlmax;
 unsigned int uiCLUTCHDuty;
 unsigned char ucCLUTCHState;
 
-//FUNCIONES
+// Functions
 void CLUTCH_Init(void)
 {
     GPIO_PWM1_Control( 0, 50 ); // Position signal to the clutch servo
     ucCLUTCHState = CLUTCH_NONE;
 }
-
 
 void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 {

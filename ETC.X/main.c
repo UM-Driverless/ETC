@@ -64,16 +64,15 @@ void main(void)
     // Calibrate APPS min - Default value when turning on = 0%
     apps_calibrate();
     
-    // Enable Global Interrupts
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
 
-    // Disable the Global Interrupts
+    // To disable the global interrupts:
     // INTERRUPT_GlobalInterruptDisable();
     
     // Clutch to initial position
+    GPIOInit();
     CLUTCH_Init();
     
-    GPIOInit();
 
     //APPSMODE_SetHigh();
     //APPSSend(0);
@@ -82,10 +81,8 @@ void main(void)
     
     CLUTCHInitMove();
     
-    
     while(1)
     {
-        // Add your application code
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         LED_Toggle();
         ucAPPS = 50; // Dummy value for testing
@@ -103,9 +100,6 @@ void main(void)
  End of File
 */
 
-
-// TODO - Change the frequency of the ETB Motor according to the pedal to check delay and right data.
-// TODO - Generic function that works for both TPS1 and TPS2, pass a value.
 // TODO - Make local any variables that don't need to be global.
 // TODO - Local variables in main such as uiAPPS1max, and pass by reference, instead of global. Easy code flow analysis
 // TODO - CAN error messages whenever something is wrong.

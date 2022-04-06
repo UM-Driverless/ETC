@@ -19,19 +19,15 @@
 #include "PARAMETERS.h"
 #include "ANALOG.h"
 
-/// Local functions
-void tps_read_default(void);
-void tps_read_opened(void);
-
 /// Global Variables
 unsigned int uiAPPS1min; // int -> 16 bit in MPLAB, PIC18. short = int here.
 unsigned int uiAPPS1max;
 unsigned int uiAPPS2min;
 unsigned int uiAPPS2max;
 
-unsigned int uiTPS1_default; // Called by TEMPORIZATIONS.c
+unsigned int ui_tps1_default; // Called by TEMPORIZATIONS.c
 unsigned int uiTPS1_opened; // Called by TEMPORIZATIONS.c
-unsigned int uiTPS2_default; // Called by TEMPORIZATIONS.c
+unsigned int ui_tps2_default; // Called by TEMPORIZATIONS.c
 unsigned int uiTPS2_opened; // Called by TEMPORIZATIONS.c
 
 unsigned int uiAPPS1; // Sent by CAN
@@ -42,8 +38,8 @@ unsigned long ulAPPS2calc;
 unsigned char ucAPPS1Perc;
 unsigned char ucAPPS2Perc;
 unsigned char ucAPPS;
-unsigned int ui_tps1_mv; // Sent by CAN
-unsigned int ui_tps2_mv; // Sent by CAN
+unsigned int ui_tps1_mv;
+unsigned int ui_tps2_mv;
 unsigned char uc_tps1_perc;
 unsigned char uc_tps2_perc;
 unsigned char uc_tps_perc; //ucTPS
@@ -61,7 +57,7 @@ signed long  slErrorPos;
 
 
 
-
+/// APPS
 void APPSSend(unsigned char ucPercent) {
     float voltage;
     uint16_t dacAPPS1, dacAPPS2;
@@ -75,11 +71,13 @@ void APPSSend(unsigned char ucPercent) {
     DAC3_example();
 }
 
-
-// Estableciendo los valores limite se puede establecer una relación lineal para
-// conseguir calcular la nueva función de transferencia cada vez que se tare el sistema
-
 void apps_calibrate(void){
+    /*Estableciendo los valores limite se puede establecer una relación lineal para
+     *conseguir calcular la nueva función de transferencia cada vez que se tare el sistema
+     *
+     *
+     */
+    
     uiAPPS1min = uiAPPS1+APPSMARGEN;
     uiAPPS2min = uiAPPS2-APPSMARGEN;
     
@@ -88,9 +86,49 @@ void apps_calibrate(void){
     uiAPPS2max = APPS2max;
 }
 
+void APPSAnalysis(void) { // Called by TEMPORIZATIONS.c
+    // Analysis APPS1
+    Nop();
+    if ( uiAPPS1min < uiAPPS1max ) // Plugged normally
+    {
+        //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
+        Nop();
+        ulAPPS1calc = (uiAPPS1-uiAPPS1min)/(uiAPPS1max - uiAPPS1min)*100;
+    }
+    else // Plugged inverted
+    {
+        //ulAPPS1calc = ((uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max))*100;
+        ulAPPS1calc = (uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max)*100;
+    }
+    // Analysis APPS2
+    if ( uiAPPS2min < uiAPPS2max )    //APPS2 voltaje no invertido
+    {
+        //ulAPPS2calc = ((uiAPPS2-uiAPPS2min)/(uiAPPS2max-uiAPPS2min))*100;
+        Nop();
+        ulAPPS2calc = (uiAPPS2-uiAPPS2min);
+        ulAPPS2calc = ulAPPS2calc*100;
+        ulAPPS2calc = (ulAPPS2calc/(uiAPPS2max-uiAPPS2min));
+    }
+    else    //APPS2 voltaje invertido
+    {
+        //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
+        //ulAPPS2calc = ((uiAPPS2min-uiAPPS2)/(uiAPPS2min-uiAPPS2max))*100;
+        Nop();
+        ulAPPS2calc = (uiAPPS2min-uiAPPS2);
+        ulAPPS2calc = ulAPPS2calc*100;
+        ulAPPS2calc = (ulAPPS2calc/(uiAPPS2min-uiAPPS2max));
+    }
+    
+    ucAPPS1Perc = ( ulAPPS1calc & 0x00007F );
+    ucAPPS2Perc = ( ulAPPS2calc & 0x00007F );
+    ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
+    Nop();
+}
+
+/// Electronic Throttle
+
 // Ejecutar cada vez que llegue el mensaje de modo autonomo
-void ETCModeSelect(unsigned char ucModeSelect)
-{
+void ETCModeSelect(unsigned char ucModeSelect) {
     switch (ucModeSelect)
     {
         case ASMode:
@@ -107,7 +145,7 @@ void ETCModeSelect(unsigned char ucModeSelect)
     }
 }
 
-//Funcion supervision de normativa
+// Normative supervision function - TODO
 void ETCRulesSupervision(void)
 {
 
@@ -115,8 +153,7 @@ void ETCRulesSupervision(void)
 }
 
 //Funcion para mover directamente el servo con PWM
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
-{
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode) {
     //Depender de beat constante en CAN
     if ( ucETCFlagSupervisor == TRUE )
     {
@@ -152,8 +189,6 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
     }
 }
 
-
-
 void etc_calibrate(void) {
     /*
      * Test the movement of the ETB (Electronic Throttle Body) at startup, 
@@ -163,19 +198,27 @@ void etc_calibrate(void) {
     
     
     
-    // ETB motor OFF - Barely Open - Engine Idle
+    // Intake motor OFF - Barely Open - Engine Idle
     GPIO_PWM2_Control(0, 600); // Motor OFF. 0% PWM at 600Hz 
-    __delay_ms(200); // Let it move
-    tps_read_default(); // Read TPS sensor at default position. Local function.
-    __delay_ms(100); // Let it read
+    // Let it move
+    __delay_ms(200);
+    // Read TPS sensor at default position.
+    ui_tps1_default = ANALOG_GetVoltage(ENT_TPS1);
+    ui_tps2_default = ANALOG_GetVoltage(ENT_TPS2);
+    // Let it read
+    __delay_ms(100);
+    
     Nop();
     
-    // ETB motor 100%
+    // Intake motor 100%
     GPIO_PWM2_Control(100, 600); // 100% PWM at 600Hz, Motor to max power.
-    __delay_ms(500); // Let it move
-    tps_read_opened(); // Read TPS sensor at max opened position. Local function.
-    
-    __delay_ms(100); // Let it read
+    // Let it move
+    __delay_ms(500);
+    // Read TPS sensor at max opened position.
+    uiTPS1_opened = ANALOG_GetVoltage(ENT_TPS1);
+    uiTPS2_opened = ANALOG_GetVoltage(ENT_TPS2);
+    // Let it read
+    __delay_ms(100);
     Nop();
     
     // Turn off after calibration
@@ -188,28 +231,6 @@ void etc_calibrate(void) {
     __delay_ms(200);
 }
 
-void tps_read_default(void) {
-    // Read TPS1 and TPS2 values
-    ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2. ANALOGRead() is not called by interruptions until INTERRUPT_GlobalInterruptEnable();
-    
-    // Define the values for default position
-    uiTPS1_default = ui_tps1_mv; // ANALOG_GetVoltage(ENT_TPS1)
-    uiTPS2_default = ui_tps2_mv; // ANALOG_GetVoltage(ENT_TPS2)
-    
-    /// RJM Why not this? Don't call ANALOGRead() and just update the important values. I don't understand why it goes crazy with the same default values.
-//    uiTPS1_default = ANALOG_GetVoltage(ENT_TPS1);
-//    uiTPS2_default = ANALOG_GetVoltage(ENT_TPS2);
-    
-}
-
-void tps_read_opened(void) {
-    ANALOGRead(); // Read APPS1 APPS2 TPS1 TPS2
-    // Define the values for fully opened position
-    uiTPS1_opened = ui_tps1_mv;
-    uiTPS2_opened = ui_tps2_mv;
-    
-}
-
 void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead(). 
 {
     /* Calculate ucTPS from ucTPS1 and ucTPS2 of the intake sensor (Throttle Position Sensor)
@@ -217,33 +238,33 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
      */
     
     /// Calculate ucTPS
-//    if ( uiTPS1_default < uiTPS1_opened ) // Plugged normally
+//    if ( ui_tps1_default < uiTPS1_opened ) // Plugged normally
 //    {
-//        //slTPS1calc = ( ( uiTPS1_opened - uiTPS1_default ) * uiETCDuty ) + uiTPS1_default;
+//        //slTPS1calc = ( ( uiTPS1_opened - ui_tps1_default ) * uiETCDuty ) + ui_tps1_default;
 //        Nop();
-//        /*slTPS1calc = ( uiTPS1_opened - uiTPS1_default );
+//        /*slTPS1calc = ( uiTPS1_opened - ui_tps1_default );
 //        slTPS1calc = ( slTPS1calc * uiETCDuty );
-//        slTPS1calc = ( ( slTPS1calc / 100 ) + uiTPS1_default );
+//        slTPS1calc = ( ( slTPS1calc / 100 ) + ui_tps1_default );
 //         */
-//        slTPS1calc = ( ui_tps1_mv - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
+//        slTPS1calc = ( ui_tps1_mv - ui_tps1_default)*100/(uiTPS1_opened - ui_tps1_default);
 //        ucTPS_Volts_STATE = TPS1_NO_INVERTED;
 //    } // TODO else plugged inverted... Ignore for now
     // ucTPS_Volts_STATE = TPS1_NO_INVERTED;
     
     
 //    // Analysis TPS2
-//    if ( uiTPS2_default < uiTPS2_opened )    //TPS2 voltaje no invertido
+//    if ( ui_tps2_default < uiTPS2_opened )    //TPS2 voltaje no invertido
 //    {
-//        //slTPS2calc = ( ( uiTPS2_opened - uiTPS2_default ) * uiETCDuty ) + uiTPS2_default;
-//        slTPS2calc = ( uiTPS2_opened - uiTPS2_default );
+//        //slTPS2calc = ( ( uiTPS2_opened - ui_tps2_default ) * uiETCDuty ) + ui_tps2_default;
+//        slTPS2calc = ( uiTPS2_opened - ui_tps2_default );
 //        slTPS2calc = ( slTPS2calc * uiETCDuty );
-//        slTPS2calc = ( ( slTPS2calc / 100 ) + uiTPS2_default );
+//        slTPS2calc = ( ( slTPS2calc / 100 ) + ui_tps2_default );
 //        ucTPS_Volts_STATE = TPS2_NO_INVERTED;
 //    }
     
     // Calculate fraction of travel. Sensor 1 and 2 provide voltages of constant average. They move in opposite directions.
-    uc_tps1_perc = 100* (signed long)(ui_tps1_mv - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
-    uc_tps2_perc = 100* (signed long)(ui_tps2_mv - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
+    uc_tps1_perc = 100* (signed long)(ui_tps1_mv - ui_tps1_default) / (signed long)(uiTPS1_opened - ui_tps1_default);
+    uc_tps2_perc = 100* (signed long)(ui_tps2_mv - ui_tps2_default) / (signed long)(uiTPS2_opened - ui_tps2_default);
     
     // TODO - CHECK THAT THEY MATCH.
     
@@ -251,6 +272,8 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
     uc_tps1_perc = (uc_tps1_perc & 0x0000007F);
     uc_tps2_perc = (uc_tps2_perc & 0x0000007F);
     
+    // uc_tps1_perc and uc_tps2_perc should match. If too different, CAN error. TODO
+    // uc_tps_perc is the average.
     uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
     
     Nop();
@@ -307,49 +330,7 @@ void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead().
     
 }
 
-void APPSAnalysis(void) // Called by TEMPORIZATIONS.c
-{
-    // Analysis APPS1
-    Nop();
-    if ( uiAPPS1min < uiAPPS1max ) // Plugged normally
-    {
-        //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
-        Nop();
-        ulAPPS1calc = (uiAPPS1-uiAPPS1min)/(uiAPPS1max - uiAPPS1min)*100;
-    }
-    else // Plugged inverted
-    {
-        //ulAPPS1calc = ((uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max))*100;
-        ulAPPS1calc = (uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max)*100;
-    }
-    // Analysis APPS2
-    if ( uiAPPS2min < uiAPPS2max )    //APPS2 voltaje no invertido
-    {
-        //ulAPPS2calc = ((uiAPPS2-uiAPPS2min)/(uiAPPS2max-uiAPPS2min))*100;
-        Nop();
-        ulAPPS2calc = (uiAPPS2-uiAPPS2min);
-        ulAPPS2calc = ulAPPS2calc*100;
-        ulAPPS2calc = (ulAPPS2calc/(uiAPPS2max-uiAPPS2min));
-    }
-    else    //APPS2 voltaje invertido
-    {
-        //DEBERIAMOS SACAR ERROR PORQUE EL CALCULO SALE MAL POR LOS LIMITES
-        //ulAPPS2calc = ((uiAPPS2min-uiAPPS2)/(uiAPPS2min-uiAPPS2max))*100;
-        Nop();
-        ulAPPS2calc = (uiAPPS2min-uiAPPS2);
-        ulAPPS2calc = ulAPPS2calc*100;
-        ulAPPS2calc = (ulAPPS2calc/(uiAPPS2min-uiAPPS2max));
-    }
-    
-    ucAPPS1Perc = ( ulAPPS1calc & 0x00007F );
-    ucAPPS2Perc = ( ulAPPS2calc & 0x00007F );
-    ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
-    Nop();
-}
-
-
-void ETCSupervisor(void)
-{
+void ETCSupervisor(void) {
     Nop();
     if ( ucASMode == ASMode ) {
         if ( ucETCBeatSupervisor == TRUE )
@@ -387,7 +368,7 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
      */
     
     // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
-    // Static K_P to change values at run time for calibration.
+    // Static local variables to change values at run time for calibration.
     static signed int K_P = 1000;
     static signed int K_I = 1;
     static signed int K_D;

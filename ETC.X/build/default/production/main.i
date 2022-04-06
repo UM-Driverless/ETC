@@ -38336,9 +38336,9 @@ extern unsigned int uiAPPS2;
 extern unsigned int uiAPPS2max;
 
 
-extern unsigned int uiTPS1_default;
+extern unsigned int ui_tps1_default;
 extern unsigned int uiTPS1_opened;
-extern unsigned int uiTPS2_default;
+extern unsigned int ui_tps2_default;
 extern unsigned int uiTPS2_opened;
 
 
@@ -38382,10 +38382,6 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
-
-signed int K_P;
-signed int K_I;
-signed int K_D;
 # 48 "main.c" 2
 
 # 1 "./ANALOG.h" 1
@@ -38411,16 +38407,15 @@ void main(void)
 
     apps_calibrate();
 
-
     (INTCON0bits.GIE = 1);
 
 
 
 
 
+    GPIOInit();
     CLUTCH_Init();
 
-    GPIOInit();
 
 
 
@@ -38429,10 +38424,8 @@ void main(void)
 
     CLUTCHInitMove();
 
-
     while(1)
     {
-
 
         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
         ucAPPS = 50;

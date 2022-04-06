@@ -38334,9 +38334,9 @@ extern unsigned int uiAPPS2;
 extern unsigned int uiAPPS2max;
 
 
-extern unsigned int uiTPS1_default;
+extern unsigned int ui_tps1_default;
 extern unsigned int uiTPS1_opened;
-extern unsigned int uiTPS2_default;
+extern unsigned int ui_tps2_default;
 extern unsigned int uiTPS2_opened;
 
 
@@ -38380,10 +38380,6 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
-
-signed int K_P;
-signed int K_I;
-signed int K_D;
 # 17 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
@@ -38405,18 +38401,14 @@ void ANALOGRead(void);
 
 
 
-void tps_read_default(void);
-void tps_read_opened(void);
-
-
 unsigned int uiAPPS1min;
 unsigned int uiAPPS1max;
 unsigned int uiAPPS2min;
 unsigned int uiAPPS2max;
 
-unsigned int uiTPS1_default;
+unsigned int ui_tps1_default;
 unsigned int uiTPS1_opened;
-unsigned int uiTPS2_default;
+unsigned int ui_tps2_default;
 unsigned int uiTPS2_opened;
 
 unsigned int uiAPPS1;
@@ -38460,11 +38452,13 @@ void APPSSend(unsigned char ucPercent) {
     DAC3_example();
 }
 
-
-
-
-
 void apps_calibrate(void){
+
+
+
+
+
+
     uiAPPS1min = uiAPPS1+100;
     uiAPPS2min = uiAPPS2-100;
 
@@ -38473,140 +38467,7 @@ void apps_calibrate(void){
     uiAPPS2max = 1990;
 }
 
-
-void ETCModeSelect(unsigned char ucModeSelect)
-{
-    switch (ucModeSelect)
-    {
-        case 1:
-
-
-            do { LATAbits.LATA5 = 1; } while(0);
-            break;
-        case 0:
-            do { LATAbits.LATA5 = 0; } while(0);
-            break;
-        default:
-            do { LATAbits.LATA5 = 0; } while(0);
-            break;
-    }
-}
-
-
-void ETCRulesSupervision(void)
-{
-
-
-}
-
-
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
-{
-
-    if ( ucETCFlagSupervisor == 0x01 )
-    {
-
-        uiETCDuty = ucTargetMove;
-
-        if ( ucMode == ucASMode )
-        {
-            if ( ucASMode == 1 )
-            {
-
-                GPIO_PWM2_Control(uiETCDuty + 34, 300);
-            }
-            else if ( ucASMode == 0 )
-            {
-
-                GPIO_PWM2_Control(uiETCDuty, 300);
-            }
-            else
-            {
-
-            }
-
-        }
-        else
-        {
-
-        }
-    }
-    else
-    {
-        GPIO_PWM2_Control(0, 600);
-    }
-}
-
-
-
-void etc_calibrate(void) {
-# 167 "ETC.c"
-    GPIO_PWM2_Control(0, 600);
-    _delay((unsigned long)((200)*(10000000/4000.0)));
-    tps_read_default();
-    _delay((unsigned long)((100)*(10000000/4000.0)));
-    __nop();
-
-
-    GPIO_PWM2_Control(100, 600);
-    _delay((unsigned long)((500)*(10000000/4000.0)));
-    tps_read_opened();
-
-    _delay((unsigned long)((100)*(10000000/4000.0)));
-    __nop();
-
-
-    GPIO_PWM2_Control(0, 600);
-
-
-    GPIO_PWM2_Control(50, 400);
-    _delay((unsigned long)((200)*(10000000/4000.0)));
-    GPIO_PWM2_Control(50, 600);
-    _delay((unsigned long)((200)*(10000000/4000.0)));
-}
-
-void tps_read_default(void) {
-
-    ANALOGRead();
-
-
-    uiTPS1_default = ui_tps1_mv;
-    uiTPS2_default = ui_tps2_mv;
-
-
-
-
-
-}
-
-void tps_read_opened(void) {
-    ANALOGRead();
-
-    uiTPS1_opened = ui_tps1_mv;
-    uiTPS2_opened = ui_tps2_mv;
-
-}
-
-void TPSAnalysis(void)
-{
-# 245 "ETC.c"
-    uc_tps1_perc = 100* (signed long)(ui_tps1_mv - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
-    uc_tps2_perc = 100* (signed long)(ui_tps2_mv - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
-
-
-
-
-    uc_tps1_perc = (uc_tps1_perc & 0x0000007F);
-    uc_tps2_perc = (uc_tps2_perc & 0x0000007F);
-
-    uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
-
-    __nop();
-# 308 "ETC.c"
-}
-
-void APPSAnalysis(void)
-{
+void APPSAnalysis(void) {
 
     __nop();
     if ( uiAPPS1min < uiAPPS1max )
@@ -38646,8 +38507,124 @@ void APPSAnalysis(void)
 }
 
 
-void ETCSupervisor(void)
+
+
+void ETCModeSelect(unsigned char ucModeSelect) {
+    switch (ucModeSelect)
+    {
+        case 1:
+
+
+            do { LATAbits.LATA5 = 1; } while(0);
+            break;
+        case 0:
+            do { LATAbits.LATA5 = 0; } while(0);
+            break;
+        default:
+            do { LATAbits.LATA5 = 0; } while(0);
+            break;
+    }
+}
+
+
+void ETCRulesSupervision(void)
 {
+
+
+}
+
+
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode) {
+
+    if ( ucETCFlagSupervisor == 0x01 )
+    {
+
+        uiETCDuty = ucTargetMove;
+
+        if ( ucMode == ucASMode )
+        {
+            if ( ucASMode == 1 )
+            {
+
+                GPIO_PWM2_Control(uiETCDuty + 34, 300);
+            }
+            else if ( ucASMode == 0 )
+            {
+
+                GPIO_PWM2_Control(uiETCDuty, 300);
+            }
+            else
+            {
+
+            }
+
+        }
+        else
+        {
+
+        }
+    }
+    else
+    {
+        GPIO_PWM2_Control(0, 600);
+    }
+}
+
+void etc_calibrate(void) {
+# 202 "ETC.c"
+    GPIO_PWM2_Control(0, 600);
+
+    _delay((unsigned long)((200)*(10000000/4000.0)));
+
+    ui_tps1_default = ANALOG_GetVoltage(3);
+    ui_tps2_default = ANALOG_GetVoltage(4);
+
+    _delay((unsigned long)((100)*(10000000/4000.0)));
+
+    __nop();
+
+
+    GPIO_PWM2_Control(100, 600);
+
+    _delay((unsigned long)((500)*(10000000/4000.0)));
+
+    uiTPS1_opened = ANALOG_GetVoltage(3);
+    uiTPS2_opened = ANALOG_GetVoltage(4);
+
+    _delay((unsigned long)((100)*(10000000/4000.0)));
+    __nop();
+
+
+    GPIO_PWM2_Control(0, 600);
+
+
+    GPIO_PWM2_Control(50, 400);
+    _delay((unsigned long)((200)*(10000000/4000.0)));
+    GPIO_PWM2_Control(50, 600);
+    _delay((unsigned long)((200)*(10000000/4000.0)));
+}
+
+void TPSAnalysis(void)
+{
+# 266 "ETC.c"
+    uc_tps1_perc = 100* (signed long)(ui_tps1_mv - ui_tps1_default) / (signed long)(uiTPS1_opened - ui_tps1_default);
+    uc_tps2_perc = 100* (signed long)(ui_tps2_mv - ui_tps2_default) / (signed long)(uiTPS2_opened - ui_tps2_default);
+
+
+
+
+    uc_tps1_perc = (uc_tps1_perc & 0x0000007F);
+    uc_tps2_perc = (uc_tps2_perc & 0x0000007F);
+
+
+
+    uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
+
+    __nop();
+# 331 "ETC.c"
+}
+
+void ETCSupervisor(void) {
     __nop();
     if ( ucASMode == 1 ) {
         if ( ucETCBeatSupervisor == 0x01 )
@@ -38677,7 +38654,7 @@ void ETCManual(unsigned char ucTargetManual)
 }
 
 void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
-# 391 "ETC.c"
+# 372 "ETC.c"
     static signed int K_P = 1000;
     static signed int K_I = 1;
     static signed int K_D;

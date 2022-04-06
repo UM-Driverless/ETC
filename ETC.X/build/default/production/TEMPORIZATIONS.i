@@ -38362,9 +38362,9 @@ extern unsigned int uiAPPS2;
 extern unsigned int uiAPPS2max;
 
 
-extern unsigned int uiTPS1_default;
+extern unsigned int ui_tps1_default;
 extern unsigned int uiTPS1_opened;
-extern unsigned int uiTPS2_default;
+extern unsigned int ui_tps2_default;
 extern unsigned int uiTPS2_opened;
 
 
@@ -38408,10 +38408,6 @@ void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
-
-signed int K_P;
-signed int K_I;
-signed int K_D;
 # 13 "TEMPORIZATIONS.c" 2
 
 # 1 "./PARAMETERS.h" 1

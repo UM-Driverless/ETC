@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-// Analog inputs
+// Analog input number meanings
 #define ENT_APPS1       1
 #define ENT_APPS2       2
 #define ENT_TPS1        3

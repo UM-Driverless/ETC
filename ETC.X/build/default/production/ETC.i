@@ -38346,11 +38346,11 @@ extern unsigned char ucAPPS2Perc;
 extern unsigned char ucAPPS;
 extern unsigned int uiTPS1;
 extern unsigned int uiTPS2;
-extern unsigned long ulTPS1calc;
-extern unsigned long ulTPS2calc;
+extern signed long slTPS1calc;
+extern signed long slTPS2calc;
 extern unsigned char ucTPS1Perc;
 extern unsigned char ucTPS2Perc;
-extern unsigned char ucTPS;
+extern unsigned char uc_tps_perc;
 extern unsigned char ucTPS_STATE;
 extern unsigned char ucTPS1_STATE;
 extern unsigned char ucTPS2_STATE;
@@ -38422,11 +38422,11 @@ unsigned char ucAPPS2Perc;
 unsigned char ucAPPS;
 unsigned int uiTPS1;
 unsigned int uiTPS2;
-unsigned long ulTPS1calc;
-unsigned long ulTPS2calc;
+signed long slTPS1calc;
+signed long slTPS2calc;
 unsigned char ucTPS1Perc;
 unsigned char ucTPS2Perc;
-unsigned char ucTPS;
+unsigned char uc_tps_perc;
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
 unsigned char ucTPS2_STATE;
@@ -38603,102 +38603,20 @@ void tps_read_opened(void)
 
 void TPSAnalysis(void)
 {
+# 252 "ETC.c"
+    ucTPS1Perc = 100* (signed long)(uiTPS1 - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
+    ucTPS2Perc = 100* (signed long)(uiTPS2 - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
+
+
+
+
+    ucTPS1Perc = (ucTPS1Perc & 0x0000007F);
+    ucTPS2Perc = (ucTPS2Perc & 0x0000007F);
+
+    uc_tps_perc = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
 
     __nop();
-    if ( uiTPS1_default < uiTPS1_opened )
-    {
-
-        __nop();
-
-
-
-
-        ulTPS1calc = ( uiTPS1 - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
-        ucTPS_Volts_STATE = 1;
-    }
-    else
-    {
-        __nop();
-
-        ulTPS1calc = ( uiTPS1_default - uiTPS1 );
-        ulTPS1calc *= 100;
-        ulTPS1calc = ulTPS1calc / (uiTPS1_default - uiTPS1_opened);
-        ucTPS_Volts_STATE = 2;
-    }
-
-
-    if ( uiTPS2_default < uiTPS2_opened )
-    {
-
-        ulTPS2calc = ( uiTPS2_opened - uiTPS2_default );
-        ulTPS2calc = ( ulTPS2calc * uiETCDuty );
-        ulTPS2calc = ( ( ulTPS2calc / 100 ) + uiTPS2_default );
-        ucTPS_Volts_STATE = 4;
-    }
-    else
-    {
-        __nop();
-
-        ulTPS2calc = ( uiTPS2_default - uiTPS2 );
-        ulTPS2calc *= 100;
-        ulTPS2calc = ulTPS2calc / (uiTPS2_default - uiTPS2_opened);
-        ucTPS_Volts_STATE = 2;
-    }
-
-    ucTPS1Perc = ( ulTPS1calc & 0x00007F );
-    ucTPS2Perc = ( ulTPS2calc & 0x00007F );
-    ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
-    __nop();
-
-    if ( ( ulTPS1calc > uiTPS1 + 20 ) || ( ulTPS1calc < uiTPS1 - 20 ) )
-    {
-
-        ucTPS_STATE |= 1;
-    }
-    else
-    {
-
-        ucTPS_STATE |= 0xFE;
-    }
-
-    if ( ( ulTPS2calc > uiTPS2 + 20 ) || ( ulTPS2calc < uiTPS2 - 20 ) )
-    {
-
-        ucTPS_STATE |= 2;
-    }
-    else
-    {
-
-        ucTPS_STATE |= 0xFD;
-    }
-
-
-    if ( ucTPS_Volts_STATE == 5 )
-    {
-        ucTPS_STATE |= 4;
-    }
-    else if ( ucTPS_Volts_STATE == 9 )
-    {
-
-        ucTPS_STATE &= 0xFB;
-    }
-    else if ( ucTPS_Volts_STATE == 6 )
-    {
-
-        ucTPS_STATE &= 0xFB;
-    }
-    else if ( ucTPS_Volts_STATE == 10 )
-    {
-        ucTPS_STATE |= 4;
-    }
-    else
-    {
-        ucTPS_STATE |= 4;
-    }
-
-
-
-
+# 315 "ETC.c"
 }
 
 void APPSAnalysis(void)
@@ -38745,8 +38663,7 @@ void APPSAnalysis(void)
 void ETCSupervisor(void)
 {
     __nop();
-    if ( ucASMode == 1 )
-    {
+    if ( ucASMode == 1 ) {
         if ( ucETCBeatSupervisor == 0x01 )
         {
             ucETCFlagSupervisor = 0x01;
@@ -38756,15 +38673,14 @@ void ETCSupervisor(void)
             ucETCFlagSupervisor = 0x00;
 
             GPIO_PWM1_Control(0, 300);
-            GPIO_PWM2_Control(0, 600);
+
+            GPIO_PWM2_Control(0, 300);
         }
-    }
-    else if ( ucASMode == 0) {
+    } else if ( ucASMode == 0) {
         ucETCFlagSupervisor = 0x01;
     }
 
 }
-
 
 void ETCManual(unsigned char ucTargetManual)
 {
@@ -38775,17 +38691,18 @@ void ETCManual(unsigned char ucTargetManual)
 }
 
 void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
-# 402 "ETC.c"
+# 397 "ETC.c"
     static signed long slIntegral = 0;
     signed long slDerivative = 0;
     signed long slMotorPWM = 0;
+
     __nop();
 
 
 
     if ( ucETCFlagSupervisor == 0x01 ) {
-# 425 "ETC.c"
-        slErrorPos = (signed long)(ucTargetMove) - (signed long)((signed int)(uiTPS1-1212)*100/(3126-1212));
+# 421 "ETC.c"
+        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(uiTPS1) - 1212 )*100 / (3126-1212);
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - siLastErrorPos;
 

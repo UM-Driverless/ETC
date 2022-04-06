@@ -38,11 +38,11 @@ unsigned char ucAPPS2Perc;
 unsigned char ucAPPS;
 unsigned int uiTPS1;
 unsigned int uiTPS2;
-unsigned long ulTPS1calc;
-unsigned long ulTPS2calc;
+signed long slTPS1calc;
+signed long slTPS2calc;
 unsigned char ucTPS1Perc;
 unsigned char ucTPS2Perc;
-unsigned char ucTPS;
+unsigned char uc_tps_perc; //ucTPS
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
 unsigned char ucTPS2_STATE;
@@ -217,100 +217,97 @@ void tps_read_opened(void)
     uiTPS2_opened = uiTPS2;
 }
 
-void TPSAnalysis(void) // Called by TEMPORIZATIONS.c
+void TPSAnalysis(void) // Called by TEMPORIZATIONS.c. right after ANALOGRead(). 
 {
-    // Analysis TPS1
+    /* Calculate ucTPS from ucTPS1 and ucTPS2 of the intake sensor (Throttle Position Sensor)
+     *
+     */
+    
+    /// Calculate ucTPS
+//    if ( uiTPS1_default < uiTPS1_opened ) // Plugged normally
+//    {
+//        //slTPS1calc = ( ( uiTPS1_opened - uiTPS1_default ) * uiETCDuty ) + uiTPS1_default;
+//        Nop();
+//        /*slTPS1calc = ( uiTPS1_opened - uiTPS1_default );
+//        slTPS1calc = ( slTPS1calc * uiETCDuty );
+//        slTPS1calc = ( ( slTPS1calc / 100 ) + uiTPS1_default );
+//         */
+//        slTPS1calc = ( uiTPS1 - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
+//        ucTPS_Volts_STATE = TPS1_NO_INVERTED;
+//    } // TODO else plugged inverted... Ignore for now
+    // ucTPS_Volts_STATE = TPS1_NO_INVERTED;
+    
+    
+//    // Analysis TPS2
+//    if ( uiTPS2_default < uiTPS2_opened )    //TPS2 voltaje no invertido
+//    {
+//        //slTPS2calc = ( ( uiTPS2_opened - uiTPS2_default ) * uiETCDuty ) + uiTPS2_default;
+//        slTPS2calc = ( uiTPS2_opened - uiTPS2_default );
+//        slTPS2calc = ( slTPS2calc * uiETCDuty );
+//        slTPS2calc = ( ( slTPS2calc / 100 ) + uiTPS2_default );
+//        ucTPS_Volts_STATE = TPS2_NO_INVERTED;
+//    }
+    
+    // Calculate fraction of travel. Sensor 1 and 2 provide voltages of constant average. They move in opposite directions.
+    ucTPS1Perc = 100* (signed long)(uiTPS1 - uiTPS1_default) / (signed long)(uiTPS1_opened - uiTPS1_default);
+    ucTPS2Perc = 100* (signed long)(uiTPS2 - uiTPS2_default) / (signed long)(uiTPS2_opened - uiTPS2_default);
+    
+    // TODO - CHECK THAT THEY MATCH.
+    
+    // Just take the 7 last bits, which correspond to 255, the current max value.
+    ucTPS1Perc = (ucTPS1Perc & 0x0000007F);
+    ucTPS2Perc = (ucTPS2Perc & 0x0000007F);
+    
+    uc_tps_perc = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
+    
     Nop();
-    if ( uiTPS1_default < uiTPS1_opened ) // Plugged normally
-    {
-        //ulTPS1calc = ( ( uiTPS1_opened - uiTPS1_default ) * uiETCDuty ) + uiTPS1_default;
-        Nop();
-        /*ulTPS1calc = ( uiTPS1_opened - uiTPS1_default );
-        ulTPS1calc = ( ulTPS1calc * uiETCDuty );
-        ulTPS1calc = ( ( ulTPS1calc / 100 ) + uiTPS1_default );
-         */
-        ulTPS1calc = ( uiTPS1 - uiTPS1_default)*100/(uiTPS1_opened - uiTPS1_default);
-        ucTPS_Volts_STATE = TPS1_NO_INVERTED;
-    }
-    else // Plugged inverted
-    {
-        Nop();
-        //ulTPS1calc = ( uiTPS1_default - ( ( uiTPS1_default - uiTPS1_opened ) * uiETCDuty ) );
-        ulTPS1calc = ( uiTPS1_default - uiTPS1 );
-        ulTPS1calc *= 100;
-        ulTPS1calc = ulTPS1calc / (uiTPS1_default - uiTPS1_opened);
-        ucTPS_Volts_STATE = TPS1_INVERTED;
-    }
     
-    // Analysis TPS2
-    if ( uiTPS2_default < uiTPS2_opened )    //TPS2 voltaje no invertido
-    {
-        //ulTPS2calc = ( ( uiTPS2_opened - uiTPS2_default ) * uiETCDuty ) + uiTPS2_default;
-        ulTPS2calc = ( uiTPS2_opened - uiTPS2_default );
-        ulTPS2calc = ( ulTPS2calc * uiETCDuty );
-        ulTPS2calc = ( ( ulTPS2calc / 100 ) + uiTPS2_default );
-        ucTPS_Volts_STATE = TPS2_NO_INVERTED;
-    }
-    else    //TPS2 voltaje invertido
-    {
-        Nop();
-        //ulTPS1calc = ( uiTPS1_default - ( ( uiTPS1_default - uiTPS1_opened ) * uiETCDuty ) );
-        ulTPS2calc = ( uiTPS2_default - uiTPS2 );
-        ulTPS2calc *= 100;
-        ulTPS2calc = ulTPS2calc / (uiTPS2_default - uiTPS2_opened);
-        ucTPS_Volts_STATE = TPS1_INVERTED;
-    }
-    
-    ucTPS1Perc = ( ulTPS1calc & 0x00007F );
-    ucTPS2Perc = ( ulTPS2calc & 0x00007F );
-    ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
-    Nop();
-    // Analysis de fallos TPS por salida de márgenes
-    if ( ( ulTPS1calc > uiTPS1 + TPSMARGEN ) || ( ulTPS1calc < uiTPS1 - TPSMARGEN ) )
-    {
-        //apuntar fallo de TPS1
-        ucTPS_STATE |= TPS1_ERROR;
-    }
-    else
-    {
-        //quitar error TPS1
-        ucTPS_STATE |= QUITAR_ERROR_TPS1;
-    }
-    
-    if ( ( ulTPS2calc > uiTPS2 + TPSMARGEN ) || ( ulTPS2calc < uiTPS2 - TPSMARGEN ) )
-    {
-        //apuntar fallo de TPS2
-        ucTPS_STATE |= TPS2_ERROR;
-    }
-    else
-    {
-        //quitar error TPS1
-        ucTPS_STATE |= QUITAR_ERROR_TPS2;
-    }
-    
-    // Analysis by voltage inversion
-    if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_NO_INVERTED )
-    {
-        ucTPS_STATE |= TPS_Volt_ERROR;
-    }
-    else if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_INVERTED )
-    {
-        //todo OK, eliminar erro de estado
-        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
-    }
-    else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_NO_INVERTED )
-    {
-        //todo OK, eliminar erro de estado
-        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
-    }
-    else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_INVERTED )
-    {
-        ucTPS_STATE |= TPS_Volt_ERROR;
-    }
-    else
-    {
-        ucTPS_STATE |= TPS_Volt_ERROR;
-    }
+    /// Analysis of TPS error when out of range.
+//    if ( ( slTPS1calc > uiTPS1 + TPSMARGEN ) || ( slTPS1calc < uiTPS1 - TPSMARGEN ) )
+//    {
+//        //apuntar fallo de TPS1
+//        ucTPS_STATE |= TPS1_ERROR;
+//    }
+//    else
+//    {
+//        //quitar error TPS1
+//        ucTPS_STATE |= QUITAR_ERROR_TPS1;
+//    }
+//    
+//    if ( ( slTPS2calc > uiTPS2 + TPSMARGEN ) || ( slTPS2calc < uiTPS2 - TPSMARGEN ) )
+//    {
+//        //apuntar fallo de TPS2
+//        ucTPS_STATE |= TPS2_ERROR;
+//    }
+//    else
+//    {
+//        //quitar error TPS1
+//        ucTPS_STATE |= QUITAR_ERROR_TPS2;
+//    }
+//    
+//    // Analysis by voltage inversion
+//    if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_NO_INVERTED )
+//    {
+//        ucTPS_STATE |= TPS_Volt_ERROR;
+//    }
+//    else if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_INVERTED )
+//    {
+//        //todo OK, eliminar erro de estado
+//        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
+//    }
+//    else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_NO_INVERTED )
+//    {
+//        //todo OK, eliminar erro de estado
+//        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
+//    }
+//    else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_INVERTED )
+//    {
+//        ucTPS_STATE |= TPS_Volt_ERROR;
+//    }
+//    else
+//    {
+//        ucTPS_STATE |= TPS_Volt_ERROR;
+//    }
     
     // Analysis by difference between TPS1 and TPS2
     
@@ -361,26 +358,24 @@ void APPSAnalysis(void) // Called by TEMPORIZATIONS.c
 void ETCSupervisor(void)
 {
     Nop();
-    if ( ucASMode == ASMode )
-    {
+    if ( ucASMode == ASMode ) {
         if ( ucETCBeatSupervisor == TRUE )
         {
-            ucETCFlagSupervisor = TRUE; //PERMITO MOVIMIENTO
+            ucETCFlagSupervisor = TRUE; // Allow movement (from Autonomous System)
         }
         else
         {
-            ucETCFlagSupervisor = FALSE; //NO PERMITO MOVER 
-            // poner embrague y ETC a cero
+            ucETCFlagSupervisor = FALSE; // Error. Don't allow movement
+            // Clutch to 0
             GPIO_PWM1_Control(0, 300);
-            GPIO_PWM2_Control(0, 600);
+            // Intake to idle (motor off)
+            GPIO_PWM2_Control(0, 300);
         }
-    }
-    else if ( ucASMode == ManualMode) {
-        ucETCFlagSupervisor = TRUE; //PERMITO MOVIMIENTO
+    } else if ( ucASMode == ManualMode) {
+        ucETCFlagSupervisor = TRUE; // Allow movement (from pedal)
     }
     
 }
-
 
 void ETCManual(unsigned char ucTargetManual)
 {
@@ -406,8 +401,8 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
     Nop();
     
     
-    // Depender de beat constante en CAN
-    if ( ucETCFlagSupervisor == TRUE ) {  
+    // Only let the motor move if CAN beat flag is OK.
+    if ( ucETCFlagSupervisor == TRUE ) {
         
         /// MAIN CALCULATION
 //        ucCurrentPos = ucTPS;
@@ -423,7 +418,7 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
         // TODO tps_map(ucTargetMove)... to map 16-55 to 0-100%
         // ucTPS is the current position. Usually 16-55 for default-open.
         // slErrorPos must be able to become negative!!!!
-        slErrorPos = (signed long)(ucTargetMove) - ( ( (signed long)(uiTPS1) - 1212 )*100 / (3126-1212) ); 
+        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(uiTPS1) - 1212 )*100 / (3126-1212); 
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - siLastErrorPos;
         

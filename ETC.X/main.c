@@ -109,6 +109,8 @@ void main(void)
 // TODO - Generic function that works for both TPS1 and TPS2, pass a value.
 // TODO - Make local any variables that don't need to be global.
 // TODO - Local variables in main such as uiAPPS1max, and pass by reference, instead of global. Easy code flow analysis
+// TODO - CAN error messages whenever something is wrong.
+// TODO - Description for every single variable
 
 // TODO - Questions
 /*

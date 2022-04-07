@@ -88,7 +88,7 @@ void main(void)
         ucAPPS = 50; // Dummy value for testing
         
         Nop();
-        ETC_PIDcontroller( 30 , ManualMode); // uiAPPS1 updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
+        ETC_PIDcontroller( (3478-uiAPPS1)/(3478-1680)*100 , ManualMode); // uiAPPS1 updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
         
         // Play sound of uiAPPS1 value
 //        sensor_sound();

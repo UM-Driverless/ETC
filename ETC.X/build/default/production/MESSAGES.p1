@@ -65,10 +65,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/can1.h: 235: _Bool CAN1_Receive(CAN_MSG_OBJ *rxCanMsg);
 [v _CAN1_Receive `(a ~T0 @X0 0 ef1`*S3180 ]
 "34 ./CLUTCH.h
-[; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
+[; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
 "89 ./ETC.h
-[; ;./ETC.h: 89: void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+[; ;./ETC.h: 89: void ETC_PIDcontroller (unsigned char slTargetMove, unsigned char ucMode);
 [v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`uc`uc ]
 "64
 [; ;./ETC.h: 64: extern unsigned char ucETCBeatSupervisor;

@@ -26,7 +26,7 @@ void CLUTCH_Init(void)
     ucCLUTCHState = CLUTCH_NONE;
 }
 
-void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
+void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode)
 {
     //Depender de beat constante en CAN
     if ( ucETCFlagSupervisor == TRUE )
@@ -35,7 +35,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
         //ucCLUTCHState
         //ANALIZAR SI SE PUEDE MOVER HASTA EL RANGO MAX LEIDO POR LA INT2
         //HACER CONVERSION DE 0-100% A 2-12 DUTY
-        uiCLUTCHDuty = ucTargetMove * 60;
+        uiCLUTCHDuty = slTargetMove * 60;
         uiCLUTCHDuty = uiCLUTCHDuty / 100;
         uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
         //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo

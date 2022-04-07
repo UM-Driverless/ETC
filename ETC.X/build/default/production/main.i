@@ -38312,7 +38312,7 @@ extern unsigned char ucCLUTCHState;
 
 
 void CLUTCH_Init(void);
-void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
+void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
 void CLUTCHInitMove(void);
 # 46 "main.c" 2
@@ -38372,13 +38372,13 @@ void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETCMove(unsigned char slTargetMove, unsigned char ucMode);
 void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
-void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+void ETC_PIDcontroller (unsigned char slTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
@@ -38431,10 +38431,10 @@ void main(void)
         ucAPPS = 50;
 
         __nop();
-        ETC_PIDcontroller( 30 , 0);
 
 
 
+        sensor_sound();
 
 
     }

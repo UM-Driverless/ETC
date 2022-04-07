@@ -31,7 +31,7 @@ extern unsigned char ucCLUTCHState;
 
 //FUNCIONES
 void CLUTCH_Init(void);
-void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
+void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
 void CLUTCHInitMove(void);
 

@@ -152,12 +152,12 @@ void ETCRulesSupervision(void)
 }
 
 //Funcion para mover directamente el servo con PWM
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode) {
+void ETCMove(unsigned char slTargetMove, unsigned char ucMode) {
     //Depender de beat constante en CAN
     if ( ucETCFlagSupervisor == TRUE )
     {
         //HACER CONVERSION DE 0-100% A 2-12 DUTY
-        uiETCDuty = ucTargetMove;
+        uiETCDuty = slTargetMove;
         //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
         if ( ucMode == ucASMode )
         {
@@ -367,19 +367,19 @@ void ETCManual(unsigned char ucTargetManual)
     }
 }
 
-void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
+void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode) {
     /*
      *
      * 
-     * ucTargetMove is the target position of the throttle, in 0-100% = default-fully opened?
+     * slTargetMove is the target position of the throttle, in 0-100% = default-fully opened?
      * ucMode is the driving mode input to the function. It will be checked with the global variable 
      */
     
     // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
     // Static local variables to change values at run time for calibration.
     static signed int K_P = 1000;
-    static signed int K_I = 1;
-    static signed int K_D;
+    static signed int K_I = 10;
+    static signed long K_D = 0;
     static signed long slIntegral = 0;
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0; // TODO CHANGED!!
@@ -396,8 +396,8 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
         // TODO map_perc(value,min,max)... to map a value between min and max as a percentage
         // ui_tp1_mv is the current position. Usually 16-55 for default-open.
         
-        // TODO ---- USE uc_tps_perc INSTEAD OF ui_tps1_mv
-        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);  // in % or what units? TODO RJM
+        // TODO ---- USE uc_tps_perc INSTEAD OF ui_tps1_mv        
+        slErrorPos = (signed long)(slTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);  // in % or what units? TODO RJM
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - slLastErrorPos;
         
@@ -415,7 +415,10 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
             sl_motor_pwm_duty = 100;
         }
         
+      
+        // fprintf(stderr,"%i\n",slErrorPos);
         Nop();
+        
         // MAIN MOVEMENT - DEPENDS ON ASMode¡
         if ( ucMode == ucASMode ) {
             if ( ucASMode == ASMode ) {
@@ -445,9 +448,11 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
 
 /// TESTING
 void sensor_sound(void){
-    GPIO_PWM2_Control(50, uiAPPS1); // Play as frequency the value of the accelerator pedal.
+    GPIO_PWM2_Control(30, uiAPPS1); // Play as frequency the value of the accelerator pedal.
 //    GPIO_PWM2_Control(50, uiAPPS2); // Play as frequency the value of the accelerator pedal.
     
 //    GPIO_PWM2_Control(50, ui_tps1_mv); // Play as frequency the value of the Electronic Throttle Motor.
 //    GPIO_PWM2_Control(50, ui_tps2_mv); // Play as frequency the value of the Electronic Throttle Motor.
+    
+    
 }

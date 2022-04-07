@@ -38370,13 +38370,13 @@ void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETCMove(unsigned char slTargetMove, unsigned char ucMode);
 void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
-void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
+void ETC_PIDcontroller (unsigned char slTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
@@ -38533,12 +38533,12 @@ void ETCRulesSupervision(void)
 }
 
 
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode) {
+void ETCMove(unsigned char slTargetMove, unsigned char ucMode) {
 
     if ( ucETCFlagSupervisor == 0x01 )
     {
 
-        uiETCDuty = ucTargetMove;
+        uiETCDuty = slTargetMove;
 
         if ( ucMode == ucASMode )
         {
@@ -38659,11 +38659,11 @@ void ETCManual(unsigned char ucTargetManual)
     }
 }
 
-void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
+void ETC_PIDcontroller(signed float slTargetMove, unsigned char ucMode) {
 # 380 "ETC.c"
     static signed int K_P = 1000;
-    static signed int K_I = 1;
-    static signed int K_D;
+    static signed int K_I = 10;
+    static signed long K_D = 0;
     static signed long slIntegral = 0;
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0;
@@ -38681,7 +38681,9 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
 
 
 
-        slErrorPos = (signed long)(ucTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);
+        slTargetMove = (3478-uiAPPS1)/(3478-1680);
+
+        slErrorPos = (signed long)(slTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - slLastErrorPos;
 
@@ -38699,7 +38701,10 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
             sl_motor_pwm_duty = 100;
         }
 
+
+
         __nop();
+
 
         if ( ucMode == ucASMode ) {
             if ( ucASMode == 1 ) {
@@ -38729,7 +38734,9 @@ void ETC_PIDcontroller(unsigned char ucTargetMove, unsigned char ucMode) {
 
 
 void sensor_sound(void){
-    GPIO_PWM2_Control(50, uiAPPS1);
+    GPIO_PWM2_Control(30, uiAPPS1);
+
+
 
 
 

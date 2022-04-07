@@ -57,9 +57,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"89 ./ETC.h
-[; ;./ETC.h: 89: void ETC_PIDcontroller (unsigned char ucTargetMove, unsigned char ucMode);
-[v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`uc`uc ]
+"92 ./ETC.h
+[; ;./ETC.h: 92: void sensor_sound(void);
+[v _sensor_sound `(v ~T0 @X0 0 ef ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3634,9 +3634,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "90
 [; ;main.c: 90:         __nop();
 [e ( ___nop ..  ]
-"91
-[; ;main.c: 91:         ETC_PIDcontroller( 30 , 0);
-[e ( _ETC_PIDcontroller (2 , -> -> 30 `i `uc -> -> 0 `i `uc ]
+"94
+[; ;main.c: 94:         sensor_sound();
+[e ( _sensor_sound ..  ]
 "97
 [; ;main.c: 97:     }
 }

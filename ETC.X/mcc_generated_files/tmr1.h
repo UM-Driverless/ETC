@@ -185,7 +185,7 @@ void TMR1_StopTimer(void);
     TMR1_StartTimer();
 
     // Read the current value of TMR1
-    if(0 == TMR1_ReadTimer())
+    if (0 == TMR1_ReadTimer())
     {
         // Do something else...
 
@@ -221,7 +221,7 @@ uint16_t TMR1_ReadTimer(void);
     while(1)
     {
         // Read the TMR1 register
-        if(ZERO == TMR1_ReadTimer())
+        if (ZERO == TMR1_ReadTimer())
         {
             // Do something else...
 
@@ -256,7 +256,7 @@ void TMR1_WriteTimer(uint16_t timerVal);
     <code>
     while(1)
     {
-        if(TMR1IF)
+        if (TMR1IF)
         {
             // Do something else...
 
@@ -297,7 +297,7 @@ void TMR1_Reload(void);
     TMR1_StartSinglePulseAcquistion();
 
     // check TMR1 gate status
-    if(TMR1_CheckGateValueStatus()== 0)
+    if (TMR1_CheckGateValueStatus()== 0)
         xVal = TMR1_ReadTimer();
 
     // wait untill gate interrupt occured
@@ -336,7 +336,7 @@ void TMR1_StartSinglePulseAcquisition(void);
     TMR1_StartSinglePulseAcquistion();
 
     // check TMR1 gate status
-    if(TMR1_CheckGateValueStatus()== 0)
+    if (TMR1_CheckGateValueStatus()== 0)
         xVal = TMR1_ReadTimer();
 
     // wait untill gate interrupt occured

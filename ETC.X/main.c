@@ -58,10 +58,9 @@ void main(void)
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
+    GPIOInit(); // Set digital inputs and outputs.
     
-    // Calibrate ETC - Apply 0% and 100% power to the throttle motor of intake, and read the sensors.
     etc_calibrate();
-    // Calibrate APPS min - Default value when turning on = 0%
     apps_calibrate();
     
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
@@ -70,42 +69,34 @@ void main(void)
     // INTERRUPT_GlobalInterruptDisable();
     
     // Clutch to initial position
-    GPIOInit();
     CLUTCH_Init();
-    
-
     //APPSMODE_SetHigh();
     //APPSSend(0);
-    
-    // Mover ETC en init
-    
     CLUTCHInitMove();
     
     while(1)
     {
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         LED_Toggle();
-        ucAPPS = 50; // Dummy value for testing
         
         Nop();
-        ETC_PIDcontroller( (3478-uiAPPS1)/(3478-1680)*100 , ManualMode); // uiAPPS1 updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
+//        ETC_PID( (3478-ucAPPS1_mv)/(3478-1680)*100 , ManualMode); // ucAPPS1_mv updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
         
-        // Play sound of uiAPPS1 value
-//        sensor_sound();
+        /// Play sound of some value - ucAPPS1_mv ucAPPS2_mv ucAPPS1_perc ucAPPS2_perc ucAPPS_perc
+        GPIO_PWM2_Control(30, ucAPPS1_mv); // Play as frequency
         
-        //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, uc_tps1_perc, uc_tps2_perc, 0, 0, 0, 0);    //Falta meter los APPS target
+        
+        //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0);    //Falta meter los APPS target
     }
 }
 /*
  End of File
 */
 
-// TODO - Make local any variables that don't need to be global.
-// TODO - Local variables in main such as uiAPPS1max, and pass by reference, instead of global. Easy code flow analysis
 // TODO - CAN error messages whenever something is wrong.
+// TODO - Make local any variables that don't need to be global. Local variables in main such as uiAPPS1_opened_mv, and pass by reference, instead of global. Easy code flow analysis
 // TODO - Description for every single variable
 
-// TODO - Questions
 /*
  What are the frequency limits of the ET Motor driver? Note in a comment
  

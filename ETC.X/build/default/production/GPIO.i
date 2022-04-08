@@ -37634,7 +37634,6 @@ unsigned char ucCLUTCHDuty;
 unsigned char ucCLUTCHState;
 
 
-
 void GPIOInit(void)
 {
     do { TRISAbits.TRISA0 = 0; } while(0);

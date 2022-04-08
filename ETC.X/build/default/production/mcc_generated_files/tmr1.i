@@ -37668,7 +37668,7 @@ void TMR1_ISR(void)
 void TMR1_CallBack(void)
 {
 
-    if(TMR1_InterruptHandler)
+    if (TMR1_InterruptHandler)
     {
         TMR1_InterruptHandler();
     }

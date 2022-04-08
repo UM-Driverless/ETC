@@ -130,9 +130,9 @@ void CAN1_Initialize(void);
     {
         SYSTEM_Initialize();
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 //User Application code
             }
@@ -168,9 +168,9 @@ CAN_OP_MODE_STATUS CAN1_OperationModeSet(const CAN_OP_MODES reqestMode);
     {        
         SYSTEM_Initialize();
             
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 //User Application code
             }
@@ -211,15 +211,15 @@ CAN_OP_MODES CAN1_OperationModeGet(void);
      
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 while(1) 
                 {
-                    if(CAN1_ReceivedMessageCountGet() > 0) 
+                    if (CAN1_ReceivedMessageCountGet() > 0) 
                     {
-                        if(true == CAN1_Receive(&msg))
+                        if (true == CAN1_Receive(&msg))
                         {
                             break;
                         }
@@ -308,9 +308,9 @@ bool CAN1_ReceiveFrom(const CAN1_RX_FIFO_CHANNELS fifoChannel, CAN_MSG_OBJ *rxCa
         
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -320,7 +320,7 @@ bool CAN1_ReceiveFrom(const CAN1_RX_FIFO_CHANNELS fifoChannel, CAN_MSG_OBJ *rxCa
                 msg.field.dlc = DLC_32;
                 msg.data = data;
             
-                if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                 {
                     CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                 }
@@ -361,9 +361,9 @@ CAN_TX_MSG_REQUEST_STATUS CAN1_Transmit(const CAN1_TX_FIFO_CHANNELS fifoChannel,
         
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -373,9 +373,9 @@ CAN_TX_MSG_REQUEST_STATUS CAN1_Transmit(const CAN1_TX_FIFO_CHANNELS fifoChannel,
                 msg.field.dlc = DLC_32;
                 msg.data = data;
             
-                if(CAN1_IsBusOff() == false)
+                if (CAN1_IsBusOff() == false)
                 {
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
@@ -419,9 +419,9 @@ bool CAN1_IsBusOff(void);
         
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -431,9 +431,9 @@ bool CAN1_IsBusOff(void);
                 msg.field.dlc = DLC_32;
                 msg.data = data;
             
-                if(CAN1_IsTxErrorPassive() == false)
+                if (CAN1_IsTxErrorPassive() == false)
                 {
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
@@ -478,9 +478,9 @@ bool CAN1_IsTxErrorPassive(void);
         
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -490,9 +490,9 @@ bool CAN1_IsTxErrorPassive(void);
                 msg.field.dlc = DLC_32;
                 msg.data = data;
             
-                if(CAN1_IsTxErrorWarning() == false)
+                if (CAN1_IsTxErrorWarning() == false)
                 {
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
@@ -537,9 +537,9 @@ bool CAN1_IsTxErrorWarning(void);
         
         SYSTEM_Initialize();
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -549,9 +549,9 @@ bool CAN1_IsTxErrorWarning(void);
                 msg.field.dlc = DLC_32;
                 msg.data = data;
             
-                if(CAN1_IsTxErrorActive() == false)
+                if (CAN1_IsTxErrorActive() == false)
                 {
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
@@ -592,15 +592,15 @@ bool CAN1_IsTxErrorActive(void);
         
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 while(1) 
                 {
-                    if(CAN1_IsRxErrorPassive() == false)
+                    if (CAN1_IsRxErrorPassive() == false)
                     {
-                        if(CAN1_ReceivedMessageCountGet() > 0) 
+                        if (CAN1_ReceivedMessageCountGet() > 0) 
                         {
                             CAN1_Receive(&msg);
                         }
@@ -640,15 +640,15 @@ bool CAN1_IsRxErrorPassive(void);
      
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 while(1) 
                 {
-                    if(CAN1_IsRxErrorWarning() == false)
+                    if (CAN1_IsRxErrorWarning() == false)
                     {
-                        if(CAN1_ReceivedMessageCountGet() > 0) 
+                        if (CAN1_ReceivedMessageCountGet() > 0) 
                         {
                             CAN1_Receive(&msg);
                         }
@@ -688,15 +688,15 @@ bool CAN1_IsRxErrorWarning(void);
      
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 while(1) 
                 {
-                    if(CAN1_IsRxErrorActive() == false)
+                    if (CAN1_IsRxErrorActive() == false)
                     {
-                        if(CAN1_ReceivedMessageCountGet() > 0) 
+                        if (CAN1_ReceivedMessageCountGet() > 0) 
                         {
                             CAN1_Receive(&msg);
                         }
@@ -731,21 +731,21 @@ bool CAN1_IsRxErrorActive(void);
     {     
         SYSTEM_Initialize();
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 CAN1_Sleep();
                 
-                if(CAN_DISABLE_MODE == CAN1_OperationModeGet())
+                if (CAN_DISABLE_MODE == CAN1_OperationModeGet())
                 {
                     Sleep(); //Call sleep instruction
                     C1INTLbits.WAKIF = 0; // Clear Wake-Up interrupt flag
                     
                     // Recover to Normal mode
-                    if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_CONFIGURATION_MODE))
+                    if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_CONFIGURATION_MODE))
                     {
-                        if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+                        if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
                         {
                             //User Application code                            
                         }
@@ -789,9 +789,9 @@ void CAN1_Sleep(void);
         
         SYSTEM_Initialize();
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {    
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -801,7 +801,7 @@ void CAN1_Sleep(void);
                 msg.field.dlc = DLC_32;
                 msg.data = data;
             
-                if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                 {
                     CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                 }
@@ -838,13 +838,13 @@ CAN_TX_FIFO_STATUS CAN1_TransmitFIFOStatusGet(const CAN1_TX_FIFO_CHANNELS fifoCh
      
         SYSTEM_Initialize();
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 while(1) 
                 {
-                    if(CAN1_ReceivedMessageCountGet() > 0) 
+                    if (CAN1_ReceivedMessageCountGet() > 0) 
                     {
                         CAN1_Receive(&msg);
                     }
@@ -891,9 +891,9 @@ uint8_t CAN1_ReceivedMessageCountGet(void);
         CAN1_SetInvalidMessageInterruptHandler(&CAN1_InvalidMessage);
         CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {    
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -905,12 +905,12 @@ uint8_t CAN1_ReceivedMessageCountGet(void);
 
                 while(1)
                 {            
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
                     
-                    if(gInvalidMsgOccurred == true)
+                    if (gInvalidMsgOccurred == true)
                     {
                         break;
                     }
@@ -952,20 +952,20 @@ void CAN1_SetInvalidMessageInterruptHandler(void (*handler)(void));
         CAN1_SetBusWakeUpActivityInterruptHandler(&CAN1_BusWakeUpActivity);
         CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 CAN1_Sleep();
                             
                 //Check CAN1 module is in CAN_DISABLE_MODE
-                if(CAN_DISABLE_MODE == CAN1_OperationModeGet())
+                if (CAN_DISABLE_MODE == CAN1_OperationModeGet())
                 {
                     Sleep(); //Call sleep instruction
                     
                     while(1) 
                     {
-                        if(gBusWakeUpOccurred == true)
+                        if (gBusWakeUpOccurred == true)
                         {
                             break;
                         }                        
@@ -1015,9 +1015,9 @@ void CAN1_SetBusWakeUpActivityInterruptHandler(void (*handler)(void));
         CAN1_SetBusErrorInterruptHandler(&CAN1_BusError);
         CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {    
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -1029,12 +1029,12 @@ void CAN1_SetBusWakeUpActivityInterruptHandler(void (*handler)(void));
 
                 while(1)
                 {            
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
                     
-                    if(gBusErrorOccurred == true)
+                    if (gBusErrorOccurred == true)
                     {
                         break;
                     }
@@ -1079,13 +1079,13 @@ void CAN1_SetBusErrorInterruptHandler(void (*handler)(void));
         CAN1_SetModeChangeInterruptHandler(&CAN1_ModeChange);
         CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
         
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 while(1) 
                 {
-                    if(gModeChangeOccurred == true)
+                    if (gModeChangeOccurred == true)
                     {
                         break;
                     }                    
@@ -1134,9 +1134,9 @@ void CAN1_SetModeChangeInterruptHandler(void (*handler)(void));
         CAN1_SetSystemErrorInterruptHandler(&CAN1_SystemError);
         CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {    
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -1148,12 +1148,12 @@ void CAN1_SetModeChangeInterruptHandler(void (*handler)(void));
 
                 while(1)
                 {            
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
                     
-                    if(gSystemOccurred == true)
+                    if (gSystemOccurred == true)
                     {
                         break;
                     }
@@ -1203,9 +1203,9 @@ void CAN1_SetSystemErrorInterruptHandler(void (*handler)(void));
         CAN1_SetTxAttemptInterruptHandler(&CAN1_TxAttempt);
         CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {    
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 msg.msgId = 0x1FFFF;
                 msg.field.formatType = CAN_FD_FORMAT;
@@ -1217,12 +1217,12 @@ void CAN1_SetSystemErrorInterruptHandler(void (*handler)(void));
 
                 while(1)
                 {                               
-                    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
+                    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_FIFO1) & CAN_TX_FIFO_AVAILABLE))
                     {
                         CAN1_Transmit(CAN1_TX_FIFO1, &msg);
                     }
                     
-                    if(gTxAttemptOccurred == true)
+                    if (gTxAttemptOccurred == true)
                     {
                         break;
                     }
@@ -1265,13 +1265,13 @@ void CAN1_SetTxAttemptInterruptHandler(void (*handler)(void));
         CAN1_SetRxBufferOverFlowInterruptHandler(&CAN1_RxBufferOverFlow);
         CAN1_OperationModeSet(CAN_CONFIGURATION_MODE);
 
-        if(CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
+        if (CAN_CONFIGURATION_MODE == CAN1_OperationModeGet())
         {    
-            if(CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
+            if (CAN_OP_MODE_REQUEST_SUCCESS == CAN1_OperationModeSet(CAN_NORMAL_2_0_MODE))
             {
                 while(1) 
                 {
-                    if(gRxOverFlowOccurred == true)
+                    if (gRxOverFlowOccurred == true)
                     {
                         gRxOverFlowOccurred = false;
                         // User Application code

@@ -38326,40 +38326,48 @@ void GPIO_INT2_desembragar(void);
 # 47 "main.c" 2
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
-extern unsigned int uiAPPS1min;
-extern unsigned int uiAPPS1;
-extern unsigned int uiAPPS1max;
+# 32 "./ETC.h"
+extern unsigned int uiAPPS1_default_mv;
+extern unsigned int uiAPPS2_default_mv;
+extern unsigned int uiAPPS1_opened_mv;
+extern unsigned int uiAPPS2_opened_mv;
 
-extern unsigned int uiAPPS2min;
-extern unsigned int uiAPPS2;
-extern unsigned int uiAPPS2max;
-
-
-extern unsigned int ui_tps1_default;
-extern unsigned int uiTPS1_opened;
-extern unsigned int ui_tps2_default;
-extern unsigned int uiTPS2_opened;
-
-extern unsigned char ucETCBeatSupervisor;
-extern unsigned int ui_tps1_mv;
-extern unsigned int ui_tps2_mv;
-extern unsigned char ucETCFlagSupervisor;
+extern unsigned int ucAPPS1_mv;
+extern unsigned int ucAPPS2_mv;
+extern unsigned char ucAPPS1_perc;
+extern unsigned char ucAPPS2_perc;
+extern unsigned char ucAPPS_perc;
 
 extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
-
-
 extern unsigned char ucAPPSManual;
-extern signed long slErrorPos;
+
+
+extern unsigned int uiTPS1_default_mv;
+extern unsigned int uiTPS1_opened_mv;
+extern unsigned int uiTPS2_default_mv;
+extern unsigned int uiTPS2_opened_mv;
+
+extern unsigned int uiTPS1_mv;
+extern unsigned int uiTPS2_mv;
+extern unsigned char ucTPS1_perc;
+extern unsigned char ucTPS2_perc;
+extern unsigned char ucTPS_perc;
+
+extern unsigned int uiETCDuty;
+extern unsigned char ucTPS_STATE;
+extern unsigned char ucTPS1_STATE;
+extern unsigned char ucTPS2_STATE;
+extern unsigned char ucTPS_Volts_STATE;
+extern unsigned char ucETB_STATE;
+extern unsigned char ucETCBeatSupervisor;
+extern unsigned char ucETCFlagSupervisor;
+
 
 
 void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
+
+
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(signed long slTargetMove, unsigned char ucMode);
@@ -38371,7 +38379,7 @@ void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
 
 
-void sensor_sound(void);
+unsigned char perc_of(signed long val, signed long min, signed long max);
 # 48 "main.c" 2
 
 # 1 "./ANALOG.h" 1
@@ -38391,10 +38399,9 @@ void main(void)
 
 
 
-
+    GPIOInit();
 
     etc_calibrate();
-
     apps_calibrate();
 
     (INTCON0bits.GIE = 1);
@@ -38403,13 +38410,7 @@ void main(void)
 
 
 
-    GPIOInit();
     CLUTCH_Init();
-
-
-
-
-
 
 
     CLUTCHInitMove();
@@ -38418,12 +38419,12 @@ void main(void)
     {
 
         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-        ucAPPS = 50;
 
         __nop();
-        ETC_PIDcontroller( (3478-uiAPPS1)/(3478-1680)*100 , 0);
 
 
+
+        GPIO_PWM2_Control(30, ucAPPS1_mv);
 
 
 

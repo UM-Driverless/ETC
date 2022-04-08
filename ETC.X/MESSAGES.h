@@ -57,7 +57,7 @@ extern unsigned char ucASMode; // Declare variable - Introduce the variable into
 // STEERING WHEEL
 extern unsigned char ucSTEER_WH_Clutch;
 
-// DEFINICIONES
+// DEFINITIONS
 #define DataLength_0        			0
 #define DataLength_1        			1
 #define DataLength_2        			2
@@ -88,8 +88,8 @@ extern unsigned char ucSTEER_WH_Clutch;
 // ETC
 #define ETC_SIGNAL                  0x330
 #define ETC_STATE                   0x331
-    
-// DEFINICION DE FUNCIONES    
+
+
 void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8);
 void CANReadMessage(void);
 

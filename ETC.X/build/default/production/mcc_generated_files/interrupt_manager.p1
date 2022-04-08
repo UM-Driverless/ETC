@@ -3628,7 +3628,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _INTERRUPT_InterruptManager ]
 [f ]
 "61
-[; ;mcc_generated_files/interrupt_manager.c: 61:     if(PIE3bits.TMR0IE == 1 && PIR3bits.TMR0IF == 1)
+[; ;mcc_generated_files/interrupt_manager.c: 61:     if (PIE3bits.TMR0IE == 1 && PIR3bits.TMR0IF == 1)
 [e $ ! && == -> . . _PIE3bits 0 7 `i -> 1 `i == -> . . _PIR3bits 0 7 `i -> 1 `i 3183  ]
 "62
 [; ;mcc_generated_files/interrupt_manager.c: 62:     {
@@ -3641,7 +3641,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 3184  ]
 "65
-[; ;mcc_generated_files/interrupt_manager.c: 65:     else if(PIE3bits.TMR1IE == 1 && PIR3bits.TMR1IF == 1)
+[; ;mcc_generated_files/interrupt_manager.c: 65:     else if (PIE3bits.TMR1IE == 1 && PIR3bits.TMR1IF == 1)
 [e :U 3183 ]
 [e $ ! && == -> . . _PIE3bits 0 4 `i -> 1 `i == -> . . _PIR3bits 0 4 `i -> 1 `i 3185  ]
 "66
@@ -3655,7 +3655,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 3186  ]
 "69
-[; ;mcc_generated_files/interrupt_manager.c: 69:     else if(PIE0bits.CANIE == 1 && PIR0bits.CANIF == 1)
+[; ;mcc_generated_files/interrupt_manager.c: 69:     else if (PIE0bits.CANIE == 1 && PIR0bits.CANIF == 1)
 [e :U 3185 ]
 [e $ ! && == -> . . _PIE0bits 0 6 `i -> 1 `i == -> . . _PIR0bits 0 6 `i -> 1 `i 3187  ]
 "70
@@ -3669,7 +3669,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 3188  ]
 "73
-[; ;mcc_generated_files/interrupt_manager.c: 73:     else if(PIE4bits.CANRXIE == 1 && PIR4bits.CANRXIF == 1)
+[; ;mcc_generated_files/interrupt_manager.c: 73:     else if (PIE4bits.CANRXIE == 1 && PIR4bits.CANRXIF == 1)
 [e :U 3187 ]
 [e $ ! && == -> . . _PIE4bits 0 4 `i -> 1 `i == -> . . _PIR4bits 0 4 `i -> 1 `i 3189  ]
 "74

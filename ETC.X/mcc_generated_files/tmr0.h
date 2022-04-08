@@ -190,7 +190,7 @@ void TMR0_StopTimer(void);
     TMR0_StartTimer();
 
     // Read the current value of TMR0
-    if(0 == TMR0_ReadTimer())
+    if (0 == TMR0_ReadTimer())
     {
         // Do something else...
 
@@ -226,7 +226,7 @@ uint8_t TMR0_ReadTimer(void);
     while(1)
     {
         // Read the TMR0 register
-        if(ZERO == TMR0_ReadTimer())
+        if (ZERO == TMR0_ReadTimer())
         {
             // Do something else...
 
@@ -262,7 +262,7 @@ void TMR0_WriteTimer(uint8_t timerVal);
     <code>
     while(1)
     {
-        if(TMR0IF)
+        if (TMR0IF)
         {
             // Do something else...
 

@@ -37653,16 +37653,16 @@ void PWM2_16BIT_LoadBufferRegisters(void)
 void PWM2_16BIT_PWMI_ISR(void)
 {
     PIR5bits.PWM2IF = 0;
-    if((PWM2GIEbits.S1P1IE == 1) && (PWM2GIRbits.S1P1IF == 1))
+    if ((PWM2GIEbits.S1P1IE == 1) && (PWM2GIRbits.S1P1IF == 1))
     {
         PWM2GIRbits.S1P1IF = 0;
-        if(PWM2_16BIT_Slice1Output1_InterruptHandler != ((void*)0))
+        if (PWM2_16BIT_Slice1Output1_InterruptHandler != ((void*)0))
             PWM2_16BIT_Slice1Output1_InterruptHandler();
     }
-    else if((PWM2GIEbits.S1P2IE == 1) && (PWM2GIRbits.S1P2IF == 1))
+    else if ((PWM2GIEbits.S1P2IE == 1) && (PWM2GIRbits.S1P2IF == 1))
     {
         PWM2GIRbits.S1P2IF = 0;
-        if(PWM2_16BIT_Slice1Output2_InterruptHandler != ((void*)0))
+        if (PWM2_16BIT_Slice1Output2_InterruptHandler != ((void*)0))
             PWM2_16BIT_Slice1Output2_InterruptHandler();
     }
 }
@@ -37670,7 +37670,7 @@ void PWM2_16BIT_PWMI_ISR(void)
 void PWM2_16BIT_PWMPI_ISR(void)
 {
     PIR5bits.PWM2PIF = 0;
-    if(PWM2_16BIT_Period_InterruptHandler != ((void*)0))
+    if (PWM2_16BIT_Period_InterruptHandler != ((void*)0))
         PWM2_16BIT_Period_InterruptHandler();
 }
 

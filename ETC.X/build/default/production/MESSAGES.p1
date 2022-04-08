@@ -43,7 +43,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/can1.h: 566: _Bool CAN1_IsTxErrorActive(void);
 [v _CAN1_IsTxErrorActive `(a ~T0 @X0 0 ef ]
 "90 MESSAGES.C
-[; ;MESSAGES.C: 90:     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
+[; ;MESSAGES.C: 90:     if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
 [c E22743 0 1 .. ]
 [n E22743 . CAN_TX_FIFO_FULL CAN_TX_FIFO_AVAILABLE  ]
 [c E22765 0 .. ]
@@ -67,14 +67,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "34 ./CLUTCH.h
 [; ;./CLUTCH.h: 34: void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`l`uc ]
-"79 ./ETC.h
-[; ;./ETC.h: 79: void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
+"81 ./ETC.h
+[; ;./ETC.h: 81: void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
 [v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`l`uc ]
-"52
-[; ;./ETC.h: 52: extern unsigned char ucETCBeatSupervisor;
+"64
+[; ;./ETC.h: 64: extern unsigned char ucETCBeatSupervisor;
 [v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
-"71
-[; ;./ETC.h: 71: void ETCModeSelect (unsigned char ucModeSelect);
+"73
+[; ;./ETC.h: 73: void ETCModeSelect (unsigned char ucModeSelect);
 [v _ETCModeSelect `(v ~T0 @X0 0 ef1`uc ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
@@ -3750,7 +3750,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MESSAGES.C: 71:     msgTransmit.data = CANDATAdata;
 [e = . _msgTransmit 2 &U _CANDATAdata ]
 "73
-[; ;MESSAGES.C: 73:     if(CAN1_IsBusOff() == 0x01)
+[; ;MESSAGES.C: 73:     if (CAN1_IsBusOff() == 0x01)
 [e $ ! == -> ( _CAN1_IsBusOff ..  `i -> 1 `i 3182  ]
 "74
 [; ;MESSAGES.C: 74:     {
@@ -3763,7 +3763,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 3182 ]
 "77
-[; ;MESSAGES.C: 77:     if(CAN1_IsTxErrorPassive() == 0x01)
+[; ;MESSAGES.C: 77:     if (CAN1_IsTxErrorPassive() == 0x01)
 [e $ ! == -> ( _CAN1_IsTxErrorPassive ..  `i -> 1 `i 3183  ]
 "78
 [; ;MESSAGES.C: 78:     {
@@ -3776,7 +3776,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 3183 ]
 "81
-[; ;MESSAGES.C: 81:     if(CAN1_IsTxErrorWarning() == 0x01)
+[; ;MESSAGES.C: 81:     if (CAN1_IsTxErrorWarning() == 0x01)
 [e $ ! == -> ( _CAN1_IsTxErrorWarning ..  `i -> 1 `i 3184  ]
 "82
 [; ;MESSAGES.C: 82:     {
@@ -3789,7 +3789,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 3184 ]
 "85
-[; ;MESSAGES.C: 85:     if(CAN1_IsTxErrorActive() == 0x01)
+[; ;MESSAGES.C: 85:     if (CAN1_IsTxErrorActive() == 0x01)
 [e $ ! == -> ( _CAN1_IsTxErrorActive ..  `i -> 1 `i 3185  ]
 "86
 [; ;MESSAGES.C: 86:     {
@@ -3802,7 +3802,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 3185 ]
 "90
-[; ;MESSAGES.C: 90:     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
+[; ;MESSAGES.C: 90:     if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
 [e $ ! == -> . `E22743 1 `ui & -> ( _CAN1_TransmitFIFOStatusGet (1 . `E22765 0 `ui -> . `E22743 1 `ui 3186  ]
 "91
 [; ;MESSAGES.C: 91:     {
@@ -3861,11 +3861,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MESSAGES.C: 110:     unsigned char uc_data8;
 [v _uc_data8 `uc ~T0 @X0 1 a ]
 "112
-[; ;MESSAGES.C: 112:     if(CAN1_ReceivedMessageCountGet() > 0) {
+[; ;MESSAGES.C: 112:     if (CAN1_ReceivedMessageCountGet() > 0) {
 [e $ ! > -> ( _CAN1_ReceivedMessageCountGet ..  `i -> 0 `i 3188  ]
 {
 "113
-[; ;MESSAGES.C: 113:         if(1 == CAN1_Receive(&msgReceipt)) {
+[; ;MESSAGES.C: 113:         if (1 == CAN1_Receive(&msgReceipt)) {
 [e $ ! == -> 1 `i -> ( _CAN1_Receive (1 &U _msgReceipt `i 3189  ]
 {
 "114

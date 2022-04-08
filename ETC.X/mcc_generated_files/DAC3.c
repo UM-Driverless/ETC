@@ -44,7 +44,7 @@ uint16_t DAC3_Read(uint16_t *dacNonvolatile)
     //Second byte holds D3:D0 padded with 4 0s on the end
     dacVolatile =  (data.volatileVoltByte1 << 4) + (data.volatileVoltByte2 >> 4);
     
-    if(dacNonvolatile)
+    if (dacNonvolatile)
     {
         *dacNonvolatile = (data.nonvolatileVoltByte1 << 4) + (data.nonvolatileVoltByte2 >> 4);
     }

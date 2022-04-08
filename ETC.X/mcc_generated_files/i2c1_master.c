@@ -208,7 +208,7 @@ i2c1_error_t I2C1_Open(i2c1_address_t address)
 {
     i2c1_error_t returnValue = I2C1_BUSY;
     
-    if(!I2C1_Status.inUse)
+    if (!I2C1_Status.inUse)
     {
         I2C1_Status.address = address;
         I2C1_Status.busy = 0;
@@ -240,7 +240,7 @@ i2c1_error_t I2C1_Open(i2c1_address_t address)
 i2c1_error_t I2C1_Close(void)
 {
     i2c1_error_t returnValue = I2C1_BUSY;
-    if(!I2C1_Status.busy)
+    if (!I2C1_Status.busy)
     {
         I2C1_Status.inUse = 0;
         I2C1_Status.address = 0xff;
@@ -255,13 +255,13 @@ i2c1_error_t I2C1_Close(void)
 i2c1_error_t I2C1_MasterOperation(bool read)
 {
     i2c1_error_t returnValue = I2C1_BUSY;
-    if(!I2C1_Status.busy)
+    if (!I2C1_Status.busy)
     {
         I2C1_Status.busy = true;
         returnValue = I2C1_NOERR;
         I2C1_MasterSetCounter((uint8_t) I2C1_Status.data_length);
 
-        if(read)
+        if (read)
         {
             I2C1_Status.state = I2C1_RX;
             I2C1_DO_SEND_ADR_READ();
@@ -295,7 +295,7 @@ void I2C1_SetTimeOut(uint8_t timeOutValue)
 
 void I2C1_SetBuffer(void *buffer, size_t bufferSize)
 {
-    if(I2C1_Status.bufferFree)
+    if (I2C1_Status.bufferFree)
     {
         I2C1_Status.data_ptr = buffer;
         I2C1_Status.data_length = bufferSize;
@@ -330,7 +330,7 @@ void I2C1_SetTimeoutCallback(i2c1_callback_t cb, void *ptr)
 
 static void I2C1_SetCallback(i2c1_callbackIndex_t idx, i2c1_callback_t cb, void *ptr)
 {
-    if(cb)
+    if (cb)
     {
         I2C1_Status.callbackTable[idx] = cb;
         I2C1_Status.callbackPayload[idx] = ptr;
@@ -355,7 +355,7 @@ static inline void I2C1_MasterFsm(void)
 {
     I2C1_ClearInterruptFlags();
 
-    if(I2C1_Status.addressNackCheck && I2C1_MasterIsNack())
+    if (I2C1_Status.addressNackCheck && I2C1_MasterIsNack())
     {
         I2C1_Status.state = I2C1_ADDRESS_NACK;
     }
@@ -364,15 +364,15 @@ static inline void I2C1_MasterFsm(void)
 
 static inline void I2C1_ClearInterruptFlags(void)
 {
-    if(I2C1_MasterIsCountFlagSet())
+    if (I2C1_MasterIsCountFlagSet())
     {
         I2C1_MasterClearCountFlag();
     }
-    else if(I2C1_MasterIsStopFlagSet())
+    else if (I2C1_MasterIsStopFlagSet())
     {
         I2C1_MasterClearStopFlag();
     }
-    else if(I2C1_MasterIsNackFlagSet())
+    else if (I2C1_MasterIsNackFlagSet())
     {
         I2C1_MasterClearNackFlag();
     }
@@ -388,7 +388,7 @@ static i2c1_fsm_states_t I2C1_DO_IDLE(void)
 static i2c1_fsm_states_t I2C1_DO_SEND_ADR_READ(void)
 {
     I2C1_Status.addressNackCheck = 2;
-    if(I2C1_Status.data_length ==  1)
+    if (I2C1_Status.data_length ==  1)
     {
         I2C1_DO_RX_EMPTY();
     }
@@ -405,7 +405,7 @@ static i2c1_fsm_states_t I2C1_DO_SEND_ADR_WRITE(void)
 
 static i2c1_fsm_states_t I2C1_DO_TX(void)
 {
-    if(I2C1_MasterIsNack())
+    if (I2C1_MasterIsNack())
     {
         switch(I2C1_Status.callbackTable[I2C1_DATA_NACK](I2C1_Status.callbackPayload[I2C1_DATA_NACK]))
         {
@@ -419,9 +419,9 @@ static i2c1_fsm_states_t I2C1_DO_TX(void)
                 return I2C1_IDLE;
         }
     }
-    else if(I2C1_MasterIsTxBufEmpty())
+    else if (I2C1_MasterIsTxBufEmpty())
     {
-        if(I2C1_Status.addressNackCheck)
+        if (I2C1_Status.addressNackCheck)
         {
             I2C1_Status.addressNackCheck--;
         }
@@ -438,16 +438,16 @@ static i2c1_fsm_states_t I2C1_DO_TX(void)
 
 static i2c1_fsm_states_t I2C1_DO_RX(void)
 {
-    if(!I2C1_MasterIsRxBufFull())
+    if (!I2C1_MasterIsRxBufFull())
     {
         return I2C1_RX;
     }
-    if(I2C1_Status.addressNackCheck)
+    if (I2C1_Status.addressNackCheck)
     {
         I2C1_Status.addressNackCheck--;
     }
 
-    if(--I2C1_Status.data_length)
+    if (--I2C1_Status.data_length)
     {
         *I2C1_Status.data_ptr++ = I2C1_MasterGetRxData();
         return I2C1_RX;
@@ -496,7 +496,7 @@ static i2c1_fsm_states_t I2C1_DO_RX_EMPTY(void)
             return I2C1_RX;
         default:
         case I2C1_STOP:
-            if(I2C1_Status.state != I2C1_SEND_RESTART_READ)
+            if (I2C1_Status.state != I2C1_SEND_RESTART_READ)
             {
                 I2C1_MasterDisableRestart();
             }
@@ -524,7 +524,7 @@ static i2c1_fsm_states_t I2C1_DO_SEND_RESTART(void)
 static i2c1_fsm_states_t I2C1_DO_SEND_STOP(void)
 {
     I2C1_MasterStop();
-    if(I2C1_MasterGetCounter())
+    if (I2C1_MasterGetCounter())
     {
         I2C1_MasterSetCounter(0);
         I2C1_MasterSendTxData(0);
@@ -634,7 +634,7 @@ i2c1_operations_t I2C1_CallbackRestartRead(void *funPtr)
 /* I2C1 Register Level interfaces */
 static inline bool I2C1_MasterOpen(void)
 {
-    if(!I2C1CON0bits.EN)
+    if (!I2C1CON0bits.EN)
     {
         //CNTIF 0; ACKTIF 0; WRIF 0; ADRIF 0; PCIF 0; RSCIF 0; SCIF 0; 
         I2C1PIR = 0x00;
@@ -817,23 +817,23 @@ static inline void I2C1_MasterWaitForEvent(void)
 {
     while(1)
     {
-        if(PIR7bits.I2C1TXIF)
+        if (PIR7bits.I2C1TXIF)
         {    
             break;
         }
-        if(PIR7bits.I2C1RXIF)
+        if (PIR7bits.I2C1RXIF)
         {  
             break;
         } 
-        if(I2C1PIRbits.PCIF)
+        if (I2C1PIRbits.PCIF)
         {
             break;
         } 
-        if(I2C1PIRbits.CNTIF)
+        if (I2C1PIRbits.CNTIF)
         {
             break;
         }
-        if(I2C1ERRbits.NACKIF)
+        if (I2C1ERRbits.NACKIF)
         {
             break;
         }

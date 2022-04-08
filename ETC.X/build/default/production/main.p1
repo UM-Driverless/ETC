@@ -15,8 +15,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"74 ./ETC.h
-[; ;./ETC.h: 74: void etc_calibrate(void);
+"16 ./GPIO.h
+[; ;./GPIO.h: 16: void GPIOInit(void);
+[v _GPIOInit `(v ~T0 @X0 0 ef ]
+"76 ./ETC.h
+[; ;./ETC.h: 76: void etc_calibrate(void);
 [v _etc_calibrate `(v ~T0 @X0 0 ef ]
 "70
 [; ;./ETC.h: 70: void apps_calibrate(void);
@@ -32,9 +35,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3082 . . . ]
 "2094
 [v _INTCON0bits `VS3082 ~T0 @X0 0 e@1238 ]
-"16 ./GPIO.h
-[; ;./GPIO.h: 16: void GPIOInit(void);
-[v _GPIOInit `(v ~T0 @X0 0 ef ]
 "33 ./CLUTCH.h
 [; ;./CLUTCH.h: 33: void CLUTCH_Init(void);
 [v _CLUTCH_Init `(v ~T0 @X0 0 ef ]
@@ -51,18 +51,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3060 . . ]
 "1491
 [v _LATAbits `VS3060 ~T0 @X0 0 e@1214 ]
-"62 ./ETC.h
-[; ;./ETC.h: 62: extern unsigned char ucAPPS;
-[v _ucAPPS `uc ~T0 @X0 0 e ]
 "8 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"79 ./ETC.h
-[; ;./ETC.h: 79: void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
-[v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`l`uc ]
-"39
-[; ;./ETC.h: 39: extern unsigned int uiAPPS1;
-[v _uiAPPS1 `ui ~T0 @X0 0 e ]
+"18 ./GPIO.h
+[; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+[v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
+"37 ./ETC.h
+[; ;./ETC.h: 37: extern unsigned int ucAPPS1_mv;
+[v _ucAPPS1_mv `ui ~T0 @X0 0 e ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3600,53 +3597,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 "57
 [; ;main.c: 57:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
+"61
+[; ;main.c: 61:     GPIOInit();
+[e ( _GPIOInit ..  ]
 "63
 [; ;main.c: 63:     etc_calibrate();
 [e ( _etc_calibrate ..  ]
-"65
-[; ;main.c: 65:     apps_calibrate();
+"64
+[; ;main.c: 64:     apps_calibrate();
 [e ( _apps_calibrate ..  ]
-"67
-[; ;main.c: 67:     (INTCON0bits.GIE = 1);
+"66
+[; ;main.c: 66:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"73
-[; ;main.c: 73:     GPIOInit();
-[e ( _GPIOInit ..  ]
-"74
-[; ;main.c: 74:     CLUTCH_Init();
+"72
+[; ;main.c: 72:     CLUTCH_Init();
 [e ( _CLUTCH_Init ..  ]
-"82
-[; ;main.c: 82:     CLUTCHInitMove();
+"75
+[; ;main.c: 75:     CLUTCHInitMove();
 [e ( _CLUTCHInitMove ..  ]
-"84
-[; ;main.c: 84:     while(1)
+"77
+[; ;main.c: 77:     while(1)
 [e :U 3183 ]
-"85
-[; ;main.c: 85:     {
+"78
+[; ;main.c: 78:     {
 {
-"87
-[; ;main.c: 87:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+"80
+[; ;main.c: 80:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 [e :U 3187 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
 [e :U 3186 ]
-"88
-[; ;main.c: 88:         ucAPPS = 50;
-[e = _ucAPPS -> -> 50 `i `uc ]
-"90
-[; ;main.c: 90:         __nop();
+"82
+[; ;main.c: 82:         __nop();
 [e ( ___nop ..  ]
-"91
-[; ;main.c: 91:         ETC_PIDcontroller( (3478-uiAPPS1)/(3478-1680)*100 , 0);
-[e ( _ETC_PIDcontroller (2 , -> * / - -> -> 3478 `i `ui _uiAPPS1 -> - -> 3478 `i -> 1680 `i `ui -> -> 100 `i `ui `l -> -> 0 `i `uc ]
-"97
-[; ;main.c: 97:     }
+"86
+[; ;main.c: 86:         GPIO_PWM2_Control(30, ucAPPS1_mv);
+[e ( _GPIO_PWM2_Control (2 , -> -> 30 `i `ui _ucAPPS1_mv ]
+"90
+[; ;main.c: 90:     }
 }
 [e :U 3182 ]
 [e $U 3183  ]
 [e :U 3184 ]
-"98
-[; ;main.c: 98: }
+"91
+[; ;main.c: 91: }
 [e :UE 3181 ]
 }

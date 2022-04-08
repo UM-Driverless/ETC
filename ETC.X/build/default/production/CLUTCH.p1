@@ -14,8 +14,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17 ./GPIO.h
 [; ;./GPIO.h: 17: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM1_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-"55 ./ETC.h
-[; ;./ETC.h: 55: extern unsigned char ucETCFlagSupervisor;
+"65 ./ETC.h
+[; ;./ETC.h: 65: extern unsigned char ucETCFlagSupervisor;
 [v _ucETCFlagSupervisor `uc ~T0 @X0 0 e ]
 "56 ./MESSAGES.h
 [; ;./MESSAGES.h: 56: extern unsigned char ucASMode;

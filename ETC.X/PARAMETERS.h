@@ -18,12 +18,12 @@ extern "C" {
 // PARAMETROS CONSTANTES    
 #define TPSMARGEN 20
 #define APPSMARGEN 100
-#define APPS1max 160 //0.001v
-#define APPS2max 1990 //0.001v
+#define APPS1_OPEN_MV 160 //0.001v
+#define APPS2_OPEN_MV 1990 //0.001v
 
-// ETC PID CONTROL CONSTANTS
-#define ETC_KP 0.9
-#define ETC_KI 0.1 // 5 goes crazy, 1 does nothing
+// ETC PID CONTROL CONSTANTS, then divided by 1000
+#define ETC_KP 1000
+#define ETC_KI 10 // 5 goes crazy, 1 does nothing
 #define ETC_KD 0
 
 #ifdef	__cplusplus

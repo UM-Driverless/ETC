@@ -211,7 +211,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/drivers/i2c_simple_master.c: 101:     int x;
 [v _x `i ~T0 @X0 1 a ]
 "103
-[; ;mcc_generated_files/drivers/i2c_simple_master.c: 103:     for(x = 2; x != 0; x--)
+[; ;mcc_generated_files/drivers/i2c_simple_master.c: 103:     for (x = 2; x != 0; x--)
 {
 [e = _x -> 2 `i ]
 [e $ != _x -> 0 `i 20  ]
@@ -247,7 +247,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ == -> . `E355 1 `ui -> = _e ( _I2C1_Close ..  `ui 27  ]
 [e :U 28 ]
 "111
-[; ;mcc_generated_files/drivers/i2c_simple_master.c: 111:         if(e==I2C1_NOERR) break;
+[; ;mcc_generated_files/drivers/i2c_simple_master.c: 111:         if (e==I2C1_NOERR) break;
 [e $ ! == -> _e `ui -> . `E355 0 `ui 29  ]
 [e $U 21  ]
 [e :U 29 ]

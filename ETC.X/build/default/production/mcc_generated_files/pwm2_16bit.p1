@@ -3865,7 +3865,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pwm2_16bit.c: 170:     PIR5bits.PWM2IF = 0;
 [e = . . _PIR5bits 0 7 -> -> 0 `i `uc ]
 "171
-[; ;mcc_generated_files/pwm2_16bit.c: 171:     if((PWM2GIEbits.S1P1IE == 1) && (PWM2GIRbits.S1P1IF == 1))
+[; ;mcc_generated_files/pwm2_16bit.c: 171:     if ((PWM2GIEbits.S1P1IE == 1) && (PWM2GIRbits.S1P1IF == 1))
 [e $ ! && == -> . . _PWM2GIEbits 0 0 `i -> 1 `i == -> . . _PWM2GIRbits 0 0 `i -> 1 `i 3184  ]
 "172
 [; ;mcc_generated_files/pwm2_16bit.c: 172:     {
@@ -3874,7 +3874,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pwm2_16bit.c: 173:         PWM2GIRbits.S1P1IF = 0;
 [e = . . _PWM2GIRbits 0 0 -> -> 0 `i `uc ]
 "174
-[; ;mcc_generated_files/pwm2_16bit.c: 174:         if(PWM2_16BIT_Slice1Output1_InterruptHandler != ((void*)0))
+[; ;mcc_generated_files/pwm2_16bit.c: 174:         if (PWM2_16BIT_Slice1Output1_InterruptHandler != ((void*)0))
 [e $ ! != _PWM2_16BIT_Slice1Output1_InterruptHandler -> -> -> 0 `i `*v `*F22189 3185  ]
 "175
 [; ;mcc_generated_files/pwm2_16bit.c: 175:             PWM2_16BIT_Slice1Output1_InterruptHandler();
@@ -3885,7 +3885,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 3186  ]
 "177
-[; ;mcc_generated_files/pwm2_16bit.c: 177:     else if((PWM2GIEbits.S1P2IE == 1) && (PWM2GIRbits.S1P2IF == 1))
+[; ;mcc_generated_files/pwm2_16bit.c: 177:     else if ((PWM2GIEbits.S1P2IE == 1) && (PWM2GIRbits.S1P2IF == 1))
 [e :U 3184 ]
 [e $ ! && == -> . . _PWM2GIEbits 0 1 `i -> 1 `i == -> . . _PWM2GIRbits 0 1 `i -> 1 `i 3187  ]
 "178
@@ -3895,7 +3895,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pwm2_16bit.c: 179:         PWM2GIRbits.S1P2IF = 0;
 [e = . . _PWM2GIRbits 0 1 -> -> 0 `i `uc ]
 "180
-[; ;mcc_generated_files/pwm2_16bit.c: 180:         if(PWM2_16BIT_Slice1Output2_InterruptHandler != ((void*)0))
+[; ;mcc_generated_files/pwm2_16bit.c: 180:         if (PWM2_16BIT_Slice1Output2_InterruptHandler != ((void*)0))
 [e $ ! != _PWM2_16BIT_Slice1Output2_InterruptHandler -> -> -> 0 `i `*v `*F22190 3188  ]
 "181
 [; ;mcc_generated_files/pwm2_16bit.c: 181:             PWM2_16BIT_Slice1Output2_InterruptHandler();
@@ -3922,7 +3922,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pwm2_16bit.c: 187:     PIR5bits.PWM2PIF = 0;
 [e = . . _PIR5bits 0 6 -> -> 0 `i `uc ]
 "188
-[; ;mcc_generated_files/pwm2_16bit.c: 188:     if(PWM2_16BIT_Period_InterruptHandler != ((void*)0))
+[; ;mcc_generated_files/pwm2_16bit.c: 188:     if (PWM2_16BIT_Period_InterruptHandler != ((void*)0))
 [e $ ! != _PWM2_16BIT_Period_InterruptHandler -> -> -> 0 `i `*v `*F22192 3190  ]
 "189
 [; ;mcc_generated_files/pwm2_16bit.c: 189:         PWM2_16BIT_Period_InterruptHandler();

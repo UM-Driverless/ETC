@@ -143,7 +143,7 @@ void TMR0_CallBack(void)
 {
     // Add your custom callback code here
     
-    if(TMR0_InterruptHandler)
+    if (TMR0_InterruptHandler)
     {
         TMR0_InterruptHandler();
     }

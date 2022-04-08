@@ -70,24 +70,24 @@ void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned 
     msgTransmit.field.dlc = ( uc_dataLength & 0x0F ); //DATA LENGTH
     msgTransmit.data = CANDATAdata;
     
-    if(CAN1_IsBusOff() == TRUE)
+    if (CAN1_IsBusOff() == TRUE)
     {
         Nop();
     }
-    if(CAN1_IsTxErrorPassive() == TRUE)
+    if (CAN1_IsTxErrorPassive() == TRUE)
     {
         Nop();
     }
-    if(CAN1_IsTxErrorWarning() == TRUE)
+    if (CAN1_IsTxErrorWarning() == TRUE)
     {
         Nop();
     }
-    if(CAN1_IsTxErrorActive() == TRUE)
+    if (CAN1_IsTxErrorActive() == TRUE)
     {
         Nop();
     }
 
-    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_TXQ) & CAN_TX_FIFO_AVAILABLE))
+    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(CAN1_TX_TXQ) & CAN_TX_FIFO_AVAILABLE))
     {        
         CAN1_Transmit(CAN1_TX_TXQ, &msgTransmit);
         Nop();
@@ -109,8 +109,8 @@ void CANReadMessage(void) {
     unsigned char uc_data7;
     unsigned char uc_data8;
     
-    if(CAN1_ReceivedMessageCountGet() > 0) {
-        if(true == CAN1_Receive(&msgReceipt)) {
+    if (CAN1_ReceivedMessageCountGet() > 0) {
+        if (true == CAN1_Receive(&msgReceipt)) {
             Nop();
             id = msgReceipt.msgId;
             idType = msgReceipt.field.idType;
@@ -135,7 +135,7 @@ void CANReadMessage(void) {
                     if ( ucASMode == ASMode ) {
                         CLUTCH_Move(ucTargetClutch, ASMode);
                         //ETCMove(ucTargetAccelerator, ASMode);
-                        ETC_PIDcontroller( ucTargetAccelerator, ASMode);
+                        ETC_PID( ucTargetAccelerator, ASMode);
                         ucETCBeatSupervisor = TRUE;
                     }
                     //APPSSend(ucTargetAccelerator);

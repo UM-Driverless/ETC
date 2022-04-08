@@ -38312,40 +38312,48 @@ void CANReadMessage(void);
 
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
-extern unsigned int uiAPPS1min;
-extern unsigned int uiAPPS1;
-extern unsigned int uiAPPS1max;
+# 32 "./ETC.h"
+extern unsigned int uiAPPS1_default_mv;
+extern unsigned int uiAPPS2_default_mv;
+extern unsigned int uiAPPS1_opened_mv;
+extern unsigned int uiAPPS2_opened_mv;
 
-extern unsigned int uiAPPS2min;
-extern unsigned int uiAPPS2;
-extern unsigned int uiAPPS2max;
-
-
-extern unsigned int ui_tps1_default;
-extern unsigned int uiTPS1_opened;
-extern unsigned int ui_tps2_default;
-extern unsigned int uiTPS2_opened;
-
-extern unsigned char ucETCBeatSupervisor;
-extern unsigned int ui_tps1_mv;
-extern unsigned int ui_tps2_mv;
-extern unsigned char ucETCFlagSupervisor;
+extern unsigned int ucAPPS1_mv;
+extern unsigned int ucAPPS2_mv;
+extern unsigned char ucAPPS1_perc;
+extern unsigned char ucAPPS2_perc;
+extern unsigned char ucAPPS_perc;
 
 extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
-
-
 extern unsigned char ucAPPSManual;
-extern signed long slErrorPos;
+
+
+extern unsigned int uiTPS1_default_mv;
+extern unsigned int uiTPS1_opened_mv;
+extern unsigned int uiTPS2_default_mv;
+extern unsigned int uiTPS2_opened_mv;
+
+extern unsigned int uiTPS1_mv;
+extern unsigned int uiTPS2_mv;
+extern unsigned char ucTPS1_perc;
+extern unsigned char ucTPS2_perc;
+extern unsigned char ucTPS_perc;
+
+extern unsigned int uiETCDuty;
+extern unsigned char ucTPS_STATE;
+extern unsigned char ucTPS1_STATE;
+extern unsigned char ucTPS2_STATE;
+extern unsigned char ucTPS_Volts_STATE;
+extern unsigned char ucETB_STATE;
+extern unsigned char ucETCBeatSupervisor;
+extern unsigned char ucETCFlagSupervisor;
+
 
 
 void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
+
+
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(signed long slTargetMove, unsigned char ucMode);
@@ -38357,7 +38365,7 @@ void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
 
 
-void sensor_sound(void);
+unsigned char perc_of(signed long val, signed long min, signed long max);
 # 10 "MESSAGES.C" 2
 
 # 1 "./CLUTCH.h" 1
@@ -38438,24 +38446,24 @@ void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned 
     msgTransmit.field.dlc = ( uc_dataLength & 0x0F );
     msgTransmit.data = CANDATAdata;
 
-    if(CAN1_IsBusOff() == 0x01)
+    if (CAN1_IsBusOff() == 0x01)
     {
         __nop();
     }
-    if(CAN1_IsTxErrorPassive() == 0x01)
+    if (CAN1_IsTxErrorPassive() == 0x01)
     {
         __nop();
     }
-    if(CAN1_IsTxErrorWarning() == 0x01)
+    if (CAN1_IsTxErrorWarning() == 0x01)
     {
         __nop();
     }
-    if(CAN1_IsTxErrorActive() == 0x01)
+    if (CAN1_IsTxErrorActive() == 0x01)
     {
         __nop();
     }
 
-    if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
+    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
     {
         CAN1_Transmit(TXQ, &msgTransmit);
         __nop();
@@ -38477,8 +38485,8 @@ void CANReadMessage(void) {
     unsigned char uc_data7;
     unsigned char uc_data8;
 
-    if(CAN1_ReceivedMessageCountGet() > 0) {
-        if(1 == CAN1_Receive(&msgReceipt)) {
+    if (CAN1_ReceivedMessageCountGet() > 0) {
+        if (1 == CAN1_Receive(&msgReceipt)) {
             __nop();
             id = msgReceipt.msgId;
             idType = msgReceipt.field.idType;

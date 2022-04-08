@@ -3762,7 +3762,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR0_CallBack ]
 [f ]
 "146
-[; ;mcc_generated_files/tmr0.c: 146:     if(TMR0_InterruptHandler)
+[; ;mcc_generated_files/tmr0.c: 146:     if (TMR0_InterruptHandler)
 [e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F22186 3185  ]
 "147
 [; ;mcc_generated_files/tmr0.c: 147:     {

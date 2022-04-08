@@ -378,7 +378,7 @@ uint16_t DAC3_Read(uint16_t *dacNonvolatile)
 
     dacVolatile = (data.volatileVoltByte1 << 4) + (data.volatileVoltByte2 >> 4);
 
-    if(dacNonvolatile)
+    if (dacNonvolatile)
     {
         *dacNonvolatile = (data.nonvolatileVoltByte1 << 4) + (data.nonvolatileVoltByte2 >> 4);
     }

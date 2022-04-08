@@ -21,40 +21,48 @@ void ANALOGRead(void);
 # 8 "ANALOG.c" 2
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
-extern unsigned int uiAPPS1min;
-extern unsigned int uiAPPS1;
-extern unsigned int uiAPPS1max;
+# 32 "./ETC.h"
+extern unsigned int uiAPPS1_default_mv;
+extern unsigned int uiAPPS2_default_mv;
+extern unsigned int uiAPPS1_opened_mv;
+extern unsigned int uiAPPS2_opened_mv;
 
-extern unsigned int uiAPPS2min;
-extern unsigned int uiAPPS2;
-extern unsigned int uiAPPS2max;
-
-
-extern unsigned int ui_tps1_default;
-extern unsigned int uiTPS1_opened;
-extern unsigned int ui_tps2_default;
-extern unsigned int uiTPS2_opened;
-
-extern unsigned char ucETCBeatSupervisor;
-extern unsigned int ui_tps1_mv;
-extern unsigned int ui_tps2_mv;
-extern unsigned char ucETCFlagSupervisor;
+extern unsigned int ucAPPS1_mv;
+extern unsigned int ucAPPS2_mv;
+extern unsigned char ucAPPS1_perc;
+extern unsigned char ucAPPS2_perc;
+extern unsigned char ucAPPS_perc;
 
 extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
-
-
 extern unsigned char ucAPPSManual;
-extern signed long slErrorPos;
+
+
+extern unsigned int uiTPS1_default_mv;
+extern unsigned int uiTPS1_opened_mv;
+extern unsigned int uiTPS2_default_mv;
+extern unsigned int uiTPS2_opened_mv;
+
+extern unsigned int uiTPS1_mv;
+extern unsigned int uiTPS2_mv;
+extern unsigned char ucTPS1_perc;
+extern unsigned char ucTPS2_perc;
+extern unsigned char ucTPS_perc;
+
+extern unsigned int uiETCDuty;
+extern unsigned char ucTPS_STATE;
+extern unsigned char ucTPS1_STATE;
+extern unsigned char ucTPS2_STATE;
+extern unsigned char ucTPS_Volts_STATE;
+extern unsigned char ucETB_STATE;
+extern unsigned char ucETCBeatSupervisor;
+extern unsigned char ucETCFlagSupervisor;
+
 
 
 void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
+
+
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(signed long slTargetMove, unsigned char ucMode);
@@ -66,7 +74,7 @@ void ETCManual (unsigned char ucTargetManual);
 void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
 
 
-void sensor_sound(void);
+unsigned char perc_of(signed long val, signed long min, signed long max);
 # 9 "ANALOG.c" 2
 
 # 1 "./mcc_generated_files/adc.h" 1
@@ -37798,8 +37806,8 @@ unsigned int ANALOG_GetVoltage(unsigned char ucEntradaAnalogica) {
 
 
 void ANALOGRead(void) {
-    uiAPPS1 = ANALOG_GetVoltage(1);
-    uiAPPS2 = ANALOG_GetVoltage(2);
-    ui_tps1_mv = ANALOG_GetVoltage(3);
-    ui_tps2_mv = ANALOG_GetVoltage(4);
+    ucAPPS1_mv = ANALOG_GetVoltage(1);
+    ucAPPS2_mv = ANALOG_GetVoltage(2);
+    uiTPS1_mv = ANALOG_GetVoltage(3);
+    uiTPS2_mv = ANALOG_GetVoltage(4);
 }

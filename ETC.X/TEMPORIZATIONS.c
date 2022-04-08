@@ -31,8 +31,8 @@ void TEMPORIZATION_100ms(void)
 {
     ANALOGRead();
     //ETCManual(ucAPPSManual);
-    //ETC_PIDcontroller (ucAPPS, ManualMode);
-    //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, uc_tps1_perc, uc_tps2_perc, 0, 0, 0, 0);    //Falta meter los APPS target
+    //ETC_PIDcontroller (ucAPPS_perc, ManualMode);
+    //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0);    //Falta meter los APPS target
     TPSAnalysis();
     APPSAnalysis();
 }
@@ -42,7 +42,7 @@ void TEMPORIZATION_500ms(void)
     // TODO. Temporarily commented. APPS data comes analog from sensor, no CAN.
     //CANWriteMessage(ETC_SIGNAL, DataLength_6,ulAPPS1calc, ulAPPS2calc, slTPS1calc, slTPS2calc, 0, 0, 0, 0);    //Falta meter los APPS target
     
-    //CANWriteMessage(ETC_SIGNAL, DataLength_6,uiAPPS1/100, uiAPPS2/100, ui_tps1_mv, 100, ui_tps2_mv/100, 0, 0, 0, 0);    //Falta meter los APPS target
+    //CANWriteMessage(ETC_SIGNAL, DataLength_6,ucAPPS1_mv/100, ucAPPS2_mv/100, uiTPS1_mv, 100, uiTPS2_mv/100, 0, 0, 0, 0);    //Falta meter los APPS target
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
     CLUTCH_AnalyseState();
     

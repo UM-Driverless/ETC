@@ -23,51 +23,53 @@ extern "C" {
 #define QUITAR_ERROR_TPS1  0xFE    
 #define QUITAR_ERROR_TPS2  0xFD   
 // inversion de voltaje
-#define TPS1_NO_INVERTED    1  
-#define TPS1_INVERTED       2
-#define TPS2_NO_INVERTED    4  
-#define TPS2_INVERTED       8
-#define TPS1_NO_INVERTED_TPS2_NO_INVERTED       5
-#define TPS1_NO_INVERTED_TPS2_INVERTED          9  
-#define TPS1_INVERTED_TPS2_NO_INVERTED          6  
-#define TPS1_INVERTED_TPS2_INVERTED             10  
 #define QUITAR_ERROR_VOLTS                      0xFB       
     
+    
+/// Global Variables
 
-/// VARIABLES    
-extern unsigned int uiAPPS1min;
-extern unsigned int uiAPPS1; // Sent by CAN
-extern unsigned int uiAPPS1max;
+// APPS Variables - Defaults, real-time values, states
+extern unsigned int uiAPPS1_default_mv;
+extern unsigned int uiAPPS2_default_mv;
+extern unsigned int uiAPPS1_opened_mv;
+extern unsigned int uiAPPS2_opened_mv;
 
-extern unsigned int uiAPPS2min;
-extern unsigned int uiAPPS2; // Sent by CAN
-extern unsigned int uiAPPS2max;
-
-// Electronic Throttle (Body, Motor, Control, Sensor...)
-extern unsigned int ui_tps1_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS1_opened; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int ui_tps2_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS2_opened; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-
-extern unsigned char ucETCBeatSupervisor;
-extern unsigned int ui_tps1_mv; // Sent by CAN
-extern unsigned int ui_tps2_mv; // Sent by CAN
-extern unsigned char ucETCFlagSupervisor;
+extern unsigned int ucAPPS1_mv;
+extern unsigned int ucAPPS2_mv;
+extern unsigned char ucAPPS1_perc;
+extern unsigned char ucAPPS2_perc;
+extern unsigned char ucAPPS_perc;
 
 extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
-
-
 extern unsigned char ucAPPSManual;
-extern signed long slErrorPos;
 
-/// Functions
+// TPS Variables - Defaults, real-time values, states
+extern unsigned int uiTPS1_default_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int uiTPS1_opened_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int uiTPS2_default_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int uiTPS2_opened_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+
+extern unsigned int uiTPS1_mv; // Sent by CAN, used by ANALOG.c for ANALOG_GetVoltage, called by interruption in TEMPORIZATIONS.c
+extern unsigned int uiTPS2_mv; // Sent by CAN
+extern unsigned char ucTPS1_perc;
+extern unsigned char ucTPS2_perc;
+extern unsigned char ucTPS_perc;
+
+extern unsigned int uiETCDuty;
+extern unsigned char ucTPS_STATE;
+extern unsigned char ucTPS1_STATE;
+extern unsigned char ucTPS2_STATE;
+extern unsigned char ucTPS_Volts_STATE;
+extern unsigned char ucETB_STATE;
+extern unsigned char ucETCBeatSupervisor;
+extern unsigned char ucETCFlagSupervisor;
+
+
+// APPS functions
 void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
+
+// Electronic Throttle functions (ETC)
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(signed long slTargetMove, unsigned char ucMode);
@@ -76,10 +78,10 @@ void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
-void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 
-/// Testing
-void sensor_sound(void);
+// Generic functions
+unsigned char perc_of(signed long val, signed long min, signed long max);
 
 #ifdef	__cplusplus
 }

@@ -3913,7 +3913,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TMR1_CallBack ]
 [f ]
 "188
-[; ;mcc_generated_files/tmr1.c: 188:     if(TMR1_InterruptHandler)
+[; ;mcc_generated_files/tmr1.c: 188:     if (TMR1_InterruptHandler)
 [e $ ! != _TMR1_InterruptHandler -> -> 0 `i `*F22191 3189  ]
 "189
 [; ;mcc_generated_files/tmr1.c: 189:     {

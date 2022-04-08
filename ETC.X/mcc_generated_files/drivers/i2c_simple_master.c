@@ -100,7 +100,7 @@ uint8_t i2c_read1ByteRegister(i2c1_address_t address, uint8_t reg)
     i2c1_error_t e;
     int x;
 
-    for(x = 2; x != 0; x--)
+    for (x = 2; x != 0; x--)
     {
         while(!I2C1_Open(address)); // sit here until we get the bus..
         I2C1_SetDataCompleteCallback(rd1RegCompleteHandler,&d2);
@@ -108,7 +108,7 @@ uint8_t i2c_read1ByteRegister(i2c1_address_t address, uint8_t reg)
         I2C1_SetAddressNackCallback(NULL,NULL); //NACK polling?
         I2C1_MasterWrite();
         while(I2C1_BUSY == (e = I2C1_Close())); // sit here until finished.
-        if(e==I2C1_NOERR) break;
+        if (e==I2C1_NOERR) break;
     }
     
 

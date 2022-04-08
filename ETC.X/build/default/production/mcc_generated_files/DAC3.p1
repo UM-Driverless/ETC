@@ -78,7 +78,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/DAC3.c: 45:     dacVolatile = (data.volatileVoltByte1 << 4) + (data.volatileVoltByte2 >> 4);
 [e = _dacVolatile -> + << -> . _data 1 `i -> 4 `i >> -> . _data 2 `i -> 4 `i `us ]
 "47
-[; ;mcc_generated_files/DAC3.c: 47:     if(dacNonvolatile)
+[; ;mcc_generated_files/DAC3.c: 47:     if (dacNonvolatile)
 [e $ ! != _dacNonvolatile -> -> 0 `i `*us 7  ]
 "48
 [; ;mcc_generated_files/DAC3.c: 48:     {

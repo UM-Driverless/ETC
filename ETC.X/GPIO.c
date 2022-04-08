@@ -13,14 +13,13 @@
 #include "CLUTCH.h"
 
 
-//VARIABLES
+// VARIABLES
 unsigned char ucCLUTCHlmin;
 unsigned char ucCLUTCHlmax;
 unsigned char ucCLUTCHDuty;
 unsigned char ucCLUTCHState;
 
-
-//FUNCIONES
+// FUNCTIONS
 void GPIOInit(void)
 {
     LED_SetDigitalOutput();

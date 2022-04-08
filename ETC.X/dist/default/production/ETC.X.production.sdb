@@ -210,14 +210,14 @@ CAN_TX_MSG_REQUEST_BRS_ERROR 2
 CAN_TX_MSG_REQUEST_FIFO_FULL 3
 ]
 "24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
-[e E22198 . `uc
+[e E22207 . `uc
 CONTEXT_TPS1 0
 CONTEXT_TPS2 1
 CONTEXT_APPS1 2
 CONTEXT_APPS2 3
 ]
 "25
-[e E22187 . `uc
+[e E22196 . `uc
 TPS2 4
 TPS1 16
 APPS2 17
@@ -233,8 +233,6 @@ channel_FVR_Buffer2 63
 [v i2_ANALOG_GetVoltage ANALOG_GetVoltage `(ui  1 e 2 0 ]
 "88
 [v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\__lldiv.c
-[v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 [v i2___aldiv __aldiv `(l  1 e 4 0 ]
@@ -276,7 +274,6 @@ channel_FVR_Buffer2 63
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-[v i2___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
@@ -292,29 +289,30 @@ channel_FVR_Buffer2 63
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 "110
 [v _CLUTCHInitMove CLUTCHInitMove `(v  1 e 1 0 ]
-"72 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"75 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _apps_calibrate apps_calibrate `(v  1 e 1 0 ]
-"87
+"88
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
-"128
+"100
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
-"153
+"125
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
-"189
+"161
 [v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
-"231
+"201
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
-"339
+"270
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
-"368
+"294
 [v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
-[v i2_ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
-"24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"373
+[v _perc_of perc_of `(uc  1 e 1 0 ]
+"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
-"43
+"42
 [v _GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
 [v i2_GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
-"64
+"63
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 "54 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
@@ -836,7 +834,7 @@ channel_FVR_Buffer2 63
 [v _PMD5 PMD5 `VEuc  1 e 1 @101 ]
 "1660
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S3896 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S3900 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -846,8 +844,8 @@ channel_FVR_Buffer2 63
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1677
-[u S3905 . 1 `S3896 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES3905  1 e 1 @1222 ]
+[u S3909 . 1 `S3900 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES3909  1 e 1 @1222 ]
 "1678
 [v _PMD6 PMD6 `VEuc  1 e 1 @102 ]
 "1722
@@ -868,7 +866,7 @@ channel_FVR_Buffer2 63
 [v _PMD7 PMD7 `VEuc  1 e 1 @103 ]
 "1784
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
-[s S3929 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S3933 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -878,13 +876,13 @@ channel_FVR_Buffer2 63
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1801
-[u S3938 . 1 `S3929 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES3938  1 e 1 @1224 ]
+[u S3942 . 1 `S3933 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES3942  1 e 1 @1224 ]
 "1802
 [v _PMD8 PMD8 `VEuc  1 e 1 @104 ]
 "1846
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
-[s S3839 . 1 `uc 1 RA0 1 0 :1:0 
+[s S3843 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -894,9 +892,9 @@ channel_FVR_Buffer2 63
 `uc 1 RA7 1 0 :1:7 
 ]
 "1884
-[u S3848 . 1 `S3839 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES3848  1 e 1 @1230 ]
-[s S3818 . 1 `uc 1 RB0 1 0 :1:0 
+[u S3852 . 1 `S3843 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES3852  1 e 1 @1230 ]
+[s S3822 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -906,8 +904,8 @@ channel_FVR_Buffer2 63
 `uc 1 RB7 1 0 :1:7 
 ]
 "1946
-[u S3827 . 1 `S3818 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES3827  1 e 1 @1231 ]
+[u S3831 . 1 `S3822 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3831  1 e 1 @1231 ]
 [s S1119 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -1834,54 +1832,48 @@ channel_FVR_Buffer2 63
 [v _PIE7bits PIE7bits `VES1851  1 e 1 @1189 ]
 "19 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _uiCLUTCHDuty uiCLUTCHDuty `ui  1 e 2 0 ]
-"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-[v _uiAPPS1min uiAPPS1min `ui  1 e 2 0 ]
-"24
-[v _uiAPPS1max uiAPPS1max `ui  1 e 2 0 ]
-"25
-[v _uiAPPS2min uiAPPS2min `ui  1 e 2 0 ]
+"25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+[v _uiAPPS1_default_mv uiAPPS1_default_mv `ui  1 e 2 0 ]
 "26
-[v _uiAPPS2max uiAPPS2max `ui  1 e 2 0 ]
+[v _uiAPPS2_default_mv uiAPPS2_default_mv `ui  1 e 2 0 ]
+"27
+[v _uiAPPS1_opened_mv uiAPPS1_opened_mv `ui  1 e 2 0 ]
 "28
-[v _ui_tps1_default ui_tps1_default `ui  1 e 2 0 ]
-"29
-[v _uiTPS1_opened uiTPS1_opened `ui  1 e 2 0 ]
+[v _uiAPPS2_opened_mv uiAPPS2_opened_mv `ui  1 e 2 0 ]
 "30
-[v _ui_tps2_default ui_tps2_default `ui  1 e 2 0 ]
+[v _ucAPPS1_mv ucAPPS1_mv `ui  1 e 2 0 ]
 "31
-[v _uiTPS2_opened uiTPS2_opened `ui  1 e 2 0 ]
+[v _ucAPPS2_mv ucAPPS2_mv `ui  1 e 2 0 ]
+"32
+[v _ucAPPS1_perc ucAPPS1_perc `uc  1 e 1 0 ]
 "33
-[v _uiAPPS1 uiAPPS1 `ui  1 e 2 0 ]
+[v _ucAPPS2_perc ucAPPS2_perc `uc  1 e 1 0 ]
 "34
-[v _uiAPPS2 uiAPPS2 `ui  1 e 2 0 ]
-"36
-[v _ulAPPS1calc ulAPPS1calc `ul  1 e 4 0 ]
-"37
-[v _ulAPPS2calc ulAPPS2calc `ul  1 e 4 0 ]
-"38
-[v _ucAPPS1Perc ucAPPS1Perc `uc  1 e 1 0 ]
-"39
-[v _ucAPPS2Perc ucAPPS2Perc `uc  1 e 1 0 ]
+[v _ucAPPS_perc ucAPPS_perc `uc  1 e 1 0 ]
 "40
-[v _ucAPPS ucAPPS `uc  1 e 1 0 ]
+[v _uiTPS1_default_mv uiTPS1_default_mv `ui  1 e 2 0 ]
 "41
-[v _ui_tps1_mv ui_tps1_mv `ui  1 e 2 0 ]
+[v _uiTPS2_default_mv uiTPS2_default_mv `ui  1 e 2 0 ]
 "42
-[v _ui_tps2_mv ui_tps2_mv `ui  1 e 2 0 ]
+[v _uiTPS1_opened_mv uiTPS1_opened_mv `ui  1 e 2 0 ]
 "43
-[v _uc_tps1_perc uc_tps1_perc `uc  1 e 1 0 ]
-"44
-[v _uc_tps2_perc uc_tps2_perc `uc  1 e 1 0 ]
+[v _uiTPS2_opened_mv uiTPS2_opened_mv `ui  1 e 2 0 ]
 "45
-[v _uc_tps_perc uc_tps_perc `uc  1 e 1 0 ]
-"50
-[v _uiETCDuty uiETCDuty `ui  1 e 2 0 ]
-"52
-[v _ucETCBeatSupervisor ucETCBeatSupervisor `uc  1 e 1 0 ]
-"53
-[v _ucETCFlagSupervisor ucETCFlagSupervisor `uc  1 e 1 0 ]
+[v _uiTPS1_mv uiTPS1_mv `ui  1 e 2 0 ]
+"46
+[v _uiTPS2_mv uiTPS2_mv `ui  1 e 2 0 ]
+"47
+[v _ucTPS1_perc ucTPS1_perc `uc  1 e 1 0 ]
+"48
+[v _ucTPS2_perc ucTPS2_perc `uc  1 e 1 0 ]
+"49
+[v _ucTPS_perc ucTPS_perc `uc  1 e 1 0 ]
 "55
-[v _slErrorPos slErrorPos `l  1 e 4 0 ]
+[v _uiETCDuty uiETCDuty `ui  1 e 2 0 ]
+"57
+[v _ucETCBeatSupervisor ucETCBeatSupervisor `uc  1 e 1 0 ]
+"58
+[v _ucETCFlagSupervisor ucETCFlagSupervisor `uc  1 e 1 0 ]
 "17 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _ucCLUTCHlmin ucCLUTCHlmin `uc  1 e 1 0 ]
 "18
@@ -2007,12 +1999,12 @@ channel_FVR_Buffer2 63
 "54 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"98
+"91
 } 0
-"189 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"161 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
 {
-"229
+"199
 } 0
 "15 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
 [v _ANALOG_GetVoltage ANALOG_GetVoltage `(ui  1 e 2 0 ]
@@ -2052,10 +2044,10 @@ channel_FVR_Buffer2 63
 {
 "448
 } 0
-"72 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"75 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _apps_calibrate apps_calibrate `(v  1 e 1 0 ]
 {
-"85
+"86
 } 0
 "50 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -2300,54 +2292,22 @@ channel_FVR_Buffer2 63
 [v ADC_SetADIInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "721
 } 0
-"24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
 {
-"36
+"35
 } 0
-"368 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-[v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
-{
-"383
-[v ETC_PIDcontroller@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 67 ]
-"382
-[v ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 63 ]
-"368
-[v ETC_PIDcontroller@slTargetMove slTargetMove `l  1 p 4 50 ]
-[v ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 54 ]
-"378
-[v ETC_PIDcontroller@sl_K_P sl_K_P `l  1 s 4 sl_K_P ]
-"379
-[v ETC_PIDcontroller@sl_K_I sl_K_I `l  1 s 4 sl_K_I ]
-"380
-[v ETC_PIDcontroller@sl_K_D sl_K_D `l  1 s 4 sl_K_D ]
-"381
-[v ETC_PIDcontroller@slIntegral slIntegral `l  1 s 4 slIntegral ]
-"384
-[v ETC_PIDcontroller@slLastErrorPos slLastErrorPos `l  1 s 4 slLastErrorPos ]
-"445
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
-[v ___lmul __lmul `(ul  1 e 4 0 ]
-{
-"17
-[v ___lmul@product product `ul  1 a 4 8 ]
-"15
-[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
-[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
-"129
-} 0
-"64 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"63
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 {
-"67
-[v GPIO_PWM2_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
 "66
+[v GPIO_PWM2_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
+"65
 [v GPIO_PWM2_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 46 ]
-"64
+"63
 [v GPIO_PWM2_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 40 ]
 [v GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 42 ]
-"79
+"78
 } 0
 "144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
@@ -2383,17 +2343,17 @@ channel_FVR_Buffer2 63
 [v CLUTCH_Move@ucMode ucMode `uc  1 p 1 54 ]
 "72
 } 0
-"43 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"42 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
 {
-"46
-[v GPIO_PWM1_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
 "45
+[v GPIO_PWM1_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
+"44
 [v GPIO_PWM1_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 46 ]
-"43
+"42
 [v GPIO_PWM1_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 40 ]
 [v GPIO_PWM1_Control@uiFreq uiFreq `ui  1 p 2 42 ]
-"58
+"57
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -2414,10 +2374,10 @@ channel_FVR_Buffer2 63
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v ___wmul@product product `ui  1 a 2 11 ]
+[v ___wmul@product product `ui  1 a 2 4 ]
 "15
-[v ___wmul@multiplier multiplier `ui  1 p 2 7 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 9 ]
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
@@ -2462,13 +2422,13 @@ channel_FVR_Buffer2 63
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
-[v ___aldiv@quotient quotient `l  1 a 4 22 ]
+[v ___aldiv@quotient quotient `l  1 a 4 10 ]
 "11
-[v ___aldiv@sign sign `uc  1 a 1 21 ]
-[v ___aldiv@counter counter `uc  1 a 1 20 ]
+[v ___aldiv@sign sign `uc  1 a 1 9 ]
+[v ___aldiv@counter counter `uc  1 a 1 8 ]
 "7
-[v ___aldiv@dividend dividend `l  1 p 4 12 ]
-[v ___aldiv@divisor divisor `l  1 p 4 16 ]
+[v ___aldiv@dividend dividend `l  1 p 4 0 ]
+[v ___aldiv@divisor divisor `l  1 p 4 4 ]
 "41
 } 0
 "144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
@@ -2539,10 +2499,10 @@ channel_FVR_Buffer2 63
 [v i2CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
 "107
 } 0
-"339 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"270 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
 {
-"358
+"286
 } 0
 "65 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
@@ -2569,27 +2529,23 @@ channel_FVR_Buffer2 63
 {
 "38
 } 0
-"231 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"201 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
 {
-"337
+"268
 } 0
-"87
+"88
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
 {
-"124
+"96
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\__lldiv.c
-[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"373
+[v _perc_of perc_of `(uc  1 e 1 0 ]
 {
-"10
-[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
-"11
-[v ___lldiv@counter counter `uc  1 a 1 12 ]
-"7
-[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
-[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
-"30
+[v perc_of@val val `l  1 p 4 26 ]
+[v perc_of@min min `l  1 p 4 30 ]
+[v perc_of@max max `l  1 p 4 34 ]
+"389
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -2702,57 +2658,6 @@ channel_FVR_Buffer2 63
 [v CANReadMessage@uc_data6 uc_data6 `uc  1 a 1 79 ]
 "185
 } 0
-"368 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-[v i2_ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
-{
-"383
-[v i2ETC_PIDcontroller@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 67 ]
-"382
-[v i2ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 63 ]
-"368
-[v i2ETC_PIDcontroller@slTargetMove slTargetMove `l  1 p 4 50 ]
-[v i2ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 54 ]
-"445
-} 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
-[v i2___lmul __lmul `(ul  1 e 4 0 ]
-{
-"17
-[v i2___lmul@product product `ul  1 a 4 8 ]
-"15
-[v i2___lmul@multiplier multiplier `ul  1 p 4 0 ]
-[v i2___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
-"129
-} 0
-"64 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
-[v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
-{
-"67
-[v i2GPIO_PWM2_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
-"66
-[v i2GPIO_PWM2_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 46 ]
-"64
-[v i2GPIO_PWM2_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 40 ]
-[v i2GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 42 ]
-"79
-} 0
-"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
-[v i2_PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
-{
-[v i2PWM2_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
-"148
-} 0
-"150
-[v i2_PWM2_16BIT_SetSlice1Output1DutyCycleRegister PWM2_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
-{
-[v i2PWM2_16BIT_SetSlice1Output1DutyCycleRegister@registerValue registerValue `us  1 p 2 0 ]
-"154
-} 0
-"162
-[v i2_PWM2_16BIT_LoadBufferRegisters PWM2_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
-{
-"166
-} 0
 "29 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v i2_CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 {
@@ -2760,17 +2665,70 @@ channel_FVR_Buffer2 63
 [v i2CLUTCH_Move@ucMode ucMode `uc  1 p 1 54 ]
 "72
 } 0
-"43 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"42 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
 {
-"46
-[v i2GPIO_PWM1_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
 "45
+[v i2GPIO_PWM1_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
+"44
 [v i2GPIO_PWM1_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 46 ]
-"43
+"42
 [v i2GPIO_PWM1_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 40 ]
 [v i2GPIO_PWM1_Control@uiFreq uiFreq `ui  1 p 2 42 ]
-"58
+"57
+} 0
+"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+[v i2_PWM1_16BIT_WritePeriodRegister PWM1_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
+{
+[v i2PWM1_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
+"148
+} 0
+"150
+[v i2_PWM1_16BIT_SetSlice1Output1DutyCycleRegister PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
+{
+[v i2PWM1_16BIT_SetSlice1Output1DutyCycleRegister@registerValue registerValue `us  1 p 2 0 ]
+"154
+} 0
+"162
+[v i2_PWM1_16BIT_LoadBufferRegisters PWM1_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
+{
+"166
+} 0
+"294 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+[v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
+{
+"309
+[v ETC_PIDcontroller@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 67 ]
+"308
+[v ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 63 ]
+"294
+[v ETC_PIDcontroller@sl_target_perc sl_target_perc `l  1 p 4 50 ]
+[v ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 54 ]
+"304
+[v ETC_PIDcontroller@sl_K_P sl_K_P `l  1 s 4 sl_K_P ]
+"305
+[v ETC_PIDcontroller@sl_K_I sl_K_I `l  1 s 4 sl_K_I ]
+"306
+[v ETC_PIDcontroller@sl_K_D sl_K_D `l  1 s 4 sl_K_D ]
+"307
+[v ETC_PIDcontroller@slIntegral slIntegral `l  1 s 4 slIntegral ]
+"310
+[v ETC_PIDcontroller@slLastErrorPos slLastErrorPos `l  1 s 4 slLastErrorPos ]
+"311
+[v ETC_PIDcontroller@slErrorPos slErrorPos `l  1 s 4 slErrorPos ]
+"371
+} 0
+"63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+[v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
+{
+"66
+[v i2GPIO_PWM2_Control@uiConvertedDC uiConvertedDC `ui  1 a 2 48 ]
+"65
+[v i2GPIO_PWM2_Control@uiConvertedPeriod uiConvertedPeriod `ui  1 a 2 46 ]
+"63
+[v i2GPIO_PWM2_Control@uiDutyCycle uiDutyCycle `ui  1 p 2 40 ]
+[v i2GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 42 ]
+"78
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
@@ -2791,10 +2749,10 @@ channel_FVR_Buffer2 63
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
-[v i2___wmul@product product `ui  1 a 2 11 ]
+[v i2___wmul@product product `ui  1 a 2 4 ]
 "15
-[v i2___wmul@multiplier multiplier `ui  1 p 2 7 ]
-[v i2___wmul@multiplicand multiplicand `ui  1 p 2 9 ]
+[v i2___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v i2___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
@@ -2848,30 +2806,40 @@ channel_FVR_Buffer2 63
 [v i2___aldiv@divisor divisor `l  1 p 4 16 ]
 "41
 } 0
-"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
-[v i2_PWM1_16BIT_WritePeriodRegister PWM1_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
+"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+[v i2_PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
 {
-[v i2PWM1_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
+[v i2PWM2_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
 "148
 } 0
 "150
-[v i2_PWM1_16BIT_SetSlice1Output1DutyCycleRegister PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
+[v i2_PWM2_16BIT_SetSlice1Output1DutyCycleRegister PWM2_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
 {
-[v i2PWM1_16BIT_SetSlice1Output1DutyCycleRegister@registerValue registerValue `us  1 p 2 0 ]
+[v i2PWM2_16BIT_SetSlice1Output1DutyCycleRegister@registerValue registerValue `us  1 p 2 0 ]
 "154
 } 0
 "162
-[v i2_PWM1_16BIT_LoadBufferRegisters PWM1_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
+[v i2_PWM2_16BIT_LoadBufferRegisters PWM2_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
 {
 "166
 } 0
-"128 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v ___lmul@product product `ul  1 a 4 8 ]
+"15
+[v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"100 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 {
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 2 ]
-"143
+"115
 } 0
 "447 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_ReceivedMessageCountGet CAN1_ReceivedMessageCountGet `(uc  1 e 1 0 ]

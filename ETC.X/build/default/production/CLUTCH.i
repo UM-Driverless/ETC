@@ -25,7 +25,7 @@ extern unsigned char ucCLUTCHState;
 
 
 void CLUTCH_Init(void);
-void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode);
+void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
 void CLUTCHInitMove(void);
 # 9 "CLUTCH.c" 2
@@ -38334,7 +38334,7 @@ extern unsigned char ucASMode;
 
 extern unsigned char ucSTEER_WH_Clutch;
 # 93 "./MESSAGES.h"
-void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
+void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8);
 void CANReadMessage(void);
 # 13 "CLUTCH.c" 2
 
@@ -38354,19 +38354,9 @@ extern unsigned int uiTPS1_opened;
 extern unsigned int ui_tps2_default;
 extern unsigned int uiTPS2_opened;
 
-
+extern unsigned char ucETCBeatSupervisor;
 extern unsigned int ui_tps1_mv;
 extern unsigned int ui_tps2_mv;
-extern unsigned char uc_tps1_perc;
-extern unsigned char uc_tps2_perc;
-extern unsigned char uc_tps_perc;
-extern unsigned char ucTPS_STATE;
-extern unsigned char ucTPS1_STATE;
-extern unsigned char ucTPS2_STATE;
-extern unsigned char ucTPS_Volts_STATE;
-extern unsigned int uiETCDuty;
-extern unsigned char ucETB_STATE;
-extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 
 extern unsigned char ucAPPS_STATE;
@@ -38385,13 +38375,13 @@ void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
-void ETCMove(unsigned char slTargetMove, unsigned char ucMode);
+void ETCMove(signed long slTargetMove, unsigned char ucMode);
 void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
-void ETC_PIDcontroller (unsigned char slTargetMove, unsigned char ucMode);
+void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
@@ -38411,7 +38401,7 @@ void CLUTCH_Init(void)
     ucCLUTCHState = 0;
 }
 
-void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode)
+void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
 {
 
     if ( ucETCFlagSupervisor == 0x01 )

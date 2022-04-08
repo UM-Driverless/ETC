@@ -12,8 +12,7 @@
 
 //**********ANALOG_GetVoltage***********//
 // Function that returns the analog voltage read.
-unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
-{
+unsigned int ANALOG_GetVoltage(unsigned char ucEntradaAnalogica) {
     uint16_t uiValorAnalog;
     uint16_t uiValorVoltage;
     unsigned char ucFlag;
@@ -86,8 +85,7 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
 }
 
 //EJECUTARLO CADA 10ms
-void ANALOGRead(void)
-{
+void ANALOGRead(void) {
     uiAPPS1 = ANALOG_GetVoltage(ENT_APPS1);
     uiAPPS2 = ANALOG_GetVoltage(ENT_APPS2);
     ui_tps1_mv = ANALOG_GetVoltage(ENT_TPS1);

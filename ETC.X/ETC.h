@@ -49,19 +49,9 @@ extern unsigned int uiTPS1_opened; // Called by TEMPORIZATIONS.c, TODO move to m
 extern unsigned int ui_tps2_default; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
 extern unsigned int uiTPS2_opened; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
 
-
+extern unsigned char ucETCBeatSupervisor;
 extern unsigned int ui_tps1_mv; // Sent by CAN
 extern unsigned int ui_tps2_mv; // Sent by CAN
-extern unsigned char uc_tps1_perc;
-extern unsigned char uc_tps2_perc;
-extern unsigned char uc_tps_perc;
-extern unsigned char ucTPS_STATE;
-extern unsigned char ucTPS1_STATE;
-extern unsigned char ucTPS2_STATE;
-extern unsigned char ucTPS_Volts_STATE;
-extern unsigned int uiETCDuty;
-extern unsigned char ucETB_STATE;
-extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 
 extern unsigned char ucAPPS_STATE;
@@ -80,7 +70,7 @@ void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
-void ETCMove(unsigned char slTargetMove, unsigned char ucMode);
+void ETCMove(signed long slTargetMove, unsigned char ucMode);
 void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);

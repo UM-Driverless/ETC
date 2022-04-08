@@ -26,7 +26,7 @@ void CLUTCH_Init(void)
     ucCLUTCHState = CLUTCH_NONE;
 }
 
-void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode)
+void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
 {
     //Depender de beat constante en CAN
     if ( ucETCFlagSupervisor == TRUE )

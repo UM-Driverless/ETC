@@ -38314,7 +38314,7 @@ extern unsigned char ucASMode;
 
 extern unsigned char ucSTEER_WH_Clutch;
 # 93 "./MESSAGES.h"
-void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
+void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8);
 void CANReadMessage(void);
 # 15 "ETC.c" 2
 
@@ -38339,19 +38339,9 @@ extern unsigned int uiTPS1_opened;
 extern unsigned int ui_tps2_default;
 extern unsigned int uiTPS2_opened;
 
-
+extern unsigned char ucETCBeatSupervisor;
 extern unsigned int ui_tps1_mv;
 extern unsigned int ui_tps2_mv;
-extern unsigned char uc_tps1_perc;
-extern unsigned char uc_tps2_perc;
-extern unsigned char uc_tps_perc;
-extern unsigned char ucTPS_STATE;
-extern unsigned char ucTPS1_STATE;
-extern unsigned char ucTPS2_STATE;
-extern unsigned char ucTPS_Volts_STATE;
-extern unsigned int uiETCDuty;
-extern unsigned char ucETB_STATE;
-extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 
 extern unsigned char ucAPPS_STATE;
@@ -38370,13 +38360,13 @@ void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
-void ETCMove(unsigned char slTargetMove, unsigned char ucMode);
+void ETCMove(signed long slTargetMove, unsigned char ucMode);
 void etc_calibrate(void);
 void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
-void ETC_PIDcontroller (unsigned char slTargetMove, unsigned char ucMode);
+void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
 
 
 void sensor_sound(void);
@@ -38434,8 +38424,6 @@ unsigned char ucETCBeatSupervisor = 0x00;
 unsigned char ucETCFlagSupervisor = 0x00;
 unsigned char ucAPPSManual;
 signed long slErrorPos;
-
-
 
 
 
@@ -38533,7 +38521,7 @@ void ETCRulesSupervision(void)
 }
 
 
-void ETCMove(unsigned char slTargetMove, unsigned char ucMode) {
+void ETCMove(signed long slTargetMove, unsigned char ucMode) {
 
     if ( ucETCFlagSupervisor == 0x01 )
     {
@@ -38570,7 +38558,7 @@ void ETCMove(unsigned char slTargetMove, unsigned char ucMode) {
 }
 
 void etc_calibrate(void) {
-# 201 "ETC.c"
+# 199 "ETC.c"
     GPIO_PWM2_Control(0, 600);
 
     _delay((unsigned long)((200)*(10000000/4000.0)));
@@ -38605,7 +38593,7 @@ void etc_calibrate(void) {
 
 void TPSAnalysis(void)
 {
-# 267 "ETC.c"
+# 265 "ETC.c"
     uc_tps1_perc = 100* (signed long)(ui_tps1_mv - ui_tps1_default) / (signed long)(uiTPS1_opened - ui_tps1_default);
     uc_tps2_perc = 100* (signed long)(ui_tps2_mv - ui_tps2_default) / (signed long)(uiTPS2_opened - ui_tps2_default);
 
@@ -38627,7 +38615,7 @@ void TPSAnalysis(void)
     uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
 
     __nop();
-# 339 "ETC.c"
+# 337 "ETC.c"
 }
 
 void ETCSupervisor(void) {
@@ -38659,11 +38647,11 @@ void ETCManual(unsigned char ucTargetManual)
     }
 }
 
-void ETC_PIDcontroller(signed float slTargetMove, unsigned char ucMode) {
-# 380 "ETC.c"
-    static signed int K_P = 1000;
-    static signed int K_I = 10;
-    static signed long K_D = 0;
+void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode) {
+# 378 "ETC.c"
+    static signed long sl_K_P = 1000;
+    static signed long sl_K_I = 10;
+    static signed long sl_K_D = 0;
     static signed long slIntegral = 0;
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0;
@@ -38681,14 +38669,12 @@ void ETC_PIDcontroller(signed float slTargetMove, unsigned char ucMode) {
 
 
 
-        slTargetMove = (3478-uiAPPS1)/(3478-1680);
-
         slErrorPos = (signed long)(slTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - slLastErrorPos;
 
 
-        sl_motor_pwm_duty = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative;
+        sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
         sl_motor_pwm_duty /= 1000;
 
 

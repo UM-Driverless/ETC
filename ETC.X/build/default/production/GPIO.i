@@ -37620,7 +37620,7 @@ extern unsigned char ucCLUTCHState;
 
 
 void CLUTCH_Init(void);
-void CLUTCH_Move (unsigned char slTargetMove, unsigned char ucMode);
+void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
 void CLUTCHInitMove(void);
 # 13 "GPIO.c" 2

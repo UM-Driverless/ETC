@@ -38,7 +38,7 @@ unsigned long ulAPPS2calc;
 unsigned char ucAPPS1Perc;
 unsigned char ucAPPS2Perc;
 unsigned char ucAPPS;
-unsigned int ui_tps1_mv;
+unsigned int ui_tps1_mv; // Global because it depends on interruptions. (TEMPORIZATIONS.c)
 unsigned int ui_tps2_mv;
 unsigned char uc_tps1_perc;
 unsigned char uc_tps2_perc;
@@ -53,8 +53,6 @@ unsigned char ucETCBeatSupervisor = FALSE;
 unsigned char ucETCFlagSupervisor = FALSE;
 unsigned char ucAPPSManual;
 signed long  slErrorPos;
-
-
 
 
 /// APPS
@@ -152,7 +150,7 @@ void ETCRulesSupervision(void)
 }
 
 //Funcion para mover directamente el servo con PWM
-void ETCMove(unsigned char slTargetMove, unsigned char ucMode) {
+void ETCMove(signed long slTargetMove, unsigned char ucMode) {
     //Depender de beat constante en CAN
     if ( ucETCFlagSupervisor == TRUE )
     {
@@ -377,9 +375,9 @@ void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode) {
     
     // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
     // Static local variables to change values at run time for calibration.
-    static signed int K_P = 1000;
-    static signed int K_I = 10;
-    static signed long K_D = 0;
+    static signed long sl_K_P = 1000;
+    static signed long sl_K_I = 10;
+    static signed long sl_K_D = 0;
     static signed long slIntegral = 0;
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0; // TODO CHANGED!!
@@ -402,7 +400,7 @@ void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode) {
         slDerivative = slErrorPos - slLastErrorPos;
         
 //        sl_motor_pwm_duty = ETC_KP * slErrorPos + ETC_KI * slIntegral + ETC_KD * slDerivative;
-        sl_motor_pwm_duty = K_P * slErrorPos + K_I * slIntegral + K_D * slDerivative; // TODO complete
+        sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative; // TODO complete
         sl_motor_pwm_duty /= 1000; // Because the constants are long, not floats
 //        sl_motor_pwm_duty /= 100;
         

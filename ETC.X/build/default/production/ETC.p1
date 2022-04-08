@@ -11,47 +11,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
-"17 ./GPIO.h
-[; ;./GPIO.h: 17: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
-[v _GPIO_PWM1_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-"55 ./ETC.h
-[; ;./ETC.h: 55: extern unsigned char ucETCFlagSupervisor;
-[v _ucETCFlagSupervisor `uc ~T0 @X0 0 e ]
-"56 ./MESSAGES.h
-[; ;./MESSAGES.h: 56: extern unsigned char ucASMode;
-[v _ucASMode `uc ~T0 @X0 0 e ]
-"1935 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1935: 
-[s S3077 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3077 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
-"1934
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1934: __asm("MD1CON1 equ 06Bh");
-[u S3076 `S3077 1 ]
-[n S3076 . . ]
-"1946
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1946:         unsigned MD1CLSYNC :1;
-[v _PORTBbits `VS3076 ~T0 @X0 0 e@1231 ]
-"1873
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1873:         unsigned OPOL :1;
-[s S3075 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3075 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"1872
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1872:         unsigned :3;
-[u S3074 `S3075 1 ]
-[n S3074 . . ]
-"1884
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1884:         unsigned MD1EN :1;
-[v _PORTAbits `VS3074 ~T0 @X0 0 e@1230 ]
+"40 ./mcc_generated_files/drivers/i2c_simple_master.h
+[; ;./mcc_generated_files/drivers/i2c_simple_master.h: 40: void i2c_write2ByteRegister(i2c1_address_t address, uint8_t reg, uint16_t data);
+[v _i2c_write2ByteRegister `(v ~T0 @X0 0 ef3`uc`uc`us ]
+"27 ./mcc_generated_files/DAC3_example.h
+[; ;./mcc_generated_files/DAC3_example.h: 27: void DAC3_example(void);
+[v _DAC3_example `(v ~T0 @X0 0 ef ]
 "8 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"28 ./CLUTCH.h
-[; ;./CLUTCH.h: 28: extern unsigned char ucCLUTCHDuty;
-[v _ucCLUTCHDuty `uc ~T0 @X0 0 e ]
-[v F193 `(v ~T0 @X0 1 tf1`ul ]
+"1480 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
+[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
+[s S3063 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3063 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"1479
+[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1479:     struct {
+[u S3062 `S3063 1 ]
+[n S3062 . . ]
+"1491
+[v _LATAbits `VS3062 ~T0 @X0 0 e@1214 ]
+"56 ./MESSAGES.h
+[; ;./MESSAGES.h: 56: extern unsigned char ucASMode;
+[v _ucASMode `uc ~T0 @X0 0 e ]
+"18 ./GPIO.h
+[; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+[v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
+[v F606 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
-[v __delay `JF193 ~T0 @X0 0 e ]
+[v __delay `JF606 ~T0 @X0 0 e ]
 [p i __delay ]
+"22 ./ANALOG.h
+[; ;./ANALOG.h: 22: unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica);
+[v _ANALOG_GetVoltage `(ui ~T0 @X0 0 ef1`uc ]
+"17 ./GPIO.h
+[; ;./GPIO.h: 17: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+[v _GPIO_PWM1_Control `(v ~T0 @X0 0 ef2`ui`ui ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3577,301 +3571,823 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;./MESSAGES.h: 20: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
-"17 CLUTCH.c
-[; ;CLUTCH.c: 17: unsigned char ucCLUTCHlmin;
-[v _ucCLUTCHlmin `uc ~T0 @X0 1 e ]
-"18
-[; ;CLUTCH.c: 18: unsigned char ucCLUTCHlmax;
-[v _ucCLUTCHlmax `uc ~T0 @X0 1 e ]
-"19
-[; ;CLUTCH.c: 19: unsigned int uiCLUTCHDuty;
-[v _uiCLUTCHDuty `ui ~T0 @X0 1 e ]
-"20
-[; ;CLUTCH.c: 20: unsigned char ucCLUTCHState;
-[v _ucCLUTCHState `uc ~T0 @X0 1 e ]
-"23
-[; ;CLUTCH.c: 23: void CLUTCH_Init(void)
-[v _CLUTCH_Init `(v ~T0 @X0 1 ef ]
+"23 ETC.c
+[; ;ETC.c: 23: unsigned int uiAPPS1min;
+[v _uiAPPS1min `ui ~T0 @X0 1 e ]
 "24
-[; ;CLUTCH.c: 24: {
-{
-[e :U _CLUTCH_Init ]
-[f ]
+[; ;ETC.c: 24: unsigned int uiAPPS1max;
+[v _uiAPPS1max `ui ~T0 @X0 1 e ]
 "25
-[; ;CLUTCH.c: 25:     GPIO_PWM1_Control( 0, 50 );
-[e ( _GPIO_PWM1_Control (2 , -> -> 0 `i `ui -> -> 50 `i `ui ]
+[; ;ETC.c: 25: unsigned int uiAPPS2min;
+[v _uiAPPS2min `ui ~T0 @X0 1 e ]
 "26
-[; ;CLUTCH.c: 26:     ucCLUTCHState = 0;
-[e = _ucCLUTCHState -> -> 0 `i `uc ]
-"27
-[; ;CLUTCH.c: 27: }
+[; ;ETC.c: 26: unsigned int uiAPPS2max;
+[v _uiAPPS2max `ui ~T0 @X0 1 e ]
+"28
+[; ;ETC.c: 28: unsigned int ui_tps1_default;
+[v _ui_tps1_default `ui ~T0 @X0 1 e ]
+"29
+[; ;ETC.c: 29: unsigned int uiTPS1_opened;
+[v _uiTPS1_opened `ui ~T0 @X0 1 e ]
+"30
+[; ;ETC.c: 30: unsigned int ui_tps2_default;
+[v _ui_tps2_default `ui ~T0 @X0 1 e ]
+"31
+[; ;ETC.c: 31: unsigned int uiTPS2_opened;
+[v _uiTPS2_opened `ui ~T0 @X0 1 e ]
+"33
+[; ;ETC.c: 33: unsigned int uiAPPS1;
+[v _uiAPPS1 `ui ~T0 @X0 1 e ]
+"34
+[; ;ETC.c: 34: unsigned int uiAPPS2;
+[v _uiAPPS2 `ui ~T0 @X0 1 e ]
+"35
+[; ;ETC.c: 35: unsigned char ucAPPS_STATE;
+[v _ucAPPS_STATE `uc ~T0 @X0 1 e ]
+"36
+[; ;ETC.c: 36: unsigned long ulAPPS1calc;
+[v _ulAPPS1calc `ul ~T0 @X0 1 e ]
+"37
+[; ;ETC.c: 37: unsigned long ulAPPS2calc;
+[v _ulAPPS2calc `ul ~T0 @X0 1 e ]
+"38
+[; ;ETC.c: 38: unsigned char ucAPPS1Perc;
+[v _ucAPPS1Perc `uc ~T0 @X0 1 e ]
+"39
+[; ;ETC.c: 39: unsigned char ucAPPS2Perc;
+[v _ucAPPS2Perc `uc ~T0 @X0 1 e ]
+"40
+[; ;ETC.c: 40: unsigned char ucAPPS;
+[v _ucAPPS `uc ~T0 @X0 1 e ]
+"41
+[; ;ETC.c: 41: unsigned int ui_tps1_mv;
+[v _ui_tps1_mv `ui ~T0 @X0 1 e ]
+"42
+[; ;ETC.c: 42: unsigned int ui_tps2_mv;
+[v _ui_tps2_mv `ui ~T0 @X0 1 e ]
+"43
+[; ;ETC.c: 43: unsigned char uc_tps1_perc;
+[v _uc_tps1_perc `uc ~T0 @X0 1 e ]
+"44
+[; ;ETC.c: 44: unsigned char uc_tps2_perc;
+[v _uc_tps2_perc `uc ~T0 @X0 1 e ]
+"45
+[; ;ETC.c: 45: unsigned char uc_tps_perc;
+[v _uc_tps_perc `uc ~T0 @X0 1 e ]
+"46
+[; ;ETC.c: 46: unsigned char ucTPS_STATE;
+[v _ucTPS_STATE `uc ~T0 @X0 1 e ]
+"47
+[; ;ETC.c: 47: unsigned char ucTPS1_STATE;
+[v _ucTPS1_STATE `uc ~T0 @X0 1 e ]
+"48
+[; ;ETC.c: 48: unsigned char ucTPS2_STATE;
+[v _ucTPS2_STATE `uc ~T0 @X0 1 e ]
+"49
+[; ;ETC.c: 49: unsigned char ucTPS_Volts_STATE;
+[v _ucTPS_Volts_STATE `uc ~T0 @X0 1 e ]
+"50
+[; ;ETC.c: 50: unsigned int uiETCDuty;
+[v _uiETCDuty `ui ~T0 @X0 1 e ]
+"51
+[; ;ETC.c: 51: unsigned char ucETB_STATE;
+[v _ucETB_STATE `uc ~T0 @X0 1 e ]
+"52
+[; ;ETC.c: 52: unsigned char ucETCBeatSupervisor = 0x00;
+[v _ucETCBeatSupervisor `uc ~T0 @X0 1 e ]
+[i _ucETCBeatSupervisor
+-> -> 0 `i `uc
+]
+"53
+[; ;ETC.c: 53: unsigned char ucETCFlagSupervisor = 0x00;
+[v _ucETCFlagSupervisor `uc ~T0 @X0 1 e ]
+[i _ucETCFlagSupervisor
+-> -> 0 `i `uc
+]
+"54
+[; ;ETC.c: 54: unsigned char ucAPPSManual;
+[v _ucAPPSManual `uc ~T0 @X0 1 e ]
+"55
+[; ;ETC.c: 55: signed long slErrorPos;
+[v _slErrorPos `l ~T0 @X0 1 e ]
+"59
+[; ;ETC.c: 59: void APPSSend(unsigned char ucPercent) {
+[v _APPSSend `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _APPSSend ]
+[v _ucPercent `uc ~T0 @X0 1 r1 ]
+[f ]
+"60
+[; ;ETC.c: 60:     float voltage;
+[v _voltage `f ~T0 @X0 1 a ]
+"61
+[; ;ETC.c: 61:     uint16_t dacAPPS1, dacAPPS2;
+[v _dacAPPS1 `us ~T0 @X0 1 a ]
+[v _dacAPPS2 `us ~T0 @X0 1 a ]
+"63
+[; ;ETC.c: 63:     dacAPPS1 = (4096*ucPercent)/5;
+[e = _dacAPPS1 -> / * -> 4096 `i -> _ucPercent `i -> 5 `i `us ]
+"64
+[; ;ETC.c: 64:     dacAPPS2 = (4096*ucPercent)/5;
+[e = _dacAPPS2 -> / * -> 4096 `i -> _ucPercent `i -> 5 `i `us ]
+"66
+[; ;ETC.c: 66:     i2c_write2ByteRegister(0x60,(dacAPPS1>>8),dacAPPS1);
+[e ( _i2c_write2ByteRegister (3 , , -> -> 96 `i `uc -> >> -> _dacAPPS1 `ui -> 8 `i `uc _dacAPPS1 ]
+"68
+[; ;ETC.c: 68:     i2c_write2ByteRegister(0x61,(dacAPPS2>>8),dacAPPS2);
+[e ( _i2c_write2ByteRegister (3 , , -> -> 97 `i `uc -> >> -> _dacAPPS2 `ui -> 8 `i `uc _dacAPPS2 ]
+"69
+[; ;ETC.c: 69:     DAC3_example();
+[e ( _DAC3_example ..  ]
+"70
+[; ;ETC.c: 70: }
 [e :UE 3181 ]
 }
-"29
-[; ;CLUTCH.c: 29: void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
-[v _CLUTCH_Move `(v ~T0 @X0 1 ef2`l`uc ]
-"30
-[; ;CLUTCH.c: 30: {
-{
-[e :U _CLUTCH_Move ]
-"29
-[; ;CLUTCH.c: 29: void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
-[v _slTargetMove `l ~T0 @X0 1 r1 ]
-[v _ucMode `uc ~T0 @X0 1 r2 ]
-"30
-[; ;CLUTCH.c: 30: {
-[f ]
-"32
-[; ;CLUTCH.c: 32:     if ( ucETCFlagSupervisor == 0x01 )
-[e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3183  ]
-"33
-[; ;CLUTCH.c: 33:     {
-{
-"38
-[; ;CLUTCH.c: 38:         uiCLUTCHDuty = slTargetMove * 60;
-[e = _uiCLUTCHDuty -> * _slTargetMove -> -> 60 `i `l `ui ]
-"39
-[; ;CLUTCH.c: 39:         uiCLUTCHDuty = uiCLUTCHDuty / 100;
-[e = _uiCLUTCHDuty / _uiCLUTCHDuty -> -> 100 `i `ui ]
-"40
-[; ;CLUTCH.c: 40:         uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
-[e = _uiCLUTCHDuty & _uiCLUTCHDuty -> -> 255 `i `ui ]
-"42
-[; ;CLUTCH.c: 42:         if ( ucMode == ucASMode )
-[e $ ! == -> _ucMode `i -> _ucASMode `i 3184  ]
-"43
-[; ;CLUTCH.c: 43:         {
-{
-"57
-[; ;CLUTCH.c: 57:             if ( ucCLUTCHState < 4 )
-[e $ ! < -> _ucCLUTCHState `i -> 4 `i 3185  ]
-"58
-[; ;CLUTCH.c: 58:             {
-{
-"59
-[; ;CLUTCH.c: 59:                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
-[e ( _GPIO_PWM1_Control (2 , _uiCLUTCHDuty -> -> 300 `i `ui ]
-"60
-[; ;CLUTCH.c: 60:             }
-}
-[e :U 3185 ]
-"61
-[; ;CLUTCH.c: 61:         }
-}
-[e $U 3186  ]
-"62
-[; ;CLUTCH.c: 62:         else
-[e :U 3184 ]
-"63
-[; ;CLUTCH.c: 63:         {
-{
-"65
-[; ;CLUTCH.c: 65:         }
-}
-[e :U 3186 ]
-"66
-[; ;CLUTCH.c: 66:     }
-}
-[e $U 3187  ]
-"67
-[; ;CLUTCH.c: 67:     else
-[e :U 3183 ]
-"68
-[; ;CLUTCH.c: 68:     {
-{
-"69
-[; ;CLUTCH.c: 69:         GPIO_PWM1_Control(0, 300);
-[e ( _GPIO_PWM1_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
-"70
-[; ;CLUTCH.c: 70:     }
-}
-[e :U 3187 ]
 "72
-[; ;CLUTCH.c: 72: }
+[; ;ETC.c: 72: void apps_calibrate(void){
+[v _apps_calibrate `(v ~T0 @X0 1 ef ]
+{
+[e :U _apps_calibrate ]
+[f ]
+"79
+[; ;ETC.c: 79:     uiAPPS1min = uiAPPS1+100;
+[e = _uiAPPS1min + _uiAPPS1 -> -> 100 `i `ui ]
+"80
+[; ;ETC.c: 80:     uiAPPS2min = uiAPPS2-100;
+[e = _uiAPPS2min - _uiAPPS2 -> -> 100 `i `ui ]
+"83
+[; ;ETC.c: 83:     uiAPPS1max = 160;
+[e = _uiAPPS1max -> -> 160 `i `ui ]
+"84
+[; ;ETC.c: 84:     uiAPPS2max = 1990;
+[e = _uiAPPS2max -> -> 1990 `i `ui ]
+"85
+[; ;ETC.c: 85: }
 [e :UE 3182 ]
 }
-"75
-[; ;CLUTCH.c: 75: void CLUTCH_AnalyseState(void)
-[v _CLUTCH_AnalyseState `(v ~T0 @X0 1 ef ]
-"76
-[; ;CLUTCH.c: 76: {
-{
-[e :U _CLUTCH_AnalyseState ]
-[f ]
-"77
-[; ;CLUTCH.c: 77:     unsigned char ucFDC1;
-[v _ucFDC1 `uc ~T0 @X0 1 a ]
-"78
-[; ;CLUTCH.c: 78:     unsigned char ucFDC2;
-[v _ucFDC2 `uc ~T0 @X0 1 a ]
-"80
-[; ;CLUTCH.c: 80:     ucFDC1 = PORTBbits.RB2;
-[e = _ucFDC1 . . _PORTBbits 0 2 ]
-"81
-[; ;CLUTCH.c: 81:     ucFDC2 = PORTAbits.RA1;
-[e = _ucFDC2 . . _PORTAbits 0 1 ]
-"83
-[; ;CLUTCH.c: 83:     __nop();
-[e ( ___nop ..  ]
-"85
-[; ;CLUTCH.c: 85:     if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x00 ) )
-[e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 0 `i 3189  ]
-"86
-[; ;CLUTCH.c: 86:     {
-{
 "87
-[; ;CLUTCH.c: 87:         ucCLUTCHState = 1;
-[e = _ucCLUTCHState -> -> 1 `i `uc ]
-"88
-[; ;CLUTCH.c: 88:         ucCLUTCHlmin = ucCLUTCHDuty;
-[e = _ucCLUTCHlmin _ucCLUTCHDuty ]
+[; ;ETC.c: 87: void APPSAnalysis(void) {
+[v _APPSAnalysis `(v ~T0 @X0 1 ef ]
+{
+[e :U _APPSAnalysis ]
+[f ]
 "89
-[; ;CLUTCH.c: 89:     }
-}
-[e $U 3190  ]
+[; ;ETC.c: 89:     __nop();
+[e ( ___nop ..  ]
 "90
-[; ;CLUTCH.c: 90:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x01 ) )
-[e :U 3189 ]
-[e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 1 `i 3191  ]
+[; ;ETC.c: 90:     if ( uiAPPS1min < uiAPPS1max )
+[e $ ! < _uiAPPS1min _uiAPPS1max 3184  ]
 "91
-[; ;CLUTCH.c: 91:     {
+[; ;ETC.c: 91:     {
 {
-"92
-[; ;CLUTCH.c: 92:         ucCLUTCHState = 2;
-[e = _ucCLUTCHState -> -> 2 `i `uc ]
 "93
-[; ;CLUTCH.c: 93:         ucCLUTCHlmax = ucCLUTCHDuty;
-[e = _ucCLUTCHlmax _ucCLUTCHDuty ]
+[; ;ETC.c: 93:         __nop();
+[e ( ___nop ..  ]
 "94
-[; ;CLUTCH.c: 94:     }
-}
-[e $U 3192  ]
+[; ;ETC.c: 94:         ulAPPS1calc = (uiAPPS1-uiAPPS1min)/(uiAPPS1max - uiAPPS1min)*100;
+[e = _ulAPPS1calc -> * / - _uiAPPS1 _uiAPPS1min - _uiAPPS1max _uiAPPS1min -> -> 100 `i `ui `ul ]
 "95
-[; ;CLUTCH.c: 95:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x00 ) )
-[e :U 3191 ]
-[e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 0 `i 3193  ]
+[; ;ETC.c: 95:     }
+}
+[e $U 3185  ]
 "96
-[; ;CLUTCH.c: 96:     {
-{
+[; ;ETC.c: 96:     else
+[e :U 3184 ]
 "97
-[; ;CLUTCH.c: 97:         ucCLUTCHState = 3;
-[e = _ucCLUTCHState -> -> 3 `i `uc ]
-"98
-[; ;CLUTCH.c: 98:     }
-}
-[e $U 3194  ]
-"99
-[; ;CLUTCH.c: 99:     else if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x01 ) )
-[e :U 3193 ]
-[e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 1 `i 3195  ]
-"100
-[; ;CLUTCH.c: 100:     {
+[; ;ETC.c: 97:     {
 {
-"101
-[; ;CLUTCH.c: 101:         ucCLUTCHState = 4;
-[e = _ucCLUTCHState -> -> 4 `i `uc ]
-"102
-[; ;CLUTCH.c: 102:     }
+"99
+[; ;ETC.c: 99:         ulAPPS1calc = (uiAPPS1min-uiAPPS1)/(uiAPPS1min-uiAPPS1max)*100;
+[e = _ulAPPS1calc -> * / - _uiAPPS1min _uiAPPS1 - _uiAPPS1min _uiAPPS1max -> -> 100 `i `ui `ul ]
+"100
+[; ;ETC.c: 100:     }
 }
-[e $U 3196  ]
+[e :U 3185 ]
+"102
+[; ;ETC.c: 102:     if ( uiAPPS2min < uiAPPS2max )
+[e $ ! < _uiAPPS2min _uiAPPS2max 3186  ]
 "103
-[; ;CLUTCH.c: 103:     else
-[e :U 3195 ]
-"104
-[; ;CLUTCH.c: 104:     {
+[; ;ETC.c: 103:     {
 {
 "105
-[; ;CLUTCH.c: 105:         ucCLUTCHState = 5;
-[e = _ucCLUTCHState -> -> 5 `i `uc ]
+[; ;ETC.c: 105:         __nop();
+[e ( ___nop ..  ]
 "106
-[; ;CLUTCH.c: 106:     }
-}
-[e :U 3196 ]
-[e :U 3194 ]
-[e :U 3192 ]
-[e :U 3190 ]
+[; ;ETC.c: 106:         ulAPPS2calc = (uiAPPS2-uiAPPS2min);
+[e = _ulAPPS2calc -> - _uiAPPS2 _uiAPPS2min `ul ]
 "107
-[; ;CLUTCH.c: 107: }
+[; ;ETC.c: 107:         ulAPPS2calc = ulAPPS2calc*100;
+[e = _ulAPPS2calc * _ulAPPS2calc -> -> -> 100 `i `l `ul ]
+"108
+[; ;ETC.c: 108:         ulAPPS2calc = (ulAPPS2calc/(uiAPPS2max-uiAPPS2min));
+[e = _ulAPPS2calc / _ulAPPS2calc -> - _uiAPPS2max _uiAPPS2min `ul ]
+"109
+[; ;ETC.c: 109:     }
+}
+[e $U 3187  ]
+"110
+[; ;ETC.c: 110:     else
+[e :U 3186 ]
+"111
+[; ;ETC.c: 111:     {
+{
+"114
+[; ;ETC.c: 114:         __nop();
+[e ( ___nop ..  ]
+"115
+[; ;ETC.c: 115:         ulAPPS2calc = (uiAPPS2min-uiAPPS2);
+[e = _ulAPPS2calc -> - _uiAPPS2min _uiAPPS2 `ul ]
+"116
+[; ;ETC.c: 116:         ulAPPS2calc = ulAPPS2calc*100;
+[e = _ulAPPS2calc * _ulAPPS2calc -> -> -> 100 `i `l `ul ]
+"117
+[; ;ETC.c: 117:         ulAPPS2calc = (ulAPPS2calc/(uiAPPS2min-uiAPPS2max));
+[e = _ulAPPS2calc / _ulAPPS2calc -> - _uiAPPS2min _uiAPPS2max `ul ]
+"118
+[; ;ETC.c: 118:     }
+}
+[e :U 3187 ]
+"120
+[; ;ETC.c: 120:     ucAPPS1Perc = ( ulAPPS1calc & 0x00007F );
+[e = _ucAPPS1Perc -> & _ulAPPS1calc -> -> -> 127 `i `l `ul `uc ]
+"121
+[; ;ETC.c: 121:     ucAPPS2Perc = ( ulAPPS2calc & 0x00007F );
+[e = _ucAPPS2Perc -> & _ulAPPS2calc -> -> -> 127 `i `l `ul `uc ]
+"122
+[; ;ETC.c: 122:     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
+[e = _ucAPPS -> / + -> _ucAPPS1Perc `i -> _ucAPPS2Perc `i -> 2 `i `uc ]
+"123
+[; ;ETC.c: 123:     __nop();
+[e ( ___nop ..  ]
+"124
+[; ;ETC.c: 124: }
+[e :UE 3183 ]
+}
+"128
+[; ;ETC.c: 128: void ETCModeSelect(unsigned char ucModeSelect) {
+[v _ETCModeSelect `(v ~T0 @X0 1 ef1`uc ]
+{
+[e :U _ETCModeSelect ]
+[v _ucModeSelect `uc ~T0 @X0 1 r1 ]
+[f ]
+"129
+[; ;ETC.c: 129:     switch (ucModeSelect)
+[e $U 3190  ]
+"130
+[; ;ETC.c: 130:     {
+{
+"131
+[; ;ETC.c: 131:         case 1:
+[e :U 3191 ]
+"134
+[; ;ETC.c: 134:             do { LATAbits.LATA5 = 1; } while(0);
+[e :U 3194 ]
+{
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 3193 ]
+"135
+[; ;ETC.c: 135:             break;
+[e $U 3189  ]
+"136
+[; ;ETC.c: 136:         case 0:
+[e :U 3195 ]
+"137
+[; ;ETC.c: 137:             do { LATAbits.LATA5 = 0; } while(0);
+[e :U 3198 ]
+{
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 3197 ]
+"138
+[; ;ETC.c: 138:             break;
+[e $U 3189  ]
+"139
+[; ;ETC.c: 139:         default:
+[e :U 3199 ]
+"140
+[; ;ETC.c: 140:             do { LATAbits.LATA5 = 0; } while(0);
+[e :U 3202 ]
+{
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 3201 ]
+"141
+[; ;ETC.c: 141:             break;
+[e $U 3189  ]
+"142
+[; ;ETC.c: 142:     }
+}
+[e $U 3189  ]
+[e :U 3190 ]
+[e [\ -> _ucModeSelect `i , $ -> 1 `i 3191
+ , $ -> 0 `i 3195
+ 3199 ]
+[e :U 3189 ]
+"143
+[; ;ETC.c: 143: }
 [e :UE 3188 ]
 }
-"110
-[; ;CLUTCH.c: 110: void CLUTCHInitMove(void)
-[v _CLUTCHInitMove `(v ~T0 @X0 1 ef ]
-"111
-[; ;CLUTCH.c: 111: {
+"146
+[; ;ETC.c: 146: void ETCRulesSupervision(void)
+[v _ETCRulesSupervision `(v ~T0 @X0 1 ef ]
+"147
+[; ;ETC.c: 147: {
 {
-[e :U _CLUTCHInitMove ]
+[e :U _ETCRulesSupervision ]
 [f ]
-"112
-[; ;CLUTCH.c: 112:     CLUTCH_Move(0, 1);
-[e ( _CLUTCH_Move (2 , -> -> 0 `i `l -> -> 1 `i `uc ]
-"113
-[; ;CLUTCH.c: 113:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
-"114
-[; ;CLUTCH.c: 114:     if ( ucCLUTCHState == 1 )
-[e $ ! == -> _ucCLUTCHState `i -> 1 `i 3198  ]
-"115
-[; ;CLUTCH.c: 115:     {
-{
-"116
-[; ;CLUTCH.c: 116:         CLUTCH_Move(30, 1);
-[e ( _CLUTCH_Move (2 , -> -> 30 `i `l -> -> 1 `i `uc ]
-"117
-[; ;CLUTCH.c: 117:         _delay((unsigned long)((200)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"118
-[; ;CLUTCH.c: 118:         CLUTCH_Move(50, 1);
-[e ( _CLUTCH_Move (2 , -> -> 50 `i `l -> -> 1 `i `uc ]
-"119
-[; ;CLUTCH.c: 119:         _delay((unsigned long)((200)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"120
-[; ;CLUTCH.c: 120:     }
+"150
+[; ;ETC.c: 150: }
+[e :UE 3203 ]
 }
-[e :U 3198 ]
-"121
-[; ;CLUTCH.c: 121:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
-"122
-[; ;CLUTCH.c: 122:     if ( ucCLUTCHState == 3 )
-[e $ ! == -> _ucCLUTCHState `i -> 3 `i 3199  ]
-"123
-[; ;CLUTCH.c: 123:     {
+"153
+[; ;ETC.c: 153: void ETCMove(signed long slTargetMove, unsigned char ucMode) {
+[v _ETCMove `(v ~T0 @X0 1 ef2`l`uc ]
 {
-"125
-[; ;CLUTCH.c: 125:         CLUTCH_Move(70, 1);
-[e ( _CLUTCH_Move (2 , -> -> 70 `i `l -> -> 1 `i `uc ]
-"126
-[; ;CLUTCH.c: 126:         _delay((unsigned long)((200)*(10000000/4000.0)));
+[e :U _ETCMove ]
+[v _slTargetMove `l ~T0 @X0 1 r1 ]
+[v _ucMode `uc ~T0 @X0 1 r2 ]
+[f ]
+"155
+[; ;ETC.c: 155:     if ( ucETCFlagSupervisor == 0x01 )
+[e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3205  ]
+"156
+[; ;ETC.c: 156:     {
+{
+"158
+[; ;ETC.c: 158:         uiETCDuty = slTargetMove;
+[e = _uiETCDuty -> _slTargetMove `ui ]
+"160
+[; ;ETC.c: 160:         if ( ucMode == ucASMode )
+[e $ ! == -> _ucMode `i -> _ucASMode `i 3206  ]
+"161
+[; ;ETC.c: 161:         {
+{
+"162
+[; ;ETC.c: 162:             if ( ucASMode == 1 )
+[e $ ! == -> _ucASMode `i -> 1 `i 3207  ]
+"163
+[; ;ETC.c: 163:             {
+{
+"165
+[; ;ETC.c: 165:                 GPIO_PWM2_Control(uiETCDuty + 34, 300);
+[e ( _GPIO_PWM2_Control (2 , + _uiETCDuty -> -> 34 `i `ui -> -> 300 `i `ui ]
+"166
+[; ;ETC.c: 166:             }
+}
+[e $U 3208  ]
+"167
+[; ;ETC.c: 167:             else if ( ucASMode == 0 )
+[e :U 3207 ]
+[e $ ! == -> _ucASMode `i -> 0 `i 3209  ]
+"168
+[; ;ETC.c: 168:             {
+{
+"170
+[; ;ETC.c: 170:                 GPIO_PWM2_Control(uiETCDuty, 300);
+[e ( _GPIO_PWM2_Control (2 , _uiETCDuty -> -> 300 `i `ui ]
+"171
+[; ;ETC.c: 171:             }
+}
+[e $U 3210  ]
+"172
+[; ;ETC.c: 172:             else
+[e :U 3209 ]
+"173
+[; ;ETC.c: 173:             {
+{
+"175
+[; ;ETC.c: 175:             }
+}
+[e :U 3210 ]
+[e :U 3208 ]
+"177
+[; ;ETC.c: 177:         }
+}
+[e $U 3211  ]
+"178
+[; ;ETC.c: 178:         else
+[e :U 3206 ]
+"179
+[; ;ETC.c: 179:         {
+{
+"181
+[; ;ETC.c: 181:         }
+}
+[e :U 3211 ]
+"182
+[; ;ETC.c: 182:     }
+}
+[e $U 3212  ]
+"183
+[; ;ETC.c: 183:     else
+[e :U 3205 ]
+"184
+[; ;ETC.c: 184:     {
+{
+"185
+[; ;ETC.c: 185:         GPIO_PWM2_Control(0, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
+"186
+[; ;ETC.c: 186:     }
+}
+[e :U 3212 ]
+"187
+[; ;ETC.c: 187: }
+[e :UE 3204 ]
+}
+"189
+[; ;ETC.c: 189: void etc_calibrate(void) {
+[v _etc_calibrate `(v ~T0 @X0 1 ef ]
+{
+[e :U _etc_calibrate ]
+[f ]
+"199
+[; ;ETC.c: 199:     GPIO_PWM2_Control(0, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
+"201
+[; ;ETC.c: 201:     _delay((unsigned long)((200)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"127
-[; ;CLUTCH.c: 127:         CLUTCH_Move(100, 1);
-[e ( _CLUTCH_Move (2 , -> -> 100 `i `l -> -> 1 `i `uc ]
-"128
-[; ;CLUTCH.c: 128:         _delay((unsigned long)((150)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"129
-[; ;CLUTCH.c: 129:     }
+"203
+[; ;ETC.c: 203:     ui_tps1_default = ANALOG_GetVoltage(3);
+[e = _ui_tps1_default ( _ANALOG_GetVoltage (1 -> -> 3 `i `uc ]
+"204
+[; ;ETC.c: 204:     ui_tps2_default = ANALOG_GetVoltage(4);
+[e = _ui_tps2_default ( _ANALOG_GetVoltage (1 -> -> 4 `i `uc ]
+"206
+[; ;ETC.c: 206:     _delay((unsigned long)((100)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"208
+[; ;ETC.c: 208:     __nop();
+[e ( ___nop ..  ]
+"211
+[; ;ETC.c: 211:     GPIO_PWM2_Control(100, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 100 `i `ui -> -> 600 `i `ui ]
+"213
+[; ;ETC.c: 213:     _delay((unsigned long)((500)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"215
+[; ;ETC.c: 215:     uiTPS1_opened = ANALOG_GetVoltage(3);
+[e = _uiTPS1_opened ( _ANALOG_GetVoltage (1 -> -> 3 `i `uc ]
+"216
+[; ;ETC.c: 216:     uiTPS2_opened = ANALOG_GetVoltage(4);
+[e = _uiTPS2_opened ( _ANALOG_GetVoltage (1 -> -> 4 `i `uc ]
+"218
+[; ;ETC.c: 218:     _delay((unsigned long)((100)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"219
+[; ;ETC.c: 219:     __nop();
+[e ( ___nop ..  ]
+"222
+[; ;ETC.c: 222:     GPIO_PWM2_Control(0, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
+"225
+[; ;ETC.c: 225:     GPIO_PWM2_Control(50, 400);
+[e ( _GPIO_PWM2_Control (2 , -> -> 50 `i `ui -> -> 400 `i `ui ]
+"226
+[; ;ETC.c: 226:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"227
+[; ;ETC.c: 227:     GPIO_PWM2_Control(50, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 50 `i `ui -> -> 600 `i `ui ]
+"228
+[; ;ETC.c: 228:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"229
+[; ;ETC.c: 229: }
+[e :UE 3213 ]
 }
-[e :U 3199 ]
-"130
-[; ;CLUTCH.c: 130:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
-"131
-[; ;CLUTCH.c: 131:     if ( ucCLUTCHState == 2 )
-[e $ ! == -> _ucCLUTCHState `i -> 2 `i 3200  ]
-"132
-[; ;CLUTCH.c: 132:     {
+"231
+[; ;ETC.c: 231: void TPSAnalysis(void)
+[v _TPSAnalysis `(v ~T0 @X0 1 ef ]
+"232
+[; ;ETC.c: 232: {
 {
-"134
-[; ;CLUTCH.c: 134:         CLUTCH_Move(0, 1);
-[e ( _CLUTCH_Move (2 , -> -> 0 `i `l -> -> 1 `i `uc ]
-"135
-[; ;CLUTCH.c: 135:     }
+[e :U _TPSAnalysis ]
+[f ]
+"265
+[; ;ETC.c: 265:     uc_tps1_perc = 100* (signed long)(ui_tps1_mv - ui_tps1_default) / (signed long)(uiTPS1_opened - ui_tps1_default);
+[e = _uc_tps1_perc -> / * -> -> 100 `i `l -> - _ui_tps1_mv _ui_tps1_default `l -> - _uiTPS1_opened _ui_tps1_default `l `uc ]
+"266
+[; ;ETC.c: 266:     uc_tps2_perc = 100* (signed long)(ui_tps2_mv - ui_tps2_default) / (signed long)(uiTPS2_opened - ui_tps2_default);
+[e = _uc_tps2_perc -> / * -> -> 100 `i `l -> - _ui_tps2_mv _ui_tps2_default `l -> - _uiTPS2_opened _ui_tps2_default `l `uc ]
+"271
+[; ;ETC.c: 271:     if (uc_tps1_perc > 100){
+[e $ ! > -> _uc_tps1_perc `i -> 100 `i 3215  ]
+{
+"272
+[; ;ETC.c: 272:         uc_tps1_perc = 100;
+[e = _uc_tps1_perc -> -> 100 `i `uc ]
+"273
+[; ;ETC.c: 273:     } else if (uc_tps1_perc < 0){
 }
-[e :U 3200 ]
-"136
-[; ;CLUTCH.c: 136: }
-[e :UE 3197 ]
+[e $U 3216  ]
+[e :U 3215 ]
+[e $ ! < -> _uc_tps1_perc `i -> 0 `i 3217  ]
+{
+"274
+[; ;ETC.c: 274:         uc_tps1_perc = 0;
+[e = _uc_tps1_perc -> -> 0 `i `uc ]
+"275
+[; ;ETC.c: 275:     }
+}
+[e :U 3217 ]
+[e :U 3216 ]
+"277
+[; ;ETC.c: 277:     if (uc_tps2_perc > 100){
+[e $ ! > -> _uc_tps2_perc `i -> 100 `i 3218  ]
+{
+"278
+[; ;ETC.c: 278:         uc_tps2_perc = 100;
+[e = _uc_tps2_perc -> -> 100 `i `uc ]
+"279
+[; ;ETC.c: 279:     } else if (uc_tps2_perc < 0){
+}
+[e $U 3219  ]
+[e :U 3218 ]
+[e $ ! < -> _uc_tps2_perc `i -> 0 `i 3220  ]
+{
+"280
+[; ;ETC.c: 280:         uc_tps2_perc = 0;
+[e = _uc_tps2_perc -> -> 0 `i `uc ]
+"281
+[; ;ETC.c: 281:     }
+}
+[e :U 3220 ]
+[e :U 3219 ]
+"283
+[; ;ETC.c: 283:     uc_tps_perc = ( ( uc_tps1_perc + uc_tps2_perc ) / 2 );
+[e = _uc_tps_perc -> / + -> _uc_tps1_perc `i -> _uc_tps2_perc `i -> 2 `i `uc ]
+"285
+[; ;ETC.c: 285:     __nop();
+[e ( ___nop ..  ]
+"337
+[; ;ETC.c: 337: }
+[e :UE 3214 ]
+}
+"339
+[; ;ETC.c: 339: void ETCSupervisor(void) {
+[v _ETCSupervisor `(v ~T0 @X0 1 ef ]
+{
+[e :U _ETCSupervisor ]
+[f ]
+"340
+[; ;ETC.c: 340:     __nop();
+[e ( ___nop ..  ]
+"341
+[; ;ETC.c: 341:     if ( ucASMode == 1 ) {
+[e $ ! == -> _ucASMode `i -> 1 `i 3222  ]
+{
+"342
+[; ;ETC.c: 342:         if ( ucETCBeatSupervisor == 0x01 )
+[e $ ! == -> _ucETCBeatSupervisor `i -> 1 `i 3223  ]
+"343
+[; ;ETC.c: 343:         {
+{
+"344
+[; ;ETC.c: 344:             ucETCFlagSupervisor = 0x01;
+[e = _ucETCFlagSupervisor -> -> 1 `i `uc ]
+"345
+[; ;ETC.c: 345:         }
+}
+[e $U 3224  ]
+"346
+[; ;ETC.c: 346:         else
+[e :U 3223 ]
+"347
+[; ;ETC.c: 347:         {
+{
+"348
+[; ;ETC.c: 348:             ucETCFlagSupervisor = 0x00;
+[e = _ucETCFlagSupervisor -> -> 0 `i `uc ]
+"350
+[; ;ETC.c: 350:             GPIO_PWM1_Control(0, 300);
+[e ( _GPIO_PWM1_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
+"352
+[; ;ETC.c: 352:             GPIO_PWM2_Control(0, 300);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
+"353
+[; ;ETC.c: 353:         }
+}
+[e :U 3224 ]
+"354
+[; ;ETC.c: 354:     } else if ( ucASMode == 0) {
+}
+[e $U 3225  ]
+[e :U 3222 ]
+[e $ ! == -> _ucASMode `i -> 0 `i 3226  ]
+{
+"355
+[; ;ETC.c: 355:         ucETCFlagSupervisor = 0x01;
+[e = _ucETCFlagSupervisor -> -> 1 `i `uc ]
+"356
+[; ;ETC.c: 356:     }
+}
+[e :U 3226 ]
+[e :U 3225 ]
+"358
+[; ;ETC.c: 358: }
+[e :UE 3221 ]
+}
+"360
+[; ;ETC.c: 360: void ETCManual(unsigned char ucTargetManual)
+[v _ETCManual `(v ~T0 @X0 1 ef1`uc ]
+"361
+[; ;ETC.c: 361: {
+{
+[e :U _ETCManual ]
+"360
+[; ;ETC.c: 360: void ETCManual(unsigned char ucTargetManual)
+[v _ucTargetManual `uc ~T0 @X0 1 r1 ]
+"361
+[; ;ETC.c: 361: {
+[f ]
+"362
+[; ;ETC.c: 362:     if ( ucASMode == 0 )
+[e $ ! == -> _ucASMode `i -> 0 `i 3228  ]
+"363
+[; ;ETC.c: 363:     {
+{
+"364
+[; ;ETC.c: 364:         ETCMove(ucTargetManual, 0);
+[e ( _ETCMove (2 , -> _ucTargetManual `l -> -> 0 `i `uc ]
+"365
+[; ;ETC.c: 365:     }
+}
+[e :U 3228 ]
+"366
+[; ;ETC.c: 366: }
+[e :UE 3227 ]
+}
+"368
+[; ;ETC.c: 368: void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode) {
+[v _ETC_PIDcontroller `(v ~T0 @X0 1 ef2`l`uc ]
+{
+[e :U _ETC_PIDcontroller ]
+[v _slTargetMove `l ~T0 @X0 1 r1 ]
+[v _ucMode `uc ~T0 @X0 1 r2 ]
+[f ]
+"378
+[; ;ETC.c: 378:     static signed long sl_K_P = 1000;
+[v F23065 `l ~T0 @X0 1 s sl_K_P ]
+[i F23065
+-> -> 1000 `i `l
+]
+"379
+[; ;ETC.c: 379:     static signed long sl_K_I = 10;
+[v F23066 `l ~T0 @X0 1 s sl_K_I ]
+[i F23066
+-> -> 10 `i `l
+]
+"380
+[; ;ETC.c: 380:     static signed long sl_K_D = 0;
+[v F23067 `l ~T0 @X0 1 s sl_K_D ]
+[i F23067
+-> -> 0 `i `l
+]
+"381
+[; ;ETC.c: 381:     static signed long slIntegral = 0;
+[v F23068 `l ~T0 @X0 1 s slIntegral ]
+[i F23068
+-> -> 0 `i `l
+]
+"382
+[; ;ETC.c: 382:     signed long slDerivative;
+[v _slDerivative `l ~T0 @X0 1 a ]
+"383
+[; ;ETC.c: 383:     signed long sl_motor_pwm_duty = 0;
+[v _sl_motor_pwm_duty `l ~T0 @X0 1 a ]
+[e = _sl_motor_pwm_duty -> -> 0 `i `l ]
+"384
+[; ;ETC.c: 384:     static signed long slLastErrorPos;
+[v F23071 `l ~T0 @X0 1 s slLastErrorPos ]
+"386
+[; ;ETC.c: 386:     __nop();
+[e ( ___nop ..  ]
+"390
+[; ;ETC.c: 390:     if ( ucETCFlagSupervisor == 0x01 ) {
+[e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3230  ]
+{
+"398
+[; ;ETC.c: 398:         slErrorPos = (signed long)(slTargetMove) - ( (signed long)(ui_tps1_mv) - 1212 )*100 / (3126-1212);
+[e = _slErrorPos - _slTargetMove / * - -> _ui_tps1_mv `l -> -> 1212 `i `l -> -> 100 `i `l -> - -> 3126 `i -> 1212 `i `l ]
+"399
+[; ;ETC.c: 399:         slIntegral += slErrorPos;
+[e =+ F23068 _slErrorPos ]
+"400
+[; ;ETC.c: 400:         slDerivative = slErrorPos - slLastErrorPos;
+[e = _slDerivative - _slErrorPos F23071 ]
+"403
+[; ;ETC.c: 403:         sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
+[e = _sl_motor_pwm_duty + + * F23065 _slErrorPos * F23066 F23068 * F23067 _slDerivative ]
+"404
+[; ;ETC.c: 404:         sl_motor_pwm_duty /= 1000;
+[e =/ _sl_motor_pwm_duty -> -> 1000 `i `l ]
+"409
+[; ;ETC.c: 409:         if ( sl_motor_pwm_duty < 0 ) {
+[e $ ! < _sl_motor_pwm_duty -> -> 0 `i `l 3231  ]
+{
+"410
+[; ;ETC.c: 410:             sl_motor_pwm_duty = 0;
+[e = _sl_motor_pwm_duty -> -> 0 `i `l ]
+"411
+[; ;ETC.c: 411:         }
+}
+[e $U 3232  ]
+"412
+[; ;ETC.c: 412:         else if ( sl_motor_pwm_duty > 100 ) {
+[e :U 3231 ]
+[e $ ! > _sl_motor_pwm_duty -> -> 100 `i `l 3233  ]
+{
+"413
+[; ;ETC.c: 413:             sl_motor_pwm_duty = 100;
+[e = _sl_motor_pwm_duty -> -> 100 `i `l ]
+"414
+[; ;ETC.c: 414:         }
+}
+[e :U 3233 ]
+[e :U 3232 ]
+"418
+[; ;ETC.c: 418:         __nop();
+[e ( ___nop ..  ]
+"421
+[; ;ETC.c: 421:         if ( ucMode == ucASMode ) {
+[e $ ! == -> _ucMode `i -> _ucASMode `i 3234  ]
+{
+"422
+[; ;ETC.c: 422:             if ( ucASMode == 1 ) {
+[e $ ! == -> _ucASMode `i -> 1 `i 3235  ]
+{
+"424
+[; ;ETC.c: 424:                 GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
+[e ( _GPIO_PWM2_Control (2 , -> _sl_motor_pwm_duty `ui -> -> 600 `i `ui ]
+"425
+[; ;ETC.c: 425:             }
+}
+[e $U 3236  ]
+"426
+[; ;ETC.c: 426:             else if ( ucASMode == 0 ) {
+[e :U 3235 ]
+[e $ ! == -> _ucASMode `i -> 0 `i 3237  ]
+{
+"429
+[; ;ETC.c: 429:                 GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
+[e ( _GPIO_PWM2_Control (2 , -> _sl_motor_pwm_duty `ui -> -> 600 `i `ui ]
+"430
+[; ;ETC.c: 430:             }
+}
+[e $U 3238  ]
+"431
+[; ;ETC.c: 431:             else {
+[e :U 3237 ]
+{
+"433
+[; ;ETC.c: 433:             }
+}
+[e :U 3238 ]
+[e :U 3236 ]
+"434
+[; ;ETC.c: 434:         } else {
+}
+[e $U 3239  ]
+[e :U 3234 ]
+{
+"436
+[; ;ETC.c: 436:         }
+}
+[e :U 3239 ]
+"439
+[; ;ETC.c: 439:         slLastErrorPos = slErrorPos;
+[e = F23071 _slErrorPos ]
+"440
+[; ;ETC.c: 440:     }
+}
+[e $U 3240  ]
+"441
+[; ;ETC.c: 441:     else {
+[e :U 3230 ]
+{
+"443
+[; ;ETC.c: 443:         GPIO_PWM2_Control(0, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
+"444
+[; ;ETC.c: 444:     }
+}
+[e :U 3240 ]
+"445
+[; ;ETC.c: 445: }
+[e :UE 3229 ]
+}
+"448
+[; ;ETC.c: 448: void sensor_sound(void){
+[v _sensor_sound `(v ~T0 @X0 1 ef ]
+{
+[e :U _sensor_sound ]
+[f ]
+"449
+[; ;ETC.c: 449:     GPIO_PWM2_Control(30, uiAPPS1);
+[e ( _GPIO_PWM2_Control (2 , -> -> 30 `i `ui _uiAPPS1 ]
+"456
+[; ;ETC.c: 456: }
+[e :UE 3241 ]
 }

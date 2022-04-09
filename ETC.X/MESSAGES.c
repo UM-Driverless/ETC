@@ -140,7 +140,8 @@ void CANReadMessage (void)
                     if ( ucASMode == ASMode )
                     {
                         CLUTCH_Move(ucTargetClutch, ASMode);
-                        ETCMove(ucTargetAccelerator, ASMode);
+                        //ETCMove(ucTargetAccelerator, ASMode);
+                        ETC_PIDcontroller ( ucTargetAccelerator, ASMode);
                         ucETCBeatSupervisor = TRUE;
                     }
                     //APPSSend(ucTargetAccelerator);

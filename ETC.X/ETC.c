@@ -24,8 +24,8 @@
 // APPS Variables - Defaults, real-time values, states
 unsigned int uiAPPS1_default_mv; // int -> 16 bit in MPLAB, PIC18. short = int here.
 unsigned int uiAPPS2_default_mv;
-unsigned int uiAPPS1_opened_mv;
-unsigned int uiAPPS2_opened_mv;
+unsigned int uiAPPS1_pushed_mv;
+unsigned int uiAPPS2_pushed_mv;
 
 unsigned int uiAPPS1_mv; // Sent by CAN
 unsigned int uiAPPS2_mv; // Sent by CAN
@@ -59,30 +59,33 @@ unsigned char ucETCFlagSupervisor = FALSE;
 
 
 /// APPS functions
-void APPSSend(unsigned char ucPercent) {
-    float voltage;
-    uint16_t dacAPPS1, dacAPPS2;
-    // Funcion de transferencia de porcentaje a valor APPS
-    dacAPPS1 = (4096*ucPercent)/5;
-    dacAPPS2 = (4096*ucPercent)/5;
-    //APPS1 I2C ADRRS = 0x60
-    i2c_write2ByteRegister(0x60,(dacAPPS1>>8),dacAPPS1);
-    //APPS2 I2C ADRRS = 0x61
-    i2c_write2ByteRegister(0x61,(dacAPPS2>>8),dacAPPS2);
-    DAC3_example();
-}
+// We don't use
+//void APPSSend(unsigned char ucPercent) {
+//    float voltage;
+//    uint16_t dacAPPS1, dacAPPS2;
+//    // Funcion de transferencia de porcentaje a valor APPS
+//    dacAPPS1 = (4096*ucPercent)/5;
+//    dacAPPS2 = (4096*ucPercent)/5;
+//    //APPS1 I2C ADRRS = 0x60
+//    i2c_write2ByteRegister(0x60,(dacAPPS1>>8),dacAPPS1);
+//    //APPS2 I2C ADRRS = 0x61
+//    i2c_write2ByteRegister(0x61,(dacAPPS2>>8),dacAPPS2);
+//    DAC3_example();
+//}
 
 void apps_calibrate(void){
     /* Get limit values to get percentage later.
      *
      */
+    ANALOGRead();
     
-    uiAPPS1_default_mv = uiAPPS1_mv + APPSMARGEN;
-    uiAPPS2_default_mv = uiAPPS2_mv - APPSMARGEN;
+    uiAPPS1_default_mv = uiAPPS1_mv + APPSMARGEN_MV; // Smallest value of APPS1. ~379mV
+    uiAPPS2_default_mv = uiAPPS2_mv - APPSMARGEN_MV; // Biggest value of APPS2. ~3349mV
     
+    Nop();
     // We have to push the accelerator pedal to get these values, so assign constants for now.
-    uiAPPS1_opened_mv = APPS1_OPEN_MV;
-    uiAPPS2_opened_mv = APPS2_OPEN_MV;
+    uiAPPS1_pushed_mv = APPS1_PUSHED_MV - APPSMARGEN_MV; // Biggest value of APPS1. ~1890mV
+    uiAPPS2_pushed_mv = APPS2_PUSHED_MV + APPSMARGEN_MV; // Smallest value of APPS2. ~260mV
 }
 
 void APPSAnalysis(void) { // Called by TEMPORIZATIONS.c
@@ -90,12 +93,12 @@ void APPSAnalysis(void) { // Called by TEMPORIZATIONS.c
      * 
      */
     
-    ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv);
-    ucAPPS2_perc = 100 - perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_opened_mv); // Tries to mimic ucAPPS1_perc
+    ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_pushed_mv);
+    ucAPPS2_perc = perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_pushed_mv);
     ucAPPS_perc = (ucAPPS1_perc + ucAPPS2_perc) / 2;
 }
 
-/// Electronic Throttle - Intake functions
+/// Throttle - Sensor/Motor
 // Run every time the autonomous mode message is received.
 void ETCModeSelect(unsigned char ucModeSelect) {
     switch (ucModeSelect)
@@ -205,8 +208,8 @@ void TPSAnalysis(void) {
         
     // Calculate fraction of travel. Sensor 1 and 2 provide voltages of constant average. They move in opposite directions.
     ucTPS1_perc = perc_of(uiTPS1_mv, uiTPS1_default_mv, uiTPS1_opened_mv);
-    ucTPS2_perc = 100 - perc_of(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv); // Tries to mimic ucTPS1_perc
-    ucTPS_perc = (ucTPS1_perc + ucTPS2_perc) / 2 ;
+    ucTPS2_perc = perc_of(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv);
+    ucTPS_perc = (ucTPS1_perc + ucTPS2_perc) / 2;
     
     // TODO - STOP HERE AND CHECK VALUES
     Nop();
@@ -216,7 +219,7 @@ void TPSAnalysis(void) {
     // ucTPS_perc is the average.
         
     /// Analysis of TPS error when out of range.
-//    if ( ( slTPS1calc > uiTPS1_mv + TPSMARGEN ) || ( slTPS1calc < uiTPS1_mv - TPSMARGEN ) )
+//    if ( ( slTPS1calc > uiTPS1_mv + TPSMARGEN_MV ) || ( slTPS1calc < uiTPS1_mv - TPSMARGEN_MV ) )
 //    {
 //        //apuntar fallo de TPS1
 //        ucTPS_STATE |= TPS1_ERROR;
@@ -227,7 +230,7 @@ void TPSAnalysis(void) {
 //        ucTPS_STATE |= QUITAR_ERROR_TPS1;
 //    }
 //    
-//    if ( ( slTPS2calc > uiTPS2_mv + TPSMARGEN ) || ( slTPS2calc < uiTPS2_mv - TPSMARGEN ) )
+//    if ( ( slTPS2calc > uiTPS2_mv + TPSMARGEN_MV ) || ( slTPS2calc < uiTPS2_mv - TPSMARGEN_MV ) )
 //    {
 //        //apuntar fallo de TPS2
 //        ucTPS_STATE |= TPS2_ERROR;
@@ -293,7 +296,7 @@ void ETCManual(unsigned char ucTargetManual) {
 
 void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
     /*
-     *
+     * Conditional logic to get target position out of this function, along with checks that it's ok to run it. PID just does PID.
      * 
      * sl_target_perc is the target position of the throttle, in 0-100% = default-fully opened?
      * ucMode is the driving mode input to the function. It will be checked with the global variable 
@@ -301,74 +304,73 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
     
     // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
     // Static local variables to change values at run time for calibration.
-    static signed long sl_K_P = 1000;
-    static signed long sl_K_I = 10;
-    static signed long sl_K_D = 0;
-    static signed long slIntegral = 0;
+    // Test with sl_target_perc ~= 80%, first K_I until it works with delay, then K_P to cancel those oscillations, then K_D to cancel the K_P oscillations.
+    static signed long sl_K = 50000; // Just to compensate the spring, which has approximately constant force, start with 50% of PWM duty cycle. The intake throttle is designed to go with the same force in both directions.
+    static signed long sl_K_P = 1500; // 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
+    static signed long sl_K_I = 3; // 0.003 -> Small because it integrates.
+    static signed long sl_K_D = 20000; // 20.0. If the error increases, you need to add power.
+    static signed long slIntegral = 0; // Usually in the range of 1e5 - 1e6
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0;
-    static signed long slLastErrorPos;
-    static signed long  slErrorPos;
+    static signed long  slErrorPos = 0; // Start as 0, then update every cycle.
+    static signed long slLastErrorPos = 0;
     
     Nop();
     
     // Only let the motor move if CAN beat flag is OK. - TODO MOVE THESE CONDITIONALS TO THE MAIN.C FILE?
-    if ( ucETCFlagSupervisor == TRUE ) {
-        
-        /// MAIN CALCULATION
-        
-        // ui_tp1_mv is the current position. Usually 16-55 for default-open.
-        
-        // TODO ---- USE ucTPS_perc INSTEAD OF uiTPS1_mv
-        // TODO: 1. play sound of ucTPS_perc to check. 2. Use ucTPS_perc INSTEAD OF uiTPS1_mv
-        slErrorPos = (signed long)(sl_target_perc) - ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212);  // in % or what units? TODO RJM
-        slIntegral += slErrorPos;
-        slDerivative = slErrorPos - slLastErrorPos;
-        
-        // Bound the values of slIntegral - TODO bounds to PARAMETERS.h, or remove if not needed.
+    /// MAIN CALCULATION
+
+    slErrorPos = sl_target_perc - ucTPS_perc;  // in % or what units? TODO RJM ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212)
+    
+    slIntegral += slErrorPos;
+
+    slDerivative = slErrorPos - slLastErrorPos;
+
+    // Bound the values of slIntegral - TODO bounds to PARAMETERS.h, or remove if not needed.
 //        if (slIntegral > (1<<20)){
 //            slIntegral = 1<<20;
 //        } else if (slIntegral < -32768){
 //            slIntegral = 0;
 //        }
-        
-        sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative; // TODO complete
-        sl_motor_pwm_duty /= 1000; // Because the constants are long, not floats        
-        
-        // Crop between 0 and 100. It's a duty cycle.
-        if ( sl_motor_pwm_duty < 0 ) {
-            sl_motor_pwm_duty = 0;
-        }
-        else if ( sl_motor_pwm_duty > 100 ) {
-            sl_motor_pwm_duty = 100;
-        }
-        
-        Nop();
-        
-        // MAIN MOVEMENT - DEPENDS ON ASMode - TODO remove conditionals to make it faster?
-        if ( ucMode == ucASMode ) {
-            if ( ucASMode == ASMode ) {
-                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
-                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
-            }
-            else if ( ucASMode == ManualMode ) {
-                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
-//                ETCMove(sl_motor_pwm_duty, ManualMode);
-                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
-            }
-            else {
-                // ERROR: Wrong value
-            }
-        } else {
-            // ERROR: Movement prevented by driving mode
-        }
-        
-         // Set error as last error for next iteration
-        slLastErrorPos = slErrorPos;
-    } else {
-        // ET Motor OFF
-        GPIO_PWM2_Control(0, 600);
+
+    sl_motor_pwm_duty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative; // TODO complete
+    Nop();
+    sl_motor_pwm_duty /= 1024; // 1024 ~= 1000. Do it because the constants are long, not floats
+
+
+    // Crop between 0 and 100. It's a duty cycle.
+    if (sl_motor_pwm_duty < 0) {
+        sl_motor_pwm_duty = 0;
     }
+    else if ( sl_motor_pwm_duty > 100 ) {
+        sl_motor_pwm_duty = 100;
+    }
+
+    Nop();
+
+    GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+    slLastErrorPos = slErrorPos;
+
+    // MAIN MOVEMENT - DEPENDS ON ASMode - TODO remove conditionals to make it faster?
+//        if ( ucMode == ucASMode ) {
+//            if ( ucASMode == ASMode ) {
+//                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
+//                GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+//            }
+//            else if ( ucASMode == ManualMode ) {
+//                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
+////                ETCMove(sl_motor_pwm_duty, ManualMode);
+//                GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+//            }
+//            else {
+//                // ERROR: Wrong value
+//            }
+//        } else {
+//            // ERROR: Movement prevented by driving mode
+//        }
+//        
+//         // Set error as last error for next iteration
+    slLastErrorPos = slErrorPos;
 }
 
 unsigned char perc_of(signed long val, signed long min, signed long max) {

@@ -38327,8 +38327,8 @@ void DAC3_example(void);
 # 32 "./ETC.h"
 extern unsigned int uiAPPS1_default_mv;
 extern unsigned int uiAPPS2_default_mv;
-extern unsigned int uiAPPS1_opened_mv;
-extern unsigned int uiAPPS2_opened_mv;
+extern unsigned int uiAPPS1_pushed_mv;
+extern unsigned int uiAPPS2_pushed_mv;
 
 extern unsigned int uiAPPS1_mv;
 extern unsigned int uiAPPS2_mv;
@@ -38403,8 +38403,8 @@ void ANALOGRead(void);
 
 unsigned int uiAPPS1_default_mv;
 unsigned int uiAPPS2_default_mv;
-unsigned int uiAPPS1_opened_mv;
-unsigned int uiAPPS2_opened_mv;
+unsigned int uiAPPS1_pushed_mv;
+unsigned int uiAPPS2_pushed_mv;
 
 unsigned int uiAPPS1_mv;
 unsigned int uiAPPS2_mv;
@@ -38435,33 +38435,20 @@ unsigned int uiETCDuty;
 unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = 0x00;
 unsigned char ucETCFlagSupervisor = 0x00;
-
-
-
-void APPSSend(unsigned char ucPercent) {
-    float voltage;
-    uint16_t dacAPPS1, dacAPPS2;
-
-    dacAPPS1 = (4096*ucPercent)/5;
-    dacAPPS2 = (4096*ucPercent)/5;
-
-    i2c_write2ByteRegister(0x60,(dacAPPS1>>8),dacAPPS1);
-
-    i2c_write2ByteRegister(0x61,(dacAPPS2>>8),dacAPPS2);
-    DAC3_example();
-}
-
+# 76 "ETC.c"
 void apps_calibrate(void){
 
 
 
+    ANALOGRead();
 
     uiAPPS1_default_mv = uiAPPS1_mv + 100;
     uiAPPS2_default_mv = uiAPPS2_mv - 100;
 
+    __nop();
 
-    uiAPPS1_opened_mv = 160;
-    uiAPPS2_opened_mv = 1990;
+    uiAPPS1_pushed_mv = 1990 - 100;
+    uiAPPS2_pushed_mv = 160 + 100;
 }
 
 void APPSAnalysis(void) {
@@ -38469,8 +38456,8 @@ void APPSAnalysis(void) {
 
 
 
-    ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv);
-    ucAPPS2_perc = 100 - perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_opened_mv);
+    ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_pushed_mv);
+    ucAPPS2_perc = 100 - perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_pushed_mv);
     ucAPPS_perc = (ucAPPS1_perc + ucAPPS2_perc) / 2;
 }
 
@@ -38589,7 +38576,7 @@ void TPSAnalysis(void) {
 
 
     __nop();
-# 268 "ETC.c"
+# 271 "ETC.c"
 }
 
 void ETCSupervisor(void) {
@@ -38617,7 +38604,7 @@ void ETCManual(unsigned char ucTargetManual) {
 }
 
 void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
-# 304 "ETC.c"
+# 307 "ETC.c"
     static signed long sl_K_P = 1000;
     static signed long sl_K_I = 10;
     static signed long sl_K_D = 0;
@@ -38641,7 +38628,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
         slErrorPos = (signed long)(sl_target_perc) - ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212);
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - slLastErrorPos;
-# 335 "ETC.c"
+# 338 "ETC.c"
         sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
         sl_motor_pwm_duty /= 1000;
 
@@ -38682,7 +38669,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
 }
 
 unsigned char perc_of(signed long val, signed long min, signed long max) {
-# 383 "ETC.c"
+# 386 "ETC.c"
     val = 100*(val - min)/(max - min);
     if (val < 0){
         val = 0;

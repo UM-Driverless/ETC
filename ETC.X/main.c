@@ -51,8 +51,7 @@
 /*
     Main application
  */
-void main(void)
-{
+void main(void) {
     // Initialize the device - MCC Pins and configurations, still interrupts not Enabled.
     SYSTEM_Initialize();
 
@@ -74,19 +73,16 @@ void main(void)
     //APPSSend(0);
     CLUTCHInitMove();
     
-    while(1)
-    {
-        //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
+    while(1) {
         LED_Toggle();
         
-        Nop();
-//        ETC_PID( (3478-uiAPPS1_mv)/(3478-1680)*100 , ManualMode); // uiAPPS1_mv updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
+        ETC_PID(ucAPPS_perc, ManualMode);
         
         /// Play sound of some value - uiAPPS1_mv uiAPPS2_mv ucAPPS1_perc ucAPPS2_perc ucAPPS_perc
-        GPIO_PWM2_Control(30, uiAPPS1_mv); // Play as frequency
+//        GPIO_PWM2_Control(10, 100*ucAPPS1_perc); // Play as frequency
         
         
-        //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0);    //Falta meter los APPS target
+        CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0); //Falta meter los APPS target
     }
 }
 /*
@@ -94,8 +90,9 @@ void main(void)
 */
 
 // TODO - CAN error messages whenever something is wrong.
-// TODO - Make local any variables that don't need to be global. Local variables in main such as uiAPPS1_opened_mv, and pass by reference, instead of global. Easy code flow analysis
+// TODO - Make local any variables that don't need to be global. Local variables in main such as uiAPPS1_pushed_mv, and pass by reference, instead of global. Easy code flow analysis
 // TODO - Description for every single variable
+// TODO - FIX Function that creates PWM so it works with any frequency, and test 30kHz frequencies to remove audible noise.
 
 /*
  What are the frequency limits of the ET Motor driver? Note in a comment

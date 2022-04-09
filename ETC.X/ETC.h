@@ -31,8 +31,8 @@ extern "C" {
 // APPS Variables - Defaults, real-time values, states
 extern unsigned int uiAPPS1_default_mv;
 extern unsigned int uiAPPS2_default_mv;
-extern unsigned int uiAPPS1_opened_mv;
-extern unsigned int uiAPPS2_opened_mv;
+extern unsigned int uiAPPS1_pushed_mv;
+extern unsigned int uiAPPS2_pushed_mv;
 
 extern unsigned int uiAPPS1_mv;
 extern unsigned int uiAPPS2_mv;

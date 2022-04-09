@@ -38329,8 +38329,8 @@ void GPIO_INT2_desembragar(void);
 # 32 "./ETC.h"
 extern unsigned int uiAPPS1_default_mv;
 extern unsigned int uiAPPS2_default_mv;
-extern unsigned int uiAPPS1_opened_mv;
-extern unsigned int uiAPPS2_opened_mv;
+extern unsigned int uiAPPS1_pushed_mv;
+extern unsigned int uiAPPS2_pushed_mv;
 
 extern unsigned int uiAPPS1_mv;
 extern unsigned int uiAPPS2_mv;
@@ -38392,8 +38392,7 @@ void ANALOGRead(void);
 
 
 
-void main(void)
-{
+void main(void) {
 
     SYSTEM_Initialize();
 
@@ -38415,8 +38414,7 @@ void main(void)
 
     CLUTCHInitMove();
 
-    while(1)
-    {
+    while(1) {
 
         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 
@@ -38424,9 +38422,9 @@ void main(void)
 
 
 
-        GPIO_PWM2_Control(30, uiAPPS1_mv);
 
 
 
+        CANWriteMessage(0x330, 6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0);
     }
 }

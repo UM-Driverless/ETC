@@ -16,10 +16,10 @@ extern "C" {
 #define TRUE    0x01
     
 // PARAMETROS CONSTANTES    
-#define TPSMARGEN 20
-#define APPSMARGEN 100
-#define APPS1_OPEN_MV 160 //0.001v
-#define APPS2_OPEN_MV 1990 //0.001v
+#define TPSMARGEN_MV 20
+#define APPSMARGEN_MV 100
+#define APPS1_PUSHED_MV 1990 //0.001v
+#define APPS2_PUSHED_MV 160 //0.001v
 
 // ETC PID CONTROL CONSTANTS, then divided by 1000
 #define ETC_KP 1000

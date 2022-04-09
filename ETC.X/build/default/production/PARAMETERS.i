@@ -16,5 +16,13 @@
 
 
 # 1 "./../ETC.X/PARAMETERS.h" 1
+# 24 "./../ETC.X/PARAMETERS.h"
+extern signed long sl_K_P;
+extern signed long sl_K_I;
+extern signed long sl_K_D;
 # 9 "PARAMETERS.c" 2
 
+
+signed long sl_K_P=1500;
+signed long sl_K_I=0;
+signed long sl_K_D=0;

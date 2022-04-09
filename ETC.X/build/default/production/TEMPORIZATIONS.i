@@ -38374,8 +38374,8 @@ extern unsigned char ucAPPS2Perc;
 extern unsigned char ucAPPS;
 extern unsigned int uiTPS1;
 extern unsigned int uiTPS2;
-extern unsigned long ulTPS1calc;
-extern unsigned long ulTPS2calc;
+extern signed long ulTPS1calc;
+extern signed long ulTPS2calc;
 extern unsigned char ucTPS1Perc;
 extern unsigned char ucTPS2Perc;
 extern unsigned char ucTPS;
@@ -38398,14 +38398,20 @@ void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETC_PID(signed char scTargetMove, unsigned char ucMode);
 void ETCInitMove(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
+unsigned char ETCPercentCalc(signed long val, signed long min, signed long max);
 # 13 "TEMPORIZATIONS.c" 2
 
 # 1 "./PARAMETERS.h" 1
+# 24 "./PARAMETERS.h"
+extern signed long sl_K_P;
+extern signed long sl_K_I;
+extern signed long sl_K_D;
 # 14 "TEMPORIZATIONS.c" 2
 
 
@@ -38427,13 +38433,14 @@ void TEMPORIZATION_100ms (void)
 {
 
 
+
+
 }
 
 void TEMPORIZATION_500ms (void)
 {
 
 
-    ANALOGRead();
     CLUTCH_AnalyseState();
 
     ETCSupervisor();

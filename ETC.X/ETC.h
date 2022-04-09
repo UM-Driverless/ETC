@@ -53,8 +53,8 @@ extern unsigned char ucAPPS2Perc;
 extern unsigned char ucAPPS; 
 extern unsigned int uiTPS1;
 extern unsigned int uiTPS2; 
-extern unsigned long ulTPS1calc;
-extern unsigned long ulTPS2calc; 
+extern signed long ulTPS1calc;
+extern signed long ulTPS2calc; 
 extern unsigned char ucTPS1Perc;
 extern unsigned char ucTPS2Perc; 
 extern unsigned char ucTPS; 
@@ -77,11 +77,13 @@ void TPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETC_PID(signed char scTargetMove, unsigned char ucMode);
 void ETCInitMove(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
+unsigned char ETCPercentCalc(signed long val, signed long min, signed long max);
 
 #ifdef	__cplusplus
 }

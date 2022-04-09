@@ -29,15 +29,16 @@ void TEMPORIZATION_10ms (void)
 
 void TEMPORIZATION_100ms (void)
 {
-    //ANALOGRead();
-    //ETCManual(ucAPPSManual);
+    /*ANALOGRead();
+    TPSAnalysis();
+    APPSAnalysis();
+    ETCManual(ucAPPSManual);*/
 }
 
 void TEMPORIZATION_500ms (void)
 {
-    //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1, ucAPPS2, ucTPS1, ucTPS2, 0, 0, 0, 0);    //Falta meter los APPS target
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
-    ANALOGRead();
+    //ANALOGRead();
     CLUTCH_AnalyseState();
     
     ETCSupervisor();

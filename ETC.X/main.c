@@ -59,7 +59,8 @@ void main(void)
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
     // Use the following macros to:
-
+    ANALOGRead();
+    ETCInitMove();
     // Enable the Global Interrupts
     INTERRUPT_GlobalInterruptEnable();
 
@@ -67,10 +68,8 @@ void main(void)
     //INTERRUPT_GlobalInterruptDisable();
     
     //Tarar sensores TPS y APPS a minimos
-    ANALOGRead();
     APPSReadmin();
     APPSReadmax();
-    TPSReadmin();
     
     CLUTCH_Init();
     GPIOInit();
@@ -79,7 +78,7 @@ void main(void)
     //APPSSend(0);
     
     //Mover ETC en init
-    ETCInitMove();
+
     CLUTCHInitMove();
     
     while (1)
@@ -87,9 +86,18 @@ void main(void)
         // Add your application code
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
         LED_Toggle();
-        __delay_ms(1000);
+        ANALOGRead();
+        TPSAnalysis();
+        APPSAnalysis();
+        ETC_PID(ucAPPS, ManualMode);
+        /*ANALOGRead();
+        TPSAnalysis();
+        APPSAnalysis();*/
+        CANWriteMessage(ETC_SIGNAL, DataLength_6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);    //Falta meter los APPS target
+        __delay_ms(500);
     }
 }
 /**
  End of File
 */
+

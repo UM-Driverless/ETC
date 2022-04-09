@@ -86,8 +86,8 @@ unsigned int ANALOG_GetVoltage(unsigned char ucEntradaAnalogica) {
 
 //EJECUTARLO CADA 10ms
 void ANALOGRead(void) {
-    ucAPPS1_mv = ANALOG_GetVoltage(ENT_APPS1);
-    ucAPPS2_mv = ANALOG_GetVoltage(ENT_APPS2);
+    uiAPPS1_mv = ANALOG_GetVoltage(ENT_APPS1);
+    uiAPPS2_mv = ANALOG_GetVoltage(ENT_APPS2);
     uiTPS1_mv = ANALOG_GetVoltage(ENT_TPS1);
     uiTPS2_mv = ANALOG_GetVoltage(ENT_TPS2);
 }

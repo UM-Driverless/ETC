@@ -69,6 +69,7 @@ start 1A 0 CODE 0
 _TMR1_WriteTimer 5BFC 0 CODE 0
 _ucTargetBrake 5B6 0 BANK5 1
 __size_of_DefaultSystemErrorHandler 0 0 ABS 0
+__size_of_ETC_PID 0 0 ABS 0
 ___fltol@f1 5DF 0 BANK5 1
 __size_of_PWM1_16BIT_LoadBufferRegisters 0 0 ABS 0
 _ucTargetGear 5B4 0 BANK5 1
@@ -104,6 +105,7 @@ __size_of_I2C1_Initialize 0 0 ABS 0
 _T1CON 31E 0 ABS 0
 CAN1_ReceivedMessageCountGet@index 50A 0 COMRAM 1
 _ADACT 3F9 0 ABS 0
+ETC_PID@slLastErrorPos 624 0 BANK6 1
 _ucCount1s 55E 0 COMRAM 1
 _ucAPPSManual 598 0 BANK5 1
 _ADCNT 3E6 0 ABS 0
@@ -136,6 +138,7 @@ _PWM1_16BIT_Slice1Output1_SetInterruptHandler 5F04 0 CODE 0
 _PWM2_16BIT_Slice1Output1_SetInterruptHandler 5EE6 0 CODE 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
+ETC_PID@sl_K_I 673 0 BANK6 1
 _C1FLTOBJ1U 196 0 ABS 0
 _etc_calibrate 3E14 0 CODE 0
 __Hcomram 0 0 ABS 0
@@ -161,14 +164,12 @@ __pcstackBANK5 5C1 0 BANK5 1
 __Lnvrram 0 0 COMRAM 1
 i2___fladd 2B7E 0 CODE 0
 __pidataBANK6 5FB8 0 CODE 0
-ETC_PIDcontroller@sl_motor_pwm_duty 544 0 COMRAM 1
 _ANALOGRead 5A9C 0 CODE 0
 _GPIOInit 5A5E 0 CODE 0
 _TEMPORIZATION_10ms 5FF4 0 CODE 0
 CAN1_SetRxBufferOverFlowInterruptHandler@handler 5C1 0 BANK5 1
 _rxMsgData 646 0 BANK6 1
 ___xxtofl 3952 0 CODE 0
-ETC_PIDcontroller@slDerivative 540 0 COMRAM 1
 _T0CON0 31A 0 ABS 0
 _ADCON0 3F3 0 ABS 0
 _T0CON1 31B 0 ABS 0
@@ -182,6 +183,7 @@ _TEMPORIZATION_100ms 5E7E 0 CODE 0
 i2___fladd@signs 51B 0 COMRAM 1
 ?___fltol 5DF 0 BANK5 1
 CAN1_OperationModeSet@opMode 5C1 0 BANK5 1
+ETC_PID@slDerivative 540 0 COMRAM 1
 _TEMPORIZATION_1mins 5FEE 0 CODE 0
 _I2C1_DO_SEND_ADR_WRITE 0 0 ABS 0
 _PIE0bits 49E 0 ABS 0
@@ -198,6 +200,7 @@ _PIR2bits 4B0 0 ABS 0
 _PIR3bits 4B1 0 ABS 0
 _I2C1_DO_SEND_STOP 0 0 ABS 0
 _PIR4bits 4B2 0 ABS 0
+ETC_PID@sl_target_perc 533 0 COMRAM 1
 _PIR5bits 4B3 0 ABS 0
 _PIR7bits 4B5 0 ABS 0
 i2___wmul 5D06 0 CODE 0
@@ -330,6 +333,7 @@ _CANReadMessage 34F8 0 CODE 0
 _ucService_brake 5AF 0 BANK5 1
 __size_of_ADC_DisableChannelSequencer 0 0 ABS 0
 __ptext112 5FE2 0 CODE 0
+ETC_PID@sl_motor_pwm_duty 544 0 COMRAM 1
 __end_of___fltol 461E 0 CODE 0
 ReadMessageFromFifo@rxFifoObj 50C 0 COMRAM 1
 __Htext122 0 0 ABS 0
@@ -396,6 +400,7 @@ i2___aldiv@sign 516 0 COMRAM 1
 __Htext116 0 0 ABS 0
 __size_of_DefaultRxBufferOverflowHandler 0 0 ABS 0
 __Ltext116 0 0 ABS 0
+ETC_PID@sl_K_D 62C 0 BANK6 1
 stackhi 25FF 0 ABS 0
 _I2C1_DO_BUS_COLLISION 0 0 ABS 0
 __end_of_GetRxFifoDepth 5DDE 0 CODE 0
@@ -475,6 +480,7 @@ __Ltext129 0 0 ABS 0
 CAN1_OperationModeSet@status 5C2 0 BANK5 1
 _wr1RegCompleteHandler@i2c1_master_example$F162 0 0 ABS 0
 _rd1RegCompleteHandler 0 0 ABS 0
+__end_of_ETC_PID 32B8 0 CODE 0
 _rd2RegCompleteHandler 0 0 ABS 0
 __size_of_APPSAnalysis 0 0 ABS 0
 end_of_initialization 57C0 0 CODE 0
@@ -507,6 +513,7 @@ memcpy@tmp 50B 0 COMRAM 1
 __size_of_CAN1_SetSystemErrorInterruptHandler 0 0 ABS 0
 i2GPIO_PWM2_Control@uiDutyCycle 529 0 COMRAM 1
 _OSCCON3 AF 0 ABS 0
+ETC_PID@sl_K_P 677 0 BANK6 1
 __end_of_DefaultBusErrorHandler 6004 0 CODE 0
 i2___fltol 461E 0 CODE 0
 __end_ofi2_PWM2_16BIT_WritePeriodRegister 5EBC 0 CODE 0
@@ -573,6 +580,7 @@ __end_ofi2___fladd 303E 0 CODE 0
 _I2C1TXB 28B 0 ABS 0
 PWM1_16BIT_Slice1Output2_SetInterruptHandler@InterruptHandler 5C1 0 BANK5 1
 PWM2_16BIT_Slice1Output2_SetInterruptHandler@InterruptHandler 5C1 0 BANK5 1
+_ETC_PID 303E 0 CODE 0
 _SYSTEM_Initialize 5BA0 0 CODE 0
 _PWM1CLK 461 0 ABS 0
 _PWM2CLK 470 0 ABS 0
@@ -699,10 +707,10 @@ __Ltext9 0 0 ABS 0
 __ptext8 5994 0 CODE 0
 GetRxFifoDepth@validChannel 502 0 COMRAM 1
 __ptext9 5EC8 0 CODE 0
+ETC_PID@ucMode 537 0 COMRAM 1
 _PWM1S1P1L 46B 0 ABS 0
 _PWM2S1P1L 47A 0 ABS 0
 __end_ofi2___fltol 4724 0 CODE 0
-ETC_PIDcontroller@slIntegral 628 0 BANK6 1
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 _ucASBState 5A4 0 BANK5 1
@@ -769,7 +777,6 @@ _uiYaw_rate 63E 0 BANK6 1
 __size_of_CAN1_SetTxAttemptInterruptHandler 0 0 ABS 0
 _rd2RegCompleteHandler@i2c1_master_example$F156 0 0 ABS 0
 _TEMPORIZATION_30s 5FEA 0 CODE 0
-ETC_PIDcontroller@sl_target_perc 533 0 COMRAM 1
 __end_of_TEMPORIZATION_30s 5FEC 0 CODE 0
 __end_of_DefaultBusWakeUpActivityHandler 6002 0 CODE 0
 ANALOG_GetVoltage@uiValorAnalog 5CB 0 BANK5 1
@@ -831,10 +838,10 @@ _ADC_DefaultContext4Threshold_ISR 0 0 ABS 0
 __end_of_CAN1_RX_FIFO_FilterMaskConfiguration 5DA2 0 CODE 0
 __end_of_TMR1_DefaultInterruptHandler 5FEA 0 CODE 0
 __pcstackCOMRAM 501 0 COMRAM 1
-_ucAPPS1_mv 570 0 BANK5 1
 __HdataBANK6 0 0 ABS 0
 __LdataBANK6 0 0 ABS 0
-_ucAPPS2_mv 568 0 BANK5 1
+_uiAPPS1_mv 570 0 BANK5 1
+_uiAPPS2_mv 568 0 BANK5 1
 __pdataBANK6 673 0 BANK6 1
 __end_of_CAN1_RX_FIFO_Configuration 5D06 0 CODE 0
 __Hspace_1 67B 0 ABS 0
@@ -936,6 +943,7 @@ __size_of_TEMPORIZATION_1mins 0 0 ABS 0
 perc_of@max 523 0 COMRAM 1
 GPIO_PWM1_Control@uiDutyCycle 5E9 0 BANK5 1
 _PWM1_16BIT_LoadBufferRegisters 5FDA 0 CODE 0
+ETC_PID@slIntegral 628 0 BANK6 1
 _PWM2_16BIT_LoadBufferRegisters 5FD6 0 CODE 0
 __size_of___lwdiv 0 0 ABS 0
 CAN1_SetModeChangeInterruptHandler@handler 5C1 0 BANK5 1
@@ -946,8 +954,6 @@ _C1NBTCFGT 107 0 ABS 0
 GPIO_PWM2_Control@uiDutyCycle 5E9 0 BANK5 1
 _I2C1CON2 296 0 ABS 0
 __Hbank10 0 0 ABS 0
-ETC_PIDcontroller@slLastErrorPos 624 0 BANK6 1
-__end_of_ETC_PIDcontroller 32B8 0 CODE 0
 __Lbank10 0 0 ABS 0
 __Hbank20 0 0 ABS 0
 i2GPIO_PWM1_Control@uiFreq 52B 0 COMRAM 1
@@ -980,6 +986,7 @@ __Lbank32 0 0 ABS 0
 __Lbank13 0 0 ABS 0
 _I2C1_DO_BUS_ERROR 0 0 ABS 0
 _I2C1_DO_RX_ACK 0 0 ABS 0
+ETC_PID@slErrorPos 560 0 BANK5 1
 __Hbank23 0 0 ABS 0
 _INTERRUPT_Initialize 5FD2 0 CODE 0
 ?i2___fltol 51F 0 COMRAM 1
@@ -1387,8 +1394,6 @@ __size_of_TMR1_CallBack 0 0 ABS 0
 __end_ofi2_CLUTCH_AnalyseState 4D6E 0 CODE 0
 __size_of___fladd 0 0 ABS 0
 _ADC_DisableChannelSequencer 5FC0 0 CODE 0
-ETC_PIDcontroller@slErrorPos 560 0 BANK5 1
-__size_of_ETC_PIDcontroller 0 0 ABS 0
 _C1MASK1T 19B 0 ABS 0
 _ucCLUTCHlmax 59E 0 BANK5 1
 __size_ofi2___xxtofl 0 0 ABS 0
@@ -1430,11 +1435,9 @@ memcpy@s1 503 0 COMRAM 1
 __size_of_PWM1_16BIT_Initialize 0 0 ABS 0
 _PWM1_16BIT_Slice1Output2_InterruptHandler 57C 0 BANK5 1
 _PWM2_16BIT_Slice1Output2_InterruptHandler 66F 0 BANK6 1
-ETC_PIDcontroller@sl_K_D 62C 0 BANK6 1
 __accesstop 560 0 ABS 0
 _I2C1CNTL 28C 0 ABS 0
 __size_of___aldiv 0 0 ABS 0
-_ETC_PIDcontroller 303E 0 CODE 0
 _ADC_SetContext1ThresholdInterruptHandler 5F90 0 CODE 0
 __end_of_CAN1_ErrorNotificationInterruptEnable 5510 0 CODE 0
 CANReadMessage@uc_data1 557 0 COMRAM 1
@@ -1447,7 +1450,6 @@ CANReadMessage@uc_data4 554 0 COMRAM 1
 intlevel0 0 0 CODE 0
 __end_of_TMR0_ISR 5B72 0 CODE 0
 CANReadMessage@uc_data5 555 0 COMRAM 1
-ETC_PIDcontroller@sl_K_I 673 0 BANK6 1
 __size_ofi2_ADC_DisableChannelSequencer 0 0 ABS 0
 CANReadMessage@uc_data6 550 0 COMRAM 1
 __size_of_CAN1_RX_FIFO_FilterMaskConfiguration 0 0 ABS 0
@@ -1471,7 +1473,6 @@ intlevel3 0 0 CODE 0
 __size_of___lmul 0 0 ABS 0
 _I2C1CON1bits 295 0 ABS 0
 __size_of_ReadMessageFromFifo 0 0 ABS 0
-ETC_PIDcontroller@sl_K_P 677 0 BANK6 1
 __end_of_CAN1_Receive 5994 0 CODE 0
 __end_of_CAN1_SetRxBufferOverFlowInterruptHandler 5F4A 0 CODE 0
 _ucCount10s 55D 0 COMRAM 1
@@ -1526,7 +1527,6 @@ __end_of_TEMPORIZATION_10ms 5FF6 0 CODE 0
 _ucTargetDirection 5B5 0 BANK5 1
 __size_of_ADC_Initialize 0 0 ABS 0
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0
-ETC_PIDcontroller@ucMode 537 0 COMRAM 1
 _uiAPPS1_default_mv 56C 0 BANK5 1
 ADC_SetContext4ThresholdInterruptHandler@InterruptHandler 5C1 0 BANK5 1
 ___fladd@b 5CF 0 BANK5 1
@@ -1584,7 +1584,7 @@ text62 26BC 6003 CODE 26BC 0
 %locals
 dist/default/production\ETC.X.production.o
 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
-C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
+C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
 43489 5756 0 CODE 0
 43491 5756 0 CODE 0
 43494 5756 0 CODE 0
@@ -2679,15 +2679,15 @@ ETC.c
 95 5478 0 CODE 0
 96 5494 0 CODE 0
 ETC.c
-373 5082 0 CODE 0
-382 5082 0 CODE 0
-383 50EA 0 CODE 0
-384 50F8 0 CODE 0
-385 5108 0 CODE 0
-386 512C 0 CODE 0
-387 513C 0 CODE 0
+374 5082 0 CODE 0
+383 5082 0 CODE 0
+384 50EA 0 CODE 0
+385 50F8 0 CODE 0
+386 5108 0 CODE 0
+387 512C 0 CODE 0
 388 513C 0 CODE 0
-389 513E 0 CODE 0
+389 513C 0 CODE 0
+390 513E 0 CODE 0
 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 7 4EFC 0 CODE 0
 13 4EFC 0 CODE 0
@@ -2918,24 +2918,24 @@ ETC.c
 324 3052 0 CODE 0
 325 30C8 0 CODE 0
 326 30E6 0 CODE 0
-329 310C 0 CODE 0
-330 31B8 0 CODE 0
-335 31EC 0 CODE 0
-336 31FA 0 CODE 0
-337 320A 0 CODE 0
-338 320E 0 CODE 0
-339 322E 0 CODE 0
-344 323E 0 CODE 0
-347 3240 0 CODE 0
-348 3252 0 CODE 0
-350 3262 0 CODE 0
-351 3276 0 CODE 0
-352 327A 0 CODE 0
-362 328E 0 CODE 0
-365 328E 0 CODE 0
-366 329E 0 CODE 0
-369 32A2 0 CODE 0
-371 32B6 0 CODE 0
+335 310C 0 CODE 0
+336 31B8 0 CODE 0
+339 31EC 0 CODE 0
+340 31FA 0 CODE 0
+341 320A 0 CODE 0
+342 320E 0 CODE 0
+343 322E 0 CODE 0
+346 323E 0 CODE 0
+349 3240 0 CODE 0
+350 3252 0 CODE 0
+352 3262 0 CODE 0
+353 3276 0 CODE 0
+354 327A 0 CODE 0
+364 328E 0 CODE 0
+367 328E 0 CODE 0
+368 329E 0 CODE 0
+370 32A2 0 CODE 0
+372 32B6 0 CODE 0
 GPIO.c
 63 49F4 0 CODE 0
 69 49F4 0 CODE 0

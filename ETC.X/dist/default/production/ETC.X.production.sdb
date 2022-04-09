@@ -304,8 +304,8 @@ channel_FVR_Buffer2 63
 "270
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
 "294
-[v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
-"373
+[v _ETC_PID ETC_PID `(v  1 e 1 0 ]
+"374
 [v _perc_of perc_of `(uc  1 e 1 0 ]
 "23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
@@ -1841,9 +1841,9 @@ channel_FVR_Buffer2 63
 "28
 [v _uiAPPS2_opened_mv uiAPPS2_opened_mv `ui  1 e 2 0 ]
 "30
-[v _ucAPPS1_mv ucAPPS1_mv `ui  1 e 2 0 ]
+[v _uiAPPS1_mv uiAPPS1_mv `ui  1 e 2 0 ]
 "31
-[v _ucAPPS2_mv ucAPPS2_mv `ui  1 e 2 0 ]
+[v _uiAPPS2_mv uiAPPS2_mv `ui  1 e 2 0 ]
 "32
 [v _ucAPPS1_perc ucAPPS1_perc `uc  1 e 1 0 ]
 "33
@@ -2539,13 +2539,13 @@ channel_FVR_Buffer2 63
 {
 "96
 } 0
-"373
+"374
 [v _perc_of perc_of `(uc  1 e 1 0 ]
 {
 [v perc_of@val val `l  1 p 4 26 ]
 [v perc_of@min min `l  1 p 4 30 ]
 [v perc_of@max max `l  1 p 4 34 ]
-"389
+"390
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -2695,28 +2695,28 @@ channel_FVR_Buffer2 63
 "166
 } 0
 "294 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-[v _ETC_PIDcontroller ETC_PIDcontroller `(v  1 e 1 0 ]
+[v _ETC_PID ETC_PID `(v  1 e 1 0 ]
 {
 "309
-[v ETC_PIDcontroller@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 67 ]
+[v ETC_PID@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 67 ]
 "308
-[v ETC_PIDcontroller@slDerivative slDerivative `l  1 a 4 63 ]
+[v ETC_PID@slDerivative slDerivative `l  1 a 4 63 ]
 "294
-[v ETC_PIDcontroller@sl_target_perc sl_target_perc `l  1 p 4 50 ]
-[v ETC_PIDcontroller@ucMode ucMode `uc  1 p 1 54 ]
+[v ETC_PID@sl_target_perc sl_target_perc `l  1 p 4 50 ]
+[v ETC_PID@ucMode ucMode `uc  1 p 1 54 ]
 "304
-[v ETC_PIDcontroller@sl_K_P sl_K_P `l  1 s 4 sl_K_P ]
+[v ETC_PID@sl_K_P sl_K_P `l  1 s 4 sl_K_P ]
 "305
-[v ETC_PIDcontroller@sl_K_I sl_K_I `l  1 s 4 sl_K_I ]
+[v ETC_PID@sl_K_I sl_K_I `l  1 s 4 sl_K_I ]
 "306
-[v ETC_PIDcontroller@sl_K_D sl_K_D `l  1 s 4 sl_K_D ]
+[v ETC_PID@sl_K_D sl_K_D `l  1 s 4 sl_K_D ]
 "307
-[v ETC_PIDcontroller@slIntegral slIntegral `l  1 s 4 slIntegral ]
+[v ETC_PID@slIntegral slIntegral `l  1 s 4 slIntegral ]
 "310
-[v ETC_PIDcontroller@slLastErrorPos slLastErrorPos `l  1 s 4 slLastErrorPos ]
+[v ETC_PID@slLastErrorPos slLastErrorPos `l  1 s 4 slLastErrorPos ]
 "311
-[v ETC_PIDcontroller@slErrorPos slErrorPos `l  1 s 4 slErrorPos ]
-"371
+[v ETC_PID@slErrorPos slErrorPos `l  1 s 4 slErrorPos ]
+"372
 } 0
 "63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]

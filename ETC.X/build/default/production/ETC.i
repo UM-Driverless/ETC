@@ -38330,8 +38330,8 @@ extern unsigned int uiAPPS2_default_mv;
 extern unsigned int uiAPPS1_opened_mv;
 extern unsigned int uiAPPS2_opened_mv;
 
-extern unsigned int ucAPPS1_mv;
-extern unsigned int ucAPPS2_mv;
+extern unsigned int uiAPPS1_mv;
+extern unsigned int uiAPPS2_mv;
 extern unsigned char ucAPPS1_perc;
 extern unsigned char ucAPPS2_perc;
 extern unsigned char ucAPPS_perc;
@@ -38374,7 +38374,7 @@ void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
-void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 
 
 unsigned char perc_of(signed long val, signed long min, signed long max);
@@ -38406,8 +38406,8 @@ unsigned int uiAPPS2_default_mv;
 unsigned int uiAPPS1_opened_mv;
 unsigned int uiAPPS2_opened_mv;
 
-unsigned int ucAPPS1_mv;
-unsigned int ucAPPS2_mv;
+unsigned int uiAPPS1_mv;
+unsigned int uiAPPS2_mv;
 unsigned char ucAPPS1_perc;
 unsigned char ucAPPS2_perc;
 unsigned char ucAPPS_perc;
@@ -38456,8 +38456,8 @@ void apps_calibrate(void){
 
 
 
-    uiAPPS1_default_mv = ucAPPS1_mv + 100;
-    uiAPPS2_default_mv = ucAPPS2_mv - 100;
+    uiAPPS1_default_mv = uiAPPS1_mv + 100;
+    uiAPPS2_default_mv = uiAPPS2_mv - 100;
 
 
     uiAPPS1_opened_mv = 160;
@@ -38469,8 +38469,8 @@ void APPSAnalysis(void) {
 
 
 
-    ucAPPS1_perc = perc_of(ucAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv);
-    ucAPPS2_perc = 100 - perc_of(ucAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_opened_mv);
+    ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv);
+    ucAPPS2_perc = 100 - perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_opened_mv);
     ucAPPS_perc = (ucAPPS1_perc + ucAPPS2_perc) / 2;
 }
 
@@ -38616,7 +38616,7 @@ void ETCManual(unsigned char ucTargetManual) {
     }
 }
 
-void ETC_PIDcontroller(signed long sl_target_perc, unsigned char ucMode) {
+void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
 # 304 "ETC.c"
     static signed long sl_K_P = 1000;
     static signed long sl_K_I = 10;
@@ -38641,12 +38641,9 @@ void ETC_PIDcontroller(signed long sl_target_perc, unsigned char ucMode) {
         slErrorPos = (signed long)(sl_target_perc) - ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212);
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - slLastErrorPos;
-
-
+# 335 "ETC.c"
         sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
         sl_motor_pwm_duty /= 1000;
-
-
 
 
         if ( sl_motor_pwm_duty < 0 ) {
@@ -38655,8 +38652,6 @@ void ETC_PIDcontroller(signed long sl_target_perc, unsigned char ucMode) {
         else if ( sl_motor_pwm_duty > 100 ) {
             sl_motor_pwm_duty = 100;
         }
-
-
 
         __nop();
 
@@ -38680,15 +38675,14 @@ void ETC_PIDcontroller(signed long sl_target_perc, unsigned char ucMode) {
 
 
         slLastErrorPos = slErrorPos;
-    }
-    else {
+    } else {
 
         GPIO_PWM2_Control(0, 600);
     }
 }
 
 unsigned char perc_of(signed long val, signed long min, signed long max) {
-# 382 "ETC.c"
+# 383 "ETC.c"
     val = 100*(val - min)/(max - min);
     if (val < 0){
         val = 0;

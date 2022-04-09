@@ -38358,8 +38358,8 @@ extern unsigned int uiAPPS2_default_mv;
 extern unsigned int uiAPPS1_opened_mv;
 extern unsigned int uiAPPS2_opened_mv;
 
-extern unsigned int ucAPPS1_mv;
-extern unsigned int ucAPPS2_mv;
+extern unsigned int uiAPPS1_mv;
+extern unsigned int uiAPPS2_mv;
 extern unsigned char ucAPPS1_perc;
 extern unsigned char ucAPPS2_perc;
 extern unsigned char ucAPPS_perc;
@@ -38402,7 +38402,7 @@ void TPSAnalysis(void);
 void APPSAnalysis(void);
 void ETCSupervisor(void);
 void ETCManual (unsigned char ucTargetManual);
-void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 
 
 unsigned char perc_of(signed long val, signed long min, signed long max);

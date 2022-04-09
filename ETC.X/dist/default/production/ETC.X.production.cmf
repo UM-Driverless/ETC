@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+$C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 idloc IDLOC 5 200000 200000 20 1
 init CODE 0 1A 1A 4 1
 reset_vec CODE 0 0 0 4 1
@@ -617,24 +617,24 @@ $dist/default/production\ETC.X.production.o
 3052 text102 CODE >324:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 30C8 text102 CODE >325:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 30E6 text102 CODE >326:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-310C text102 CODE >329:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-31B8 text102 CODE >330:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-31EC text102 CODE >335:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-31FA text102 CODE >336:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-320A text102 CODE >337:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-320E text102 CODE >338:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-322E text102 CODE >339:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-323E text102 CODE >344:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-3240 text102 CODE >347:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-3252 text102 CODE >348:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-3262 text102 CODE >350:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-3276 text102 CODE >351:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-327A text102 CODE >352:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-328E text102 CODE >362:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-328E text102 CODE >365:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-329E text102 CODE >366:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-32A2 text102 CODE >369:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-32B6 text102 CODE >371:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+310C text102 CODE >335:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+31B8 text102 CODE >336:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+31EC text102 CODE >339:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+31FA text102 CODE >340:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+320A text102 CODE >341:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+320E text102 CODE >342:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+322E text102 CODE >343:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+323E text102 CODE >346:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+3240 text102 CODE >349:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+3252 text102 CODE >350:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+3262 text102 CODE >352:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+3276 text102 CODE >353:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+327A text102 CODE >354:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+328E text102 CODE >364:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+328E text102 CODE >367:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+329E text102 CODE >368:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+32A2 text102 CODE >370:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+32B6 text102 CODE >372:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 5FDE text101 CODE >162:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
 5FDE text101 CODE >165:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
 5FE0 text101 CODE >166:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
@@ -839,15 +839,15 @@ $dist/default/production\ETC.X.production.o
 4FAE text84 CODE >39:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 4FB6 text84 CODE >40:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 4FBE text84 CODE >41:C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-5082 text83 CODE >373:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-5082 text83 CODE >382:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-50EA text83 CODE >383:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-50F8 text83 CODE >384:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-5108 text83 CODE >385:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-512C text83 CODE >386:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-513C text83 CODE >387:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+5082 text83 CODE >374:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+5082 text83 CODE >383:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+50EA text83 CODE >384:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+50F8 text83 CODE >385:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+5108 text83 CODE >386:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+512C text83 CODE >387:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 513C text83 CODE >388:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-513E text83 CODE >389:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+513C text83 CODE >389:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+513E text83 CODE >390:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 541A text82 CODE >88:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 541A text82 CODE >93:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 5446 text82 CODE >94:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
@@ -1805,59 +1805,59 @@ $dist/default/production\ETC.X.production.o
 584A text0 CODE >80:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
 586C text0 CODE >82:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
 586E text0 CODE >86:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
-5756 cinit CODE >43489:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5756 cinit CODE >43491:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5756 cinit CODE >43494:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5756 cinit CODE >43789:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5758 cinit CODE >43790:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-575A cinit CODE >43791:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-575C cinit CODE >43792:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-575E cinit CODE >43793:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5760 cinit CODE >43794:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5762 cinit CODE >43795:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5766 cinit CODE >43796:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-576A cinit CODE >43797:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-576A cinit CODE >43798:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-576C cinit CODE >43799:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5770 cinit CODE >43800:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5772 cinit CODE >43801:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5774 cinit CODE >43802:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5776 cinit CODE >43806:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5778 cinit CODE >43807:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-577A cinit CODE >43808:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-577C cinit CODE >43809:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-577E cinit CODE >43810:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5780 cinit CODE >43811:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5782 cinit CODE >43812:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5784 cinit CODE >43813:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-578A cinit CODE >43814:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-578C cinit CODE >43815:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5792 cinit CODE >43819:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5796 cinit CODE >43820:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5798 cinit CODE >43821:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-5798 cinit CODE >43822:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-579A cinit CODE >43823:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-579C cinit CODE >43824:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-579E cinit CODE >43827:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57A2 cinit CODE >43828:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57A4 cinit CODE >43829:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57A4 cinit CODE >43830:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57A6 cinit CODE >43831:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57A8 cinit CODE >43832:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57AA cinit CODE >43835:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57AC cinit CODE >43836:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57AE cinit CODE >43837:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57B0 cinit CODE >43838:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57B2 cinit CODE >43846:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57B4 cinit CODE >43847:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57B6 cinit CODE >43848:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57B8 cinit CODE >43849:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57BA cinit CODE >43850:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57BC cinit CODE >43851:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57BE cinit CODE >43852:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57C0 cinit CODE >43858:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57C0 cinit CODE >43860:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
-57C2 cinit CODE >43861:C:\Users\ruben\AppData\Local\Temp\xcAs6nk.s
+5756 cinit CODE >43489:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5756 cinit CODE >43491:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5756 cinit CODE >43494:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5756 cinit CODE >43789:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5758 cinit CODE >43790:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+575A cinit CODE >43791:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+575C cinit CODE >43792:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+575E cinit CODE >43793:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5760 cinit CODE >43794:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5762 cinit CODE >43795:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5766 cinit CODE >43796:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+576A cinit CODE >43797:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+576A cinit CODE >43798:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+576C cinit CODE >43799:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5770 cinit CODE >43800:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5772 cinit CODE >43801:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5774 cinit CODE >43802:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5776 cinit CODE >43806:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5778 cinit CODE >43807:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+577A cinit CODE >43808:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+577C cinit CODE >43809:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+577E cinit CODE >43810:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5780 cinit CODE >43811:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5782 cinit CODE >43812:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5784 cinit CODE >43813:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+578A cinit CODE >43814:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+578C cinit CODE >43815:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5792 cinit CODE >43819:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5796 cinit CODE >43820:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5798 cinit CODE >43821:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+5798 cinit CODE >43822:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+579A cinit CODE >43823:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+579C cinit CODE >43824:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+579E cinit CODE >43827:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57A2 cinit CODE >43828:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57A4 cinit CODE >43829:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57A4 cinit CODE >43830:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57A6 cinit CODE >43831:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57A8 cinit CODE >43832:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57AA cinit CODE >43835:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57AC cinit CODE >43836:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57AE cinit CODE >43837:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57B0 cinit CODE >43838:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57B2 cinit CODE >43846:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57B4 cinit CODE >43847:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57B6 cinit CODE >43848:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57B8 cinit CODE >43849:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57BA cinit CODE >43850:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57BC cinit CODE >43851:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57BE cinit CODE >43852:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57C0 cinit CODE >43858:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57C0 cinit CODE >43860:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
+57C2 cinit CODE >43861:C:\Users\ruben\AppData\Local\Temp\xcAsq1s.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1876,6 +1876,7 @@ __end_of_PWM2_16BIT_Slice1Output2_SetInterruptHandler 5EE6 0 CODE 0 text13 dist/
 _C1FLTCON0H 181 0 ABS 0 - dist/default/production\ETC.X.production.o
 ___awdiv@counter 505 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 i2___xxtofl 3B0A 0 CODE 0 text104 dist/default/production\ETC.X.production.o
+ETC_PID@slLastErrorPos 624 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
 _C1FLTOBJ1H 195 0 ABS 0 - dist/default/production\ETC.X.production.o
 _C1FLTOBJ1L 194 0 ABS 0 - dist/default/production\ETC.X.production.o
 _C1FLTOBJ1T 197 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -1933,7 +1934,7 @@ _PWM2LDS 471 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRH 473 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRL 472 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\ETC.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 __end_of_PWM1_16BIT_SetSlice1Output1DutyCycleRegister 5E7E 0 CODE 0 text65 dist/default/production\ETC.X.production.o
 _CAN1_SetBusWakeUpActivityInterruptHandler 5F5E 0 CODE 0 text39 dist/default/production\ETC.X.production.o
 _PWM2PIPOS 475 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -1980,11 +1981,11 @@ _WPUA 401 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUB 409 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUC 411 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUE 421 0 ABS 0 - dist/default/production\ETC.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+___sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 _main 5830 0 CODE 0 text0 dist/default/production\ETC.X.production.o
 i2_PWM2_16BIT_SetSlice1Output1DutyCycleRegister 5EBC 0 CODE 0 text111 dist/default/production\ETC.X.production.o
 _CAN1_Initialize 588C 0 CODE 0 text25 dist/default/production\ETC.X.production.o
-start 1A 0 CODE 0 init C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+start 1A 0 CODE 0 init C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 PWM2_16BIT_WritePeriodRegister@periodCount 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __end_ofi2_CLUTCH_AnalyseState 4D6E 0 CODE 0 text74 dist/default/production\ETC.X.production.o
 i2___lwdiv@quotient 505 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
@@ -2021,8 +2022,6 @@ i2PWM2_16BIT_SetSlice1Output1DutyCycleRegister@registerValue 501 0 COMRAM 1 csta
 __size_of_APPSAnalysis 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _CAN1_SetInvalidMessageInterruptHandler 5F54 0 CODE 0 text38 dist/default/production\ETC.X.production.o
 GPIO_PWM2_Control@uiConvertedPeriod 5EF 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
-_ucAPPS1_mv 570 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
-_ucAPPS2_mv 568 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __LidataBANK5 0 0 ABS 0 idataBANK5 dist/default/production\ETC.X.production.o
 __LidataBANK6 0 0 ABS 0 idataBANK6 dist/default/production\ETC.X.production.o
 __end_of_CAN1_SetInvalidMessageInterruptHandler 5F5E 0 CODE 0 text38 dist/default/production\ETC.X.production.o
@@ -2049,11 +2048,11 @@ CAN1_Receive@rxCanMsg 521 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.
 _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 TMR0_SetInterruptHandler@InterruptHandler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _ADC_SetContext1ThresholdInterruptHandler 5F90 0 CODE 0 text46 dist/default/production\ETC.X.production.o
-__accesstop 560 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
-intlevel0 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
-intlevel1 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
-intlevel2 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
-intlevel3 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+__accesstop 560 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
+intlevel0 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
+intlevel1 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
+intlevel2 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
+intlevel3 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 __ptext100 5EA4 0 CODE 0 text100 dist/default/production\ETC.X.production.o
 __ptext101 5FDE 0 CODE 0 text101 dist/default/production\ETC.X.production.o
 __ptext102 303E 0 CODE 0 text102 dist/default/production\ETC.X.production.o
@@ -2090,6 +2089,7 @@ __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production\ETC.X.production.o
 i2___xxtofl@arg 50B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 i2___xxtofl@exp 50A 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 i2___xxtofl@val 501 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
+__size_of_ETC_PID 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_PWM1_16BIT_SetSlice1Output1DutyCycleRegister 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ucTargetDirection 5B5 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
@@ -2162,14 +2162,14 @@ _C1FIFOCON1U 15E 0 ABS 0 - dist/default/production\ETC.X.production.o
 _TMR0_DefaultInterruptHandler 5FF2 0 CODE 0 text92 dist/default/production\ETC.X.production.o
 ___awdiv@dividend 501 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_of_PWM1_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 _I2C1BAUD 29D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTH 28D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTL 28C 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON0 294 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON1 295 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON2 296 0 ABS 0 - dist/default/production\ETC.X.production.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 __size_ofi2___wmul 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __size_of_DefaultModeChangeHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2223,7 +2223,6 @@ _ADACTPPS 269 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_DefaultRxBufferOverflowHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __end_of___lmul 5830 0 CODE 0 text113 dist/default/production\ETC.X.production.o
 __end_of___wmul 5CB0 0 CODE 0 text59 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@slErrorPos 560 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 CAN1_ReceivedMessageCountGet@fifoDepth 507 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\ETC.X.production.o
@@ -2308,6 +2307,7 @@ _OSCFRQ B1 0 ABS 0 - dist/default/production\ETC.X.production.o
 i2ANALOG_GetVoltage@uiValorAnalog 50B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\ETC.X.production.o
 i2___wmul 5D06 0 CODE 0 text105 dist/default/production\ETC.X.production.o
+__end_of_ETC_PID 32B8 0 CODE 0 text102 dist/default/production\ETC.X.production.o
 i2PWM1_16BIT_SetSlice1Output1DutyCycleRegister@registerValue 501 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_ofi2_PWM2_16BIT_LoadBufferRegisters 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_CAN1_RXI_ISR 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2321,7 +2321,6 @@ i2_PWM1_16BIT_WritePeriodRegister 5E98 0 CODE 0 text99 dist/default/production\E
 CAN1_Receive@status 523 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 TMR1_ISR@CountCallBack 572 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __size_of_CAN1_ReceivedMessageCountGet 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-__size_of_ETC_PIDcontroller 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADCSEL1 3FC 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADCSEL2 3FD 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADCSEL3 3FE 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2349,7 +2348,6 @@ __end_of_memcpy 5942 0 CODE 0 text119 dist/default/production\ETC.X.production.o
 __end_of_SYSTEM_Initialize 5BCE 0 CODE 0 text7 dist/default/production\ETC.X.production.o
 ANALOG_GetVoltage@ucFlag 5CD 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __end_ofi2___wmul 5D30 0 CODE 0 text105 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@slDerivative 540 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __end_of_ADC_SetContext2ThresholdInterruptHandler 5F90 0 CODE 0 text45 dist/default/production\ETC.X.production.o
 __size_of_CAN1_SetBusWakeUpActivityInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _CAN1_Receive 5942 0 CODE 0 text116 dist/default/production\ETC.X.production.o
@@ -2377,7 +2375,7 @@ __size_of_CAN1_SetSystemErrorInterruptHandler 0 0 ABS 0 - dist/default/productio
 __size_of_ADC_SetActiveClockTuningInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _uiETCDuty 564 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __end_of_DefaultModeChangeHandler 5FFE 0 CODE 0 text126 dist/default/production\ETC.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+isa$xinst 0 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 __size_of_PWM2_16BIT_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __end_of_TMR1_SetInterruptHandler 5ED2 0 CODE 0 text9 dist/default/production\ETC.X.production.o
 _I2C1_Status 600 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
@@ -2448,7 +2446,7 @@ __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\ETC.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\ETC.X.production.o
 __size_of_PWM2_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADC_Context4Thereshld_ISR 663 0 BANK6 1 nvBANK6 dist/default/production\ETC.X.production.o
-__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 _ucTargetGear 5B4 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 ___xxtofl@arg 5CB 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 ___xxtofl@exp 5CA 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
@@ -2575,9 +2573,7 @@ __end_of_CAN1_SetBusErrorInterruptHandler 5F72 0 CODE 0 text40 dist/default/prod
 __size_of_TMR0_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 CAN1_Receive@index 524 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 Receive@rxCanMsg 518 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@sl_K_D 62C 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@sl_K_I 673 0 BANK6 1 dataBANK6 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@sl_K_P 677 0 BANK6 1 dataBANK6 dist/default/production\ETC.X.production.o
+ETC_PID@slIntegral 628 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
 _C1NBTCFGH 105 0 ABS 0 - dist/default/production\ETC.X.production.o
 _C1NBTCFGL 104 0 ABS 0 - dist/default/production\ETC.X.production.o
 _C1NBTCFGT 107 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2598,7 +2594,6 @@ i2CLUTCH_AnalyseState@ucFDC1 501 0 COMRAM 1 cstackCOMRAM dist/default/production
 i2CLUTCH_AnalyseState@ucFDC2 502 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _ANALOGRead 5A9C 0 CODE 0 text85 dist/default/production\ETC.X.production.o
 _ucTPS1_perc 597 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@ucMode 537 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _ucService_brake 5AF 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __end_of_TMR0_DefaultInterruptHandler 5FF4 0 CODE 0 text92 dist/default/production\ETC.X.production.o
 _ucAMI_state 5B1 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
@@ -2660,7 +2655,6 @@ i2_GPIO_PWM2_Control 49F4 0 CODE 0 text103 dist/default/production\ETC.X.product
 __Hrparam 0 0 COMRAM 1 rparam dist/default/production\ETC.X.production.o
 __size_of_CAN1_RX_FIFO_FilterMaskConfiguration 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __end_of___xxtofl 3B0A 0 CODE 0 text58 dist/default/production\ETC.X.production.o
-__end_of_ETC_PIDcontroller 32B8 0 CODE 0 text102 dist/default/production\ETC.X.production.o
 _ReadMessageFromFifo 32B8 0 CODE 0 text118 dist/default/production\ETC.X.production.o
 CAN1_OperationModeSet@requestMode 5C3 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __pdataBANK5 5FD 0 BANK5 1 dataBANK5 dist/default/production\ETC.X.production.o
@@ -2776,6 +2770,7 @@ __end_of_CAN1_OperationModeSet 531E 0 CODE 0 text31 dist/default/production\ETC.
 _INTERRUPT_InterruptManager 4FC0 0 CODE 0 text68 dist/default/production\ETC.X.production.o
 _ADC_Initialize 372C 0 CODE 0 text42 dist/default/production\ETC.X.production.o
 _CLUTCH_AnalyseState 4E38 0 CODE 0 text67 dist/default/production\ETC.X.production.o
+ETC_PID@sl_motor_pwm_duty 544 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_of_CAN1_SetFIFO1NotEmptyHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 ?i2_ANALOG_GetVoltage 506 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_of_PMD_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2938,6 +2933,7 @@ _etc_calibrate 3E14 0 CODE 0 text1 dist/default/production\ETC.X.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production\ETC.X.production.o
 __Lconfig 0 0 CONFIG 4 config dist/default/production\ETC.X.production.o
 GPIO_PWM2_Control@uiConvertedDC 5F1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
+ETC_PID@slDerivative 540 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _PWM2_16BIT_Slice1Output1_InterruptHandler 671 0 BANK6 1 nvBANK6 dist/default/production\ETC.X.production.o
 __end_of_TEMPORIZATION_1s 5FEE 0 CODE 0 text77 dist/default/production\ETC.X.production.o
 __end_of_TMR0_ISR 5B72 0 CODE 0 text90 dist/default/production\ETC.X.production.o
@@ -2969,7 +2965,7 @@ __size_of_TEMPORIZATION_1s 0 0 ABS 0 - dist/default/production\ETC.X.production.
 _TMR0_SetInterruptHandler 5ED2 0 CODE 0 text11 dist/default/production\ETC.X.production.o
 i2GPIO_PWM1_Control@uiFreq 52B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\ETC.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+isa$std 1 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 _ucTPS_perc 595 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 CAN1_SetRxBufferOverFlowInterruptHandler@handler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _DefaultRxBufferOverflowHandler 5FFA 0 CODE 0 text125 dist/default/production\ETC.X.production.o
@@ -2980,8 +2976,8 @@ __size_of_CAN1_SetInvalidMessageInterruptHandler 0 0 ABS 0 - dist/default/produc
 _CAN1_ModeChangeHandler 586 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __end_of_TPSAnalysis 541A 0 CODE 0 text81 dist/default/production\ETC.X.production.o
 _ucETB_STATE 590 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
-stackhi 25FF 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
-stacklo 67B 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+stackhi 25FF 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
+stacklo 67B 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 ANALOG_GetVoltage@uiValorVoltage 5CE 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _ADC_SetContext4ThresholdInterruptHandler 5F72 0 CODE 0 text43 dist/default/production\ETC.X.production.o
 __end_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler 5EF0 0 CODE 0 text14 dist/default/production\ETC.X.production.o
@@ -2991,6 +2987,7 @@ _OSCCON1 AD 0 ABS 0 - dist/default/production\ETC.X.production.o
 _OSCCON3 AF 0 ABS 0 - dist/default/production\ETC.X.production.o
 _OSCTUNE B0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Lirdata 0 0 CODE 0 irdata dist/default/production\ETC.X.production.o
+_ETC_PID 303E 0 CODE 0 text102 dist/default/production\ETC.X.production.o
 __size_of_DefaultBusErrorHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Livt0x8 8 0 CODE 0 ivt0x8 dist/default/production\ETC.X.production.o
 _ADCON0bits 3F3 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2998,7 +2995,6 @@ _ADCON1bits 3F4 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADCON2bits 3F5 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADCON3bits 3F6 0 ABS 0 - dist/default/production\ETC.X.production.o
 ___fladd@grs 5DE 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@sl_target_perc 533 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _PWM2_16BIT_LoadBufferRegisters 5FD6 0 CODE 0 text53 dist/default/production\ETC.X.production.o
 i2ANALOG_GetVoltage@ucEntradaAnalogica 50A 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _msgTransmit 656 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
@@ -3047,7 +3043,6 @@ __size_of_PWM1_16BIT_Slice1Output1_SetInterruptHandler 0 0 ABS 0 - dist/default/
 ?_ANALOG_GetVoltage 5C6 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __size_of_PWM1_16BIT_WritePeriodRegister 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 CAN1_OperationModeSet@status 5C2 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@slIntegral 628 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
 __end_of_ADC_SetContext4ThresholdInterruptHandler 5F7C 0 CODE 0 text43 dist/default/production\ETC.X.production.o
 __end_of_CANReadMessage 372C 0 CODE 0 text96 dist/default/production\ETC.X.production.o
 _ADC_Context1Thereshld_ISR 669 0 BANK6 1 nvBANK6 dist/default/production\ETC.X.production.o
@@ -3072,7 +3067,6 @@ i2___aldiv 440A 0 CODE 0 text109 dist/default/production\ETC.X.production.o
 __size_of_ADC_SelectContext 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 i2___fladd 2B7E 0 CODE 0 text108 dist/default/production\ETC.X.production.o
 i2___fltol 461E 0 CODE 0 text107 dist/default/production\ETC.X.production.o
-_ETC_PIDcontroller 303E 0 CODE 0 text102 dist/default/production\ETC.X.production.o
 i2___lwdiv 56E2 0 CODE 0 text106 dist/default/production\ETC.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec dist/default/production\ETC.X.production.o
 TMR1_SetInterruptHandler@InterruptHandler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
@@ -3209,7 +3203,7 @@ __Ltext98 0 0 ABS 0 text98 dist/default/production\ETC.X.production.o
 __Ltext99 0 0 ABS 0 text99 dist/default/production\ETC.X.production.o
 _ADC_DefaultContext1Threshold_ISR 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _perc_of 5082 0 CODE 0 text83 dist/default/production\ETC.X.production.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
 ___aldiv@dividend 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _uiAPPS1_opened_mv 63C 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
 __end_of_CLUTCH_AnalyseState 4EFC 0 CODE 0 text67 dist/default/production\ETC.X.production.o
@@ -3245,6 +3239,7 @@ _ucSteering_angle_target 5A9 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.pr
 __Lreset_vec 0 0 CODE 0 reset_vec dist/default/production\ETC.X.production.o
 __size_ofi2_ANALOG_GetVoltage 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _DLC_BYTES 2627 0 SMALLCONST 0 smallconst dist/default/production\ETC.X.production.o
+ETC_PID@sl_target_perc 533 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 CAN1_ReceivedMessageCountGet@fifoHead 509 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 CAN1_ReceivedMessageCountGet@fifoTail 508 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_of_TEMPORIZATION_10s 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -3252,6 +3247,8 @@ __size_of_TEMPORIZATION_30s 0 0 ABS 0 - dist/default/production\ETC.X.production
 __end_of_PWM2_16BIT_Period_SetInterruptHandler 5EFA 0 CODE 0 text15 dist/default/production\ETC.X.production.o
 ADC_SetADIInterruptHandler@InterruptHandler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __end_of_GPIO_PWM2_Control 4816 0 CODE 0 text50 dist/default/production\ETC.X.production.o
+_uiAPPS1_mv 570 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
+_uiAPPS2_mv 568 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __size_of_etc_calibrate 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 CAN1_SetFIFO1NotEmptyHandler@handler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _SLRCONA 403 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -3287,7 +3284,6 @@ __size_of_CAN1_RX_FIFO_Configuration 0 0 ABS 0 - dist/default/production\ETC.X.p
 _ucETCFlagSupervisor 5A1 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 CAN1_ReceivedMessageCountGet@numOfMsg 504 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __end_ofi2_PWM2_16BIT_WritePeriodRegister 5EBC 0 CODE 0 text110 dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@slLastErrorPos 624 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
 _ucASBState 5A4 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __end_of_i2c1_fsmStateTable 2627 0 SMALLCONST 0 smallconst dist/default/production\ETC.X.production.o
 ___lmul@multiplicand 505 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
@@ -3299,7 +3295,6 @@ __pcstackCOMRAM 501 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.produc
 __size_ofi2_PWM2_16BIT_WritePeriodRegister 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1_DO_SEND_ADR_READ 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _T0CON0bits 31A 0 ABS 0 - dist/default/production\ETC.X.production.o
-ETC_PIDcontroller@sl_motor_pwm_duty 544 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_ofi2_ADC_DisableChannelSequencer 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _TEMPORIZATION_10ms 5FF4 0 CODE 0 text93 dist/default/production\ETC.X.production.o
 __end_of_I2C1_Initialize 5C84 0 CODE 0 text24 dist/default/production\ETC.X.production.o
@@ -3367,6 +3362,9 @@ _TRISB 4C7 0 ABS 0 - dist/default/production\ETC.X.production.o
 _TRISC 4C8 0 ABS 0 - dist/default/production\ETC.X.production.o
 _TRISE 4CA 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_TMR0_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
+ETC_PID@sl_K_D 62C 0 BANK6 1 bssBANK6 dist/default/production\ETC.X.production.o
+ETC_PID@sl_K_I 673 0 BANK6 1 dataBANK6 dist/default/production\ETC.X.production.o
+ETC_PID@sl_K_P 677 0 BANK6 1 dataBANK6 dist/default/production\ETC.X.production.o
 __end_of_PWM2_16BIT_Initialize 55FA 0 CODE 0 text12 dist/default/production\ETC.X.production.o
 __HRAM 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Hbss 0 0 RAM 1 bss dist/default/production\ETC.X.production.o
@@ -3391,6 +3389,7 @@ CLUTCH_Move@slTargetMove 5F3 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X
 _CAN1_BusWakeUpActivityHandler 58A 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 ADC_SetActiveClockTuningInterruptHandler@InterruptHandler 5C1 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
+ETC_PID@ucMode 537 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 _PWM1_16BIT_Slice1Output2_InterruptHandler 57C 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 i2_ADC_GetSingleConversion 5B0E 0 CODE 0 text88 dist/default/production\ETC.X.production.o
 __size_ofi2_PWM1_16BIT_SetSlice1Output1DutyCycleRegister 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -3438,6 +3437,7 @@ _ADCSEL3bits 3FE 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADCSEL4bits 3FF 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Hintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production\ETC.X.production.o
 Receive@index 520 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
+ETC_PID@slErrorPos 560 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __end_of_PWM1_16BIT_Initialize 566E 0 CODE 0 text16 dist/default/production\ETC.X.production.o
 _APPSAnalysis 541A 0 CODE 0 text82 dist/default/production\ETC.X.production.o
 __size_of_INTERRUPT_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o

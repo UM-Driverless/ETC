@@ -80,10 +80,10 @@ void main(void)
         LED_Toggle();
         
         Nop();
-//        ETC_PID( (3478-ucAPPS1_mv)/(3478-1680)*100 , ManualMode); // ucAPPS1_mv updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
+//        ETC_PID( (3478-uiAPPS1_mv)/(3478-1680)*100 , ManualMode); // uiAPPS1_mv updated by ANALOGRead in ANALOG.c, which is called by TEMPORIZATION_100ms();
         
-        /// Play sound of some value - ucAPPS1_mv ucAPPS2_mv ucAPPS1_perc ucAPPS2_perc ucAPPS_perc
-        GPIO_PWM2_Control(30, ucAPPS1_mv); // Play as frequency
+        /// Play sound of some value - uiAPPS1_mv uiAPPS2_mv ucAPPS1_perc ucAPPS2_perc ucAPPS_perc
+        GPIO_PWM2_Control(30, uiAPPS1_mv); // Play as frequency
         
         
         //CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0);    //Falta meter los APPS target

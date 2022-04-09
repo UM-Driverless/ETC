@@ -68,8 +68,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./CLUTCH.h: 34: void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`l`uc ]
 "81 ./ETC.h
-[; ;./ETC.h: 81: void ETC_PIDcontroller(signed long slTargetMove, unsigned char ucMode);
-[v _ETC_PIDcontroller `(v ~T0 @X0 0 ef2`l`uc ]
+[; ;./ETC.h: 81: void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+[v _ETC_PID `(v ~T0 @X0 0 ef2`l`uc ]
 "64
 [; ;./ETC.h: 64: extern unsigned char ucETCBeatSupervisor;
 [v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
@@ -3934,8 +3934,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;MESSAGES.C: 136:                         CLUTCH_Move(ucTargetClutch, 1);
 [e ( _CLUTCH_Move (2 , -> _ucTargetClutch `l -> -> 1 `i `uc ]
 "138
-[; ;MESSAGES.C: 138:                         ETC_PIDcontroller( ucTargetAccelerator, 1);
-[e ( _ETC_PIDcontroller (2 , -> _ucTargetAccelerator `l -> -> 1 `i `uc ]
+[; ;MESSAGES.C: 138:                         ETC_PID( ucTargetAccelerator, 1);
+[e ( _ETC_PID (2 , -> _ucTargetAccelerator `l -> -> 1 `i `uc ]
 "139
 [; ;MESSAGES.C: 139:                         ucETCBeatSupervisor = 0x01;
 [e = _ucETCBeatSupervisor -> -> 1 `i `uc ]

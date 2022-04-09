@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.32\pic\dat\en_msgs.txt \
   -pivt0x8=08h -cn -h+dist/default/production\ETC.X.production.sym \
   --cmf=dist/default/production\ETC.X.production.cmf -z -Q18F26Q84 \
-  -oC:\Users\ruben\AppData\Local\Temp\xcAs6nk.4 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\ruben\AppData\Local\Temp\xcAsq1s.4 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ETC.X.production.map -E1 -ver=XC8 Compiler \
   --acfsm=1493 -ASTACK=067Bh-025FFh -pstack=STACK -ACODE=00h-0FFFFh \
   -ACONST=00h-0FFFFh -ASMALLCONST=02600h-026FFhx218 \
@@ -31,7 +31,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o \
+  C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o \
   dist/default/production\ETC.X.production.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 18F26Q84
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\ruben\AppData\Local\Temp\xcAs6nk.o
+C:\Users\ruben\AppData\Local\Temp\xcAsq1s.o
                 idloc                            200000   200000       20        0       5
                 config                           300000   300000       24        0       4
                 init                                 1A       1A        4        4       0
@@ -571,16 +571,16 @@ CLUTCH_AnalyseState@ucFDC2                                    cstackBANK5  0005C
 CLUTCH_Move@slTargetMove                                      cstackBANK5  0005F3
 CLUTCH_Move@ucMode                                            cstackBANK5  0005F7
 ETCModeSelect@ucModeSelect                                    cstackCOMRAM 000503
-ETC_PIDcontroller@slDerivative                                cstackCOMRAM 000540
-ETC_PIDcontroller@slErrorPos                                  bssBANK5     000560
-ETC_PIDcontroller@slIntegral                                  bssBANK6     000628
-ETC_PIDcontroller@slLastErrorPos                              bssBANK6     000624
-ETC_PIDcontroller@sl_K_D                                      bssBANK6     00062C
-ETC_PIDcontroller@sl_K_I                                      dataBANK6    000673
-ETC_PIDcontroller@sl_K_P                                      dataBANK6    000677
-ETC_PIDcontroller@sl_motor_pwm_duty                           cstackCOMRAM 000544
-ETC_PIDcontroller@sl_target_perc                              cstackCOMRAM 000533
-ETC_PIDcontroller@ucMode                                      cstackCOMRAM 000537
+ETC_PID@slDerivative                                          cstackCOMRAM 000540
+ETC_PID@slErrorPos                                            bssBANK5     000560
+ETC_PID@slIntegral                                            bssBANK6     000628
+ETC_PID@slLastErrorPos                                        bssBANK6     000624
+ETC_PID@sl_K_D                                                bssBANK6     00062C
+ETC_PID@sl_K_I                                                dataBANK6    000673
+ETC_PID@sl_K_P                                                dataBANK6    000677
+ETC_PID@sl_motor_pwm_duty                                     cstackCOMRAM 000544
+ETC_PID@sl_target_perc                                        cstackCOMRAM 000533
+ETC_PID@ucMode                                                cstackCOMRAM 000537
 GPIO_PWM1_Control@uiConvertedDC                               cstackBANK5  0005F1
 GPIO_PWM1_Control@uiConvertedPeriod                           cstackBANK5  0005EF
 GPIO_PWM1_Control@uiDutyCycle                                 cstackBANK5  0005E9
@@ -783,7 +783,7 @@ _DefaultSystemErrorHandler                                    text124      005FF
 _DefaultTxAttemptHandler                                      text123      005FF6
 _ETCModeSelect                                                text114      0059DC
 _ETCSupervisor                                                text75       00566E
-_ETC_PIDcontroller                                            text102      00303E
+_ETC_PID                                                      text102      00303E
 _GPIOInit                                                     text49       005A5E
 _GPIO_PWM1_Control                                            text57       004816
 _GPIO_PWM2_Control                                            text50       004724
@@ -1541,7 +1541,7 @@ __end_of_DefaultSystemErrorHandler                            text124      005FF
 __end_of_DefaultTxAttemptHandler                              text123      005FF8
 __end_of_ETCModeSelect                                        text114      005A20
 __end_of_ETCSupervisor                                        text75       0056E2
-__end_of_ETC_PIDcontroller                                    text102      0032B8
+__end_of_ETC_PID                                              text102      0032B8
 __end_of_FIFO                                                 smallconst   002632
 __end_of_GPIOInit                                             text49       005A9C
 __end_of_GPIO_PWM1_Control                                    text57       004908
@@ -1822,7 +1822,7 @@ __size_of_DefaultSystemErrorHandler                           (abs)        00000
 __size_of_DefaultTxAttemptHandler                             (abs)        000000
 __size_of_ETCModeSelect                                       (abs)        000000
 __size_of_ETCSupervisor                                       (abs)        000000
-__size_of_ETC_PIDcontroller                                   (abs)        000000
+__size_of_ETC_PID                                             (abs)        000000
 __size_of_GPIOInit                                            (abs)        000000
 __size_of_GPIO_PWM1_Control                                   (abs)        000000
 __size_of_GPIO_PWM2_Control                                   (abs)        000000
@@ -1922,9 +1922,7 @@ _rxFifos                                                      dataBANK5    0005F
 _rxMsgData                                                    bssBANK6     000646
 _timer1ReloadVal                                              nvBANK5      0005FB
 _ucAMI_state                                                  bssBANK5     0005B1
-_ucAPPS1_mv                                                   bssBANK5     000570
 _ucAPPS1_perc                                                 bssBANK5     00059C
-_ucAPPS2_mv                                                   bssBANK5     000568
 _ucAPPS2_perc                                                 bssBANK5     00059B
 _ucAPPSManual                                                 bssBANK5     000598
 _ucAPPS_STATE                                                 bssBANK5     000599
@@ -1970,8 +1968,10 @@ _ucTargetClutch                                               bssBANK5     0005B
 _ucTargetDirection                                            bssBANK5     0005B5
 _ucTargetGear                                                 bssBANK5     0005B4
 _uiAPPS1_default_mv                                           bssBANK5     00056C
+_uiAPPS1_mv                                                   bssBANK5     000570
 _uiAPPS1_opened_mv                                            bssBANK6     00063C
 _uiAPPS2_default_mv                                           bssBANK5     00056A
+_uiAPPS2_mv                                                   bssBANK5     000568
 _uiAPPS2_opened_mv                                            bssBANK6     00063A
 _uiAcc_lateral                                                bssBANK6     000640
 _uiAcc_longitudinal                                           bssBANK6     000642
@@ -2260,10 +2260,10 @@ mcc_generated_files/mcc.c estimated size: 110
 
 ETC.c
 		_ETCModeSelect 		CODE           	59DC	0000	68
+		_ETC_PID       		CODE           	303E	0000	634
 		_TPSAnalysis   		CODE           	539C	0000	126
 		_perc_of       		CODE           	5082	0000	190
 		_apps_calibrate		CODE           	5B72	0000	46
-		_ETC_PIDcontroller		CODE           	303E	0000	634
 		_APPSAnalysis  		CODE           	541A	0000	124
 		_etc_calibrate 		CODE           	3E14	0000	328
 		_ETCSupervisor 		CODE           	566E	0000	116

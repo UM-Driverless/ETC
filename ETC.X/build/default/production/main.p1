@@ -58,8 +58,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
 "37 ./ETC.h
-[; ;./ETC.h: 37: extern unsigned int ucAPPS1_mv;
-[v _ucAPPS1_mv `ui ~T0 @X0 0 e ]
+[; ;./ETC.h: 37: extern unsigned int uiAPPS1_mv;
+[v _uiAPPS1_mv `ui ~T0 @X0 0 e ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3632,8 +3632,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 82:         __nop();
 [e ( ___nop ..  ]
 "86
-[; ;main.c: 86:         GPIO_PWM2_Control(30, ucAPPS1_mv);
-[e ( _GPIO_PWM2_Control (2 , -> -> 30 `i `ui _ucAPPS1_mv ]
+[; ;main.c: 86:         GPIO_PWM2_Control(30, uiAPPS1_mv);
+[e ( _GPIO_PWM2_Control (2 , -> -> 30 `i `ui _uiAPPS1_mv ]
 "90
 [; ;main.c: 90:     }
 }

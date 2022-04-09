@@ -27,8 +27,8 @@ unsigned int uiAPPS2_default_mv;
 unsigned int uiAPPS1_opened_mv;
 unsigned int uiAPPS2_opened_mv;
 
-unsigned int ucAPPS1_mv; // Sent by CAN
-unsigned int ucAPPS2_mv; // Sent by CAN
+unsigned int uiAPPS1_mv; // Sent by CAN
+unsigned int uiAPPS2_mv; // Sent by CAN
 unsigned char ucAPPS1_perc;
 unsigned char ucAPPS2_perc;
 unsigned char ucAPPS_perc;
@@ -77,8 +77,8 @@ void apps_calibrate(void){
      *
      */
     
-    uiAPPS1_default_mv = ucAPPS1_mv + APPSMARGEN;
-    uiAPPS2_default_mv = ucAPPS2_mv - APPSMARGEN;
+    uiAPPS1_default_mv = uiAPPS1_mv + APPSMARGEN;
+    uiAPPS2_default_mv = uiAPPS2_mv - APPSMARGEN;
     
     // We have to push the accelerator pedal to get these values, so assign constants for now.
     uiAPPS1_opened_mv = APPS1_OPEN_MV;
@@ -86,12 +86,12 @@ void apps_calibrate(void){
 }
 
 void APPSAnalysis(void) { // Called by TEMPORIZATIONS.c
-    /* Converts ucAPPS1_mv and ucAPPS2_mv into ucAPPS_perc
+    /* Converts uiAPPS1_mv and uiAPPS2_mv into ucAPPS_perc
      * 
      */
     
-    ucAPPS1_perc = perc_of(ucAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv);
-    ucAPPS2_perc = 100 - perc_of(ucAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_opened_mv); // Tries to mimic ucAPPS1_perc
+    ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv);
+    ucAPPS2_perc = 100 - perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_opened_mv); // Tries to mimic ucAPPS1_perc
     ucAPPS_perc = (ucAPPS1_perc + ucAPPS2_perc) / 2;
 }
 

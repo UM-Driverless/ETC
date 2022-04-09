@@ -42,7 +42,7 @@ void TEMPORIZATION_500ms(void)
     // TODO. Temporarily commented. APPS data comes analog from sensor, no CAN.
     //CANWriteMessage(ETC_SIGNAL, DataLength_6,ulAPPS1calc, ulAPPS2calc, slTPS1calc, slTPS2calc, 0, 0, 0, 0);    //Falta meter los APPS target
     
-    //CANWriteMessage(ETC_SIGNAL, DataLength_6,ucAPPS1_mv/100, ucAPPS2_mv/100, uiTPS1_mv, 100, uiTPS2_mv/100, 0, 0, 0, 0);    //Falta meter los APPS target
+    //CANWriteMessage(ETC_SIGNAL, DataLength_6,uiAPPS1_mv/100, uiAPPS2_mv/100, uiTPS1_mv, 100, uiTPS2_mv/100, 0, 0, 0, 0);    //Falta meter los APPS target
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
     CLUTCH_AnalyseState();
     

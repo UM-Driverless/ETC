@@ -34,8 +34,8 @@ extern unsigned int uiAPPS2_default_mv;
 extern unsigned int uiAPPS1_opened_mv;
 extern unsigned int uiAPPS2_opened_mv;
 
-extern unsigned int ucAPPS1_mv;
-extern unsigned int ucAPPS2_mv;
+extern unsigned int uiAPPS1_mv;
+extern unsigned int uiAPPS2_mv;
 extern unsigned char ucAPPS1_perc;
 extern unsigned char ucAPPS2_perc;
 extern unsigned char ucAPPS_perc;

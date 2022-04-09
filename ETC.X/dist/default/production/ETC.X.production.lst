@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Fri Apr 08 23:46:15 2022
+                                                                                               Sat Apr 09 13:22:59 2022
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	18F26Q84
@@ -300,11 +300,11 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    286  005FB8                     __pidataBANK6:
    287                           	callstack 0
    288                           
-   289                           ;initializer for ETC_PIDcontroller@sl_K_I
+   289                           ;initializer for ETC_PID@sl_K_I
    290  005FB8  000A               	dw	10
    291  005FBA  0000               	dw	0
    292                           
-   293                           ;initializer for ETC_PIDcontroller@sl_K_P
+   293                           ;initializer for ETC_PID@sl_K_P
    294  005FBC  03E8               	dw	1000
    295  005FBE  0000               	dw	0
    296                           
@@ -874,7 +874,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    860                           	psect	bssBANK5
    861  000560                     __pbssBANK5:
    862                           	callstack 0
-   863  000560                     ETC_PIDcontroller@slErrorPos:
+   863  000560                     ETC_PID@slErrorPos:
    864                           	callstack 0
    865  000560                     	ds	4
    866  000564                     _uiETCDuty:
@@ -883,7 +883,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    869  000566                     _uiTPS1_mv:
    870                           	callstack 0
    871  000566                     	ds	2
-   872  000568                     _ucAPPS2_mv:
+   872  000568                     _uiAPPS2_mv:
    873                           	callstack 0
    874  000568                     	ds	2
    875  00056A                     _uiAPPS2_default_mv:
@@ -895,7 +895,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
    881  00056E                     _uiCLUTCHDuty:
    882                           	callstack 0
    883  00056E                     	ds	2
-   884  000570                     _ucAPPS1_mv:
+   884  000570                     _uiAPPS1_mv:
    885                           	callstack 0
    886  000570                     	ds	2
    887  000572                     TMR1_ISR@CountCallBack:
@@ -1086,13 +1086,13 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1072  000600                     _I2C1_Status:
   1073                           	callstack 0
   1074  000600                     	ds	36
-  1075  000624                     ETC_PIDcontroller@slLastErrorPos:
+  1075  000624                     ETC_PID@slLastErrorPos:
   1076                           	callstack 0
   1077  000624                     	ds	4
-  1078  000628                     ETC_PIDcontroller@slIntegral:
+  1078  000628                     ETC_PID@slIntegral:
   1079                           	callstack 0
   1080  000628                     	ds	4
-  1081  00062C                     ETC_PIDcontroller@sl_K_D:
+  1081  00062C                     ETC_PID@sl_K_D:
   1082                           	callstack 0
   1083  00062C                     	ds	4
   1084  000630                     _uiTPS2_mv:
@@ -1141,10 +1141,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1127                           	psect	dataBANK6
   1128  000673                     __pdataBANK6:
   1129                           	callstack 0
-  1130  000673                     ETC_PIDcontroller@sl_K_I:
+  1130  000673                     ETC_PID@sl_K_I:
   1131                           	callstack 0
   1132  000673                     	ds	4
-  1133  000677                     ETC_PIDcontroller@sl_K_P:
+  1133  000677                     ETC_PID@sl_K_P:
   1134                           	callstack 0
   1135  000677                     	ds	4
   1136                           
@@ -1754,30 +1754,30 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1740                           
   1741                           ; 2 bytes @ 0x30
   1742  000531                     	ds	2
-  1743  000533                     ETC_PIDcontroller@sl_target_perc:
+  1743  000533                     ETC_PID@sl_target_perc:
   1744                           	callstack 0
   1745  000533                     i2CLUTCH_Move@slTargetMove:
   1746                           	callstack 0
   1747                           
   1748                           ; 4 bytes @ 0x32
   1749  000533                     	ds	4
-  1750  000537                     ETC_PIDcontroller@ucMode:
+  1750  000537                     ETC_PID@ucMode:
   1751                           	callstack 0
   1752  000537                     i2CLUTCH_Move@ucMode:
   1753                           	callstack 0
   1754                           
   1755                           ; 1 bytes @ 0x36
   1756  000537                     	ds	1
-  1757  000538                     ??_ETC_PIDcontroller:
+  1757  000538                     ??_ETC_PID:
   1758  000538                     
   1759                           ; 1 bytes @ 0x37
   1760  000538                     	ds	8
-  1761  000540                     ETC_PIDcontroller@slDerivative:
+  1761  000540                     ETC_PID@slDerivative:
   1762                           	callstack 0
   1763                           
   1764                           ; 4 bytes @ 0x3F
   1765  000540                     	ds	4
-  1766  000544                     ETC_PIDcontroller@sl_motor_pwm_duty:
+  1766  000544                     ETC_PID@sl_motor_pwm_duty:
   1767                           	callstack 0
   1768                           
   1769                           ; 4 bytes @ 0x43
@@ -1933,14 +1933,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1909                           ;main.c: 82:         __nop();
   1910  00586C  F000               	nop	
   1911  00586E                     
-  1912                           ;main.c: 86:         GPIO_PWM2_Control(30, ucAPPS1_mv);
+  1912                           ;main.c: 86:         GPIO_PWM2_Control(30, uiAPPS1_mv);
   1913  00586E  0E00               	movlw	0
   1914  005870  0105               	movlb	5	; () banked
   1915  005872  6FEA               	movwf	(GPIO_PWM2_Control@uiDutyCycle+1)& (0+255),b
   1916  005874  0E1E               	movlw	30
   1917  005876  6FE9               	movwf	GPIO_PWM2_Control@uiDutyCycle& (0+255),b
-  1918  005878  C570  F5EB         	movff	_ucAPPS1_mv,GPIO_PWM2_Control@uiFreq
-  1919  00587C  C571  F5EC         	movff	_ucAPPS1_mv+1,GPIO_PWM2_Control@uiFreq+1
+  1918  005878  C570  F5EB         	movff	_uiAPPS1_mv,GPIO_PWM2_Control@uiFreq
+  1919  00587C  C571  F5EC         	movff	_uiAPPS1_mv+1,GPIO_PWM2_Control@uiFreq+1
   1920  005880  EC92  F023         	call	_GPIO_PWM2_Control	;wreg free
   1921  005884  EF25  F02C         	goto	l9587
   1922  005888  EF0D  F000         	goto	start
@@ -2705,21 +2705,21 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2615  005B72                     _apps_calibrate:
   2616                           	callstack 118
   2617  005B72                     
-  2618                           ;ETC.c: 80:     uiAPPS1_default_mv = ucAPPS1_mv + 100;
+  2618                           ;ETC.c: 80:     uiAPPS1_default_mv = uiAPPS1_mv + 100;
   2619  005B72  0E64               	movlw	100
   2620  005B74  0105               	movlb	5	; () banked
-  2621  005B76  2570               	addwf	_ucAPPS1_mv& (0+255),w,b
+  2621  005B76  2570               	addwf	_uiAPPS1_mv& (0+255),w,b
   2622  005B78  6F6C               	movwf	_uiAPPS1_default_mv& (0+255),b
   2623  005B7A  0E00               	movlw	0
-  2624  005B7C  2171               	addwfc	(_ucAPPS1_mv+1)& (0+255),w,b
+  2624  005B7C  2171               	addwfc	(_uiAPPS1_mv+1)& (0+255),w,b
   2625  005B7E  6F6D               	movwf	(_uiAPPS1_default_mv+1)& (0+255),b
   2626                           
-  2627                           ;ETC.c: 81:     uiAPPS2_default_mv = ucAPPS2_mv - 100;
+  2627                           ;ETC.c: 81:     uiAPPS2_default_mv = uiAPPS2_mv - 100;
   2628  005B80  0E9C               	movlw	156
-  2629  005B82  2568               	addwf	_ucAPPS2_mv& (0+255),w,b
+  2629  005B82  2568               	addwf	_uiAPPS2_mv& (0+255),w,b
   2630  005B84  6F6A               	movwf	_uiAPPS2_default_mv& (0+255),b
   2631  005B86  0EFF               	movlw	255
-  2632  005B88  2169               	addwfc	(_ucAPPS2_mv+1)& (0+255),w,b
+  2632  005B88  2169               	addwfc	(_uiAPPS2_mv+1)& (0+255),w,b
   2633  005B8A  6F6B               	movwf	(_uiAPPS2_default_mv+1)& (0+255),b
   2634  005B8C                     
   2635                           ; BSR set to: 5
@@ -11070,10 +11070,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10082  00541A                     _APPSAnalysis:
  10083                           	callstack 116
  10084  00541A                     
- 10085                           ;ETC.c: 93:     ucAPPS1_perc = perc_of(ucAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv
+ 10085                           ;ETC.c: 93:     ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_opened_mv
       +                          );
- 10086  00541A  C570  F51B         	movff	_ucAPPS1_mv,perc_of@val
- 10087  00541E  C571  F51C         	movff	_ucAPPS1_mv+1,perc_of@val+1
+ 10086  00541A  C570  F51B         	movff	_uiAPPS1_mv,perc_of@val
+ 10087  00541E  C571  F51C         	movff	_uiAPPS1_mv+1,perc_of@val+1
  10088  005422  6A1D               	clrf	(perc_of@val+2)^(0+1280),c
  10089  005424  6A1E               	clrf	(perc_of@val+3)^(0+1280),c
  10090  005426  C56C  F51F         	movff	_uiAPPS1_default_mv,perc_of@min
@@ -11088,10 +11088,10 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10099  005442  0105               	movlb	5	; () banked
  10100  005444  6F9C               	movwf	_ucAPPS1_perc& (0+255),b
  10101                           
- 10102                           ;ETC.c: 94:     ucAPPS2_perc = 100 - perc_of(ucAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_ope
+ 10102                           ;ETC.c: 94:     ucAPPS2_perc = 100 - perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_ope
       +                          ned_mv);
- 10103  005446  C568  F51B         	movff	_ucAPPS2_mv,perc_of@val
- 10104  00544A  C569  F51C         	movff	_ucAPPS2_mv+1,perc_of@val+1
+ 10103  005446  C568  F51B         	movff	_uiAPPS2_mv,perc_of@val
+ 10104  00544A  C569  F51C         	movff	_uiAPPS2_mv+1,perc_of@val+1
  10105  00544E  6A1D               	clrf	(perc_of@val+2)^(0+1280),c
  10106  005450  6A1E               	clrf	(perc_of@val+3)^(0+1280),c
  10107  005452  C56A  F51F         	movff	_uiAPPS2_default_mv,perc_of@min
@@ -11131,7 +11131,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10141                           
  10142 ;; *************** function _perc_of *****************
  10143 ;; Defined at:
- 10144 ;;		line 373 in file "ETC.c"
+ 10144 ;;		line 374 in file "ETC.c"
  10145 ;; Parameters:    Size  Location     Type
  10146 ;;  val             4   26[COMRAM] long 
  10147 ;;  min             4   30[COMRAM] long 
@@ -11179,7 +11179,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10179  005082                     _perc_of:
  10180                           	callstack 116
  10181  005082                     
- 10182                           ;ETC.c: 382:     val = 100*(val - min)/(max - min);
+ 10182                           ;ETC.c: 383:     val = 100*(val - min)/(max - min);
  10183  005082  501F               	movf	perc_of@min^(0+1280),w,c
  10184  005084  5C1B               	subwf	perc_of@val^(0+1280),w,c
  10185  005086  6E01               	movwf	___lmul@multiplier^(0+1280),c
@@ -11223,7 +11223,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10223  0050E2  C50F  F51D         	movff	?i2___aldiv+2,perc_of@val+2
  10224  0050E6  C510  F51E         	movff	?i2___aldiv+3,perc_of@val+3
  10225  0050EA                     
- 10226                           ;ETC.c: 383:     if (val < 0){
+ 10226                           ;ETC.c: 384:     if (val < 0){
  10227  0050EA  BE1E               	btfsc	(perc_of@val+3)^(0+1280),7,c
  10228  0050EC  EF7C  F028         	goto	i2u527_40
  10229  0050F0  EF7A  F028         	goto	i2u527_41
@@ -11231,7 +11231,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10231  0050F4  EF86  F028         	goto	i2l7567
  10232  0050F8                     i2u527_40:
  10233  0050F8                     
- 10234                           ;ETC.c: 384:         val = 0;
+ 10234                           ;ETC.c: 385:         val = 0;
  10235  0050F8  0E00               	movlw	0
  10236  0050FA  6E1B               	movwf	perc_of@val^(0+1280),c
  10237  0050FC  0E00               	movlw	0
@@ -11241,7 +11241,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10241  005104  0E00               	movlw	0
  10242  005106  6E1E               	movwf	(perc_of@val+3)^(0+1280),c
  10243                           
- 10244                           ;ETC.c: 385:     } else if (val > 100 ){
+ 10244                           ;ETC.c: 386:     } else if (val > 100 ){
  10245  005108  EF9E  F028         	goto	i2l2349
  10246  00510C                     i2l7567:
  10247  00510C  BE1E               	btfsc	(perc_of@val+3)^(0+1280),7,c
@@ -11259,7 +11259,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10259  005128  EF9E  F028         	goto	i2l2349
  10260  00512C                     i2u528_40:
  10261  00512C                     
- 10262                           ;ETC.c: 386:         val = 100;
+ 10262                           ;ETC.c: 387:         val = 100;
  10263  00512C  0E64               	movlw	100
  10264  00512E  6E1B               	movwf	perc_of@val^(0+1280),c
  10265  005130  0E00               	movlw	0
@@ -11270,7 +11270,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10270  00513A  6E1E               	movwf	(perc_of@val+3)^(0+1280),c
  10271  00513C                     i2l2349:
  10272                           
- 10273                           ;ETC.c: 388:     return val;
+ 10273                           ;ETC.c: 389:     return val;
  10274  00513C  501B               	movf	perc_of@val^(0+1280),w,c
  10275  00513E  0012               	return		;funcret
  10276  005140                     __end_of_perc_of:
@@ -11470,17 +11470,17 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  10450  005A9C                     _ANALOGRead:
  10451                           	callstack 116
  10452  005A9C                     
- 10453                           ;ANALOG.c: 89:     ucAPPS1_mv = ANALOG_GetVoltage(1);
+ 10453                           ;ANALOG.c: 89:     uiAPPS1_mv = ANALOG_GetVoltage(1);
  10454  005A9C  0E01               	movlw	1
  10455  005A9E  ECE9  F020         	call	i2_ANALOG_GetVoltage
- 10456  005AA2  C506  F570         	movff	?i2_ANALOG_GetVoltage,_ucAPPS1_mv
- 10457  005AA6  C507  F571         	movff	?i2_ANALOG_GetVoltage+1,_ucAPPS1_mv+1
+ 10456  005AA2  C506  F570         	movff	?i2_ANALOG_GetVoltage,_uiAPPS1_mv
+ 10457  005AA6  C507  F571         	movff	?i2_ANALOG_GetVoltage+1,_uiAPPS1_mv+1
  10458                           
- 10459                           ;ANALOG.c: 90:     ucAPPS2_mv = ANALOG_GetVoltage(2);
+ 10459                           ;ANALOG.c: 90:     uiAPPS2_mv = ANALOG_GetVoltage(2);
  10460  005AAA  0E02               	movlw	2
  10461  005AAC  ECE9  F020         	call	i2_ANALOG_GetVoltage
- 10462  005AB0  C506  F568         	movff	?i2_ANALOG_GetVoltage,_ucAPPS2_mv
- 10463  005AB4  C507  F569         	movff	?i2_ANALOG_GetVoltage+1,_ucAPPS2_mv+1
+ 10462  005AB0  C506  F568         	movff	?i2_ANALOG_GetVoltage,_uiAPPS2_mv
+ 10463  005AB4  C507  F569         	movff	?i2_ANALOG_GetVoltage+1,_uiAPPS2_mv+1
  10464                           
  10465                           ;ANALOG.c: 91:     uiTPS1_mv = ANALOG_GetVoltage(3);
  10466  005AB8  0E03               	movlw	3
@@ -12384,7 +12384,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  11244 ;;		_CAN1_Receive
  11245 ;;		_CAN1_ReceivedMessageCountGet
  11246 ;;		_ETCModeSelect
- 11247 ;;		_ETC_PIDcontroller
+ 11247 ;;		_ETC_PID
  11248 ;;		i2_CLUTCH_Move
  11249 ;; This function is called by:
  11250 ;;		_DefaultFIFO1NotEmptyHandler
@@ -12553,16 +12553,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  11407  0035F0  6E37               	movwf	i2CLUTCH_Move@ucMode^(0+1280),c
  11408  0035F2  ECF2  F028         	call	i2_CLUTCH_Move	;wreg free
  11409                           
- 11410                           ;MESSAGES.C: 138:                         ETC_PIDcontroller( ucTargetAccelerator, 1);
+ 11410                           ;MESSAGES.C: 138:                         ETC_PID( ucTargetAccelerator, 1);
  11411  0035F6  0105               	movlb	5	; () banked
  11412  0035F8  51B8               	movf	_ucTargetAccelerator& (0+255),w,b
- 11413  0035FA  6E33               	movwf	ETC_PIDcontroller@sl_target_perc^(0+1280),c
- 11414  0035FC  6A34               	clrf	(ETC_PIDcontroller@sl_target_perc+1)^(0+1280),c
- 11415  0035FE  6A35               	clrf	(ETC_PIDcontroller@sl_target_perc+2)^(0+1280),c
- 11416  003600  6A36               	clrf	(ETC_PIDcontroller@sl_target_perc+3)^(0+1280),c
+ 11413  0035FA  6E33               	movwf	ETC_PID@sl_target_perc^(0+1280),c
+ 11414  0035FC  6A34               	clrf	(ETC_PID@sl_target_perc+1)^(0+1280),c
+ 11415  0035FE  6A35               	clrf	(ETC_PID@sl_target_perc+2)^(0+1280),c
+ 11416  003600  6A36               	clrf	(ETC_PID@sl_target_perc+3)^(0+1280),c
  11417  003602  0E01               	movlw	1
- 11418  003604  6E37               	movwf	ETC_PIDcontroller@ucMode^(0+1280),c
- 11419  003606  EC1F  F018         	call	_ETC_PIDcontroller	;wreg free
+ 11418  003604  6E37               	movwf	ETC_PID@ucMode^(0+1280),c
+ 11419  003606  EC1F  F018         	call	_ETC_PID	;wreg free
  11420  00360A                     
  11421                           ;MESSAGES.C: 139:                         ucETCBeatSupervisor = 0x01;
  11422  00360A  0E01               	movlw	1
@@ -13256,7 +13256,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12045  005FE2                     __end_ofi2_PWM1_16BIT_LoadBufferRegisters:
  12046                           	callstack 0
  12047                           
- 12048 ;; *************** function _ETC_PIDcontroller *****************
+ 12048 ;; *************** function _ETC_PID *****************
  12049 ;; Defined at:
  12050 ;;		line 294 in file "ETC.c"
  12051 ;; Parameters:    Size  Location     Type
@@ -13303,7 +13303,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12082                           	psect	text102
  12083  00303E                     __ptext102:
  12084                           	callstack 0
- 12085  00303E                     _ETC_PIDcontroller:
+ 12085  00303E                     _ETC_PID:
  12086                           	callstack 116
  12087  00303E                     
  12088                           ;ETC.c: 310:     static signed long slLastErrorPos;;ETC.c: 311:     static signed long s
@@ -13324,22 +13324,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12102                           ;ETC.c: 324:         slErrorPos = (signed long)(sl_target_perc) - ( (signed long)(uiTPS1
       +                          _mv) - 1212 )*100 / (3126-1212);
  12103  003052  5166               	movf	_uiTPS1_mv& (0+255),w,b
- 12104  003054  6E38               	movwf	??_ETC_PIDcontroller^(0+1280),c
+ 12104  003054  6E38               	movwf	??_ETC_PID^(0+1280),c
  12105  003056  5167               	movf	(_uiTPS1_mv+1)& (0+255),w,b
- 12106  003058  6E39               	movwf	(??_ETC_PIDcontroller+1)^(0+1280),c
- 12107  00305A  6A3A               	clrf	(??_ETC_PIDcontroller+2)^(0+1280),c
- 12108  00305C  6A3B               	clrf	(??_ETC_PIDcontroller+3)^(0+1280),c
+ 12106  003058  6E39               	movwf	(??_ETC_PID+1)^(0+1280),c
+ 12107  00305A  6A3A               	clrf	(??_ETC_PID+2)^(0+1280),c
+ 12108  00305C  6A3B               	clrf	(??_ETC_PID+3)^(0+1280),c
  12109  00305E  0E44               	movlw	68
- 12110  003060  2438               	addwf	??_ETC_PIDcontroller^(0+1280),w,c
+ 12110  003060  2438               	addwf	??_ETC_PID^(0+1280),w,c
  12111  003062  6E01               	movwf	___lmul@multiplier^(0+1280),c
  12112  003064  0EFB               	movlw	251
- 12113  003066  2039               	addwfc	(??_ETC_PIDcontroller+1)^(0+1280),w,c
+ 12113  003066  2039               	addwfc	(??_ETC_PID+1)^(0+1280),w,c
  12114  003068  6E02               	movwf	(___lmul@multiplier+1)^(0+1280),c
  12115  00306A  0EFF               	movlw	255
- 12116  00306C  203A               	addwfc	(??_ETC_PIDcontroller+2)^(0+1280),w,c
+ 12116  00306C  203A               	addwfc	(??_ETC_PID+2)^(0+1280),w,c
  12117  00306E  6E03               	movwf	(___lmul@multiplier+2)^(0+1280),c
  12118  003070  0EFF               	movlw	255
- 12119  003072  203B               	addwfc	(??_ETC_PIDcontroller+3)^(0+1280),w,c
+ 12119  003072  203B               	addwfc	(??_ETC_PID+3)^(0+1280),w,c
  12120  003074  6E04               	movwf	(___lmul@multiplier+3)^(0+1280),c
  12121  003076  0E64               	movlw	100
  12122  003078  6E05               	movwf	___lmul@multiplicand^(0+1280),c
@@ -13364,122 +13364,122 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12141  0030A8  6E14               	movwf	(i2___aldiv@divisor+3)^(0+1280),c
  12142  0030AA  EC05  F022         	call	i2___aldiv	;wreg free
  12143  0030AE  500D               	movf	?i2___aldiv^(0+1280),w,c
- 12144  0030B0  5C33               	subwf	ETC_PIDcontroller@sl_target_perc^(0+1280),w,c
+ 12144  0030B0  5C33               	subwf	ETC_PID@sl_target_perc^(0+1280),w,c
  12145  0030B2  0105               	movlb	5	; () banked
- 12146  0030B4  6F60               	movwf	ETC_PIDcontroller@slErrorPos& (0+255),b
+ 12146  0030B4  6F60               	movwf	ETC_PID@slErrorPos& (0+255),b
  12147  0030B6  500E               	movf	(?i2___aldiv+1)^(0+1280),w,c
- 12148  0030B8  5834               	subwfb	(ETC_PIDcontroller@sl_target_perc+1)^(0+1280),w,c
- 12149  0030BA  6F61               	movwf	(ETC_PIDcontroller@slErrorPos+1)& (0+255),b
+ 12148  0030B8  5834               	subwfb	(ETC_PID@sl_target_perc+1)^(0+1280),w,c
+ 12149  0030BA  6F61               	movwf	(ETC_PID@slErrorPos+1)& (0+255),b
  12150  0030BC  500F               	movf	(?i2___aldiv+2)^(0+1280),w,c
- 12151  0030BE  5835               	subwfb	(ETC_PIDcontroller@sl_target_perc+2)^(0+1280),w,c
- 12152  0030C0  6F62               	movwf	(ETC_PIDcontroller@slErrorPos+2)& (0+255),b
+ 12151  0030BE  5835               	subwfb	(ETC_PID@sl_target_perc+2)^(0+1280),w,c
+ 12152  0030C0  6F62               	movwf	(ETC_PID@slErrorPos+2)& (0+255),b
  12153  0030C2  5010               	movf	(?i2___aldiv+3)^(0+1280),w,c
- 12154  0030C4  5836               	subwfb	(ETC_PIDcontroller@sl_target_perc+3)^(0+1280),w,c
- 12155  0030C6  6F63               	movwf	(ETC_PIDcontroller@slErrorPos+3)& (0+255),b
+ 12154  0030C4  5836               	subwfb	(ETC_PID@sl_target_perc+3)^(0+1280),w,c
+ 12155  0030C6  6F63               	movwf	(ETC_PID@slErrorPos+3)& (0+255),b
  12156  0030C8                     
  12157                           ; BSR set to: 5
  12158                           ;ETC.c: 325:         slIntegral += slErrorPos;
- 12159  0030C8  5160               	movf	ETC_PIDcontroller@slErrorPos& (0+255),w,b
+ 12159  0030C8  5160               	movf	ETC_PID@slErrorPos& (0+255),w,b
  12160  0030CA  0106               	movlb	6	; () banked
- 12161  0030CC  2728               	addwf	ETC_PIDcontroller@slIntegral& (0+255),f,b
+ 12161  0030CC  2728               	addwf	ETC_PID@slIntegral& (0+255),f,b
  12162  0030CE  0105               	movlb	5	; () banked
- 12163  0030D0  5161               	movf	(ETC_PIDcontroller@slErrorPos+1)& (0+255),w,b
+ 12163  0030D0  5161               	movf	(ETC_PID@slErrorPos+1)& (0+255),w,b
  12164  0030D2  0106               	movlb	6	; () banked
- 12165  0030D4  2329               	addwfc	(ETC_PIDcontroller@slIntegral+1)& (0+255),f,b
+ 12165  0030D4  2329               	addwfc	(ETC_PID@slIntegral+1)& (0+255),f,b
  12166  0030D6  0105               	movlb	5	; () banked
- 12167  0030D8  5162               	movf	(ETC_PIDcontroller@slErrorPos+2)& (0+255),w,b
+ 12167  0030D8  5162               	movf	(ETC_PID@slErrorPos+2)& (0+255),w,b
  12168  0030DA  0106               	movlb	6	; () banked
- 12169  0030DC  232A               	addwfc	(ETC_PIDcontroller@slIntegral+2)& (0+255),f,b
+ 12169  0030DC  232A               	addwfc	(ETC_PID@slIntegral+2)& (0+255),f,b
  12170  0030DE  0105               	movlb	5	; () banked
- 12171  0030E0  5163               	movf	(ETC_PIDcontroller@slErrorPos+3)& (0+255),w,b
+ 12171  0030E0  5163               	movf	(ETC_PID@slErrorPos+3)& (0+255),w,b
  12172  0030E2  0106               	movlb	6	; () banked
- 12173  0030E4  232B               	addwfc	(ETC_PIDcontroller@slIntegral+3)& (0+255),f,b
+ 12173  0030E4  232B               	addwfc	(ETC_PID@slIntegral+3)& (0+255),f,b
  12174  0030E6                     
  12175                           ; BSR set to: 6
  12176                           ;ETC.c: 326:         slDerivative = slErrorPos - slLastErrorPos;
- 12177  0030E6  5124               	movf	ETC_PIDcontroller@slLastErrorPos& (0+255),w,b
+ 12177  0030E6  5124               	movf	ETC_PID@slLastErrorPos& (0+255),w,b
  12178  0030E8  0105               	movlb	5	; () banked
- 12179  0030EA  5D60               	subwf	ETC_PIDcontroller@slErrorPos& (0+255),w,b
- 12180  0030EC  6E40               	movwf	ETC_PIDcontroller@slDerivative^(0+1280),c
+ 12179  0030EA  5D60               	subwf	ETC_PID@slErrorPos& (0+255),w,b
+ 12180  0030EC  6E40               	movwf	ETC_PID@slDerivative^(0+1280),c
  12181  0030EE  0106               	movlb	6	; () banked
- 12182  0030F0  5125               	movf	(ETC_PIDcontroller@slLastErrorPos+1)& (0+255),w,b
+ 12182  0030F0  5125               	movf	(ETC_PID@slLastErrorPos+1)& (0+255),w,b
  12183  0030F2  0105               	movlb	5	; () banked
- 12184  0030F4  5961               	subwfb	(ETC_PIDcontroller@slErrorPos+1)& (0+255),w,b
- 12185  0030F6  6E41               	movwf	(ETC_PIDcontroller@slDerivative+1)^(0+1280),c
+ 12184  0030F4  5961               	subwfb	(ETC_PID@slErrorPos+1)& (0+255),w,b
+ 12185  0030F6  6E41               	movwf	(ETC_PID@slDerivative+1)^(0+1280),c
  12186  0030F8  0106               	movlb	6	; () banked
- 12187  0030FA  5126               	movf	(ETC_PIDcontroller@slLastErrorPos+2)& (0+255),w,b
+ 12187  0030FA  5126               	movf	(ETC_PID@slLastErrorPos+2)& (0+255),w,b
  12188  0030FC  0105               	movlb	5	; () banked
- 12189  0030FE  5962               	subwfb	(ETC_PIDcontroller@slErrorPos+2)& (0+255),w,b
- 12190  003100  6E42               	movwf	(ETC_PIDcontroller@slDerivative+2)^(0+1280),c
+ 12189  0030FE  5962               	subwfb	(ETC_PID@slErrorPos+2)& (0+255),w,b
+ 12190  003100  6E42               	movwf	(ETC_PID@slDerivative+2)^(0+1280),c
  12191  003102  0106               	movlb	6	; () banked
- 12192  003104  5127               	movf	(ETC_PIDcontroller@slLastErrorPos+3)& (0+255),w,b
+ 12192  003104  5127               	movf	(ETC_PID@slLastErrorPos+3)& (0+255),w,b
  12193  003106  0105               	movlb	5	; () banked
- 12194  003108  5963               	subwfb	(ETC_PIDcontroller@slErrorPos+3)& (0+255),w,b
- 12195  00310A  6E43               	movwf	(ETC_PIDcontroller@slDerivative+3)^(0+1280),c
+ 12194  003108  5963               	subwfb	(ETC_PID@slErrorPos+3)& (0+255),w,b
+ 12195  00310A  6E43               	movwf	(ETC_PID@slDerivative+3)^(0+1280),c
  12196                           
- 12197                           ;ETC.c: 329:         sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_
+ 12197                           ;ETC.c: 335:         sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_
       +                          K_D * slDerivative;
- 12198  00310C  C677  F501         	movff	ETC_PIDcontroller@sl_K_P,___lmul@multiplier
- 12199  003110  C678  F502         	movff	ETC_PIDcontroller@sl_K_P+1,___lmul@multiplier+1
- 12200  003114  C679  F503         	movff	ETC_PIDcontroller@sl_K_P+2,___lmul@multiplier+2
- 12201  003118  C67A  F504         	movff	ETC_PIDcontroller@sl_K_P+3,___lmul@multiplier+3
- 12202  00311C  C560  F505         	movff	ETC_PIDcontroller@slErrorPos,___lmul@multiplicand
- 12203  003120  C561  F506         	movff	ETC_PIDcontroller@slErrorPos+1,___lmul@multiplicand+1
- 12204  003124  C562  F507         	movff	ETC_PIDcontroller@slErrorPos+2,___lmul@multiplicand+2
- 12205  003128  C563  F508         	movff	ETC_PIDcontroller@slErrorPos+3,___lmul@multiplicand+3
+ 12198  00310C  C677  F501         	movff	ETC_PID@sl_K_P,___lmul@multiplier
+ 12199  003110  C678  F502         	movff	ETC_PID@sl_K_P+1,___lmul@multiplier+1
+ 12200  003114  C679  F503         	movff	ETC_PID@sl_K_P+2,___lmul@multiplier+2
+ 12201  003118  C67A  F504         	movff	ETC_PID@sl_K_P+3,___lmul@multiplier+3
+ 12202  00311C  C560  F505         	movff	ETC_PID@slErrorPos,___lmul@multiplicand
+ 12203  003120  C561  F506         	movff	ETC_PID@slErrorPos+1,___lmul@multiplicand+1
+ 12204  003124  C562  F507         	movff	ETC_PID@slErrorPos+2,___lmul@multiplicand+2
+ 12205  003128  C563  F508         	movff	ETC_PID@slErrorPos+3,___lmul@multiplicand+3
  12206  00312C  ECE3  F02B         	call	___lmul	;wreg free
- 12207  003130  C501  F538         	movff	?___lmul,??_ETC_PIDcontroller
- 12208  003134  C502  F539         	movff	?___lmul+1,??_ETC_PIDcontroller+1
- 12209  003138  C503  F53A         	movff	?___lmul+2,??_ETC_PIDcontroller+2
- 12210  00313C  C504  F53B         	movff	?___lmul+3,??_ETC_PIDcontroller+3
- 12211  003140  C673  F501         	movff	ETC_PIDcontroller@sl_K_I,___lmul@multiplier
- 12212  003144  C674  F502         	movff	ETC_PIDcontroller@sl_K_I+1,___lmul@multiplier+1
- 12213  003148  C675  F503         	movff	ETC_PIDcontroller@sl_K_I+2,___lmul@multiplier+2
- 12214  00314C  C676  F504         	movff	ETC_PIDcontroller@sl_K_I+3,___lmul@multiplier+3
- 12215  003150  C628  F505         	movff	ETC_PIDcontroller@slIntegral,___lmul@multiplicand
- 12216  003154  C629  F506         	movff	ETC_PIDcontroller@slIntegral+1,___lmul@multiplicand+1
- 12217  003158  C62A  F507         	movff	ETC_PIDcontroller@slIntegral+2,___lmul@multiplicand+2
- 12218  00315C  C62B  F508         	movff	ETC_PIDcontroller@slIntegral+3,___lmul@multiplicand+3
+ 12207  003130  C501  F538         	movff	?___lmul,??_ETC_PID
+ 12208  003134  C502  F539         	movff	?___lmul+1,??_ETC_PID+1
+ 12209  003138  C503  F53A         	movff	?___lmul+2,??_ETC_PID+2
+ 12210  00313C  C504  F53B         	movff	?___lmul+3,??_ETC_PID+3
+ 12211  003140  C673  F501         	movff	ETC_PID@sl_K_I,___lmul@multiplier
+ 12212  003144  C674  F502         	movff	ETC_PID@sl_K_I+1,___lmul@multiplier+1
+ 12213  003148  C675  F503         	movff	ETC_PID@sl_K_I+2,___lmul@multiplier+2
+ 12214  00314C  C676  F504         	movff	ETC_PID@sl_K_I+3,___lmul@multiplier+3
+ 12215  003150  C628  F505         	movff	ETC_PID@slIntegral,___lmul@multiplicand
+ 12216  003154  C629  F506         	movff	ETC_PID@slIntegral+1,___lmul@multiplicand+1
+ 12217  003158  C62A  F507         	movff	ETC_PID@slIntegral+2,___lmul@multiplicand+2
+ 12218  00315C  C62B  F508         	movff	ETC_PID@slIntegral+3,___lmul@multiplicand+3
  12219  003160  ECE3  F02B         	call	___lmul	;wreg free
  12220  003164  5001               	movf	?___lmul^(0+1280),w,c
- 12221  003166  2438               	addwf	??_ETC_PIDcontroller^(0+1280),w,c
- 12222  003168  6E3C               	movwf	(??_ETC_PIDcontroller+4)^(0+1280),c
+ 12221  003166  2438               	addwf	??_ETC_PID^(0+1280),w,c
+ 12222  003168  6E3C               	movwf	(??_ETC_PID+4)^(0+1280),c
  12223  00316A  5002               	movf	(?___lmul+1)^(0+1280),w,c
- 12224  00316C  2039               	addwfc	(??_ETC_PIDcontroller+1)^(0+1280),w,c
- 12225  00316E  6E3D               	movwf	(??_ETC_PIDcontroller+5)^(0+1280),c
+ 12224  00316C  2039               	addwfc	(??_ETC_PID+1)^(0+1280),w,c
+ 12225  00316E  6E3D               	movwf	(??_ETC_PID+5)^(0+1280),c
  12226  003170  5003               	movf	(?___lmul+2)^(0+1280),w,c
- 12227  003172  203A               	addwfc	(??_ETC_PIDcontroller+2)^(0+1280),w,c
- 12228  003174  6E3E               	movwf	(??_ETC_PIDcontroller+6)^(0+1280),c
+ 12227  003172  203A               	addwfc	(??_ETC_PID+2)^(0+1280),w,c
+ 12228  003174  6E3E               	movwf	(??_ETC_PID+6)^(0+1280),c
  12229  003176  5004               	movf	(?___lmul+3)^(0+1280),w,c
- 12230  003178  203B               	addwfc	(??_ETC_PIDcontroller+3)^(0+1280),w,c
- 12231  00317A  6E3F               	movwf	(??_ETC_PIDcontroller+7)^(0+1280),c
- 12232  00317C  C62C  F501         	movff	ETC_PIDcontroller@sl_K_D,___lmul@multiplier
- 12233  003180  C62D  F502         	movff	ETC_PIDcontroller@sl_K_D+1,___lmul@multiplier+1
- 12234  003184  C62E  F503         	movff	ETC_PIDcontroller@sl_K_D+2,___lmul@multiplier+2
- 12235  003188  C62F  F504         	movff	ETC_PIDcontroller@sl_K_D+3,___lmul@multiplier+3
- 12236  00318C  C540  F505         	movff	ETC_PIDcontroller@slDerivative,___lmul@multiplicand
- 12237  003190  C541  F506         	movff	ETC_PIDcontroller@slDerivative+1,___lmul@multiplicand+1
- 12238  003194  C542  F507         	movff	ETC_PIDcontroller@slDerivative+2,___lmul@multiplicand+2
- 12239  003198  C543  F508         	movff	ETC_PIDcontroller@slDerivative+3,___lmul@multiplicand+3
+ 12230  003178  203B               	addwfc	(??_ETC_PID+3)^(0+1280),w,c
+ 12231  00317A  6E3F               	movwf	(??_ETC_PID+7)^(0+1280),c
+ 12232  00317C  C62C  F501         	movff	ETC_PID@sl_K_D,___lmul@multiplier
+ 12233  003180  C62D  F502         	movff	ETC_PID@sl_K_D+1,___lmul@multiplier+1
+ 12234  003184  C62E  F503         	movff	ETC_PID@sl_K_D+2,___lmul@multiplier+2
+ 12235  003188  C62F  F504         	movff	ETC_PID@sl_K_D+3,___lmul@multiplier+3
+ 12236  00318C  C540  F505         	movff	ETC_PID@slDerivative,___lmul@multiplicand
+ 12237  003190  C541  F506         	movff	ETC_PID@slDerivative+1,___lmul@multiplicand+1
+ 12238  003194  C542  F507         	movff	ETC_PID@slDerivative+2,___lmul@multiplicand+2
+ 12239  003198  C543  F508         	movff	ETC_PID@slDerivative+3,___lmul@multiplicand+3
  12240  00319C  ECE3  F02B         	call	___lmul	;wreg free
  12241  0031A0  5001               	movf	?___lmul^(0+1280),w,c
- 12242  0031A2  243C               	addwf	(??_ETC_PIDcontroller+4)^(0+1280),w,c
- 12243  0031A4  6E44               	movwf	ETC_PIDcontroller@sl_motor_pwm_duty^(0+1280),c
+ 12242  0031A2  243C               	addwf	(??_ETC_PID+4)^(0+1280),w,c
+ 12243  0031A4  6E44               	movwf	ETC_PID@sl_motor_pwm_duty^(0+1280),c
  12244  0031A6  5002               	movf	(?___lmul+1)^(0+1280),w,c
- 12245  0031A8  203D               	addwfc	(??_ETC_PIDcontroller+5)^(0+1280),w,c
- 12246  0031AA  6E45               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+1)^(0+1280),c
+ 12245  0031A8  203D               	addwfc	(??_ETC_PID+5)^(0+1280),w,c
+ 12246  0031AA  6E45               	movwf	(ETC_PID@sl_motor_pwm_duty+1)^(0+1280),c
  12247  0031AC  5003               	movf	(?___lmul+2)^(0+1280),w,c
- 12248  0031AE  203E               	addwfc	(??_ETC_PIDcontroller+6)^(0+1280),w,c
- 12249  0031B0  6E46               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+2)^(0+1280),c
+ 12248  0031AE  203E               	addwfc	(??_ETC_PID+6)^(0+1280),w,c
+ 12249  0031B0  6E46               	movwf	(ETC_PID@sl_motor_pwm_duty+2)^(0+1280),c
  12250  0031B2  5004               	movf	(?___lmul+3)^(0+1280),w,c
- 12251  0031B4  203F               	addwfc	(??_ETC_PIDcontroller+7)^(0+1280),w,c
- 12252  0031B6  6E47               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+3)^(0+1280),c
+ 12251  0031B4  203F               	addwfc	(??_ETC_PID+7)^(0+1280),w,c
+ 12252  0031B6  6E47               	movwf	(ETC_PID@sl_motor_pwm_duty+3)^(0+1280),c
  12253                           
- 12254                           ;ETC.c: 330:         sl_motor_pwm_duty /= 1000;
- 12255  0031B8  C544  F50D         	movff	ETC_PIDcontroller@sl_motor_pwm_duty,i2___aldiv@dividend
- 12256  0031BC  C545  F50E         	movff	ETC_PIDcontroller@sl_motor_pwm_duty+1,i2___aldiv@dividend+1
- 12257  0031C0  C546  F50F         	movff	ETC_PIDcontroller@sl_motor_pwm_duty+2,i2___aldiv@dividend+2
- 12258  0031C4  C547  F510         	movff	ETC_PIDcontroller@sl_motor_pwm_duty+3,i2___aldiv@dividend+3
+ 12254                           ;ETC.c: 336:         sl_motor_pwm_duty /= 1000;
+ 12255  0031B8  C544  F50D         	movff	ETC_PID@sl_motor_pwm_duty,i2___aldiv@dividend
+ 12256  0031BC  C545  F50E         	movff	ETC_PID@sl_motor_pwm_duty+1,i2___aldiv@dividend+1
+ 12257  0031C0  C546  F50F         	movff	ETC_PID@sl_motor_pwm_duty+2,i2___aldiv@dividend+2
+ 12258  0031C4  C547  F510         	movff	ETC_PID@sl_motor_pwm_duty+3,i2___aldiv@dividend+3
  12259  0031C8  0EE8               	movlw	232
  12260  0031CA  6E11               	movwf	i2___aldiv@divisor^(0+1280),c
  12261  0031CC  0E03               	movlw	3
@@ -13489,40 +13489,40 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12265  0031D4  0E00               	movlw	0
  12266  0031D6  6E14               	movwf	(i2___aldiv@divisor+3)^(0+1280),c
  12267  0031D8  EC05  F022         	call	i2___aldiv	;wreg free
- 12268  0031DC  C50D  F544         	movff	?i2___aldiv,ETC_PIDcontroller@sl_motor_pwm_duty
- 12269  0031E0  C50E  F545         	movff	?i2___aldiv+1,ETC_PIDcontroller@sl_motor_pwm_duty+1
- 12270  0031E4  C50F  F546         	movff	?i2___aldiv+2,ETC_PIDcontroller@sl_motor_pwm_duty+2
- 12271  0031E8  C510  F547         	movff	?i2___aldiv+3,ETC_PIDcontroller@sl_motor_pwm_duty+3
+ 12268  0031DC  C50D  F544         	movff	?i2___aldiv,ETC_PID@sl_motor_pwm_duty
+ 12269  0031E0  C50E  F545         	movff	?i2___aldiv+1,ETC_PID@sl_motor_pwm_duty+1
+ 12270  0031E4  C50F  F546         	movff	?i2___aldiv+2,ETC_PID@sl_motor_pwm_duty+2
+ 12271  0031E8  C510  F547         	movff	?i2___aldiv+3,ETC_PID@sl_motor_pwm_duty+3
  12272  0031EC                     
- 12273                           ;ETC.c: 335:         if ( sl_motor_pwm_duty < 0 ) {
- 12274  0031EC  BE47               	btfsc	(ETC_PIDcontroller@sl_motor_pwm_duty+3)^(0+1280),7,c
+ 12273                           ;ETC.c: 339:         if ( sl_motor_pwm_duty < 0 ) {
+ 12274  0031EC  BE47               	btfsc	(ETC_PID@sl_motor_pwm_duty+3)^(0+1280),7,c
  12275  0031EE  EFFD  F018         	goto	i2u548_40
  12276  0031F2  EFFB  F018         	goto	i2u548_41
  12277  0031F6                     i2u548_41:
  12278  0031F6  EF07  F019         	goto	i2l7879
  12279  0031FA                     i2u548_40:
  12280  0031FA                     
- 12281                           ;ETC.c: 336:             sl_motor_pwm_duty = 0;
+ 12281                           ;ETC.c: 340:             sl_motor_pwm_duty = 0;
  12282  0031FA  0E00               	movlw	0
- 12283  0031FC  6E44               	movwf	ETC_PIDcontroller@sl_motor_pwm_duty^(0+1280),c
+ 12283  0031FC  6E44               	movwf	ETC_PID@sl_motor_pwm_duty^(0+1280),c
  12284  0031FE  0E00               	movlw	0
- 12285  003200  6E45               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+1)^(0+1280),c
+ 12285  003200  6E45               	movwf	(ETC_PID@sl_motor_pwm_duty+1)^(0+1280),c
  12286  003202  0E00               	movlw	0
- 12287  003204  6E46               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+2)^(0+1280),c
+ 12287  003204  6E46               	movwf	(ETC_PID@sl_motor_pwm_duty+2)^(0+1280),c
  12288  003206  0E00               	movlw	0
- 12289  003208  6E47               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+3)^(0+1280),c
+ 12289  003208  6E47               	movwf	(ETC_PID@sl_motor_pwm_duty+3)^(0+1280),c
  12290                           
- 12291                           ;ETC.c: 337:         }
+ 12291                           ;ETC.c: 341:         }
  12292  00320A  EF1F  F019         	goto	i2l7883
  12293  00320E                     i2l7879:
- 12294  00320E  BE47               	btfsc	(ETC_PIDcontroller@sl_motor_pwm_duty+3)^(0+1280),7,c
+ 12294  00320E  BE47               	btfsc	(ETC_PID@sl_motor_pwm_duty+3)^(0+1280),7,c
  12295  003210  EF15  F019         	goto	i2u549_41
- 12296  003214  5047               	movf	(ETC_PIDcontroller@sl_motor_pwm_duty+3)^(0+1280),w,c
- 12297  003216  1046               	iorwf	(ETC_PIDcontroller@sl_motor_pwm_duty+2)^(0+1280),w,c
- 12298  003218  1045               	iorwf	(ETC_PIDcontroller@sl_motor_pwm_duty+1)^(0+1280),w,c
+ 12296  003214  5047               	movf	(ETC_PID@sl_motor_pwm_duty+3)^(0+1280),w,c
+ 12297  003216  1046               	iorwf	(ETC_PID@sl_motor_pwm_duty+2)^(0+1280),w,c
+ 12298  003218  1045               	iorwf	(ETC_PID@sl_motor_pwm_duty+1)^(0+1280),w,c
  12299  00321A  E109               	bnz	i2u549_40
  12300  00321C  0E65               	movlw	101
- 12301  00321E  5C44               	subwf	ETC_PIDcontroller@sl_motor_pwm_duty^(0+1280),w,c
+ 12301  00321E  5C44               	subwf	ETC_PID@sl_motor_pwm_duty^(0+1280),w,c
  12302  003220  A0D8               	btfss	status,0,c
  12303  003222  EF15  F019         	goto	i2u549_41
  12304  003226  EF17  F019         	goto	i2u549_40
@@ -13530,23 +13530,23 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12306  00322A  EF1F  F019         	goto	i2l7883
  12307  00322E                     i2u549_40:
  12308  00322E                     
- 12309                           ;ETC.c: 339:             sl_motor_pwm_duty = 100;
+ 12309                           ;ETC.c: 343:             sl_motor_pwm_duty = 100;
  12310  00322E  0E64               	movlw	100
- 12311  003230  6E44               	movwf	ETC_PIDcontroller@sl_motor_pwm_duty^(0+1280),c
+ 12311  003230  6E44               	movwf	ETC_PID@sl_motor_pwm_duty^(0+1280),c
  12312  003232  0E00               	movlw	0
- 12313  003234  6E45               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+1)^(0+1280),c
+ 12313  003234  6E45               	movwf	(ETC_PID@sl_motor_pwm_duty+1)^(0+1280),c
  12314  003236  0E00               	movlw	0
- 12315  003238  6E46               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+2)^(0+1280),c
+ 12315  003238  6E46               	movwf	(ETC_PID@sl_motor_pwm_duty+2)^(0+1280),c
  12316  00323A  0E00               	movlw	0
- 12317  00323C  6E47               	movwf	(ETC_PIDcontroller@sl_motor_pwm_duty+3)^(0+1280),c
+ 12317  00323C  6E47               	movwf	(ETC_PID@sl_motor_pwm_duty+3)^(0+1280),c
  12318  00323E                     i2l7883:
  12319                           
- 12320                           ;ETC.c: 344:         __nop();
+ 12320                           ;ETC.c: 346:         __nop();
  12321  00323E  F000               	nop	
  12322  003240                     
- 12323                           ;ETC.c: 347:         if ( ucMode == ucASMode ) {
+ 12323                           ;ETC.c: 349:         if ( ucMode == ucASMode ) {
  12324  003240  505C               	movf	_ucASMode^(0+1280),w,c
- 12325  003242  1837               	xorwf	ETC_PIDcontroller@ucMode^(0+1280),w,c
+ 12325  003242  1837               	xorwf	ETC_PID@ucMode^(0+1280),w,c
  12326  003244  A4D8               	btfss	status,2,c
  12327  003246  EF27  F019         	goto	i2u550_41
  12328  00324A  EF29  F019         	goto	i2u550_40
@@ -13554,7 +13554,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12330  00324E  EF47  F019         	goto	i2l2343
  12331  003252                     i2u550_40:
  12332  003252                     
- 12333                           ;ETC.c: 348:             if ( ucASMode == 1 ) {
+ 12333                           ;ETC.c: 350:             if ( ucASMode == 1 ) {
  12334  003252  045C               	decf	_ucASMode^(0+1280),w,c
  12335  003254  A4D8               	btfss	status,2,c
  12336  003256  EF2F  F019         	goto	i2u551_41
@@ -13564,16 +13564,16 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12340  003262                     i2u551_40:
  12341  003262                     i2l7889:
  12342                           
- 12343                           ;ETC.c: 350:                 GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
- 12344  003262  C544  F529         	movff	ETC_PIDcontroller@sl_motor_pwm_duty,i2GPIO_PWM2_Control@uiDutyCycle
- 12345  003266  C545  F52A         	movff	ETC_PIDcontroller@sl_motor_pwm_duty+1,i2GPIO_PWM2_Control@uiDutyCycle+1
+ 12343                           ;ETC.c: 352:                 GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
+ 12344  003262  C544  F529         	movff	ETC_PID@sl_motor_pwm_duty,i2GPIO_PWM2_Control@uiDutyCycle
+ 12345  003266  C545  F52A         	movff	ETC_PID@sl_motor_pwm_duty+1,i2GPIO_PWM2_Control@uiDutyCycle+1
  12346  00326A  0E02               	movlw	2
  12347  00326C  6E2C               	movwf	(i2GPIO_PWM2_Control@uiFreq+1)^(0+1280),c
  12348  00326E  0E58               	movlw	88
  12349  003270  6E2B               	movwf	i2GPIO_PWM2_Control@uiFreq^(0+1280),c
  12350  003272  ECFA  F024         	call	i2_GPIO_PWM2_Control	;wreg free
  12351                           
- 12352                           ;ETC.c: 351:             }
+ 12352                           ;ETC.c: 353:             }
  12353  003276  EF47  F019         	goto	i2l2343
  12354  00327A                     i2l7891:
  12355  00327A  505C               	movf	_ucASMode^(0+1280),w,c
@@ -13586,18 +13586,18 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12362  00328A  EF31  F019         	goto	i2l7889
  12363  00328E                     i2l2343:
  12364                           
- 12365                           ;ETC.c: 365:         slLastErrorPos = slErrorPos;
- 12366  00328E  C560  F624         	movff	ETC_PIDcontroller@slErrorPos,ETC_PIDcontroller@slLastErrorPos
- 12367  003292  C561  F625         	movff	ETC_PIDcontroller@slErrorPos+1,ETC_PIDcontroller@slLastErrorPos+1
- 12368  003296  C562  F626         	movff	ETC_PIDcontroller@slErrorPos+2,ETC_PIDcontroller@slLastErrorPos+2
- 12369  00329A  C563  F627         	movff	ETC_PIDcontroller@slErrorPos+3,ETC_PIDcontroller@slLastErrorPos+3
+ 12365                           ;ETC.c: 367:         slLastErrorPos = slErrorPos;
+ 12366  00328E  C560  F624         	movff	ETC_PID@slErrorPos,ETC_PID@slLastErrorPos
+ 12367  003292  C561  F625         	movff	ETC_PID@slErrorPos+1,ETC_PID@slLastErrorPos+1
+ 12368  003296  C562  F626         	movff	ETC_PID@slErrorPos+2,ETC_PID@slLastErrorPos+2
+ 12369  00329A  C563  F627         	movff	ETC_PID@slErrorPos+3,ETC_PID@slLastErrorPos+3
  12370                           
- 12371                           ;ETC.c: 366:     }
+ 12371                           ;ETC.c: 368:     } else {
  12372  00329E  EF5B  F019         	goto	i2l2345
  12373  0032A2                     i2l7895:
  12374                           
  12375                           ; BSR set to: 5
- 12376                           ;ETC.c: 369:         GPIO_PWM2_Control(0, 600);
+ 12376                           ;ETC.c: 370:         GPIO_PWM2_Control(0, 600);
  12377  0032A2  0E00               	movlw	0
  12378  0032A4  6E2A               	movwf	(i2GPIO_PWM2_Control@uiDutyCycle+1)^(0+1280),c
  12379  0032A6  0E00               	movlw	0
@@ -13609,7 +13609,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12385  0032B2  ECFA  F024         	call	i2_GPIO_PWM2_Control	;wreg free
  12386  0032B6                     i2l2345:
  12387  0032B6  0012               	return		;funcret
- 12388  0032B8                     __end_of_ETC_PIDcontroller:
+ 12388  0032B8                     __end_of_ETC_PID:
  12389                           	callstack 0
  12390                           
  12391 ;; *************** function i2_GPIO_PWM2_Control *****************
@@ -13659,7 +13659,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  12425 ;;		i2___xxtofl
  12426 ;; This function is called by:
  12427 ;;		_ETCSupervisor
- 12428 ;;		_ETC_PIDcontroller
+ 12428 ;;		_ETC_PID
  12429 ;; This function uses a non-reentrant model
  12430 ;;
  12431                           
@@ -15019,7 +15019,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  13719 ;; This function calls:
  13720 ;;		Nothing
  13721 ;; This function is called by:
- 13722 ;;		_ETC_PIDcontroller
+ 13722 ;;		_ETC_PID
  13723 ;;		_perc_of
  13724 ;;		i2_GPIO_PWM1_Control
  13725 ;;		i2_GPIO_PWM2_Control
@@ -15365,7 +15365,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  14021 ;; This function calls:
  14022 ;;		Nothing
  14023 ;; This function is called by:
- 14024 ;;		_ETC_PIDcontroller
+ 14024 ;;		_ETC_PID
  14025 ;;		_perc_of
  14026 ;; This function uses a non-reentrant model
  14027 ;;
@@ -18057,10 +18057,10 @@ Critical Paths under _INTERRUPT_InterruptManager in COMRAM
     _ANALOGRead->i2_ANALOG_GetVoltage
     i2_ANALOG_GetVoltage->i2_ADC_GetSingleConversion
     _DefaultFIFO1NotEmptyHandler->_CANReadMessage
-    _CANReadMessage->_ETC_PIDcontroller
+    _CANReadMessage->_ETC_PID
     i2_CLUTCH_Move->i2_GPIO_PWM1_Control
     i2_GPIO_PWM1_Control->i2___fltol
-    _ETC_PIDcontroller->i2_GPIO_PWM2_Control
+    _ETC_PID->i2_GPIO_PWM2_Control
     i2_GPIO_PWM2_Control->i2___fltol
     i2___fltol->i2___fladd
     i2___fladd->i2___xxtofl
@@ -18750,7 +18750,7 @@ _PWM1_16BIT_SetSlice1Output1DutyCycl
                        _CAN1_Receive
        _CAN1_ReceivedMessageCountGet
                       _ETCModeSelect
-                  _ETC_PIDcontroller
+                            _ETC_PID
                       i2_CLUTCH_Move
  ---------------------------------------------------------------------------------
  (9) i2_CLUTCH_Move                                        5     0      5    5194
@@ -18779,7 +18779,7 @@ i2_PWM1_16BIT_SetSlice1Output1DutyCy
  ---------------------------------------------------------------------------------
  (11) i2_PWM1_16BIT_LoadBufferRegisters                    0     0      0       0
  ---------------------------------------------------------------------------------
- (9) _ETC_PIDcontroller                                   21    16      5    6337
+ (9) _ETC_PID                                             21    16      5    6337
                                              50 COMRAM    21    16      5
                              ___lmul
                 i2_GPIO_PWM2_Control
@@ -19000,7 +19000,7 @@ i2_PWM2_16BIT_SetSlice1Output1DutyCy
            _GetRxFifoDepth
            _GetRxFifoStatus
          _ETCModeSelect
-         _ETC_PIDcontroller
+         _ETC_PID
            ___lmul
            i2_GPIO_PWM2_Control
              i2_PWM2_16BIT_LoadBufferRegisters
@@ -19156,13 +19156,13 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Fri Apr 08 23:46:15 2022
+Symbol Table                                                                                   Sat Apr 09 13:22:59 2022
 
-                          ETC_PIDcontroller@sl_motor_pwm_duty 0544  
                                                 ___awdiv@sign 0506  
                                        __size_of_CAN1_Receive 0052  
                                          ___wmul@multiplicand 05C3  
                                           i2___lwdiv@dividend 0501  
+                                       ETC_PID@slLastErrorPos 0624  
                                                          l400 52E0  
                                                          l403 531A  
                                                          l404 531C  
@@ -19204,6 +19204,7 @@ Symbol Table                                                                    
                                         _I2C1_DO_RX_NACK_STOP 000000  
                                   _CAN1_InvalidMessageHandler 058C  
                                       ?i2_CLUTCH_AnalyseState 0501  
+                                             __end_of_ETC_PID 32B8  
                              ?_PWM1_16BIT_LoadBufferRegisters 0501  
                             ??_PWM1_16BIT_LoadBufferRegisters 05C1  
                                                 ___fltol@exp1 05E8  
@@ -20029,7 +20030,6 @@ Symbol Table                                                                    
                             i2GPIO_PWM1_Control@uiConvertedDC 0531  
                               GPIO_PWM1_Control@uiConvertedDC 05F1  
                                     __size_of_GetRxFifoStatus 0018  
-                               ETC_PIDcontroller@slDerivative 0540  
                                              __end_of_perc_of 5140  
                                          _CLUTCH_AnalyseState 4E38  
                     __end_ofi2_PWM2_16BIT_LoadBufferRegisters 5FE6  
@@ -20043,7 +20043,6 @@ Symbol Table                                                                    
                                      __end_of_TMR1_Initialize 59DC  
                                                        pclath 0004FA  
                                                        tablat 0004F5  
-                                  __size_of_ETC_PIDcontroller 027A  
                                               ?_ETCModeSelect 0501  
                                             __end_ofi2___wmul 5D30  
                                                        plusw2 0004DB  
@@ -20093,6 +20092,7 @@ Symbol Table                                                                    
                                                __activetblptr 000003  
                                         ?i2_GPIO_PWM1_Control 0529  
                                            _uiCones_count_all 0644  
+                                                   ??_ETC_PID 0538  
                __end_of_PWM1_16BIT_Period_SetInterruptHandler 5F18  
               __size_of_PWM1_16BIT_Period_SetInterruptHandler 000A  
                __end_of_PWM2_16BIT_Period_SetInterruptHandler 5EFA  
@@ -20749,7 +20749,11 @@ Symbol Table                                                                    
                                             ___awdiv@quotient 0507  
                                     ??_CAN1_RX_FIFO_ResetInfo 05C1  
                                                       isa$std 000001  
+                                               ETC_PID@ucMode 0537  
                                             ??_apps_calibrate 05C1  
+                                               ETC_PID@sl_K_D 062C  
+                                               ETC_PID@sl_K_I 0673  
+                                               ETC_PID@sl_K_P 0677  
                    CAN1_SetModeChangeInterruptHandler@handler 05C1  
                                        ??i2_GPIO_PWM1_Control 052D  
                      CAN1_ReceivedMessageCountGet@totalMsgObj 0503  
@@ -20833,6 +20837,7 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                   ??_CAN1_SetRxBufferOverFlowInterruptHandler 05C3  
                    ?_CAN1_SetRxBufferOverFlowInterruptHandler 05C1  
                     _CAN1_SetRxBufferOverFlowInterruptHandler 5F40  
+                                    ETC_PID@sl_motor_pwm_duty 0544  
                                             ??_CANReadMessage 0548  
                                    i2GPIO_PWM1_Control@uiFreq 052B  
                                           _uiAPPS2_default_mv 056A  
@@ -20892,8 +20897,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                             _TEMPORIZATION_1s 5FEC  
                           __end_of_CAN1_TX_FIFO_Configuration 5E22  
                                   _CAN1_TX_FIFO_Configuration 5E0E  
-                                                  _ucAPPS1_mv 0570  
-                                                  _ucAPPS2_mv 0568  
                                        _rd1RegCompleteHandler 000000  
                                                      IVTBASEH 00045E  
                                                      IVTBASEL 00045D  
@@ -20941,6 +20944,8 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                               ___lmul@product 0509  
                                                      _ADPREVH 0003E9  
                                                      _ADPREVL 0003E8  
+                                                  _uiAPPS1_mv 0570  
+                                                  _uiAPPS2_mv 0568  
                                                    _C1NBTCFGH 000105  
                                                    _C1NBTCFGL 000104  
                                                      _ADSTPTH 0003E0  
@@ -20954,6 +20959,7 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                      __size_of_ADC_Initialize 0226  
                                                   ??i2___wmul 0505  
                                               ?i2_CLUTCH_Move 0533  
+                                                     _ETC_PID 303E  
                                         ?_ReadMessageFromFifo 050C  
                                                    ?___xxtofl 05C1  
                                  __end_ofi2_ANALOG_GetVoltage 42FC  
@@ -21172,12 +21178,10 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                   _ADC_SetADIInterruptHandler 5FA4  
                                              _CAN1_Initialize 588C  
                                                ___xxtofl@sign 05C9  
-                                 ETC_PIDcontroller@slErrorPos 0560  
                                                    _TRISAbits 0004C6  
                                                    _TRISBbits 0004C7  
                                                    _TRISCbits 0004C8  
                                            __size_of_CAN1_ISR 0156  
-                                 ETC_PIDcontroller@slIntegral 0628  
                                              _GetRxFifoStatus 5DF6  
                                               _CLUTCHInitMove 3F5C  
                                              i2___fltol@sign1 0527  
@@ -21186,11 +21190,13 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                                  _ADCSEL3bits 0003FE  
                                                  _ADCSEL4bits 0003FF  
                                                    i2___aldiv 440A  
+                                           ETC_PID@slErrorPos 0560  
                                         __size_of_TPSAnalysis 007E  
                                                    i2___fladd 2B7E  
                          __size_of_CAN1_RX_FIFO_Configuration 002A  
                                                    i2___fltol 461E  
                                            i2___lwdiv@divisor 0503  
+                                           ETC_PID@slIntegral 0628  
                 __end_of_CAN1_RX_FIFO_FilterMaskConfiguration 5DA2  
                __size_of_CAN1_RX_FIFO_FilterMaskConfiguration 0022  
                        ?_CAN1_RX_FIFO_FilterMaskConfiguration 0501  
@@ -21300,6 +21306,7 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                                    ___fladd@a 05D3  
                                                    ___fladd@b 05CF  
                                             ??_GetRxFifoDepth 0501  
+                                                    ?_ETC_PID 0533  
                                ?_CAN1_ReceivedMessageCountGet 0501  
                                        TMR1_ISR@CountCallBack 0572  
                                              ?_CLUTCHInitMove 0501  
@@ -21316,7 +21323,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                               __end_of_DefaultBusErrorHandler 6004  
                                 GPIO_PWM1_Control@uiDutyCycle 05E9  
                                                 _ucTargetGear 05B4  
-                             ETC_PIDcontroller@sl_target_perc 0533  
                                           ?_TEMPORIZATION_10s 0501  
                                           ?_TEMPORIZATION_30s 0501  
                                                   perc_of@max 0523  
@@ -21871,6 +21877,7 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                          _ucETCFlagSupervisor 05A1  
                                ??_DefaultFIFO1NotEmptyHandler 0558  
                                  ?_ADC_SetADIInterruptHandler 05C1  
+                                            __size_of_ETC_PID 027A  
                               __end_of_CAN1_RX_FIFO_ResetInfo 5BFC  
                                               ?_TMR0_CallBack 0501  
                                                _I2C1_DO_RESET 000000  
@@ -21887,7 +21894,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                __end_of_PWM2_16BIT_Initialize 55FA  
                             ??_PWM2_16BIT_WritePeriodRegister 05C3  
                              ?_PWM2_16BIT_WritePeriodRegister 05C1  
-                             ETC_PIDcontroller@slLastErrorPos 0624  
                                                   _ANALOGRead 5A9C  
                                  __end_ofi2_ADC_SelectContext 5FB8  
                                                Receive@status 051C  
@@ -22052,15 +22058,12 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                   __size_of_ADC_SelectContext 000C  
                           _PWM1_16BIT_Period_InterruptHandler 057A  
                                 __size_of_CLUTCH_AnalyseState 00C4  
+                                       ETC_PID@sl_target_perc 0533  
                           __end_of_INTERRUPT_InterruptManager 5082  
                                   _INTERRUPT_InterruptManager 4FC0  
                                                  _msgTransmit 0656  
                                             ??_CLUTCHInitMove 05F8  
                                            ??_TMR1_WriteTimer 0503  
-                                     ETC_PIDcontroller@ucMode 0537  
-                                     ETC_PIDcontroller@sl_K_D 062C  
-                                     ETC_PIDcontroller@sl_K_I 0673  
-                                     ETC_PIDcontroller@sl_K_P 0677  
                                                 _I2C1_DO_IDLE 000000  
                                  ??_DefaultSystemErrorHandler 0501  
                                 __size_ofi2_GPIO_PWM1_Control 00EC  
@@ -22091,7 +22094,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                      ?_PIN_MANAGER_Initialize 0501  
                                  ?_CAN1_RX_FIFO_Configuration 0501  
                                                  ?_ANALOGRead 0501  
-                                           _ETC_PIDcontroller 303E  
                           __size_of_CAN1_BitRateConfiguration 0014  
                                      _I2C1_CallbackReturnStop 000000  
                               ??_CAN1_SetFIFO1NotEmptyHandler 05C3  
@@ -22099,7 +22101,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                   ?_CAN1_BitRateConfiguration 0501  
                                       ?_CAN1_OperationModeSet 0501  
                                             ??_ADC_Initialize 05C3  
-                                          ?_ETC_PIDcontroller 0533  
                              fp__TMR0_DefaultInterruptHandler 0000  
                                ?_TMR0_DefaultInterruptHandler 0501  
                                         _I2C1_DO_ADDRESS_NACK 000000  
@@ -22108,7 +22109,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                    _PWM2_16BIT_Slice1Output2_InterruptHandler 066F  
                    _PWM1_16BIT_Slice1Output2_InterruptHandler 057C  
                                          i2_ANALOG_GetVoltage 41D2  
-                                         ??_ETC_PIDcontroller 0538  
                                     __size_of_I2C1_Initialize 002C  
                                            _ucTPS_Volts_STATE 0591  
                                              _ucASRequesState 05A3  
@@ -22116,6 +22116,7 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                                 ?_CLUTCH_Init 0501  
                                                 ?_CLUTCH_Move 05F3  
                                                _etc_calibrate 3E14  
+                                         ETC_PID@slDerivative 0540  
                                              _TMR0_Initialize 5D30  
                                       __end_of_CANReadMessage 372C  
                                        _PWM1_16BIT_Initialize 55FA  
@@ -22143,7 +22144,6 @@ PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler 05C1
                                  __end_of_TEMPORIZATION_100ms 5E8C  
                                  __end_of_TEMPORIZATION_500ms 5E46  
                               fp__DefaultFIFO1NotEmptyHandler 0000  
-                                   __end_of_ETC_PIDcontroller 32B8  
                                                 ___fladd@aexp 05DC  
                                                 ___fladd@bexp 05DD  
                                    _DefaultSystemErrorHandler 5FF8  

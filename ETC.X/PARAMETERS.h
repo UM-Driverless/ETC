@@ -21,6 +21,7 @@ extern "C" {
 #define APPS1max 1990 //0.001v
 #define APPS2max 160 //0.001v
 
+extern signed long sl_K;
 extern signed long sl_K_P;
 extern signed long sl_K_I;
 extern signed long sl_K_D;

@@ -12,6 +12,7 @@
 #include "ETC.h"
 #include "GPIO.h"
 #include "PARAMETERS.h"
+#include "ANALOG.h"
 
 //VARIABLES    
 unsigned int uiAPPS1min;
@@ -78,20 +79,6 @@ void APPSReadmax (void)
     //Lo leido en sensores APPS se queda guardado como valor maximo
     uiAPPS1max = APPS1max;
     uiAPPS2max = APPS2max;
-}
-
-void TPSReadmin (void)
-{
-    //Lo leido en sensores TPS se queda guardado como valor minimo
-    uiTPS1min = uiTPS1+TPSMARGEN;
-    uiTPS2min = uiTPS2-TPSMARGEN;
-}
-
-void TPSReadmax (void)
-{
-    //Lo leido en sensores TPS se queda guardado como valor maximo
-    uiTPS1max = uiTPS1;
-    uiTPS2max = uiTPS2;
 }
 
 //Ejecutar cada vez que llegue el mensaje de modo autonomo
@@ -184,7 +171,6 @@ void ETC_PID(signed char scTargetMove, unsigned char ucMode) {
         // TODO ---- USE ucTPS_perc INSTEAD OF uiTPS1_mv
         // TODO: 1. play sound of ucTPS_perc to check. 2. Use ucTPS_perc INSTEAD OF uiTPS1_mv
         //slErrorPos = (slTargetMove) - ( (signed long)(uiTPS1) - 1212 )*100 / (3126-1212);  // in % or what units? TODO RJM
-        scTargetMove = 50;
         slErrorPos = scTargetMove - ucTPS;  // in % or what units? TODO RJM
         slIntegral += slErrorPos;
         slDerivative = slErrorPos - slLastErrorPos;
@@ -196,7 +182,7 @@ void ETC_PID(signed char scTargetMove, unsigned char ucMode) {
 //            slIntegral = 0;
 //        }
         
-        slPWMDuty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative; // TODO complete
+        slPWMDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative; // TODO complete
         slPWMDuty /= 1000; // Because the constants are long, not floats        
         
         // Crop between 0 and 100. It's a duty cycle.
@@ -235,26 +221,49 @@ void ETC_PID(signed char scTargetMove, unsigned char ucMode) {
     }
 }
 
-
-//Probar movimiento de ETB en arranques
-void ETCInitMove(void)
-{
-    //Analizar aqui valores minimos de APPS
-    TPSReadmin();
-    Nop();
-    GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
+void ETCCalibrate(void) {
+    /*
+     * Test the movement of the ETB (Electronic Throttle Body) at startup, 
+     * and Calibrate the minimum and maximum values of TPS1 and TPS2 (Throttle Position Sensor)
+     * of the car intake
+    */
+    
+    // Intake motor OFF - Barely Open - Engine Idle
+    GPIO_PWM2_Control(0, 600); // Motor OFF. 0% PWM at 600Hz 
+    // Let it move
     __delay_ms(200);
-    GPIO_PWM2_Control(100, 600); //lo muevo sin comprobar nada
-    __delay_ms(1000);
-    TPSReadmax();
-    __delay_ms(1000);
+    // Read TPS sensor at default position.
+    ANALOGRead(); // Calls ANALOG_GetVoltage(), assigns values to uiAPPS, uiTPS
+    // Let it read
+    __delay_ms(100);
+    uiTPS1min = uiTPS1 + TPSMARGEN; // Smallest value
+    uiTPS2min = uiTPS2 - TPSMARGEN; // Biggest value
+    
     Nop();
+    
+    // Intake motor 100%
+    GPIO_PWM2_Control(100, 600); // 100% PWM at 600Hz, Motor to max power.
+    // Let it move
+    __delay_ms(500);
+    // Read TPS sensors at max opened position.
+    ANALOGRead(); // Calls ANALOG_GetVoltage(), assigns values to uiAPPS, uiTPS
+    // Let it read
+    __delay_ms(100);
+    uiTPS1max = uiTPS1 + TPSMARGEN; // Biggest value
+    uiTPS2max = uiTPS2 - TPSMARGEN; // Smallest  value
+    Nop();
+    
+    // Calibration sound
+    GPIO_PWM2_Control(20, 400);
     __delay_ms(200);
-    GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
-    Nop();
+    GPIO_PWM2_Control(20, 600);
+    __delay_ms(200);
+    
+    // Turn off after calibration
+    GPIO_PWM2_Control(0, 300); // 0% PWM at 600Hz, Motor OFF.
 }
 
-void TPSAnalysis (void)
+void TPSAnalysis(void)
 {
     //Analisis TPS1
     if ( uiTPS1min < uiTPS1max )    //TPS1 voltaje no invertido

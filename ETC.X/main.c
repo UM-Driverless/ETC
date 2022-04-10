@@ -53,26 +53,28 @@
  */
 void main(void)
 {
-    // Initialize the device
+    // Initialize the device - MCC Pins and configurations, still interrupts not Enabled.
     SYSTEM_Initialize();
 
     // If using interrupts in PIC18 High/Low Priority Mode you need to enable the Global High and Low Interrupts
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
-    // Use the following macros to:
-    ANALOGRead();
-    ETCInitMove();
-    // Enable the Global Interrupts
-    INTERRUPT_GlobalInterruptEnable();
-
-    // Disable the Global Interrupts
-    //INTERRUPT_GlobalInterruptDisable();
     
+    GPIOInit(); // Set digital inputs and outputs.
+    ETCCalibrate();
+    
+    /// APPS CALIBRATE
+    ANALOGRead(); // Read APPS and TPS sensor values.
     //Tarar sensores TPS y APPS a minimos
     APPSReadmin();
     APPSReadmax();
     
+    INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
+
+    // To disable the Global Interrupts
+    //INTERRUPT_GlobalInterruptDisable();
+    
+    
     CLUTCH_Init();
-    GPIOInit();
 
     //APPSMODE_SetHigh();
     //APPSSend(0);

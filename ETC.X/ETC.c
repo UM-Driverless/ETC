@@ -93,8 +93,8 @@ void APPSAnalysis(void) { // Called by TEMPORIZATIONS.c
      * 
      */
     
-    ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_pushed_mv);
-    ucAPPS2_perc = perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_pushed_mv);
+    ucAPPS1_perc = PercOf(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_pushed_mv);
+    ucAPPS2_perc = PercOf(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_pushed_mv);
     ucAPPS_perc = (ucAPPS1_perc + ucAPPS2_perc) / 2;
 }
 
@@ -207,8 +207,8 @@ void TPSAnalysis(void) {
      */
         
     // Calculate fraction of travel. Sensor 1 and 2 provide voltages of constant average. They move in opposite directions.
-    ucTPS1_perc = perc_of(uiTPS1_mv, uiTPS1_default_mv, uiTPS1_opened_mv);
-    ucTPS2_perc = perc_of(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv);
+    ucTPS1_perc = PercOf(uiTPS1_mv, uiTPS1_default_mv, uiTPS1_opened_mv);
+    ucTPS2_perc = PercOf(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv);
     ucTPSPerc = (ucTPS1_perc + ucTPS2_perc) / 2;
     
     // TODO - STOP HERE AND CHECK VALUES
@@ -311,7 +311,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
     static signed long sl_K_D = 0; // 20.0 to 200.0. If the error increases, you need to add power.
     static signed long slIntegral = 0; // Usually in the range of 1e5 - 1e6
     signed long slDerivative;
-    signed long sl_motor_pwm_duty = 0;
+    signed long slMotorPwmDuty = 0;
     static signed long  slErrorPos = 0; // Start as 0, then update every cycle.
 //    static signed long slLastErrorPos = 0;
     static signed long slLastTPSPerc = 0;
@@ -332,16 +332,16 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
     }
     slLastTPSPerc = ucTPSPerc; // For next iteration
     
-    sl_motor_pwm_duty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
+    slMotorPwmDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
     Nop();
-    sl_motor_pwm_duty /= 1024; // 1024 ~= 1000. Do it because the constants are long, not floats
+    slMotorPwmDuty /= 1024; // 1024 ~= 1000. Do it because the constants are long, not floats
 
     // Crop between 0 and 100. It's a duty cycle.
-    if (sl_motor_pwm_duty < 0) {
-        sl_motor_pwm_duty = 0;
+    if (slMotorPwmDuty < 0) {
+        slMotorPwmDuty = 0;
     }
-    else if ( sl_motor_pwm_duty > 100 ) {
-        sl_motor_pwm_duty = 100;
+    else if ( slMotorPwmDuty > 100 ) {
+        slMotorPwmDuty = 100;
     }
 
     // APPLY THE DUTY CYCLE TO THE MOTOR - Variable checks.
@@ -351,9 +351,9 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
         if ( ucMode == ucASMode ) { // The mode sent to the PID function and the global variable agree
             if (ucASMode == ASMode){
                 // Drive with autonomous value
-                //GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+                //GPIO_PWM2_Control(slMotorPwmDuty, 300);
             } else if (ucASMode == ManualMode){
-                GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+                GPIO_PWM2_Control(slMotorPwmDuty, 300);
             } else {
                 // ERROR. Wrong value of ucASMode
             }
@@ -368,7 +368,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
     }
 }
 
-unsigned char perc_of(signed long val, signed long min, signed long max) {
+unsigned char PercOf(signed long val, signed long min, signed long max) {
     /*
      * Returns the percentage of val between min and max. Result bounded between 0 and 100.
      * 

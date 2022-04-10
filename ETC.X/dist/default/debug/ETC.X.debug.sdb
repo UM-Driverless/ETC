@@ -310,8 +310,8 @@ channel_FVR_Buffer2 63
 "297
 [v _ETC_PID ETC_PID `(v  1 e 1 0 ]
 [v i2_ETC_PID ETC_PID `(v  1 e 1 0 ]
-"375
-[v _perc_of perc_of `(uc  1 e 1 0 ]
+"371
+[v _PercOf PercOf `(uc  1 e 1 0 ]
 "23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
 "42
@@ -2306,7 +2306,7 @@ channel_FVR_Buffer2 63
 [v _ETC_PID ETC_PID `(v  1 e 1 0 ]
 {
 "314
-[v ETC_PID@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 71 ]
+[v ETC_PID@slMotorPwmDuty slMotorPwmDuty `l  1 a 4 71 ]
 "313
 [v ETC_PID@slDerivative slDerivative `l  1 a 4 67 ]
 "297
@@ -2326,7 +2326,7 @@ channel_FVR_Buffer2 63
 [v ETC_PID@slErrorPos slErrorPos `l  1 s 4 slErrorPos ]
 "317
 [v ETC_PID@slLastTPSPerc slLastTPSPerc `l  1 s 4 slLastTPSPerc ]
-"373
+"369
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -2775,14 +2775,6 @@ channel_FVR_Buffer2 63
 {
 "99
 } 0
-"375
-[v _perc_of perc_of `(uc  1 e 1 0 ]
-{
-[v perc_of@val val `l  1 p 4 26 ]
-[v perc_of@min min `l  1 p 4 30 ]
-[v perc_of@max max `l  1 p 4 34 ]
-"391
-} 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
@@ -2795,6 +2787,14 @@ channel_FVR_Buffer2 63
 [v ___awdiv@dividend dividend `i  1 p 2 0 ]
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
+} 0
+"371 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+[v _PercOf PercOf `(uc  1 e 1 0 ]
+{
+[v PercOf@val val `l  1 p 4 26 ]
+[v PercOf@min min `l  1 p 4 30 ]
+[v PercOf@max max `l  1 p 4 34 ]
+"387
 } 0
 "122 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -2855,13 +2855,13 @@ channel_FVR_Buffer2 63
 [v i2_ETC_PID ETC_PID `(v  1 e 1 0 ]
 {
 "314
-[v i2ETC_PID@sl_motor_pwm_duty sl_motor_pwm_duty `l  1 a 4 71 ]
+[v i2ETC_PID@slMotorPwmDuty slMotorPwmDuty `l  1 a 4 71 ]
 "313
 [v i2ETC_PID@slDerivative slDerivative `l  1 a 4 67 ]
 "297
 [v i2ETC_PID@sl_target_perc sl_target_perc `l  1 p 4 50 ]
 [v i2ETC_PID@ucMode ucMode `uc  1 p 1 54 ]
-"373
+"369
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v i2___lmul __lmul `(ul  1 e 4 0 ]

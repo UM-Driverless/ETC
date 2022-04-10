@@ -38402,7 +38402,7 @@ void ETCManual (unsigned char ucTargetManual);
 void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 
 
-unsigned char perc_of(signed long val, signed long min, signed long max);
+unsigned char PercOf(signed long val, signed long min, signed long max);
 # 13 "TEMPORIZATIONS.c" 2
 
 # 1 "./PARAMETERS.h" 1

@@ -24,6 +24,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "70
 [; ;./ETC.h: 70: void apps_calibrate(void);
 [v _apps_calibrate `(v ~T0 @X0 0 ef ]
+"28 ./CLUTCH.h
+[; ;./CLUTCH.h: 28: void ClutchCalibrate(void);
+[v _ClutchCalibrate `(v ~T0 @X0 0 ef ]
 "2080 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [s S3083 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S3083 . INT0EDG INT1EDG INT2EDG . IPEN GIEL GIE ]
@@ -35,13 +38,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3082 . . . ]
 "2094
 [v _INTCON0bits `VS3082 ~T0 @X0 0 e@1238 ]
-"33 ./CLUTCH.h
-[; ;./CLUTCH.h: 33: void CLUTCH_Init(void);
-[v _CLUTCH_Init `(v ~T0 @X0 0 ef ]
-"36
-[; ;./CLUTCH.h: 36: void CLUTCHInitMove(void);
-[v _CLUTCHInitMove `(v ~T0 @X0 0 ef ]
-"1480 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
+"1480
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
 [s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S3061 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
@@ -3616,39 +3613,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "63
 [; ;main.c: 63:     apps_calibrate();
 [e ( _apps_calibrate ..  ]
-"65
-[; ;main.c: 65:     (INTCON0bits.GIE = 1);
+"64
+[; ;main.c: 64:     ClutchCalibrate();
+[e ( _ClutchCalibrate ..  ]
+"66
+[; ;main.c: 66:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
 "71
-[; ;main.c: 71:     CLUTCH_Init();
-[e ( _CLUTCH_Init ..  ]
-"74
-[; ;main.c: 74:     CLUTCHInitMove();
-[e ( _CLUTCHInitMove ..  ]
-"76
-[; ;main.c: 76:     while(1) {
+[; ;main.c: 71:     while(1) {
 [e :U 3183 ]
 {
-"77
-[; ;main.c: 77:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+"72
+[; ;main.c: 72:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 [e :U 3187 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
 [e :U 3186 ]
-"79
-[; ;main.c: 79:         ETC_PID(ucAPPS_perc, 0);
+"74
+[; ;main.c: 74:         ETC_PID(ucAPPS_perc, 0);
 [e ( _ETC_PID (2 , -> _ucAPPS_perc `l -> -> 0 `i `uc ]
-"85
-[; ;main.c: 85:         CANWriteMessage(0x330, 6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0);
+"80
+[; ;main.c: 80:         CANWriteMessage(0x330, 6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0);
 [e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc _ucAPPS1_perc _ucAPPS2_perc _ucTPS1_perc _ucTPS2_perc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"86
-[; ;main.c: 86:     }
+"81
+[; ;main.c: 81:     }
 }
 [e :U 3182 ]
 [e $U 3183  ]
 [e :U 3184 ]
-"87
-[; ;main.c: 87: }
+"82
+[; ;main.c: 82: }
 [e :UE 3181 ]
 }

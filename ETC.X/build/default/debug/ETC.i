@@ -38349,7 +38349,7 @@ extern unsigned int uiTPS1_mv;
 extern unsigned int uiTPS2_mv;
 extern unsigned char ucTPS1_perc;
 extern unsigned char ucTPS2_perc;
-extern unsigned char ucTPS_perc;
+extern unsigned char ucTPSPerc;
 
 extern unsigned int uiETCDuty;
 extern unsigned char ucTPS_STATE;
@@ -38425,7 +38425,7 @@ unsigned int uiTPS1_mv;
 unsigned int uiTPS2_mv;
 unsigned char ucTPS1_perc;
 unsigned char ucTPS2_perc;
-unsigned char ucTPS_perc;
+unsigned char ucTPSPerc;
 
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
@@ -38572,7 +38572,7 @@ void TPSAnalysis(void) {
 
     ucTPS1_perc = perc_of(uiTPS1_mv, uiTPS1_default_mv, uiTPS1_opened_mv);
     ucTPS2_perc = perc_of(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv);
-    ucTPS_perc = (ucTPS1_perc + ucTPS2_perc) / 2;
+    ucTPSPerc = (ucTPS1_perc + ucTPS2_perc) / 2;
 
 
     __nop();
@@ -38606,26 +38606,36 @@ void ETCManual(unsigned char ucTargetManual) {
 void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
 # 308 "ETC.c"
     static signed long sl_K = 50000;
-    static signed long sl_K_P = 1500;
+    static signed long sl_K_P = 1000;
     static signed long sl_K_I = 3;
-    static signed long sl_K_D = 20000;
+    static signed long sl_K_D = 0;
     static signed long slIntegral = 0;
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0;
     static signed long slErrorPos = 0;
-    static signed long slLastErrorPos = 0;
+
+    static signed long slLastTPSPerc = 0;
 
     __nop();
 
 
 
 
-    slErrorPos = sl_target_perc - ucTPS_perc;
 
-    slIntegral += slErrorPos;
 
-    slDerivative = slErrorPos - slLastErrorPos;
-# 336 "ETC.c"
+    slErrorPos = sl_target_perc - ucTPSPerc;
+
+
+    if ((slIntegral > -1e4) && (slIntegral < 1e4)){
+        slIntegral += slErrorPos;
+    }
+
+
+    if (ucTPSPerc < slLastTPSPerc){
+        slDerivative = slLastTPSPerc - ucTPSPerc;
+    }
+    slLastTPSPerc = ucTPSPerc;
+
     sl_motor_pwm_duty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
     __nop();
     sl_motor_pwm_duty /= 1024;
@@ -38639,16 +38649,31 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
         sl_motor_pwm_duty = 100;
     }
 
-    __nop();
 
-    GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
-    slLastErrorPos = slErrorPos;
-# 373 "ETC.c"
-    slLastErrorPos = slErrorPos;
+
+    if ( ucETCFlagSupervisor == 0x01 ) {
+        if ( ucMode == ucASMode ) {
+            if (ucASMode == 1){
+
+
+            } else if (ucASMode == 0){
+                GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+            } else {
+
+            }
+        } else {
+
+        }
+
+
+
+    } else {
+        GPIO_PWM2_Control(0, 300);
+    }
 }
 
 unsigned char perc_of(signed long val, signed long min, signed long max) {
-# 385 "ETC.c"
+# 384 "ETC.c"
     val = 100*(val - min)/(max - min);
     if (val < 0){
         val = 0;

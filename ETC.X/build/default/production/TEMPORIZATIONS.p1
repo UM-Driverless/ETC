@@ -20,8 +20,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "78
 [; ;./ETC.h: 78: void APPSAnalysis(void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
-"35 ./CLUTCH.h
-[; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState(void);
+"30 ./CLUTCH.h
+[; ;./CLUTCH.h: 30: void CLUTCH_AnalyseState(void);
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
 "79 ./ETC.h
 [; ;./ETC.h: 79: void ETCSupervisor(void);

@@ -12,7 +12,7 @@
 extern "C" {
 #endif
 
-//CONSTANTES
+    
 #define CLUTCH_NONE        0
 #define CLUTCH_ENGAGE      1
 #define CLUTCH_DISENGAGE   2
@@ -20,20 +20,15 @@ extern "C" {
 #define CLUTCH_ERROR       4
 #define CLUTCH_CORRUPT     5
 
-    
-    
-//VARIABLES
 extern unsigned char ucCLUTCHlmin;
 extern unsigned char ucCLUTCHlmax;    
 extern unsigned char ucCLUTCHDuty;
 extern unsigned char ucCLUTCHState;
 
-
-//FUNCIONES
-void CLUTCH_Init(void);
+void ClutchCalibrate(void);
 void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
-void CLUTCHInitMove(void);
+
 
 #ifdef	__cplusplus
 }

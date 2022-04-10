@@ -38337,7 +38337,7 @@ extern unsigned int uiTPS1_mv;
 extern unsigned int uiTPS2_mv;
 extern unsigned char ucTPS1_perc;
 extern unsigned char ucTPS2_perc;
-extern unsigned char ucTPS_perc;
+extern unsigned char ucTPSPerc;
 
 extern unsigned int uiETCDuty;
 extern unsigned char ucTPS_STATE;
@@ -38369,18 +38369,15 @@ unsigned char perc_of(signed long val, signed long min, signed long max);
 # 10 "MESSAGES.C" 2
 
 # 1 "./CLUTCH.h" 1
-# 26 "./CLUTCH.h"
+# 23 "./CLUTCH.h"
 extern unsigned char ucCLUTCHlmin;
 extern unsigned char ucCLUTCHlmax;
 extern unsigned char ucCLUTCHDuty;
 extern unsigned char ucCLUTCHState;
 
-
-
-void CLUTCH_Init(void);
+void ClutchCalibrate(void);
 void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
-void CLUTCHInitMove(void);
 # 11 "MESSAGES.C" 2
 
 # 1 "./PARAMETERS.h" 1

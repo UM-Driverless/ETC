@@ -14,21 +14,17 @@
 
 
 
-
 # 1 "./CLUTCH.h" 1
-# 26 "./CLUTCH.h"
+# 23 "./CLUTCH.h"
 extern unsigned char ucCLUTCHlmin;
 extern unsigned char ucCLUTCHlmax;
 extern unsigned char ucCLUTCHDuty;
 extern unsigned char ucCLUTCHState;
 
-
-
-void CLUTCH_Init(void);
+void ClutchCalibrate(void);
 void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
-void CLUTCHInitMove(void);
-# 9 "CLUTCH.c" 2
+# 8 "CLUTCH.c" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
 # 54 "./mcc_generated_files/pin_manager.h"
@@ -37510,10 +37506,10 @@ unsigned char __t3rd16on(void);
 void PIN_MANAGER_Initialize(void);
 # 414 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 10 "CLUTCH.c" 2
+# 9 "CLUTCH.c" 2
 
 # 1 "./PARAMETERS.h" 1
-# 11 "CLUTCH.c" 2
+# 10 "CLUTCH.c" 2
 
 # 1 "./GPIO.h" 1
 # 16 "./GPIO.h"
@@ -37521,7 +37517,7 @@ void GPIOInit(void);
 void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_INT2_desembragar(void);
-# 12 "CLUTCH.c" 2
+# 11 "CLUTCH.c" 2
 
 # 1 "./MESSAGES.h" 1
 # 15 "./MESSAGES.h"
@@ -38336,7 +38332,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 # 93 "./MESSAGES.h"
 void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8);
 void CANReadMessage(void);
-# 13 "CLUTCH.c" 2
+# 12 "CLUTCH.c" 2
 
 # 1 "./ETC.h" 1
 # 32 "./ETC.h"
@@ -38364,7 +38360,7 @@ extern unsigned int uiTPS1_mv;
 extern unsigned int uiTPS2_mv;
 extern unsigned char ucTPS1_perc;
 extern unsigned char ucTPS2_perc;
-extern unsigned char ucTPS_perc;
+extern unsigned char ucTPSPerc;
 
 extern unsigned int uiETCDuty;
 extern unsigned char ucTPS_STATE;
@@ -38393,8 +38389,7 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 
 
 unsigned char perc_of(signed long val, signed long min, signed long max);
-# 14 "CLUTCH.c" 2
-
+# 13 "CLUTCH.c" 2
 
 
 unsigned char ucCLUTCHlmin;
@@ -38402,11 +38397,45 @@ unsigned char ucCLUTCHlmax;
 unsigned int uiCLUTCHDuty;
 unsigned char ucCLUTCHState;
 
+void ClutchCalibrate(void){
 
-void CLUTCH_Init(void)
-{
+
+
+
+
     GPIO_PWM1_Control( 0, 50 );
     ucCLUTCHState = 0;
+
+
+
+
+    CLUTCH_Move(0, 1);
+
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == 1 )
+    {
+        CLUTCH_Move(30, 1);
+        _delay((unsigned long)((200)*(10000000/4000.0)));
+        CLUTCH_Move(50, 1);
+        _delay((unsigned long)((200)*(10000000/4000.0)));
+    }
+
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == 3 )
+    {
+
+        CLUTCH_Move(70, 1);
+        _delay((unsigned long)((200)*(10000000/4000.0)));
+        CLUTCH_Move(100, 1);
+        _delay((unsigned long)((150)*(10000000/4000.0)));
+    }
+
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == 2 )
+    {
+
+        CLUTCH_Move(0, 1);
+    }
 }
 
 void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
@@ -38424,7 +38453,7 @@ void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
 
         if ( ucMode == ucASMode )
         {
-# 57 "CLUTCH.c"
+# 89 "CLUTCH.c"
             if ( ucCLUTCHState < 4 )
             {
                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
@@ -38474,34 +38503,5 @@ void CLUTCH_AnalyseState(void)
     else
     {
         ucCLUTCHState = 5;
-    }
-}
-
-
-void CLUTCHInitMove(void)
-{
-    CLUTCH_Move(0, 1);
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == 1 )
-    {
-        CLUTCH_Move(30, 1);
-        _delay((unsigned long)((200)*(10000000/4000.0)));
-        CLUTCH_Move(50, 1);
-        _delay((unsigned long)((200)*(10000000/4000.0)));
-    }
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == 3 )
-    {
-
-        CLUTCH_Move(70, 1);
-        _delay((unsigned long)((200)*(10000000/4000.0)));
-        CLUTCH_Move(100, 1);
-        _delay((unsigned long)((150)*(10000000/4000.0)));
-    }
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == 2 )
-    {
-
-        CLUTCH_Move(0, 1);
     }
 }

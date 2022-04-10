@@ -241,6 +241,9 @@ channel_FVR_Buffer2 63
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+[v i2___flge __flge `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
 "43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
@@ -282,16 +285,14 @@ channel_FVR_Buffer2 63
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
-"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
-[v _CLUTCH_Init CLUTCH_Init `(v  1 e 1 0 ]
-"29
+"20 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+[v _ClutchCalibrate ClutchCalibrate `(v  1 e 1 0 ]
+"61
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 [v i2_CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
-"75
+"107
 [v _CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
-"110
-[v _CLUTCHInitMove CLUTCHInitMove `(v  1 e 1 0 ]
 "76 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _apps_calibrate apps_calibrate `(v  1 e 1 0 ]
 "91
@@ -309,7 +310,7 @@ channel_FVR_Buffer2 63
 "297
 [v _ETC_PID ETC_PID `(v  1 e 1 0 ]
 [v i2_ETC_PID ETC_PID `(v  1 e 1 0 ]
-"376
+"375
 [v _perc_of perc_of `(uc  1 e 1 0 ]
 "23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
@@ -802,7 +803,7 @@ channel_FVR_Buffer2 63
 [v _PMD2 PMD2 `VEuc  1 e 1 @98 ]
 "1474
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S3618 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S3614 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -812,8 +813,8 @@ channel_FVR_Buffer2 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1491
-[u S3627 . 1 `S3618 1 . 1 0 ]
-[v _LATAbits LATAbits `VES3627  1 e 1 @1214 ]
+[u S3623 . 1 `S3614 1 . 1 0 ]
+[v _LATAbits LATAbits `VES3623  1 e 1 @1214 ]
 "1514
 [v _PMD3 PMD3 `VEuc  1 e 1 @99 ]
 "1536
@@ -838,7 +839,7 @@ channel_FVR_Buffer2 63
 [v _PMD5 PMD5 `VEuc  1 e 1 @101 ]
 "1660
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S3912 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S3911 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -848,8 +849,8 @@ channel_FVR_Buffer2 63
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1677
-[u S3921 . 1 `S3912 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES3921  1 e 1 @1222 ]
+[u S3920 . 1 `S3911 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES3920  1 e 1 @1222 ]
 "1678
 [v _PMD6 PMD6 `VEuc  1 e 1 @102 ]
 "1722
@@ -870,7 +871,7 @@ channel_FVR_Buffer2 63
 [v _PMD7 PMD7 `VEuc  1 e 1 @103 ]
 "1784
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
-[s S3945 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S3944 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -880,13 +881,13 @@ channel_FVR_Buffer2 63
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1801
-[u S3954 . 1 `S3945 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES3954  1 e 1 @1224 ]
+[u S3953 . 1 `S3944 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES3953  1 e 1 @1224 ]
 "1802
 [v _PMD8 PMD8 `VEuc  1 e 1 @104 ]
 "1846
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
-[s S3855 . 1 `uc 1 RA0 1 0 :1:0 
+[s S3858 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -896,9 +897,9 @@ channel_FVR_Buffer2 63
 `uc 1 RA7 1 0 :1:7 
 ]
 "1884
-[u S3864 . 1 `S3855 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES3864  1 e 1 @1230 ]
-[s S3834 . 1 `uc 1 RB0 1 0 :1:0 
+[u S3867 . 1 `S3858 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES3867  1 e 1 @1230 ]
+[s S3837 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -908,8 +909,8 @@ channel_FVR_Buffer2 63
 `uc 1 RB7 1 0 :1:7 
 ]
 "1946
-[u S3843 . 1 `S3834 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES3843  1 e 1 @1231 ]
+[u S3846 . 1 `S3837 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3846  1 e 1 @1231 ]
 [s S1119 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -1834,7 +1835,7 @@ channel_FVR_Buffer2 63
 "65499
 "65499
 [v _PIE7bits PIE7bits `VES1851  1 e 1 @1189 ]
-"19 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"17 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _uiCLUTCHDuty uiCLUTCHDuty `ui  1 e 2 0 ]
 "25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _uiAPPS1_default_mv uiAPPS1_default_mv `ui  1 e 2 0 ]
@@ -1871,7 +1872,7 @@ channel_FVR_Buffer2 63
 "48
 [v _ucTPS2_perc ucTPS2_perc `uc  1 e 1 0 ]
 "49
-[v _ucTPS_perc ucTPS_perc `uc  1 e 1 0 ]
+[v _ucTPSPerc ucTPSPerc `uc  1 e 1 0 ]
 "55
 [v _uiETCDuty uiETCDuty `ui  1 e 2 0 ]
 "57
@@ -2003,7 +2004,7 @@ channel_FVR_Buffer2 63
 "54 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"87
+"82
 } 0
 "164 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _etc_calibrate etc_calibrate `(v  1 e 1 0 ]
@@ -2323,9 +2324,9 @@ channel_FVR_Buffer2 63
 [v ETC_PID@slIntegral slIntegral `l  1 s 4 slIntegral ]
 "315
 [v ETC_PID@slErrorPos slErrorPos `l  1 s 4 slErrorPos ]
-"316
-[v ETC_PID@slLastErrorPos slLastErrorPos `l  1 s 4 slLastErrorPos ]
-"374
+"317
+[v ETC_PID@slLastTPSPerc slLastTPSPerc `l  1 s 4 slLastTPSPerc ]
+"373
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -2336,6 +2337,13 @@ channel_FVR_Buffer2 63
 [v ___lmul@multiplier multiplier `ul  1 p 4 0 ]
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 14 ]
+[v ___flge@ff2 ff2 `d  1 p 4 18 ]
+"19
 } 0
 "63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
@@ -2366,22 +2374,17 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
-[v _CLUTCH_Init CLUTCH_Init `(v  1 e 1 0 ]
+"20 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+[v _ClutchCalibrate ClutchCalibrate `(v  1 e 1 0 ]
 {
-"27
+"59
 } 0
-"110
-[v _CLUTCHInitMove CLUTCHInitMove `(v  1 e 1 0 ]
-{
-"136
-} 0
-"29
+"61
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 {
 [v CLUTCH_Move@slTargetMove slTargetMove `l  1 p 4 50 ]
 [v CLUTCH_Move@ucMode ucMode `uc  1 p 1 54 ]
-"72
+"104
 } 0
 "42 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
@@ -2488,14 +2491,14 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"75 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"107 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 {
-"78
+"110
 [v CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
-"77
+"109
 [v CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
-"107
+"139
 } 0
 "55 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v _CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
@@ -2680,14 +2683,14 @@ channel_FVR_Buffer2 63
 {
 "52
 } 0
-"75 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"107 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 {
-"78
+"110
 [v i2CLUTCH_AnalyseState@ucFDC2 ucFDC2 `uc  1 a 1 1 ]
-"77
+"109
 [v i2CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
-"107
+"139
 } 0
 "273 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
@@ -2772,13 +2775,13 @@ channel_FVR_Buffer2 63
 {
 "99
 } 0
-"376
+"375
 [v _perc_of perc_of `(uc  1 e 1 0 ]
 {
 [v perc_of@val val `l  1 p 4 26 ]
 [v perc_of@min min `l  1 p 4 30 ]
 [v perc_of@max max `l  1 p 4 34 ]
-"392
+"391
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
@@ -2858,7 +2861,7 @@ channel_FVR_Buffer2 63
 "297
 [v i2ETC_PID@sl_target_perc sl_target_perc `l  1 p 4 50 ]
 [v i2ETC_PID@ucMode ucMode `uc  1 p 1 54 ]
-"374
+"373
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v i2___lmul __lmul `(ul  1 e 4 0 ]
@@ -2869,6 +2872,13 @@ channel_FVR_Buffer2 63
 [v i2___lmul@multiplier multiplier `ul  1 p 4 0 ]
 [v i2___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+[v i2___flge __flge `(b  1 e 0 0 ]
+{
+[v i2___flge@ff1 ff1 `d  1 p 4 14 ]
+[v i2___flge@ff2 ff2 `d  1 p 4 18 ]
+"19
 } 0
 "63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
@@ -2899,12 +2909,12 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"29 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"61 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v i2_CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 {
 [v i2CLUTCH_Move@slTargetMove slTargetMove `l  1 p 4 50 ]
 [v i2CLUTCH_Move@ucMode ucMode `uc  1 p 1 54 ]
-"72
+"104
 } 0
 "42 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]

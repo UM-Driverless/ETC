@@ -1,4 +1,4 @@
-# 1 "CLUTCH.c"
+# 1 "MESSAGES.C"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "CLUTCH.c" 2
+# 1 "MESSAGES.C" 2
 
 
 
@@ -14,20 +14,10 @@
 
 
 
-# 1 "./CLUTCH.h" 1
-# 23 "./CLUTCH.h"
-extern unsigned char ucCLUTCHlmin;
-extern unsigned char ucCLUTCHlmax;
-extern unsigned char ucCLUTCHDuty;
-extern unsigned char ucCLUTCHState;
-
-void ClutchCalibrate(void);
-void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
-void CLUTCH_AnalyseState(void);
-# 8 "CLUTCH.c" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 54 "./mcc_generated_files/pin_manager.h"
+# 1 "./MESSAGES.h" 1
+# 15 "./MESSAGES.h"
+# 1 "./mcc_generated_files/mcc.h" 1
+# 49 "./mcc_generated_files/mcc.h"
 # 1 "C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -37501,31 +37491,17 @@ __attribute__((__unsupported__("The READTIMER" "3" "() macro is not available wi
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\xc.h" 2 3
-# 54 "./mcc_generated_files/pin_manager.h" 2
+# 49 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
 # 402 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize(void);
 # 414 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 9 "CLUTCH.c" 2
-
-# 1 "./PARAMETERS.h" 1
-# 10 "CLUTCH.c" 2
-
-# 1 "./GPIO.h" 1
-# 16 "./GPIO.h"
-void GPIOInit(void);
-void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
-void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
-void GPIO_INT2_desembragar(void);
-# 11 "CLUTCH.c" 2
-
-# 1 "./MESSAGES.h" 1
-# 15 "./MESSAGES.h"
-# 1 "./mcc_generated_files/mcc.h" 1
-# 50 "./mcc_generated_files/mcc.h"
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
+# 51 "./mcc_generated_files/mcc.h" 2
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
@@ -38332,7 +38308,8 @@ extern unsigned char ucSTEER_WH_Clutch;
 # 93 "./MESSAGES.h"
 void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8);
 void CANReadMessage(void);
-# 12 "CLUTCH.c" 2
+# 8 "MESSAGES.C" 2
+
 
 # 1 "./ETC.h" 1
 # 32 "./ETC.h"
@@ -38360,7 +38337,7 @@ extern unsigned int uiTPS1_mv;
 extern unsigned int uiTPS2_mv;
 extern unsigned char ucTPS1_perc;
 extern unsigned char ucTPS2_perc;
-extern unsigned char ucTPSPerc;
+extern unsigned char ucTPS_perc;
 
 extern unsigned int uiETCDuty;
 extern unsigned char ucTPS_STATE;
@@ -38389,119 +38366,193 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 
 
 unsigned char perc_of(signed long val, signed long min, signed long max);
-# 13 "CLUTCH.c" 2
+# 10 "MESSAGES.C" 2
+
+# 1 "./CLUTCH.h" 1
+# 23 "./CLUTCH.h"
+extern unsigned char ucCLUTCHlmin;
+extern unsigned char ucCLUTCHlmax;
+extern unsigned char ucCLUTCHDuty;
+extern unsigned char ucCLUTCHState;
+
+void ClutchCalibrate(void);
+void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
+void CLUTCH_AnalyseState(void);
+# 11 "MESSAGES.C" 2
+
+# 1 "./PARAMETERS.h" 1
+# 12 "MESSAGES.C" 2
 
 
-unsigned char ucCLUTCHlmin;
-unsigned char ucCLUTCHlmax;
-unsigned int uiCLUTCHDuty;
-unsigned char ucCLUTCHState;
-
-void ClutchCalibrate(void){
 
 
+uint8_t CANDATAdata[8];
 
 
+unsigned char ucTargetAccelerator;
+unsigned char ucTargetClutch;
+unsigned char ucTargetBrake;
+unsigned char ucTargetDirection;
+unsigned char ucTargetGear;
 
-    GPIO_PWM1_Control( 0, 50 );
-    ucCLUTCHState = 0;
+unsigned char ucAS_state;
+unsigned char ucEBS_state;
+unsigned char ucAMI_state;
+unsigned char ucSteering_state;
+unsigned char ucService_brake;
+unsigned char ucLap_counter;
+unsigned char ucCones_count_actual;
+unsigned int uiCones_count_all;
+
+unsigned char ucSpeed_actual;
+unsigned char ucSpeed_target;
+unsigned char ucSteering_angle_actual;
+unsigned char ucSteering_angle_target;
+unsigned char ucBrake_hydr_actual;
+unsigned char ucBrake_hydr_target;
+unsigned char ucMotor_moment_actual;
+unsigned char ucMotor_moment_target;
+
+unsigned int uiAcc_longitudinal;
+unsigned int uiAcc_lateral;
+unsigned int uiYaw_rate;
+
+unsigned char ucASBState;
+unsigned char ucASRequesState;
+
+unsigned char ucASMode;
+
+unsigned char ucSTEER_WH_Clutch;
 
 
+void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8) {
+    CANDATAdata [0] = uc_data1;
+    CANDATAdata [1] = uc_data2;
+    CANDATAdata [2] = uc_data3;
+    CANDATAdata [3] = uc_data4;
+    CANDATAdata [4] = uc_data5;
+    CANDATAdata [5] = uc_data6;
+    CANDATAdata [6] = uc_data7;
+    CANDATAdata [7] = uc_data8;
 
+    msgTransmit.msgId = ul_id;
+    msgTransmit.field.formatType = CAN_2_0_FORMAT;
+    msgTransmit.field.brs = CAN_NON_BRS_MODE;
+    msgTransmit.field.frameType = CAN_FRAME_DATA;
+    msgTransmit.field.idType = CAN_FRAME_STD;
+    msgTransmit.field.dlc = ( uc_dataLength & 0x0F );
+    msgTransmit.data = CANDATAdata;
 
-    CLUTCH_Move(0, 1);
-
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == 1 )
+    if (CAN1_IsBusOff() == 0x01)
     {
-        CLUTCH_Move(30, 1);
-        _delay((unsigned long)((200)*(10000000/4000.0)));
-        CLUTCH_Move(50, 1);
-        _delay((unsigned long)((200)*(10000000/4000.0)));
+        __nop();
+    }
+    if (CAN1_IsTxErrorPassive() == 0x01)
+    {
+        __nop();
+    }
+    if (CAN1_IsTxErrorWarning() == 0x01)
+    {
+        __nop();
+    }
+    if (CAN1_IsTxErrorActive() == 0x01)
+    {
+        __nop();
     }
 
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == 3 )
+    if (CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
     {
-
-        CLUTCH_Move(70, 1);
-        _delay((unsigned long)((200)*(10000000/4000.0)));
-        CLUTCH_Move(100, 1);
-        _delay((unsigned long)((150)*(10000000/4000.0)));
-    }
-
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == 2 )
-    {
-
-        CLUTCH_Move(0, 1);
+        CAN1_Transmit(TXQ, &msgTransmit);
+        __nop();
     }
 }
 
-void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
-{
-
-    if ( ucETCFlagSupervisor == 0x01 )
-    {
 
 
+void CANReadMessage(void) {
+    uint32_t id;
+    unsigned char idType;
+    unsigned char dlc;
+    unsigned char uc_data1;
+    unsigned char uc_data2;
+    unsigned char uc_data3;
+    unsigned char uc_data4;
+    unsigned char uc_data5;
+    unsigned char uc_data6;
+    unsigned char uc_data7;
+    unsigned char uc_data8;
+
+    if (CAN1_ReceivedMessageCountGet() > 0) {
+        if (1 == CAN1_Receive(&msgReceipt)) {
+            __nop();
+            id = msgReceipt.msgId;
+            idType = msgReceipt.field.idType;
+            dlc = msgReceipt.field.dlc;
+            uc_data1 = msgReceipt.data[0];
+            uc_data2 = msgReceipt.data[1];
+            uc_data3 = msgReceipt.data[2];
+            uc_data4 = msgReceipt.data[3];
+            uc_data5 = msgReceipt.data[4];
+            uc_data6 = msgReceipt.data[5];
+            uc_data7 = msgReceipt.data[6];
+            uc_data8 = msgReceipt.data[7];
+
+            switch(id) {
+                case 0x320:
+                    ucTargetAccelerator = uc_data1;
+                    ucTargetClutch = uc_data2;
+                    ucTargetBrake = uc_data3;
+                    ucTargetDirection = uc_data4;
+                    ucTargetGear = uc_data5;
+
+                    if ( ucASMode == 1 ) {
+                        CLUTCH_Move(ucTargetClutch, 1);
+
+                        ETC_PID( ucTargetAccelerator, 1);
+                        ucETCBeatSupervisor = 0x01;
+                    }
+
+                    break;
+                case 0x500:
+                    ucAS_state = ( uc_data1 & 0x07 );
+                    ucEBS_state = ( uc_data1 & 0x18 );
+                    ucAMI_state = ( uc_data1 & 0xE0 );
+                    ucSteering_state = ( uc_data2 & 0x01 );
+                    ucService_brake = ( uc_data2 & 0x06 );
+                    ucLap_counter = ( uc_data2 & 0x78 );
 
 
-        uiCLUTCHDuty = slTargetMove * 60;
-        uiCLUTCHDuty = uiCLUTCHDuty / 100;
-        uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
+                    break;
+                case 0x501:
+                    ucSpeed_actual = uc_data1;
+                    ucSpeed_target = uc_data2;
+                    ucSteering_angle_actual = uc_data3;
+                    ucSteering_angle_target = uc_data4;
+                    ucBrake_hydr_actual = uc_data5;
+                    ucBrake_hydr_target = uc_data6;
+                    ucMotor_moment_actual = uc_data7;
+                    ucMotor_moment_target = uc_data8;
+                    break;
+                case 0x502:
 
-        if ( ucMode == ucASMode )
-        {
-# 89 "CLUTCH.c"
-            if ( ucCLUTCHState < 4 )
-            {
-                GPIO_PWM1_Control(uiCLUTCHDuty, 300);
+
+
+                    break;
+                case 0x347:
+                    ucASMode = uc_data1;
+                    ETCModeSelect(ucASMode);
+                    break;
+                case 0x412:
+                    ucSTEER_WH_Clutch = uc_data1;
+                    if ( ucASMode == 0 )
+                    {
+                        CLUTCH_Move(ucSTEER_WH_Clutch, 0);
+                    }
+                    break;
+                default:
+                    __nop();
+                    break;
             }
         }
-        else
-        {
-
-        }
-    }
-    else
-    {
-        GPIO_PWM1_Control(0, 300);
-    }
-
-}
-
-
-void CLUTCH_AnalyseState(void)
-{
-    unsigned char ucFDC1;
-    unsigned char ucFDC2;
-
-    ucFDC1 = PORTBbits.RB2;
-    ucFDC2 = PORTAbits.RA1;
-
-    __nop();
-
-    if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x00 ) )
-    {
-        ucCLUTCHState = 1;
-        ucCLUTCHlmin = ucCLUTCHDuty;
-    }
-    else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x01 ) )
-    {
-        ucCLUTCHState = 2;
-        ucCLUTCHlmax = ucCLUTCHDuty;
-    }
-    else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x00 ) )
-    {
-        ucCLUTCHState = 3;
-    }
-    else if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x01 ) )
-    {
-        ucCLUTCHState = 4;
-    }
-    else
-    {
-        ucCLUTCHState = 5;
     }
 }

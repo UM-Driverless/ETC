@@ -53,7 +53,7 @@ extern unsigned int uiTPS1_mv; // Sent by CAN, used by ANALOG.c for ANALOG_GetVo
 extern unsigned int uiTPS2_mv; // Sent by CAN
 extern unsigned char ucTPS1_perc;
 extern unsigned char ucTPS2_perc;
-extern unsigned char ucTPS_perc;
+extern unsigned char ucTPSPerc;
 
 extern unsigned int uiETCDuty;
 extern unsigned char ucTPS_STATE;

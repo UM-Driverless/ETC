@@ -38349,7 +38349,7 @@ extern unsigned int uiTPS1_mv;
 extern unsigned int uiTPS2_mv;
 extern unsigned char ucTPS1_perc;
 extern unsigned char ucTPS2_perc;
-extern unsigned char ucTPS_perc;
+extern unsigned char ucTPSPerc;
 
 extern unsigned int uiETCDuty;
 extern unsigned char ucTPS_STATE;
@@ -38425,7 +38425,7 @@ unsigned int uiTPS1_mv;
 unsigned int uiTPS2_mv;
 unsigned char ucTPS1_perc;
 unsigned char ucTPS2_perc;
-unsigned char ucTPS_perc;
+unsigned char ucTPSPerc;
 
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
@@ -38457,7 +38457,7 @@ void APPSAnalysis(void) {
 
 
     ucAPPS1_perc = perc_of(uiAPPS1_mv, uiAPPS1_default_mv, uiAPPS1_pushed_mv);
-    ucAPPS2_perc = 100 - perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_pushed_mv);
+    ucAPPS2_perc = perc_of(uiAPPS2_mv, uiAPPS2_default_mv, uiAPPS2_pushed_mv);
     ucAPPS_perc = (ucAPPS1_perc + ucAPPS2_perc) / 2;
 }
 
@@ -38571,8 +38571,8 @@ void TPSAnalysis(void) {
 
 
     ucTPS1_perc = perc_of(uiTPS1_mv, uiTPS1_default_mv, uiTPS1_opened_mv);
-    ucTPS2_perc = 100 - perc_of(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv);
-    ucTPS_perc = (ucTPS1_perc + ucTPS2_perc) / 2 ;
+    ucTPS2_perc = perc_of(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv);
+    ucTPSPerc = (ucTPS1_perc + ucTPS2_perc) / 2;
 
 
     __nop();
@@ -38604,72 +38604,58 @@ void ETCManual(unsigned char ucTargetManual) {
 }
 
 void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
-# 307 "ETC.c"
+# 308 "ETC.c"
+    static signed long sl_K = 50000;
     static signed long sl_K_P = 1000;
-    static signed long sl_K_I = 10;
-    static signed long sl_K_D = 0;
+    static signed long sl_K_I = 3;
+    static signed long sl_K_D = 30000;
     static signed long slIntegral = 0;
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0;
-    static signed long slLastErrorPos;
-    static signed long slErrorPos;
+    static signed long slErrorPos = 0;
+    static signed long slLastErrorPos = 0;
+    static signed long slLastTPSPerc = 0;
 
     __nop();
+# 329 "ETC.c"
+    slErrorPos = sl_target_perc - ucTPSPerc;
 
 
-    if ( ucETCFlagSupervisor == 0x01 ) {
-
-
-
-
-
-
-
-        slErrorPos = (signed long)(sl_target_perc) - ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212);
+    if ((slIntegral > -1e4) && (slIntegral < 1e4)){
         slIntegral += slErrorPos;
-        slDerivative = slErrorPos - slLastErrorPos;
-# 338 "ETC.c"
-        sl_motor_pwm_duty = sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
-        sl_motor_pwm_duty /= 1000;
-
-
-        if ( sl_motor_pwm_duty < 0 ) {
-            sl_motor_pwm_duty = 0;
-        }
-        else if ( sl_motor_pwm_duty > 100 ) {
-            sl_motor_pwm_duty = 100;
-        }
-
-        __nop();
-
-
-        if ( ucMode == ucASMode ) {
-            if ( ucASMode == 1 ) {
-
-                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
-            }
-            else if ( ucASMode == 0 ) {
-
-
-                GPIO_PWM2_Control(sl_motor_pwm_duty, 600);
-            }
-            else {
-
-            }
-        } else {
-
-        }
-
-
-        slLastErrorPos = slErrorPos;
-    } else {
-
-        GPIO_PWM2_Control(0, 600);
     }
+
+
+
+
+
+
+
+    slDerivative = ucTPSPerc - slLastTPSPerc;
+
+    sl_motor_pwm_duty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
+    __nop();
+    sl_motor_pwm_duty /= 1024;
+
+
+
+    if (sl_motor_pwm_duty < 0) {
+        sl_motor_pwm_duty = 0;
+    }
+    else if ( sl_motor_pwm_duty > 100 ) {
+        sl_motor_pwm_duty = 100;
+    }
+
+    __nop();
+    GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+
+    slLastErrorPos = slErrorPos;
+    slLastTPSPerc = ucTPSPerc;
+# 383 "ETC.c"
 }
 
 unsigned char perc_of(signed long val, signed long min, signed long max) {
-# 386 "ETC.c"
+# 394 "ETC.c"
     val = 100*(val - min)/(max - min);
     if (val < 0){
         val = 0;

@@ -5,7 +5,6 @@
  * Created on 4 de diciembre de 2021, 13:37
  */
 
-//INCLUDES
 #include "CLUTCH.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "PARAMETERS.h"
@@ -13,17 +12,50 @@
 #include "MESSAGES.h"
 #include "ETC.h"
 
-// Global variables
 unsigned char ucCLUTCHlmin;
 unsigned char ucCLUTCHlmax;
 unsigned int uiCLUTCHDuty;
 unsigned char ucCLUTCHState;
 
-// Functions
-void CLUTCH_Init(void)
-{
+void ClutchCalibrate(void){
+    /* Move clutch to the initial position, then 
+     * 
+     */
+    
+    // Clutch to initial position
     GPIO_PWM1_Control( 0, 50 ); // Position signal to the clutch servo
     ucCLUTCHState = CLUTCH_NONE;
+        
+    //APPSMODE_SetHigh();
+    //APPSSend(0);
+    
+    CLUTCH_Move(0, ASMode);
+    
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == CLUTCH_ENGAGE ) // CLUTCH_AnalyseState() defines ucCLUTCHState
+    {
+        CLUTCH_Move(30, ASMode);
+        __delay_ms(200);
+        CLUTCH_Move(50, ASMode);
+        __delay_ms(200);
+    }
+    
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == CLUTCH_INTRAVEL )
+    {
+        //__delay_ms(200);
+        CLUTCH_Move(70, ASMode);
+        __delay_ms(200);
+        CLUTCH_Move(100, ASMode);
+        __delay_ms(150);
+    }
+    
+    CLUTCH_AnalyseState();
+    if ( ucCLUTCHState == CLUTCH_DISENGAGE )
+    {
+        //__delay_ms(200);
+        CLUTCH_Move(0, ASMode);
+    }
 }
 
 void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
@@ -103,34 +135,5 @@ void CLUTCH_AnalyseState(void)
     else //CORRUPCION DE VARIABLES
     {
         ucCLUTCHState = CLUTCH_CORRUPT;
-    }
-}
-
-
-void CLUTCHInitMove(void)
-{
-    CLUTCH_Move(0, ASMode);
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == CLUTCH_ENGAGE )
-    {
-        CLUTCH_Move(30, ASMode);
-        __delay_ms(200);
-        CLUTCH_Move(50, ASMode);
-        __delay_ms(200);
-    }
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == CLUTCH_INTRAVEL )
-    {
-        //__delay_ms(200);
-        CLUTCH_Move(70, ASMode);
-        __delay_ms(200);
-        CLUTCH_Move(100, ASMode);
-        __delay_ms(150);
-    }
-    CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == CLUTCH_DISENGAGE )
-    {
-        //__delay_ms(200);
-        CLUTCH_Move(0, ASMode);
     }
 }

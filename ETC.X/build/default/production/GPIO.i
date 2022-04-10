@@ -37611,18 +37611,15 @@ void PIN_MANAGER_IOC(void);
 # 12 "GPIO.c" 2
 
 # 1 "./CLUTCH.h" 1
-# 26 "./CLUTCH.h"
+# 23 "./CLUTCH.h"
 extern unsigned char ucCLUTCHlmin;
 extern unsigned char ucCLUTCHlmax;
 extern unsigned char ucCLUTCHDuty;
 extern unsigned char ucCLUTCHState;
 
-
-
-void CLUTCH_Init(void);
+void ClutchCalibrate(void);
 void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);
-void CLUTCHInitMove(void);
 # 13 "GPIO.c" 2
 
 

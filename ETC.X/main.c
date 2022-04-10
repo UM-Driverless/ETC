@@ -61,17 +61,12 @@ void main(void) {
     
     etc_calibrate();
     apps_calibrate();
+    ClutchCalibrate();
     
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
 
     // To disable the global interrupts:
     // INTERRUPT_GlobalInterruptDisable();
-    
-    // Clutch to initial position
-    CLUTCH_Init();
-    //APPSMODE_SetHigh();
-    //APPSSend(0);
-    CLUTCHInitMove();
     
     while(1) {
         LED_Toggle();

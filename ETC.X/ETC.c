@@ -46,7 +46,7 @@ unsigned int uiTPS1_mv; // Global because it depends on interruptions. (TEMPORIZ
 unsigned int uiTPS2_mv;
 unsigned char ucTPS1_perc;
 unsigned char ucTPS2_perc;
-unsigned char ucTPS_perc;
+unsigned char ucTPSPerc;
 
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
@@ -202,21 +202,21 @@ void etc_calibrate(void) {
 }
 
 void TPSAnalysis(void) {
-    /* Calculate ucTPS_perc from uiTPS1_mv and uiTPS2_mv of the intake sensor (Throttle Position Sensor)
+    /* Calculate ucTPSPerc from uiTPS1_mv and uiTPS2_mv of the intake sensor (Throttle Position Sensor)
      * Called by TEMPORIZATIONS.c. right after ANALOGRead(). 
      */
         
     // Calculate fraction of travel. Sensor 1 and 2 provide voltages of constant average. They move in opposite directions.
     ucTPS1_perc = perc_of(uiTPS1_mv, uiTPS1_default_mv, uiTPS1_opened_mv);
     ucTPS2_perc = perc_of(uiTPS2_mv, uiTPS2_default_mv, uiTPS2_opened_mv);
-    ucTPS_perc = (ucTPS1_perc + ucTPS2_perc) / 2;
+    ucTPSPerc = (ucTPS1_perc + ucTPS2_perc) / 2;
     
     // TODO - STOP HERE AND CHECK VALUES
     Nop();
     
     // TODO - If too different, CAN error.
     
-    // ucTPS_perc is the average.
+    // ucTPSPerc is the average.
         
     /// Analysis of TPS error when out of range.
 //    if ( ( slTPS1calc > uiTPS1_mv + TPSMARGEN_MV ) || ( slTPS1calc < uiTPS1_mv - TPSMARGEN_MV ) )
@@ -306,37 +306,35 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
     // Static local variables to change values at run time for calibration.
     // Test with sl_target_perc ~= 80%, first K_I until it works with delay, then K_P to cancel those oscillations, then K_D to cancel the K_P oscillations.
     static signed long sl_K = 50000; // Just to compensate the spring, which has approximately constant force, start with 50% of PWM duty cycle. The intake throttle is designed to go with the same force in both directions.
-    static signed long sl_K_P = 1500; // 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
+    static signed long sl_K_P = 1000; // 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
     static signed long sl_K_I = 3; // 0.003 -> Small because it integrates.
-    static signed long sl_K_D = 20000; // 20.0. If the error increases, you need to add power.
+    static signed long sl_K_D = 0; // 20.0 to 200.0. If the error increases, you need to add power.
     static signed long slIntegral = 0; // Usually in the range of 1e5 - 1e6
     signed long slDerivative;
     signed long sl_motor_pwm_duty = 0;
     static signed long  slErrorPos = 0; // Start as 0, then update every cycle.
-    static signed long slLastErrorPos = 0;
+//    static signed long slLastErrorPos = 0;
+    static signed long slLastTPSPerc = 0;
     
-    Nop();
+    // Standard constants: K = 50 (%), K_P = 1.5, K_D = 20, K_I = 3
     
-    // Only let the motor move if CAN beat flag is OK. - TODO MOVE THESE CONDITIONALS TO THE MAIN.C FILE?
-    /// MAIN CALCULATION
-
-    slErrorPos = sl_target_perc - ucTPS_perc;  // in % or what units? TODO RJM ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212)
+    // Position error:
+    slErrorPos = sl_target_perc - ucTPSPerc;  // in % or what units? TODO RJM ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212)
     
-    slIntegral += slErrorPos;
-
-    slDerivative = slErrorPos - slLastErrorPos;
-
-    // Bound the values of slIntegral - TODO bounds to PARAMETERS.h, or remove if not needed.
-//        if (slIntegral > (1<<20)){
-//            slIntegral = 1<<20;
-//        } else if (slIntegral < -32768){
-//            slIntegral = 0;
-//        }
-
-    sl_motor_pwm_duty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative; // TODO complete
+    // Integral Error. Cap the values of the integral to avoid windup: https://en.wikipedia.org/wiki/Integral_windup, https://www.mstarlabs.com/apeng/techniques/pidsoftw.html
+    if ((slIntegral > -1e4) && (slIntegral < 1e4)){
+        slIntegral += slErrorPos;
+    }
+    
+    // Derivative Error. Only make it work when descending? I don't feel like it does anything.
+    if (ucTPSPerc < slLastTPSPerc){
+        slDerivative = slLastTPSPerc - ucTPSPerc; // Behaves like friction. Ignores the input.
+    }
+    slLastTPSPerc = ucTPSPerc; // For next iteration
+    
+    sl_motor_pwm_duty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
     Nop();
     sl_motor_pwm_duty /= 1024; // 1024 ~= 1000. Do it because the constants are long, not floats
-
 
     // Crop between 0 and 100. It's a duty cycle.
     if (sl_motor_pwm_duty < 0) {
@@ -346,31 +344,28 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
         sl_motor_pwm_duty = 100;
     }
 
-    Nop();
-
-    GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
-    slLastErrorPos = slErrorPos;
-
-    // MAIN MOVEMENT - DEPENDS ON ASMode - TODO remove conditionals to make it faster?
-//        if ( ucMode == ucASMode ) {
-//            if ( ucASMode == ASMode ) {
-//                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
-//                GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
-//            }
-//            else if ( ucASMode == ManualMode ) {
-//                //ETCMove(sl_motor_pwm_duty, ASMode); // TODO UNCOMMENT AND MAKE IT WORK
-////                ETCMove(sl_motor_pwm_duty, ManualMode);
-//                GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
-//            }
-//            else {
-//                // ERROR: Wrong value
-//            }
-//        } else {
-//            // ERROR: Movement prevented by driving mode
-//        }
-//        
-//         // Set error as last error for next iteration
-    slLastErrorPos = slErrorPos;
+    // APPLY THE DUTY CYCLE TO THE MOTOR - Variable checks.
+    // Only let the motor move if CAN beat flag is OK
+    // TODO Consider doing this externally, and giving a value to PID function depending on state. PID just moves to target position. Otherwise we need several target positions into the function.
+    if ( ucETCFlagSupervisor == TRUE ) { // OK no errors...
+        if ( ucMode == ucASMode ) { // The mode sent to the PID function and the global variable agree
+            if (ucASMode == ASMode){
+                // Drive with autonomous value
+                //GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+            } else if (ucASMode == ManualMode){
+                GPIO_PWM2_Control(sl_motor_pwm_duty, 300);
+            } else {
+                // ERROR. Wrong value of ucASMode
+            }
+        } else {
+            // ERROR. Movement prevented by driving mode
+        }
+        
+        
+        
+    } else {
+        GPIO_PWM2_Control(0, 300);
+    }
 }
 
 unsigned char perc_of(signed long val, signed long min, signed long max) {

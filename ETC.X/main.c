@@ -69,7 +69,8 @@ void main(void)
     APPSReadmax();
     
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
-
+    CANDisableErrorInterrupt();
+    
     // To disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
     

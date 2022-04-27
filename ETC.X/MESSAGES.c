@@ -189,3 +189,9 @@ void CANReadMessage (void)
         }
     }
 }
+
+
+void CANDisableErrorInterrupt (void)
+{
+    PIE0bits.CANIE = 0;
+}

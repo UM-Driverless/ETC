@@ -191,7 +191,15 @@ void CANReadMessage (void)
 }
 
 
-void CANDisableErrorInterrupt (void)
+void CANDisableErrorInterrupt (unsigned char ucInterruptSet)
 {
-    PIE0bits.CANIE = 0;
+    if (ucInterruptSet == ENABLE)
+    {
+        PIE0bits.CANIE = 1;
+    }
+    else if (ucInterruptSet == DISABLE)
+    {
+        PIE0bits.CANIE = 0;
+    }
+    
 }

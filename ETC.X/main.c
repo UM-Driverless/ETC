@@ -47,7 +47,7 @@
 #include "GPIO.h"
 #include "ETC.h"
 #include "ANALOG.h"
-
+#include "PARAMETERS.h"
 /*
                          Main application
  */
@@ -69,7 +69,7 @@ void main(void)
     APPSReadmax();
     
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
-    CANDisableErrorInterrupt();
+    CANDisableErrorInterrupt(DISABLE);
     
     // To disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();

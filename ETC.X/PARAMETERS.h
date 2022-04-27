@@ -15,6 +15,9 @@ extern "C" {
 #define FALSE   0x00
 #define TRUE    0x01
     
+#define DISABLE   0x00
+#define ENABLE    0x01
+    
 //PARAMETROS CONSTANTES    
 #define TPSMARGEN 100
 #define APPSMARGEN 100

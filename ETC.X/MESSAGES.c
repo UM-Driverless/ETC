@@ -183,3 +183,14 @@ void CANReadMessage(void) {
         }
     }
 }
+
+void CANSetErrorInterrupt(unsigned char ucEnable){
+    /*
+     Enables (1) or Disables (0) the CAN ERROR Interrupts.
+    */
+    if (ucEnable == 0){
+        PIE0bits.CANIE = 0;
+    } else if (ucEnable == 1){
+        PIE0bits.CANIE = 1;
+    }
+}

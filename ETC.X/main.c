@@ -47,6 +47,7 @@
 #include "GPIO.h"
 #include "ETC.h"
 #include "ANALOG.h"
+#include "PARAMETERS.h"
 
 /*
     Main application
@@ -63,7 +64,10 @@ void main(void) {
     apps_calibrate();
     ClutchCalibrate();
     
+    // Interrupts
     INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
+    
+    CANSetErrorInterrupt(0); // 1 Enable, 0 Disable
 
     // To disable the global interrupts:
     // INTERRUPT_GlobalInterruptDisable();
@@ -88,10 +92,3 @@ void main(void) {
 // TODO - Make local any variables that don't need to be global. Local variables in main such as uiAPPS1_pushed_mv, and pass by reference, instead of global. Easy code flow analysis
 // TODO - Description for every single variable
 // TODO - FIX Function that creates PWM so it works with any frequency, and test 30kHz frequencies to remove audible noise.
-
-/*
- What are the frequency limits of the ET Motor driver? Note in a comment
- 
- 
- 
- */

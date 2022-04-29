@@ -192,9 +192,9 @@ void etc_calibrate(void) {
     Nop();
     
     // Calibration sound
-    GPIO_PWM2_Control(50, 400);
+    GPIO_PWM2_Control(20, 400);
     __delay_ms(200);
-    GPIO_PWM2_Control(50, 600);
+    GPIO_PWM2_Control(20, 600);
     __delay_ms(200);
     
     // Turn off after calibration

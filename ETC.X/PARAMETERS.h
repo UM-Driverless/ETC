@@ -14,7 +14,7 @@ extern "C" {
 
 #define FALSE   0x00
 #define TRUE    0x01
-    
+
 // PARAMETROS CONSTANTES    
 #define TPSMARGEN_MV 20
 #define APPSMARGEN_MV 100

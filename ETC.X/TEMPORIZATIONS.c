@@ -12,14 +12,7 @@
 #include "MESSAGES.h"
 #include "ETC.h"
 #include "PARAMETERS.h"
-
-//VARIABLES
-unsigned char ucCount500ms;
-unsigned char ucCount1s;
-unsigned char ucCount10s;
-unsigned int uiCount30s;
-unsigned int uiCount1min;
-
+#include "global.h" // It declares here the global variables from global.c
 
 //FUNCIONES
 void TEMPORIZATION_10ms(void)
@@ -54,7 +47,7 @@ void TEMPORIZATION_500ms(void)
 void TEMPORIZATION_1s(void)
 {
     //LED_Toggle();
-    //CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
+    //CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, uiCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
 }
 
 void TEMPORIZATION_10s(void)

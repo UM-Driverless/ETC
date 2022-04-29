@@ -11,13 +11,7 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "../ETC.X/PARAMETERS.h"
 #include "CLUTCH.h"
-
-
-// VARIABLES
-unsigned char ucCLUTCHlmin;
-unsigned char ucCLUTCHlmax;
-unsigned char ucCLUTCHDuty;
-unsigned char ucCLUTCHState;
+#include "global.h" // It declares here the global variables from global.c
 
 // FUNCTIONS
 void GPIOInit(void)
@@ -84,7 +78,7 @@ void GPIO_INT2_desembragar(void)
     //SI ESTÁ SELECCIONAR EL VALOR DE DUTY QUE LE HEMOS APLICADO COMO EL MÁXIMO
     if ( FinCarrera2_GetValue() == TRUE )
     {
-        ucCLUTCHlmax = ucCLUTCHDuty;
-        ucCLUTCHState = CLUTCH_DISENGAGE;
+        uiCLUTCHlmax = uiCLUTCHDuty;
+        uiCLUTCHState = CLUTCH_DISENGAGE;
     }
 }

@@ -10,48 +10,8 @@
 #include "ETC.h"
 #include "CLUTCH.h"
 #include "PARAMETERS.h"
-#include "ETC.h"
+#include "global.h" // It declares here the global variables from global.c
 
-// VARIABLES
-uint8_t CANDATAdata[8];
-
-// TRAJECTORY_ACT
-unsigned char ucTargetAccelerator;
-unsigned char ucTargetClutch;
-unsigned char ucTargetBrake;
-unsigned char ucTargetDirection;
-unsigned char ucTargetGear;
-// DV_SYSTEM_STATUS
-unsigned char ucAS_state;
-unsigned char ucEBS_state;
-unsigned char ucAMI_state;
-unsigned char ucSteering_state;
-unsigned char ucService_brake;
-unsigned char ucLap_counter;
-unsigned char ucCones_count_actual;
-unsigned int uiCones_count_all;
-// DV_DRIVING_DYNAMICS_1
-unsigned char ucSpeed_actual;
-unsigned char ucSpeed_target;
-unsigned char ucSteering_angle_actual;
-unsigned char ucSteering_angle_target;
-unsigned char ucBrake_hydr_actual;
-unsigned char ucBrake_hydr_target;
-unsigned char ucMotor_moment_actual;
-unsigned char ucMotor_moment_target;
-// DV_DRIVING_DYNAMICS_2
-unsigned int uiAcc_longitudinal;
-unsigned int uiAcc_lateral;
-unsigned int uiYaw_rate;
-// ASB_STATE
-unsigned char ucASBState;
-unsigned char ucASRequesState;
-// PMC STATE - Autonomous vs Manual according to the PMC
-unsigned char ucASMode; // Declare a local instance of the already-declared header variable, saving space for it. Each file that declares it gets an instance.
-// STEERING WHEEL
-unsigned char ucSTEER_WH_Clutch;
-
-//FUNCIONES
 void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8) {
     CANDATAdata [0] = uc_data1;
     CANDATAdata [1] = uc_data2;
@@ -93,7 +53,6 @@ void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned 
         Nop();
     }
 }
-
 
 
 void CANReadMessage(void) {

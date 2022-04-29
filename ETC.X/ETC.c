@@ -18,45 +18,7 @@
 #include "GPIO.h"
 #include "PARAMETERS.h"
 #include "ANALOG.h"
-
-/// Global Variables
-
-// APPS Variables - Defaults, real-time values, states
-unsigned int uiAPPS1_default_mv; // int -> 16 bit in MPLAB, PIC18. short = int here.
-unsigned int uiAPPS2_default_mv;
-unsigned int uiAPPS1_pushed_mv;
-unsigned int uiAPPS2_pushed_mv;
-
-unsigned int uiAPPS1_mv; // Sent by CAN
-unsigned int uiAPPS2_mv; // Sent by CAN
-unsigned char ucAPPS1_perc;
-unsigned char ucAPPS2_perc;
-unsigned char ucAPPS_perc;
-
-unsigned char ucAPPS_STATE;
-unsigned char ucAPPSManual;
-
-// TPS Variables - Defaults, real-time values, states
-unsigned int uiTPS1_default_mv;
-unsigned int uiTPS2_default_mv;
-unsigned int uiTPS1_opened_mv;
-unsigned int uiTPS2_opened_mv;
-
-unsigned int uiTPS1_mv; // Global because it depends on interruptions. (TEMPORIZATIONS.c)
-unsigned int uiTPS2_mv;
-unsigned char ucTPS1_perc;
-unsigned char ucTPS2_perc;
-unsigned char ucTPSPerc;
-
-unsigned char ucTPS_STATE;
-unsigned char ucTPS1_STATE;
-unsigned char ucTPS2_STATE;
-unsigned char ucTPS_Volts_STATE;
-unsigned int uiETCDuty;
-unsigned char ucETB_STATE;
-unsigned char ucETCBeatSupervisor = FALSE;
-unsigned char ucETCFlagSupervisor = FALSE;
-
+#include "global.h" // It declares here the global variables from global.c
 
 /// APPS functions
 // We don't use

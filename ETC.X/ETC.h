@@ -25,46 +25,6 @@ extern "C" {
 // inversion de voltaje
 #define QUITAR_ERROR_VOLTS                      0xFB       
     
-    
-/// Global Variables
-
-// APPS Variables - Defaults, real-time values, states
-extern unsigned int uiAPPS1_default_mv;
-extern unsigned int uiAPPS2_default_mv;
-extern unsigned int uiAPPS1_pushed_mv;
-extern unsigned int uiAPPS2_pushed_mv;
-
-extern unsigned int uiAPPS1_mv;
-extern unsigned int uiAPPS2_mv;
-extern unsigned char ucAPPS1_perc;
-extern unsigned char ucAPPS2_perc;
-extern unsigned char ucAPPS_perc;
-
-extern unsigned char ucAPPS_STATE;
-extern unsigned char ucAPPSManual;
-
-// TPS Variables - Defaults, real-time values, states
-extern unsigned int uiTPS1_default_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS1_opened_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS2_default_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS2_opened_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-
-extern unsigned int uiTPS1_mv; // Sent by CAN, used by ANALOG.c for ANALOG_GetVoltage, called by interruption in TEMPORIZATIONS.c
-extern unsigned int uiTPS2_mv; // Sent by CAN
-extern unsigned char ucTPS1_perc;
-extern unsigned char ucTPS2_perc;
-extern unsigned char ucTPSPerc;
-
-extern unsigned int uiETCDuty;
-extern unsigned char ucTPS_STATE;
-extern unsigned char ucTPS1_STATE;
-extern unsigned char ucTPS2_STATE;
-extern unsigned char ucTPS_Volts_STATE;
-extern unsigned char ucETB_STATE;
-extern unsigned char ucETCBeatSupervisor;
-extern unsigned char ucETCFlagSupervisor;
-
-
 // APPS functions
 void APPSSend (unsigned char ucPercent);
 void apps_calibrate(void);

@@ -11,11 +11,7 @@
 #include "GPIO.h"
 #include "MESSAGES.h"
 #include "ETC.h"
-
-unsigned char ucCLUTCHlmin;
-unsigned char ucCLUTCHlmax;
-unsigned int uiCLUTCHDuty;
-unsigned char ucCLUTCHState;
+#include "global.h" // It declares here the global variables from global.c
 
 void ClutchCalibrate(void){
     /* Move clutch to the initial position, then 
@@ -24,7 +20,7 @@ void ClutchCalibrate(void){
     
     // Clutch to initial position
     GPIO_PWM1_Control( 0, 50 ); // Position signal to the clutch servo
-    ucCLUTCHState = CLUTCH_NONE;
+    uiCLUTCHState = CLUTCH_NONE;
         
     //APPSMODE_SetHigh();
     //APPSSend(0);
@@ -32,7 +28,7 @@ void ClutchCalibrate(void){
     CLUTCH_Move(0, ASMode);
     
     CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == CLUTCH_ENGAGE ) // CLUTCH_AnalyseState() defines ucCLUTCHState
+    if ( uiCLUTCHState == CLUTCH_ENGAGE ) // CLUTCH_AnalyseState() defines uiCLUTCHState
     {
         CLUTCH_Move(30, ASMode);
         __delay_ms(200);
@@ -41,7 +37,7 @@ void ClutchCalibrate(void){
     }
     
     CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == CLUTCH_INTRAVEL )
+    if ( uiCLUTCHState == CLUTCH_INTRAVEL )
     {
         //__delay_ms(200);
         CLUTCH_Move(70, ASMode);
@@ -51,7 +47,7 @@ void ClutchCalibrate(void){
     }
     
     CLUTCH_AnalyseState();
-    if ( ucCLUTCHState == CLUTCH_DISENGAGE )
+    if ( uiCLUTCHState == CLUTCH_DISENGAGE )
     {
         //__delay_ms(200);
         CLUTCH_Move(0, ASMode);
@@ -64,7 +60,7 @@ void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
     if ( ucETCFlagSupervisor == TRUE )
     {
         //CUANDO TENGAMOS LA IN1, ESTA COMPLETAMENTE EMBRAGADO, METER ESTADOS EMBRAGUE
-        //ucCLUTCHState
+        //uiCLUTCHState
         //ANALIZAR SI SE PUEDE MOVER HASTA EL RANGO MAX LEIDO POR LA INT2
         //HACER CONVERSION DE 0-100% A 2-12 DUTY
         uiCLUTCHDuty = slTargetMove * 60;
@@ -74,7 +70,7 @@ void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
         if ( ucMode == ucASMode ) 
         {
             //proteccion frente a corrupcion de datos
-            /*if ( uiCLUTCHDuty <= ucCLUTCHlmax )
+            /*if ( uiCLUTCHDuty <= uiCLUTCHlmax )
             {
                 if ( ( uiCLUTCHDuty > 0 ) && ( uiCLUTCHDuty < 12 ) ) //0-180º con 50Hz
                 {
@@ -86,7 +82,7 @@ void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode)
                 //generar error de rango
             }*/
             //proteccion frente a posicion fisica erronea del embrague
-            if ( ucCLUTCHState < CLUTCH_ERROR )
+            if ( uiCLUTCHState < CLUTCH_ERROR )
             {
                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
             }
@@ -116,24 +112,24 @@ void CLUTCH_AnalyseState(void)
     
     if ( ( ucFDC1 == TRUE ) &&  ( ucFDC2 == FALSE ) ) //EMBRAGADO
     {
-        ucCLUTCHState = CLUTCH_ENGAGE;
-        ucCLUTCHlmin = ucCLUTCHDuty;
+        uiCLUTCHState = CLUTCH_ENGAGE;
+        uiCLUTCHlmin = uiCLUTCHDuty;
     }
     else if ( ( ucFDC1 == FALSE ) &&  ( ucFDC2 == TRUE ) ) //DESAMBRAGADO
     {
-        ucCLUTCHState = CLUTCH_DISENGAGE;
-        ucCLUTCHlmax = ucCLUTCHDuty;
+        uiCLUTCHState = CLUTCH_DISENGAGE;
+        uiCLUTCHlmax = uiCLUTCHDuty;
     }
     else if ( ( ucFDC1 == FALSE ) &&  ( ucFDC2 == FALSE ) ) //RECORRIDO
     {
-        ucCLUTCHState = CLUTCH_INTRAVEL;
+        uiCLUTCHState = CLUTCH_INTRAVEL;
     }
     else if ( ( ucFDC1 == TRUE ) &&  ( ucFDC2 == TRUE ) ) //FALSO
     {
-        ucCLUTCHState = CLUTCH_ERROR;
+        uiCLUTCHState = CLUTCH_ERROR;
     }
     else //CORRUPCION DE VARIABLES
     {
-        ucCLUTCHState = CLUTCH_CORRUPT;
+        uiCLUTCHState = CLUTCH_CORRUPT;
     }
 }

@@ -51,6 +51,7 @@
 #include <xc.h>
 #include "tmr0.h"
 #include "../TEMPORIZATIONS.h"
+#include "../global.h" // It declares here the global variables from global.c
 
 
 /**

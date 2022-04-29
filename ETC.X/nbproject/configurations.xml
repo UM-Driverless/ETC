@@ -35,6 +35,7 @@
       <itemPath>TEMPORIZATIONS.h</itemPath>
       <itemPath>ETC.h</itemPath>
       <itemPath>ANALOG.h</itemPath>
+      <itemPath>global.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -73,7 +74,6 @@
       <itemPath>MESSAGES.C</itemPath>
       <itemPath>CLUTCH.c</itemPath>
       <itemPath>GPIO.c</itemPath>
-      <itemPath>PARAMETERS.c</itemPath>
       <itemPath>TEMPORIZATIONS.c</itemPath>
       <itemPath>ETC.c</itemPath>
       <itemPath>ANALOG.c</itemPath>
@@ -240,6 +240,13 @@
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
+        <property key="tracecontrol.include.timestamp" value="summarydataenabled"/>
+        <property key="tracecontrol.select" value="0"/>
+        <property key="tracecontrol.stallontracebufferfull" value="false"/>
+        <property key="tracecontrol.timestamp" value="0"/>
+        <property key="tracecontrol.tracebufmax" value="546000"/>
+        <property key="tracecontrol.tracefile" value="defmplabxtrace.log"/>
+        <property key="tracecontrol.traceresetonrun" value="false"/>
         <property key="uart0io.output" value="window"/>
         <property key="uart0io.outputfile" value=""/>
         <property key="uart0io.uartioenabled" value="false"/>

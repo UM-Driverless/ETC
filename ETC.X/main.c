@@ -48,10 +48,9 @@
 #include "ETC.h"
 #include "ANALOG.h"
 #include "PARAMETERS.h"
+#include "global.h" // It declares here the global variables from global.c
 
-/*
-    Main application
- */
+
 void main(void) {
     // Initialize the device - MCC Pins and configurations, still interrupts not Enabled.
     SYSTEM_Initialize();

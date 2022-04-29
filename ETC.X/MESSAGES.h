@@ -14,48 +14,10 @@ extern "C" {
 
 #include "mcc_generated_files/mcc.h"
 #define CAN_TX_BUFF  "BUFFERCAN"
- 
+
 CAN_MSG_OBJ msgTransmit;
 CAN_MSG_OBJ msgReceipt;
 uint8_t CANDATAdata[8];
-
-// VARIABLES
-extern unsigned char CANDATAdata[8];
-// TRAJECTORY_ACT
-extern unsigned char ucTargetAccelerator;
-extern unsigned char ucTargetClutch;
-extern unsigned char ucTargetBrake;
-extern unsigned char ucTargetDirection;
-extern unsigned char ucTargetGear;
-// DV_SYSTEM_STATUS
-extern unsigned char ucAS_state;
-extern unsigned char ucEBS_state;
-extern unsigned char ucAMI_state;
-extern unsigned char ucSteering_state;
-extern unsigned char ucService_brake;
-extern unsigned char ucLap_counter;
-extern unsigned char ucCones_count_actual;
-extern unsigned char ucCones_count_all;
-// DV_DRIVING_DYNAMICS_1
-extern unsigned char ucSpeed_actual;
-extern unsigned char ucSpeed_target;
-extern unsigned char ucSteering_angle_actual;
-extern unsigned char ucSteering_angle_target;
-extern unsigned char ucBrake_hydr_actual;
-extern unsigned char ucBrake_hydr_target;
-extern unsigned char ucMotor_moment_actual;
-extern unsigned char ucMotor_moment_target;
-// DV_DRIVING_DYNAMICS_2
-extern unsigned int uiAcc_longitudinal;
-extern unsigned int uiAcc_lateral;
-extern unsigned int uiYaw_rate;
-// ASB_STATE
-extern unsigned char ucASBState;
-extern unsigned char ucASRequesState;
-// PMC STATE
-extern unsigned char ucASMode; // Declare variable - Introduce the variable into the symbol table, still has to be defined in the .c file.
-// STEERING WHEEL
-extern unsigned char ucSTEER_WH_Clutch;
 
 // DEFINITIONS
 #define DataLength_0        			0
@@ -91,7 +53,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 
 void CANWriteMessage(unsigned long ul_id, unsigned char uc_dataLength, unsigned char uc_data1, unsigned char uc_data2, unsigned char uc_data3, unsigned char uc_data4, unsigned char uc_data5, unsigned char uc_data6, unsigned char uc_data7, unsigned char uc_data8);
 void CANReadMessage(void);
-void CANSetErrorInterrupt(void);
+void CANSetErrorInterrupt(unsigned char ucEnable);
 
 #ifdef	__cplusplus
 }

@@ -8,6 +8,7 @@
 #include "ANALOG.h"
 #include "ETC.h"
 #include "mcc_generated_files/adc.h"
+#include "global.h" // It declares here the global variables from global.c
 
 
 //**********ANALOG_GetVoltage***********//

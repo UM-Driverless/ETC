@@ -18,14 +18,6 @@ extern "C" {
 #define t10s   100       
 #define t30s   300       
 #define t1min  600 
-    
-//VARIABLES
-extern unsigned char ucCount500ms;
-extern unsigned char ucCount1s;
-extern unsigned char ucCount10s;
-extern unsigned int uiCount30s;
-extern unsigned int uiCount1min;
-
 
 //FUNCIONES
 void TEMPORIZATION_10ms(void);

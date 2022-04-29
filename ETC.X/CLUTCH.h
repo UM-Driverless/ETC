@@ -20,11 +20,6 @@ extern "C" {
 #define CLUTCH_ERROR       4
 #define CLUTCH_CORRUPT     5
 
-extern unsigned char ucCLUTCHlmin;
-extern unsigned char ucCLUTCHlmax;    
-extern unsigned char ucCLUTCHDuty;
-extern unsigned char ucCLUTCHState;
-
 void ClutchCalibrate(void);
 void CLUTCH_Move (signed long slTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState(void);

@@ -54,19 +54,42 @@ void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
 //uiDutyCycle 0 - 100% 
 // Servos go a 50Hz DC:2-12% GPIO_PWM1_Control(12, 50);
 //uiFreq Hz
-void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
-{
-    unsigned int uiConvertedPeriod;
-    unsigned int uiConvertedDC; // Max 65536, want freq of 30000
+void GPIO_PWM2_Control(unsigned int uiDutyCyclePerc, unsigned int uiFreq) {
+    /*
+     * Creates a PWM signal according to the input duty cycle as a percentage from 0 to 100, and the input frequency.
+     * 
+     * It uses the functions declared in pwm2_16bit.h
+     * 
+     * The PWM frequency is set with interruptions that work on a "base frequency", now set at 10kHz.
+     * Therefore, the PWM frequeny can be between almost 0 and 10kHz.
+     * 
+     * Mode: Left aligned, Freq: 10kHz, 7 bits of resolution, no prescale, 
+     * 
+     * Some sources say a frequency between 3000 and 6000 Hz is the most quiet. TODO try it: 100Hz, 1kHz, 2kHz, 3kHz, 30kHz.
+     * https://electrosome.com/pwm-pic-microcontroller-hi-tech-c/
+     * https://ww1.microchip.com/downloads/en/DeviceDoc/dsPIC33-PIC24-FRM-High-Resolution-PWM-with-Fine-Edge-Placement-70005320b.pdf
+     * 
+     * 
+     */
     
-    // Conversions
-    uiConvertedDC = 400 / (unsigned long)(uiFreq) * (unsigned long)(uiDutyCycle);
-    PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiConvertedDC);
+    //Protection of inputs
+    if (uiDutyCyclePerc > 100) uiDutyCyclePerc = 100;
+    if (uiFreq > 10000) uiFreq = 10000;
     
-    uiConvertedPeriod = 39241/(unsigned long)(uiFreq) - 1.1508;
-    PWM2_16BIT_WritePeriodRegister(uiConvertedPeriod);
+    // Calculations
+    unsigned int uiTotalPeriod; // static for speed.
+    unsigned int uiActivePeriod; 
     
-    // Functions
+    uiTotalPeriod = 10000 / (uiFreq); // PWM2PR = crystal_freq / (desired_pwm_freq * prescale) = wanted_period / crystal_period = how many crystal periods I want for a PWM period
+    uiActivePeriod = (uiTotalPeriod * uiDutyCyclePerc) / 100;
+    
+    // Configure the total PWM2_16BIT period
+    PWM2_16BIT_WritePeriodRegister(uiTotalPeriod);
+    
+    // Configure the active period of the PWM, the duty cycle
+    PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiActivePeriod);
+    
+    // Load period or duty cycle registers on the next period event
     PWM2_16BIT_LoadBufferRegisters();
 }
 

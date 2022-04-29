@@ -84,6 +84,7 @@
                    projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>MyConfig.mc3</itemPath>
+      <itemPath>ETC.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

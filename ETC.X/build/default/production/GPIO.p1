@@ -38,12 +38,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "148
 [; ;./mcc_generated_files/pwm1_16bit.h: 148: void PWM1_16BIT_LoadBufferRegisters(void);
 [v _PWM1_16BIT_LoadBufferRegisters `(v ~T0 @X0 0 ef ]
-"114 ./mcc_generated_files/pwm2_16bit.h
-[; ;./mcc_generated_files/pwm2_16bit.h: 114: void PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uint16_t value);
-[v _PWM2_16BIT_SetSlice1Output1DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
-"96
+"96 ./mcc_generated_files/pwm2_16bit.h
 [; ;./mcc_generated_files/pwm2_16bit.h: 96: void PWM2_16BIT_WritePeriodRegister(uint16_t periodCount);
 [v _PWM2_16BIT_WritePeriodRegister `(v ~T0 @X0 0 ef1`us ]
+"114
+[; ;./mcc_generated_files/pwm2_16bit.h: 114: void PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uint16_t value);
+[v _PWM2_16BIT_SetSlice1Output1DutyCycleRegister `(v ~T0 @X0 0 ef1`us ]
 "148
 [; ;./mcc_generated_files/pwm2_16bit.h: 148: void PWM2_16BIT_LoadBufferRegisters(void);
 [v _PWM2_16BIT_LoadBufferRegisters `(v ~T0 @X0 0 ef ]
@@ -3706,69 +3706,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 3201 ]
 }
 "57
-[; ;GPIO.c: 57: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
+[; ;GPIO.c: 57: void GPIO_PWM2_Control(unsigned int uiDutyCyclePerc, unsigned int uiFreq) {
 [v _GPIO_PWM2_Control `(v ~T0 @X0 1 ef2`ui`ui ]
-"58
-[; ;GPIO.c: 58: {
 {
 [e :U _GPIO_PWM2_Control ]
-"57
-[; ;GPIO.c: 57: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
-[v _uiDutyCycle `ui ~T0 @X0 1 r1 ]
+[v _uiDutyCyclePerc `ui ~T0 @X0 1 r1 ]
 [v _uiFreq `ui ~T0 @X0 1 r2 ]
-"58
-[; ;GPIO.c: 58: {
 [f ]
-"59
-[; ;GPIO.c: 59:     unsigned int uiConvertedPeriod;
-[v _uiConvertedPeriod `ui ~T0 @X0 1 a ]
-"60
-[; ;GPIO.c: 60:     unsigned int uiConvertedDC;
-[v _uiConvertedDC `ui ~T0 @X0 1 a ]
-"63
-[; ;GPIO.c: 63:     uiConvertedDC = 400 / (unsigned long)(uiFreq) * (unsigned long)(uiDutyCycle);
-[e = _uiConvertedDC -> * / -> -> -> 400 `i `l `ul -> _uiFreq `ul -> _uiDutyCycle `ul `ui ]
-"64
-[; ;GPIO.c: 64:     PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiConvertedDC);
-[e ( _PWM2_16BIT_SetSlice1Output1DutyCycleRegister (1 -> _uiConvertedDC `us ]
-"66
-[; ;GPIO.c: 66:     uiConvertedPeriod = 39241/(unsigned long)(uiFreq) - 1.1508;
-[e = _uiConvertedPeriod -> - -> / -> -> 39241 `l `ul -> _uiFreq `ul `d .1.1508 `ui ]
-"67
-[; ;GPIO.c: 67:     PWM2_16BIT_WritePeriodRegister(uiConvertedPeriod);
-[e ( _PWM2_16BIT_WritePeriodRegister (1 -> _uiConvertedPeriod `us ]
-"70
-[; ;GPIO.c: 70:     PWM2_16BIT_LoadBufferRegisters();
+"76
+[; ;GPIO.c: 76:     if (uiDutyCyclePerc > 100) uiDutyCyclePerc = 100;
+[e $ ! > _uiDutyCyclePerc -> -> 100 `i `ui 3203  ]
+[e = _uiDutyCyclePerc -> -> 100 `i `ui ]
+[e :U 3203 ]
+"77
+[; ;GPIO.c: 77:     if (uiFreq > 10000) uiFreq = 10000;
+[e $ ! > _uiFreq -> -> 10000 `i `ui 3204  ]
+[e = _uiFreq -> -> 10000 `i `ui ]
+[e :U 3204 ]
+"80
+[; ;GPIO.c: 80:     unsigned int uiTotalPeriod;
+[v _uiTotalPeriod `ui ~T0 @X0 1 a ]
+"81
+[; ;GPIO.c: 81:     unsigned int uiActivePeriod;
+[v _uiActivePeriod `ui ~T0 @X0 1 a ]
+"83
+[; ;GPIO.c: 83:     uiTotalPeriod = 10000 / (uiFreq);
+[e = _uiTotalPeriod / -> -> 10000 `i `ui _uiFreq ]
+"84
+[; ;GPIO.c: 84:     uiActivePeriod = (uiTotalPeriod * uiDutyCyclePerc) / 100;
+[e = _uiActivePeriod / * _uiTotalPeriod _uiDutyCyclePerc -> -> 100 `i `ui ]
+"87
+[; ;GPIO.c: 87:     PWM2_16BIT_WritePeriodRegister(uiTotalPeriod);
+[e ( _PWM2_16BIT_WritePeriodRegister (1 -> _uiTotalPeriod `us ]
+"90
+[; ;GPIO.c: 90:     PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiActivePeriod);
+[e ( _PWM2_16BIT_SetSlice1Output1DutyCycleRegister (1 -> _uiActivePeriod `us ]
+"93
+[; ;GPIO.c: 93:     PWM2_16BIT_LoadBufferRegisters();
 [e ( _PWM2_16BIT_LoadBufferRegisters ..  ]
-"71
-[; ;GPIO.c: 71: }
+"94
+[; ;GPIO.c: 94: }
 [e :UE 3202 ]
 }
-"75
-[; ;GPIO.c: 75: void GPIO_INT2_desembragar(void)
+"98
+[; ;GPIO.c: 98: void GPIO_INT2_desembragar(void)
 [v _GPIO_INT2_desembragar `(v ~T0 @X0 1 ef ]
-"76
-[; ;GPIO.c: 76: {
+"99
+[; ;GPIO.c: 99: {
 {
 [e :U _GPIO_INT2_desembragar ]
 [f ]
-"79
-[; ;GPIO.c: 79:     if ( PORTAbits.RA1 == 0x01 )
-[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 3204  ]
-"80
-[; ;GPIO.c: 80:     {
+"102
+[; ;GPIO.c: 102:     if ( PORTAbits.RA1 == 0x01 )
+[e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 3206  ]
+"103
+[; ;GPIO.c: 103:     {
 {
-"81
-[; ;GPIO.c: 81:         uiCLUTCHlmax = uiCLUTCHDuty;
+"104
+[; ;GPIO.c: 104:         uiCLUTCHlmax = uiCLUTCHDuty;
 [e = _uiCLUTCHlmax _uiCLUTCHDuty ]
-"82
-[; ;GPIO.c: 82:         uiCLUTCHState = 2;
+"105
+[; ;GPIO.c: 105:         uiCLUTCHState = 2;
 [e = _uiCLUTCHState -> -> 2 `i `ui ]
-"83
-[; ;GPIO.c: 83:     }
+"106
+[; ;GPIO.c: 106:     }
 }
-[e :U 3204 ]
-"84
-[; ;GPIO.c: 84: }
-[e :UE 3203 ]
+[e :U 3206 ]
+"107
+[; ;GPIO.c: 107: }
+[e :UE 3205 ]
 }

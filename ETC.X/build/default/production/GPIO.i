@@ -37790,17 +37790,23 @@ void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
 
 
 
-void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
-{
-    unsigned int uiConvertedPeriod;
-    unsigned int uiConvertedDC;
+void GPIO_PWM2_Control(unsigned int uiDutyCyclePerc, unsigned int uiFreq) {
+# 76 "GPIO.c"
+    if (uiDutyCyclePerc > 100) uiDutyCyclePerc = 100;
+    if (uiFreq > 10000) uiFreq = 10000;
 
 
-    uiConvertedDC = 400 / (unsigned long)(uiFreq) * (unsigned long)(uiDutyCycle);
-    PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiConvertedDC);
+    unsigned int uiTotalPeriod;
+    unsigned int uiActivePeriod;
 
-    uiConvertedPeriod = 39241/(unsigned long)(uiFreq) - 1.1508;
-    PWM2_16BIT_WritePeriodRegister(uiConvertedPeriod);
+    uiTotalPeriod = 10000 / (uiFreq);
+    uiActivePeriod = (uiTotalPeriod * uiDutyCyclePerc) / 100;
+
+
+    PWM2_16BIT_WritePeriodRegister(uiTotalPeriod);
+
+
+    PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiActivePeriod);
 
 
     PWM2_16BIT_LoadBufferRegisters();

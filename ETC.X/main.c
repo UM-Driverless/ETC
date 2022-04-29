@@ -79,7 +79,6 @@ void main(void) {
         /// Play sound of some value - uiAPPS1_mv uiAPPS2_mv ucAPPS1_perc ucAPPS2_perc ucAPPS_perc
 //        GPIO_PWM2_Control(10, 100*ucAPPS1_perc); // Play as frequency
         
-        
         CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0); //Falta meter los APPS target
     }
 }

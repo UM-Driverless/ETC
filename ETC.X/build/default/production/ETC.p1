@@ -4157,8 +4157,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _ucASMode `i -> 0 `i 3228  ]
 {
 "318
-[; ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 300);
-[e ( _GPIO_PWM2_Control (2 , -> _slMotorPwmDuty `ui -> -> 300 `i `ui ]
+[; ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 600);
+[e ( _GPIO_PWM2_Control (2 , -> _slMotorPwmDuty `ui -> -> 600 `i `ui ]
 "319
 [; ;ETC.c: 319:             } else {
 }
@@ -4187,8 +4187,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 3224 ]
 {
 "329
-[; ;ETC.c: 329:         GPIO_PWM2_Control(0, 300);
-[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
+[; ;ETC.c: 329:         GPIO_PWM2_Control(0, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
 "330
 [; ;ETC.c: 330:     }
 }

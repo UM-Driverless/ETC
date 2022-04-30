@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Fri Apr 29 23:42:21 2022
+                                                                                               Sat Apr 30 16:06:13 2022
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	18F26Q84
@@ -2183,7 +2183,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2159  005D4C  6FDE               	movwf	ETC_PID@ucMode& (0+255),b
   2160  005D4E  EC1F  F018         	call	_ETC_PID	;wreg free
   2161  005D52                     
-  2162                           ;main.c: 83:         CANWriteMessage(0x330, 6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, 
+  2162                           ;main.c: 82:         CANWriteMessage(0x330, 6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, 
       +                          ucTPS2_perc, 0, 0, 0, 0);
   2163  005D52  0E30               	movlw	48
   2164  005D54  0105               	movlb	5	; () banked
@@ -7329,12 +7329,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6697  0032FA                     u7870:
   6698  0032FA                     
   6699                           ; BSR set to: 5
-  6700                           ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 300);
+  6700                           ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 600);
   6701  0032FA  C5EF  F5CD         	movff	ETC_PID@slMotorPwmDuty,GPIO_PWM2_Control@uiDutyCyclePerc
   6702  0032FE  C5F0  F5CE         	movff	ETC_PID@slMotorPwmDuty+1,GPIO_PWM2_Control@uiDutyCyclePerc+1
-  6703  003302  0E01               	movlw	1
+  6703  003302  0E02               	movlw	2
   6704  003304  6FD0               	movwf	(GPIO_PWM2_Control@uiFreq+1)& (0+255),b
-  6705  003306  0E2C               	movlw	44
+  6705  003306  0E58               	movlw	88
   6706  003308  6FCF               	movwf	GPIO_PWM2_Control@uiFreq& (0+255),b
   6707  00330A  EC95  F02C         	call	_GPIO_PWM2_Control	;wreg free
   6708                           
@@ -7348,14 +7348,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   6716  003316                     l9639:
   6717                           
   6718                           ; BSR set to: 5
-  6719                           ;ETC.c: 329:         GPIO_PWM2_Control(0, 300);
+  6719                           ;ETC.c: 329:         GPIO_PWM2_Control(0, 600);
   6720  003316  0E00               	movlw	0
   6721  003318  6FCE               	movwf	(GPIO_PWM2_Control@uiDutyCyclePerc+1)& (0+255),b
   6722  00331A  0E00               	movlw	0
   6723  00331C  6FCD               	movwf	GPIO_PWM2_Control@uiDutyCyclePerc& (0+255),b
-  6724  00331E  0E01               	movlw	1
+  6724  00331E  0E02               	movlw	2
   6725  003320  6FD0               	movwf	(GPIO_PWM2_Control@uiFreq+1)& (0+255),b
-  6726  003322  0E2C               	movlw	44
+  6726  003322  0E58               	movlw	88
   6727  003324  6FCF               	movwf	GPIO_PWM2_Control@uiFreq& (0+255),b
   6728  003326  EC95  F02C         	call	_GPIO_PWM2_Control	;wreg free
   6729  00332A                     l2321:
@@ -15834,12 +15834,12 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  14487  0035D2                     i2u669_40:
  14488  0035D2                     
  14489                           ; BSR set to: 5
- 14490                           ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 300);
+ 14490                           ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 600);
  14491  0035D2  C530  F50E         	movff	i2ETC_PID@slMotorPwmDuty,i2GPIO_PWM2_Control@uiDutyCyclePerc
  14492  0035D6  C531  F50F         	movff	i2ETC_PID@slMotorPwmDuty+1,i2GPIO_PWM2_Control@uiDutyCyclePerc+1
- 14493  0035DA  0E01               	movlw	1
+ 14493  0035DA  0E02               	movlw	2
  14494  0035DC  6E11               	movwf	(i2GPIO_PWM2_Control@uiFreq+1)^(0+1280),c
- 14495  0035DE  0E2C               	movlw	44
+ 14495  0035DE  0E58               	movlw	88
  14496  0035E0  6E10               	movwf	i2GPIO_PWM2_Control@uiFreq^(0+1280),c
  14497  0035E2  EC93  F02D         	call	i2_GPIO_PWM2_Control	;wreg free
  14498                           
@@ -15853,14 +15853,14 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
  14506  0035EE                     i2l8581:
  14507                           
  14508                           ; BSR set to: 5
- 14509                           ;ETC.c: 329:         GPIO_PWM2_Control(0, 300);
+ 14509                           ;ETC.c: 329:         GPIO_PWM2_Control(0, 600);
  14510  0035EE  0E00               	movlw	0
  14511  0035F0  6E0F               	movwf	(i2GPIO_PWM2_Control@uiDutyCyclePerc+1)^(0+1280),c
  14512  0035F2  0E00               	movlw	0
  14513  0035F4  6E0E               	movwf	i2GPIO_PWM2_Control@uiDutyCyclePerc^(0+1280),c
- 14514  0035F6  0E01               	movlw	1
+ 14514  0035F6  0E02               	movlw	2
  14515  0035F8  6E11               	movwf	(i2GPIO_PWM2_Control@uiFreq+1)^(0+1280),c
- 14516  0035FA  0E2C               	movlw	44
+ 14516  0035FA  0E58               	movlw	88
  14517  0035FC  6E10               	movwf	i2GPIO_PWM2_Control@uiFreq^(0+1280),c
  14518  0035FE  EC93  F02D         	call	i2_GPIO_PWM2_Control	;wreg free
  14519  003602                     i2l2321:
@@ -22136,7 +22136,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Fri Apr 29 23:42:21 2022
+Symbol Table                                                                                   Sat Apr 30 16:06:13 2022
 
                                 CANWriteMessage@uc_dataLength 05E0  
                                       __size_of_CAN1_IsBusOff 0016  

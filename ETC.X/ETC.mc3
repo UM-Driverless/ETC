@@ -11352,7 +11352,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomFEXTOSC"/>
-         <value>Oscillator not enabled</value>
+         <value>XT (crystal oscillator) above 100 kHz, below 8 MHz</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="CustomFOSC"/>
@@ -11412,7 +11412,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="pinHiderKey"/>
-         <value>internal</value>
+         <value>osc</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="INTERNAL OSCILLATOR" name="pllMultiplier"/>
@@ -12504,7 +12504,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="CLK_PWM"/>
-         <value>1000000</value>
+         <value>10000</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="PWM1ERS_PIN_EN_DIS"/>
@@ -12552,11 +12552,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="prescalerSelection"/>
-         <value>1</value>
+         <value>100</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="pwmResolution"/>
-         <value>7</value>
+         <value>2</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out1ActualPulseStart"/>
@@ -12564,7 +12564,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out1Actualdc"/>
-         <value>50.00</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out1InterruptEnable"/>
@@ -12584,7 +12584,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out1PulseStart_MIN"/>
-         <value>1 us</value>
+         <value>100 us</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out1dc"/>
@@ -12596,7 +12596,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out2Actualdc"/>
-         <value>50.00</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out2InterruptEnable"/>
@@ -12616,7 +12616,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out2PulseStart_MIN"/>
-         <value>1 us</value>
+         <value>100 us</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1out2dc"/>
@@ -12632,11 +12632,11 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1pwmFreq_MAX"/>
-         <value>1 MHz</value>
+         <value>10 kHz</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1pwmFreq_MIN"/>
-         <value>15.26 Hz</value>
+         <value>0.15 Hz</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="PWM2_16BIT" name="s1pwmMode"/>
@@ -15028,7 +15028,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM2_16BIT" registerAlias="PWMCPRE"/>
-         <value>0</value>
+         <value>99</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM2_16BIT" registerAlias="PWMERS"/>
@@ -15056,7 +15056,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM2_16BIT" registerAlias="PWMPRL"/>
-         <value>99</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM2_16BIT" registerAlias="PWMS1CFG"/>
@@ -15068,7 +15068,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM2_16BIT" registerAlias="PWMS1P1L"/>
-         <value>50</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM2_16BIT" registerAlias="PWMS1P2H"/>
@@ -15076,7 +15076,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="PWM2_16BIT" registerAlias="PWMS1P2L"/>
-         <value>50</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMCLK" settingAlias="PWMCLK"/>
@@ -15100,7 +15100,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMCPRE" settingAlias="PWMCPRE"/>
-         <value>No prescale</value>
+         <value>Prescale by 100</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMERS" settingAlias="PWMERS"/>
@@ -15168,7 +15168,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMPRL" settingAlias="PWMPRL"/>
-         <value>99</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMS1CFG" settingAlias="PWMMODE"/>
@@ -15192,7 +15192,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMS1P1L" settingAlias="PWMS1P1L"/>
-         <value>50</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMS1P2H" settingAlias="PWMS1P2H"/>
@@ -15200,7 +15200,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="PWM2_16BIT" registerAlias="PWMS1P2L" settingAlias="PWMS1P2L"/>
-         <value>50</value>
+         <value>0</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="Pin Module" name="Custom Name RA0"/>
@@ -36696,7 +36696,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG1"/>
-         <value>116</value>
+         <value>113</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="System Module" registerAlias="CONFIG10"/>
@@ -36804,7 +36804,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="FEXTOSC"/>
-         <value>OFF</value>
+         <value>XT</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="System Module" registerAlias="CONFIG1" settingAlias="RSTOSC"/>
@@ -37231,15 +37231,7 @@
          <value>Window delay time 87.5%</value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.HashMap">
-      <entry>
-         <file>mcc_generated_files\mcc.h</file>
-         <hash>ad9d1d0c5782dad5abd6599dfef77cdcbafcc6debd6706f5015015c953d6cf7c</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\device_config.h</file>
-         <hash>57e2a789822223e541f318b90016224c2c12418534ea1945c8a4e73421e5efe1</hash>
-      </entry>
+   <generatedFileHashHistoryMap class="java.util.TreeMap">
       <entry>
          <file>main.c</file>
          <hash>4f2a5fe0bb4072710ab34dbb754ccfc8938eadc97bb79ba55c6733c4844b5368</hash>
@@ -37249,24 +37241,32 @@
          <hash>1f3d365f021c2353735bc31b7a7d516ad6ba03e4c53788a5202b95775733385d</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pin_manager.h</file>
-         <hash>42cb856ec9b984dce9a750727cb7069fc5c7629e0dec87132fc737acd3ed09f5</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files\pwm2_16bit.c</file>
-         <hash>f50090893cd63ee0b78010164cbff882b487fd8b02db4cdfe60f22b128ea09e1</hash>
+         <file>mcc_generated_files\device_config.h</file>
+         <hash>57e2a789822223e541f318b90016224c2c12418534ea1945c8a4e73421e5efe1</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\mcc.c</file>
          <hash>86da5c49a366199b10c37db744fb20fe2c4ccde13d9576b614246aecc334f5ab</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files\pwm2_16bit.h</file>
-         <hash>7adab52a5228d2737d9263844b6891746268c5298375d2a183be271c223a0288</hash>
+         <file>mcc_generated_files\mcc.h</file>
+         <hash>ad9d1d0c5782dad5abd6599dfef77cdcbafcc6debd6706f5015015c953d6cf7c</hash>
       </entry>
       <entry>
          <file>mcc_generated_files\pin_manager.c</file>
          <hash>cdf0b25aabd5c34337cb209ff709553753fff4c83e1dcb1aa1db37b89ef83b77</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pin_manager.h</file>
+         <hash>42cb856ec9b984dce9a750727cb7069fc5c7629e0dec87132fc737acd3ed09f5</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pwm2_16bit.c</file>
+         <hash>dea9674dfd233a266543fab19b9185b767cb7ae4170eb660156c60def0ed6542</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files\pwm2_16bit.h</file>
+         <hash>7adab52a5228d2737d9263844b6891746268c5298375d2a183be271c223a0288</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

@@ -82,9 +82,6 @@ void main(void) {
         CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1_perc, ucAPPS2_perc, ucTPS1_perc, ucTPS2_perc, 0, 0, 0, 0); //Falta meter los APPS target
     }
 }
-/*
- End of File
-*/
 
 // TODO - CAN error messages whenever something is wrong.
 // TODO - Make local any variables that don't need to be global. Local variables in main such as uiAPPS1_pushed_mv, and pass by reference, instead of global. Easy code flow analysis

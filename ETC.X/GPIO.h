@@ -12,6 +12,10 @@
 extern "C" {
 #endif
 
+#define GPIO_PWM2_CLOCK_FREQ 10000 // reference interrupt frequency to build the PWM. Interrupt with prescale from crystal, MCC.
+
+
+
 //FUNCIONES
 void GPIOInit(void);
 void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);

@@ -38671,7 +38671,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
 
 
             } else if (ucASMode == 0){
-                GPIO_PWM2_Control(slMotorPwmDuty, 300);
+                GPIO_PWM2_Control(slMotorPwmDuty, 600);
             } else {
 
             }
@@ -38682,7 +38682,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
 
 
     } else {
-        GPIO_PWM2_Control(0, 300);
+        GPIO_PWM2_Control(0, 600);
     }
 }
 

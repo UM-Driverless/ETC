@@ -30,13 +30,13 @@ extern unsigned char ucAPPS_perc;
 
 extern unsigned char ucAPPS_STATE;
 extern unsigned char ucAPPSManual;
-    
-    
+
+
 // TPS Variables - Defaults, real-time values, states
-extern unsigned int uiTPS1_default_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS1_opened_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS2_default_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
-extern unsigned int uiTPS2_opened_mv; // Called by TEMPORIZATIONS.c, TODO move to main and pass to etc_calibrate();
+extern unsigned int uiTPS1_default_mv; // Called by TEMPORIZATIONS.c
+extern unsigned int uiTPS1_opened_mv; // Called by TEMPORIZATIONS.c
+extern unsigned int uiTPS2_default_mv; // Called by TEMPORIZATIONS.c
+extern unsigned int uiTPS2_opened_mv; // Called by TEMPORIZATIONS.c
 
 extern unsigned int uiTPS1_mv; // Sent by CAN, used by ANALOG.c for ANALOG_GetVoltage, called by interruption in TEMPORIZATIONS.c
 extern unsigned int uiTPS2_mv; // Sent by CAN

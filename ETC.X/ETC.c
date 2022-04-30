@@ -315,7 +315,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
                 // Drive with autonomous value
                 //GPIO_PWM2_Control(slMotorPwmDuty, 300);
             } else if (ucASMode == ManualMode){
-                GPIO_PWM2_Control(slMotorPwmDuty, 300);
+                GPIO_PWM2_Control(slMotorPwmDuty, 3000); // Usually this
             } else {
                 // ERROR. Wrong value of ucASMode
             }
@@ -326,7 +326,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
         
         
     } else {
-        GPIO_PWM2_Control(0, 300);
+        GPIO_PWM2_Control(0, 600);
     }
 }
 

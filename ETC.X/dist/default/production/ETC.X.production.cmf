@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+$C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 idloc IDLOC 5 200000 200000 20 1
 init CODE 0 1A 1A 4 1
 reset_vec CODE 0 0 0 4 1
@@ -2006,62 +2006,62 @@ $dist/default/production\ETC.X.production.o
 5D18 text0 CODE >69:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
 5D1E text0 CODE >75:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
 5D40 text0 CODE >77:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
-5D52 text0 CODE >83:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
-5FF0 cinit CODE >45867:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FF0 cinit CODE >45869:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FF0 cinit CODE >45872:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FF0 cinit CODE >46260:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FF2 cinit CODE >46261:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FF4 cinit CODE >46262:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FF6 cinit CODE >46263:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FF8 cinit CODE >46264:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FFA cinit CODE >46265:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-5FFC cinit CODE >46266:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6000 cinit CODE >46267:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6004 cinit CODE >46268:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6004 cinit CODE >46269:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6006 cinit CODE >46270:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-600A cinit CODE >46271:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-600C cinit CODE >46272:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-600E cinit CODE >46273:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6010 cinit CODE >46277:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6012 cinit CODE >46278:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6014 cinit CODE >46279:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6016 cinit CODE >46280:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6018 cinit CODE >46281:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-601A cinit CODE >46282:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-601C cinit CODE >46283:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-601E cinit CODE >46284:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6024 cinit CODE >46285:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6026 cinit CODE >46286:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-602C cinit CODE >46290:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6030 cinit CODE >46291:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6032 cinit CODE >46292:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6032 cinit CODE >46293:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6034 cinit CODE >46294:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6036 cinit CODE >46295:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6038 cinit CODE >46298:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-603C cinit CODE >46299:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-603E cinit CODE >46300:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-603E cinit CODE >46301:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6040 cinit CODE >46302:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6042 cinit CODE >46303:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6044 cinit CODE >46306:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6048 cinit CODE >46307:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-604A cinit CODE >46308:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-604A cinit CODE >46309:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-604C cinit CODE >46310:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-604E cinit CODE >46311:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6050 cinit CODE >46319:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6052 cinit CODE >46320:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6054 cinit CODE >46321:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6056 cinit CODE >46322:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6058 cinit CODE >46323:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-605A cinit CODE >46324:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-605C cinit CODE >46325:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-605E cinit CODE >46331:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-605E cinit CODE >46333:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
-6060 cinit CODE >46334:C:\Users\ruben\AppData\Local\Temp\xcAso2o.s
+5D52 text0 CODE >82:C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
+5FF0 cinit CODE >45867:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FF0 cinit CODE >45869:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FF0 cinit CODE >45872:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FF0 cinit CODE >46260:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FF2 cinit CODE >46261:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FF4 cinit CODE >46262:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FF6 cinit CODE >46263:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FF8 cinit CODE >46264:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FFA cinit CODE >46265:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+5FFC cinit CODE >46266:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6000 cinit CODE >46267:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6004 cinit CODE >46268:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6004 cinit CODE >46269:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6006 cinit CODE >46270:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+600A cinit CODE >46271:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+600C cinit CODE >46272:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+600E cinit CODE >46273:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6010 cinit CODE >46277:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6012 cinit CODE >46278:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6014 cinit CODE >46279:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6016 cinit CODE >46280:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6018 cinit CODE >46281:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+601A cinit CODE >46282:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+601C cinit CODE >46283:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+601E cinit CODE >46284:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6024 cinit CODE >46285:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6026 cinit CODE >46286:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+602C cinit CODE >46290:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6030 cinit CODE >46291:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6032 cinit CODE >46292:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6032 cinit CODE >46293:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6034 cinit CODE >46294:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6036 cinit CODE >46295:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6038 cinit CODE >46298:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+603C cinit CODE >46299:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+603E cinit CODE >46300:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+603E cinit CODE >46301:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6040 cinit CODE >46302:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6042 cinit CODE >46303:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6044 cinit CODE >46306:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6048 cinit CODE >46307:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+604A cinit CODE >46308:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+604A cinit CODE >46309:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+604C cinit CODE >46310:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+604E cinit CODE >46311:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6050 cinit CODE >46319:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6052 cinit CODE >46320:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6054 cinit CODE >46321:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6056 cinit CODE >46322:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6058 cinit CODE >46323:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+605A cinit CODE >46324:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+605C cinit CODE >46325:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+605E cinit CODE >46331:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+605E cinit CODE >46333:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
+6060 cinit CODE >46334:C:\Users\ruben\AppData\Local\Temp\xcAs12us.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -2151,7 +2151,7 @@ _PWM2LDS 471 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRH 473 0 ABS 0 - dist/default/production\ETC.X.production.o
 _PWM2PRL 472 0 ABS 0 - dist/default/production\ETC.X.production.o
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production\ETC.X.production.o
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 __end_of_PWM1_16BIT_SetSlice1Output1DutyCycleRegister 6AAC 0 CODE 0 text67 dist/default/production\ETC.X.production.o
 _CAN1_SetBusWakeUpActivityInterruptHandler 6B90 0 CODE 0 text39 dist/default/production\ETC.X.production.o
 _PWM2PIPOS 475 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2198,11 +2198,11 @@ _WPUA 401 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUB 409 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUC 411 0 ABS 0 - dist/default/production\ETC.X.production.o
 _WPUE 421 0 ABS 0 - dist/default/production\ETC.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+___sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 _main 5D02 0 CODE 0 text0 dist/default/production\ETC.X.production.o
 i2_PWM2_16BIT_SetSlice1Output1DutyCycleRegister 6AE0 0 CODE 0 text118 dist/default/production\ETC.X.production.o
 _CAN1_Initialize 630A 0 CODE 0 text26 dist/default/production\ETC.X.production.o
-start 1A 0 CODE 0 init C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+start 1A 0 CODE 0 init C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 PWM2_16BIT_WritePeriodRegister@periodCount 5C0 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __end_ofi2_CLUTCH_AnalyseState 5382 0 CODE 0 text90 dist/default/production\ETC.X.production.o
 i2___lwdiv@quotient 50B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
@@ -2269,11 +2269,11 @@ _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler 0 0 ABS 0 - dist/default/produ
 TMR0_SetInterruptHandler@InterruptHandler 5C0 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _ADC_SetContext1ThresholdInterruptHandler 6BC2 0 CODE 0 text46 dist/default/production\ETC.X.production.o
 i2_ANALOGRead 6638 0 CODE 0 text97 dist/default/production\ETC.X.production.o
-__accesstop 560 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
-intlevel0 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
-intlevel1 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
-intlevel2 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
-intlevel3 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+__accesstop 560 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
+intlevel0 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
+intlevel1 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
+intlevel2 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
+intlevel3 0 0 CODE 0 text C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 __ptext100 66DC 0 CODE 0 text100 dist/default/production\ETC.X.production.o
 __ptext101 6BFA 0 CODE 0 text101 dist/default/production\ETC.X.production.o
 __ptext102 5E8C 0 CODE 0 text102 dist/default/production\ETC.X.production.o
@@ -2409,14 +2409,14 @@ _TMR0_DefaultInterruptHandler 6C26 0 CODE 0 text108 dist/default/production\ETC.
 ___awdiv@dividend 501 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __size_of_PWM1_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_CANWriteMessage 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 _I2C1BAUD 29D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTH 28D 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CNTL 28C 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON0 294 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON1 295 0 ABS 0 - dist/default/production\ETC.X.production.o
 _I2C1CON2 296 0 ABS 0 - dist/default/production\ETC.X.production.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 __size_ofi2___flge 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_ofi2___lmul 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_ofi2___wmul 0 0 ABS 0 - dist/default/production\ETC.X.production.o
@@ -2660,7 +2660,7 @@ __size_of_CAN1_SetSystemErrorInterruptHandler 0 0 ABS 0 - dist/default/productio
 __size_of_ADC_SetActiveClockTuningInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _uiETCDuty 56C 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __end_of_DefaultModeChangeHandler 6C32 0 CODE 0 text143 dist/default/production\ETC.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+isa$xinst 0 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 __size_of_PWM2_16BIT_Initialize 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ucServoLDif 59A 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 _ucServoLmax 59B 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
@@ -2737,7 +2737,7 @@ __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production\ETC.X.production.o
 __Hbigram 0 0 ABS 0 bigram dist/default/production\ETC.X.production.o
 __size_of_PWM2_16BIT_Period_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADC_Context4Thereshld_ISR 66F 0 BANK6 1 nvBANK6 dist/default/production\ETC.X.production.o
-__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+__smallconst 2600 0 SMALLCONST 0 smallconst C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 _ucTargetGear 556 0 COMRAM 1 bssCOMRAM dist/default/production\ETC.X.production.o
 ___xxtofl@arg 5CA 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 ___xxtofl@exp 5C9 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
@@ -3286,7 +3286,7 @@ __size_of_TEMPORIZATION_1s 0 0 ABS 0 - dist/default/production\ETC.X.production.
 _TMR0_SetInterruptHandler 6B0E 0 CODE 0 text12 dist/default/production\ETC.X.production.o
 i2GPIO_PWM1_Control@uiFreq 52B 0 COMRAM 1 cstackCOMRAM dist/default/production\ETC.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\ETC.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+isa$std 1 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 __end_of_CAN1_IsTxErrorActive 69C6 0 CODE 0 text80 dist/default/production\ETC.X.production.o
 CAN1_SetRxBufferOverFlowInterruptHandler@handler 5C0 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _DefaultRxBufferOverflowHandler 6C2E 0 CODE 0 text142 dist/default/production\ETC.X.production.o
@@ -3304,8 +3304,8 @@ __size_of_CAN1_SetInvalidMessageInterruptHandler 0 0 ABS 0 - dist/default/produc
 _CAN1_ModeChangeHandler 58A 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
 __end_of_TPSAnalysis 5F04 0 CODE 0 text102 dist/default/production\ETC.X.production.o
 _ucETB_STATE 5A4 0 BANK5 1 bssBANK5 dist/default/production\ETC.X.production.o
-stackhi 25FF 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
-stacklo 693 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+stackhi 25FF 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
+stacklo 693 0 ABS 0 - C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 ANALOG_GetVoltage@uiValorVoltage 5CD 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 _ADC_SetContext4ThresholdInterruptHandler 6BA4 0 CODE 0 text43 dist/default/production\ETC.X.production.o
 __end_of_PWM2_16BIT_Slice1Output1_SetInterruptHandler 6B2C 0 CODE 0 text15 dist/default/production\ETC.X.production.o
@@ -3539,7 +3539,7 @@ __Ltext99 0 0 ABS 0 text99 dist/default/production\ETC.X.production.o
 __size_of_isTxChannel 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 _ADC_DefaultContext1Threshold_ISR 0 0 ABS 0 - dist/default/production\ETC.X.production.o
 __size_of_CAN1_Transmit 0 0 ABS 0 - dist/default/production\ETC.X.production.o
-__ramtop 2600 0 RAM 0 ramtop C:\Users\ruben\AppData\Local\Temp\xcAso2o.o
+__ramtop 2600 0 RAM 0 ramtop C:\Users\ruben\AppData\Local\Temp\xcAs12us.o
 ___aldiv@dividend 5C0 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o
 __end_of_CLUTCH_AnalyseState 5544 0 CODE 0 text69 dist/default/production\ETC.X.production.o
 CANSetErrorInterrupt@ucEnable 5C0 0 BANK5 1 cstackBANK5 dist/default/production\ETC.X.production.o

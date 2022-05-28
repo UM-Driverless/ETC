@@ -38307,7 +38307,7 @@ unsigned char PercOf(signed long val, signed long min, signed long max);
 # 17 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
-# 16 "./GPIO.h"
+# 20 "./GPIO.h"
 void GPIOInit(void);
 void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
@@ -38671,7 +38671,7 @@ void ETC_PID(signed long sl_target_perc, unsigned char ucMode) {
 
 
             } else if (ucASMode == 0){
-                GPIO_PWM2_Control(slMotorPwmDuty, 600);
+                GPIO_PWM2_Control(slMotorPwmDuty, 3000);
             } else {
 
             }

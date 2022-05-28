@@ -23,11 +23,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3070 . . ]
 "1801
 [v _TRISCbits `VS3070 ~T0 @X0 0 e@1224 ]
-"17 ./GPIO.h
-[; ;./GPIO.h: 17: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+"21 ./GPIO.h
+[; ;./GPIO.h: 21: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM1_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-"18
-[; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+"22
+[; ;./GPIO.h: 22: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
 "114 ./mcc_generated_files/pwm1_16bit.h
 [; ;./mcc_generated_files/pwm1_16bit.h: 114: void PWM1_16BIT_SetSlice1Output1DutyCycleRegister(uint16_t value);
@@ -3713,66 +3713,66 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _uiDutyCyclePerc `ui ~T0 @X0 1 r1 ]
 [v _uiFreq `ui ~T0 @X0 1 r2 ]
 [f ]
-"76
-[; ;GPIO.c: 76:     if (uiDutyCyclePerc > 100) uiDutyCyclePerc = 100;
+"86
+[; ;GPIO.c: 86:     if (uiDutyCyclePerc > 100) uiDutyCyclePerc = 100;
 [e $ ! > _uiDutyCyclePerc -> -> 100 `i `ui 3203  ]
 [e = _uiDutyCyclePerc -> -> 100 `i `ui ]
 [e :U 3203 ]
-"77
-[; ;GPIO.c: 77:     if (uiFreq > 10000) uiFreq = 10000;
+"87
+[; ;GPIO.c: 87:     if (uiFreq > 10000) uiFreq = 10000;
 [e $ ! > _uiFreq -> -> 10000 `i `ui 3204  ]
 [e = _uiFreq -> -> 10000 `i `ui ]
 [e :U 3204 ]
-"80
-[; ;GPIO.c: 80:     unsigned int uiTotalPeriod;
-[v _uiTotalPeriod `ui ~T0 @X0 1 a ]
-"81
-[; ;GPIO.c: 81:     unsigned int uiActivePeriod;
-[v _uiActivePeriod `ui ~T0 @X0 1 a ]
-"83
-[; ;GPIO.c: 83:     uiTotalPeriod = 10000 / (uiFreq);
-[e = _uiTotalPeriod / -> -> 10000 `i `ui _uiFreq ]
-"84
-[; ;GPIO.c: 84:     uiActivePeriod = (uiTotalPeriod * uiDutyCyclePerc) / 100;
-[e = _uiActivePeriod / * _uiTotalPeriod _uiDutyCyclePerc -> -> 100 `i `ui ]
-"87
-[; ;GPIO.c: 87:     PWM2_16BIT_WritePeriodRegister(uiTotalPeriod);
-[e ( _PWM2_16BIT_WritePeriodRegister (1 -> _uiTotalPeriod `us ]
 "90
-[; ;GPIO.c: 90:     PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiActivePeriod);
-[e ( _PWM2_16BIT_SetSlice1Output1DutyCycleRegister (1 -> _uiActivePeriod `us ]
+[; ;GPIO.c: 90:     unsigned int uiTotalPeriod;
+[v _uiTotalPeriod `ui ~T0 @X0 1 a ]
+"91
+[; ;GPIO.c: 91:     unsigned int uiActivePeriod;
+[v _uiActivePeriod `ui ~T0 @X0 1 a ]
 "93
-[; ;GPIO.c: 93:     PWM2_16BIT_LoadBufferRegisters();
-[e ( _PWM2_16BIT_LoadBufferRegisters ..  ]
+[; ;GPIO.c: 93:     uiTotalPeriod = (10000 / uiFreq) - 1;
+[e = _uiTotalPeriod - / -> -> 10000 `i `ui _uiFreq -> -> 1 `i `ui ]
 "94
-[; ;GPIO.c: 94: }
+[; ;GPIO.c: 94:     uiActivePeriod = (uiTotalPeriod * uiDutyCyclePerc) / 100;
+[e = _uiActivePeriod / * _uiTotalPeriod _uiDutyCyclePerc -> -> 100 `i `ui ]
+"97
+[; ;GPIO.c: 97:     PWM2_16BIT_WritePeriodRegister(uiTotalPeriod);
+[e ( _PWM2_16BIT_WritePeriodRegister (1 -> _uiTotalPeriod `us ]
+"100
+[; ;GPIO.c: 100:     PWM2_16BIT_SetSlice1Output1DutyCycleRegister(uiActivePeriod);
+[e ( _PWM2_16BIT_SetSlice1Output1DutyCycleRegister (1 -> _uiActivePeriod `us ]
+"103
+[; ;GPIO.c: 103:     PWM2_16BIT_LoadBufferRegisters();
+[e ( _PWM2_16BIT_LoadBufferRegisters ..  ]
+"104
+[; ;GPIO.c: 104: }
 [e :UE 3202 ]
 }
-"98
-[; ;GPIO.c: 98: void GPIO_INT2_desembragar(void)
+"108
+[; ;GPIO.c: 108: void GPIO_INT2_desembragar(void)
 [v _GPIO_INT2_desembragar `(v ~T0 @X0 1 ef ]
-"99
-[; ;GPIO.c: 99: {
+"109
+[; ;GPIO.c: 109: {
 {
 [e :U _GPIO_INT2_desembragar ]
 [f ]
-"102
-[; ;GPIO.c: 102:     if ( PORTAbits.RA1 == 0x01 )
+"112
+[; ;GPIO.c: 112:     if ( PORTAbits.RA1 == 0x01 )
 [e $ ! == -> . . _PORTAbits 0 1 `i -> 1 `i 3206  ]
-"103
-[; ;GPIO.c: 103:     {
+"113
+[; ;GPIO.c: 113:     {
 {
-"104
-[; ;GPIO.c: 104:         uiCLUTCHlmax = uiCLUTCHDuty;
+"114
+[; ;GPIO.c: 114:         uiCLUTCHlmax = uiCLUTCHDuty;
 [e = _uiCLUTCHlmax _uiCLUTCHDuty ]
-"105
-[; ;GPIO.c: 105:         uiCLUTCHState = 2;
+"115
+[; ;GPIO.c: 115:         uiCLUTCHState = 2;
 [e = _uiCLUTCHState -> -> 2 `i `ui ]
-"106
-[; ;GPIO.c: 106:     }
+"116
+[; ;GPIO.c: 116:     }
 }
 [e :U 3206 ]
-"107
-[; ;GPIO.c: 107: }
+"117
+[; ;GPIO.c: 117: }
 [e :UE 3205 ]
 }

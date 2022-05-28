@@ -66,8 +66,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96
 [; ;./global.h: 96: extern unsigned char ucASMode;
 [v _ucASMode `uc ~T0 @X0 0 e ]
-"18 ./GPIO.h
-[; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+"22 ./GPIO.h
+[; ;./GPIO.h: 22: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
 [v F606 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
@@ -106,8 +106,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53
 [; ;./global.h: 53: extern unsigned char ucETCBeatSupervisor;
 [v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
-"17 ./GPIO.h
-[; ;./GPIO.h: 17: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+"21 ./GPIO.h
+[; ;./GPIO.h: 21: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM1_Control `(v ~T0 @X0 0 ef2`ui`ui ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
@@ -4157,8 +4157,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _ucASMode `i -> 0 `i 3228  ]
 {
 "318
-[; ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 600);
-[e ( _GPIO_PWM2_Control (2 , -> _slMotorPwmDuty `ui -> -> 600 `i `ui ]
+[; ;ETC.c: 318:                 GPIO_PWM2_Control(slMotorPwmDuty, 3000);
+[e ( _GPIO_PWM2_Control (2 , -> _slMotorPwmDuty `ui -> -> 3000 `i `ui ]
 "319
 [; ;ETC.c: 319:             } else {
 }

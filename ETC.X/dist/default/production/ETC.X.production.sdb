@@ -2348,14 +2348,14 @@ channel_FVR_Buffer2 63
 "57 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 {
-"80
+"90
 [v GPIO_PWM2_Control@uiTotalPeriod uiTotalPeriod `ui  1 a 2 19 ]
-"81
+"91
 [v GPIO_PWM2_Control@uiActivePeriod uiActivePeriod `ui  1 a 2 17 ]
 "57
 [v GPIO_PWM2_Control@uiDutyCyclePerc uiDutyCyclePerc `ui  1 p 2 13 ]
 [v GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 15 ]
-"94
+"104
 } 0
 "144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
@@ -2892,14 +2892,14 @@ channel_FVR_Buffer2 63
 "57 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 {
-"80
+"90
 [v i2GPIO_PWM2_Control@uiTotalPeriod uiTotalPeriod `ui  1 a 2 19 ]
-"81
+"91
 [v i2GPIO_PWM2_Control@uiActivePeriod uiActivePeriod `ui  1 a 2 17 ]
 "57
 [v i2GPIO_PWM2_Control@uiDutyCyclePerc uiDutyCyclePerc `ui  1 p 2 13 ]
 [v i2GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 15 ]
-"94
+"104
 } 0
 "144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v i2_PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]

@@ -15,8 +15,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"16 ./GPIO.h
-[; ;./GPIO.h: 16: void GPIOInit(void);
+"20 ./GPIO.h
+[; ;./GPIO.h: 20: void GPIOInit(void);
 [v _GPIOInit `(v ~T0 @X0 0 ef ]
 "36 ./ETC.h
 [; ;./ETC.h: 36: void etc_calibrate(void);

@@ -15,7 +15,7 @@
 
 
 # 1 "./GPIO.h" 1
-# 16 "./GPIO.h"
+# 20 "./GPIO.h"
 void GPIOInit(void);
 void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
@@ -37791,7 +37791,7 @@ void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq)
 
 
 void GPIO_PWM2_Control(unsigned int uiDutyCyclePerc, unsigned int uiFreq) {
-# 76 "GPIO.c"
+# 86 "GPIO.c"
     if (uiDutyCyclePerc > 100) uiDutyCyclePerc = 100;
     if (uiFreq > 10000) uiFreq = 10000;
 
@@ -37799,7 +37799,7 @@ void GPIO_PWM2_Control(unsigned int uiDutyCyclePerc, unsigned int uiFreq) {
     unsigned int uiTotalPeriod;
     unsigned int uiActivePeriod;
 
-    uiTotalPeriod = 10000 / (uiFreq);
+    uiTotalPeriod = (10000 / uiFreq) - 1;
     uiActivePeriod = (uiTotalPeriod * uiDutyCyclePerc) / 100;
 
 

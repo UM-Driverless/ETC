@@ -97,7 +97,6 @@ void main(void)
         TPSAnalysis();
         APPSAnalysis();*/
         CANWriteMessage(ETC_SIGNAL, DataLength_6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);    //Falta meter los APPS target
-        __delay_ms(500);
     }
 }
 /**

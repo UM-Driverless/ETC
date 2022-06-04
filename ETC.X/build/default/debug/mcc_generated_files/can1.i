@@ -38366,6 +38366,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 # 97 "mcc_generated_files/../MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
+void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
 # 51 "mcc_generated_files/can1.c" 2
 # 73 "mcc_generated_files/can1.c"
 struct CAN_FIFOREG

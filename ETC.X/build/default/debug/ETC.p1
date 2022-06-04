@@ -36,20 +36,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
-"24 ./PARAMETERS.h
-[; ;./PARAMETERS.h: 24: extern signed long sl_K;
-[v _sl_K `l ~T0 @X0 0 e ]
-"25
-[; ;./PARAMETERS.h: 25: extern signed long sl_K_P;
-[v _sl_K_P `l ~T0 @X0 0 e ]
-"26
-[; ;./PARAMETERS.h: 26: extern signed long sl_K_I;
-[v _sl_K_I `l ~T0 @X0 0 e ]
-"27
-[; ;./PARAMETERS.h: 27: extern signed long sl_K_D;
-[v _sl_K_D `l ~T0 @X0 0 e ]
 [v F606 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
+"12
 [v __delay `JF606 ~T0 @X0 0 e ]
 [p i __delay ]
 "23 ./ANALOG.h
@@ -3736,10 +3724,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _APPSReadmin ]
 [f ]
 "73
-[; ;ETC.c: 73:     uiAPPS1min = uiAPPS1+100;
+[; ;ETC.c: 73:     uiAPPS1min = uiAPPS1 + 100;
 [e = _uiAPPS1min + _uiAPPS1 -> -> 100 `i `ui ]
 "74
-[; ;ETC.c: 74:     uiAPPS2min = uiAPPS2-100;
+[; ;ETC.c: 74:     uiAPPS2min = uiAPPS2 - 100;
 [e = _uiAPPS2min - _uiAPPS2 -> -> 100 `i `ui ]
 "75
 [; ;ETC.c: 75: }
@@ -3754,11 +3742,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _APPSReadmax ]
 [f ]
 "80
-[; ;ETC.c: 80:     uiAPPS1max = 1990;
-[e = _uiAPPS1max -> -> 1990 `i `ui ]
+[; ;ETC.c: 80:     uiAPPS1max = 1990 - 100;
+[e = _uiAPPS1max -> - -> 1990 `i -> 100 `i `ui ]
 "81
-[; ;ETC.c: 81:     uiAPPS2max = 160;
-[e = _uiAPPS2max -> -> 160 `i `ui ]
+[; ;ETC.c: 81:     uiAPPS2max = 160 + 100;
+[e = _uiAPPS2max -> + -> 160 `i -> 100 `i `ui ]
 "82
 [; ;ETC.c: 82: }
 [e :UE 3183 ]
@@ -3949,180 +3937,237 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 3200 ]
 }
 "148
-[; ;ETC.c: 148: void ETC_PID(signed char scTargetMove, unsigned char ucMode) {
-[v _ETC_PID `(v ~T0 @X0 1 ef2`c`uc ]
+[; ;ETC.c: 148: void ETC_PID(signed long slTargetMove, unsigned char ucMode)
+[v _ETC_PID `(v ~T0 @X0 1 ef2`l`uc ]
+"149
+[; ;ETC.c: 149: {
 {
 [e :U _ETC_PID ]
-[v _scTargetMove `c ~T0 @X0 1 r1 ]
+"148
+[; ;ETC.c: 148: void ETC_PID(signed long slTargetMove, unsigned char ucMode)
+[v _slTargetMove `l ~T0 @X0 1 r1 ]
 [v _ucMode `uc ~T0 @X0 1 r2 ]
+"149
+[; ;ETC.c: 149: {
 [f ]
-"156
-[; ;ETC.c: 156:     static signed long slIntegral = 0;
-[v F23079 `l ~T0 @X0 1 s slIntegral ]
-[i F23079
+"160
+[; ;ETC.c: 160:     static signed long sl_K = 50000;
+[v F23081 `l ~T0 @X0 1 s sl_K ]
+[i F23081
+-> 50000 `l
+]
+"161
+[; ;ETC.c: 161:     static signed long sl_K_P = 1000;
+[v F23082 `l ~T0 @X0 1 s sl_K_P ]
+[i F23082
+-> -> 1000 `i `l
+]
+"162
+[; ;ETC.c: 162:     static signed long sl_K_I = 3;
+[v F23083 `l ~T0 @X0 1 s sl_K_I ]
+[i F23083
+-> -> 3 `i `l
+]
+"163
+[; ;ETC.c: 163:     static signed long sl_K_D = 0;
+[v F23084 `l ~T0 @X0 1 s sl_K_D ]
+[i F23084
 -> -> 0 `i `l
 ]
-"157
-[; ;ETC.c: 157:     signed long slDerivative;
-[v _slDerivative `l ~T0 @X0 1 a ]
-"158
-[; ;ETC.c: 158:     signed long slPWMDuty = 0;
-[v _slPWMDuty `l ~T0 @X0 1 a ]
-[e = _slPWMDuty -> -> 0 `i `l ]
-"159
-[; ;ETC.c: 159:     static signed long slLastErrorPos;
-[v F23082 `l ~T0 @X0 1 s slLastErrorPos ]
-"160
-[; ;ETC.c: 160:     static signed long slErrorPos;
-[v F23083 `l ~T0 @X0 1 s slErrorPos ]
-"162
-[; ;ETC.c: 162:     __nop();
-[e ( ___nop ..  ]
+"164
+[; ;ETC.c: 164:     static signed long slIntegral = 0;
+[v F23085 `l ~T0 @X0 1 s slIntegral ]
+[i F23085
+-> -> 0 `i `l
+]
 "165
-[; ;ETC.c: 165:     if ( ucETCFlagSupervisor == 0x01 ) {
-[e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3210  ]
-{
+[; ;ETC.c: 165:     signed long slDerivative;
+[v _slDerivative `l ~T0 @X0 1 a ]
+"166
+[; ;ETC.c: 166:     signed long slMotorPwmDuty = 0;
+[v _slMotorPwmDuty `l ~T0 @X0 1 a ]
+[e = _slMotorPwmDuty -> -> 0 `i `l ]
+"167
+[; ;ETC.c: 167:     static signed long slErrorPos = 0;
+[v F23088 `l ~T0 @X0 1 s slErrorPos ]
+[i F23088
+-> -> 0 `i `l
+]
+"169
+[; ;ETC.c: 169:     static signed long slLastTPSPerc = 0;
+[v F23089 `l ~T0 @X0 1 s slLastTPSPerc ]
+[i F23089
+-> -> 0 `i `l
+]
 "174
-[; ;ETC.c: 174:         slErrorPos = scTargetMove - ucTPS;
-[e = F23083 -> - -> _scTargetMove `i -> _ucTPS `i `l ]
-"175
-[; ;ETC.c: 175:         slIntegral += slErrorPos;
-[e =+ F23079 F23083 ]
-"176
-[; ;ETC.c: 176:         slDerivative = slErrorPos - slLastErrorPos;
-[e = _slDerivative - F23083 F23082 ]
+[; ;ETC.c: 174:     slErrorPos = slTargetMove - ucTPS;
+[e = F23088 - _slTargetMove -> _ucTPS `l ]
+"177
+[; ;ETC.c: 177:     if ((slIntegral > -1e4) && (slIntegral < 1e4))
+[e $ ! && > -> F23085 `d -U .1e4 < -> F23085 `d .1e4 3210  ]
+"178
+[; ;ETC.c: 178:     {
+{
+"179
+[; ;ETC.c: 179:         slIntegral += slErrorPos;
+[e =+ F23085 F23088 ]
+"180
+[; ;ETC.c: 180:     }
+}
+[e :U 3210 ]
+"183
+[; ;ETC.c: 183:     if (ucTPS < slLastTPSPerc)
+[e $ ! < -> _ucTPS `l F23089 3211  ]
+"184
+[; ;ETC.c: 184:     {
+{
 "185
-[; ;ETC.c: 185:         slPWMDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
-[e = _slPWMDuty + + + _sl_K * _sl_K_P F23083 * _sl_K_I F23079 * _sl_K_D _slDerivative ]
+[; ;ETC.c: 185:         slDerivative = slLastTPSPerc - ucTPS;
+[e = _slDerivative - F23089 -> _ucTPS `l ]
 "186
-[; ;ETC.c: 186:         slPWMDuty /= 1000;
-[e =/ _slPWMDuty -> -> 1000 `i `l ]
-"189
-[; ;ETC.c: 189:         if ( slPWMDuty < 0 ) {
-[e $ ! < _slPWMDuty -> -> 0 `i `l 3211  ]
-{
-"190
-[; ;ETC.c: 190:             slPWMDuty = 0;
-[e = _slPWMDuty -> -> 0 `i `l ]
-"191
-[; ;ETC.c: 191:         }
+[; ;ETC.c: 186:     }
 }
-[e $U 3212  ]
-"192
-[; ;ETC.c: 192:         else if ( slPWMDuty > 100 ) {
 [e :U 3211 ]
-[e $ ! > _slPWMDuty -> -> 100 `i `l 3213  ]
-{
-"193
-[; ;ETC.c: 193:             slPWMDuty = 100;
-[e = _slPWMDuty -> -> 100 `i `l ]
-"194
-[; ;ETC.c: 194:         }
-}
-[e :U 3213 ]
-[e :U 3212 ]
-"196
-[; ;ETC.c: 196:         __nop();
+"187
+[; ;ETC.c: 187:     slLastTPSPerc = ucTPS;
+[e = F23089 -> _ucTPS `l ]
+"189
+[; ;ETC.c: 189:     slMotorPwmDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
+[e = _slMotorPwmDuty + + + F23081 * F23082 F23088 * F23083 F23085 * F23084 _slDerivative ]
+"190
+[; ;ETC.c: 190:     __nop();
 [e ( ___nop ..  ]
+"191
+[; ;ETC.c: 191:     slMotorPwmDuty /= 1024;
+[e =/ _slMotorPwmDuty -> -> 1024 `i `l ]
+"194
+[; ;ETC.c: 194:     if (slMotorPwmDuty < 0)
+[e $ ! < _slMotorPwmDuty -> -> 0 `i `l 3212  ]
+"195
+[; ;ETC.c: 195:     {
+{
+"196
+[; ;ETC.c: 196:         slMotorPwmDuty = 0;
+[e = _slMotorPwmDuty -> -> 0 `i `l ]
+"197
+[; ;ETC.c: 197:     }
+}
+[e $U 3213  ]
+"198
+[; ;ETC.c: 198:     else if ( slMotorPwmDuty > 100 )
+[e :U 3212 ]
+[e $ ! > _slMotorPwmDuty -> -> 100 `i `l 3214  ]
 "199
-[; ;ETC.c: 199:         if ( ucMode == ucASMode ) {
-[e $ ! == -> _ucMode `i -> _ucASMode `i 3214  ]
+[; ;ETC.c: 199:     {
 {
 "200
-[; ;ETC.c: 200:             if ( ucASMode == 1 ) {
-[e $ ! == -> _ucASMode `i -> 1 `i 3215  ]
-{
-"202
-[; ;ETC.c: 202:                 GPIO_PWM2_Control(slPWMDuty, 600);
-[e ( _GPIO_PWM2_Control (2 , -> _slPWMDuty `ui -> -> 600 `i `ui ]
-"203
-[; ;ETC.c: 203:             }
+[; ;ETC.c: 200:         slMotorPwmDuty = 100;
+[e = _slMotorPwmDuty -> -> 100 `i `l ]
+"201
+[; ;ETC.c: 201:     }
 }
-[e $U 3216  ]
-"204
-[; ;ETC.c: 204:             else if ( ucASMode == 0 ) {
-[e :U 3215 ]
-[e $ ! == -> _ucASMode `i -> 0 `i 3217  ]
-{
-"207
-[; ;ETC.c: 207:                 GPIO_PWM2_Control(slPWMDuty, 600);
-[e ( _GPIO_PWM2_Control (2 , -> _slPWMDuty `ui -> -> 600 `i `ui ]
+[e :U 3214 ]
+[e :U 3213 ]
+"203
+[; ;ETC.c: 203:     __nop();
+[e ( ___nop ..  ]
 "208
-[; ;ETC.c: 208:             }
+[; ;ETC.c: 208:     if ( ucETCFlagSupervisor == 0x01 )
+[e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3215  ]
+"209
+[; ;ETC.c: 209:     {
+{
+"210
+[; ;ETC.c: 210:         if ( ucMode == ucASMode )
+[e $ ! == -> _ucMode `i -> _ucASMode `i 3216  ]
+"211
+[; ;ETC.c: 211:         {
+{
+"212
+[; ;ETC.c: 212:             if (ucASMode == 1)
+[e $ ! == -> _ucASMode `i -> 1 `i 3217  ]
+"213
+[; ;ETC.c: 213:             {
+{
+"215
+[; ;ETC.c: 215:                 GPIO_PWM2_Control(slMotorPwmDuty, 600);
+[e ( _GPIO_PWM2_Control (2 , -> _slMotorPwmDuty `ui -> -> 600 `i `ui ]
+"216
+[; ;ETC.c: 216:             }
 }
 [e $U 3218  ]
-"209
-[; ;ETC.c: 209:             else {
-[e :U 3217 ]
-{
-"211
-[; ;ETC.c: 211:             }
-}
-[e :U 3218 ]
-[e :U 3216 ]
-"212
-[; ;ETC.c: 212:         } else {
-}
-[e $U 3219  ]
-[e :U 3214 ]
-{
-"214
-[; ;ETC.c: 214:         }
-}
-[e :U 3219 ]
 "217
-[; ;ETC.c: 217:         slLastErrorPos = slErrorPos;
-[e = F23082 F23083 ]
+[; ;ETC.c: 217:             else if (ucASMode == 0)
+[e :U 3217 ]
+[e $ ! == -> _ucASMode `i -> 0 `i 3219  ]
 "218
-[; ;ETC.c: 218:     } else {
+[; ;ETC.c: 218:             {
+{
+"219
+[; ;ETC.c: 219:                 GPIO_PWM2_Control(slMotorPwmDuty, 600);
+[e ( _GPIO_PWM2_Control (2 , -> _slMotorPwmDuty `ui -> -> 600 `i `ui ]
+"220
+[; ;ETC.c: 220:             }
 }
 [e $U 3220  ]
-[e :U 3210 ]
-{
-"220
-[; ;ETC.c: 220:         GPIO_PWM2_Control(0, 600);
-[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
 "221
-[; ;ETC.c: 221:     }
+[; ;ETC.c: 221:             else
+[e :U 3219 ]
+"222
+[; ;ETC.c: 222:             {
+{
+"224
+[; ;ETC.c: 224:             }
 }
 [e :U 3220 ]
-"222
-[; ;ETC.c: 222: }
+[e :U 3218 ]
+"225
+[; ;ETC.c: 225:         }
+}
+[e $U 3221  ]
+"226
+[; ;ETC.c: 226:         else
+[e :U 3216 ]
+"227
+[; ;ETC.c: 227:         {
+{
+"229
+[; ;ETC.c: 229:         }
+}
+[e :U 3221 ]
+"230
+[; ;ETC.c: 230:     }
+}
+[e $U 3222  ]
+"231
+[; ;ETC.c: 231:     else
+[e :U 3215 ]
+"232
+[; ;ETC.c: 232:     {
+{
+"233
+[; ;ETC.c: 233:         GPIO_PWM2_Control(0, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
+"234
+[; ;ETC.c: 234:     }
+}
+[e :U 3222 ]
+"235
+[; ;ETC.c: 235: }
 [e :UE 3209 ]
 }
-"224
-[; ;ETC.c: 224: void ETCCalibrate(void) {
+"237
+[; ;ETC.c: 237: void ETCCalibrate(void) {
 [v _ETCCalibrate `(v ~T0 @X0 1 ef ]
 {
 [e :U _ETCCalibrate ]
 [f ]
-"232
-[; ;ETC.c: 232:     GPIO_PWM2_Control(0, 600);
-[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
-"234
-[; ;ETC.c: 234:     _delay((unsigned long)((200)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"236
-[; ;ETC.c: 236:     ANALOGRead();
-[e ( _ANALOGRead ..  ]
-"238
-[; ;ETC.c: 238:     _delay((unsigned long)((100)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"239
-[; ;ETC.c: 239:     uiTPS1min = uiTPS1 + 100;
-[e = _uiTPS1min + _uiTPS1 -> -> 100 `i `ui ]
-"240
-[; ;ETC.c: 240:     uiTPS2min = uiTPS2 - 100;
-[e = _uiTPS2min - _uiTPS2 -> -> 100 `i `ui ]
-"242
-[; ;ETC.c: 242:     __nop();
-[e ( ___nop ..  ]
 "245
-[; ;ETC.c: 245:     GPIO_PWM2_Control(100, 600);
-[e ( _GPIO_PWM2_Control (2 , -> -> 100 `i `ui -> -> 600 `i `ui ]
+[; ;ETC.c: 245:     GPIO_PWM2_Control(0, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
 "247
-[; ;ETC.c: 247:     _delay((unsigned long)((500)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+[; ;ETC.c: 247:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "249
 [; ;ETC.c: 249:     ANALOGRead();
 [e ( _ANALOGRead ..  ]
@@ -4130,464 +4175,378 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;ETC.c: 251:     _delay((unsigned long)((100)*(10000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
 "252
-[; ;ETC.c: 252:     uiTPS1max = uiTPS1 + 100;
-[e = _uiTPS1max + _uiTPS1 -> -> 100 `i `ui ]
+[; ;ETC.c: 252:     uiTPS1min = uiTPS1 + 100;
+[e = _uiTPS1min + _uiTPS1 -> -> 100 `i `ui ]
 "253
-[; ;ETC.c: 253:     uiTPS2max = uiTPS2 - 100;
-[e = _uiTPS2max - _uiTPS2 -> -> 100 `i `ui ]
-"254
-[; ;ETC.c: 254:     __nop();
+[; ;ETC.c: 253:     uiTPS2min = uiTPS2 - 100;
+[e = _uiTPS2min - _uiTPS2 -> -> 100 `i `ui ]
+"255
+[; ;ETC.c: 255:     __nop();
 [e ( ___nop ..  ]
-"257
-[; ;ETC.c: 257:     GPIO_PWM2_Control(20, 400);
-[e ( _GPIO_PWM2_Control (2 , -> -> 20 `i `ui -> -> 400 `i `ui ]
 "258
-[; ;ETC.c: 258:     _delay((unsigned long)((200)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"259
-[; ;ETC.c: 259:     GPIO_PWM2_Control(20, 600);
-[e ( _GPIO_PWM2_Control (2 , -> -> 20 `i `ui -> -> 600 `i `ui ]
+[; ;ETC.c: 258:     GPIO_PWM2_Control(100, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 100 `i `ui -> -> 600 `i `ui ]
 "260
-[; ;ETC.c: 260:     _delay((unsigned long)((200)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"263
-[; ;ETC.c: 263:     GPIO_PWM2_Control(0, 300);
-[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
+[; ;ETC.c: 260:     _delay((unsigned long)((500)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"262
+[; ;ETC.c: 262:     ANALOGRead();
+[e ( _ANALOGRead ..  ]
 "264
-[; ;ETC.c: 264: }
-[e :UE 3221 ]
-}
+[; ;ETC.c: 264:     _delay((unsigned long)((100)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"265
+[; ;ETC.c: 265:     uiTPS1max = uiTPS1 + 100;
+[e = _uiTPS1max + _uiTPS1 -> -> 100 `i `ui ]
 "266
-[; ;ETC.c: 266: void TPSAnalysis(void)
-[v _TPSAnalysis `(v ~T0 @X0 1 ef ]
+[; ;ETC.c: 266:     uiTPS2max = uiTPS2 - 100;
+[e = _uiTPS2max - _uiTPS2 -> -> 100 `i `ui ]
 "267
-[; ;ETC.c: 267: {
+[; ;ETC.c: 267:     __nop();
+[e ( ___nop ..  ]
+"270
+[; ;ETC.c: 270:     GPIO_PWM2_Control(20, 400);
+[e ( _GPIO_PWM2_Control (2 , -> -> 20 `i `ui -> -> 400 `i `ui ]
+"271
+[; ;ETC.c: 271:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"272
+[; ;ETC.c: 272:     GPIO_PWM2_Control(20, 600);
+[e ( _GPIO_PWM2_Control (2 , -> -> 20 `i `ui -> -> 600 `i `ui ]
+"273
+[; ;ETC.c: 273:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"276
+[; ;ETC.c: 276:     GPIO_PWM2_Control(0, 300);
+[e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
+"277
+[; ;ETC.c: 277: }
+[e :UE 3223 ]
+}
+"279
+[; ;ETC.c: 279: void TPSAnalysis(void)
+[v _TPSAnalysis `(v ~T0 @X0 1 ef ]
+"280
+[; ;ETC.c: 280: {
 {
 [e :U _TPSAnalysis ]
 [f ]
-"269
-[; ;ETC.c: 269:     if ( uiTPS1min < uiTPS1max )
-[e $ ! < _uiTPS1min _uiTPS1max 3223  ]
-"270
-[; ;ETC.c: 270:     {
+"305
+[; ;ETC.c: 305:     ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
+[e = _ucTPS1Perc ( _ETCPercentCalc (3 , , -> _uiTPS1 `l -> _uiTPS1min `l -> _uiTPS1max `l ]
+"306
+[; ;ETC.c: 306:     ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
+[e = _ucTPS2Perc ( _ETCPercentCalc (3 , , -> _uiTPS2 `l -> _uiTPS2min `l -> _uiTPS2max `l ]
+"307
+[; ;ETC.c: 307:     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
+[e = _ucTPS -> / + -> _ucTPS1Perc `i -> _ucTPS2Perc `i -> 2 `i `uc ]
+"308
+[; ;ETC.c: 308:     __nop();
+[e ( ___nop ..  ]
+"313
+[; ;ETC.c: 313:     if ( ( ulTPS1calc > uiTPS1 + 100 ) || ( ulTPS1calc < uiTPS1 - 100 ) )
+[e $ ! || > _ulTPS1calc -> + _uiTPS1 -> -> 100 `i `ui `l < _ulTPS1calc -> - _uiTPS1 -> -> 100 `i `ui `l 3225  ]
+"314
+[; ;ETC.c: 314:     {
 {
-"275
-[; ;ETC.c: 275:         ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1max, uiTPS1min);
-[e = _ucTPS1Perc ( _ETCPercentCalc (3 , , -> _uiTPS1 `l -> _uiTPS1max `l -> _uiTPS1min `l ]
-"276
-[; ;ETC.c: 276:         ucTPS_Volts_STATE = 1;
-[e = _ucTPS_Volts_STATE -> -> 1 `i `uc ]
-"277
-[; ;ETC.c: 277:     }
-}
-[e $U 3224  ]
-"278
-[; ;ETC.c: 278:     else
-[e :U 3223 ]
-"279
-[; ;ETC.c: 279:     {
-{
-"284
-[; ;ETC.c: 284:         ucTPS1Perc = 100-ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
-[e = _ucTPS1Perc -> - -> 100 `i -> ( _ETCPercentCalc (3 , , -> _uiTPS1 `l -> _uiTPS1min `l -> _uiTPS1max `l `i `uc ]
-"285
-[; ;ETC.c: 285:         ucTPS_Volts_STATE = 2;
-[e = _ucTPS_Volts_STATE -> -> 2 `i `uc ]
-"286
-[; ;ETC.c: 286:     }
-}
-[e :U 3224 ]
-"288
-[; ;ETC.c: 288:     if ( uiTPS2min < uiTPS2max )
-[e $ ! < _uiTPS2min _uiTPS2max 3225  ]
-"289
-[; ;ETC.c: 289:     {
-{
-"294
-[; ;ETC.c: 294:         ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2max, uiTPS2min);
-[e = _ucTPS2Perc ( _ETCPercentCalc (3 , , -> _uiTPS2 `l -> _uiTPS2max `l -> _uiTPS2min `l ]
-"295
-[; ;ETC.c: 295:         ucTPS_Volts_STATE = 4;
-[e = _ucTPS_Volts_STATE -> -> 4 `i `uc ]
-"296
-[; ;ETC.c: 296:     }
+"316
+[; ;ETC.c: 316:         ucTPS_STATE |= 1;
+[e =| _ucTPS_STATE -> -> 1 `i `uc ]
+"317
+[; ;ETC.c: 317:     }
 }
 [e $U 3226  ]
-"297
-[; ;ETC.c: 297:     else
+"318
+[; ;ETC.c: 318:     else
 [e :U 3225 ]
-"298
-[; ;ETC.c: 298:     {
+"319
+[; ;ETC.c: 319:     {
 {
-"303
-[; ;ETC.c: 303:         ucTPS2Perc = 100-ETCPercentCalc (uiTPS2, uiTPS2max, uiTPS2min);
-[e = _ucTPS2Perc -> - -> 100 `i -> ( _ETCPercentCalc (3 , , -> _uiTPS2 `l -> _uiTPS2max `l -> _uiTPS2min `l `i `uc ]
-"304
-[; ;ETC.c: 304:         ucTPS_Volts_STATE = 8;
-[e = _ucTPS_Volts_STATE -> -> 8 `i `uc ]
-"305
-[; ;ETC.c: 305:     }
+"321
+[; ;ETC.c: 321:         ucTPS_STATE |= 0xFE;
+[e =| _ucTPS_STATE -> -> 254 `i `uc ]
+"322
+[; ;ETC.c: 322:     }
 }
 [e :U 3226 ]
-"310
-[; ;ETC.c: 310:     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
-[e = _ucTPS -> / + -> _ucTPS1Perc `i -> _ucTPS2Perc `i -> 2 `i `uc ]
-"311
-[; ;ETC.c: 311:     __nop();
-[e ( ___nop ..  ]
-"316
-[; ;ETC.c: 316:     if ( ( ulTPS1calc > uiTPS1 + 100 ) || ( ulTPS1calc < uiTPS1 - 100 ) )
-[e $ ! || > _ulTPS1calc -> + _uiTPS1 -> -> 100 `i `ui `l < _ulTPS1calc -> - _uiTPS1 -> -> 100 `i `ui `l 3227  ]
-"317
-[; ;ETC.c: 317:     {
+"324
+[; ;ETC.c: 324:     if ( ( ulTPS2calc > uiTPS2 + 100 ) || ( ulTPS2calc < uiTPS2 - 100 ) )
+[e $ ! || > _ulTPS2calc -> + _uiTPS2 -> -> 100 `i `ui `l < _ulTPS2calc -> - _uiTPS2 -> -> 100 `i `ui `l 3227  ]
+"325
+[; ;ETC.c: 325:     {
 {
-"319
-[; ;ETC.c: 319:         ucTPS_STATE |= 1;
-[e =| _ucTPS_STATE -> -> 1 `i `uc ]
-"320
-[; ;ETC.c: 320:     }
+"327
+[; ;ETC.c: 327:         ucTPS_STATE |= 2;
+[e =| _ucTPS_STATE -> -> 2 `i `uc ]
+"328
+[; ;ETC.c: 328:     }
 }
 [e $U 3228  ]
-"321
-[; ;ETC.c: 321:     else
+"329
+[; ;ETC.c: 329:     else
 [e :U 3227 ]
-"322
-[; ;ETC.c: 322:     {
+"330
+[; ;ETC.c: 330:     {
 {
-"324
-[; ;ETC.c: 324:         ucTPS_STATE |= 0xFE;
-[e =| _ucTPS_STATE -> -> 254 `i `uc ]
-"325
-[; ;ETC.c: 325:     }
+"332
+[; ;ETC.c: 332:         ucTPS_STATE |= 0xFD;
+[e =| _ucTPS_STATE -> -> 253 `i `uc ]
+"333
+[; ;ETC.c: 333:     }
 }
 [e :U 3228 ]
-"327
-[; ;ETC.c: 327:     if ( ( ulTPS2calc > uiTPS2 + 100 ) || ( ulTPS2calc < uiTPS2 - 100 ) )
-[e $ ! || > _ulTPS2calc -> + _uiTPS2 -> -> 100 `i `ui `l < _ulTPS2calc -> - _uiTPS2 -> -> 100 `i `ui `l 3229  ]
-"328
-[; ;ETC.c: 328:     {
+"336
+[; ;ETC.c: 336:     if ( ucTPS_Volts_STATE == 5 )
+[e $ ! == -> _ucTPS_Volts_STATE `i -> 5 `i 3229  ]
+"337
+[; ;ETC.c: 337:     {
 {
-"330
-[; ;ETC.c: 330:         ucTPS_STATE |= 2;
-[e =| _ucTPS_STATE -> -> 2 `i `uc ]
-"331
-[; ;ETC.c: 331:     }
+"338
+[; ;ETC.c: 338:         ucTPS_STATE |= 4;
+[e =| _ucTPS_STATE -> -> 4 `i `uc ]
+"339
+[; ;ETC.c: 339:     }
 }
 [e $U 3230  ]
-"332
-[; ;ETC.c: 332:     else
-[e :U 3229 ]
-"333
-[; ;ETC.c: 333:     {
-{
-"335
-[; ;ETC.c: 335:         ucTPS_STATE |= 0xFD;
-[e =| _ucTPS_STATE -> -> 253 `i `uc ]
-"336
-[; ;ETC.c: 336:     }
-}
-[e :U 3230 ]
-"339
-[; ;ETC.c: 339:     if ( ucTPS_Volts_STATE == 5 )
-[e $ ! == -> _ucTPS_Volts_STATE `i -> 5 `i 3231  ]
 "340
-[; ;ETC.c: 340:     {
-{
+[; ;ETC.c: 340:     else if ( ucTPS_Volts_STATE == 9 )
+[e :U 3229 ]
+[e $ ! == -> _ucTPS_Volts_STATE `i -> 9 `i 3231  ]
 "341
-[; ;ETC.c: 341:         ucTPS_STATE |= 4;
-[e =| _ucTPS_STATE -> -> 4 `i `uc ]
-"342
-[; ;ETC.c: 342:     }
+[; ;ETC.c: 341:     {
+{
+"343
+[; ;ETC.c: 343:         ucTPS_STATE &= 0xFB;
+[e =& _ucTPS_STATE -> -> 251 `i `uc ]
+"344
+[; ;ETC.c: 344:     }
 }
 [e $U 3232  ]
-"343
-[; ;ETC.c: 343:     else if ( ucTPS_Volts_STATE == 9 )
+"345
+[; ;ETC.c: 345:     else if ( ucTPS_Volts_STATE == 6 )
 [e :U 3231 ]
-[e $ ! == -> _ucTPS_Volts_STATE `i -> 9 `i 3233  ]
-"344
-[; ;ETC.c: 344:     {
-{
+[e $ ! == -> _ucTPS_Volts_STATE `i -> 6 `i 3233  ]
 "346
-[; ;ETC.c: 346:         ucTPS_STATE &= 0xFB;
+[; ;ETC.c: 346:     {
+{
+"348
+[; ;ETC.c: 348:         ucTPS_STATE &= 0xFB;
 [e =& _ucTPS_STATE -> -> 251 `i `uc ]
-"347
-[; ;ETC.c: 347:     }
+"349
+[; ;ETC.c: 349:     }
 }
 [e $U 3234  ]
-"348
-[; ;ETC.c: 348:     else if ( ucTPS_Volts_STATE == 6 )
+"350
+[; ;ETC.c: 350:     else if ( ucTPS_Volts_STATE == 10 )
 [e :U 3233 ]
-[e $ ! == -> _ucTPS_Volts_STATE `i -> 6 `i 3235  ]
-"349
-[; ;ETC.c: 349:     {
-{
+[e $ ! == -> _ucTPS_Volts_STATE `i -> 10 `i 3235  ]
 "351
-[; ;ETC.c: 351:         ucTPS_STATE &= 0xFB;
-[e =& _ucTPS_STATE -> -> 251 `i `uc ]
+[; ;ETC.c: 351:     {
+{
 "352
-[; ;ETC.c: 352:     }
+[; ;ETC.c: 352:         ucTPS_STATE |= 4;
+[e =| _ucTPS_STATE -> -> 4 `i `uc ]
+"353
+[; ;ETC.c: 353:     }
 }
 [e $U 3236  ]
-"353
-[; ;ETC.c: 353:     else if ( ucTPS_Volts_STATE == 10 )
-[e :U 3235 ]
-[e $ ! == -> _ucTPS_Volts_STATE `i -> 10 `i 3237  ]
 "354
-[; ;ETC.c: 354:     {
-{
+[; ;ETC.c: 354:     else
+[e :U 3235 ]
 "355
-[; ;ETC.c: 355:         ucTPS_STATE |= 4;
-[e =| _ucTPS_STATE -> -> 4 `i `uc ]
-"356
-[; ;ETC.c: 356:     }
-}
-[e $U 3238  ]
-"357
-[; ;ETC.c: 357:     else
-[e :U 3237 ]
-"358
-[; ;ETC.c: 358:     {
+[; ;ETC.c: 355:     {
 {
-"359
-[; ;ETC.c: 359:         ucTPS_STATE |= 4;
+"356
+[; ;ETC.c: 356:         ucTPS_STATE |= 4;
 [e =| _ucTPS_STATE -> -> 4 `i `uc ]
-"360
-[; ;ETC.c: 360:     }
+"357
+[; ;ETC.c: 357:     }
 }
-[e :U 3238 ]
 [e :U 3236 ]
 [e :U 3234 ]
 [e :U 3232 ]
-"365
-[; ;ETC.c: 365: }
-[e :UE 3222 ]
+[e :U 3230 ]
+"362
+[; ;ETC.c: 362: }
+[e :UE 3224 ]
 }
-"369
-[; ;ETC.c: 369: void APPSAnalysis (void)
+"366
+[; ;ETC.c: 366: void APPSAnalysis (void)
 [v _APPSAnalysis `(v ~T0 @X0 1 ef ]
-"370
-[; ;ETC.c: 370: {
+"367
+[; ;ETC.c: 367: {
 {
 [e :U _APPSAnalysis ]
 [f ]
-"372
-[; ;ETC.c: 372:     __nop();
-[e ( ___nop ..  ]
-"373
-[; ;ETC.c: 373:     _delay((unsigned long)((50)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
-"374
-[; ;ETC.c: 374:     __nop();
-[e ( ___nop ..  ]
-"375
-[; ;ETC.c: 375:     __nop();
-[e ( ___nop ..  ]
-"376
-[; ;ETC.c: 376:     __nop();
-[e ( ___nop ..  ]
-"377
-[; ;ETC.c: 377:     if ( uiAPPS1min < uiAPPS1max )
-[e $ ! < _uiAPPS1min _uiAPPS1max 3240  ]
-"378
-[; ;ETC.c: 378:     {
-{
-"384
-[; ;ETC.c: 384:         ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1min, uiAPPS1max);
-[e = _ucAPPS1Perc ( _ETCPercentCalc (3 , , -> _uiAPPS1 `l -> _uiAPPS1min `l -> _uiAPPS1max `l ]
-"385
-[; ;ETC.c: 385:     }
-}
-[e $U 3241  ]
-"386
-[; ;ETC.c: 386:     else
-[e :U 3240 ]
 "387
-[; ;ETC.c: 387:     {
-{
-"392
-[; ;ETC.c: 392:         ucAPPS1Perc = 100-ETCPercentCalc (uiAPPS1, uiAPPS1max, uiAPPS1min);
-[e = _ucAPPS1Perc -> - -> 100 `i -> ( _ETCPercentCalc (3 , , -> _uiAPPS1 `l -> _uiAPPS1max `l -> _uiAPPS1min `l `i `uc ]
-"393
-[; ;ETC.c: 393:     }
-}
-[e :U 3241 ]
-"395
-[; ;ETC.c: 395:     if ( uiAPPS2min < uiAPPS2max )
-[e $ ! < _uiAPPS2min _uiAPPS2max 3242  ]
-"396
-[; ;ETC.c: 396:     {
-{
-"401
-[; ;ETC.c: 401:         ucAPPS2Perc = 100-ETCPercentCalc (uiAPPS2, uiAPPS2max, uiAPPS2min);
-[e = _ucAPPS2Perc -> - -> 100 `i -> ( _ETCPercentCalc (3 , , -> _uiAPPS2 `l -> _uiAPPS2max `l -> _uiAPPS2min `l `i `uc ]
-"402
-[; ;ETC.c: 402:     }
-}
-[e $U 3243  ]
-"403
-[; ;ETC.c: 403:     else
-[e :U 3242 ]
-"404
-[; ;ETC.c: 404:     {
-{
-"410
-[; ;ETC.c: 410:         ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
+[; ;ETC.c: 387:     ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1min, uiAPPS1max);
+[e = _ucAPPS1Perc ( _ETCPercentCalc (3 , , -> _uiAPPS1 `l -> _uiAPPS1min `l -> _uiAPPS1max `l ]
+"388
+[; ;ETC.c: 388:     ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
 [e = _ucAPPS2Perc ( _ETCPercentCalc (3 , , -> _uiAPPS2 `l -> _uiAPPS2min `l -> _uiAPPS2max `l ]
-"411
-[; ;ETC.c: 411:     }
-}
-[e :U 3243 ]
-"415
-[; ;ETC.c: 415:     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
+"389
+[; ;ETC.c: 389:     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
 [e = _ucAPPS -> / + -> _ucAPPS1Perc `i -> _ucAPPS2Perc `i -> 2 `i `uc ]
-"416
-[; ;ETC.c: 416:     __nop();
+"390
+[; ;ETC.c: 390:     __nop();
 [e ( ___nop ..  ]
-"417
-[; ;ETC.c: 417: }
-[e :UE 3239 ]
+"391
+[; ;ETC.c: 391: }
+[e :UE 3237 ]
 }
-"420
-[; ;ETC.c: 420: void ETCSupervisor (void)
+"394
+[; ;ETC.c: 394: void ETCSupervisor (void)
 [v _ETCSupervisor `(v ~T0 @X0 1 ef ]
-"421
-[; ;ETC.c: 421: {
+"395
+[; ;ETC.c: 395: {
 {
 [e :U _ETCSupervisor ]
 [f ]
-"422
-[; ;ETC.c: 422:     __nop();
+"396
+[; ;ETC.c: 396:     __nop();
 [e ( ___nop ..  ]
-"423
-[; ;ETC.c: 423:     if ( ucASMode == 1 )
-[e $ ! == -> _ucASMode `i -> 1 `i 3245  ]
-"424
-[; ;ETC.c: 424:     {
+"397
+[; ;ETC.c: 397:     if ( ucASMode == 1 )
+[e $ ! == -> _ucASMode `i -> 1 `i 3239  ]
+"398
+[; ;ETC.c: 398:     {
 {
-"425
-[; ;ETC.c: 425:         if ( ucETCBeatSupervisor == 0x01 )
-[e $ ! == -> _ucETCBeatSupervisor `i -> 1 `i 3246  ]
-"426
-[; ;ETC.c: 426:         {
+"399
+[; ;ETC.c: 399:         if ( ucETCBeatSupervisor == 0x01 )
+[e $ ! == -> _ucETCBeatSupervisor `i -> 1 `i 3240  ]
+"400
+[; ;ETC.c: 400:         {
 {
-"427
-[; ;ETC.c: 427:             ucETCFlagSupervisor = 0x01;
+"401
+[; ;ETC.c: 401:             ucETCFlagSupervisor = 0x01;
 [e = _ucETCFlagSupervisor -> -> 1 `i `uc ]
-"428
-[; ;ETC.c: 428:         }
+"402
+[; ;ETC.c: 402:         }
 }
-[e $U 3247  ]
-"429
-[; ;ETC.c: 429:         else
-[e :U 3246 ]
-"430
-[; ;ETC.c: 430:         {
+[e $U 3241  ]
+"403
+[; ;ETC.c: 403:         else
+[e :U 3240 ]
+"404
+[; ;ETC.c: 404:         {
 {
-"431
-[; ;ETC.c: 431:             ucETCFlagSupervisor = 0x00;
+"405
+[; ;ETC.c: 405:             ucETCFlagSupervisor = 0x00;
 [e = _ucETCFlagSupervisor -> -> 0 `i `uc ]
-"433
-[; ;ETC.c: 433:             GPIO_PWM1_Control(0, 300);
+"407
+[; ;ETC.c: 407:             GPIO_PWM1_Control(0, 300);
 [e ( _GPIO_PWM1_Control (2 , -> -> 0 `i `ui -> -> 300 `i `ui ]
-"434
-[; ;ETC.c: 434:             GPIO_PWM2_Control(0, 600);
+"408
+[; ;ETC.c: 408:             GPIO_PWM2_Control(0, 600);
 [e ( _GPIO_PWM2_Control (2 , -> -> 0 `i `ui -> -> 600 `i `ui ]
-"435
-[; ;ETC.c: 435:         }
+"409
+[; ;ETC.c: 409:         }
 }
-[e :U 3247 ]
-"436
-[; ;ETC.c: 436:     }
+[e :U 3241 ]
+"410
+[; ;ETC.c: 410:     }
 }
-[e $U 3248  ]
-"437
-[; ;ETC.c: 437:     else if ( ucASMode == 0 )
-[e :U 3245 ]
-[e $ ! == -> _ucASMode `i -> 0 `i 3249  ]
-"438
-[; ;ETC.c: 438:     {
+[e $U 3242  ]
+"411
+[; ;ETC.c: 411:     else if ( ucASMode == 0 )
+[e :U 3239 ]
+[e $ ! == -> _ucASMode `i -> 0 `i 3243  ]
+"412
+[; ;ETC.c: 412:     {
 {
-"439
-[; ;ETC.c: 439:         ucETCFlagSupervisor = 0x01;
+"413
+[; ;ETC.c: 413:         ucETCFlagSupervisor = 0x01;
 [e = _ucETCFlagSupervisor -> -> 1 `i `uc ]
-"440
-[; ;ETC.c: 440:     }
+"414
+[; ;ETC.c: 414:     }
 }
-[e :U 3249 ]
-[e :U 3248 ]
-"442
-[; ;ETC.c: 442: }
-[e :UE 3244 ]
+[e :U 3243 ]
+[e :U 3242 ]
+"416
+[; ;ETC.c: 416: }
+[e :UE 3238 ]
 }
-"445
-[; ;ETC.c: 445: void ETCManual (unsigned char ucTargetManual)
+"419
+[; ;ETC.c: 419: void ETCManual (unsigned char ucTargetManual)
 [v _ETCManual `(v ~T0 @X0 1 ef1`uc ]
-"446
-[; ;ETC.c: 446: {
+"420
+[; ;ETC.c: 420: {
 {
 [e :U _ETCManual ]
-"445
-[; ;ETC.c: 445: void ETCManual (unsigned char ucTargetManual)
+"419
+[; ;ETC.c: 419: void ETCManual (unsigned char ucTargetManual)
 [v _ucTargetManual `uc ~T0 @X0 1 r1 ]
-"446
-[; ;ETC.c: 446: {
+"420
+[; ;ETC.c: 420: {
 [f ]
-"447
-[; ;ETC.c: 447:     if ( ucASMode == 0 )
-[e $ ! == -> _ucASMode `i -> 0 `i 3251  ]
-"448
-[; ;ETC.c: 448:     {
+"421
+[; ;ETC.c: 421:     if ( ucASMode == 0 )
+[e $ ! == -> _ucASMode `i -> 0 `i 3245  ]
+"422
+[; ;ETC.c: 422:     {
 {
-"449
-[; ;ETC.c: 449:         ETCMove(ucTargetManual, 0);
+"423
+[; ;ETC.c: 423:         ETCMove(ucTargetManual, 0);
 [e ( _ETCMove (2 , _ucTargetManual -> -> 0 `i `uc ]
-"451
-[; ;ETC.c: 451:     }
+"425
+[; ;ETC.c: 425:     }
 }
-[e :U 3251 ]
-"452
-[; ;ETC.c: 452: }
-[e :UE 3250 ]
+[e :U 3245 ]
+"426
+[; ;ETC.c: 426: }
+[e :UE 3244 ]
 }
-"455
-[; ;ETC.c: 455: unsigned char ETCPercentCalc(signed long val, signed long min, signed long max) {
+"429
+[; ;ETC.c: 429: unsigned char ETCPercentCalc(signed long val, signed long min, signed long max)
 [v _ETCPercentCalc `(uc ~T0 @X0 1 ef3`l`l`l ]
+"430
+[; ;ETC.c: 430: {
 {
 [e :U _ETCPercentCalc ]
+"429
+[; ;ETC.c: 429: unsigned char ETCPercentCalc(signed long val, signed long min, signed long max)
 [v _val `l ~T0 @X0 1 r1 ]
 [v _min `l ~T0 @X0 1 r2 ]
 [v _max `l ~T0 @X0 1 r3 ]
+"430
+[; ;ETC.c: 430: {
 [f ]
-"464
-[; ;ETC.c: 464:     val = 100*(val - min)/(max - min);
+"437
+[; ;ETC.c: 437:     val = 100*(val - min)/(max - min);
 [e = _val / * -> -> 100 `i `l - _val _min - _max _min ]
-"465
-[; ;ETC.c: 465:     if (val < 0){
-[e $ ! < _val -> -> 0 `i `l 3253  ]
+"438
+[; ;ETC.c: 438:     if (val < 0)
+[e $ ! < _val -> -> 0 `i `l 3247  ]
+"439
+[; ;ETC.c: 439:     {
 {
-"466
-[; ;ETC.c: 466:         val = 0;
+"440
+[; ;ETC.c: 440:         val = 0;
 [e = _val -> -> 0 `i `l ]
-"467
-[; ;ETC.c: 467:     } else if (val > 100 ){
+"441
+[; ;ETC.c: 441:     }
 }
-[e $U 3254  ]
-[e :U 3253 ]
-[e $ ! > _val -> -> 100 `i `l 3255  ]
+[e $U 3248  ]
+"442
+[; ;ETC.c: 442:     else if (val > 100 )
+[e :U 3247 ]
+[e $ ! > _val -> -> 100 `i `l 3249  ]
+"443
+[; ;ETC.c: 443:     {
 {
-"468
-[; ;ETC.c: 468:         val = 100;
+"444
+[; ;ETC.c: 444:         val = 100;
 [e = _val -> -> 100 `i `l ]
-"469
-[; ;ETC.c: 469:     }
+"445
+[; ;ETC.c: 445:     }
 }
-[e :U 3255 ]
-[e :U 3254 ]
-"470
-[; ;ETC.c: 470:     return val;
+[e :U 3249 ]
+[e :U 3248 ]
+"447
+[; ;ETC.c: 447:     return val;
 [e ) -> _val `uc ]
-[e $UE 3252  ]
-"471
-[; ;ETC.c: 471: }
-[e :UE 3252 ]
+[e $UE 3246  ]
+"448
+[; ;ETC.c: 448: }
+[e :UE 3246 ]
 }

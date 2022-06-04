@@ -68,14 +68,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./CLUTCH.h: 34: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
 "78 ./ETC.h
-[; ;./ETC.h: 78: void ETC_PID(signed char scTargetMove, unsigned char ucMode);
-[v _ETC_PID `(v ~T0 @X0 0 ef2`c`uc ]
+[; ;./ETC.h: 78: void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+[v _ETC_PID `(v ~T0 @X0 0 ef2`l`uc ]
 "67
 [; ;./ETC.h: 67: extern unsigned char ucETCBeatSupervisor;
 [v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
 "75
 [; ;./ETC.h: 75: void ETCModeSelect (unsigned char ucModeSelect);
 [v _ETCModeSelect `(v ~T0 @X0 0 ef1`uc ]
+"65046 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
+[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 65046:     struct {
+[s S2995 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S2995 . SWIE HLVDIE OSFIE CSWIE TU16AIE CLC1IE CANIE IOCIE ]
+"65045
+[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 65045: typedef union {
+[u S2994 `S2995 1 ]
+[n S2994 . . ]
+"65057
+[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 65057: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x49E)));
+[v _PIE0bits `VS2994 ~T0 @X0 0 e@1182 ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3951,7 +3962,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _CLUTCH_Move (2 , _ucTargetClutch -> -> 1 `i `uc ]
 "144
 [; ;MESSAGES.C: 144:                         ETC_PID ( ucTargetAccelerator, 1);
-[e ( _ETC_PID (2 , -> _ucTargetAccelerator `c -> -> 1 `i `uc ]
+[e ( _ETC_PID (2 , -> _ucTargetAccelerator `l -> -> 1 `i `uc ]
 "145
 [; ;MESSAGES.C: 145:                         ucETCBeatSupervisor = 0x01;
 [e = _ucETCBeatSupervisor -> -> 1 `i `uc ]
@@ -4089,4 +4100,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 "191
 [; ;MESSAGES.C: 191: }
 [e :UE 3187 ]
+}
+"194
+[; ;MESSAGES.C: 194: void CANDisableErrorInterrupt (unsigned char ucInterruptSet)
+[v _CANDisableErrorInterrupt `(v ~T0 @X0 1 ef1`uc ]
+"195
+[; ;MESSAGES.C: 195: {
+{
+[e :U _CANDisableErrorInterrupt ]
+"194
+[; ;MESSAGES.C: 194: void CANDisableErrorInterrupt (unsigned char ucInterruptSet)
+[v _ucInterruptSet `uc ~T0 @X0 1 r1 ]
+"195
+[; ;MESSAGES.C: 195: {
+[f ]
+"196
+[; ;MESSAGES.C: 196:     if (ucInterruptSet == 0x01)
+[e $ ! == -> _ucInterruptSet `i -> 1 `i 3202  ]
+"197
+[; ;MESSAGES.C: 197:     {
+{
+"198
+[; ;MESSAGES.C: 198:         PIE0bits.CANIE = 1;
+[e = . . _PIE0bits 0 6 -> -> 1 `i `uc ]
+"199
+[; ;MESSAGES.C: 199:     }
+}
+[e $U 3203  ]
+"200
+[; ;MESSAGES.C: 200:     else if (ucInterruptSet == 0x00)
+[e :U 3202 ]
+[e $ ! == -> _ucInterruptSet `i -> 0 `i 3204  ]
+"201
+[; ;MESSAGES.C: 201:     {
+{
+"202
+[; ;MESSAGES.C: 202:         PIE0bits.CANIE = 0;
+[e = . . _PIE0bits 0 6 -> -> 0 `i `uc ]
+"203
+[; ;MESSAGES.C: 203:     }
+}
+[e :U 3204 ]
+[e :U 3203 ]
+"205
+[; ;MESSAGES.C: 205: }
+[e :UE 3201 ]
 }

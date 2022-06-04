@@ -38300,6 +38300,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 # 97 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
+void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
 # 45 "main.c" 2
 
 # 1 "./CLUTCH.h" 1
@@ -38367,7 +38368,7 @@ void APPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed char scTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 void ETCCalibrate(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);
@@ -38382,6 +38383,13 @@ unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica);
 void ANALOGRead (void);
 # 49 "main.c" 2
 
+# 1 "./PARAMETERS.h" 1
+# 27 "./PARAMETERS.h"
+extern signed long sl_K;
+extern signed long sl_K_P;
+extern signed long sl_K_I;
+extern signed long sl_K_D;
+# 50 "main.c" 2
 
 
 
@@ -38404,6 +38412,7 @@ void main(void)
     APPSReadmax();
 
     (INTCON0bits.GIE = 1);
+    CANDisableErrorInterrupt(0x00);
 
 
 
@@ -38431,6 +38440,5 @@ void main(void)
 
 
         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
-        _delay((unsigned long)((500)*(10000000/4000.0)));
     }
 }

@@ -38311,6 +38311,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 # 97 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
+void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
 # 8 "MESSAGES.C" 2
 
 
@@ -38356,7 +38357,7 @@ void APPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed char scTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 void ETCCalibrate(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);
@@ -38381,7 +38382,7 @@ void CLUTCHInitMove(void);
 # 11 "MESSAGES.C" 2
 
 # 1 "./PARAMETERS.h" 1
-# 24 "./PARAMETERS.h"
+# 27 "./PARAMETERS.h"
 extern signed long sl_K;
 extern signed long sl_K_P;
 extern signed long sl_K_I;
@@ -38566,4 +38567,18 @@ void CANReadMessage (void)
             }
         }
     }
+}
+
+
+void CANDisableErrorInterrupt (unsigned char ucInterruptSet)
+{
+    if (ucInterruptSet == 0x01)
+    {
+        PIE0bits.CANIE = 1;
+    }
+    else if (ucInterruptSet == 0x00)
+    {
+        PIE0bits.CANIE = 0;
+    }
+
 }

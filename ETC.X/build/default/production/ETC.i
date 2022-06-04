@@ -38325,6 +38325,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 # 97 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
+void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
 # 10 "ETC.c" 2
 
 # 1 "./mcc_generated_files/DAC3_example.h" 1
@@ -38374,7 +38375,7 @@ void APPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed char scTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 void ETCCalibrate(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);
@@ -38392,7 +38393,7 @@ void GPIO_INT2_desembragar (void);
 # 13 "ETC.c" 2
 
 # 1 "./PARAMETERS.h" 1
-# 24 "./PARAMETERS.h"
+# 27 "./PARAMETERS.h"
 extern signed long sl_K;
 extern signed long sl_K_P;
 extern signed long sl_K_I;
@@ -38462,15 +38463,15 @@ void APPSSend (unsigned char ucPercent)
 void APPSReadmin (void)
 {
 
-    uiAPPS1min = uiAPPS1+100;
-    uiAPPS2min = uiAPPS2-100;
+    uiAPPS1min = uiAPPS1 + 100;
+    uiAPPS2min = uiAPPS2 - 100;
 }
 
 void APPSReadmax (void)
 {
 
-    uiAPPS1max = 1990;
-    uiAPPS2max = 160;
+    uiAPPS1max = 1990 - 100;
+    uiAPPS2max = 160 + 100;
 }
 
 
@@ -38537,65 +38538,82 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
     }
 }
 
-void ETC_PID(signed char scTargetMove, unsigned char ucMode) {
-
-
-
-
-
-
-
+void ETC_PID(signed long slTargetMove, unsigned char ucMode)
+{
+# 160 "ETC.c"
+    static signed long sl_K = 50000;
+    static signed long sl_K_P = 1000;
+    static signed long sl_K_I = 3;
+    static signed long sl_K_D = 0;
     static signed long slIntegral = 0;
     signed long slDerivative;
-    signed long slPWMDuty = 0;
-    static signed long slLastErrorPos;
-    static signed long slErrorPos;
+    signed long slMotorPwmDuty = 0;
+    static signed long slErrorPos = 0;
+
+    static signed long slLastTPSPerc = 0;
+
+
+
+
+    slErrorPos = slTargetMove - ucTPS;
+
+
+    if ((slIntegral > -1e4) && (slIntegral < 1e4))
+    {
+        slIntegral += slErrorPos;
+    }
+
+
+    if (ucTPS < slLastTPSPerc)
+    {
+        slDerivative = slLastTPSPerc - ucTPS;
+    }
+    slLastTPSPerc = ucTPS;
+
+    slMotorPwmDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
+    __nop();
+    slMotorPwmDuty /= 1024;
+
+
+    if (slMotorPwmDuty < 0)
+    {
+        slMotorPwmDuty = 0;
+    }
+    else if ( slMotorPwmDuty > 100 )
+    {
+        slMotorPwmDuty = 100;
+    }
 
     __nop();
 
 
-    if ( ucETCFlagSupervisor == 0x01 ) {
-# 174 "ETC.c"
-        scTargetMove = 50;
-        slErrorPos = scTargetMove - ucTPS;
-        slIntegral += slErrorPos;
-        slDerivative = slErrorPos - slLastErrorPos;
-# 186 "ETC.c"
-        slPWMDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
-        slPWMDuty /= 1000;
 
 
-        if ( slPWMDuty < 0 ) {
-            slPWMDuty = 0;
-        }
-        else if ( slPWMDuty > 100 ) {
-            slPWMDuty = 100;
-        }
+    if ( ucETCFlagSupervisor == 0x01 )
+    {
+        if ( ucMode == ucASMode )
+        {
+            if (ucASMode == 1)
+            {
 
-        __nop();
-
-
-        if ( ucMode == ucASMode ) {
-            if ( ucASMode == 1 ) {
-
-                GPIO_PWM2_Control(slPWMDuty, 600);
+                GPIO_PWM2_Control(slMotorPwmDuty, 600);
             }
-            else if ( ucASMode == 0 ) {
-
-
-                GPIO_PWM2_Control(slPWMDuty, 600);
+            else if (ucASMode == 0)
+            {
+                GPIO_PWM2_Control(slMotorPwmDuty, 600);
             }
-            else {
+            else
+            {
 
             }
-        } else {
+        }
+        else
+        {
 
         }
-
-
-        slLastErrorPos = slErrorPos;
-    } else {
-
+    }
+    else
+    {
         GPIO_PWM2_Control(0, 600);
     }
 }
@@ -38644,48 +38662,9 @@ void ETCCalibrate(void) {
 
 void TPSAnalysis(void)
 {
-
-    if ( uiTPS1min < uiTPS1max )
-    {
-
-
-
-
-        ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1max, uiTPS1min);
-        ucTPS_Volts_STATE = 1;
-    }
-    else
-    {
-
-
-
-
-        ucTPS1Perc = 100-ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
-        ucTPS_Volts_STATE = 2;
-    }
-
-    if ( uiTPS2min < uiTPS2max )
-    {
-
-
-
-
-        ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2max, uiTPS2min);
-        ucTPS_Volts_STATE = 4;
-    }
-    else
-    {
-
-
-
-
-        ucTPS2Perc = 100-ETCPercentCalc (uiTPS2, uiTPS2max, uiTPS2min);
-        ucTPS_Volts_STATE = 8;
-    }
-
-
-
-
+# 305 "ETC.c"
+    ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
+    ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
     __nop();
 
@@ -38747,50 +38726,9 @@ void TPSAnalysis(void)
 
 void APPSAnalysis (void)
 {
-
-    __nop();
-    _delay((unsigned long)((50)*(10000000/4000.0)));
-    __nop();
-    __nop();
-    __nop();
-    if ( uiAPPS1min < uiAPPS1max )
-    {
-
-
-
-
-
-        ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1min, uiAPPS1max);
-    }
-    else
-    {
-
-
-
-
-        ucAPPS1Perc = 100-ETCPercentCalc (uiAPPS1, uiAPPS1max, uiAPPS1min);
-    }
-
-    if ( uiAPPS2min < uiAPPS2max )
-    {
-
-
-
-
-        ucAPPS2Perc = 100-ETCPercentCalc (uiAPPS2, uiAPPS2max, uiAPPS2min);
-    }
-    else
-    {
-
-
-
-
-
-        ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
-    }
-
-
-
+# 387 "ETC.c"
+    ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1min, uiAPPS1max);
+    ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
     __nop();
 }
@@ -38831,13 +38769,23 @@ void ETCManual (unsigned char ucTargetManual)
 }
 
 
-unsigned char ETCPercentCalc(signed long val, signed long min, signed long max) {
-# 465 "ETC.c"
+unsigned char ETCPercentCalc(signed long val, signed long min, signed long max)
+{
+
+
+
+
+
+
     val = 100*(val - min)/(max - min);
-    if (val < 0){
+    if (val < 0)
+    {
         val = 0;
-    } else if (val > 100 ){
+    }
+    else if (val > 100 )
+    {
         val = 100;
     }
+
     return val;
 }

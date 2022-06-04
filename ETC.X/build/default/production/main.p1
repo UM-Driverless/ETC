@@ -41,6 +41,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3082 . . . ]
 "2094
 [v _INTCON0bits `VS3082 ~T0 @X0 0 e@1238 ]
+"99 ./MESSAGES.h
+[; ;./MESSAGES.h: 99: void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
+[v _CANDisableErrorInterrupt `(v ~T0 @X0 0 ef1`uc ]
 "33 ./CLUTCH.h
 [; ;./CLUTCH.h: 33: void CLUTCH_Init (void);
 [v _CLUTCH_Init `(v ~T0 @X0 0 ef ]
@@ -64,8 +67,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ETC.h: 81: void APPSAnalysis (void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
 "78
-[; ;./ETC.h: 78: void ETC_PID(signed char scTargetMove, unsigned char ucMode);
-[v _ETC_PID `(v ~T0 @X0 0 ef2`c`uc ]
+[; ;./ETC.h: 78: void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+[v _ETC_PID `(v ~T0 @X0 0 ef2`l`uc ]
 "53
 [; ;./ETC.h: 53: extern unsigned char ucAPPS;
 [v _ucAPPS `uc ~T0 @X0 0 e ]
@@ -84,10 +87,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;./ETC.h: 55: extern unsigned int uiTPS2;
 [v _uiTPS2 `ui ~T0 @X0 0 e ]
-[v F183 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
-[v __delay `JF183 ~T0 @X0 0 e ]
-[p i __delay ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3643,43 +3642,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71
 [; ;main.c: 71:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"77
-[; ;main.c: 77:     CLUTCH_Init();
+"72
+[; ;main.c: 72:     CANDisableErrorInterrupt(0x00);
+[e ( _CANDisableErrorInterrupt (1 -> -> 0 `i `uc ]
+"78
+[; ;main.c: 78:     CLUTCH_Init();
 [e ( _CLUTCH_Init ..  ]
-"84
-[; ;main.c: 84:     CLUTCHInitMove();
+"85
+[; ;main.c: 85:     CLUTCHInitMove();
 [e ( _CLUTCHInitMove ..  ]
-"86
-[; ;main.c: 86:     while (1)
-[e :U 3183 ]
 "87
-[; ;main.c: 87:     {
+[; ;main.c: 87:     while (1)
+[e :U 3183 ]
+"88
+[; ;main.c: 88:     {
 {
-"90
-[; ;main.c: 90:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+"91
+[; ;main.c: 91:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 [e :U 3187 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
 [e :U 3186 ]
-"91
-[; ;main.c: 91:         ANALOGRead();
-[e ( _ANALOGRead ..  ]
 "92
-[; ;main.c: 92:         TPSAnalysis();
-[e ( _TPSAnalysis ..  ]
+[; ;main.c: 92:         ANALOGRead();
+[e ( _ANALOGRead ..  ]
 "93
-[; ;main.c: 93:         APPSAnalysis();
-[e ( _APPSAnalysis ..  ]
+[; ;main.c: 93:         TPSAnalysis();
+[e ( _TPSAnalysis ..  ]
 "94
-[; ;main.c: 94:         ETC_PID(ucAPPS, 0);
-[e ( _ETC_PID (2 , -> _ucAPPS `c -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
-[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> / _uiAPPS1 -> -> 100 `i `ui `uc -> / _uiAPPS2 -> -> 100 `i `ui `uc -> / _uiTPS1 -> -> 100 `i `ui `uc -> / _uiTPS2 -> -> 100 `i `ui `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;main.c: 94:         APPSAnalysis();
+[e ( _APPSAnalysis ..  ]
+"95
+[; ;main.c: 95:         ETC_PID(ucAPPS, 0);
+[e ( _ETC_PID (2 , -> _ucAPPS `l -> -> 0 `i `uc ]
 "99
-[; ;main.c: 99:         _delay((unsigned long)((500)*(10000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+[; ;main.c: 99:         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
+[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> / _uiAPPS1 -> -> 100 `i `ui `uc -> / _uiAPPS2 -> -> 100 `i `ui `uc -> / _uiTPS1 -> -> 100 `i `ui `uc -> / _uiTPS2 -> -> 100 `i `ui `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "100
 [; ;main.c: 100:     }
 }

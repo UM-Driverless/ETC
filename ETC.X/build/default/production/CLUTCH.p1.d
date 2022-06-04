@@ -1,8 +1,12 @@
-build/default/debug/main.p1:  \
-main.c  \
+build/default/production/CLUTCH.p1:  \
+CLUTCH.c  \
+CLUTCH.h  \
+mcc_generated_files/pin_manager.h  \
+PARAMETERS.h  \
+GPIO.h  \
+MESSAGES.h  \
 mcc_generated_files/mcc.h  \
 mcc_generated_files/device_config.h  \
-mcc_generated_files/pin_manager.h  \
 mcc_generated_files/interrupt_manager.h  \
 mcc_generated_files/i2c1_master.h  \
 mcc_generated_files/adc.h  \
@@ -14,9 +18,4 @@ mcc_generated_files/drivers/i2c_simple_master.h  \
 mcc_generated_files/pwm2_16bit.h  \
 mcc_generated_files/DAC3.h  \
 mcc_generated_files/pwm1_16bit.h  \
-MESSAGES.h  \
-CLUTCH.h  \
-GPIO.h  \
-ETC.h  \
-ANALOG.h  \
-PARAMETERS.h 
+ETC.h 

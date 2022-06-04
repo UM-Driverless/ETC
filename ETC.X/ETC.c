@@ -302,8 +302,8 @@ void TPSAnalysis(void)
     }*/
     
     
-    ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1max, uiTPS1min);
-    ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2max, uiTPS2min);
+    ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
+    ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
     Nop();
     
@@ -384,8 +384,8 @@ void APPSAnalysis (void)
         ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
     }*/
     
-    ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1max, uiAPPS1min);
-    ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2max, uiAPPS2min);
+    ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1min, uiAPPS1max);
+    ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
     Nop();
 }

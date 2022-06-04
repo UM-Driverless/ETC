@@ -38439,6 +38439,7 @@ void TEMPORIZATION_100ms (void)
 
 void TEMPORIZATION_500ms (void)
 {
+    do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 
 
     CLUTCH_AnalyseState();

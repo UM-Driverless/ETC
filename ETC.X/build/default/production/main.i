@@ -38431,7 +38431,7 @@ void main(void)
     {
 
 
-        do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();

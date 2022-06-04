@@ -690,13 +690,13 @@ channel_FVR_Buffer2 63
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]
 "38
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
-"49
+"50
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
-"55
+"56
 [v _TEMPORIZATION_10s TEMPORIZATION_10s `(v  1 e 1 0 ]
-"60
+"61
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
-"65
+"66
 [v _TEMPORIZATION_1mins TEMPORIZATION_1mins `(v  1 e 1 0 ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
 `uc 1 frameType 1 0 :1:1 
@@ -806,7 +806,7 @@ channel_FVR_Buffer2 63
 [v _PMD2 PMD2 `VEuc  1 e 1 @98 ]
 "1474
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S3631 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S4048 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -816,8 +816,8 @@ channel_FVR_Buffer2 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1491
-[u S3640 . 1 `S3631 1 . 1 0 ]
-[v _LATAbits LATAbits `VES3640  1 e 1 @1214 ]
+[u S4057 . 1 `S4048 1 . 1 0 ]
+[v _LATAbits LATAbits `VES4057  1 e 1 @1214 ]
 "1514
 [v _PMD3 PMD3 `VEuc  1 e 1 @99 ]
 "1536
@@ -842,7 +842,7 @@ channel_FVR_Buffer2 63
 [v _PMD5 PMD5 `VEuc  1 e 1 @101 ]
 "1660
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S3947 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S3918 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -852,8 +852,8 @@ channel_FVR_Buffer2 63
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1677
-[u S3956 . 1 `S3947 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES3956  1 e 1 @1222 ]
+[u S3927 . 1 `S3918 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES3927  1 e 1 @1222 ]
 "1678
 [v _PMD6 PMD6 `VEuc  1 e 1 @102 ]
 "1722
@@ -874,7 +874,7 @@ channel_FVR_Buffer2 63
 [v _PMD7 PMD7 `VEuc  1 e 1 @103 ]
 "1784
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
-[s S3980 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S3951 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -884,13 +884,13 @@ channel_FVR_Buffer2 63
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1801
-[u S3989 . 1 `S3980 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES3989  1 e 1 @1224 ]
+[u S3960 . 1 `S3951 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES3960  1 e 1 @1224 ]
 "1802
 [v _PMD8 PMD8 `VEuc  1 e 1 @104 ]
 "1846
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
-[s S3890 . 1 `uc 1 RA0 1 0 :1:0 
+[s S3861 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -900,9 +900,9 @@ channel_FVR_Buffer2 63
 `uc 1 RA7 1 0 :1:7 
 ]
 "1884
-[u S3899 . 1 `S3890 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES3899  1 e 1 @1230 ]
-[s S3869 . 1 `uc 1 RB0 1 0 :1:0 
+[u S3870 . 1 `S3861 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES3870  1 e 1 @1230 ]
+[s S3840 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -912,8 +912,8 @@ channel_FVR_Buffer2 63
 `uc 1 RB7 1 0 :1:7 
 ]
 "1946
-[u S3878 . 1 `S3869 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES3878  1 e 1 @1231 ]
+[u S3849 . 1 `S3840 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3849  1 e 1 @1231 ]
 [s S1119 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -2739,7 +2739,7 @@ channel_FVR_Buffer2 63
 "38 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
 {
-"47
+"48
 } 0
 "77 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
@@ -2755,25 +2755,25 @@ channel_FVR_Buffer2 63
 {
 "416
 } 0
-"60 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"61 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
 {
-"63
+"64
 } 0
-"49
+"50
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
 {
-"53
+"54
 } 0
-"65
+"66
 [v _TEMPORIZATION_1mins TEMPORIZATION_1mins `(v  1 e 1 0 ]
 {
-"68
+"69
 } 0
-"55
+"56
 [v _TEMPORIZATION_10s TEMPORIZATION_10s `(v  1 e 1 0 ]
 {
-"58
+"59
 } 0
 "30
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]

@@ -38542,7 +38542,7 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
 {
 # 160 "ETC.c"
     static signed long sl_K = 50000;
-    static signed long sl_K_P = 1000;
+    static signed long sl_K_P = 800;
     static signed long sl_K_I = 3;
     static signed long sl_K_D = 0;
     static signed long slIntegral = 0;

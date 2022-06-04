@@ -88,7 +88,7 @@ void main(void)
     {
         // Add your application code
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
-        LED_Toggle();
+        //LED_Toggle();
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();

@@ -37,6 +37,7 @@ void TEMPORIZATION_100ms (void)
 
 void TEMPORIZATION_500ms (void)
 {
+    LED_Toggle();
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
     //ANALOGRead();
     CLUTCH_AnalyseState();
@@ -48,7 +49,7 @@ void TEMPORIZATION_500ms (void)
 
 void TEMPORIZATION_1s (void)
 {
-    //LED_Toggle();
+    
     //CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
 }
 

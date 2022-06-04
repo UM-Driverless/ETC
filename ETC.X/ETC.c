@@ -158,7 +158,7 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
     // Static local variables to change values at run time for calibration.
     // Test with sl_target_perc ~= 80%, first K_I until it works with delay, then K_P to cancel those oscillations, then K_D to cancel the K_P oscillations.
     static signed long sl_K = 50000; // Just to compensate the spring, which has approximately constant force, start with 50% of PWM duty cycle. The intake throttle is designed to go with the same force in both directions.
-    static signed long sl_K_P = 1000; // 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
+    static signed long sl_K_P = 800; // 1000 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
     static signed long sl_K_I = 3; // 0.003 -> Small because it integrates.
     static signed long sl_K_D = 0; // 20.0 to 200.0. If the error increases, you need to add power.
     static signed long slIntegral = 0; // Usually in the range of 1e5 - 1e6

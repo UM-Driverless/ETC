@@ -62,7 +62,7 @@ void APPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed char scTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 void ETCCalibrate(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);

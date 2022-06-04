@@ -18,4 +18,5 @@ MESSAGES.h  \
 CLUTCH.h  \
 GPIO.h  \
 ETC.h  \
-ANALOG.h 
+ANALOG.h  \
+PARAMETERS.h 

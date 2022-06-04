@@ -37513,7 +37513,8 @@ void PIN_MANAGER_IOC(void);
 # 10 "CLUTCH.c" 2
 
 # 1 "./PARAMETERS.h" 1
-# 24 "./PARAMETERS.h"
+# 27 "./PARAMETERS.h"
+extern signed long sl_K;
 extern signed long sl_K_P;
 extern signed long sl_K_I;
 extern signed long sl_K_D;
@@ -38343,6 +38344,7 @@ extern unsigned char ucSTEER_WH_Clutch;
 # 97 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
+void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
 # 13 "CLUTCH.c" 2
 
 # 1 "./ETC.h" 1
@@ -38387,7 +38389,7 @@ void APPSReadmax (void);
 void ETCModeSelect (unsigned char ucModeSelect);
 void ETCRulesSupervision(void);
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed char scTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 void ETCCalibrate(void);
 void TPSAnalysis (void);
 void APPSAnalysis (void);

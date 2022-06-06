@@ -11,6 +11,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./../ETC.X/mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
+"80 ./ETC.h
+[; ;./ETC.h: 80: void TPSAnalysis (void);
+[v _TPSAnalysis `(v ~T0 @X0 0 ef ]
+"81
+[; ;./ETC.h: 81: void APPSAnalysis (void);
+[v _APPSAnalysis `(v ~T0 @X0 0 ef ]
+"1480 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
+[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
+[s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S3061 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"1479
+[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1479:     struct {
+[u S3060 `S3061 1 ]
+[n S3060 . . ]
+"1491
+[v _LATAbits `VS3060 ~T0 @X0 0 e@1214 ]
 "35 ./CLUTCH.h
 [; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
@@ -3569,87 +3585,100 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TEMPORIZATION_10ms ]
 [f ]
 "28
-[; ;TEMPORIZATIONS.c: 28: }
+[; ;TEMPORIZATIONS.c: 28:     TPSAnalysis();
+[e ( _TPSAnalysis ..  ]
+"29
+[; ;TEMPORIZATIONS.c: 29:     APPSAnalysis();
+[e ( _APPSAnalysis ..  ]
+"30
+[; ;TEMPORIZATIONS.c: 30: }
 [e :UE 3181 ]
 }
-"30
-[; ;TEMPORIZATIONS.c: 30: void TEMPORIZATION_100ms (void)
+"32
+[; ;TEMPORIZATIONS.c: 32: void TEMPORIZATION_100ms (void)
 [v _TEMPORIZATION_100ms `(v ~T0 @X0 1 ef ]
-"31
-[; ;TEMPORIZATIONS.c: 31: {
+"33
+[; ;TEMPORIZATIONS.c: 33: {
 {
 [e :U _TEMPORIZATION_100ms ]
 [f ]
-"36
-[; ;TEMPORIZATIONS.c: 36: }
+"38
+[; ;TEMPORIZATIONS.c: 38: }
 [e :UE 3182 ]
 }
-"38
-[; ;TEMPORIZATIONS.c: 38: void TEMPORIZATION_500ms (void)
+"40
+[; ;TEMPORIZATIONS.c: 40: void TEMPORIZATION_500ms (void)
 [v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
-"39
-[; ;TEMPORIZATIONS.c: 39: {
+"41
+[; ;TEMPORIZATIONS.c: 41: {
 {
 [e :U _TEMPORIZATION_500ms ]
 [f ]
 "42
-[; ;TEMPORIZATIONS.c: 42:     CLUTCH_AnalyseState();
-[e ( _CLUTCH_AnalyseState ..  ]
-"44
-[; ;TEMPORIZATIONS.c: 44:     ETCSupervisor();
-[e ( _ETCSupervisor ..  ]
+[; ;TEMPORIZATIONS.c: 42:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+[e :U 3186 ]
+{
+[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
+}
+[e :U 3185 ]
 "45
-[; ;TEMPORIZATIONS.c: 45:     ucETCBeatSupervisor = 0x00;
-[e = _ucETCBeatSupervisor -> -> 0 `i `uc ]
+[; ;TEMPORIZATIONS.c: 45:     CLUTCH_AnalyseState();
+[e ( _CLUTCH_AnalyseState ..  ]
 "47
-[; ;TEMPORIZATIONS.c: 47: }
+[; ;TEMPORIZATIONS.c: 47:     ETCSupervisor();
+[e ( _ETCSupervisor ..  ]
+"48
+[; ;TEMPORIZATIONS.c: 48:     ucETCBeatSupervisor = 0x00;
+[e = _ucETCBeatSupervisor -> -> 0 `i `uc ]
+"50
+[; ;TEMPORIZATIONS.c: 50: }
 [e :UE 3183 ]
 }
-"49
-[; ;TEMPORIZATIONS.c: 49: void TEMPORIZATION_1s (void)
+"52
+[; ;TEMPORIZATIONS.c: 52: void TEMPORIZATION_1s (void)
 [v _TEMPORIZATION_1s `(v ~T0 @X0 1 ef ]
-"50
-[; ;TEMPORIZATIONS.c: 50: {
+"53
+[; ;TEMPORIZATIONS.c: 53: {
 {
 [e :U _TEMPORIZATION_1s ]
 [f ]
-"53
-[; ;TEMPORIZATIONS.c: 53: }
-[e :UE 3184 ]
-}
-"55
-[; ;TEMPORIZATIONS.c: 55: void TEMPORIZATION_10s (void)
-[v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
 "56
-[; ;TEMPORIZATIONS.c: 56: {
+[; ;TEMPORIZATIONS.c: 56: }
+[e :UE 3187 ]
+}
+"58
+[; ;TEMPORIZATIONS.c: 58: void TEMPORIZATION_10s (void)
+[v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
+"59
+[; ;TEMPORIZATIONS.c: 59: {
 {
 [e :U _TEMPORIZATION_10s ]
 [f ]
-"58
-[; ;TEMPORIZATIONS.c: 58: }
-[e :UE 3185 ]
-}
-"60
-[; ;TEMPORIZATIONS.c: 60: void TEMPORIZATION_30s (void)
-[v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
 "61
-[; ;TEMPORIZATIONS.c: 61: {
+[; ;TEMPORIZATIONS.c: 61: }
+[e :UE 3188 ]
+}
+"63
+[; ;TEMPORIZATIONS.c: 63: void TEMPORIZATION_30s (void)
+[v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
+"64
+[; ;TEMPORIZATIONS.c: 64: {
 {
 [e :U _TEMPORIZATION_30s ]
 [f ]
-"63
-[; ;TEMPORIZATIONS.c: 63: }
-[e :UE 3186 ]
-}
-"65
-[; ;TEMPORIZATIONS.c: 65: void TEMPORIZATION_1mins (void)
-[v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
 "66
-[; ;TEMPORIZATIONS.c: 66: {
+[; ;TEMPORIZATIONS.c: 66: }
+[e :UE 3189 ]
+}
+"68
+[; ;TEMPORIZATIONS.c: 68: void TEMPORIZATION_1mins (void)
+[v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
+"69
+[; ;TEMPORIZATIONS.c: 69: {
 {
 [e :U _TEMPORIZATION_1mins ]
 [f ]
-"68
-[; ;TEMPORIZATIONS.c: 68: }
-[e :UE 3187 ]
+"71
+[; ;TEMPORIZATIONS.c: 71: }
+[e :UE 3190 ]
 }

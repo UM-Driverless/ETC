@@ -304,16 +304,19 @@ channel_FVR_Buffer2 63
 "148
 [v _ETC_PID ETC_PID `(v  1 e 1 0 ]
 [v i2_ETC_PID ETC_PID `(v  1 e 1 0 ]
-"237
+"234
 [v _ETCCalibrate ETCCalibrate `(v  1 e 1 0 ]
-"279
+"276
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
-"366
+[v i2_TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
+"363
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
-"394
+[v i2_APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
+"391
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
-"429
-[v _ETCPercentCalc ETCPercentCalc `(uc  1 e 1 0 ]
+"426
+[v _ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
+[v i2_ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
 "24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
 "43
@@ -686,17 +689,17 @@ channel_FVR_Buffer2 63
 [v _CANDisableErrorInterrupt CANDisableErrorInterrupt `(v  1 e 1 0 ]
 "25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_10ms TEMPORIZATION_10ms `(v  1 e 1 0 ]
-"30
+"32
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]
-"38
+"40
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
-"50
+"52
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
-"56
+"58
 [v _TEMPORIZATION_10s TEMPORIZATION_10s `(v  1 e 1 0 ]
-"61
+"63
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
-"66
+"68
 [v _TEMPORIZATION_1mins TEMPORIZATION_1mins `(v  1 e 1 0 ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
 `uc 1 frameType 1 0 :1:1 
@@ -806,7 +809,7 @@ channel_FVR_Buffer2 63
 [v _PMD2 PMD2 `VEuc  1 e 1 @98 ]
 "1474
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S4048 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S4050 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -816,8 +819,8 @@ channel_FVR_Buffer2 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1491
-[u S4057 . 1 `S4048 1 . 1 0 ]
-[v _LATAbits LATAbits `VES4057  1 e 1 @1214 ]
+[u S4059 . 1 `S4050 1 . 1 0 ]
+[v _LATAbits LATAbits `VES4059  1 e 1 @1214 ]
 "1514
 [v _PMD3 PMD3 `VEuc  1 e 1 @99 ]
 "1536
@@ -1861,23 +1864,29 @@ channel_FVR_Buffer2 63
 "27
 [v _uiAPPS2 uiAPPS2 `ui  1 e 2 0 ]
 "31
-[v _ucAPPS1Perc ucAPPS1Perc `uc  1 e 1 0 ]
+[v _ucAPPS1Perc ucAPPS1Perc `ui  1 e 2 0 ]
 "32
-[v _ucAPPS2Perc ucAPPS2Perc `uc  1 e 1 0 ]
+[v _ucAPPS2Perc ucAPPS2Perc `ui  1 e 2 0 ]
 "33
-[v _ucAPPS ucAPPS `uc  1 e 1 0 ]
+[v _ucAPPS ucAPPS `ui  1 e 2 0 ]
 "34
 [v _uiTPS1 uiTPS1 `ui  1 e 2 0 ]
 "35
 [v _uiTPS2 uiTPS2 `ui  1 e 2 0 ]
+"36
+[v _ulTPS1calc ulTPS1calc `l  1 e 4 0 ]
+"37
+[v _ulTPS2calc ulTPS2calc `l  1 e 4 0 ]
 "38
-[v _ucTPS1Perc ucTPS1Perc `uc  1 e 1 0 ]
+[v _ucTPS1Perc ucTPS1Perc `ui  1 e 2 0 ]
 "39
-[v _ucTPS2Perc ucTPS2Perc `uc  1 e 1 0 ]
+[v _ucTPS2Perc ucTPS2Perc `ui  1 e 2 0 ]
 "40
-[v _ucTPS ucTPS `uc  1 e 1 0 ]
+[v _ucTPS ucTPS `ui  1 e 2 0 ]
 "41
 [v _ucTPS_STATE ucTPS_STATE `uc  1 e 1 0 ]
+"44
+[v _ucTPS_Volts_STATE ucTPS_Volts_STATE `uc  1 e 1 0 ]
 "45
 [v _uiETCDuty uiETCDuty `ui  1 e 2 0 ]
 "47
@@ -2011,10 +2020,10 @@ channel_FVR_Buffer2 63
 {
 "101
 } 0
-"279 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"276 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
 {
-"362
+"359
 } 0
 "50 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -2283,7 +2292,7 @@ channel_FVR_Buffer2 63
 [v ETC_PID@slErrorPos slErrorPos `l  1 s 4 slErrorPos ]
 "169
 [v ETC_PID@slLastTPSPerc slLastTPSPerc `l  1 s 4 slLastTPSPerc ]
-"235
+"232
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
@@ -2292,10 +2301,10 @@ channel_FVR_Buffer2 63
 [v ___flge@ff2 ff2 `d  1 p 4 18 ]
 "19
 } 0
-"237 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"234 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCCalibrate ETCCalibrate `(v  1 e 1 0 ]
 {
-"277
+"274
 } 0
 "64 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
@@ -2659,31 +2668,18 @@ channel_FVR_Buffer2 63
 {
 "82
 } 0
-"366
+"363
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
 {
-"391
+"388
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
-[v ___awdiv __awdiv `(i  1 e 2 0 ]
-{
-"10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
-"11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
-"7
-[v ___awdiv@dividend dividend `i  1 p 2 0 ]
-[v ___awdiv@divisor divisor `i  1 p 2 2 ]
-"41
-} 0
-"429 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
-[v _ETCPercentCalc ETCPercentCalc `(uc  1 e 1 0 ]
+"426
+[v _ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
 {
 [v ETCPercentCalc@val val `l  1 p 4 26 ]
 [v ETCPercentCalc@min min `l  1 p 4 30 ]
 [v ETCPercentCalc@max max `l  1 p 4 34 ]
-"448
+"445
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
@@ -2736,10 +2732,10 @@ channel_FVR_Buffer2 63
 {
 "230
 } 0
-"38 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"40 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
 {
-"48
+"50
 } 0
 "77 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v i2_CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
@@ -2750,35 +2746,35 @@ channel_FVR_Buffer2 63
 [v i2CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
 "109
 } 0
-"394 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"391 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCSupervisor ETCSupervisor `(v  1 e 1 0 ]
 {
-"416
+"413
 } 0
-"61 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
 {
-"64
+"66
 } 0
-"50
+"52
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
 {
-"54
+"56
 } 0
-"66
+"68
 [v _TEMPORIZATION_1mins TEMPORIZATION_1mins `(v  1 e 1 0 ]
 {
-"69
+"71
 } 0
-"56
+"58
 [v _TEMPORIZATION_10s TEMPORIZATION_10s `(v  1 e 1 0 ]
 {
-"59
+"61
 } 0
-"30
+"32
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]
 {
-"36
+"38
 } 0
 "122 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -2800,7 +2796,25 @@ channel_FVR_Buffer2 63
 "25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_10ms TEMPORIZATION_10ms `(v  1 e 1 0 ]
 {
-"28
+"30
+} 0
+"276 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+[v i2_TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
+{
+"359
+} 0
+"363
+[v i2_APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
+{
+"388
+} 0
+"426
+[v i2_ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
+{
+[v i2ETCPercentCalc@val val `l  1 p 4 26 ]
+[v i2ETCPercentCalc@min min `l  1 p 4 30 ]
+[v i2ETCPercentCalc@max max `l  1 p 4 34 ]
+"445
 } 0
 "741 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_RXI_ISR CAN1_RXI_ISR `(v  1 e 1 0 ]
@@ -2845,7 +2859,7 @@ channel_FVR_Buffer2 63
 "148
 [v i2ETC_PID@slTargetMove slTargetMove `l  1 p 4 50 ]
 [v i2ETC_PID@ucMode ucMode `uc  1 p 1 54 ]
-"235
+"232
 } 0
 "15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
 [v i2___lmul __lmul `(ul  1 e 4 0 ]
@@ -2982,13 +2996,13 @@ channel_FVR_Buffer2 63
 [v i2___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
-[v i2___aldiv@quotient quotient `l  1 a 4 10 ]
+[v i2___aldiv@quotient quotient `l  1 a 4 22 ]
 "11
-[v i2___aldiv@sign sign `uc  1 a 1 9 ]
-[v i2___aldiv@counter counter `uc  1 a 1 8 ]
+[v i2___aldiv@sign sign `uc  1 a 1 21 ]
+[v i2___aldiv@counter counter `uc  1 a 1 20 ]
 "7
-[v i2___aldiv@dividend dividend `l  1 p 4 0 ]
-[v i2___aldiv@divisor divisor `l  1 p 4 4 ]
+[v i2___aldiv@dividend dividend `l  1 p 4 12 ]
+[v i2___aldiv@divisor divisor `l  1 p 4 16 ]
 "41
 } 0
 "144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c

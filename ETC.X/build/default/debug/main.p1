@@ -50,16 +50,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;./CLUTCH.h: 36: void CLUTCHInitMove(void);
 [v _CLUTCHInitMove `(v ~T0 @X0 0 ef ]
-"1480 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
-[s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S3061 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"1479
-[; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1479:     struct {
-[u S3060 `S3061 1 ]
-[n S3060 . . ]
-"1491
-[v _LATAbits `VS3060 ~T0 @X0 0 e@1214 ]
 "80 ./ETC.h
 [; ;./ETC.h: 80: void TPSAnalysis (void);
 [v _TPSAnalysis `(v ~T0 @X0 0 ef ]
@@ -70,8 +60,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ETC.h: 78: void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 [v _ETC_PID `(v ~T0 @X0 0 ef2`l`uc ]
 "53
-[; ;./ETC.h: 53: extern unsigned char ucAPPS;
-[v _ucAPPS `uc ~T0 @X0 0 e ]
+[; ;./ETC.h: 53: extern unsigned int ucAPPS;
+[v _ucAPPS `ui ~T0 @X0 0 e ]
 "97 ./MESSAGES.h
 [; ;./MESSAGES.h: 97: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 [v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
@@ -3657,13 +3647,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "88
 [; ;main.c: 88:     {
 {
-"91
-[; ;main.c: 91:         do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-[e :U 3187 ]
-{
-[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
-}
-[e :U 3186 ]
 "92
 [; ;main.c: 92:         ANALOGRead();
 [e ( _ANALOGRead ..  ]

@@ -60,8 +60,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./ETC.h: 78: void ETC_PID(signed long slTargetMove, unsigned char ucMode);
 [v _ETC_PID `(v ~T0 @X0 0 ef2`l`uc ]
 "53
-[; ;./ETC.h: 53: extern unsigned char ucAPPS;
-[v _ucAPPS `uc ~T0 @X0 0 e ]
+[; ;./ETC.h: 53: extern unsigned int ucAPPS;
+[v _ucAPPS `ui ~T0 @X0 0 e ]
 "97 ./MESSAGES.h
 [; ;./MESSAGES.h: 97: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 [v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]

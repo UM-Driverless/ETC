@@ -28,16 +28,16 @@ unsigned int uiAPPS2;
 unsigned char ucAPPS_STATE; 
 unsigned long ulAPPS1calc;
 unsigned long ulAPPS2calc; 
-unsigned char ucAPPS1Perc;
-unsigned char ucAPPS2Perc; 
-unsigned char ucAPPS; 
+unsigned int ucAPPS1Perc;
+unsigned int ucAPPS2Perc; 
+unsigned int ucAPPS; 
 unsigned int uiTPS1;
 unsigned int uiTPS2; 
 signed long ulTPS1calc;
 signed long ulTPS2calc; 
-unsigned char ucTPS1Perc;
-unsigned char ucTPS2Perc; 
-unsigned char ucTPS; 
+unsigned int ucTPS1Perc;
+unsigned int ucTPS2Perc; 
+unsigned int ucTPS; 
 unsigned char ucTPS_STATE; 
 unsigned char ucTPS1_STATE; 
 unsigned char ucTPS2_STATE; 
@@ -157,10 +157,10 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
     // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
     // Static local variables to change values at run time for calibration.
     // Test with sl_target_perc ~= 80%, first K_I until it works with delay, then K_P to cancel those oscillations, then K_D to cancel the K_P oscillations.
-    static signed long sl_K = 50000; // Just to compensate the spring, which has approximately constant force, start with 50% of PWM duty cycle. The intake throttle is designed to go with the same force in both directions.
-    static signed long sl_K_P = 800; // 1000 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
-    static signed long sl_K_I = 3; // 0.003 -> Small because it integrates.
-    static signed long sl_K_D = 0; // 20.0 to 200.0. If the error increases, you need to add power.
+    static signed long sl_K = 50e3; // 50e3/1000 Just to compensate the spring, which has approximately constant force, start with 50% of PWM duty cycle. The intake throttle is designed to go with the same force in both directions.
+    static signed long sl_K_P = 1000; // 1000/1000 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
+    static signed long sl_K_I = 2; // 3/1000 -> Small because it integrates.
+    static signed long sl_K_D = -0; // 20.0 to 200.0. If the error increases, you need to add power.
     static signed long slIntegral = 0; // Usually in the range of 1e5 - 1e6
     signed long slDerivative;
     signed long slMotorPwmDuty = 0;
@@ -171,7 +171,7 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
     // Standard constants: K = 50 (%), K_P = 1.5, K_D = 20, K_I = 3
     
     // Position error:
-    slErrorPos = slTargetMove - ucTPS;  // in % or what units? TODO RJM ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212)
+    slErrorPos = (slTargetMove - ucTPS)/100;  // in % or what units? TODO RJM ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212)
     
     // Integral Error. Cap the values of the integral to avoid windup: https://en.wikipedia.org/wiki/Integral_windup, https://www.mstarlabs.com/apeng/techniques/pidsoftw.html
     if ((slIntegral > -1e4) && (slIntegral < 1e4))
@@ -180,15 +180,12 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
     }
     
     // Derivative Error. Only make it work when descending? I don't feel like it does anything.
-    if (ucTPS < slLastTPSPerc)
-    {
-        slDerivative = slLastTPSPerc - ucTPS; // Behaves like friction. Ignores the input.
-    }
+    slDerivative = ucTPS - slLastTPSPerc; // Behaves like friction. Ignores the input.
     slLastTPSPerc = ucTPS; // For next iteration
     
     slMotorPwmDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
     Nop();
-    slMotorPwmDuty /= 1024; // 1024 ~= 1000. Do it because the constants are long, not floats
+    slMotorPwmDuty /= 1000; // 1024 ~= 1000. Do it because the constants are long, not floats
 
     // Crop between 0 and 100. It's a duty cycle.
     if (slMotorPwmDuty < 0) 
@@ -384,8 +381,8 @@ void APPSAnalysis (void)
         ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
     }*/
     
-    ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1min, uiAPPS1max);
-    ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
+    ucAPPS1Perc = ETCPercentCalc(uiAPPS1, uiAPPS1min, uiAPPS1max);
+    ucAPPS2Perc = ETCPercentCalc(uiAPPS2, uiAPPS2min, uiAPPS2max);
     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
     Nop();
 }
@@ -426,7 +423,7 @@ void ETCManual (unsigned char ucTargetManual)
 }
 
 //Declaracion funciones
-unsigned char ETCPercentCalc(signed long val, signed long min, signed long max) 
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max) 
 {
     /*Returns the percentage of val between min and max. Result bounded between 0 and 100.
      * If val is out of the range [min,max], then it will be capped at 0% or 100%.
@@ -434,14 +431,14 @@ unsigned char ETCPercentCalc(signed long val, signed long min, signed long max)
      * If val exceeds the range going through min, it will be 0%. It if goes through max, it will be 100%, even if min > max.
      * A higher value will be 0% in this case.
      */
-    val = 100*(val - min)/(max - min);
+    val = (10000*(val - min))/(max - min);
     if (val < 0)
     {
         val = 0;
     } 
-    else if (val > 100 )
+    else if (val > 10000 )
     {
-        val = 100;
+        val = 10000;
     } 
     // val is now contained in the interval [0,100] -> ok to assign to unsigned char
     return val;

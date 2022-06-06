@@ -38348,16 +38348,16 @@ extern unsigned int uiAPPS2;
 extern unsigned char ucAPPS_STATE;
 extern unsigned long ulAPPS1calc;
 extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
+extern unsigned int ucAPPS1Perc;
+extern unsigned int ucAPPS2Perc;
+extern unsigned int ucAPPS;
 extern unsigned int uiTPS1;
 extern unsigned int uiTPS2;
 extern signed long ulTPS1calc;
 extern signed long ulTPS2calc;
-extern unsigned char ucTPS1Perc;
-extern unsigned char ucTPS2Perc;
-extern unsigned char ucTPS;
+extern unsigned int ucTPS1Perc;
+extern unsigned int ucTPS2Perc;
+extern unsigned int ucTPS;
 extern unsigned char ucTPS_STATE;
 extern unsigned char ucTPS1_STATE;
 extern unsigned char ucTPS2_STATE;
@@ -38381,7 +38381,7 @@ void TPSAnalysis (void);
 void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
-unsigned char ETCPercentCalc(signed long val, signed long min, signed long max);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
 # 12 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
@@ -38421,16 +38421,16 @@ unsigned int uiAPPS2;
 unsigned char ucAPPS_STATE;
 unsigned long ulAPPS1calc;
 unsigned long ulAPPS2calc;
-unsigned char ucAPPS1Perc;
-unsigned char ucAPPS2Perc;
-unsigned char ucAPPS;
+unsigned int ucAPPS1Perc;
+unsigned int ucAPPS2Perc;
+unsigned int ucAPPS;
 unsigned int uiTPS1;
 unsigned int uiTPS2;
 signed long ulTPS1calc;
 signed long ulTPS2calc;
-unsigned char ucTPS1Perc;
-unsigned char ucTPS2Perc;
-unsigned char ucTPS;
+unsigned int ucTPS1Perc;
+unsigned int ucTPS2Perc;
+unsigned int ucTPS;
 unsigned char ucTPS_STATE;
 unsigned char ucTPS1_STATE;
 unsigned char ucTPS2_STATE;
@@ -38541,10 +38541,10 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 void ETC_PID(signed long slTargetMove, unsigned char ucMode)
 {
 # 160 "ETC.c"
-    static signed long sl_K = 50000;
+    static signed long sl_K = 50e3;
     static signed long sl_K_P = 1000;
-    static signed long sl_K_I = 3;
-    static signed long sl_K_D = 0;
+    static signed long sl_K_I = 0;
+    static signed long sl_K_D = -0;
     static signed long slIntegral = 0;
     signed long slDerivative;
     signed long slMotorPwmDuty = 0;
@@ -38555,7 +38555,7 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
 
 
 
-    slErrorPos = slTargetMove - ucTPS;
+    slErrorPos = (slTargetMove - ucTPS)/100;
 
 
     if ((slIntegral > -1e4) && (slIntegral < 1e4))
@@ -38564,15 +38564,12 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
     }
 
 
-    if (ucTPS < slLastTPSPerc)
-    {
-        slDerivative = slLastTPSPerc - ucTPS;
-    }
+    slDerivative = ucTPS - slLastTPSPerc;
     slLastTPSPerc = ucTPS;
 
     slMotorPwmDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
     __nop();
-    slMotorPwmDuty /= 1024;
+    slMotorPwmDuty /= 1000;
 
 
     if (slMotorPwmDuty < 0)
@@ -38662,7 +38659,7 @@ void ETCCalibrate(void) {
 
 void TPSAnalysis(void)
 {
-# 305 "ETC.c"
+# 302 "ETC.c"
     ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
     ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
@@ -38726,9 +38723,9 @@ void TPSAnalysis(void)
 
 void APPSAnalysis (void)
 {
-# 387 "ETC.c"
-    ucAPPS1Perc = ETCPercentCalc (uiAPPS1, uiAPPS1min, uiAPPS1max);
-    ucAPPS2Perc = ETCPercentCalc (uiAPPS2, uiAPPS2min, uiAPPS2max);
+# 384 "ETC.c"
+    ucAPPS1Perc = ETCPercentCalc(uiAPPS1, uiAPPS1min, uiAPPS1max);
+    ucAPPS2Perc = ETCPercentCalc(uiAPPS2, uiAPPS2min, uiAPPS2max);
     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
     __nop();
 }
@@ -38769,7 +38766,7 @@ void ETCManual (unsigned char ucTargetManual)
 }
 
 
-unsigned char ETCPercentCalc(signed long val, signed long min, signed long max)
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max)
 {
 
 
@@ -38777,14 +38774,14 @@ unsigned char ETCPercentCalc(signed long val, signed long min, signed long max)
 
 
 
-    val = 100*(val - min)/(max - min);
+    val = (10000*(val - min))/(max - min);
     if (val < 0)
     {
         val = 0;
     }
-    else if (val > 100 )
+    else if (val > 10000 )
     {
-        val = 100;
+        val = 10000;
     }
 
     return val;

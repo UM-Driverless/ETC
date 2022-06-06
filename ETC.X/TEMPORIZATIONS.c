@@ -25,13 +25,15 @@ unsigned int uiCount1min;
 void TEMPORIZATION_10ms (void)
 {
     //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
+    TPSAnalysis();
+    APPSAnalysis();
 }
 
 void TEMPORIZATION_100ms (void)
 {
     /*ANALOGRead();
-    TPSAnalysis();
-    APPSAnalysis();
+    //TPSAnalysis();
+    //APPSAnalysis();
     ETCManual(ucAPPSManual);*/
 }
 

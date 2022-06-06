@@ -38341,16 +38341,16 @@ extern unsigned int uiAPPS2;
 extern unsigned char ucAPPS_STATE;
 extern unsigned long ulAPPS1calc;
 extern unsigned long ulAPPS2calc;
-extern unsigned char ucAPPS1Perc;
-extern unsigned char ucAPPS2Perc;
-extern unsigned char ucAPPS;
+extern unsigned int ucAPPS1Perc;
+extern unsigned int ucAPPS2Perc;
+extern unsigned int ucAPPS;
 extern unsigned int uiTPS1;
 extern unsigned int uiTPS2;
 extern signed long ulTPS1calc;
 extern signed long ulTPS2calc;
-extern unsigned char ucTPS1Perc;
-extern unsigned char ucTPS2Perc;
-extern unsigned char ucTPS;
+extern unsigned int ucTPS1Perc;
+extern unsigned int ucTPS2Perc;
+extern unsigned int ucTPS;
 extern unsigned char ucTPS_STATE;
 extern unsigned char ucTPS1_STATE;
 extern unsigned char ucTPS2_STATE;
@@ -38374,7 +38374,7 @@ void TPSAnalysis (void);
 void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
-unsigned char ETCPercentCalc(signed long val, signed long min, signed long max);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
 # 48 "main.c" 2
 
 # 1 "./ANALOG.h" 1

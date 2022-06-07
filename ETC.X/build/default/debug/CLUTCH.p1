@@ -3605,7 +3605,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ucCLUTCHState -> -> 0 `i `uc ]
 "27
 [; ;CLUTCH.c: 27: }
-[e :UE 3181 ]
+[e :UE 3182 ]
 }
 "31
 [; ;CLUTCH.c: 31: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
@@ -3623,7 +3623,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "34
 [; ;CLUTCH.c: 34:     if ( ucETCFlagSupervisor == 0x01 )
-[e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3183  ]
+[e $ ! == -> _ucETCFlagSupervisor `i -> 1 `i 3184  ]
 "35
 [; ;CLUTCH.c: 35:     {
 {
@@ -3638,13 +3638,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _uiCLUTCHDuty & _uiCLUTCHDuty -> -> 255 `i `ui ]
 "44
 [; ;CLUTCH.c: 44:         if ( ucMode == ucASMode )
-[e $ ! == -> _ucMode `i -> _ucASMode `i 3184  ]
+[e $ ! == -> _ucMode `i -> _ucASMode `i 3185  ]
 "45
 [; ;CLUTCH.c: 45:         {
 {
 "59
 [; ;CLUTCH.c: 59:             if ( ucCLUTCHState < 4 )
-[e $ ! < -> _ucCLUTCHState `i -> 4 `i 3185  ]
+[e $ ! < -> _ucCLUTCHState `i -> 4 `i 3186  ]
 "60
 [; ;CLUTCH.c: 60:             {
 {
@@ -3654,28 +3654,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [; ;CLUTCH.c: 62:             }
 }
-[e :U 3185 ]
+[e :U 3186 ]
 "63
 [; ;CLUTCH.c: 63:         }
 }
-[e $U 3186  ]
+[e $U 3187  ]
 "64
 [; ;CLUTCH.c: 64:         else
-[e :U 3184 ]
+[e :U 3185 ]
 "65
 [; ;CLUTCH.c: 65:         {
 {
 "67
 [; ;CLUTCH.c: 67:         }
 }
-[e :U 3186 ]
+[e :U 3187 ]
 "68
 [; ;CLUTCH.c: 68:     }
 }
-[e $U 3187  ]
+[e $U 3188  ]
 "69
 [; ;CLUTCH.c: 69:     else
-[e :U 3183 ]
+[e :U 3184 ]
 "70
 [; ;CLUTCH.c: 70:     {
 {
@@ -3685,10 +3685,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72
 [; ;CLUTCH.c: 72:     }
 }
-[e :U 3187 ]
+[e :U 3188 ]
 "74
 [; ;CLUTCH.c: 74: }
-[e :UE 3182 ]
+[e :UE 3183 ]
 }
 "77
 [; ;CLUTCH.c: 77: void CLUTCH_AnalyseState (void)
@@ -3715,7 +3715,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( ___nop ..  ]
 "87
 [; ;CLUTCH.c: 87:     if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x00 ) )
-[e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 0 `i 3189  ]
+[e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 0 `i 3190  ]
 "88
 [; ;CLUTCH.c: 88:     {
 {
@@ -3728,11 +3728,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "91
 [; ;CLUTCH.c: 91:     }
 }
-[e $U 3190  ]
+[e $U 3191  ]
 "92
 [; ;CLUTCH.c: 92:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x01 ) )
-[e :U 3189 ]
-[e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 1 `i 3191  ]
+[e :U 3190 ]
+[e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 1 `i 3192  ]
 "93
 [; ;CLUTCH.c: 93:     {
 {
@@ -3745,11 +3745,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "96
 [; ;CLUTCH.c: 96:     }
 }
-[e $U 3192  ]
+[e $U 3193  ]
 "97
 [; ;CLUTCH.c: 97:     else if ( ( ucFDC1 == 0x00 ) && ( ucFDC2 == 0x00 ) )
-[e :U 3191 ]
-[e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 0 `i 3193  ]
+[e :U 3192 ]
+[e $ ! && == -> _ucFDC1 `i -> 0 `i == -> _ucFDC2 `i -> 0 `i 3194  ]
 "98
 [; ;CLUTCH.c: 98:     {
 {
@@ -3759,11 +3759,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "100
 [; ;CLUTCH.c: 100:     }
 }
-[e $U 3194  ]
+[e $U 3195  ]
 "101
 [; ;CLUTCH.c: 101:     else if ( ( ucFDC1 == 0x01 ) && ( ucFDC2 == 0x01 ) )
-[e :U 3193 ]
-[e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 1 `i 3195  ]
+[e :U 3194 ]
+[e $ ! && == -> _ucFDC1 `i -> 1 `i == -> _ucFDC2 `i -> 1 `i 3196  ]
 "102
 [; ;CLUTCH.c: 102:     {
 {
@@ -3773,10 +3773,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "104
 [; ;CLUTCH.c: 104:     }
 }
-[e $U 3196  ]
+[e $U 3197  ]
 "105
 [; ;CLUTCH.c: 105:     else
-[e :U 3195 ]
+[e :U 3196 ]
 "106
 [; ;CLUTCH.c: 106:     {
 {
@@ -3786,13 +3786,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "108
 [; ;CLUTCH.c: 108:     }
 }
-[e :U 3196 ]
-[e :U 3194 ]
-[e :U 3192 ]
-[e :U 3190 ]
+[e :U 3197 ]
+[e :U 3195 ]
+[e :U 3193 ]
+[e :U 3191 ]
 "109
 [; ;CLUTCH.c: 109: }
-[e :UE 3188 ]
+[e :UE 3189 ]
 }
 "112
 [; ;CLUTCH.c: 112: void CLUTCHInitMove(void)
@@ -3810,7 +3810,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _CLUTCH_AnalyseState ..  ]
 "116
 [; ;CLUTCH.c: 116:     if ( ucCLUTCHState == 1 )
-[e $ ! == -> _ucCLUTCHState `i -> 1 `i 3198  ]
+[e $ ! == -> _ucCLUTCHState `i -> 1 `i 3199  ]
 "117
 [; ;CLUTCH.c: 117:     {
 {
@@ -3829,13 +3829,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "122
 [; ;CLUTCH.c: 122:     }
 }
-[e :U 3198 ]
+[e :U 3199 ]
 "123
 [; ;CLUTCH.c: 123:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
 "124
 [; ;CLUTCH.c: 124:     if ( ucCLUTCHState == 3 )
-[e $ ! == -> _ucCLUTCHState `i -> 3 `i 3199  ]
+[e $ ! == -> _ucCLUTCHState `i -> 3 `i 3200  ]
 "125
 [; ;CLUTCH.c: 125:     {
 {
@@ -3854,13 +3854,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "131
 [; ;CLUTCH.c: 131:     }
 }
-[e :U 3199 ]
+[e :U 3200 ]
 "132
 [; ;CLUTCH.c: 132:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
 "133
 [; ;CLUTCH.c: 133:     if ( ucCLUTCHState == 2 )
-[e $ ! == -> _ucCLUTCHState `i -> 2 `i 3200  ]
+[e $ ! == -> _ucCLUTCHState `i -> 2 `i 3201  ]
 "134
 [; ;CLUTCH.c: 134:     {
 {
@@ -3870,8 +3870,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "137
 [; ;CLUTCH.c: 137:     }
 }
-[e :U 3200 ]
+[e :U 3201 ]
 "138
 [; ;CLUTCH.c: 138: }
-[e :UE 3197 ]
+[e :UE 3198 ]
 }

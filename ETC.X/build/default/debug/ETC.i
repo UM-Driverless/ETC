@@ -38382,6 +38382,41 @@ void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
 unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
+# 103 "./ETC.h"
+typedef struct {
+
+
+ float Kp;
+ float Ki;
+ float Kd;
+
+
+ float tau;
+
+
+ float limMin;
+ float limMax;
+
+
+ float limMinInt;
+ float limMaxInt;
+
+
+ float T;
+
+
+ float integrator;
+ float prevError;
+ float differentiator;
+ float prevMeasurement;
+
+
+ float out;
+
+} PIDController;
+
+void PIDController_Init(PIDController *pid);
+float PIDController_Update(PIDController *pid, float setpoint, float measurement);
 # 12 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
@@ -38538,12 +38573,13 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
     }
 }
 
+
 void ETC_PID(signed long slTargetMove, unsigned char ucMode)
 {
-# 160 "ETC.c"
+# 159 "ETC.c"
     static signed long sl_K = 50e3;
     static signed long sl_K_P = 1000;
-    static signed long sl_K_I = 0;
+    static signed long sl_K_I = 2;
     static signed long sl_K_D = -0;
     static signed long slIntegral = 0;
     signed long slDerivative;
@@ -38614,6 +38650,7 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
         GPIO_PWM2_Control(0, 600);
     }
 }
+
 
 void ETCCalibrate(void) {
 
@@ -38774,15 +38811,90 @@ unsigned int ETCPercentCalc(signed long val, signed long min, signed long max)
 
 
 
-    val = (10000*(val - min))/(max - min);
+    val = (100*(val - min))/(max - min);
     if (val < 0)
     {
         val = 0;
     }
-    else if (val > 10000 )
+    else if (val > 100 )
     {
-        val = 10000;
+        val = 100;
     }
 
     return val;
+}
+
+
+
+void PIDController_Init(PIDController *pid) {
+
+
+ pid->integrator = 0.0f;
+ pid->prevError = 0.0f;
+
+ pid->differentiator = 0.0f;
+ pid->prevMeasurement = 0.0f;
+
+ pid->out = 0.0f;
+
+}
+
+float PIDController_Update(PIDController *pid, float setpoint, float measurement) {
+
+
+
+
+    float error = setpoint - measurement;
+
+
+
+
+
+    float proportional = pid->Kp * error;
+
+
+
+
+
+    pid->integrator = pid->integrator + 0.5f * pid->Ki * pid->T * (error + pid->prevError);
+
+
+
+    if (pid->integrator > pid->limMaxInt)
+    {
+        pid->integrator = pid->limMaxInt;
+    }
+    else if (pid->integrator < pid->limMinInt)
+    {
+        pid->integrator = pid->limMinInt;
+    }
+
+
+
+
+
+
+    pid->differentiator = -(2.0f * pid->Kd * (measurement - pid->prevMeasurement)
+                        + (2.0f * pid->tau - pid->T) * pid->differentiator)
+                        / (2.0f * pid->tau + pid->T);
+# 509 "ETC.c"
+    pid->out = proportional + pid->integrator + pid->differentiator;
+
+    if (pid->out > pid->limMax) {
+
+        pid->out = pid->limMax;
+
+    } else if (pid->out < pid->limMin) {
+
+        pid->out = pid->limMin;
+
+    }
+
+
+    pid->prevError = error;
+    pid->prevMeasurement = measurement;
+
+
+    return pid->out;
+
 }

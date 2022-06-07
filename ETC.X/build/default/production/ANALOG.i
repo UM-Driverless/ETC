@@ -69,6 +69,41 @@ void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
 unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
+# 103 "./ETC.h"
+typedef struct {
+
+
+ float Kp;
+ float Ki;
+ float Kd;
+
+
+ float tau;
+
+
+ float limMin;
+ float limMax;
+
+
+ float limMinInt;
+ float limMaxInt;
+
+
+ float T;
+
+
+ float integrator;
+ float prevError;
+ float differentiator;
+ float prevMeasurement;
+
+
+ float out;
+
+} PIDController;
+
+void PIDController_Init(PIDController *pid);
+float PIDController_Update(PIDController *pid, float setpoint, float measurement);
 # 9 "ANALOG.c" 2
 
 # 1 "./mcc_generated_files/adc.h" 1

@@ -84,6 +84,16 @@ void main(void)
 
     CLUTCHInitMove();
     
+    
+    PIDController pid = { PID_KP, PID_KI, PID_KD,
+                          PID_TAU,
+                          PID_LIM_MIN, PID_LIM_MAX,
+			  PID_LIM_MIN_INT, PID_LIM_MAX_INT,
+                          SAMPLE_TIME_S };
+    
+    
+    PIDController_Init(&pid);
+    
     while (1)
     {
         // Add your application code
@@ -92,7 +102,13 @@ void main(void)
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();
-        ETC_PID(ucAPPS, ManualMode);
+        //ETC_PID(ucAPPS, ManualMode);
+        
+        
+        GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+    
+        
+        
         /*ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();*/

@@ -3768,7 +3768,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . _msgTransmit 2 &U _CANDATAdata ]
 "74
 [; ;MESSAGES.C: 74:     if(CAN1_IsBusOff() == 0x01)
-[e $ ! == -> ( _CAN1_IsBusOff ..  `i -> 1 `i 3182  ]
+[e $ ! == -> ( _CAN1_IsBusOff ..  `i -> 1 `i 3183  ]
 "75
 [; ;MESSAGES.C: 75:     {
 {
@@ -3778,10 +3778,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "77
 [; ;MESSAGES.C: 77:     }
 }
-[e :U 3182 ]
+[e :U 3183 ]
 "78
 [; ;MESSAGES.C: 78:     if(CAN1_IsTxErrorPassive() == 0x01)
-[e $ ! == -> ( _CAN1_IsTxErrorPassive ..  `i -> 1 `i 3183  ]
+[e $ ! == -> ( _CAN1_IsTxErrorPassive ..  `i -> 1 `i 3184  ]
 "79
 [; ;MESSAGES.C: 79:     {
 {
@@ -3791,10 +3791,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "81
 [; ;MESSAGES.C: 81:     }
 }
-[e :U 3183 ]
+[e :U 3184 ]
 "82
 [; ;MESSAGES.C: 82:     if(CAN1_IsTxErrorWarning() == 0x01)
-[e $ ! == -> ( _CAN1_IsTxErrorWarning ..  `i -> 1 `i 3184  ]
+[e $ ! == -> ( _CAN1_IsTxErrorWarning ..  `i -> 1 `i 3185  ]
 "83
 [; ;MESSAGES.C: 83:     {
 {
@@ -3804,10 +3804,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "85
 [; ;MESSAGES.C: 85:     }
 }
-[e :U 3184 ]
+[e :U 3185 ]
 "86
 [; ;MESSAGES.C: 86:     if(CAN1_IsTxErrorActive() == 0x01)
-[e $ ! == -> ( _CAN1_IsTxErrorActive ..  `i -> 1 `i 3185  ]
+[e $ ! == -> ( _CAN1_IsTxErrorActive ..  `i -> 1 `i 3186  ]
 "87
 [; ;MESSAGES.C: 87:     {
 {
@@ -3817,10 +3817,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "89
 [; ;MESSAGES.C: 89:     }
 }
-[e :U 3185 ]
+[e :U 3186 ]
 "91
 [; ;MESSAGES.C: 91:     if(CAN_TX_FIFO_AVAILABLE == (CAN1_TransmitFIFOStatusGet(TXQ) & CAN_TX_FIFO_AVAILABLE))
-[e $ ! == -> . `E22743 1 `ui & -> ( _CAN1_TransmitFIFOStatusGet (1 . `E22765 0 `ui -> . `E22743 1 `ui 3186  ]
+[e $ ! == -> . `E22743 1 `ui & -> ( _CAN1_TransmitFIFOStatusGet (1 . `E22765 0 `ui -> . `E22743 1 `ui 3187  ]
 "92
 [; ;MESSAGES.C: 92:     {
 {
@@ -3833,10 +3833,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "95
 [; ;MESSAGES.C: 95:     }
 }
-[e :U 3186 ]
+[e :U 3187 ]
 "96
 [; ;MESSAGES.C: 96: }
-[e :UE 3181 ]
+[e :UE 3182 ]
 }
 "100
 [; ;MESSAGES.C: 100: void CANReadMessage (void)
@@ -3881,13 +3881,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _data8 `uc ~T0 @X0 1 a ]
 "114
 [; ;MESSAGES.C: 114:     if(CAN1_ReceivedMessageCountGet() > 0)
-[e $ ! > -> ( _CAN1_ReceivedMessageCountGet ..  `i -> 0 `i 3188  ]
+[e $ ! > -> ( _CAN1_ReceivedMessageCountGet ..  `i -> 0 `i 3189  ]
 "115
 [; ;MESSAGES.C: 115:     {
 {
 "116
 [; ;MESSAGES.C: 116:         if(1 == CAN1_Receive(&msgReceipt))
-[e $ ! == -> 1 `i -> ( _CAN1_Receive (1 &U _msgReceipt `i 3189  ]
+[e $ ! == -> 1 `i -> ( _CAN1_Receive (1 &U _msgReceipt `i 3190  ]
 "117
 [; ;MESSAGES.C: 117:         {
 {
@@ -3929,13 +3929,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _data8 *U + . _msgReceipt 2 * -> -> 7 `i `x -> -> # *U . _msgReceipt 2 `i `x ]
 "131
 [; ;MESSAGES.C: 131:             switch (id)
-[e $U 3191  ]
+[e $U 3192  ]
 "132
 [; ;MESSAGES.C: 132:             {
 {
 "133
 [; ;MESSAGES.C: 133:                 case 0x320:
-[e :U 3192 ]
+[e :U 3193 ]
 "134
 [; ;MESSAGES.C: 134:                     ucTargetAccelerator = data1;
 [e = _ucTargetAccelerator _data1 ]
@@ -3953,7 +3953,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ucTargetGear _data5 ]
 "140
 [; ;MESSAGES.C: 140:                     if ( ucASMode == 1 )
-[e $ ! == -> _ucASMode `i -> 1 `i 3193  ]
+[e $ ! == -> _ucASMode `i -> 1 `i 3194  ]
 "141
 [; ;MESSAGES.C: 141:                     {
 {
@@ -3969,13 +3969,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "146
 [; ;MESSAGES.C: 146:                     }
 }
-[e :U 3193 ]
+[e :U 3194 ]
 "148
 [; ;MESSAGES.C: 148:                     break;
-[e $U 3190  ]
+[e $U 3191  ]
 "149
 [; ;MESSAGES.C: 149:                 case 0x500:
-[e :U 3194 ]
+[e :U 3195 ]
 "150
 [; ;MESSAGES.C: 150:                     ucAS_state = ( data1 & 0x07 );
 [e = _ucAS_state -> & -> _data1 `i -> 7 `i `uc ]
@@ -3996,10 +3996,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ucLap_counter -> & -> _data2 `i -> 120 `i `uc ]
 "158
 [; ;MESSAGES.C: 158:                     break;
-[e $U 3190  ]
+[e $U 3191  ]
 "159
 [; ;MESSAGES.C: 159:                 case 0x501:
-[e :U 3195 ]
+[e :U 3196 ]
 "160
 [; ;MESSAGES.C: 160:                     ucSpeed_actual = data1;
 [e = _ucSpeed_actual _data1 ]
@@ -4026,16 +4026,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ucMotor_moment_target _data8 ]
 "168
 [; ;MESSAGES.C: 168:                     break;
-[e $U 3190  ]
+[e $U 3191  ]
 "169
 [; ;MESSAGES.C: 169:                 case 0x502:
-[e :U 3196 ]
+[e :U 3197 ]
 "173
 [; ;MESSAGES.C: 173:                     break;
-[e $U 3190  ]
+[e $U 3191  ]
 "174
 [; ;MESSAGES.C: 174:                 case 0x347:
-[e :U 3197 ]
+[e :U 3198 ]
 "175
 [; ;MESSAGES.C: 175:                     ucASMode = data1;
 [e = _ucASMode _data1 ]
@@ -4044,16 +4044,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _ETCModeSelect (1 _ucASMode ]
 "177
 [; ;MESSAGES.C: 177:                     break;
-[e $U 3190  ]
+[e $U 3191  ]
 "178
 [; ;MESSAGES.C: 178:                 case 0x412:
-[e :U 3198 ]
+[e :U 3199 ]
 "179
 [; ;MESSAGES.C: 179:                     ucSTEER_WH_Clutch = data1;
 [e = _ucSTEER_WH_Clutch _data1 ]
 "180
 [; ;MESSAGES.C: 180:                     if ( ucASMode == 0 )
-[e $ ! == -> _ucASMode `i -> 0 `i 3199  ]
+[e $ ! == -> _ucASMode `i -> 0 `i 3200  ]
 "181
 [; ;MESSAGES.C: 181:                     {
 {
@@ -4063,43 +4063,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "183
 [; ;MESSAGES.C: 183:                     }
 }
-[e :U 3199 ]
+[e :U 3200 ]
 "184
 [; ;MESSAGES.C: 184:                     break;
-[e $U 3190  ]
+[e $U 3191  ]
 "185
 [; ;MESSAGES.C: 185:                 default:
-[e :U 3200 ]
+[e :U 3201 ]
 "186
 [; ;MESSAGES.C: 186:                     __nop();
 [e ( ___nop ..  ]
 "187
 [; ;MESSAGES.C: 187:                     break;
-[e $U 3190  ]
+[e $U 3191  ]
 "188
 [; ;MESSAGES.C: 188:             }
 }
-[e $U 3190  ]
+[e $U 3191  ]
+[e :U 3192 ]
+[e [\ _id , $ -> -> -> 800 `i `l `ul 3193
+ , $ -> -> -> 1280 `i `l `ul 3195
+ , $ -> -> -> 1281 `i `l `ul 3196
+ , $ -> -> -> 1282 `i `l `ul 3197
+ , $ -> -> -> 839 `i `l `ul 3198
+ , $ -> -> -> 1042 `i `l `ul 3199
+ 3201 ]
 [e :U 3191 ]
-[e [\ _id , $ -> -> -> 800 `i `l `ul 3192
- , $ -> -> -> 1280 `i `l `ul 3194
- , $ -> -> -> 1281 `i `l `ul 3195
- , $ -> -> -> 1282 `i `l `ul 3196
- , $ -> -> -> 839 `i `l `ul 3197
- , $ -> -> -> 1042 `i `l `ul 3198
- 3200 ]
-[e :U 3190 ]
 "189
 [; ;MESSAGES.C: 189:         }
 }
-[e :U 3189 ]
+[e :U 3190 ]
 "190
 [; ;MESSAGES.C: 190:     }
 }
-[e :U 3188 ]
+[e :U 3189 ]
 "191
 [; ;MESSAGES.C: 191: }
-[e :UE 3187 ]
+[e :UE 3188 ]
 }
 "194
 [; ;MESSAGES.C: 194: void CANDisableErrorInterrupt (unsigned char ucInterruptSet)
@@ -4116,7 +4116,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "196
 [; ;MESSAGES.C: 196:     if (ucInterruptSet == 0x01)
-[e $ ! == -> _ucInterruptSet `i -> 1 `i 3202  ]
+[e $ ! == -> _ucInterruptSet `i -> 1 `i 3203  ]
 "197
 [; ;MESSAGES.C: 197:     {
 {
@@ -4126,11 +4126,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "199
 [; ;MESSAGES.C: 199:     }
 }
-[e $U 3203  ]
+[e $U 3204  ]
 "200
 [; ;MESSAGES.C: 200:     else if (ucInterruptSet == 0x00)
-[e :U 3202 ]
-[e $ ! == -> _ucInterruptSet `i -> 0 `i 3204  ]
+[e :U 3203 ]
+[e $ ! == -> _ucInterruptSet `i -> 0 `i 3205  ]
 "201
 [; ;MESSAGES.C: 201:     {
 {
@@ -4140,9 +4140,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "203
 [; ;MESSAGES.C: 203:     }
 }
+[e :U 3205 ]
 [e :U 3204 ]
-[e :U 3203 ]
 "205
 [; ;MESSAGES.C: 205: }
-[e :UE 3201 ]
+[e :UE 3202 ]
 }

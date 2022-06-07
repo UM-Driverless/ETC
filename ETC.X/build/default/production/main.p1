@@ -50,18 +50,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;./CLUTCH.h: 36: void CLUTCHInitMove(void);
 [v _CLUTCHInitMove `(v ~T0 @X0 0 ef ]
-"80 ./ETC.h
+"103 ./ETC.h
+[; ;./ETC.h: 103: typedef struct {
+[s S3181 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
+[n S3181 . Kp Ki Kd tau limMin limMax limMinInt limMaxInt T integrator prevError differentiator prevMeasurement out ]
+"135
+[; ;./ETC.h: 135: void PIDController_Init(PIDController *pid);
+[v _PIDController_Init `(v ~T0 @X0 0 ef1`*S3181 ]
+"80
 [; ;./ETC.h: 80: void TPSAnalysis (void);
 [v _TPSAnalysis `(v ~T0 @X0 0 ef ]
 "81
 [; ;./ETC.h: 81: void APPSAnalysis (void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
-"78
-[; ;./ETC.h: 78: void ETC_PID(signed long slTargetMove, unsigned char ucMode);
-[v _ETC_PID `(v ~T0 @X0 0 ef2`l`uc ]
+"18 ./GPIO.h
+[; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
+[v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
+"136 ./ETC.h
+[; ;./ETC.h: 136: float PIDController_Update(PIDController *pid, float setpoint, float measurement);
+[v _PIDController_Update `(f ~T0 @X0 0 ef3`*S3181`f`f ]
 "53
 [; ;./ETC.h: 53: extern unsigned int ucAPPS;
 [v _ucAPPS `ui ~T0 @X0 0 e ]
+"60
+[; ;./ETC.h: 60: extern unsigned int ucTPS;
+[v _ucTPS `ui ~T0 @X0 0 e ]
 "97 ./MESSAGES.h
 [; ;./MESSAGES.h: 97: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 [v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
@@ -3641,34 +3654,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 "85
 [; ;main.c: 85:     CLUTCHInitMove();
 [e ( _CLUTCHInitMove ..  ]
-"87
-[; ;main.c: 87:     while (1)
-[e :U 3183 ]
+[v F23065 `S3181 ~T0 @X0 1 s ]
+[i F23065
+:U ..
+:U ..
 "88
-[; ;main.c: 88:     {
-{
-"92
-[; ;main.c: 92:         ANALOGRead();
-[e ( _ANALOGRead ..  ]
-"93
-[; ;main.c: 93:         TPSAnalysis();
-[e ( _TPSAnalysis ..  ]
-"94
-[; ;main.c: 94:         APPSAnalysis();
-[e ( _APPSAnalysis ..  ]
+[; ;main.c: 88:     PIDController pid = { 2.8f, 1.4f, 0.16f,
+-> .2.8 `f
+-> .1.4 `f
+-> .0.16 `f
+-> .0.02 `f
+-> .0.0 `f
+-> .100.0 `f
+-U -> .5.0 `f
+-> .5.0 `f
+-> .0.01 `f
+..
+..
+]
+[v _pid `S3181 ~T0 @X0 1 a ]
+[e = _pid F23065 ]
 "95
-[; ;main.c: 95:         ETC_PID(ucAPPS, 0);
-[e ( _ETC_PID (2 , -> _ucAPPS `l -> -> 0 `i `uc ]
-"99
-[; ;main.c: 99:         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
-[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> / _uiAPPS1 -> -> 100 `i `ui `uc -> / _uiAPPS2 -> -> 100 `i `ui `uc -> / _uiTPS1 -> -> 100 `i `ui `uc -> / _uiTPS2 -> -> 100 `i `ui `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"100
-[; ;main.c: 100:     }
-}
-[e :U 3182 ]
-[e $U 3183  ]
+[; ;main.c: 95:     PIDController_Init(&pid);
+[e ( _PIDController_Init (1 &U _pid ]
+"97
+[; ;main.c: 97:     while (1)
 [e :U 3184 ]
-"101
-[; ;main.c: 101: }
-[e :UE 3181 ]
+"98
+[; ;main.c: 98:     {
+{
+"102
+[; ;main.c: 102:         ANALOGRead();
+[e ( _ANALOGRead ..  ]
+"103
+[; ;main.c: 103:         TPSAnalysis();
+[e ( _TPSAnalysis ..  ]
+"104
+[; ;main.c: 104:         APPSAnalysis();
+[e ( _APPSAnalysis ..  ]
+"108
+[; ;main.c: 108:         GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+[e ( _GPIO_PWM2_Control (2 , -> ( _PIDController_Update (3 , , &U _pid -> _ucAPPS `f -> _ucTPS `f `ui -> -> 600 `i `ui ]
+"115
+[; ;main.c: 115:         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
+[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> / _uiAPPS1 -> -> 100 `i `ui `uc -> / _uiAPPS2 -> -> 100 `i `ui `uc -> / _uiTPS1 -> -> 100 `i `ui `uc -> / _uiTPS2 -> -> 100 `i `ui `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"116
+[; ;main.c: 116:     }
+}
+[e :U 3183 ]
+[e $U 3184  ]
+[e :U 3185 ]
+"117
+[; ;main.c: 117: }
+[e :UE 3182 ]
 }

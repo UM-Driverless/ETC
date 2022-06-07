@@ -145,14 +145,13 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
     }
 }
 
+
 void ETC_PID(signed long slTargetMove, unsigned char ucMode) 
 {
-    /*
-     * Conditional logic to get target position out of this function, along with checks that it's ok to run it. PID just does PID.
-     * 
-     * sl_target_perc is the target position of the throttle, in 0-100% = default-fully opened?
-     * ucMode is the driving mode input to the function. It will be checked with the global variable 
-     */
+     // Conditional logic to get target position out of this function, along with checks that it's ok to run it. PID just does PID.
+     // sl_target_perc is the target position of the throttle, in 0-100% = default-fully opened?
+     // ucMode is the driving mode input to the function. It will be checked with the global variable 
+     
     
     // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
     // Static local variables to change values at run time for calibration.
@@ -230,6 +229,7 @@ void ETC_PID(signed long slTargetMove, unsigned char ucMode)
         GPIO_PWM2_Control(0, 600);
     }
 }
+
 
 void ETCCalibrate(void) {
     /*
@@ -431,15 +431,99 @@ unsigned int ETCPercentCalc(signed long val, signed long min, signed long max)
      * If val exceeds the range going through min, it will be 0%. It if goes through max, it will be 100%, even if min > max.
      * A higher value will be 0% in this case.
      */
-    val = (10000*(val - min))/(max - min);
+    val = (100*(val - min))/(max - min);
     if (val < 0)
     {
         val = 0;
     } 
-    else if (val > 10000 )
+    else if (val > 100 )
     {
-        val = 10000;
+        val = 100;
     } 
     // val is now contained in the interval [0,100] -> ok to assign to unsigned char
     return val;
 }
+
+
+//-----
+void PIDController_Init(PIDController *pid) {
+
+	/* Clear controller variables */
+	pid->integrator = 0.0f;
+	pid->prevError  = 0.0f;
+
+	pid->differentiator  = 0.0f;
+	pid->prevMeasurement = 0.0f;
+
+	pid->out = 0.0f;
+
+}
+
+float PIDController_Update(PIDController *pid, float setpoint, float measurement) {
+
+	/*
+	* Error signal
+	*/
+    float error = setpoint - measurement;
+
+
+	/*
+	* Proportional
+	*/
+    float proportional = pid->Kp * error;
+
+
+	/*
+	* Integral
+	*/
+    pid->integrator = pid->integrator + 0.5f * pid->Ki * pid->T * (error + pid->prevError);
+
+    
+	/* Anti-wind-up via integrator clamping */
+    if (pid->integrator > pid->limMaxInt) 
+    {
+        pid->integrator = pid->limMaxInt;
+    } 
+    else if (pid->integrator < pid->limMinInt) 
+    {
+        pid->integrator = pid->limMinInt;
+    }
+
+
+	/*
+	* Derivative (band-limited differentiator)
+	*/
+		
+    pid->differentiator = -(2.0f * pid->Kd * (measurement - pid->prevMeasurement)	/* Note: derivative on measurement, therefore minus sign in front of equation! */
+                        + (2.0f * pid->tau - pid->T) * pid->differentiator)
+                        / (2.0f * pid->tau + pid->T);
+
+
+    // Reset integral if big input derivative
+     if ((pid->differentiator > 2.0f) || (pid->differentiator < -2.0f)){
+         pid->integrator = 0;
+    }
+	/*
+	* Compute output and apply limits
+	*/
+    pid->out = proportional + pid->integrator + pid->differentiator;
+
+    if (pid->out > pid->limMax) {
+
+        pid->out = pid->limMax;
+
+    } else if (pid->out < pid->limMin) {
+
+        pid->out = pid->limMin;
+
+    }
+
+	/* Store error and measurement for later use */
+    pid->prevError       = error;
+    pid->prevMeasurement = measurement;
+
+	/* Return controller output */
+    return pid->out;
+
+}
+

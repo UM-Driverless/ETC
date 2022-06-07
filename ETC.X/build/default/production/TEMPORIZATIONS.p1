@@ -3592,7 +3592,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _APPSAnalysis ..  ]
 "30
 [; ;TEMPORIZATIONS.c: 30: }
-[e :UE 3181 ]
+[e :UE 3182 ]
 }
 "32
 [; ;TEMPORIZATIONS.c: 32: void TEMPORIZATION_100ms (void)
@@ -3604,7 +3604,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "38
 [; ;TEMPORIZATIONS.c: 38: }
-[e :UE 3182 ]
+[e :UE 3183 ]
 }
 "40
 [; ;TEMPORIZATIONS.c: 40: void TEMPORIZATION_500ms (void)
@@ -3616,11 +3616,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "42
 [; ;TEMPORIZATIONS.c: 42:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-[e :U 3186 ]
+[e :U 3187 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
-[e :U 3185 ]
+[e :U 3186 ]
 "45
 [; ;TEMPORIZATIONS.c: 45:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
@@ -3632,7 +3632,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _ucETCBeatSupervisor -> -> 0 `i `uc ]
 "50
 [; ;TEMPORIZATIONS.c: 50: }
-[e :UE 3183 ]
+[e :UE 3184 ]
 }
 "52
 [; ;TEMPORIZATIONS.c: 52: void TEMPORIZATION_1s (void)
@@ -3644,7 +3644,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "56
 [; ;TEMPORIZATIONS.c: 56: }
-[e :UE 3187 ]
+[e :UE 3188 ]
 }
 "58
 [; ;TEMPORIZATIONS.c: 58: void TEMPORIZATION_10s (void)
@@ -3656,7 +3656,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "61
 [; ;TEMPORIZATIONS.c: 61: }
-[e :UE 3188 ]
+[e :UE 3189 ]
 }
 "63
 [; ;TEMPORIZATIONS.c: 63: void TEMPORIZATION_30s (void)
@@ -3668,7 +3668,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "66
 [; ;TEMPORIZATIONS.c: 66: }
-[e :UE 3189 ]
+[e :UE 3190 ]
 }
 "68
 [; ;TEMPORIZATIONS.c: 68: void TEMPORIZATION_1mins (void)
@@ -3680,5 +3680,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "71
 [; ;TEMPORIZATIONS.c: 71: }
-[e :UE 3190 ]
+[e :UE 3191 ]
 }

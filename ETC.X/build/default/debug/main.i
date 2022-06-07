@@ -38375,6 +38375,41 @@ void APPSAnalysis (void);
 void ETCSupervisor (void);
 void ETCManual (unsigned char ucTargetManual);
 unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
+# 103 "./ETC.h"
+typedef struct {
+
+
+ float Kp;
+ float Ki;
+ float Kd;
+
+
+ float tau;
+
+
+ float limMin;
+ float limMax;
+
+
+ float limMinInt;
+ float limMaxInt;
+
+
+ float T;
+
+
+ float integrator;
+ float prevError;
+ float differentiator;
+ float prevMeasurement;
+
+
+ float out;
+
+} PIDController;
+
+void PIDController_Init(PIDController *pid);
+float PIDController_Update(PIDController *pid, float setpoint, float measurement);
 # 48 "main.c" 2
 
 # 1 "./ANALOG.h" 1
@@ -38427,6 +38462,16 @@ void main(void)
 
     CLUTCHInitMove();
 
+
+    PIDController pid = { 3.0f, 1.4f, 0.16f,
+                          0.02f,
+                          0.0f, 100.0f,
+     -5.0f, 5.0f,
+                          0.01f };
+
+
+    PIDController_Init(&pid);
+
     while (1)
     {
 
@@ -38435,7 +38480,13 @@ void main(void)
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();
-        ETC_PID(ucAPPS, 0);
+
+
+
+        GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+
+
+
 
 
 

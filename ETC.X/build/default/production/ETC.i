@@ -38322,7 +38322,9 @@ extern unsigned char ucASRequesState;
 extern unsigned char ucASMode;
 
 extern unsigned char ucSTEER_WH_Clutch;
-# 97 "./MESSAGES.h"
+
+extern unsigned int uiRPM;
+# 101 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
 void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
@@ -38334,7 +38336,42 @@ void DAC3_example(void);
 # 11 "ETC.c" 2
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
+# 16 "./ETC.h"
+typedef struct {
+
+
+ float Kp;
+ float Ki;
+ float Kd;
+
+
+ float tau;
+
+
+ float limMin;
+ float limMax;
+
+
+ float limMinInt;
+ float limMaxInt;
+
+
+ float T;
+
+
+ float integrator;
+ float prevError;
+ float differentiator;
+ float prevMeasurement;
+
+
+ float out;
+
+} PIDController;
+# 69 "./ETC.h"
+extern PIDController pid;
+
+
 extern unsigned int uiAPPS1min;
 extern unsigned int uiAPPS1max;
 extern unsigned int uiAPPS2min;
@@ -38367,56 +38404,23 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-
-
-void APPSSend (unsigned char ucPercent);
-void APPSReadmin (void);
-void APPSReadmax (void);
-void ETCModeSelect (unsigned char ucModeSelect);
-void ETCRulesSupervision(void);
+# 121 "./ETC.h"
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed long slTargetMove, unsigned char ucMode);
-void ETCCalibrate(void);
-void TPSAnalysis (void);
-void APPSAnalysis (void);
-void ETCSupervisor (void);
-void ETCManual (unsigned char ucTargetManual);
-unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
-# 103 "./ETC.h"
-typedef struct {
-
-
- float Kp;
- float Ki;
- float Kd;
-
-
- float tau;
-
-
- float limMin;
- float limMax;
-
-
- float limMinInt;
- float limMaxInt;
-
-
- float T;
-
-
- float integrator;
- float prevError;
- float differentiator;
- float prevMeasurement;
-
-
- float out;
-
-} PIDController;
 
 void PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
+
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin(void);
+void APPSReadmax(void);
+void ETCRulesSupervision(void);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+void ETCCalibrate(void);
+void TPSAnalysis(void);
+void APPSAnalysis(void);
+void ETCSupervisor(void);
+void ETCManual(unsigned char ucTargetManual);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
 # 12 "ETC.c" 2
 
 # 1 "./GPIO.h" 1
@@ -38477,6 +38481,17 @@ unsigned char ucETCFlagSupervisor = 0x00;
 unsigned char ucAPPSManual;
 
 
+PIDController pid = { 2.8f, 1.4f, 0.16f,
+                          0.02f,
+                          0.0f, 100.0f,
+     -5.0f, 5.0f,
+                          0.01f };
+
+
+
+
+
+
 void APPSSend (unsigned char ucPercent)
 {
     float voltage;
@@ -38510,25 +38525,6 @@ void APPSReadmax (void)
 }
 
 
-void ETCModeSelect (unsigned char ucModeSelect)
-{
-    switch (ucModeSelect)
-    {
-        case 1:
-
-
-            do { LATAbits.LATA5 = 1; } while(0);
-            break;
-        case 0:
-            do { LATAbits.LATA5 = 0; } while(0);
-            break;
-        default:
-            do { LATAbits.LATA5 = 0; } while(0);
-            break;
-    }
-}
-
-
 void ETCRulesSupervision(void)
 {
 
@@ -38538,6 +38534,9 @@ void ETCRulesSupervision(void)
 
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 {
+
+
+
 
     if ( ucETCFlagSupervisor == 0x01 )
     {
@@ -38549,12 +38548,14 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
             if ( ucASMode == 1 )
             {
 
-                GPIO_PWM2_Control(uiETCDuty + 34, 600);
+
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
             }
             else if ( ucASMode == 0 )
             {
 
-                GPIO_PWM2_Control(uiETCDuty, 600);
+
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
             }
             else
             {
@@ -38576,7 +38577,7 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 
 void ETC_PID(signed long slTargetMove, unsigned char ucMode)
 {
-# 159 "ETC.c"
+# 156 "ETC.c"
     static signed long sl_K = 50e3;
     static signed long sl_K_P = 1000;
     static signed long sl_K_I = 2;
@@ -38696,7 +38697,7 @@ void ETCCalibrate(void) {
 
 void TPSAnalysis(void)
 {
-# 302 "ETC.c"
+# 299 "ETC.c"
     ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
     ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
@@ -38760,7 +38761,7 @@ void TPSAnalysis(void)
 
 void APPSAnalysis (void)
 {
-# 384 "ETC.c"
+# 381 "ETC.c"
     ucAPPS1Perc = ETCPercentCalc(uiAPPS1, uiAPPS1min, uiAPPS1max);
     ucAPPS2Perc = ETCPercentCalc(uiAPPS2, uiAPPS2min, uiAPPS2max);
     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );

@@ -14,7 +14,6 @@
 
 
 
-
 # 1 "./CLUTCH.h" 1
 # 26 "./CLUTCH.h"
 extern unsigned char ucCLUTCHlmin;
@@ -28,7 +27,7 @@ void CLUTCH_Init (void);
 void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState (void);
 void CLUTCHInitMove(void);
-# 9 "CLUTCH.c" 2
+# 8 "CLUTCH.c" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
 # 54 "./mcc_generated_files/pin_manager.h"
@@ -37510,7 +37509,7 @@ unsigned char __t3rd16on(void);
 void PIN_MANAGER_Initialize (void);
 # 414 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
-# 10 "CLUTCH.c" 2
+# 9 "CLUTCH.c" 2
 
 # 1 "./PARAMETERS.h" 1
 # 27 "./PARAMETERS.h"
@@ -37518,7 +37517,7 @@ extern signed long sl_K;
 extern signed long sl_K_P;
 extern signed long sl_K_I;
 extern signed long sl_K_D;
-# 11 "CLUTCH.c" 2
+# 10 "CLUTCH.c" 2
 
 # 1 "./GPIO.h" 1
 # 16 "./GPIO.h"
@@ -37526,7 +37525,7 @@ void GPIOInit (void);
 void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 void GPIO_INT2_desembragar (void);
-# 12 "CLUTCH.c" 2
+# 11 "CLUTCH.c" 2
 
 # 1 "./MESSAGES.h" 1
 # 16 "./MESSAGES.h"
@@ -38341,14 +38340,51 @@ extern unsigned char ucASRequesState;
 extern unsigned char ucASMode;
 
 extern unsigned char ucSTEER_WH_Clutch;
-# 97 "./MESSAGES.h"
+
+extern unsigned int uiRPM;
+# 101 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
 void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
-# 13 "CLUTCH.c" 2
+# 12 "CLUTCH.c" 2
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
+# 16 "./ETC.h"
+typedef struct {
+
+
+ float Kp;
+ float Ki;
+ float Kd;
+
+
+ float tau;
+
+
+ float limMin;
+ float limMax;
+
+
+ float limMinInt;
+ float limMaxInt;
+
+
+ float T;
+
+
+ float integrator;
+ float prevError;
+ float differentiator;
+ float prevMeasurement;
+
+
+ float out;
+
+} PIDController;
+# 69 "./ETC.h"
+extern PIDController pid;
+
+
 extern unsigned int uiAPPS1min;
 extern unsigned int uiAPPS1max;
 extern unsigned int uiAPPS2min;
@@ -38381,58 +38417,24 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-
-
-void APPSSend (unsigned char ucPercent);
-void APPSReadmin (void);
-void APPSReadmax (void);
-void ETCModeSelect (unsigned char ucModeSelect);
-void ETCRulesSupervision(void);
+# 121 "./ETC.h"
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed long slTargetMove, unsigned char ucMode);
-void ETCCalibrate(void);
-void TPSAnalysis (void);
-void APPSAnalysis (void);
-void ETCSupervisor (void);
-void ETCManual (unsigned char ucTargetManual);
-unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
-# 103 "./ETC.h"
-typedef struct {
-
-
- float Kp;
- float Ki;
- float Kd;
-
-
- float tau;
-
-
- float limMin;
- float limMax;
-
-
- float limMinInt;
- float limMaxInt;
-
-
- float T;
-
-
- float integrator;
- float prevError;
- float differentiator;
- float prevMeasurement;
-
-
- float out;
-
-} PIDController;
 
 void PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
-# 14 "CLUTCH.c" 2
 
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin(void);
+void APPSReadmax(void);
+void ETCRulesSupervision(void);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+void ETCCalibrate(void);
+void TPSAnalysis(void);
+void APPSAnalysis(void);
+void ETCSupervisor(void);
+void ETCManual(unsigned char ucTargetManual);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
+# 13 "CLUTCH.c" 2
 
 
 unsigned char ucCLUTCHlmin;
@@ -38464,7 +38466,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
 
         if ( ucMode == ucASMode )
         {
-# 59 "CLUTCH.c"
+# 57 "CLUTCH.c"
             if ( ucCLUTCHState < 4 )
             {
                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
@@ -38520,6 +38522,9 @@ void CLUTCH_AnalyseState (void)
 
 void CLUTCHInitMove(void)
 {
+
+
+
     CLUTCH_Move(0, 1);
     CLUTCH_AnalyseState();
     if ( ucCLUTCHState == 1 )

@@ -11,12 +11,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./../ETC.X/mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
+"101 ./MESSAGES.h
+[; ;./MESSAGES.h: 101: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
+[v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
 "80 ./ETC.h
-[; ;./ETC.h: 80: void TPSAnalysis (void);
-[v _TPSAnalysis `(v ~T0 @X0 0 ef ]
+[; ;./ETC.h: 80: extern unsigned int uiAPPS1;
+[v _uiAPPS1 `ui ~T0 @X0 0 e ]
 "81
-[; ;./ETC.h: 81: void APPSAnalysis (void);
-[v _APPSAnalysis `(v ~T0 @X0 0 ef ]
+[; ;./ETC.h: 81: extern unsigned int uiAPPS2;
+[v _uiAPPS2 `ui ~T0 @X0 0 e ]
+"88
+[; ;./ETC.h: 88: extern unsigned int uiTPS1;
+[v _uiTPS1 `ui ~T0 @X0 0 e ]
+"89
+[; ;./ETC.h: 89: extern unsigned int uiTPS2;
+[v _uiTPS2 `ui ~T0 @X0 0 e ]
 "1480 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
 [s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -30,12 +39,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35 ./CLUTCH.h
 [; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
 [v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
-"82 ./ETC.h
-[; ;./ETC.h: 82: void ETCSupervisor (void);
+"134 ./ETC.h
+[; ;./ETC.h: 134: void ETCSupervisor(void);
 [v _ETCSupervisor `(v ~T0 @X0 0 ef ]
-"67
-[; ;./ETC.h: 67: extern unsigned char ucETCBeatSupervisor;
+"101
+[; ;./ETC.h: 101: extern unsigned char ucETCBeatSupervisor;
 [v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
+"8 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
+[v ___nop `(v ~T0 @X0 0 ef ]
+[p i ___nop ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3576,46 +3588,55 @@ Version 4.0 HI-TECH Software Intermediate Code
 "21
 [; ;TEMPORIZATIONS.c: 21: unsigned int uiCount1min;
 [v _uiCount1min `ui ~T0 @X0 1 e ]
+"24
+[; ;TEMPORIZATIONS.c: 24: unsigned int counter = 0;
+[v _counter `ui ~T0 @X0 1 e ]
+[i _counter
+-> -> 0 `i `ui
+]
 "25
-[; ;TEMPORIZATIONS.c: 25: void TEMPORIZATION_10ms (void)
+[; ;TEMPORIZATIONS.c: 25: unsigned int counts = 0;
+[v _counts `ui ~T0 @X0 1 e ]
+[i _counts
+-> -> 0 `i `ui
+]
+"29
+[; ;TEMPORIZATIONS.c: 29: void TEMPORIZATION_10ms(void)
 [v _TEMPORIZATION_10ms `(v ~T0 @X0 1 ef ]
-"26
-[; ;TEMPORIZATIONS.c: 26: {
+"30
+[; ;TEMPORIZATIONS.c: 30: {
 {
 [e :U _TEMPORIZATION_10ms ]
 [f ]
-"28
-[; ;TEMPORIZATIONS.c: 28:     TPSAnalysis();
-[e ( _TPSAnalysis ..  ]
-"29
-[; ;TEMPORIZATIONS.c: 29:     APPSAnalysis();
-[e ( _APPSAnalysis ..  ]
-"30
-[; ;TEMPORIZATIONS.c: 30: }
+"32
+[; ;TEMPORIZATIONS.c: 32: }
 [e :UE 3182 ]
 }
-"32
-[; ;TEMPORIZATIONS.c: 32: void TEMPORIZATION_100ms (void)
+"34
+[; ;TEMPORIZATIONS.c: 34: void TEMPORIZATION_100ms(void)
 [v _TEMPORIZATION_100ms `(v ~T0 @X0 1 ef ]
-"33
-[; ;TEMPORIZATIONS.c: 33: {
+"35
+[; ;TEMPORIZATIONS.c: 35: {
 {
 [e :U _TEMPORIZATION_100ms ]
 [f ]
-"38
-[; ;TEMPORIZATIONS.c: 38: }
+"37
+[; ;TEMPORIZATIONS.c: 37:     CANWriteMessage(0x330, 6, uiAPPS1, uiAPPS2, uiTPS1, uiTPS2, 0, 0, 0, 0);
+[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> _uiAPPS1 `uc -> _uiAPPS2 `uc -> _uiTPS1 `uc -> _uiTPS2 `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"39
+[; ;TEMPORIZATIONS.c: 39: }
 [e :UE 3183 ]
 }
-"40
-[; ;TEMPORIZATIONS.c: 40: void TEMPORIZATION_500ms (void)
-[v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
 "41
-[; ;TEMPORIZATIONS.c: 41: {
+[; ;TEMPORIZATIONS.c: 41: void TEMPORIZATION_500ms(void)
+[v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
+"42
+[; ;TEMPORIZATIONS.c: 42: {
 {
 [e :U _TEMPORIZATION_500ms ]
 [f ]
-"42
-[; ;TEMPORIZATIONS.c: 42:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+"43
+[; ;TEMPORIZATIONS.c: 43:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
 [e :U 3187 ]
 {
 [e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
@@ -3630,55 +3651,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48
 [; ;TEMPORIZATIONS.c: 48:     ucETCBeatSupervisor = 0x00;
 [e = _ucETCBeatSupervisor -> -> 0 `i `uc ]
-"50
-[; ;TEMPORIZATIONS.c: 50: }
+"49
+[; ;TEMPORIZATIONS.c: 49: }
 [e :UE 3184 ]
 }
-"52
-[; ;TEMPORIZATIONS.c: 52: void TEMPORIZATION_1s (void)
+"51
+[; ;TEMPORIZATIONS.c: 51: void TEMPORIZATION_1s(void)
 [v _TEMPORIZATION_1s `(v ~T0 @X0 1 ef ]
-"53
-[; ;TEMPORIZATIONS.c: 53: {
+"52
+[; ;TEMPORIZATIONS.c: 52: {
 {
 [e :U _TEMPORIZATION_1s ]
 [f ]
-"56
-[; ;TEMPORIZATIONS.c: 56: }
+"55
+[; ;TEMPORIZATIONS.c: 55: }
 [e :UE 3188 ]
 }
-"58
-[; ;TEMPORIZATIONS.c: 58: void TEMPORIZATION_10s (void)
+"57
+[; ;TEMPORIZATIONS.c: 57: void TEMPORIZATION_10s(void)
 [v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
-"59
-[; ;TEMPORIZATIONS.c: 59: {
+"58
+[; ;TEMPORIZATIONS.c: 58: {
 {
 [e :U _TEMPORIZATION_10s ]
 [f ]
-"61
-[; ;TEMPORIZATIONS.c: 61: }
+"59
+[; ;TEMPORIZATIONS.c: 59:     counts = counter;
+[e = _counts _counter ]
+"60
+[; ;TEMPORIZATIONS.c: 60:     counter = 0;
+[e = _counter -> -> 0 `i `ui ]
+"62
+[; ;TEMPORIZATIONS.c: 62:     __nop();
+[e ( ___nop ..  ]
+"63
+[; ;TEMPORIZATIONS.c: 63: }
 [e :UE 3189 ]
 }
-"63
-[; ;TEMPORIZATIONS.c: 63: void TEMPORIZATION_30s (void)
+"65
+[; ;TEMPORIZATIONS.c: 65: void TEMPORIZATION_30s(void)
 [v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
-"64
-[; ;TEMPORIZATIONS.c: 64: {
+"66
+[; ;TEMPORIZATIONS.c: 66: {
 {
 [e :U _TEMPORIZATION_30s ]
 [f ]
-"66
-[; ;TEMPORIZATIONS.c: 66: }
+"68
+[; ;TEMPORIZATIONS.c: 68: }
 [e :UE 3190 ]
 }
-"68
-[; ;TEMPORIZATIONS.c: 68: void TEMPORIZATION_1mins (void)
+"70
+[; ;TEMPORIZATIONS.c: 70: void TEMPORIZATION_1mins(void)
 [v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
-"69
-[; ;TEMPORIZATIONS.c: 69: {
+"71
+[; ;TEMPORIZATIONS.c: 71: {
 {
 [e :U _TEMPORIZATION_1mins ]
 [f ]
-"71
-[; ;TEMPORIZATIONS.c: 71: }
+"73
+[; ;TEMPORIZATIONS.c: 73: }
 [e :UE 3191 ]
 }

@@ -21,7 +21,42 @@ void ANALOGRead (void);
 # 8 "ANALOG.c" 2
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
+# 16 "./ETC.h"
+typedef struct {
+
+
+ float Kp;
+ float Ki;
+ float Kd;
+
+
+ float tau;
+
+
+ float limMin;
+ float limMax;
+
+
+ float limMinInt;
+ float limMaxInt;
+
+
+ float T;
+
+
+ float integrator;
+ float prevError;
+ float differentiator;
+ float prevMeasurement;
+
+
+ float out;
+
+} PIDController;
+# 69 "./ETC.h"
+extern PIDController pid;
+
+
 extern unsigned int uiAPPS1min;
 extern unsigned int uiAPPS1max;
 extern unsigned int uiAPPS2min;
@@ -54,56 +89,23 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-
-
-void APPSSend (unsigned char ucPercent);
-void APPSReadmin (void);
-void APPSReadmax (void);
-void ETCModeSelect (unsigned char ucModeSelect);
-void ETCRulesSupervision(void);
+# 121 "./ETC.h"
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed long slTargetMove, unsigned char ucMode);
-void ETCCalibrate(void);
-void TPSAnalysis (void);
-void APPSAnalysis (void);
-void ETCSupervisor (void);
-void ETCManual (unsigned char ucTargetManual);
-unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
-# 103 "./ETC.h"
-typedef struct {
-
-
- float Kp;
- float Ki;
- float Kd;
-
-
- float tau;
-
-
- float limMin;
- float limMax;
-
-
- float limMinInt;
- float limMaxInt;
-
-
- float T;
-
-
- float integrator;
- float prevError;
- float differentiator;
- float prevMeasurement;
-
-
- float out;
-
-} PIDController;
 
 void PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
+
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin(void);
+void APPSReadmax(void);
+void ETCRulesSupervision(void);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+void ETCCalibrate(void);
+void TPSAnalysis(void);
+void APPSAnalysis(void);
+void ETCSupervisor(void);
+void ETCManual(unsigned char ucTargetManual);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
 # 9 "ANALOG.c" 2
 
 # 1 "./mcc_generated_files/adc.h" 1

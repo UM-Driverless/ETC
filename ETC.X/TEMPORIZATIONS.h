@@ -27,6 +27,10 @@ extern unsigned int uiCount30s;
 extern unsigned int uiCount1min;
 
 
+extern unsigned int counter; // Check while frequency
+extern unsigned int counts;
+
+
 //FUNCIONES
 void TEMPORIZATION_10ms (void);
 void TEMPORIZATION_100ms (void);

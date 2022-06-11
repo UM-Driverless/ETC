@@ -38308,7 +38308,9 @@ extern unsigned char ucASRequesState;
 extern unsigned char ucASMode;
 
 extern unsigned char ucSTEER_WH_Clutch;
-# 97 "./MESSAGES.h"
+
+extern unsigned int uiRPM;
+# 101 "./MESSAGES.h"
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 void CANReadMessage (void);
 void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
@@ -38316,7 +38318,42 @@ void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
 
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
+# 16 "./ETC.h"
+typedef struct {
+
+
+ float Kp;
+ float Ki;
+ float Kd;
+
+
+ float tau;
+
+
+ float limMin;
+ float limMax;
+
+
+ float limMinInt;
+ float limMaxInt;
+
+
+ float T;
+
+
+ float integrator;
+ float prevError;
+ float differentiator;
+ float prevMeasurement;
+
+
+ float out;
+
+} PIDController;
+# 69 "./ETC.h"
+extern PIDController pid;
+
+
 extern unsigned int uiAPPS1min;
 extern unsigned int uiAPPS1max;
 extern unsigned int uiAPPS2min;
@@ -38349,56 +38386,23 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor;
 extern unsigned char ucAPPSManual;
-
-
-void APPSSend (unsigned char ucPercent);
-void APPSReadmin (void);
-void APPSReadmax (void);
-void ETCModeSelect (unsigned char ucModeSelect);
-void ETCRulesSupervision(void);
+# 121 "./ETC.h"
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed long slTargetMove, unsigned char ucMode);
-void ETCCalibrate(void);
-void TPSAnalysis (void);
-void APPSAnalysis (void);
-void ETCSupervisor (void);
-void ETCManual (unsigned char ucTargetManual);
-unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
-# 103 "./ETC.h"
-typedef struct {
-
-
- float Kp;
- float Ki;
- float Kd;
-
-
- float tau;
-
-
- float limMin;
- float limMax;
-
-
- float limMinInt;
- float limMaxInt;
-
-
- float T;
-
-
- float integrator;
- float prevError;
- float differentiator;
- float prevMeasurement;
-
-
- float out;
-
-} PIDController;
 
 void PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
+
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin(void);
+void APPSReadmax(void);
+void ETCRulesSupervision(void);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+void ETCCalibrate(void);
+void TPSAnalysis(void);
+void APPSAnalysis(void);
+void ETCSupervisor(void);
+void ETCManual(unsigned char ucTargetManual);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
 # 10 "MESSAGES.C" 2
 
 # 1 "./CLUTCH.h" 1
@@ -38465,6 +38469,8 @@ unsigned char ucASMode;
 
 unsigned char ucSTEER_WH_Clutch;
 
+unsigned int uiRPM;
+
 
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8)
 {
@@ -38511,7 +38517,7 @@ void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char d
 
 
 
-void CANReadMessage (void)
+void CANReadMessage(void)
 {
     uint32_t id;
     unsigned char idType;
@@ -38554,8 +38560,8 @@ void CANReadMessage (void)
                     if ( ucASMode == 1 )
                     {
                         CLUTCH_Move(ucTargetClutch, 1);
+                        ETCMove(ucTargetAccelerator, 1);
 
-                        ETC_PID ( ucTargetAccelerator, 1);
                         ucETCBeatSupervisor = 0x01;
                     }
 
@@ -38587,7 +38593,6 @@ void CANReadMessage (void)
                     break;
                 case 0x347:
                     ucASMode = data1;
-                    ETCModeSelect(ucASMode);
                     break;
                 case 0x412:
                     ucSTEER_WH_Clutch = data1;
@@ -38595,6 +38600,9 @@ void CANReadMessage (void)
                     {
                         CLUTCH_Move(ucSTEER_WH_Clutch, 0);
                     }
+                    break;
+                case 0x345:
+                    uiRPM = (data2 << 8) | (data1);
                     break;
                 default:
                     __nop();
@@ -38605,7 +38613,7 @@ void CANReadMessage (void)
 }
 
 
-void CANDisableErrorInterrupt (unsigned char ucInterruptSet)
+void CANDisableErrorInterrupt(unsigned char ucInterruptSet)
 {
     if (ucInterruptSet == 0x01)
     {

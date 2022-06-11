@@ -5,7 +5,6 @@
  * Created on 4 de diciembre de 2021, 13:37
  */
 
-//INCLUDES
 #include "CLUTCH.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "PARAMETERS.h"
@@ -13,7 +12,6 @@
 #include "MESSAGES.h"
 #include "ETC.h"
 
-//VARIABLES
 unsigned char ucCLUTCHlmin;
 unsigned char ucCLUTCHlmax;
 unsigned int uiCLUTCHDuty;
@@ -111,6 +109,7 @@ void CLUTCH_AnalyseState (void)
 
 void CLUTCHInitMove(void)
 {
+    // With engine off, moves the clutch and checks expected behavior.
     CLUTCH_Move(0, ASMode);
     CLUTCH_AnalyseState();
     if ( ucCLUTCHState == CLUTCH_ENGAGE )

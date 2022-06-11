@@ -50,6 +50,8 @@ unsigned char ucASRequesState;
 unsigned char ucASMode;
 //STEERING WHEELL
 unsigned char ucSTEER_WH_Clutch;
+//ECU
+unsigned int uiRPM;
 
 //FUNCIONES
 void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8)
@@ -97,7 +99,7 @@ void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char d
 
 
 
-void CANReadMessage (void)
+void CANReadMessage(void)
 {
     uint32_t id;
     unsigned char idType;
@@ -128,7 +130,7 @@ void CANReadMessage (void)
             data7 = msgReceipt.data[6];
             data8 = msgReceipt.data[7];
             
-            switch (id)
+            switch (id) // Interpret data according to the id
             {
                 case TRAJECTORY_ACT:
                     ucTargetAccelerator = data1;
@@ -140,8 +142,7 @@ void CANReadMessage (void)
                     if ( ucASMode == ASMode )
                     {
                         CLUTCH_Move(ucTargetClutch, ASMode);
-                        //ETCMove(ucTargetAccelerator, ASMode);
-                        ETC_PID ( ucTargetAccelerator, ASMode);
+                        ETCMove(ucTargetAccelerator, ASMode);
                         ucETCBeatSupervisor = TRUE;
                     }
                     //APPSSend(ucTargetAccelerator);
@@ -173,7 +174,6 @@ void CANReadMessage (void)
                     break;
                 case PMC_STATE:
                     ucASMode = data1;
-                    ETCModeSelect(ucASMode);
                     break;
                 case STEER_WH_CONT:
                     ucSTEER_WH_Clutch = data1;
@@ -181,6 +181,9 @@ void CANReadMessage (void)
                     {
                         CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
                     }
+                    break;
+                case PMC_ECU1_ID:
+                    uiRPM = (data2 << 8) | (data1);
                     break;
                 default:
                     Nop();
@@ -191,7 +194,7 @@ void CANReadMessage (void)
 }
 
 
-void CANDisableErrorInterrupt (unsigned char ucInterruptSet)
+void CANDisableErrorInterrupt(unsigned char ucInterruptSet)
 {
     if (ucInterruptSet == ENABLE)
     {

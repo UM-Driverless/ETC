@@ -21,51 +21,50 @@ unsigned int uiCount30s;
 unsigned int uiCount1min;
 
 
+unsigned int counter = 0; // Check while frequency
+unsigned int counts = 0;
+
+
 //FUNCIONES
-void TEMPORIZATION_10ms (void)
+void TEMPORIZATION_10ms(void)
 {
-    //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
-    TPSAnalysis();
-    APPSAnalysis();
+    
 }
 
-void TEMPORIZATION_100ms (void)
+void TEMPORIZATION_100ms(void)
 {
-    /*ANALOGRead();
-    //TPSAnalysis();
-    //APPSAnalysis();
-    ETCManual(ucAPPSManual);*/
+    CANWriteMessage(ETC_SIGNAL, DataLength_6, uiAPPS1, uiAPPS2, uiTPS1, uiTPS2, 0, 0, 0, 0);    //Falta meter los APPS target
+    //CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
 }
 
-void TEMPORIZATION_500ms (void)
+void TEMPORIZATION_500ms(void)
 {
     LED_Toggle();
     //ANALIZAR IN1 E IN2 PARA ESTADO CLUTCH
-    //ANALOGRead();
     CLUTCH_AnalyseState();
     
     ETCSupervisor();
     ucETCBeatSupervisor = FALSE;
-    
 }
 
-void TEMPORIZATION_1s (void)
+void TEMPORIZATION_1s(void)
 {
     
-    //CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
 }
 
-void TEMPORIZATION_10s (void)
+void TEMPORIZATION_10s(void)
+{
+    counts = counter;
+    counter = 0;
+    Nop();
+}
+
+void TEMPORIZATION_30s(void)
 {
 
 }
 
-void TEMPORIZATION_30s (void)
-{
-
-}
-
-void TEMPORIZATION_1mins (void)
+void TEMPORIZATION_1mins(void)
 {
     
 }

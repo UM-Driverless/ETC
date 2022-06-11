@@ -1,5 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F22174 `(v ~T0 @X0 0 tf ]
+[v F22176 `(v ~T0 @X0 0 tf ]
 "39512 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 39512: extern volatile unsigned char T1GCON __attribute__((address(0x31F)));
 [v _T1GCON `Vuc ~T0 @X0 0 e@799 ]
@@ -96,42 +96,42 @@ Version 4.0 HI-TECH Software Intermediate Code
 "385 mcc_generated_files/tmr1.h
 [; ;mcc_generated_files/tmr1.h: 385: void TMR1_CallBack(void);
 [v _TMR1_CallBack `(v ~T0 @X0 0 ef ]
-[v F22191 `(v ~T0 @X0 0 tf ]
-"32 mcc_generated_files/../TEMPORIZATIONS.h
-[; ;mcc_generated_files/../TEMPORIZATIONS.h: 32: void TEMPORIZATION_100ms (void);
+[v F22193 `(v ~T0 @X0 0 tf ]
+"36 mcc_generated_files/../TEMPORIZATIONS.h
+[; ;mcc_generated_files/../TEMPORIZATIONS.h: 36: void TEMPORIZATION_100ms (void);
 [v _TEMPORIZATION_100ms `(v ~T0 @X0 0 ef ]
 "23
 [; ;mcc_generated_files/../TEMPORIZATIONS.h: 23: extern unsigned char ucCount500ms;
 [v _ucCount500ms `uc ~T0 @X0 0 e ]
-"33
-[; ;mcc_generated_files/../TEMPORIZATIONS.h: 33: void TEMPORIZATION_500ms (void);
+"37
+[; ;mcc_generated_files/../TEMPORIZATIONS.h: 37: void TEMPORIZATION_500ms (void);
 [v _TEMPORIZATION_500ms `(v ~T0 @X0 0 ef ]
 "24
 [; ;mcc_generated_files/../TEMPORIZATIONS.h: 24: extern unsigned char ucCount1s;
 [v _ucCount1s `uc ~T0 @X0 0 e ]
-"34
-[; ;mcc_generated_files/../TEMPORIZATIONS.h: 34: void TEMPORIZATION_1s (void);
+"38
+[; ;mcc_generated_files/../TEMPORIZATIONS.h: 38: void TEMPORIZATION_1s (void);
 [v _TEMPORIZATION_1s `(v ~T0 @X0 0 ef ]
 "25
 [; ;mcc_generated_files/../TEMPORIZATIONS.h: 25: extern unsigned char ucCount10s;
 [v _ucCount10s `uc ~T0 @X0 0 e ]
-"35
-[; ;mcc_generated_files/../TEMPORIZATIONS.h: 35: void TEMPORIZATION_10s (void);
+"39
+[; ;mcc_generated_files/../TEMPORIZATIONS.h: 39: void TEMPORIZATION_10s (void);
 [v _TEMPORIZATION_10s `(v ~T0 @X0 0 ef ]
 "26
 [; ;mcc_generated_files/../TEMPORIZATIONS.h: 26: extern unsigned int uiCount30s;
 [v _uiCount30s `ui ~T0 @X0 0 e ]
-"36
-[; ;mcc_generated_files/../TEMPORIZATIONS.h: 36: void TEMPORIZATION_30s (void);
+"40
+[; ;mcc_generated_files/../TEMPORIZATIONS.h: 40: void TEMPORIZATION_30s (void);
 [v _TEMPORIZATION_30s `(v ~T0 @X0 0 ef ]
 "27
 [; ;mcc_generated_files/../TEMPORIZATIONS.h: 27: extern unsigned int uiCount1min;
 [v _uiCount1min `ui ~T0 @X0 0 e ]
-"37
-[; ;mcc_generated_files/../TEMPORIZATIONS.h: 37: void TEMPORIZATION_1mins (void);
+"41
+[; ;mcc_generated_files/../TEMPORIZATIONS.h: 41: void TEMPORIZATION_1mins (void);
 [v _TEMPORIZATION_1mins `(v ~T0 @X0 0 ef ]
-[v F22193 `(v ~T0 @X0 0 tf ]
 [v F22195 `(v ~T0 @X0 0 tf ]
+[v F22197 `(v ~T0 @X0 0 tf ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3653,7 +3653,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _timer1ReloadVal `Vus ~T0 @X0 1 e ]
 "59
 [; ;mcc_generated_files/tmr1.c: 59: void (*TMR1_InterruptHandler)(void);
-[v _TMR1_InterruptHandler `*F22174 ~T0 @X0 1 e ]
+[v _TMR1_InterruptHandler `*F22176 ~T0 @X0 1 e ]
 "65
 [; ;mcc_generated_files/tmr1.c: 65: void TMR1_Initialize(void)
 [v _TMR1_Initialize `(v ~T0 @X0 1 ef ]
@@ -3874,8 +3874,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "167
 [; ;mcc_generated_files/tmr1.c: 167:     static volatile unsigned int CountCallBack = 0;
-[v F22189 `Vui ~T0 @X0 1 s CountCallBack ]
-[i F22189
+[v F22191 `Vui ~T0 @X0 1 s CountCallBack ]
+[i F22191
 -> -> 0 `i `ui
 ]
 "170
@@ -3886,13 +3886,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TMR1_WriteTimer (1 _timer1ReloadVal ]
 "174
 [; ;mcc_generated_files/tmr1.c: 174:     if (++CountCallBack >= 5)
-[e $ ! >= =+ F22189 -> -> 1 `i `Vui -> -> 5 `i `ui 3187  ]
+[e $ ! >= =+ F22191 -> -> 1 `i `Vui -> -> 5 `i `ui 3187  ]
 "175
 [; ;mcc_generated_files/tmr1.c: 175:     {
 {
 "180
 [; ;mcc_generated_files/tmr1.c: 180:         CountCallBack = 0;
-[e = F22189 -> -> 0 `i `ui ]
+[e = F22191 -> -> 0 `i `ui ]
 "181
 [; ;mcc_generated_files/tmr1.c: 181:     }
 }
@@ -3914,7 +3914,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "188
 [; ;mcc_generated_files/tmr1.c: 188:     if(TMR1_InterruptHandler)
-[e $ ! != _TMR1_InterruptHandler -> -> 0 `i `*F22191 3189  ]
+[e $ ! != _TMR1_InterruptHandler -> -> 0 `i `*F22193 3189  ]
 "189
 [; ;mcc_generated_files/tmr1.c: 189:     {
 {
@@ -4014,10 +4014,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "223
 [; ;mcc_generated_files/tmr1.c: 223: void TMR1_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F22193 ]
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F22195 ]
 {
 [e :U _TMR1_SetInterruptHandler ]
-[v _InterruptHandler `*F22195 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22197 ~T0 @X0 1 r1 ]
 [f ]
 "224
 [; ;mcc_generated_files/tmr1.c: 224:     TMR1_InterruptHandler = InterruptHandler;

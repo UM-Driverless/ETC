@@ -48,9 +48,8 @@
 #include "ETC.h"
 #include "ANALOG.h"
 #include "PARAMETERS.h"
-/*
-                         Main application
- */
+#include "TEMPORIZATIONS.h"
+
 void main(void)
 {
     // Initialize the device - MCC Pins and configurations, still interrupts not Enabled.
@@ -76,46 +75,32 @@ void main(void)
     
     
     CLUTCH_Init();
+    CLUTCHInitMove();    
 
     //APPSMODE_SetHigh();
     //APPSSend(0);
-    
-    //Mover ETC en init
-
-    CLUTCHInitMove();
-    
-    
-    PIDController pid = { PID_KP, PID_KI, PID_KD,
-                          PID_TAU,
-                          PID_LIM_MIN, PID_LIM_MAX,
-			  PID_LIM_MIN_INT, PID_LIM_MAX_INT,
-                          SAMPLE_TIME_S };
-    
+   
     
     PIDController_Init(&pid);
     
+    
     while (1)
     {
-        // Add your application code
-        //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
-        //LED_Toggle();
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();
         //ETC_PID(ucAPPS, ManualMode);
-        
-        
-        GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+        ETCManual(ucAPPS);
     
+        counter++;
         
         
-        /*ANALOGRead();
-        TPSAnalysis();
-        APPSAnalysis();*/
-        CANWriteMessage(ETC_SIGNAL, DataLength_6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);    //Falta meter los APPS target
     }
 }
-/**
- End of File
-*/
 
+// TODO check time for each part of while
+// TODO delete ETC_PID. Use etcmove
+// TODO - CAN error messages whenever something is wrong.
+// TODO - Make local any variables that don't need to be global. Local variables in main such as uiAPPS1_pushed_mv, and pass by reference, instead of global. Easy code flow analysis
+// TODO - Description for every single variable
+// TODO - FIX Function that creates PWM so it works with any frequency, and test 30kHz frequencies to remove audible noise.

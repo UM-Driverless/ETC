@@ -11,6 +11,39 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+
+// PID controller struct with constants.
+typedef struct {
+
+	/* Controller gains */
+	float Kp;
+	float Ki;
+	float Kd;
+
+	/* Derivative low-pass filter time constant */
+	float tau;
+
+	/* Output limits */
+	float limMin;
+	float limMax;
+	
+	/* Integrator limits */
+	float limMinInt;
+	float limMaxInt;
+
+	/* Sample time (in seconds) */
+	float T;
+
+	/* Controller "memory" */
+	float integrator;
+	float prevError;			/* Required for integrator */
+	float differentiator;
+	float prevMeasurement;		/* Required for differentiator */
+
+	/* Controller output */
+	float out;
+
+} PIDController;
     
     
 //CONSTANTES
@@ -32,7 +65,8 @@ extern "C" {
 #define TPS1_INVERTED_TPS2_NO_INVERTED          6  
 #define TPS1_INVERTED_TPS2_INVERTED             10  
 #define QUITAR_ERROR_VOLTS                      0xFB       
-    
+
+extern PIDController pid;
 
 //VARIABLES    
 extern unsigned int uiAPPS1min;
@@ -68,23 +102,7 @@ extern unsigned char ucETCBeatSupervisor;
 extern unsigned char ucETCFlagSupervisor; 
 extern unsigned char ucAPPSManual;
 
-//FUNCIONES
-void APPSSend (unsigned char ucPercent);
-void APPSReadmin (void);
-void APPSReadmax (void);
-void ETCModeSelect (unsigned char ucModeSelect);
-void ETCRulesSupervision(void);
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed long slTargetMove, unsigned char ucMode);
-void ETCCalibrate(void);
-void TPSAnalysis (void);
-void APPSAnalysis (void);
-void ETCSupervisor (void);
-void ETCManual (unsigned char ucTargetManual);
-unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
-
-//-----
-
+// PID CONSTANTS
 #define PID_KP  2.8f //2.8f
 #define PID_KI  1.4f //1.4f
 #define PID_KD  0.16f //0.16f
@@ -99,41 +117,24 @@ unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
 
 #define SAMPLE_TIME_S 0.01f
 
-
-typedef struct {
-
-	/* Controller gains */
-	float Kp;
-	float Ki;
-	float Kd;
-
-	/* Derivative low-pass filter time constant */
-	float tau;
-
-	/* Output limits */
-	float limMin;
-	float limMax;
-	
-	/* Integrator limits */
-	float limMinInt;
-	float limMaxInt;
-
-	/* Sample time (in seconds) */
-	float T;
-
-	/* Controller "memory" */
-	float integrator;
-	float prevError;			/* Required for integrator */
-	float differentiator;
-	float prevMeasurement;		/* Required for differentiator */
-
-	/* Controller output */
-	float out;
-
-} PIDController;
+//FUNCIONES
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
 
 void  PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
+
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin(void);
+void APPSReadmax(void);
+void ETCRulesSupervision(void);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+void ETCCalibrate(void);
+void TPSAnalysis(void);
+void APPSAnalysis(void);
+void ETCSupervisor(void);
+void ETCManual(unsigned char ucTargetManual);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
+
 
 #ifdef	__cplusplus
 }

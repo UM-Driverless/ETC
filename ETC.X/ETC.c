@@ -14,7 +14,7 @@
 #include "PARAMETERS.h"
 #include "ANALOG.h"
 
-//VARIABLES    
+//VARIABLES
 unsigned int uiAPPS1min;
 unsigned int uiAPPS1max;    
 unsigned int uiAPPS2min;
@@ -47,6 +47,13 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = FALSE; 
 unsigned char ucETCFlagSupervisor = FALSE; 
 unsigned char ucAPPSManual;
+
+
+PIDController pid = { PID_KP, PID_KI, PID_KD,
+                          PID_TAU,
+                          PID_LIM_MIN, PID_LIM_MAX,
+			  PID_LIM_MIN_INT, PID_LIM_MAX_INT,
+                          SAMPLE_TIME_S };
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent)
@@ -81,25 +88,6 @@ void APPSReadmax (void)
     uiAPPS2max = APPS2max + APPSMARGEN;
 }
 
-//Ejecutar cada vez que llegue el mensaje de modo autonomo
-void ETCModeSelect (unsigned char ucModeSelect)
-{
-    switch (ucModeSelect)
-    {
-        case ASMode:
-            //Iniciar con 0%
-            //APPSSend(0x00); //da error el I2C generando inf interrupciones
-            APPSMODE_SetHigh();
-            break;
-        case ManualMode:
-            APPSMODE_SetLow();
-            break;
-        default:    //poner modo manual porsi
-            APPSMODE_SetLow();
-            break;
-    }
-}
-
 //Funcion supervision de normativa
 void ETCRulesSupervision(void)
 {
@@ -110,6 +98,7 @@ void ETCRulesSupervision(void)
 //Funcion para mover directamente el servo con PWM
 void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
 {
+    // Moves the throttle to achieve ucTargetMove
     //Depender de beat constante en CAN
     if ( ucETCFlagSupervisor == TRUE )
     {
@@ -121,12 +110,14 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
             if ( ucASMode == ASMode ) 
             {
                 //aumentar un 10% para asegurar un ralenti siempre, quiza ajustarlo con rpm
-                GPIO_PWM2_Control(uiETCDuty + 34, 600); //lo muevo sin comprobar nada
+                //GPIO_PWM2_Control(uiETCDuty + 34, 600); //lo muevo sin comprobar nada
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
             }
             else if ( ucASMode == ManualMode )
             {
                 //hay que ver como meter aqui la conexion con TPS y APPS
-                GPIO_PWM2_Control(uiETCDuty, 600); //lo muevo sin comprobar nada
+                //GPIO_PWM2_Control(uiETCDuty, 600); //lo muevo sin comprobar nada
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
             }
             else
             {

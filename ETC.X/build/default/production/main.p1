@@ -18,17 +18,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./GPIO.h
 [; ;./GPIO.h: 16: void GPIOInit (void);
 [v _GPIOInit `(v ~T0 @X0 0 ef ]
-"79 ./ETC.h
-[; ;./ETC.h: 79: void ETCCalibrate(void);
+"131 ./ETC.h
+[; ;./ETC.h: 131: void ETCCalibrate(void);
 [v _ETCCalibrate `(v ~T0 @X0 0 ef ]
 "23 ./ANALOG.h
 [; ;./ANALOG.h: 23: void ANALOGRead (void);
 [v _ANALOGRead `(v ~T0 @X0 0 ef ]
-"73 ./ETC.h
-[; ;./ETC.h: 73: void APPSReadmin (void);
+"127 ./ETC.h
+[; ;./ETC.h: 127: void APPSReadmin(void);
 [v _APPSReadmin `(v ~T0 @X0 0 ef ]
-"74
-[; ;./ETC.h: 74: void APPSReadmax (void);
+"128
+[; ;./ETC.h: 128: void APPSReadmax(void);
 [v _APPSReadmax `(v ~T0 @X0 0 ef ]
 "2080 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [s S3083 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -41,8 +41,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3082 . . . ]
 "2094
 [v _INTCON0bits `VS3082 ~T0 @X0 0 e@1238 ]
-"99 ./MESSAGES.h
-[; ;./MESSAGES.h: 99: void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
+"103 ./MESSAGES.h
+[; ;./MESSAGES.h: 103: void CANDisableErrorInterrupt (unsigned char ucInterruptSet);
 [v _CANDisableErrorInterrupt `(v ~T0 @X0 0 ef1`uc ]
 "33 ./CLUTCH.h
 [; ;./CLUTCH.h: 33: void CLUTCH_Init (void);
@@ -50,46 +50,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;./CLUTCH.h: 36: void CLUTCHInitMove(void);
 [v _CLUTCHInitMove `(v ~T0 @X0 0 ef ]
-"103 ./ETC.h
-[; ;./ETC.h: 103: typedef struct {
+"16 ./ETC.h
+[; ;./ETC.h: 16: typedef struct {
 [s S3181 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
 [n S3181 . Kp Ki Kd tau limMin limMax limMinInt limMaxInt T integrator prevError differentiator prevMeasurement out ]
-"135
-[; ;./ETC.h: 135: void PIDController_Init(PIDController *pid);
+"123
+[; ;./ETC.h: 123: void PIDController_Init(PIDController *pid);
 [v _PIDController_Init `(v ~T0 @X0 0 ef1`*S3181 ]
-"80
-[; ;./ETC.h: 80: void TPSAnalysis (void);
+"69
+[; ;./ETC.h: 69: extern PIDController pid;
+[v _pid `S3181 ~T0 @X0 0 e ]
+"132
+[; ;./ETC.h: 132: void TPSAnalysis(void);
 [v _TPSAnalysis `(v ~T0 @X0 0 ef ]
-"81
-[; ;./ETC.h: 81: void APPSAnalysis (void);
+"133
+[; ;./ETC.h: 133: void APPSAnalysis(void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
-"18 ./GPIO.h
-[; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
-[v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-"136 ./ETC.h
-[; ;./ETC.h: 136: float PIDController_Update(PIDController *pid, float setpoint, float measurement);
-[v _PIDController_Update `(f ~T0 @X0 0 ef3`*S3181`f`f ]
-"53
-[; ;./ETC.h: 53: extern unsigned int ucAPPS;
+"135
+[; ;./ETC.h: 135: void ETCManual(unsigned char ucTargetManual);
+[v _ETCManual `(v ~T0 @X0 0 ef1`uc ]
+"87
+[; ;./ETC.h: 87: extern unsigned int ucAPPS;
 [v _ucAPPS `ui ~T0 @X0 0 e ]
-"60
-[; ;./ETC.h: 60: extern unsigned int ucTPS;
-[v _ucTPS `ui ~T0 @X0 0 e ]
-"97 ./MESSAGES.h
-[; ;./MESSAGES.h: 97: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
-[v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
-"46 ./ETC.h
-[; ;./ETC.h: 46: extern unsigned int uiAPPS1;
-[v _uiAPPS1 `ui ~T0 @X0 0 e ]
-"47
-[; ;./ETC.h: 47: extern unsigned int uiAPPS2;
-[v _uiAPPS2 `ui ~T0 @X0 0 e ]
-"54
-[; ;./ETC.h: 54: extern unsigned int uiTPS1;
-[v _uiTPS1 `ui ~T0 @X0 0 e ]
-"55
-[; ;./ETC.h: 55: extern unsigned int uiTPS2;
-[v _uiTPS2 `ui ~T0 @X0 0 e ]
+"30 ./TEMPORIZATIONS.h
+[; ;./TEMPORIZATIONS.h: 30: extern unsigned int counter;
+[v _counter `ui ~T0 @X0 0 e ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3616,95 +3601,75 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"54 main.c
-[; ;main.c: 54: void main(void)
+"53 main.c
+[; ;main.c: 53: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"55
-[; ;main.c: 55: {
+"54
+[; ;main.c: 54: {
 {
 [e :U _main ]
 [f ]
-"57
-[; ;main.c: 57:     SYSTEM_Initialize();
+"56
+[; ;main.c: 56:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"62
-[; ;main.c: 62:     GPIOInit();
+"61
+[; ;main.c: 61:     GPIOInit();
 [e ( _GPIOInit ..  ]
-"63
-[; ;main.c: 63:     ETCCalibrate();
+"62
+[; ;main.c: 62:     ETCCalibrate();
 [e ( _ETCCalibrate ..  ]
-"66
-[; ;main.c: 66:     ANALOGRead();
+"65
+[; ;main.c: 65:     ANALOGRead();
 [e ( _ANALOGRead ..  ]
-"68
-[; ;main.c: 68:     APPSReadmin();
+"67
+[; ;main.c: 67:     APPSReadmin();
 [e ( _APPSReadmin ..  ]
-"69
-[; ;main.c: 69:     APPSReadmax();
+"68
+[; ;main.c: 68:     APPSReadmax();
 [e ( _APPSReadmax ..  ]
-"71
-[; ;main.c: 71:     (INTCON0bits.GIE = 1);
+"70
+[; ;main.c: 70:     (INTCON0bits.GIE = 1);
 [e = . . _INTCON0bits 0 6 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     CANDisableErrorInterrupt(0x00);
+"71
+[; ;main.c: 71:     CANDisableErrorInterrupt(0x00);
 [e ( _CANDisableErrorInterrupt (1 -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     CLUTCH_Init();
+"77
+[; ;main.c: 77:     CLUTCH_Init();
 [e ( _CLUTCH_Init ..  ]
-"85
-[; ;main.c: 85:     CLUTCHInitMove();
+"78
+[; ;main.c: 78:     CLUTCHInitMove();
 [e ( _CLUTCHInitMove ..  ]
-[v F23065 `S3181 ~T0 @X0 1 s ]
-[i F23065
-:U ..
-:U ..
-"88
-[; ;main.c: 88:     PIDController pid = { 2.8f, 1.4f, 0.16f,
--> .2.8 `f
--> .1.4 `f
--> .0.16 `f
--> .0.02 `f
--> .0.0 `f
--> .100.0 `f
--U -> .5.0 `f
--> .5.0 `f
--> .0.01 `f
-..
-..
-]
-[v _pid `S3181 ~T0 @X0 1 a ]
-[e = _pid F23065 ]
-"95
-[; ;main.c: 95:     PIDController_Init(&pid);
+"85
+[; ;main.c: 85:     PIDController_Init(&pid);
 [e ( _PIDController_Init (1 &U _pid ]
-"97
-[; ;main.c: 97:     while (1)
+"88
+[; ;main.c: 88:     while (1)
 [e :U 3184 ]
-"98
-[; ;main.c: 98:     {
+"89
+[; ;main.c: 89:     {
 {
-"102
-[; ;main.c: 102:         ANALOGRead();
+"90
+[; ;main.c: 90:         ANALOGRead();
 [e ( _ANALOGRead ..  ]
-"103
-[; ;main.c: 103:         TPSAnalysis();
+"91
+[; ;main.c: 91:         TPSAnalysis();
 [e ( _TPSAnalysis ..  ]
-"104
-[; ;main.c: 104:         APPSAnalysis();
+"92
+[; ;main.c: 92:         APPSAnalysis();
 [e ( _APPSAnalysis ..  ]
-"108
-[; ;main.c: 108:         GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
-[e ( _GPIO_PWM2_Control (2 , -> ( _PIDController_Update (3 , , &U _pid -> _ucAPPS `f -> _ucTPS `f `ui -> -> 600 `i `ui ]
-"115
-[; ;main.c: 115:         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
-[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> / _uiAPPS1 -> -> 100 `i `ui `uc -> / _uiAPPS2 -> -> 100 `i `ui `uc -> / _uiTPS1 -> -> 100 `i `ui `uc -> / _uiTPS2 -> -> 100 `i `ui `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"116
-[; ;main.c: 116:     }
+"94
+[; ;main.c: 94:         ETCManual(ucAPPS);
+[e ( _ETCManual (1 -> _ucAPPS `uc ]
+"96
+[; ;main.c: 96:         counter++;
+[e ++ _counter -> -> 1 `i `ui ]
+"97
+[; ;main.c: 97:     }
 }
 [e :U 3183 ]
 [e $U 3184  ]
 [e :U 3185 ]
-"117
-[; ;main.c: 117: }
+"98
+[; ;main.c: 98: }
 [e :UE 3182 ]
 }

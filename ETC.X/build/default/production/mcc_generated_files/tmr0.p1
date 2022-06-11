@@ -1,5 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F22172 `(v ~T0 @X0 0 tf ]
+[v F22174 `(v ~T0 @X0 0 tf ]
 "39040 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 39040: extern volatile unsigned char T0CON1 __attribute__((address(0x31B)));
 [v _T0CON1 `Vuc ~T0 @X0 0 e@795 ]
@@ -63,12 +63,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "315 mcc_generated_files/tmr0.h
 [; ;mcc_generated_files/tmr0.h: 315: void TMR0_CallBack(void);
 [v _TMR0_CallBack `(v ~T0 @X0 0 ef ]
-"31 mcc_generated_files/../TEMPORIZATIONS.h
-[; ;mcc_generated_files/../TEMPORIZATIONS.h: 31: void TEMPORIZATION_10ms (void);
+"35 mcc_generated_files/../TEMPORIZATIONS.h
+[; ;mcc_generated_files/../TEMPORIZATIONS.h: 35: void TEMPORIZATION_10ms (void);
 [v _TEMPORIZATION_10ms `(v ~T0 @X0 0 ef ]
-[v F22186 `(v ~T0 @X0 0 tf ]
 [v F22188 `(v ~T0 @X0 0 tf ]
 [v F22190 `(v ~T0 @X0 0 tf ]
+[v F22192 `(v ~T0 @X0 0 tf ]
 "363 C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/ruben/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3587,7 +3587,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 04FFh ;# ">
 "60 mcc_generated_files/tmr0.c
 [; ;mcc_generated_files/tmr0.c: 60: void (*TMR0_InterruptHandler)(void);
-[v _TMR0_InterruptHandler `*F22172 ~T0 @X0 1 e ]
+[v _TMR0_InterruptHandler `*F22174 ~T0 @X0 1 e ]
 "62
 [; ;mcc_generated_files/tmr0.c: 62: void TMR0_Initialize(void)
 [v _TMR0_Initialize `(v ~T0 @X0 1 ef ]
@@ -3723,8 +3723,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "124
 [; ;mcc_generated_files/tmr0.c: 124:     static volatile uint16_t CountCallBack = 0;
-[v F22184 `Vus ~T0 @X0 1 s CountCallBack ]
-[i F22184
+[v F22186 `Vus ~T0 @X0 1 s CountCallBack ]
+[i F22186
 -> -> 0 `i `us
 ]
 "127
@@ -3732,7 +3732,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR3bits 0 7 -> -> 0 `i `uc ]
 "129
 [; ;mcc_generated_files/tmr0.c: 129:     if (++CountCallBack >= 10)
-[e $ ! >= -> =+ F22184 -> -> 1 `i `Vus `ui -> -> 10 `i `ui 3183  ]
+[e $ ! >= -> =+ F22186 -> -> 1 `i `Vus `ui -> -> 10 `i `ui 3183  ]
 "130
 [; ;mcc_generated_files/tmr0.c: 130:     {
 {
@@ -3741,7 +3741,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _TMR0_CallBack ..  ]
 "135
 [; ;mcc_generated_files/tmr0.c: 135:         CountCallBack = 0;
-[e = F22184 -> -> 0 `i `us ]
+[e = F22186 -> -> 0 `i `us ]
 "136
 [; ;mcc_generated_files/tmr0.c: 136:     }
 }
@@ -3763,7 +3763,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "146
 [; ;mcc_generated_files/tmr0.c: 146:     if(TMR0_InterruptHandler)
-[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F22186 3185  ]
+[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F22188 3185  ]
 "147
 [; ;mcc_generated_files/tmr0.c: 147:     {
 {
@@ -3780,10 +3780,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "152
 [; ;mcc_generated_files/tmr0.c: 152: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F22188 ]
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F22190 ]
 {
 [e :U _TMR0_SetInterruptHandler ]
-[v _InterruptHandler `*F22190 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22192 ~T0 @X0 1 r1 ]
 [f ]
 "153
 [; ;mcc_generated_files/tmr0.c: 153:     TMR0_InterruptHandler = InterruptHandler;

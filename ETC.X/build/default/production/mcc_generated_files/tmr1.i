@@ -37524,6 +37524,10 @@ extern unsigned int uiCount30s;
 extern unsigned int uiCount1min;
 
 
+extern unsigned int counter;
+extern unsigned int counts;
+
+
 
 void TEMPORIZATION_10ms (void);
 void TEMPORIZATION_100ms (void);

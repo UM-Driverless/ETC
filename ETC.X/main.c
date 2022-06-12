@@ -82,7 +82,7 @@ void main(void)
     
     //Mover ETC en init
 
-    CLUTCHInitMove();
+    //CLUTCHInitMove();
     
     
     PIDController pid = { PID_KP, PID_KI, PID_KD,
@@ -104,9 +104,16 @@ void main(void)
         APPSAnalysis();
         //ETC_PID(ucAPPS, ManualMode);
         
-        
-        GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
-    
+        if (ucASMode == ManualMode)
+        {
+            GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+        }
+        else if (ucASMode == ASMode)
+        {
+            GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
+            ucCLUTCHState = CLUTCH_NONE;
+            GPIO_PWM1_Control(ucTargetClutch, 300);
+        }
         
         
         /*ANALOGRead();

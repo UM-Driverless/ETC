@@ -47,9 +47,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33 ./CLUTCH.h
 [; ;./CLUTCH.h: 33: void CLUTCH_Init (void);
 [v _CLUTCH_Init `(v ~T0 @X0 0 ef ]
-"36
-[; ;./CLUTCH.h: 36: void CLUTCHInitMove(void);
-[v _CLUTCHInitMove `(v ~T0 @X0 0 ef ]
 "103 ./ETC.h
 [; ;./ETC.h: 103: typedef struct {
 [s S3181 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
@@ -63,6 +60,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "81
 [; ;./ETC.h: 81: void APPSAnalysis (void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
+"60 ./MESSAGES.h
+[; ;./MESSAGES.h: 60: extern unsigned char ucASMode;
+[v _ucASMode `uc ~T0 @X0 0 e ]
 "18 ./GPIO.h
 [; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
@@ -75,7 +75,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "60
 [; ;./ETC.h: 60: extern unsigned int ucTPS;
 [v _ucTPS `ui ~T0 @X0 0 e ]
-"97 ./MESSAGES.h
+"29 ./MESSAGES.h
+[; ;./MESSAGES.h: 29: extern unsigned char ucTargetAccelerator;
+[v _ucTargetAccelerator `uc ~T0 @X0 0 e ]
+"97
 [; ;./MESSAGES.h: 97: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 [v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
 "46 ./ETC.h
@@ -3651,16 +3654,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "78
 [; ;main.c: 78:     CLUTCH_Init();
 [e ( _CLUTCH_Init ..  ]
-"85
-[; ;main.c: 85:     CLUTCHInitMove();
-[e ( _CLUTCHInitMove ..  ]
 [v F23065 `S3181 ~T0 @X0 1 s ]
 [i F23065
 :U ..
 :U ..
 "88
-[; ;main.c: 88:     PIDController pid = { 3.0f, 1.4f, 0.16f,
--> .3.0 `f
+[; ;main.c: 88:     PIDController pid = { 2.8f, 1.4f, 0.16f,
+-> .2.8 `f
 -> .1.4 `f
 -> .0.16 `f
 -> .0.02 `f
@@ -3692,19 +3692,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 "104
 [; ;main.c: 104:         APPSAnalysis();
 [e ( _APPSAnalysis ..  ]
+"107
+[; ;main.c: 107:         if (ucASMode == 0)
+[e $ ! == -> _ucASMode `i -> 0 `i 3186  ]
 "108
-[; ;main.c: 108:         GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+[; ;main.c: 108:         {
+{
+"109
+[; ;main.c: 109:             GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
 [e ( _GPIO_PWM2_Control (2 , -> ( _PIDController_Update (3 , , &U _pid -> _ucAPPS `f -> _ucTPS `f `ui -> -> 600 `i `ui ]
-"115
-[; ;main.c: 115:         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
+"110
+[; ;main.c: 110:         }
+}
+[e $U 3187  ]
+"111
+[; ;main.c: 111:         else if (ucASMode == 1)
+[e :U 3186 ]
+[e $ ! == -> _ucASMode `i -> 1 `i 3188  ]
+"112
+[; ;main.c: 112:         {
+{
+"113
+[; ;main.c: 113:             GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
+[e ( _GPIO_PWM2_Control (2 , -> ( _PIDController_Update (3 , , &U _pid -> _ucTargetAccelerator `f -> _ucTPS `f `ui -> -> 600 `i `ui ]
+"114
+[; ;main.c: 114:         }
+}
+[e :U 3188 ]
+[e :U 3187 ]
+"120
+[; ;main.c: 120:         CANWriteMessage(0x330, 6, uiAPPS1/100, uiAPPS2/100, uiTPS1/100, uiTPS2/100, 0, 0, 0, 0);
 [e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> / _uiAPPS1 -> -> 100 `i `ui `uc -> / _uiAPPS2 -> -> 100 `i `ui `uc -> / _uiTPS1 -> -> 100 `i `ui `uc -> / _uiTPS2 -> -> 100 `i `ui `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
-"116
-[; ;main.c: 116:     }
+"121
+[; ;main.c: 121:     }
 }
 [e :U 3183 ]
 [e $U 3184  ]
 [e :U 3185 ]
-"117
-[; ;main.c: 117: }
+"122
+[; ;main.c: 122: }
 [e :UE 3182 ]
 }

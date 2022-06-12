@@ -38454,16 +38454,8 @@ void main(void)
 
 
     CLUTCH_Init();
-
-
-
-
-
-
-    CLUTCHInitMove();
-
-
-    PIDController pid = { 3.0f, 1.4f, 0.16f,
+# 88 "main.c"
+    PIDController pid = { 2.8f, 1.4f, 0.16f,
                           0.02f,
                           0.0f, 100.0f,
      -5.0f, 5.0f,
@@ -38482,9 +38474,14 @@ void main(void)
         APPSAnalysis();
 
 
-
-        GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
-
+        if (ucASMode == 0)
+        {
+            GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+        }
+        else if (ucASMode == 1)
+        {
+            GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
+        }
 
 
 

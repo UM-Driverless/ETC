@@ -5,13 +5,14 @@
         <group>
             <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/main.c</file>
             <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/MESSAGES.c</file>
-            <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/GPIO.c</file>
-            <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/ETC.c</file>
+            <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/mcc_generated_files/can1.c</file>
             <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/TEMPORIZATIONS.c</file>
+            <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/ETC.c</file>
+            <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/ANALOG.c</file>
             <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/CLUTCH.c</file>
-            <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/PARAMETERS.h</file>
             <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/ETC.h</file>
             <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/MESSAGES.h</file>
+            <file>file:/C:/Users/ruben/Documents/GitHub/ETC/ETC.X/TEMPORIZATIONS.h</file>
         </group>
     </open-files>
 </project-private>

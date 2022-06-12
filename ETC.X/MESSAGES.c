@@ -139,9 +139,10 @@ void CANReadMessage (void)
                     //Mover embrague y APPS según lleguen
                     if ( ucASMode == ASMode )
                     {
-                        CLUTCH_Move(ucTargetClutch, ASMode);
+                        //ucCLUTCHState = CLUTCH_NONE;
+                        //CLUTCH_Move(ucTargetClutch, ASMode);
                         //ETCMove(ucTargetAccelerator, ASMode);
-                        ETC_PID ( ucTargetAccelerator, ASMode);
+                        //ETC_PID ( ucTargetAccelerator, ASMode);
                         ucETCBeatSupervisor = TRUE;
                     }
                     //APPSSend(ucTargetAccelerator);

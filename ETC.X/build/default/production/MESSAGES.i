@@ -38553,9 +38553,10 @@ void CANReadMessage (void)
 
                     if ( ucASMode == 1 )
                     {
-                        CLUTCH_Move(ucTargetClutch, 1);
 
-                        ETC_PID ( ucTargetAccelerator, 1);
+
+
+
                         ucETCBeatSupervisor = 0x01;
                     }
 

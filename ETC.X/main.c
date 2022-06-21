@@ -102,6 +102,7 @@ void main(void)
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();
+        ETCRulesSupervision(); //justo despues de analizar porcentajes debe ir la supervision
         //ETC_PID(ucAPPS, ManualMode);
         
         if (ucASMode == ManualMode)

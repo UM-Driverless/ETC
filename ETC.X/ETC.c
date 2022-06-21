@@ -47,6 +47,11 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = FALSE; 
 unsigned char ucETCFlagSupervisor = FALSE; 
 unsigned char ucAPPSManual;
+unsigned char ucETCTimerRuleTPS = FALSE;
+unsigned char ucETCTimerRuleAPPS = FALSE;
+unsigned char ucCount100msTPSError = 0;
+unsigned char ucCount100msAPPSError = 0;
+unsigned char ucETCRuleSupervisor = TRUE;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent)
@@ -101,50 +106,66 @@ void ETCModeSelect (unsigned char ucModeSelect)
 }
 
 //Funcion supervision de normativa
-void ETCRulesSupervision(void)
+void ETCRulesSupervision(void) //ejecutar a 10Hz min o en cada porcentaje calculado 
 {
-
-    
-}
-
-//Funcion para mover directamente el servo con PWM
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
-{
-    //Depender de beat constante en CAN
-    if ( ucETCFlagSupervisor == TRUE )
+    //Supervision TPS
+    if (ucTPS1Perc>ucTPS2Perc+10)
     {
-        //HACER CONVERSION DE 0-100% A 2-12 DUTY
-        uiETCDuty = ucTargetMove;
-        //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
-        if ( ucMode == ucASMode )
-        {
-            if ( ucASMode == ASMode ) 
-            {
-                //aumentar un 10% para asegurar un ralenti siempre, quiza ajustarlo con rpm
-                GPIO_PWM2_Control(uiETCDuty + 34, 600); //lo muevo sin comprobar nada
-            }
-            else if ( ucASMode == ManualMode )
-            {
-                //hay que ver como meter aqui la conexion con TPS y APPS
-                GPIO_PWM2_Control(uiETCDuty, 600); //lo muevo sin comprobar nada
-            }
-            else
-            {
-                //la variable ucMode esta corrupto
-            }
-
-        }
-        else
-        {
-            //generar error movimiento impedido por modo de conduccion
-        }
-    } 
+        ucETCTimerRuleTPS = FALSE; 
+    }
+    else if (ucTPS2Perc>ucTPS1Perc+10)
+    {
+        ucETCTimerRuleTPS = FALSE; 
+    }
     else 
     {
-        GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
+        ucETCTimerRuleTPS = TRUE; 
+        ucCount100msTPSError = 0;
+    }
+    
+    //Supervision APPS
+    if (ucAPPS1Perc>ucAPPS2Perc+10)
+    {
+        ucETCTimerRuleAPPS = FALSE; 
+    }
+    else if (ucAPPS2Perc>ucAPPS1Perc+10)
+    {
+        ucETCTimerRuleAPPS = FALSE; 
+    }
+    else 
+    {
+        ucETCTimerRuleAPPS = TRUE; 
+        ucCount100msAPPSError = 0;
     }
 }
 
+void ETC100msSupervisor (void)
+{
+    if ( ucETCTimerRuleTPS == FALSE )
+    {
+        if ( ucCount100msTPSError < 255 )
+        {
+            ucCount100msTPSError++;
+        }
+    }
+    if ( ucETCTimerRuleAPPS == FALSE )
+    {
+        if ( ucCount100msTPSError < 255 )
+        {
+            ucCount100msAPPSError++;
+        }
+    }
+    if ( ucCount100msTPSError >= 2 )
+    {
+        ucTPS_STATE |= TPS1_TPS2_DIFF;
+        ucETCRuleSupervisor = FALSE;
+    }
+    if ( ucCount100msAPPSError >= 2 )
+    {
+        ucTPS_STATE |= TPS1_TPS2_DIFF;
+        ucETCRuleSupervisor = FALSE;
+    }
+}
 
 void ETC_PID(signed long slTargetMove, unsigned char ucMode) 
 {
@@ -337,12 +358,12 @@ void TPSAnalysis(void)
     else if ( ucTPS_Volts_STATE == TPS1_NO_INVERTED_TPS2_INVERTED )
     {
         //todo OK, eliminar erro de estado
-        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
+        ucTPS_STATE &= QUITAR_ERROR_TPS_VOLTS;
     }
     else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_NO_INVERTED )
     {
         //todo OK, eliminar erro de estado
-        ucTPS_STATE &= QUITAR_ERROR_VOLTS;
+        ucTPS_STATE &= QUITAR_ERROR_TPS_VOLTS;
     }
     else if ( ucTPS_Volts_STATE == TPS1_INVERTED_TPS2_INVERTED )
     {

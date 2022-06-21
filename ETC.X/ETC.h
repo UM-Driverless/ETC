@@ -15,13 +15,14 @@ extern "C" {
     
 //CONSTANTES
 #define TPS_OK              0
-//errores por salidad de margenes
+//TPS STATES
 #define TPS1_ERROR          1
 #define TPS2_ERROR          2
-#define TPS1_TPS2_ERROR     3
+#define TPS1_TPS2_DIFF      3
 #define TPS_Volt_ERROR      4
 #define QUITAR_ERROR_TPS1  0xFE    
 #define QUITAR_ERROR_TPS2  0xFD   
+#define QUITAR_ERROR_TPS_VOLTS 0xFB       
 //inversion de voltaje
 #define TPS1_NO_INVERTED    1  
 #define TPS1_INVERTED       2
@@ -31,7 +32,15 @@ extern "C" {
 #define TPS1_NO_INVERTED_TPS2_INVERTED          9  
 #define TPS1_INVERTED_TPS2_NO_INVERTED          6  
 #define TPS1_INVERTED_TPS2_INVERTED             10  
-#define QUITAR_ERROR_VOLTS                      0xFB       
+    
+//APPS STATES
+#define APPS1_ERROR          1
+#define APPS2_ERROR          2
+#define APPS1_APPS2_DIFF     3
+#define APPS_Volt_ERROR      4
+#define QUITAR_ERROR_APPS1  0xFE    
+#define QUITAR_ERROR_APPS2  0xFD   
+#define QUITAR_ERROR_APPS_VOLTS 0xFB       
     
 
 //VARIABLES    
@@ -67,6 +76,11 @@ extern unsigned char ucETB_STATE;
 extern unsigned char ucETCBeatSupervisor; 
 extern unsigned char ucETCFlagSupervisor; 
 extern unsigned char ucAPPSManual;
+extern unsigned char ucETCTimerRuleTPS;
+extern unsigned char ucETCTimerRuleAPPS;
+extern unsigned char ucCount100msTPSError;
+extern unsigned char ucCount100msAPPSError;
+extern unsigned char ucETCRuleSupervisor;
 
 //FUNCIONES
 void APPSSend (unsigned char ucPercent);

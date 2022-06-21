@@ -35,6 +35,7 @@ void TEMPORIZATION_100ms (void)
     //TPSAnalysis();
     //APPSAnalysis();
     ETCManual(ucAPPSManual);*/
+    ETC100msSupervisor();
     CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, ucAPPS, ucTPS, 0, 0);    //Falta meter los APPS target
 }
 

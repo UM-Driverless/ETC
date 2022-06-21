@@ -4,8 +4,8 @@
  - Autocalibrar el embrague
  - Mandar mensaje CAN a todas las placas ???
  - Controlar embrague (mensaje CAN del volante + mensaje CAN cambio/volante, golpe de gas)
- - Desconecto M+, M-; si en 1s TPS no idle+-5%  => abrir SW
- 	Vuelvo a cerrar SW tras 1s afer TPS en idle+-5%
+ - Desconecto M+, M-; si en 1s TPS no idle+-5%  => abrir SDC
+ 	Vuelvo a cerrar SDC tras 1s afer TPS en idle+-5%
  - Si TPS1 y TPS2 tienen 		diferencia >10% 		durante 100ms  =>  desconecto M+, M-
  - Si APPS1 y APPS2 tienen 		diferencia >10% 		durante 100ms  =>  desconecto M+, M-
  - Si TPS y target TPS tienen		diferencia >10% 		durante 500ms  =>  desconecto M+, M-

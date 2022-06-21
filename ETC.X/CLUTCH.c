@@ -106,6 +106,7 @@ void CLUTCH_AnalyseState (void)
     {
         ucCLUTCHState = CLUTCH_CORRUPT;
     }
+    
 }
 
 

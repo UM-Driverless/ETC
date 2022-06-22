@@ -11,33 +11,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./../ETC.X/mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
-"80 ./ETC.h
-[; ;./ETC.h: 80: void TPSAnalysis (void);
+"63 ./ETC.h
+[; ;./ETC.h: 63: typedef struct {
+[s S3181 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
+[n S3181 . Kp Ki Kd tau limMin limMax limMinInt limMaxInt T integrator prevError differentiator prevMeasurement out ]
+"156
+[; ;./ETC.h: 156: void TPSAnalysis (void);
 [v _TPSAnalysis `(v ~T0 @X0 0 ef ]
-"81
-[; ;./ETC.h: 81: void APPSAnalysis (void);
+"157
+[; ;./ETC.h: 157: void APPSAnalysis (void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
+"162
+[; ;./ETC.h: 162: void ETC100msSupervisor (void);
+[v _ETC100msSupervisor `(v ~T0 @X0 0 ef ]
 "97 ./MESSAGES.h
 [; ;./MESSAGES.h: 97: void CANWriteMessage(unsigned long id, unsigned char dataLength, unsigned char data1, unsigned char data2, unsigned char data3, unsigned char data4, unsigned char data5, unsigned char data6, unsigned char data7, unsigned char data8);
 [v _CANWriteMessage `(v ~T0 @X0 0 ef10`ul`uc`uc`uc`uc`uc`uc`uc`uc`uc ]
-"51 ./ETC.h
-[; ;./ETC.h: 51: extern unsigned int ucAPPS1Perc;
+"116 ./ETC.h
+[; ;./ETC.h: 116: extern unsigned int ucAPPS1Perc;
 [v _ucAPPS1Perc `ui ~T0 @X0 0 e ]
-"52
-[; ;./ETC.h: 52: extern unsigned int ucAPPS2Perc;
+"117
+[; ;./ETC.h: 117: extern unsigned int ucAPPS2Perc;
 [v _ucAPPS2Perc `ui ~T0 @X0 0 e ]
-"58
-[; ;./ETC.h: 58: extern unsigned int ucTPS1Perc;
+"123
+[; ;./ETC.h: 123: extern unsigned int ucTPS1Perc;
 [v _ucTPS1Perc `ui ~T0 @X0 0 e ]
-"59
-[; ;./ETC.h: 59: extern unsigned int ucTPS2Perc;
+"124
+[; ;./ETC.h: 124: extern unsigned int ucTPS2Perc;
 [v _ucTPS2Perc `ui ~T0 @X0 0 e ]
-"53
-[; ;./ETC.h: 53: extern unsigned int ucAPPS;
+"118
+[; ;./ETC.h: 118: extern unsigned int ucAPPS;
 [v _ucAPPS `ui ~T0 @X0 0 e ]
-"60
-[; ;./ETC.h: 60: extern unsigned int ucTPS;
+"125
+[; ;./ETC.h: 125: extern unsigned int ucTPS;
 [v _ucTPS `ui ~T0 @X0 0 e ]
+"35 ./CLUTCH.h
+[; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
+[v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
+"158 ./ETC.h
+[; ;./ETC.h: 158: void ETCXavierSupervisor (void);
+[v _ETCXavierSupervisor `(v ~T0 @X0 0 ef ]
+"132
+[; ;./ETC.h: 132: extern unsigned char ucETCBeatSupervisor;
+[v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
+"164
+[; ;./ETC.h: 164: void ETC500msSupervisor (void);
+[v _ETC500msSupervisor `(v ~T0 @X0 0 ef ]
+"126
+[; ;./ETC.h: 126: extern unsigned char ucTPS_STATE;
+[v _ucTPS_STATE `uc ~T0 @X0 0 e ]
+"113
+[; ;./ETC.h: 113: extern unsigned char ucAPPS_STATE;
+[v _ucAPPS_STATE `uc ~T0 @X0 0 e ]
+"29 ./CLUTCH.h
+[; ;./CLUTCH.h: 29: extern unsigned char ucCLUTCHState;
+[v _ucCLUTCHState `uc ~T0 @X0 0 e ]
+"131 ./ETC.h
+[; ;./ETC.h: 131: extern unsigned char ucETB_STATE;
+[v _ucETB_STATE `uc ~T0 @X0 0 e ]
 "1480 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1480:         unsigned TU1MD :1;
 [s S3061 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -48,27 +79,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3060 . . ]
 "1491
 [v _LATAbits `VS3060 ~T0 @X0 0 e@1214 ]
-"35 ./CLUTCH.h
-[; ;./CLUTCH.h: 35: void CLUTCH_AnalyseState (void);
-[v _CLUTCH_AnalyseState `(v ~T0 @X0 0 ef ]
-"82 ./ETC.h
-[; ;./ETC.h: 82: void ETCSupervisor (void);
-[v _ETCSupervisor `(v ~T0 @X0 0 ef ]
-"67
-[; ;./ETC.h: 67: extern unsigned char ucETCBeatSupervisor;
-[v _ucETCBeatSupervisor `uc ~T0 @X0 0 e ]
-"61
-[; ;./ETC.h: 61: extern unsigned char ucTPS_STATE;
-[v _ucTPS_STATE `uc ~T0 @X0 0 e ]
-"48
-[; ;./ETC.h: 48: extern unsigned char ucAPPS_STATE;
-[v _ucAPPS_STATE `uc ~T0 @X0 0 e ]
-"29 ./CLUTCH.h
-[; ;./CLUTCH.h: 29: extern unsigned char ucCLUTCHState;
-[v _ucCLUTCHState `uc ~T0 @X0 0 e ]
-"66 ./ETC.h
-[; ;./ETC.h: 66: extern unsigned char ucETB_STATE;
-[v _ucETB_STATE `uc ~T0 @X0 0 e ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3594,6 +3604,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"95 ./ETC.h
+[; ;./ETC.h: 95: PIDController pid = { 2.8f, 1.4f, 0.16f,
+[v _pid `S3181 ~T0 @X0 1 e ]
+[i _pid
+:U ..
+:U ..
+-> .2.8 `f
+-> .1.4 `f
+-> .0.16 `f
+-> .0.02 `f
+-> .0.0 `f
+-> .100.0 `f
+-U -> .5.0 `f
+-> .5.0 `f
+-> .0.01 `f
+..
+..
+]
 "17 TEMPORIZATIONS.c
 [; ;TEMPORIZATIONS.c: 17: unsigned char ucCount500ms;
 [v _ucCount500ms `uc ~T0 @X0 1 e ]
@@ -3636,36 +3664,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _TEMPORIZATION_100ms ]
 [f ]
 "38
-[; ;TEMPORIZATIONS.c: 38:     CANWriteMessage(0x330, 6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, ucAPPS, ucTPS, 0, 0);
-[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> _ucAPPS1Perc `uc -> _ucAPPS2Perc `uc -> _ucTPS1Perc `uc -> _ucTPS2Perc `uc -> _ucAPPS `uc -> _ucTPS `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+[; ;TEMPORIZATIONS.c: 38:     ETC100msSupervisor();
+[e ( _ETC100msSupervisor ..  ]
 "39
-[; ;TEMPORIZATIONS.c: 39: }
+[; ;TEMPORIZATIONS.c: 39:     CANWriteMessage(0x330, 6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, ucAPPS, ucTPS, 0, 0);
+[e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 816 `i `l `ul -> -> 6 `i `uc -> _ucAPPS1Perc `uc -> _ucAPPS2Perc `uc -> _ucTPS1Perc `uc -> _ucTPS2Perc `uc -> _ucAPPS `uc -> _ucTPS `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
+"40
+[; ;TEMPORIZATIONS.c: 40: }
 [e :UE 3183 ]
 }
-"41
-[; ;TEMPORIZATIONS.c: 41: void TEMPORIZATION_500ms (void)
-[v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
 "42
-[; ;TEMPORIZATIONS.c: 42: {
+[; ;TEMPORIZATIONS.c: 42: void TEMPORIZATION_500ms (void)
+[v _TEMPORIZATION_500ms `(v ~T0 @X0 1 ef ]
+"43
+[; ;TEMPORIZATIONS.c: 43: {
 {
 [e :U _TEMPORIZATION_500ms ]
 [f ]
-"43
-[; ;TEMPORIZATIONS.c: 43:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
-[e :U 3187 ]
-{
-[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
-}
-[e :U 3186 ]
 "46
 [; ;TEMPORIZATIONS.c: 46:     CLUTCH_AnalyseState();
 [e ( _CLUTCH_AnalyseState ..  ]
 "48
-[; ;TEMPORIZATIONS.c: 48:     ETCSupervisor();
-[e ( _ETCSupervisor ..  ]
+[; ;TEMPORIZATIONS.c: 48:     ETCXavierSupervisor();
+[e ( _ETCXavierSupervisor ..  ]
 "49
 [; ;TEMPORIZATIONS.c: 49:     ucETCBeatSupervisor = 0x00;
 [e = _ucETCBeatSupervisor -> -> 0 `i `uc ]
+"50
+[; ;TEMPORIZATIONS.c: 50:     ETC500msSupervisor();
+[e ( _ETC500msSupervisor ..  ]
 "51
 [; ;TEMPORIZATIONS.c: 51: }
 [e :UE 3184 ]
@@ -3682,42 +3709,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;TEMPORIZATIONS.c: 55:     CANWriteMessage(0x331, 4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);
 [e ( _CANWriteMessage (4 , , , , , , , , , -> -> -> 817 `i `l `ul -> -> 4 `i `uc _ucTPS_STATE _ucAPPS_STATE _ucCLUTCHState _ucETB_STATE -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc -> -> 0 `i `uc ]
 "56
-[; ;TEMPORIZATIONS.c: 56: }
-[e :UE 3188 ]
+[; ;TEMPORIZATIONS.c: 56:     do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+[e :U 3188 ]
+{
+[e = . . _LATAbits 0 0 -> ~ -> . . _LATAbits 0 0 `i `uc ]
 }
-"58
-[; ;TEMPORIZATIONS.c: 58: void TEMPORIZATION_10s (void)
-[v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
+[e :U 3187 ]
+"57
+[; ;TEMPORIZATIONS.c: 57: }
+[e :UE 3185 ]
+}
 "59
-[; ;TEMPORIZATIONS.c: 59: {
+[; ;TEMPORIZATIONS.c: 59: void TEMPORIZATION_10s (void)
+[v _TEMPORIZATION_10s `(v ~T0 @X0 1 ef ]
+"60
+[; ;TEMPORIZATIONS.c: 60: {
 {
 [e :U _TEMPORIZATION_10s ]
 [f ]
-"61
-[; ;TEMPORIZATIONS.c: 61: }
+"62
+[; ;TEMPORIZATIONS.c: 62: }
 [e :UE 3189 ]
 }
-"63
-[; ;TEMPORIZATIONS.c: 63: void TEMPORIZATION_30s (void)
-[v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
 "64
-[; ;TEMPORIZATIONS.c: 64: {
+[; ;TEMPORIZATIONS.c: 64: void TEMPORIZATION_30s (void)
+[v _TEMPORIZATION_30s `(v ~T0 @X0 1 ef ]
+"65
+[; ;TEMPORIZATIONS.c: 65: {
 {
 [e :U _TEMPORIZATION_30s ]
 [f ]
-"66
-[; ;TEMPORIZATIONS.c: 66: }
+"67
+[; ;TEMPORIZATIONS.c: 67: }
 [e :UE 3190 ]
 }
-"68
-[; ;TEMPORIZATIONS.c: 68: void TEMPORIZATION_1mins (void)
-[v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
 "69
-[; ;TEMPORIZATIONS.c: 69: {
+[; ;TEMPORIZATIONS.c: 69: void TEMPORIZATION_1mins (void)
+[v _TEMPORIZATION_1mins `(v ~T0 @X0 1 ef ]
+"70
+[; ;TEMPORIZATIONS.c: 70: {
 {
 [e :U _TEMPORIZATION_1mins ]
 [f ]
-"71
-[; ;TEMPORIZATIONS.c: 71: }
+"72
+[; ;TEMPORIZATIONS.c: 72: }
 [e :UE 3191 ]
 }

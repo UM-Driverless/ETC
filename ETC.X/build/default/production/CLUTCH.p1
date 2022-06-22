@@ -11,11 +11,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
+"63 ./ETC.h
+[; ;./ETC.h: 63: typedef struct {
+[s S3181 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
+[n S3181 . Kp Ki Kd tau limMin limMax limMinInt limMaxInt T integrator prevError differentiator prevMeasurement out ]
 "17 ./GPIO.h
 [; ;./GPIO.h: 17: void GPIO_PWM1_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM1_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-"68 ./ETC.h
-[; ;./ETC.h: 68: extern unsigned char ucETCFlagSupervisor;
+"133 ./ETC.h
+[; ;./ETC.h: 133: extern unsigned char ucETCFlagSupervisor;
 [v _ucETCFlagSupervisor `uc ~T0 @X0 0 e ]
 "60 ./MESSAGES.h
 [; ;./MESSAGES.h: 60: extern unsigned char ucASMode;
@@ -3577,6 +3581,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"95 ./ETC.h
+[; ;./ETC.h: 95: PIDController pid = { 2.8f, 1.4f, 0.16f,
+[v _pid `S3181 ~T0 @X0 1 e ]
+[i _pid
+:U ..
+:U ..
+-> .2.8 `f
+-> .1.4 `f
+-> .0.16 `f
+-> .0.02 `f
+-> .0.0 `f
+-> .100.0 `f
+-U -> .5.0 `f
+-> .5.0 `f
+-> .0.01 `f
+..
+..
+]
 "17 CLUTCH.c
 [; ;CLUTCH.c: 17: unsigned char ucCLUTCHlmin;
 [v _ucCLUTCHlmin `uc ~T0 @X0 1 e ]

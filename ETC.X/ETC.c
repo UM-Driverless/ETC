@@ -52,8 +52,19 @@ unsigned char ucETCTimerRuleAPPS = FALSE;
 unsigned char ucCount100msTPSError = 0;
 unsigned char ucCount100msAPPSError = 0;
 unsigned char ucETCRuleSupervisor = TRUE;
+unsigned char ucETCTargetTPSDiff = 0;
+unsigned char ucCount500msTPSDiff = 0;
+unsigned char ucETCMotorNotClose = TRUE;
+unsigned char ucETCResolveNotCloseError = FALSE;
+unsigned char ucCount500msResolveNotCloseError = 0;
 
 //FUNCIONES
+void ETCInit(void) 
+{
+    //SDC_SetHigh(); //Habilitamos SDC
+    ETCCalibrate();
+    PIDController_Init(&pid);
+}
 void APPSSend (unsigned char ucPercent)
 {
     float voltage;
@@ -106,7 +117,7 @@ void ETCModeSelect (unsigned char ucModeSelect)
 }
 
 //Funcion supervision de normativa
-void ETCRulesSupervision(void) //ejecutar a 10Hz min o en cada porcentaje calculado 
+void ETCRulesSensorsSupervision(void) //ejecutar a 20Hz min o en cada porcentaje calculado 
 {
     //Supervision TPS
     if (ucTPS1Perc>ucTPS2Perc+10)
@@ -167,90 +178,66 @@ void ETC100msSupervisor (void)
     }
 }
 
-void ETC_PID(signed long slTargetMove, unsigned char ucMode) 
+void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual)
 {
-     // Conditional logic to get target position out of this function, along with checks that it's ok to run it. PID just does PID.
-     // sl_target_perc is the target position of the throttle, in 0-100% = default-fully opened?
-     // ucMode is the driving mode input to the function. It will be checked with the global variable 
-     
-    
-    // TODO REMOVE AND CALIBRATE VALUES, use PARAMETERS.h #define constants
-    // Static local variables to change values at run time for calibration.
-    // Test with sl_target_perc ~= 80%, first K_I until it works with delay, then K_P to cancel those oscillations, then K_D to cancel the K_P oscillations.
-    static signed long sl_K = 50e3; // 50e3/1000 Just to compensate the spring, which has approximately constant force, start with 50% of PWM duty cycle. The intake throttle is designed to go with the same force in both directions.
-    static signed long sl_K_P = 1000; // 1000/1000 2.1 starts to be unstable. 1.0 barely moves it. 1.5 is the right value. Multiply by divider value.
-    static signed long sl_K_I = 2; // 3/1000 -> Small because it integrates.
-    static signed long sl_K_D = -0; // 20.0 to 200.0. If the error increases, you need to add power.
-    static signed long slIntegral = 0; // Usually in the range of 1e5 - 1e6
-    signed long slDerivative;
-    signed long slMotorPwmDuty = 0;
-    static signed long  slErrorPos = 0; // Start as 0, then update every cycle.
-//    static signed long slLastErrorPos = 0;
-    static signed long slLastTPSPerc = 0;
-    
-    // Standard constants: K = 50 (%), K_P = 1.5, K_D = 20, K_I = 3
-    
-    // Position error:
-    slErrorPos = (slTargetMove - ucTPS)/100;  // in % or what units? TODO RJM ( (signed long)(uiTPS1_mv) - 1212 )*100 / (3126-1212)
-    
-    // Integral Error. Cap the values of the integral to avoid windup: https://en.wikipedia.org/wiki/Integral_windup, https://www.mstarlabs.com/apeng/techniques/pidsoftw.html
-    if ((slIntegral > -1e4) && (slIntegral < 1e4))
+    if (ucTPStarget>ucTPSactual+10)
     {
-        slIntegral += slErrorPos;
+        ucETCTargetTPSDiff = FALSE; 
     }
-    
-    // Derivative Error. Only make it work when descending? I don't feel like it does anything.
-    slDerivative = ucTPS - slLastTPSPerc; // Behaves like friction. Ignores the input.
-    slLastTPSPerc = ucTPS; // For next iteration
-    
-    slMotorPwmDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
-    Nop();
-    slMotorPwmDuty /= 1000; // 1024 ~= 1000. Do it because the constants are long, not floats
-
-    // Crop between 0 and 100. It's a duty cycle.
-    if (slMotorPwmDuty < 0) 
+    else if (ucTPSactual>ucTPStarget+10)
     {
-        slMotorPwmDuty = 0;
+        ucETCTargetTPSDiff = FALSE; 
     }
-    else if ( slMotorPwmDuty > 100 ) 
+    else
     {
-        slMotorPwmDuty = 100;
-    }
-    
-    Nop();
-    
-    // APPLY THE DUTY CYCLE TO THE MOTOR - Variable checks.
-    // Only let the motor move if CAN beat flag is OK
-    // TODO Consider doing this externally, and giving a value to PID function depending on state. PID just moves to target position. Otherwise we need several target positions into the function.
-    if ( ucETCFlagSupervisor == TRUE ) // OK no errors...
-    { 
-        if ( ucMode == ucASMode ) // The mode sent to the PID function and the global variable agree
-        { 
-            if (ucASMode == ASMode)
-            {
-                // Drive with autonomous value
-                GPIO_PWM2_Control(slMotorPwmDuty, 600);
-            } 
-            else if (ucASMode == ManualMode)
-            {
-                GPIO_PWM2_Control(slMotorPwmDuty, 600); // Usually this
-            } 
-            else 
-            {
-                // ERROR. Wrong value of ucASMode
-            }
-        } 
+        ucETCTargetTPSDiff = TRUE;
+        ucCount500msTPSDiff = 0;
+        if (( ucTPSactual <= 5 ) && ( (ucTPS_STATE & ETC_NotClose_ERROR) == ETC_NotClose_ERROR ))//consideramos ralentí y error ETC not close guardado
+        {
+            ucETCResolveNotCloseError = TRUE;
+        }
         else 
         {
-            // ERROR. Movement prevented by driving mode
-        } 
-    } 
-    else 
-    {
-        GPIO_PWM2_Control(0, 600);
+            ucETCResolveNotCloseError = FALSE;
+            ucCount500msResolveNotCloseError = 0;
+        }
     }
 }
-
+void ETC500msSupervisor (void)
+{
+    if ( ucETCTargetTPSDiff == FALSE )
+    {
+        if ( ucCount500msTPSDiff < 255 )
+        {
+            ucCount500msTPSDiff++;
+        }
+    }
+    if (ucCount500msTPSDiff == 2)
+    {
+        ucTPS_STATE |= TPS_Target_DIFF;
+        ucETCRuleSupervisor = FALSE;
+    }
+    else if (ucCount500msTPSDiff >= 3) //mas de 1s con TPS mal
+    {
+        ucTPS_STATE |= ETC_NotClose_ERROR;
+        ucETCMotorNotClose = FALSE;
+        //Cortar SDC cuando este conectado a relé
+        //SDC_SetLow();
+    }
+    if ( ucETCResolveNotCloseError == TRUE )
+    {
+        if ( ucCount500msResolveNotCloseError < 255 )
+        {
+            ucCount500msResolveNotCloseError++;
+        }
+        if ( ucCount500msResolveNotCloseError >= 3 )//mas de 1s con TPS ookey tras estado not close
+        {
+            ucETCMotorNotClose = TRUE;
+            ucETCResolveNotCloseError = FALSE;
+            ucTPS_STATE &= QUITAR_ERROR_ETCNotClose;
+        }
+    }
+}
 
 void ETCCalibrate(void) {
     /*
@@ -379,8 +366,6 @@ void TPSAnalysis(void)
     
 }
 
-
-
 void APPSAnalysis (void)
 {
     //Analisis APPS1
@@ -408,8 +393,47 @@ void APPSAnalysis (void)
     Nop();
 }
 
+//Funcion para mover directamente el servo con PWM
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
+{
+    ETCRulesMotorSupervisor (ucTargetMove, ucTPS);
+    //Depender de beat constante en CAN
+    if ( ( ucETCFlagSupervisor == TRUE ) && ( ucETCRuleSupervisor == TRUE ) )
+    {
+        //HACER CONVERSION DE 0-100% A 2-12 DUTY
+        uiETCDuty = ucTargetMove;
+        //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
+        if ( ucMode == ucASMode )
+        {
+            if ( ucASMode == ASMode ) 
+            {
+                //aumentar un 10% para asegurar un ralenti siempre, quiza ajustarlo con rpm
+                //GPIO_PWM2_Control(uiETCDuty + 34, 600); //lo muevo sin comprobar nada
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
+            }
+            else if ( ucASMode == ManualMode )
+            {
+                //hay que ver como meter aqui la conexion con TPS y APPS
+                //GPIO_PWM2_Control(uiETCDuty, 600); //lo muevo sin comprobar nada
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
+            }
+            else
+            {
+                //la variable ucMode esta corrupto
+            }
+        }
+        else
+        {
+            //generar error movimiento impedido por modo de conduccion
+        }
+    } 
+    else 
+    {
+        GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
+    }
+}
 
-void ETCSupervisor (void)
+void ETCXavierSupervisor (void)
 {
     Nop();
     if ( ucASMode == ASMode )

@@ -60,7 +60,7 @@ void main(void)
     // If using interrupts in PIC Mid-Range Compatibility Mode you need to enable the Global Interrupts
     
     GPIOInit(); // Set digital inputs and outputs.
-    ETCCalibrate();
+    ETCInit();
     
     /// APPS CALIBRATE
     ANALOGRead(); // Read APPS and TPS sensor values.
@@ -74,25 +74,10 @@ void main(void)
     // To disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
     
-    
     CLUTCH_Init();
 
-    //APPSMODE_SetHigh();
-    //APPSSend(0);
-    
-    //Mover ETC en init
-
     //CLUTCHInitMove();
-    
-    
-    PIDController pid = { PID_KP, PID_KI, PID_KD,
-                          PID_TAU,
-                          PID_LIM_MIN, PID_LIM_MAX,
-			  PID_LIM_MIN_INT, PID_LIM_MAX_INT,
-                          SAMPLE_TIME_S };
-    
-    
-    PIDController_Init(&pid);
+   
     
     while (1)
     {
@@ -102,16 +87,18 @@ void main(void)
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();
-        ETCRulesSupervision(); //justo despues de analizar porcentajes debe ir la supervision
+        ETCRulesSensorsSupervision(); //justo despues de analizar porcentajes debe ir la supervision
         //ETC_PID(ucAPPS, ManualMode);
         
         if (ucASMode == ManualMode)
         {
-            GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+            ETCMove(ucAPPS,ManualMode);
+            //GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
         }
         else if (ucASMode == ASMode)
         {
-            GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
+            ETCMove(ucAPPS,ASMode);
+            //GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
             ucCLUTCHState = CLUTCH_NONE;
             GPIO_PWM1_Control(ucTargetClutch, 300);
         }

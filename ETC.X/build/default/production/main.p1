@@ -11,6 +11,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./mcc_generated_files/can_types.h: 79: {
 [s S3180 `ul 1 `S3178 1 `*uc 1 ]
 [n S3180 . msgId field data ]
+"63 ./ETC.h
+[; ;./ETC.h: 63: typedef struct {
+[s S3181 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
+[n S3181 . Kp Ki Kd tau limMin limMax limMinInt limMaxInt T integrator prevError differentiator prevMeasurement out ]
 [p mainexit ]
 "79 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
@@ -18,17 +22,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16 ./GPIO.h
 [; ;./GPIO.h: 16: void GPIOInit (void);
 [v _GPIOInit `(v ~T0 @X0 0 ef ]
-"79 ./ETC.h
-[; ;./ETC.h: 79: void ETCCalibrate(void);
-[v _ETCCalibrate `(v ~T0 @X0 0 ef ]
+"147 ./ETC.h
+[; ;./ETC.h: 147: void ETCInit(void);
+[v _ETCInit `(v ~T0 @X0 0 ef ]
 "23 ./ANALOG.h
 [; ;./ANALOG.h: 23: void ANALOGRead (void);
 [v _ANALOGRead `(v ~T0 @X0 0 ef ]
-"73 ./ETC.h
-[; ;./ETC.h: 73: void APPSReadmin (void);
+"149 ./ETC.h
+[; ;./ETC.h: 149: void APPSReadmin (void);
 [v _APPSReadmin `(v ~T0 @X0 0 ef ]
-"74
-[; ;./ETC.h: 74: void APPSReadmax (void);
+"150
+[; ;./ETC.h: 150: void APPSReadmax (void);
 [v _APPSReadmax `(v ~T0 @X0 0 ef ]
 "2080 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [s S3083 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -47,37 +51,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "33 ./CLUTCH.h
 [; ;./CLUTCH.h: 33: void CLUTCH_Init (void);
 [v _CLUTCH_Init `(v ~T0 @X0 0 ef ]
-"103 ./ETC.h
-[; ;./ETC.h: 103: typedef struct {
-[s S3181 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
-[n S3181 . Kp Ki Kd tau limMin limMax limMinInt limMaxInt T integrator prevError differentiator prevMeasurement out ]
-"135
-[; ;./ETC.h: 135: void PIDController_Init(PIDController *pid);
-[v _PIDController_Init `(v ~T0 @X0 0 ef1`*S3181 ]
-"80
-[; ;./ETC.h: 80: void TPSAnalysis (void);
+"156 ./ETC.h
+[; ;./ETC.h: 156: void TPSAnalysis (void);
 [v _TPSAnalysis `(v ~T0 @X0 0 ef ]
-"81
-[; ;./ETC.h: 81: void APPSAnalysis (void);
+"157
+[; ;./ETC.h: 157: void APPSAnalysis (void);
 [v _APPSAnalysis `(v ~T0 @X0 0 ef ]
+"161
+[; ;./ETC.h: 161: void ETCRulesSensorsSupervision(void);
+[v _ETCRulesSensorsSupervision `(v ~T0 @X0 0 ef ]
 "60 ./MESSAGES.h
 [; ;./MESSAGES.h: 60: extern unsigned char ucASMode;
 [v _ucASMode `uc ~T0 @X0 0 e ]
-"18 ./GPIO.h
-[; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
-[v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-"136 ./ETC.h
-[; ;./ETC.h: 136: float PIDController_Update(PIDController *pid, float setpoint, float measurement);
-[v _PIDController_Update `(f ~T0 @X0 0 ef3`*S3181`f`f ]
-"53
-[; ;./ETC.h: 53: extern unsigned int ucAPPS;
+"153 ./ETC.h
+[; ;./ETC.h: 153: void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+[v _ETCMove `(v ~T0 @X0 0 ef2`uc`uc ]
+"118
+[; ;./ETC.h: 118: extern unsigned int ucAPPS;
 [v _ucAPPS `ui ~T0 @X0 0 e ]
-"60
-[; ;./ETC.h: 60: extern unsigned int ucTPS;
-[v _ucTPS `ui ~T0 @X0 0 e ]
-"29 ./MESSAGES.h
-[; ;./MESSAGES.h: 29: extern unsigned char ucTargetAccelerator;
-[v _ucTargetAccelerator `uc ~T0 @X0 0 e ]
 "29 ./CLUTCH.h
 [; ;./CLUTCH.h: 29: extern unsigned char ucCLUTCHState;
 [v _ucCLUTCHState `uc ~T0 @X0 0 e ]
@@ -3612,6 +3603,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "24
 [; ;./MESSAGES.h: 24: uint8_t CANDATAdata[8];
 [v _CANDATAdata `uc ~T0 @X0 -> 8 `i e ]
+"95 ./ETC.h
+[; ;./ETC.h: 95: PIDController pid = { 2.8f, 1.4f, 0.16f,
+[v _pid `S3181 ~T0 @X0 1 e ]
+[i _pid
+:U ..
+:U ..
+-> .2.8 `f
+-> .1.4 `f
+-> .0.16 `f
+-> .0.02 `f
+-> .0.0 `f
+-> .100.0 `f
+-U -> .5.0 `f
+-> .5.0 `f
+-> .0.01 `f
+..
+..
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "54 main.c
 [; ;main.c: 54: void main(void)
@@ -3628,8 +3637,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 62:     GPIOInit();
 [e ( _GPIOInit ..  ]
 "63
-[; ;main.c: 63:     ETCCalibrate();
-[e ( _ETCCalibrate ..  ]
+[; ;main.c: 63:     ETCInit();
+[e ( _ETCInit ..  ]
 "66
 [; ;main.c: 66:     ANALOGRead();
 [e ( _ANALOGRead ..  ]
@@ -3645,88 +3654,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72
 [; ;main.c: 72:     CANDisableErrorInterrupt(0x00);
 [e ( _CANDisableErrorInterrupt (1 -> -> 0 `i `uc ]
-"78
-[; ;main.c: 78:     CLUTCH_Init();
+"77
+[; ;main.c: 77:     CLUTCH_Init();
 [e ( _CLUTCH_Init ..  ]
-[v F23065 `S3181 ~T0 @X0 1 s ]
-[i F23065
-:U ..
-:U ..
-"88
-[; ;main.c: 88:     PIDController pid = { 2.8f, 1.4f, 0.16f,
--> .2.8 `f
--> .1.4 `f
--> .0.16 `f
--> .0.02 `f
--> .0.0 `f
--> .100.0 `f
--U -> .5.0 `f
--> .5.0 `f
--> .0.01 `f
-..
-..
-]
-[v _pid `S3181 ~T0 @X0 1 a ]
-[e = _pid F23065 ]
-"95
-[; ;main.c: 95:     PIDController_Init(&pid);
-[e ( _PIDController_Init (1 &U _pid ]
-"97
-[; ;main.c: 97:     while (1)
+"82
+[; ;main.c: 82:     while (1)
 [e :U 3184 ]
-"98
-[; ;main.c: 98:     {
+"83
+[; ;main.c: 83:     {
 {
-"102
-[; ;main.c: 102:         ANALOGRead();
+"87
+[; ;main.c: 87:         ANALOGRead();
 [e ( _ANALOGRead ..  ]
-"103
-[; ;main.c: 103:         TPSAnalysis();
+"88
+[; ;main.c: 88:         TPSAnalysis();
 [e ( _TPSAnalysis ..  ]
-"104
-[; ;main.c: 104:         APPSAnalysis();
+"89
+[; ;main.c: 89:         APPSAnalysis();
 [e ( _APPSAnalysis ..  ]
-"107
-[; ;main.c: 107:         if (ucASMode == 0)
+"90
+[; ;main.c: 90:         ETCRulesSensorsSupervision();
+[e ( _ETCRulesSensorsSupervision ..  ]
+"93
+[; ;main.c: 93:         if (ucASMode == 0)
 [e $ ! == -> _ucASMode `i -> 0 `i 3186  ]
-"108
-[; ;main.c: 108:         {
+"94
+[; ;main.c: 94:         {
 {
-"109
-[; ;main.c: 109:             GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
-[e ( _GPIO_PWM2_Control (2 , -> ( _PIDController_Update (3 , , &U _pid -> _ucAPPS `f -> _ucTPS `f `ui -> -> 600 `i `ui ]
-"110
-[; ;main.c: 110:         }
+"95
+[; ;main.c: 95:             ETCMove(ucAPPS,0);
+[e ( _ETCMove (2 , -> _ucAPPS `uc -> -> 0 `i `uc ]
+"97
+[; ;main.c: 97:         }
 }
 [e $U 3187  ]
-"111
-[; ;main.c: 111:         else if (ucASMode == 1)
+"98
+[; ;main.c: 98:         else if (ucASMode == 1)
 [e :U 3186 ]
 [e $ ! == -> _ucASMode `i -> 1 `i 3188  ]
-"112
-[; ;main.c: 112:         {
+"99
+[; ;main.c: 99:         {
 {
-"113
-[; ;main.c: 113:             GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
-[e ( _GPIO_PWM2_Control (2 , -> ( _PIDController_Update (3 , , &U _pid -> _ucTargetAccelerator `f -> _ucTPS `f `ui -> -> 600 `i `ui ]
-"114
-[; ;main.c: 114:             ucCLUTCHState = 0;
+"100
+[; ;main.c: 100:             ETCMove(ucAPPS,1);
+[e ( _ETCMove (2 , -> _ucAPPS `uc -> -> 1 `i `uc ]
+"102
+[; ;main.c: 102:             ucCLUTCHState = 0;
 [e = _ucCLUTCHState -> -> 0 `i `uc ]
-"115
-[; ;main.c: 115:             GPIO_PWM1_Control(ucTargetClutch, 300);
+"103
+[; ;main.c: 103:             GPIO_PWM1_Control(ucTargetClutch, 300);
 [e ( _GPIO_PWM1_Control (2 , -> _ucTargetClutch `ui -> -> 300 `i `ui ]
-"116
-[; ;main.c: 116:         }
+"104
+[; ;main.c: 104:         }
 }
 [e :U 3188 ]
 [e :U 3187 ]
-"122
-[; ;main.c: 122:     }
+"110
+[; ;main.c: 110:     }
 }
 [e :U 3183 ]
 [e $U 3184  ]
 [e :U 3185 ]
-"123
-[; ;main.c: 123: }
+"111
+[; ;main.c: 111: }
 [e :UE 3182 ]
 }

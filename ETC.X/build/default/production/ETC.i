@@ -16,19 +16,19 @@
 
 # 1 "./mcc_generated_files/DAC3.h" 1
 # 26 "./mcc_generated_files/DAC3.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
@@ -51,7 +51,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -80,9 +80,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
 
 
 typedef int8_t int_fast8_t;
@@ -115,13 +115,13 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
 # 26 "./mcc_generated_files/DAC3.h" 2
 
 
@@ -136,12 +136,12 @@ uint16_t DAC3_Read(uint16_t *dacNonvolatile);
 
 # 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
 # 34 "./mcc_generated_files/drivers/i2c_simple_master.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
 
@@ -153,16 +153,16 @@ typedef void * va_list[1];
 
 
 typedef void * __isoc_va_list[1];
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -283,7 +283,7 @@ char *tempnam(const char *, const char *);
 
 # 1 "./mcc_generated_files/drivers/.././i2c1_master.h" 1
 # 56 "./mcc_generated_files/drivers/.././i2c1_master.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
 # 56 "./mcc_generated_files/drivers/.././i2c1_master.h" 2
 
 
@@ -374,16 +374,16 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 1 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 1 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 int atoi (const char *);
@@ -436,7 +436,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 
 size_t __ctype_get_mb_cur_max(void);
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\xc8debug.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
@@ -37749,7 +37749,7 @@ void PIN_MANAGER_IOC(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
 
 
 
@@ -37757,13 +37757,13 @@ void PIN_MANAGER_IOC(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\errno.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\errno.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
 extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 2 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
 
 # 1 "C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 2 3
+# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
 
 
 
@@ -38334,55 +38334,7 @@ void DAC3_example(void);
 # 11 "ETC.c" 2
 
 # 1 "./ETC.h" 1
-# 38 "./ETC.h"
-extern unsigned int uiAPPS1min;
-extern unsigned int uiAPPS1max;
-extern unsigned int uiAPPS2min;
-extern unsigned int uiAPPS2max;
-extern unsigned int uiTPS1min;
-extern unsigned int uiTPS1max;
-extern unsigned int uiTPS2min;
-extern unsigned int uiTPS2max;
-extern unsigned int uiAPPS1;
-extern unsigned int uiAPPS2;
-extern unsigned char ucAPPS_STATE;
-extern unsigned long ulAPPS1calc;
-extern unsigned long ulAPPS2calc;
-extern unsigned int ucAPPS1Perc;
-extern unsigned int ucAPPS2Perc;
-extern unsigned int ucAPPS;
-extern unsigned int uiTPS1;
-extern unsigned int uiTPS2;
-extern signed long ulTPS1calc;
-extern signed long ulTPS2calc;
-extern unsigned int ucTPS1Perc;
-extern unsigned int ucTPS2Perc;
-extern unsigned int ucTPS;
-extern unsigned char ucTPS_STATE;
-extern unsigned char ucTPS1_STATE;
-extern unsigned char ucTPS2_STATE;
-extern unsigned char ucTPS_Volts_STATE;
-extern unsigned int uiETCDuty;
-extern unsigned char ucETB_STATE;
-extern unsigned char ucETCBeatSupervisor;
-extern unsigned char ucETCFlagSupervisor;
-extern unsigned char ucAPPSManual;
-
-
-void APPSSend (unsigned char ucPercent);
-void APPSReadmin (void);
-void APPSReadmax (void);
-void ETCModeSelect (unsigned char ucModeSelect);
-void ETCRulesSupervision(void);
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
-void ETC_PID(signed long slTargetMove, unsigned char ucMode);
-void ETCCalibrate(void);
-void TPSAnalysis (void);
-void APPSAnalysis (void);
-void ETCSupervisor (void);
-void ETCManual (unsigned char ucTargetManual);
-unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
-# 103 "./ETC.h"
+# 63 "./ETC.h"
 typedef struct {
 
 
@@ -38415,6 +38367,76 @@ typedef struct {
 
 } PIDController;
 
+PIDController pid = { 2.8f, 1.4f, 0.16f,
+                      0.02f,
+                      0.0f, 100.0f,
+                      -5.0f, 5.0f,
+                      0.01f };
+
+
+
+extern unsigned int uiAPPS1min;
+extern unsigned int uiAPPS1max;
+extern unsigned int uiAPPS2min;
+extern unsigned int uiAPPS2max;
+extern unsigned int uiTPS1min;
+extern unsigned int uiTPS1max;
+extern unsigned int uiTPS2min;
+extern unsigned int uiTPS2max;
+extern unsigned int uiAPPS1;
+extern unsigned int uiAPPS2;
+extern unsigned char ucAPPS_STATE;
+extern unsigned long ulAPPS1calc;
+extern unsigned long ulAPPS2calc;
+extern unsigned int ucAPPS1Perc;
+extern unsigned int ucAPPS2Perc;
+extern unsigned int ucAPPS;
+extern unsigned int uiTPS1;
+extern unsigned int uiTPS2;
+extern signed long ulTPS1calc;
+extern signed long ulTPS2calc;
+extern unsigned int ucTPS1Perc;
+extern unsigned int ucTPS2Perc;
+extern unsigned int ucTPS;
+extern unsigned char ucTPS_STATE;
+extern unsigned char ucTPS1_STATE;
+extern unsigned char ucTPS2_STATE;
+extern unsigned char ucTPS_Volts_STATE;
+extern unsigned int uiETCDuty;
+extern unsigned char ucETB_STATE;
+extern unsigned char ucETCBeatSupervisor;
+extern unsigned char ucETCFlagSupervisor;
+extern unsigned char ucAPPSManual;
+extern unsigned char ucETCTimerRuleTPS;
+extern unsigned char ucETCTimerRuleAPPS;
+extern unsigned char ucCount100msTPSError;
+extern unsigned char ucCount100msAPPSError;
+extern unsigned char ucETCRuleSupervisor;
+extern unsigned char ucETCTargetTPSDiff;
+extern unsigned char ucCount500msTPSDiff;
+extern unsigned char ucETCMotorNotClose;
+extern unsigned char ucETCResolveNotCloseError;
+extern unsigned char ucCount500msResolveNotCloseError;
+
+
+void ETCInit(void);
+void APPSSend (unsigned char ucPercent);
+void APPSReadmin (void);
+void APPSReadmax (void);
+void ETCModeSelect (unsigned char ucModeSelect);
+void ETCRulesSupervision(void);
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode);
+void ETC_PID(signed long slTargetMove, unsigned char ucMode);
+void ETCCalibrate(void);
+void TPSAnalysis (void);
+void APPSAnalysis (void);
+void ETCXavierSupervisor (void);
+void ETCManual (unsigned char ucTargetManual);
+unsigned int ETCPercentCalc(signed long val, signed long min, signed long max);
+void ETCRulesSensorsSupervision(void);
+void ETC100msSupervisor (void);
+void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual);
+void ETC500msSupervisor (void);
 void PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
 # 12 "ETC.c" 2
@@ -38475,8 +38497,24 @@ unsigned char ucETB_STATE;
 unsigned char ucETCBeatSupervisor = 0x00;
 unsigned char ucETCFlagSupervisor = 0x00;
 unsigned char ucAPPSManual;
+unsigned char ucETCTimerRuleTPS = 0x00;
+unsigned char ucETCTimerRuleAPPS = 0x00;
+unsigned char ucCount100msTPSError = 0;
+unsigned char ucCount100msAPPSError = 0;
+unsigned char ucETCRuleSupervisor = 0x01;
+unsigned char ucETCTargetTPSDiff = 0;
+unsigned char ucCount500msTPSDiff = 0;
+unsigned char ucETCMotorNotClose = 0x01;
+unsigned char ucETCResolveNotCloseError = 0x00;
+unsigned char ucCount500msResolveNotCloseError = 0;
 
 
+void ETCInit(void)
+{
+
+    ETCCalibrate();
+    PIDController_Init(&pid);
+}
 void APPSSend (unsigned char ucPercent)
 {
     float voltage;
@@ -38529,128 +38567,127 @@ void ETCModeSelect (unsigned char ucModeSelect)
 }
 
 
-void ETCRulesSupervision(void)
+void ETCRulesSensorsSupervision(void)
 {
 
-
-}
-
-
-void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
-{
-
-    if ( ucETCFlagSupervisor == 0x01 )
+    if (ucTPS1Perc>ucTPS2Perc+10)
     {
-
-        uiETCDuty = ucTargetMove;
-
-        if ( ucMode == ucASMode )
-        {
-            if ( ucASMode == 1 )
-            {
-
-                GPIO_PWM2_Control(uiETCDuty + 34, 600);
-            }
-            else if ( ucASMode == 0 )
-            {
-
-                GPIO_PWM2_Control(uiETCDuty, 600);
-            }
-            else
-            {
-
-            }
-
-        }
-        else
-        {
-
-        }
+        ucETCTimerRuleTPS = 0x00;
+    }
+    else if (ucTPS2Perc>ucTPS1Perc+10)
+    {
+        ucETCTimerRuleTPS = 0x00;
     }
     else
     {
-        GPIO_PWM2_Control(0, 600);
-    }
-}
-
-
-void ETC_PID(signed long slTargetMove, unsigned char ucMode)
-{
-# 159 "ETC.c"
-    static signed long sl_K = 50e3;
-    static signed long sl_K_P = 1000;
-    static signed long sl_K_I = 2;
-    static signed long sl_K_D = -0;
-    static signed long slIntegral = 0;
-    signed long slDerivative;
-    signed long slMotorPwmDuty = 0;
-    static signed long slErrorPos = 0;
-
-    static signed long slLastTPSPerc = 0;
-
-
-
-
-    slErrorPos = (slTargetMove - ucTPS)/100;
-
-
-    if ((slIntegral > -1e4) && (slIntegral < 1e4))
-    {
-        slIntegral += slErrorPos;
+        ucETCTimerRuleTPS = 0x01;
+        ucCount100msTPSError = 0;
     }
 
 
-    slDerivative = ucTPS - slLastTPSPerc;
-    slLastTPSPerc = ucTPS;
-
-    slMotorPwmDuty = sl_K + sl_K_P * slErrorPos + sl_K_I * slIntegral + sl_K_D * slDerivative;
-    __nop();
-    slMotorPwmDuty /= 1000;
-
-
-    if (slMotorPwmDuty < 0)
+    if (ucAPPS1Perc>ucAPPS2Perc+10)
     {
-        slMotorPwmDuty = 0;
+        ucETCTimerRuleAPPS = 0x00;
     }
-    else if ( slMotorPwmDuty > 100 )
+    else if (ucAPPS2Perc>ucAPPS1Perc+10)
     {
-        slMotorPwmDuty = 100;
-    }
-
-    __nop();
-
-
-
-
-    if ( ucETCFlagSupervisor == 0x01 )
-    {
-        if ( ucMode == ucASMode )
-        {
-            if (ucASMode == 1)
-            {
-
-                GPIO_PWM2_Control(slMotorPwmDuty, 600);
-            }
-            else if (ucASMode == 0)
-            {
-                GPIO_PWM2_Control(slMotorPwmDuty, 600);
-            }
-            else
-            {
-
-            }
-        }
-        else
-        {
-
-        }
+        ucETCTimerRuleAPPS = 0x00;
     }
     else
     {
-        GPIO_PWM2_Control(0, 600);
+        ucETCTimerRuleAPPS = 0x01;
+        ucCount100msAPPSError = 0;
     }
 }
 
+void ETC100msSupervisor (void)
+{
+    if ( ucETCTimerRuleTPS == 0x00 )
+    {
+        if ( ucCount100msTPSError < 255 )
+        {
+            ucCount100msTPSError++;
+        }
+    }
+    if ( ucETCTimerRuleAPPS == 0x00 )
+    {
+        if ( ucCount100msTPSError < 255 )
+        {
+            ucCount100msAPPSError++;
+        }
+    }
+    if ( ucCount100msTPSError >= 2 )
+    {
+        ucTPS_STATE |= 0x08;
+        ucETCRuleSupervisor = 0x00;
+    }
+    if ( ucCount100msAPPSError >= 2 )
+    {
+        ucTPS_STATE |= 0x08;
+        ucETCRuleSupervisor = 0x00;
+    }
+}
+
+void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual)
+{
+    if (ucTPStarget>ucTPSactual+10)
+    {
+        ucETCTargetTPSDiff = 0x00;
+    }
+    else if (ucTPSactual>ucTPStarget+10)
+    {
+        ucETCTargetTPSDiff = 0x00;
+    }
+    else
+    {
+        ucETCTargetTPSDiff = 0x01;
+        ucCount500msTPSDiff = 0;
+        if (( ucTPSactual <= 5 ) && ( (ucTPS_STATE & 0x20) == 0x20 ))
+        {
+            ucETCResolveNotCloseError = 0x01;
+        }
+        else
+        {
+            ucETCResolveNotCloseError = 0x00;
+            ucCount500msResolveNotCloseError = 0;
+        }
+    }
+}
+void ETC500msSupervisor (void)
+{
+    if ( ucETCTargetTPSDiff == 0x00 )
+    {
+        if ( ucCount500msTPSDiff < 255 )
+        {
+            ucCount500msTPSDiff++;
+        }
+    }
+    if (ucCount500msTPSDiff == 2)
+    {
+        ucTPS_STATE |= 0x10;
+        ucETCRuleSupervisor = 0x00;
+    }
+    else if (ucCount500msTPSDiff >= 3)
+    {
+        ucTPS_STATE |= 0x20;
+        ucETCMotorNotClose = 0x00;
+
+
+    }
+    if ( ucETCResolveNotCloseError == 0x01 )
+    {
+        if ( ucCount500msResolveNotCloseError < 255 )
+        {
+            ucCount500msResolveNotCloseError++;
+        }
+        if ( ucCount500msResolveNotCloseError >= 3 )
+        {
+            ucETCMotorNotClose = 0x01;
+            ucETCResolveNotCloseError = 0x00;
+            ucTPS_STATE &= 0xDF;
+        }
+    }
+}
 
 void ETCCalibrate(void) {
 
@@ -38696,7 +38733,7 @@ void ETCCalibrate(void) {
 
 void TPSAnalysis(void)
 {
-# 302 "ETC.c"
+# 310 "ETC.c"
     ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
     ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
@@ -38708,7 +38745,7 @@ void TPSAnalysis(void)
     if ( ( ulTPS1calc > uiTPS1 + 100 ) || ( ulTPS1calc < uiTPS1 - 100 ) )
     {
 
-        ucTPS_STATE |= 1;
+        ucTPS_STATE |= 0x01;
     }
     else
     {
@@ -38719,7 +38756,7 @@ void TPSAnalysis(void)
     if ( ( ulTPS2calc > uiTPS2 + 100 ) || ( ulTPS2calc < uiTPS2 - 100 ) )
     {
 
-        ucTPS_STATE |= 2;
+        ucTPS_STATE |= 0x02;
     }
     else
     {
@@ -38730,7 +38767,7 @@ void TPSAnalysis(void)
 
     if ( ucTPS_Volts_STATE == 5 )
     {
-        ucTPS_STATE |= 4;
+        ucTPS_STATE |= 0x04;
     }
     else if ( ucTPS_Volts_STATE == 9 )
     {
@@ -38744,11 +38781,11 @@ void TPSAnalysis(void)
     }
     else if ( ucTPS_Volts_STATE == 10 )
     {
-        ucTPS_STATE |= 4;
+        ucTPS_STATE |= 0x04;
     }
     else
     {
-        ucTPS_STATE |= 4;
+        ucTPS_STATE |= 0x04;
     }
 
 
@@ -38756,11 +38793,9 @@ void TPSAnalysis(void)
 
 }
 
-
-
 void APPSAnalysis (void)
 {
-# 384 "ETC.c"
+# 390 "ETC.c"
     ucAPPS1Perc = ETCPercentCalc(uiAPPS1, uiAPPS1min, uiAPPS1max);
     ucAPPS2Perc = ETCPercentCalc(uiAPPS2, uiAPPS2min, uiAPPS2max);
     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
@@ -38768,7 +38803,46 @@ void APPSAnalysis (void)
 }
 
 
-void ETCSupervisor (void)
+void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
+{
+    ETCRulesMotorSupervisor (ucTargetMove, ucTPS);
+
+    if ( ( ucETCFlagSupervisor == 0x01 ) && ( ucETCRuleSupervisor == 0x01 ) )
+    {
+
+        uiETCDuty = ucTargetMove;
+
+        if ( ucMode == ucASMode )
+        {
+            if ( ucASMode == 1 )
+            {
+
+
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
+            }
+            else if ( ucASMode == 0 )
+            {
+
+
+                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
+            }
+            else
+            {
+
+            }
+        }
+        else
+        {
+
+        }
+    }
+    else
+    {
+        GPIO_PWM2_Control(0, 600);
+    }
+}
+
+void ETCXavierSupervisor (void)
 {
     __nop();
     if ( ucASMode == 1 )

@@ -19,11 +19,14 @@ extern "C" {
 #define ENABLE    0x01
     
 //PARAMETROS CONSTANTES    
-#define TPSMARGEN 100
+#define TPSMARGEN 5
 #define APPSMARGEN 100
 #define APPS1max 1990 //0.001v
 #define APPS2max 160 //0.001v
-
+#define TPSRulesPercent 30
+#define APPSRulesPercent 30
+#define ActiveRules 0
+    
 extern signed long sl_K;
 extern signed long sl_K_P;
 extern signed long sl_K_I;

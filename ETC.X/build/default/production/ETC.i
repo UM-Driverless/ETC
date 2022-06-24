@@ -16,19 +16,19 @@
 
 # 1 "./mcc_generated_files/DAC3.h" 1
 # 26 "./mcc_generated_files/DAC3.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef signed char int8_t;
 
 
@@ -51,7 +51,7 @@ typedef long int32_t;
 
 
 typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long intmax_t;
 
 
@@ -80,9 +80,9 @@ typedef unsigned long uint32_t;
 
 
 typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
 
 
 typedef int8_t int_fast8_t;
@@ -115,13 +115,13 @@ typedef uint24_t uint_fast24_t;
 typedef uint32_t uint_least32_t;
 
 typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/stdint.h" 1 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
 typedef int16_t int_fast16_t;
 typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdint.h" 2 3
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
 # 26 "./mcc_generated_files/DAC3.h" 2
 
 
@@ -136,12 +136,12 @@ uint16_t DAC3_Read(uint16_t *dacNonvolatile);
 
 # 1 "./mcc_generated_files/drivers/i2c_simple_master.h" 1
 # 34 "./mcc_generated_files/drivers/i2c_simple_master.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
 
@@ -153,16 +153,16 @@ typedef void * va_list[1];
 
 
 typedef void * __isoc_va_list[1];
-# 122 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long ssize_t;
-# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long long off_t;
-# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef struct _IO_FILE FILE;
-# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
-# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdio.h" 3
 typedef union _G_fpos64_t {
  char __opaque[16];
  double __align;
@@ -283,7 +283,7 @@ char *tempnam(const char *, const char *);
 
 # 1 "./mcc_generated_files/drivers/.././i2c1_master.h" 1
 # 56 "./mcc_generated_files/drivers/.././i2c1_master.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
 # 56 "./mcc_generated_files/drivers/.././i2c1_master.h" 2
 
 
@@ -374,16 +374,16 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\xc8debug.h" 1 3
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 1 3
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 1 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
-# 21 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdlib.h" 2 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 
 
 int atoi (const char *);
@@ -436,7 +436,7 @@ uldiv_t uldiv (unsigned long, unsigned long);
 
 
 size_t __ctype_get_mb_cur_max(void);
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\xc8debug.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\xc8debug.h" 2 3
 
 
 
@@ -37749,7 +37749,7 @@ void PIN_MANAGER_IOC(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 1 3
 
 
 
@@ -37757,13 +37757,13 @@ void PIN_MANAGER_IOC(void);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\errno.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\errno.h" 3
 extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 2 3
 
 # 1 "C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+# 9 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\conio.h" 2 3
 
 
 
@@ -38450,7 +38450,7 @@ void GPIO_INT2_desembragar (void);
 # 13 "ETC.c" 2
 
 # 1 "./PARAMETERS.h" 1
-# 27 "./PARAMETERS.h"
+# 30 "./PARAMETERS.h"
 extern signed long sl_K;
 extern signed long sl_K_P;
 extern signed long sl_K_I;
@@ -38569,122 +38569,134 @@ void ETCModeSelect (unsigned char ucModeSelect)
 
 void ETCRulesSensorsSupervision(void)
 {
+    if ( 0 == 1 )
+    {
 
-    if (ucTPS1Perc>ucTPS2Perc+10)
-    {
-        ucETCTimerRuleTPS = 0x00;
-    }
-    else if (ucTPS2Perc>ucTPS1Perc+10)
-    {
-        ucETCTimerRuleTPS = 0x00;
-    }
-    else
-    {
-        ucETCTimerRuleTPS = 0x01;
-        ucCount100msTPSError = 0;
-    }
+        if (ucTPS1Perc>ucTPS2Perc+30)
+        {
+            ucETCTimerRuleTPS = 0x00;
+        }
+        else if (ucTPS2Perc>ucTPS1Perc+30)
+        {
+            ucETCTimerRuleTPS = 0x00;
+        }
+        else
+        {
+            ucETCTimerRuleTPS = 0x01;
+            ucCount100msTPSError = 0;
+        }
 
 
-    if (ucAPPS1Perc>ucAPPS2Perc+10)
-    {
-        ucETCTimerRuleAPPS = 0x00;
-    }
-    else if (ucAPPS2Perc>ucAPPS1Perc+10)
-    {
-        ucETCTimerRuleAPPS = 0x00;
-    }
-    else
-    {
-        ucETCTimerRuleAPPS = 0x01;
-        ucCount100msAPPSError = 0;
+        if (ucAPPS1Perc>ucAPPS2Perc+30)
+        {
+            ucETCTimerRuleAPPS = 0x00;
+        }
+        else if (ucAPPS2Perc>ucAPPS1Perc+30)
+        {
+            ucETCTimerRuleAPPS = 0x00;
+        }
+        else
+        {
+            ucETCTimerRuleAPPS = 0x01;
+            ucCount100msAPPSError = 0;
+        }
     }
 }
 
 void ETC100msSupervisor (void)
 {
-    if ( ucETCTimerRuleTPS == 0x00 )
+    if ( 0 == 1 )
     {
-        if ( ucCount100msTPSError < 255 )
+        if ( ucETCTimerRuleTPS == 0x00 )
         {
-            ucCount100msTPSError++;
+            if ( ucCount100msTPSError < 255 )
+            {
+                ucCount100msTPSError++;
+            }
         }
-    }
-    if ( ucETCTimerRuleAPPS == 0x00 )
-    {
-        if ( ucCount100msTPSError < 255 )
+        if ( ucETCTimerRuleAPPS == 0x00 )
         {
-            ucCount100msAPPSError++;
+            if ( ucCount100msTPSError < 255 )
+            {
+                ucCount100msAPPSError++;
+            }
         }
-    }
-    if ( ucCount100msTPSError >= 2 )
-    {
-        ucTPS_STATE |= 0x08;
-        ucETCRuleSupervisor = 0x00;
-    }
-    if ( ucCount100msAPPSError >= 2 )
-    {
-        ucTPS_STATE |= 0x08;
-        ucETCRuleSupervisor = 0x00;
+        if ( ucCount100msTPSError >= 2 )
+        {
+            ucTPS_STATE |= 0x08;
+            ucETCRuleSupervisor = 0x00;
+        }
+        if ( ucCount100msAPPSError >= 2 )
+        {
+            ucTPS_STATE |= 0x08;
+            ucETCRuleSupervisor = 0x00;
+        }
     }
 }
 
 void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual)
 {
-    if (ucTPStarget>ucTPSactual+10)
+    if ( 0 == 1 )
     {
-        ucETCTargetTPSDiff = 0x00;
-    }
-    else if (ucTPSactual>ucTPStarget+10)
-    {
-        ucETCTargetTPSDiff = 0x00;
-    }
-    else
-    {
-        ucETCTargetTPSDiff = 0x01;
-        ucCount500msTPSDiff = 0;
-        if (( ucTPSactual <= 5 ) && ( (ucTPS_STATE & 0x20) == 0x20 ))
+        if (ucTPStarget>ucTPSactual+10)
         {
-            ucETCResolveNotCloseError = 0x01;
+            ucETCTargetTPSDiff = 0x00;
+        }
+        else if (ucTPSactual>ucTPStarget+10)
+        {
+            ucETCTargetTPSDiff = 0x00;
         }
         else
         {
-            ucETCResolveNotCloseError = 0x00;
-            ucCount500msResolveNotCloseError = 0;
+            ucETCTargetTPSDiff = 0x01;
+            ucCount500msTPSDiff = 0;
+            if (( ucTPSactual <= 5 ) && ( (ucTPS_STATE & 0x20) == 0x20 ))
+            {
+                ucETCResolveNotCloseError = 0x01;
+            }
+            else
+            {
+                ucETCResolveNotCloseError = 0x00;
+                ucCount500msResolveNotCloseError = 0;
+            }
         }
     }
 }
 void ETC500msSupervisor (void)
 {
-    if ( ucETCTargetTPSDiff == 0x00 )
+    if ( 0 == 1 )
     {
-        if ( ucCount500msTPSDiff < 255 )
+        if ( ucETCTargetTPSDiff == 0x00 )
         {
-            ucCount500msTPSDiff++;
+            if ( ucCount500msTPSDiff < 255 )
+            {
+                ucCount500msTPSDiff++;
+            }
         }
-    }
-    if (ucCount500msTPSDiff == 2)
-    {
-        ucTPS_STATE |= 0x10;
-        ucETCRuleSupervisor = 0x00;
-    }
-    else if (ucCount500msTPSDiff >= 3)
-    {
-        ucTPS_STATE |= 0x20;
-        ucETCMotorNotClose = 0x00;
-
-
-    }
-    if ( ucETCResolveNotCloseError == 0x01 )
-    {
-        if ( ucCount500msResolveNotCloseError < 255 )
+        if (ucCount500msTPSDiff == 2)
         {
-            ucCount500msResolveNotCloseError++;
+            ucTPS_STATE |= 0x10;
+            ucETCRuleSupervisor = 0x00;
         }
-        if ( ucCount500msResolveNotCloseError >= 3 )
+        else if (ucCount500msTPSDiff >= 3)
         {
-            ucETCMotorNotClose = 0x01;
-            ucETCResolveNotCloseError = 0x00;
-            ucTPS_STATE &= 0xDF;
+            ucTPS_STATE |= 0x20;
+            ucETCMotorNotClose = 0x00;
+
+            do { LATCbits.LATC6 = 0; } while(0);
+        }
+        if ( ucETCResolveNotCloseError == 0x01 )
+        {
+            if ( ucCount500msResolveNotCloseError < 255 )
+            {
+                ucCount500msResolveNotCloseError++;
+            }
+            if ( ucCount500msResolveNotCloseError >= 3 )
+            {
+                ucETCMotorNotClose = 0x01;
+                ucETCResolveNotCloseError = 0x00;
+                ucTPS_STATE &= 0xDF;
+            }
         }
     }
 }
@@ -38704,8 +38716,8 @@ void ETCCalibrate(void) {
     ANALOGRead();
 
     _delay((unsigned long)((100)*(10000000/4000.0)));
-    uiTPS1min = uiTPS1 + 100;
-    uiTPS2min = uiTPS2 - 100;
+    uiTPS1min = uiTPS1 + 5;
+    uiTPS2min = uiTPS2 - 5;
 
     __nop();
 
@@ -38717,15 +38729,9 @@ void ETCCalibrate(void) {
     ANALOGRead();
 
     _delay((unsigned long)((100)*(10000000/4000.0)));
-    uiTPS1max = uiTPS1 + 100;
-    uiTPS2max = uiTPS2 - 100;
+    uiTPS1max = uiTPS1 + 5;
+    uiTPS2max = uiTPS2 - 5;
     __nop();
-
-
-    GPIO_PWM2_Control(20, 400);
-    _delay((unsigned long)((200)*(10000000/4000.0)));
-    GPIO_PWM2_Control(20, 600);
-    _delay((unsigned long)((200)*(10000000/4000.0)));
 
 
     GPIO_PWM2_Control(0, 300);
@@ -38733,7 +38739,7 @@ void ETCCalibrate(void) {
 
 void TPSAnalysis(void)
 {
-# 310 "ETC.c"
+# 316 "ETC.c"
     ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
     ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
@@ -38742,7 +38748,7 @@ void TPSAnalysis(void)
 
 
 
-    if ( ( ulTPS1calc > uiTPS1 + 100 ) || ( ulTPS1calc < uiTPS1 - 100 ) )
+    if ( ( ulTPS1calc > uiTPS1 + 5 ) || ( ulTPS1calc < uiTPS1 - 5 ) )
     {
 
         ucTPS_STATE |= 0x01;
@@ -38753,7 +38759,7 @@ void TPSAnalysis(void)
         ucTPS_STATE |= 0xFE;
     }
 
-    if ( ( ulTPS2calc > uiTPS2 + 100 ) || ( ulTPS2calc < uiTPS2 - 100 ) )
+    if ( ( ulTPS2calc > uiTPS2 + 5 ) || ( ulTPS2calc < uiTPS2 - 5 ) )
     {
 
         ucTPS_STATE |= 0x02;
@@ -38795,7 +38801,7 @@ void TPSAnalysis(void)
 
 void APPSAnalysis (void)
 {
-# 390 "ETC.c"
+# 396 "ETC.c"
     ucAPPS1Perc = ETCPercentCalc(uiAPPS1, uiAPPS1min, uiAPPS1max);
     ucAPPS2Perc = ETCPercentCalc(uiAPPS2, uiAPPS2min, uiAPPS2max);
     ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );

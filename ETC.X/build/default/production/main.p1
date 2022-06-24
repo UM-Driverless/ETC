@@ -69,6 +69,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "118
 [; ;./ETC.h: 118: extern unsigned int ucAPPS;
 [v _ucAPPS `ui ~T0 @X0 0 e ]
+"29 ./MESSAGES.h
+[; ;./MESSAGES.h: 29: extern unsigned char ucTargetAccelerator;
+[v _ucTargetAccelerator `uc ~T0 @X0 0 e ]
 "29 ./CLUTCH.h
 [; ;./CLUTCH.h: 29: extern unsigned char ucCLUTCHState;
 [v _ucCLUTCHState `uc ~T0 @X0 0 e ]
@@ -3696,8 +3699,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 99:         {
 {
 "100
-[; ;main.c: 100:             ETCMove(ucAPPS,1);
-[e ( _ETCMove (2 , -> _ucAPPS `uc -> -> 1 `i `uc ]
+[; ;main.c: 100:             ETCMove(ucTargetAccelerator,1);
+[e ( _ETCMove (2 , _ucTargetAccelerator -> -> 1 `i `uc ]
 "102
 [; ;main.c: 102:             ucCLUTCHState = 0;
 [e = _ucCLUTCHState -> -> 0 `i `uc ]

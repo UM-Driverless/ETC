@@ -119,122 +119,134 @@ void ETCModeSelect (unsigned char ucModeSelect)
 //Funcion supervision de normativa
 void ETCRulesSensorsSupervision(void) //ejecutar a 20Hz min o en cada porcentaje calculado 
 {
-    //Supervision TPS
-    if (ucTPS1Perc>ucTPS2Perc+10)
+    if ( ActiveRules == 1 )
     {
-        ucETCTimerRuleTPS = FALSE; 
-    }
-    else if (ucTPS2Perc>ucTPS1Perc+10)
-    {
-        ucETCTimerRuleTPS = FALSE; 
-    }
-    else 
-    {
-        ucETCTimerRuleTPS = TRUE; 
-        ucCount100msTPSError = 0;
-    }
-    
-    //Supervision APPS
-    if (ucAPPS1Perc>ucAPPS2Perc+10)
-    {
-        ucETCTimerRuleAPPS = FALSE; 
-    }
-    else if (ucAPPS2Perc>ucAPPS1Perc+10)
-    {
-        ucETCTimerRuleAPPS = FALSE; 
-    }
-    else 
-    {
-        ucETCTimerRuleAPPS = TRUE; 
-        ucCount100msAPPSError = 0;
+        //Supervision TPS
+        if (ucTPS1Perc>ucTPS2Perc+TPSRulesPercent)
+        {
+            ucETCTimerRuleTPS = FALSE; 
+        }
+        else if (ucTPS2Perc>ucTPS1Perc+TPSRulesPercent)
+        {
+            ucETCTimerRuleTPS = FALSE; 
+        }
+        else 
+        {
+            ucETCTimerRuleTPS = TRUE; 
+            ucCount100msTPSError = 0;
+        }
+
+        //Supervision APPS
+        if (ucAPPS1Perc>ucAPPS2Perc+APPSRulesPercent)
+        {
+            ucETCTimerRuleAPPS = FALSE; 
+        }
+        else if (ucAPPS2Perc>ucAPPS1Perc+APPSRulesPercent)
+        {
+            ucETCTimerRuleAPPS = FALSE; 
+        }
+        else 
+        {
+            ucETCTimerRuleAPPS = TRUE; 
+            ucCount100msAPPSError = 0;
+        }
     }
 }
 
 void ETC100msSupervisor (void)
 {
-    if ( ucETCTimerRuleTPS == FALSE )
+    if ( ActiveRules == 1 )
     {
-        if ( ucCount100msTPSError < 255 )
+        if ( ucETCTimerRuleTPS == FALSE )
         {
-            ucCount100msTPSError++;
+            if ( ucCount100msTPSError < 255 )
+            {
+                ucCount100msTPSError++;
+            }
         }
-    }
-    if ( ucETCTimerRuleAPPS == FALSE )
-    {
-        if ( ucCount100msTPSError < 255 )
+        if ( ucETCTimerRuleAPPS == FALSE )
         {
-            ucCount100msAPPSError++;
+            if ( ucCount100msTPSError < 255 )
+            {
+                ucCount100msAPPSError++;
+            }
         }
-    }
-    if ( ucCount100msTPSError >= 2 )
-    {
-        ucTPS_STATE |= TPS1_TPS2_DIFF;
-        ucETCRuleSupervisor = FALSE;
-    }
-    if ( ucCount100msAPPSError >= 2 )
-    {
-        ucTPS_STATE |= TPS1_TPS2_DIFF;
-        ucETCRuleSupervisor = FALSE;
+        if ( ucCount100msTPSError >= 2 )
+        {
+            ucTPS_STATE |= TPS1_TPS2_DIFF;
+            ucETCRuleSupervisor = FALSE;
+        }
+        if ( ucCount100msAPPSError >= 2 )
+        {
+            ucTPS_STATE |= TPS1_TPS2_DIFF;
+            ucETCRuleSupervisor = FALSE;
+        }
     }
 }
 
 void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual)
 {
-    if (ucTPStarget>ucTPSactual+10)
+    if ( ActiveRules == 1 )
     {
-        ucETCTargetTPSDiff = FALSE; 
-    }
-    else if (ucTPSactual>ucTPStarget+10)
-    {
-        ucETCTargetTPSDiff = FALSE; 
-    }
-    else
-    {
-        ucETCTargetTPSDiff = TRUE;
-        ucCount500msTPSDiff = 0;
-        if (( ucTPSactual <= 5 ) && ( (ucTPS_STATE & ETC_NotClose_ERROR) == ETC_NotClose_ERROR ))//consideramos ralentí y error ETC not close guardado
+        if (ucTPStarget>ucTPSactual+10)
         {
-            ucETCResolveNotCloseError = TRUE;
+            ucETCTargetTPSDiff = FALSE; 
         }
-        else 
+        else if (ucTPSactual>ucTPStarget+10)
         {
-            ucETCResolveNotCloseError = FALSE;
-            ucCount500msResolveNotCloseError = 0;
+            ucETCTargetTPSDiff = FALSE; 
+        }
+        else
+        {
+            ucETCTargetTPSDiff = TRUE;
+            ucCount500msTPSDiff = 0;
+            if (( ucTPSactual <= 5 ) && ( (ucTPS_STATE & ETC_NotClose_ERROR) == ETC_NotClose_ERROR ))//consideramos ralentí y error ETC not close guardado
+            {
+                ucETCResolveNotCloseError = TRUE;
+            }
+            else 
+            {
+                ucETCResolveNotCloseError = FALSE;
+                ucCount500msResolveNotCloseError = 0;
+            }
         }
     }
 }
 void ETC500msSupervisor (void)
 {
-    if ( ucETCTargetTPSDiff == FALSE )
+    if ( ActiveRules == 1 )
     {
-        if ( ucCount500msTPSDiff < 255 )
+        if ( ucETCTargetTPSDiff == FALSE )
         {
-            ucCount500msTPSDiff++;
+            if ( ucCount500msTPSDiff < 255 )
+            {
+                ucCount500msTPSDiff++;
+            }
         }
-    }
-    if (ucCount500msTPSDiff == 2)
-    {
-        ucTPS_STATE |= TPS_Target_DIFF;
-        ucETCRuleSupervisor = FALSE;
-    }
-    else if (ucCount500msTPSDiff >= 3) //mas de 1s con TPS mal
-    {
-        ucTPS_STATE |= ETC_NotClose_ERROR;
-        ucETCMotorNotClose = FALSE;
-        //Cortar SDC cuando este conectado a relé
-        //SDC_SetLow();
-    }
-    if ( ucETCResolveNotCloseError == TRUE )
-    {
-        if ( ucCount500msResolveNotCloseError < 255 )
+        if (ucCount500msTPSDiff == 2)
         {
-            ucCount500msResolveNotCloseError++;
+            ucTPS_STATE |= TPS_Target_DIFF;
+            ucETCRuleSupervisor = FALSE;
         }
-        if ( ucCount500msResolveNotCloseError >= 3 )//mas de 1s con TPS ookey tras estado not close
+        else if (ucCount500msTPSDiff >= 3) //mas de 1s con TPS mal
         {
-            ucETCMotorNotClose = TRUE;
-            ucETCResolveNotCloseError = FALSE;
-            ucTPS_STATE &= QUITAR_ERROR_ETCNotClose;
+            ucTPS_STATE |= ETC_NotClose_ERROR;
+            ucETCMotorNotClose = FALSE;
+            //Cortar SDC cuando este conectado a relé
+            SDC_SetLow();
+        }
+        if ( ucETCResolveNotCloseError == TRUE )
+        {
+            if ( ucCount500msResolveNotCloseError < 255 )
+            {
+                ucCount500msResolveNotCloseError++;
+            }
+            if ( ucCount500msResolveNotCloseError >= 3 )//mas de 1s con TPS ookey tras estado not close
+            {
+                ucETCMotorNotClose = TRUE;
+                ucETCResolveNotCloseError = FALSE;
+                ucTPS_STATE &= QUITAR_ERROR_ETCNotClose;
+            }
         }
     }
 }
@@ -270,12 +282,6 @@ void ETCCalibrate(void) {
     uiTPS1max = uiTPS1 + TPSMARGEN; // Biggest value
     uiTPS2max = uiTPS2 - TPSMARGEN; // Smallest  value
     Nop();
-    
-    // Calibration sound
-    GPIO_PWM2_Control(20, 400);
-    __delay_ms(200);
-    GPIO_PWM2_Control(20, 600);
-    __delay_ms(200);
     
     // Turn off after calibration
     GPIO_PWM2_Control(0, 300); // 0% PWM at 600Hz, Motor OFF.

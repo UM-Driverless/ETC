@@ -97,7 +97,7 @@ void main(void)
         }
         else if (ucASMode == ASMode)
         {
-            ETCMove(ucAPPS,ASMode);
+            ETCMove(ucTargetAccelerator,ASMode);
             //GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
             ucCLUTCHState = CLUTCH_NONE;
             GPIO_PWM1_Control(ucTargetClutch, 300);

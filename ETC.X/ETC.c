@@ -283,6 +283,11 @@ void ETCCalibrate(void) {
     uiTPS2max = uiTPS2 - TPSMARGEN; // Smallest  value
     Nop();
     
+    //Declaración de rangos que mas tarde se deberian autocalibrar aqui
+    ucTPS1TableIn = {1454,1535,1617,1698,1779,1861,1942,2023,2104,2186,2267,2348,2430,2511,2592,2674,2755,2836,2917,2999,3080};
+    ucTPS1TableOut = {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100};
+    ucTPS1TableIn = {1142,1233,1324,1415,1506,1597,1688,1779,1870,1961,2052,2142,2233,2324,2415,2506,2597,2688,2779,2870,2961};
+    ucTPS1TableOut = {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100};
     // Turn off after calibration
     GPIO_PWM2_Control(0, 300); // 0% PWM at 600Hz, Motor OFF.
 }
@@ -313,8 +318,10 @@ void TPSAnalysis(void)
     }*/
     
     
-    ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
-    ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
+    /*ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
+    ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);*/
+    ucTPS1Perc = ETCPercentMultiCalc (uiTPS1, ucTPS1TableIn, ucTPS1TableOut, TPS_ADJ_TAB_SIZE);
+    ucTPS2Perc = ETCPercentMultiCalc (uiTPS2, ucTPS2TableIn, ucTPS2TableOut, TPS_ADJ_TAB_SIZE);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
     Nop();
     
@@ -493,6 +500,31 @@ unsigned int ETCPercentCalc(signed long val, signed long min, signed long max)
     } 
     // val is now contained in the interval [0,100] -> ok to assign to unsigned char
     return val;
+}
+
+unsigned int ETCPercentMultiCalc(signed long value, unsigned char *ucTab_in, unsigned char *ucTab_out, unsigned char ucSize) 
+{
+    unsigned char ucPos = 1;  // _in[0] already tested
+    signed long slResult;    
+    // take care the value is within range
+    // value = constrain(value, _in[0], _in[size-1]);
+    if (value <= ucTab_in[0]) return ucTab_out[0];
+    if (value >= ucTab_in[ucSize-1]) return ucTab_out[ucSize-1];
+
+    // search right interval
+
+    while(value > ucTab_in[ucPos]) ucPos++;
+
+    // this will handle all exact "points" in the _in array
+    if (value == ucTab_in[ucPos]) return ucTab_out[ucPos];
+
+    // interpolate in the right segment for the rest
+    slResult = ( (value - ucTab_in[ucPos-1]) * (ucTab_out[ucPos] - ucTab_out[ucPos-1]) / (ucTab_in[ucPos] - ucTab_in[ucPos-1]) + ucTab_out[ucPos-1] );
+    
+    if ( slResult < 0 ) slResult = ucTab_out[0];
+    if ( slResult > 100 ) slResult = ucTab_out[ucSize-1];
+    
+    return slResult ;
 }
 
 

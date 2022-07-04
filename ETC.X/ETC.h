@@ -60,7 +60,7 @@ extern "C" {
 
 #define SAMPLE_TIME_S 0.01f
     
-#define TPS_ADJ_TAB_SIZE 20
+#define TPS_ADJ_TAB_SIZE 21
     
 unsigned char ucTPS1TableIn [TPS_ADJ_TAB_SIZE];
 unsigned char ucTPS1TableOut [TPS_ADJ_TAB_SIZE];

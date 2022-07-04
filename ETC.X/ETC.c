@@ -58,6 +58,12 @@ unsigned char ucETCMotorNotClose = TRUE;
 unsigned char ucETCResolveNotCloseError = FALSE;
 unsigned char ucCount500msResolveNotCloseError = 0;
 
+//Declaración de rangos que mas tarde se deberian autocalibrar aqui
+unsigned char ucTPS1TableIn[]  = {1454,1535,1617,1698,1779,1861,1942,2023,2104,2186,2267,2348,2430,2511,2592,2674,2755,2836,2917,2999,3080};
+unsigned char ucTPS1TableOut[] = {   0,   5,  10,  15,  20,  25,  30,  35,  40,  45,  50,  55,  60,  65,  70,  75,  80,  85,  90,  95, 100};
+unsigned char ucTPS2TableIn[]  = {1142,1233,1324,1415,1506,1597,1688,1779,1870,1961,2052,2142,2233,2324,2415,2506,2597,2688,2779,2870,2961};
+unsigned char ucTPS2TableOut[] = {   0,   5,  10,  15,  20,  25,  30,  35,  40,  45,  50,  55,  60,  65,  70,  75,  80,  85,  90,  95, 100};
+
 //FUNCIONES
 void ETCInit(void) 
 {
@@ -283,11 +289,6 @@ void ETCCalibrate(void) {
     uiTPS2max = uiTPS2 - TPSMARGEN; // Smallest  value
     Nop();
     
-    //Declaración de rangos que mas tarde se deberian autocalibrar aqui
-    ucTPS1TableIn = {1454,1535,1617,1698,1779,1861,1942,2023,2104,2186,2267,2348,2430,2511,2592,2674,2755,2836,2917,2999,3080};
-    ucTPS1TableOut = {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100};
-    ucTPS1TableIn = {1142,1233,1324,1415,1506,1597,1688,1779,1870,1961,2052,2142,2233,2324,2415,2506,2597,2688,2779,2870,2961};
-    ucTPS1TableOut = {0,5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85,90,95,100};
     // Turn off after calibration
     GPIO_PWM2_Control(0, 300); // 0% PWM at 600Hz, Motor OFF.
 }

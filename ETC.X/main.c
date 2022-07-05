@@ -68,11 +68,11 @@ void main(void)
     APPSReadmin();
     APPSReadmax();
     
-    //INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
+    INTERRUPT_GlobalInterruptEnable(); // Now the functions in TEMPORIZATIONS.c start working.
     CANDisableErrorInterrupt(DISABLE);
     
     // To disable the Global Interrupts
-    INTERRUPT_GlobalInterruptDisable();
+    //INTERRUPT_GlobalInterruptDisable();
     
     CLUTCH_Init();
 

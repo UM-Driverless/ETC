@@ -279,7 +279,7 @@ void ETCCalibrate(void) {
     uiTPS1min = uiTPS1 - TPSMARGEN; // Smallest value
     uiTPS2min = uiTPS2 + TPSMARGEN; // Biggest value
     uiTPS1TableIn[0]= uiTPS1 - TPSMARGEN;
-    uiTPS2TableIn[TPS_ADJ_TAB_SIZE-1]= uiTPS2 + TPSMARGEN;
+    uiTPS2TableIn[0]= uiTPS2 + TPSMARGEN;
     Nop();
     
     // Intake motor 100%
@@ -293,7 +293,7 @@ void ETCCalibrate(void) {
     uiTPS1max = uiTPS1 - TPSMARGEN; // Biggest value
     uiTPS2max = uiTPS2 + TPSMARGEN; // Smallest  value
     uiTPS1TableIn[TPS_ADJ_TAB_SIZE-1]= uiTPS1 - TPSMARGEN;
-    uiTPS2TableIn[0]= uiTPS2 + TPSMARGEN;
+    uiTPS2TableIn[TPS_ADJ_TAB_SIZE-1]= uiTPS2 + TPSMARGEN;
     Nop();
     
     // Turn off after calibration

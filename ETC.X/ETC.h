@@ -172,7 +172,8 @@ void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactu
 void ETC500msSupervisor (void);
 void PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
-unsigned int ETCPercentMultiCalc(signed long value, unsigned int *uiTab_in, unsigned char *ucTab_out, unsigned char ucSize);
+unsigned int ETCPercentMultiCalcTPS1(signed long value, unsigned int *uiTab_in, unsigned char *ucTab_out, unsigned char ucSize);
+unsigned int ETCPercentMultiCalcTPS2(signed long value, unsigned int *uiTab_in, unsigned char *ucTab_out, unsigned char ucSize);
 
 #ifdef	__cplusplus
 }

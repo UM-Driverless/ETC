@@ -1,72 +1,97 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"70 ./ETC.h
-[; ;./ETC.h: 70: typedef struct {
-[s S1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 `f 1 ]
-[n S1 . Kp Ki Kd tau limMin limMax limMinInt limMaxInt T integrator prevError differentiator prevMeasurement out ]
-[v F22277 `(v ~T0 @X0 1 tf ]
-"172 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 172: __attribute__((inline)) void ADC_DisableChannelSequencer(void);
-[v _ADC_DisableChannelSequencer `TF22277 ~T0 @X0 0 e ]
-"25 ANALOG.c
-[; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
-[c E22267 0 1 2 3 .. ]
-[n E22267 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
-[v F22281 `(v ~T0 @X0 1 tf1`E22267 ]
-"227 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 227: __attribute__((inline)) void ADC_SelectContext(ADC_context_t context);
-[v _ADC_SelectContext `TF22281 ~T0 @X0 0 e ]
-"26 ANALOG.c
-[; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(TPS1);
-[c E22256 4 16 17 18 59 60 61 62 63 .. ]
-[n E22256 . TPS2 TPS1 APPS2 APPS1 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
-"378 ./mcc_generated_files/adc.h
-[; ;./mcc_generated_files/adc.h: 378: adc_result_t ADC_GetSingleConversion(ADC_channel_t channel);
-[v _ADC_GetSingleConversion `(us ~T0 @X0 0 ef1`E22256 ]
-"118 ./ETC.h
-[; ;./ETC.h: 118: extern unsigned int uiAPPS1;
-[v _uiAPPS1 `ui ~T0 @X0 0 e ]
-"119
-[; ;./ETC.h: 119: extern unsigned int uiAPPS2;
-[v _uiAPPS2 `ui ~T0 @X0 0 e ]
-"126
-[; ;./ETC.h: 126: extern unsigned int uiTPS1;
-[v _uiTPS1 `ui ~T0 @X0 0 e ]
-"127
-[; ;./ETC.h: 127: extern unsigned int uiTPS2;
-[v _uiTPS2 `ui ~T0 @X0 0 e ]
-"8 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\builtins.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"65 ./ETC.h
-[; ;./ETC.h: 65: unsigned int uiTPS1TableIn [21];
-[v _uiTPS1TableIn `ui ~T0 @X0 -> 21 `i e ]
-"66
-[; ;./ETC.h: 66: unsigned char ucTPS1TableOut [21];
-[v _ucTPS1TableOut `uc ~T0 @X0 -> 21 `i e ]
-"67
-[; ;./ETC.h: 67: unsigned int uiTPS2TableIn [21];
-[v _uiTPS2TableIn `ui ~T0 @X0 -> 21 `i e ]
-"68
-[; ;./ETC.h: 68: unsigned char ucTPS2TableOut [21];
-[v _ucTPS2TableOut `uc ~T0 @X0 -> 21 `i e ]
-"102
-[; ;./ETC.h: 102: PIDController pid = { 2.8f, 1.4f, 0.16f,
-[v _pid `S1 ~T0 @X0 1 e ]
-[i _pid
-:U ..
-:U ..
--> .2.8 `f
--> .1.4 `f
--> .0.16 `f
--> .0.02 `f
--> .0.0 `f
--> .100.0 `f
--U -> .5.0 `f
--> .5.0 `f
--> .0.01 `f
-..
-..
-]
+"1474 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 1474:         unsigned TU16AMD :1;
+[v _LATA `Vuc ~T0 @X0 0 e@1214 ]
+"1536
+[v _LATB `Vuc ~T0 @X0 0 e@1215 ]
+"1598
+[v _LATC `Vuc ~T0 @X0 0 e@1216 ]
+"1846
+[v _TRISE `Vuc ~T0 @X0 0 e@1226 ]
+"1660
+[v _TRISA `Vuc ~T0 @X0 0 e@1222 ]
+"1722
+[v _TRISB `Vuc ~T0 @X0 0 e@1223 ]
+"1784
+[v _TRISC `Vuc ~T0 @X0 0 e@1224 ]
+"59417
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59417: extern volatile unsigned char ANSELC __attribute__((address(0x410)));
+[v _ANSELC `Vuc ~T0 @X0 0 e@1040 ]
+"58921
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 58921: extern volatile unsigned char ANSELB __attribute__((address(0x408)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@1032 ]
+"58425
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 58425: extern volatile unsigned char ANSELA __attribute__((address(0x400)));
+[v _ANSELA `Vuc ~T0 @X0 0 e@1024 ]
+"59913
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59913: extern volatile unsigned char WPUE __attribute__((address(0x421)));
+[v _WPUE `Vuc ~T0 @X0 0 e@1057 ]
+"58983
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 58983: extern volatile unsigned char WPUB __attribute__((address(0x409)));
+[v _WPUB `Vuc ~T0 @X0 0 e@1033 ]
+"58487
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 58487: extern volatile unsigned char WPUA __attribute__((address(0x401)));
+[v _WPUA `Vuc ~T0 @X0 0 e@1025 ]
+"59479
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59479: extern volatile unsigned char WPUC __attribute__((address(0x411)));
+[v _WPUC `Vuc ~T0 @X0 0 e@1041 ]
+"58549
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 58549: extern volatile unsigned char ODCONA __attribute__((address(0x402)));
+[v _ODCONA `Vuc ~T0 @X0 0 e@1026 ]
+"59045
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59045: extern volatile unsigned char ODCONB __attribute__((address(0x40A)));
+[v _ODCONB `Vuc ~T0 @X0 0 e@1034 ]
+"59541
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59541: extern volatile unsigned char ODCONC __attribute__((address(0x412)));
+[v _ODCONC `Vuc ~T0 @X0 0 e@1042 ]
+"58611
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 58611: extern volatile unsigned char SLRCONA __attribute__((address(0x403)));
+[v _SLRCONA `Vuc ~T0 @X0 0 e@1027 ]
+"59107
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59107: extern volatile unsigned char SLRCONB __attribute__((address(0x40B)));
+[v _SLRCONB `Vuc ~T0 @X0 0 e@1035 ]
+"59603
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59603: extern volatile unsigned char SLRCONC __attribute__((address(0x413)));
+[v _SLRCONC `Vuc ~T0 @X0 0 e@1043 ]
+"58673
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 58673: extern volatile unsigned char INLVLA __attribute__((address(0x404)));
+[v _INLVLA `Vuc ~T0 @X0 0 e@1028 ]
+"59169
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59169: extern volatile unsigned char INLVLB __attribute__((address(0x40C)));
+[v _INLVLB `Vuc ~T0 @X0 0 e@1036 ]
+"59665
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59665: extern volatile unsigned char INLVLC __attribute__((address(0x414)));
+[v _INLVLC `Vuc ~T0 @X0 0 e@1044 ]
+"59934
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 59934: extern volatile unsigned char INLVLE __attribute__((address(0x424)));
+[v _INLVLE `Vuc ~T0 @X0 0 e@1060 ]
+"28447
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 28447: extern volatile unsigned char ADACTPPS __attribute__((address(0x269)));
+[v _ADACTPPS `Vuc ~T0 @X0 0 e@617 ]
+"28909
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 28909: extern volatile unsigned char I2C1SDAPPS __attribute__((address(0x270)));
+[v _I2C1SDAPPS `Vuc ~T0 @X0 0 e@624 ]
+"24216
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 24216: extern volatile unsigned char RB1PPS __attribute__((address(0x20A)));
+[v _RB1PPS `Vuc ~T0 @X0 0 e@522 ]
+"24716
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 24716: extern volatile unsigned char RC3PPS __attribute__((address(0x214)));
+[v _RC3PPS `Vuc ~T0 @X0 0 e@532 ]
+"24166
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 24166: extern volatile unsigned char RB0PPS __attribute__((address(0x209)));
+[v _RB0PPS `Vuc ~T0 @X0 0 e@521 ]
+"24766
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 24766: extern volatile unsigned char RC4PPS __attribute__((address(0x215)));
+[v _RC4PPS `Vuc ~T0 @X0 0 e@533 ]
+"24966
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 24966: extern volatile unsigned char CANRXPPS __attribute__((address(0x23D)));
+[v _CANRXPPS `Vuc ~T0 @X0 0 e@573 ]
+"24366
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 24366: extern volatile unsigned char RB4PPS __attribute__((address(0x20D)));
+[v _RB4PPS `Vuc ~T0 @X0 0 e@525 ]
+"28975
+[; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 28975: extern volatile unsigned char I2C1SCLPPS __attribute__((address(0x271)));
+[v _I2C1SCLPPS `Vuc ~T0 @X0 0 e@625 ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3583,239 +3608,126 @@ Version 4.0 HI-TECH Software Intermediate Code
 "68860
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.12.193/xc8\pic\include\proc\pic18f26q84.h: 68860: __asm("TOSU equ 04FFh");
 [; <" TOSU equ 04FFh ;# ">
-"15 ANALOG.c
-[; ;ANALOG.c: 15: unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
-[v _ANALOG_GetVoltage `(ui ~T0 @X0 1 ef1`uc ]
-"16
-[; ;ANALOG.c: 16: {
-{
-[e :U _ANALOG_GetVoltage ]
-"15
-[; ;ANALOG.c: 15: unsigned int ANALOG_GetVoltage (unsigned char ucEntradaAnalogica)
-[v _ucEntradaAnalogica `uc ~T0 @X0 1 r1 ]
-"16
-[; ;ANALOG.c: 16: {
-[f ]
-"17
-[; ;ANALOG.c: 17:     uint16_t uiValorAnalog;
-[v _uiValorAnalog `us ~T0 @X0 1 a ]
-"18
-[; ;ANALOG.c: 18:     uint16_t uiValorVoltage;
-[v _uiValorVoltage `us ~T0 @X0 1 a ]
-"19
-[; ;ANALOG.c: 19:     unsigned char ucFlag;
-[v _ucFlag `uc ~T0 @X0 1 a ]
-"21
-[; ;ANALOG.c: 21:     switch (ucEntradaAnalogica)
-[e $U 3179  ]
-"22
-[; ;ANALOG.c: 22:     {
-{
-"23
-[; ;ANALOG.c: 23:         case 3:
-[e :U 3180 ]
-"24
-[; ;ANALOG.c: 24:             ADC_DisableChannelSequencer();
-[e ( _ADC_DisableChannelSequencer ..  ]
-"25
-[; ;ANALOG.c: 25:             ADC_SelectContext(CONTEXT_TPS1);
-[e ( _ADC_SelectContext (1 . `E22267 0 ]
-"26
-[; ;ANALOG.c: 26:             uiValorAnalog = ADC_GetSingleConversion(TPS1);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22256 1 ]
-"27
-[; ;ANALOG.c: 27:             ucFlag = 1;
-[e = _ucFlag -> -> 1 `i `uc ]
-"28
-[; ;ANALOG.c: 28:             break;
-[e $U 3178  ]
-"29
-[; ;ANALOG.c: 29:         case 4:
-[e :U 3181 ]
-"30
-[; ;ANALOG.c: 30:             ADC_DisableChannelSequencer();
-[e ( _ADC_DisableChannelSequencer ..  ]
-"31
-[; ;ANALOG.c: 31:             ADC_SelectContext(CONTEXT_TPS2);
-[e ( _ADC_SelectContext (1 . `E22267 1 ]
-"32
-[; ;ANALOG.c: 32:             uiValorAnalog = ADC_GetSingleConversion(TPS2);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22256 0 ]
-"33
-[; ;ANALOG.c: 33:             ucFlag = 1;
-[e = _ucFlag -> -> 1 `i `uc ]
-"34
-[; ;ANALOG.c: 34:             break;
-[e $U 3178  ]
-"35
-[; ;ANALOG.c: 35:         case 1:
-[e :U 3182 ]
-"36
-[; ;ANALOG.c: 36:             ADC_DisableChannelSequencer();
-[e ( _ADC_DisableChannelSequencer ..  ]
-"37
-[; ;ANALOG.c: 37:             ADC_SelectContext(CONTEXT_APPS1);
-[e ( _ADC_SelectContext (1 . `E22267 2 ]
-"38
-[; ;ANALOG.c: 38:             uiValorAnalog = ADC_GetSingleConversion(APPS1);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22256 3 ]
-"39
-[; ;ANALOG.c: 39:             ucFlag = 1;
-[e = _ucFlag -> -> 1 `i `uc ]
-"40
-[; ;ANALOG.c: 40:             break;
-[e $U 3178  ]
-"41
-[; ;ANALOG.c: 41:         case 2:
-[e :U 3183 ]
-"42
-[; ;ANALOG.c: 42:             ADC_DisableChannelSequencer();
-[e ( _ADC_DisableChannelSequencer ..  ]
-"43
-[; ;ANALOG.c: 43:             ADC_SelectContext(CONTEXT_APPS2);
-[e ( _ADC_SelectContext (1 . `E22267 3 ]
-"44
-[; ;ANALOG.c: 44:             uiValorAnalog = ADC_GetSingleConversion(APPS2);
-[e = _uiValorAnalog ( _ADC_GetSingleConversion (1 . `E22256 2 ]
-"45
-[; ;ANALOG.c: 45:             ucFlag = 1;
-[e = _ucFlag -> -> 1 `i `uc ]
-"46
-[; ;ANALOG.c: 46:             break;
-[e $U 3178  ]
-"47
-[; ;ANALOG.c: 47:         default:
-[e :U 3184 ]
-"48
-[; ;ANALOG.c: 48:             ucFlag = 2;
-[e = _ucFlag -> -> 2 `i `uc ]
-"49
-[; ;ANALOG.c: 49:             break;
-[e $U 3178  ]
-"50
-[; ;ANALOG.c: 50:     }
-}
-[e $U 3178  ]
-[e :U 3179 ]
-[e [\ -> _ucEntradaAnalogica `i , $ -> 3 `i 3180
- , $ -> 4 `i 3181
- , $ -> 1 `i 3182
- , $ -> 2 `i 3183
- 3184 ]
-[e :U 3178 ]
-"52
-[; ;ANALOG.c: 52:     if ( ucFlag == 1 )
-[e $ ! == -> _ucFlag `i -> 1 `i 3185  ]
-"53
-[; ;ANALOG.c: 53:     {
-{
-"54
-[; ;ANALOG.c: 54:         if ( uiValorAnalog <= 6 )
-[e $ ! <= -> _uiValorAnalog `ui -> -> 6 `i `ui 3186  ]
-"55
-[; ;ANALOG.c: 55:         {
-{
+"55 mcc_generated_files/pin_manager.c
+[; ;mcc_generated_files/pin_manager.c: 55: void PIN_MANAGER_Initialize(void)
+[v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
 "56
-[; ;ANALOG.c: 56:             uiValorVoltage = 0;
-[e = _uiValorVoltage -> -> 0 `i `us ]
-"57
-[; ;ANALOG.c: 57:         }
-}
-[e $U 3187  ]
-"58
-[; ;ANALOG.c: 58:         else
-[e :U 3186 ]
-"59
-[; ;ANALOG.c: 59:         {
+[; ;mcc_generated_files/pin_manager.c: 56: {
 {
-"62
-[; ;ANALOG.c: 62:             uiValorVoltage = (1*uiValorAnalog);
-[e = _uiValorVoltage -> * -> -> 1 `i `ui -> _uiValorAnalog `ui `us ]
-"63
-[; ;ANALOG.c: 63:             uiValorVoltage = uiValorVoltage - 5;
-[e = _uiValorVoltage -> - -> _uiValorVoltage `ui -> -> 5 `i `ui `us ]
-"64
-[; ;ANALOG.c: 64:         }
-}
-[e :U 3187 ]
-"66
-[; ;ANALOG.c: 66:         if ( uiValorVoltage > 5000 )
-[e $ ! > -> _uiValorVoltage `ui -> -> 5000 `i `ui 3188  ]
-"67
-[; ;ANALOG.c: 67:         {
-{
-"70
-[; ;ANALOG.c: 70:         }
-}
-[e $U 3189  ]
-"71
-[; ;ANALOG.c: 71:         else
-[e :U 3188 ]
-"72
-[; ;ANALOG.c: 72:         {
-{
-"73
-[; ;ANALOG.c: 73:             return (uiValorVoltage);
-[e ) -> _uiValorVoltage `ui ]
-[e $UE 3177  ]
-"74
-[; ;ANALOG.c: 74:         }
-}
-[e :U 3189 ]
-"75
-[; ;ANALOG.c: 75:     }
-}
-[e $U 3190  ]
-"76
-[; ;ANALOG.c: 76:     else if ( ucFlag == 2 )
-[e :U 3185 ]
-[e $ ! == -> _ucFlag `i -> 2 `i 3191  ]
-"77
-[; ;ANALOG.c: 77:     {
-{
-"80
-[; ;ANALOG.c: 80:     }
-}
-[e $U 3192  ]
-"81
-[; ;ANALOG.c: 81:     else
-[e :U 3191 ]
-"82
-[; ;ANALOG.c: 82:     {
-{
-"84
-[; ;ANALOG.c: 84:     }
-}
-[e :U 3192 ]
-[e :U 3190 ]
-"86
-[; ;ANALOG.c: 86: }
-[e :UE 3177 ]
-}
-"89
-[; ;ANALOG.c: 89: void ANALOGRead (void)
-[v _ANALOGRead `(v ~T0 @X0 1 ef ]
-"90
-[; ;ANALOG.c: 90: {
-{
-[e :U _ANALOGRead ]
+[e :U _PIN_MANAGER_Initialize ]
 [f ]
+"60
+[; ;mcc_generated_files/pin_manager.c: 60:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"61
+[; ;mcc_generated_files/pin_manager.c: 61:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
+"62
+[; ;mcc_generated_files/pin_manager.c: 62:     LATC = 0x00;
+[e = _LATC -> -> 0 `i `uc ]
+"67
+[; ;mcc_generated_files/pin_manager.c: 67:     TRISE = 0x08;
+[e = _TRISE -> -> 8 `i `uc ]
+"68
+[; ;mcc_generated_files/pin_manager.c: 68:     TRISA = 0xDE;
+[e = _TRISA -> -> 222 `i `uc ]
+"69
+[; ;mcc_generated_files/pin_manager.c: 69:     TRISB = 0xCC;
+[e = _TRISB -> -> 204 `i `uc ]
+"70
+[; ;mcc_generated_files/pin_manager.c: 70:     TRISC = 0x07;
+[e = _TRISC -> -> 7 `i `uc ]
+"75
+[; ;mcc_generated_files/pin_manager.c: 75:     ANSELC = 0xE7;
+[e = _ANSELC -> -> 231 `i `uc ]
+"76
+[; ;mcc_generated_files/pin_manager.c: 76:     ANSELB = 0x73;
+[e = _ANSELB -> -> 115 `i `uc ]
+"77
+[; ;mcc_generated_files/pin_manager.c: 77:     ANSELA = 0xFD;
+[e = _ANSELA -> -> 253 `i `uc ]
+"82
+[; ;mcc_generated_files/pin_manager.c: 82:     WPUE = 0x00;
+[e = _WPUE -> -> 0 `i `uc ]
+"83
+[; ;mcc_generated_files/pin_manager.c: 83:     WPUB = 0x00;
+[e = _WPUB -> -> 0 `i `uc ]
+"84
+[; ;mcc_generated_files/pin_manager.c: 84:     WPUA = 0x00;
+[e = _WPUA -> -> 0 `i `uc ]
+"85
+[; ;mcc_generated_files/pin_manager.c: 85:     WPUC = 0x00;
+[e = _WPUC -> -> 0 `i `uc ]
+"90
+[; ;mcc_generated_files/pin_manager.c: 90:     ODCONA = 0x00;
+[e = _ODCONA -> -> 0 `i `uc ]
 "91
-[; ;ANALOG.c: 91:     uiAPPS1 = ANALOG_GetVoltage(1);
-[e = _uiAPPS1 ( _ANALOG_GetVoltage (1 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 91:     ODCONB = 0x00;
+[e = _ODCONB -> -> 0 `i `uc ]
 "92
-[; ;ANALOG.c: 92:     uiAPPS2 = ANALOG_GetVoltage(2);
-[e = _uiAPPS2 ( _ANALOG_GetVoltage (1 -> -> 2 `i `uc ]
-"93
-[; ;ANALOG.c: 93:     uiTPS1 = ANALOG_GetVoltage(3);
-[e = _uiTPS1 ( _ANALOG_GetVoltage (1 -> -> 3 `i `uc ]
-"94
-[; ;ANALOG.c: 94:     uiTPS2 = ANALOG_GetVoltage(4);
-[e = _uiTPS2 ( _ANALOG_GetVoltage (1 -> -> 4 `i `uc ]
-"95
-[; ;ANALOG.c: 95:     __nop();
-[e ( ___nop ..  ]
-"96
-[; ;ANALOG.c: 96: }
-[e :UE 3193 ]
+[; ;mcc_generated_files/pin_manager.c: 92:     ODCONC = 0x18;
+[e = _ODCONC -> -> 24 `i `uc ]
+"97
+[; ;mcc_generated_files/pin_manager.c: 97:     SLRCONA = 0xFF;
+[e = _SLRCONA -> -> 255 `i `uc ]
+"98
+[; ;mcc_generated_files/pin_manager.c: 98:     SLRCONB = 0xFF;
+[e = _SLRCONB -> -> 255 `i `uc ]
+"99
+[; ;mcc_generated_files/pin_manager.c: 99:     SLRCONC = 0xFF;
+[e = _SLRCONC -> -> 255 `i `uc ]
+"104
+[; ;mcc_generated_files/pin_manager.c: 104:     INLVLA = 0xFF;
+[e = _INLVLA -> -> 255 `i `uc ]
+"105
+[; ;mcc_generated_files/pin_manager.c: 105:     INLVLB = 0xFF;
+[e = _INLVLB -> -> 255 `i `uc ]
+"106
+[; ;mcc_generated_files/pin_manager.c: 106:     INLVLC = 0xFF;
+[e = _INLVLC -> -> 255 `i `uc ]
+"107
+[; ;mcc_generated_files/pin_manager.c: 107:     INLVLE = 0x08;
+[e = _INLVLE -> -> 8 `i `uc ]
+"116
+[; ;mcc_generated_files/pin_manager.c: 116:     ADACTPPS = 0x0F;
+[e = _ADACTPPS -> -> 15 `i `uc ]
+"117
+[; ;mcc_generated_files/pin_manager.c: 117:     I2C1SDAPPS = 0x14;
+[e = _I2C1SDAPPS -> -> 20 `i `uc ]
+"118
+[; ;mcc_generated_files/pin_manager.c: 118:     RB1PPS = 0x1A;
+[e = _RB1PPS -> -> 26 `i `uc ]
+"119
+[; ;mcc_generated_files/pin_manager.c: 119:     RC3PPS = 0x37;
+[e = _RC3PPS -> -> 55 `i `uc ]
+"120
+[; ;mcc_generated_files/pin_manager.c: 120:     RB0PPS = 0x18;
+[e = _RB0PPS -> -> 24 `i `uc ]
+"121
+[; ;mcc_generated_files/pin_manager.c: 121:     RC4PPS = 0x38;
+[e = _RC4PPS -> -> 56 `i `uc ]
+"122
+[; ;mcc_generated_files/pin_manager.c: 122:     CANRXPPS = 0x0B;
+[e = _CANRXPPS -> -> 11 `i `uc ]
+"123
+[; ;mcc_generated_files/pin_manager.c: 123:     RB4PPS = 0x46;
+[e = _RB4PPS -> -> 70 `i `uc ]
+"124
+[; ;mcc_generated_files/pin_manager.c: 124:     I2C1SCLPPS = 0x13;
+[e = _I2C1SCLPPS -> -> 19 `i `uc ]
+"125
+[; ;mcc_generated_files/pin_manager.c: 125: }
+[e :UE 3176 ]
+}
+"127
+[; ;mcc_generated_files/pin_manager.c: 127: void PIN_MANAGER_IOC(void)
+[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
+"128
+[; ;mcc_generated_files/pin_manager.c: 128: {
+{
+[e :U _PIN_MANAGER_IOC ]
+[f ]
+"129
+[; ;mcc_generated_files/pin_manager.c: 129: }
+[e :UE 3177 ]
 }

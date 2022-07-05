@@ -59,12 +59,12 @@ unsigned char ucETCResolveNotCloseError = FALSE;
 unsigned char ucCount500msResolveNotCloseError = 0;
 
 //Declaración de rangos que mas tarde se deberian autocalibrar aqui
-unsigned int uiTPS1TableIn[]  = {1147,1167,1169,1202,1376,1349,1385,1572,1729,1780,1900,1951,2033,2145,2251,2318,2402,2493,2774,2778,2962};
+unsigned int uiTPS1TableIn[]   = {1147,1167,1169,1202,1376,1349,1385,1572,1729,1780,1900,1951,2033,2145,2251,2318,2402,2493,2774,2778,2962};
 unsigned char ucTPS1TableOut[] = {   0,   5,  10,  15,  20,  25,  30,  35,  40,  45,  50,  55,  60,  65,  70,  75,  80,  85,  90,  95, 100};
-unsigned char ucTPS2TableIn[]  = {999,1060,1070,1178,1238,1291,1329,1393,1485,1546,1604,1708,1761,1960,2215,2273,2365,2490,2594,2603,2618};
-//unsigned int uiTPS2TableIn[]  = {2618,2603,2594,2490,2365,2273,2215,1960,1761,1708,1604,1546,1485,1393,1329,1291,1238,1178,1070,1060,999};
-//unsigned char ucTPS2TableOut[] = {   0,   5,  10,  15,  20,  25,  30,  35,  40,  45,  50,  55,  60,  65,  70,  75,  80,  85,  90,  95, 100};
-unsigned char ucTPS2TableOut[] = { 100, 95, 90,85,80,75,70,65,60,55,50,45,40,35,30,25,20,15,10,5,0};
+//unsigned char ucTPS2TableIn[]  = {999,1060,1070,1178,1238,1291,1329,1393,1485,1546,1604,1708,1761,1960,2215,2273,2365,2490,2594,2603,2618};
+unsigned int uiTPS2TableIn[]   = {2618,2603,2594,2490,2365,2273,2215,1960,1761,1708,1604,1546,1485,1393,1329,1291,1238,1178,1070,1060,999};
+unsigned char ucTPS2TableOut[] = {   0,   5,  10,  15,  20,  25,  30,  35,  40,  45,  50,  55,  60,  65,  70,  75,  80,  85,  90,  95, 100};
+//unsigned char ucTPS2TableOut[] = { 100, 95, 90,85,80,75,70,65,60,55,50,45,40,35,30,25,20,15,10,5,0};
 
 unsigned int ucAPPSTargetPruebas; 
 
@@ -328,8 +328,8 @@ void TPSAnalysis(void)
     
     /*ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
     ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);*/
-    ucTPS1Perc = ETCPercentMultiCalc (uiTPS1, uiTPS1TableIn, ucTPS1TableOut, TPS_ADJ_TAB_SIZE);
-    ucTPS2Perc = ETCPercentMultiCalc (uiTPS2, uiTPS2TableIn, ucTPS2TableOut, TPS_ADJ_TAB_SIZE);
+    ucTPS1Perc = ETCPercentMultiCalcTPS1 (uiTPS1, uiTPS1TableIn, ucTPS1TableOut, TPS_ADJ_TAB_SIZE);
+    ucTPS2Perc = ETCPercentMultiCalcTPS2 (uiTPS2, uiTPS2TableIn, ucTPS2TableOut, TPS_ADJ_TAB_SIZE);
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
     Nop();
     
@@ -509,7 +509,7 @@ unsigned int ETCPercentCalc(signed long val, signed long min, signed long max)
     return val;
 }
 
-unsigned int ETCPercentMultiCalc(signed long value, unsigned int *uiTab_in, unsigned char *ucTab_out, unsigned char ucSize) 
+unsigned int ETCPercentMultiCalcTPS1(signed long value, unsigned int *uiTab_in, unsigned char *ucTab_out, unsigned char ucSize) 
 {
     unsigned char ucPos = 1;  // _in[0] already tested
     signed long slResult;    
@@ -530,6 +530,34 @@ unsigned int ETCPercentMultiCalc(signed long value, unsigned int *uiTab_in, unsi
 
     // interpolate in the right segment for the rest
     slResult = ( (value - uiTab_in[ucPos-1]) * (ucTab_out[ucPos] - ucTab_out[ucPos-1]) / (uiTab_in[ucPos] - uiTab_in[ucPos-1]) + ucTab_out[ucPos-1] );
+    
+    if ( slResult < 0 ) slResult = ucTab_out[0];
+    if ( slResult > 100 ) slResult = ucTab_out[ucSize-1];
+    
+    return slResult ;
+}
+
+unsigned int ETCPercentMultiCalcTPS2(signed long value, unsigned int *uiTab_in, unsigned char *ucTab_out, unsigned char ucSize) 
+{
+    unsigned char ucPos = 1;  // _in[0] already tested
+    signed long slResult;    
+    unsigned int ucValCero= uiTab_in[0];
+    unsigned int ucValMax= uiTab_in[ucSize-1];
+    unsigned char ucValout=0;
+    // take care the value is within range
+    // value = constrain(value, _in[0], _in[size-1]);
+    if (value >= ucValCero) return ucTab_out[0];
+    if (value <= ucValMax) return ucTab_out[ucSize-1];
+
+    // search right interval
+
+    while(value < uiTab_in[ucPos]) ucPos++;
+    ucValout = ucTab_out[ucPos];
+    // this will handle all exact "points" in the _in array
+    if (value == uiTab_in[ucPos]) return ucTab_out[ucPos];
+
+    // interpolate in the right segment for the rest
+    slResult = ( ( (value - uiTab_in[ucPos-1]) * (ucTab_out[ucPos] - ucTab_out[ucPos-1]) / (uiTab_in[ucPos] - uiTab_in[ucPos-1]) ) + ucTab_out[ucPos-1] );
     
     if ( slResult < 0 ) slResult = ucTab_out[0];
     if ( slResult > 100 ) slResult = ucTab_out[ucSize-1];

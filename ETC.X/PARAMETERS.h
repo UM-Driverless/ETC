@@ -19,7 +19,7 @@ extern "C" {
 #define ENABLE    0x01
     
 //PARAMETROS CONSTANTES    
-#define TPSMARGEN 5
+#define TPSMARGEN 50
 #define APPSMARGEN 100
 #define APPS1max 1990 //0.001v
 #define APPS2max 160 //0.001v

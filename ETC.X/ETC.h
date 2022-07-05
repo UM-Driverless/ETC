@@ -62,9 +62,9 @@ extern "C" {
     
 #define TPS_ADJ_TAB_SIZE 21
     
-unsigned char ucTPS1TableIn [TPS_ADJ_TAB_SIZE];
+unsigned int uiTPS1TableIn [TPS_ADJ_TAB_SIZE];
 unsigned char ucTPS1TableOut [TPS_ADJ_TAB_SIZE];
-unsigned char ucTPS2TableIn [TPS_ADJ_TAB_SIZE];
+unsigned int uiTPS2TableIn [TPS_ADJ_TAB_SIZE];
 unsigned char ucTPS2TableOut [TPS_ADJ_TAB_SIZE];
     
 typedef struct {
@@ -150,6 +150,7 @@ extern unsigned char ucETCMotorNotClose;
 extern unsigned char ucETCResolveNotCloseError;
 extern unsigned char ucCount500msResolveNotCloseError;
 
+extern unsigned int ucAPPSTargetPruebas; 
 //FUNCIONES
 void ETCInit(void);
 void APPSSend (unsigned char ucPercent);
@@ -171,7 +172,7 @@ void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactu
 void ETC500msSupervisor (void);
 void PIDController_Init(PIDController *pid);
 float PIDController_Update(PIDController *pid, float setpoint, float measurement);
-unsigned int ETCPercentMultiCalc(signed long value, unsigned char *ucTab_in, unsigned char *ucTab_out, unsigned char ucSize);
+unsigned int ETCPercentMultiCalc(signed long value, unsigned int *uiTab_in, unsigned char *ucTab_out, unsigned char ucSize);
 
 #ifdef	__cplusplus
 }

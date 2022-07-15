@@ -196,13 +196,14 @@ void ETC100msSupervisor (void)
 
 void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual)
 {
+    CANWriteMessage(0x500, DataLength_6, ucTPStarget, ucTPSactual, ucTPS, ucAPPS, ucTPS_STATE, 0, 0, 0);    //Falta meter los APPS target
     if ( ActiveRules == 1 )
     {
-        if (ucTPStarget>ucTPSactual+10)
+        if (ucTPStarget>ucTPSactual+TPSRulesPercent)
         {
             ucETCTargetTPSDiff = FALSE; 
         }
-        else if (ucTPSactual>ucTPStarget+10)
+        else if (ucTPSactual>ucTPStarget+TPSRulesPercent)
         {
             ucETCTargetTPSDiff = FALSE; 
         }
@@ -601,6 +602,7 @@ float PIDController_Update(PIDController *pid, float setpoint, float measurement
 
     
 	/* Anti-wind-up via integrator clamping */
+    /*
     if (pid->integrator > pid->limMaxInt) 
     {
         pid->integrator = pid->limMaxInt;
@@ -609,6 +611,7 @@ float PIDController_Update(PIDController *pid, float setpoint, float measurement
     {
         pid->integrator = pid->limMinInt;
     }
+    */
 
 
 	/*

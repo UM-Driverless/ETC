@@ -46,17 +46,17 @@ extern "C" {
 #define QUITAR_ERROR_APPS_VOLTS 0xFB       
     
 //PID
-#define PID_KP  2.8f //2.8f
-#define PID_KI  1.4f //1.4f
-#define PID_KD  0.16f //0.16f
+#define PID_KP  2.4f //2.8f 2.4f
+#define PID_KI  1.4f //1.4f 1.8f
+#define PID_KD  0.0f //0.16f .06f
 
 #define PID_TAU 0.02f
 
 #define PID_LIM_MIN 0.0f //0%
 #define PID_LIM_MAX  100.0f //100%
 
-#define PID_LIM_MIN_INT -5.0f
-#define PID_LIM_MAX_INT  5.0f
+#define PID_LIM_MIN_INT -10.0f
+#define PID_LIM_MAX_INT  10.0f
 
 #define SAMPLE_TIME_S 0.01f
     

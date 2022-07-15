@@ -93,7 +93,7 @@ void main(void)
         if (ucASMode == ManualMode)
         {
             ETCMove(ucAPPS,ManualMode);
-            //GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucAPPS), (float)(ucTPS)), 600);
+            //GPIO_PWM2_Control(ucAPPS, 600);
         }
         else if (ucASMode == ASMode)
         {

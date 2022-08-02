@@ -71,7 +71,8 @@ unsigned int ucAPPSTargetPruebas;
 //FUNCIONES
 void ETCInit(void) 
 {
-    //SDC_SetHigh(); //Habilitamos SDC
+    SDC_SetHigh(); //Habilitamos SDC
+    OUTM_SetHigh();
     ETCCalibrate();
     PIDController_Init(&pid);
 }

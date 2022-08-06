@@ -25,7 +25,7 @@ extern "C" {
 #define APPS2max 160 //0.001v
 #define TPSRulesPercent 20
 #define APPSRulesPercent 20
-#define ActiveRules 1
+#define ActiveRules 0
     
 extern signed long sl_K;
 extern signed long sl_K_P;

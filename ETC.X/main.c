@@ -94,6 +94,7 @@ void main(void)
         {
             ETCMove(ucAPPS,ManualMode);
             //GPIO_PWM2_Control(ucAPPS, 600);
+            CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
         }
         else if (ucASMode == ASMode)
         {

@@ -37,12 +37,13 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
         //ucCLUTCHState
         //ANALIZAR SI SE PUEDE MOVER HASTA EL RANGO MAX LEIDO POR LA INT2
         //HACER CONVERSION DE 0-100% A 2-12 DUTY
-//        uiCLUTCHDuty = ucTargetMove * 60;
-//        uiCLUTCHDuty = uiCLUTCHDuty / 100;
-//        uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
+        
+        uiCLUTCHDuty = ucTargetMove * 60;
+        uiCLUTCHDuty = uiCLUTCHDuty / 100;
+        uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
         
         // map % of ucTargetMove to duty cycle
-        uiCLUTCHDuty = (800. + (2100. - 800.)/100. * ucTargetMove) / 20000; // active time in microseconds / total period of 2e4 us
+        //uiCLUTCHDuty = (800. + (2100. - 800.)/100. * ucTargetMove) / 20000; // active time in microseconds / total period of 2e4 us
         
         
         //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo

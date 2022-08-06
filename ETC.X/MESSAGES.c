@@ -178,10 +178,10 @@ void CANReadMessage (void)
                     break;
                 case STEER_WH_CONT:
                     ucSTEER_WH_Clutch = data1;
-                    if ( ucASMode == ManualMode )
+                    /*if ( ucASMode == ManualMode )
                     {
                         CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
-                    }
+                    }*/
                     break;
                 default:
                     Nop();

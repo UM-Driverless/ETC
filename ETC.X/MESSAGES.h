@@ -28,6 +28,7 @@ extern unsigned char CANDATAdata[8];
 //TRAJECTORY_ACT
 extern unsigned char ucTargetAccelerator;
 extern unsigned char ucTargetClutch;
+extern unsigned char ucTargetClutch_PREV;
 extern unsigned char ucTargetBrake;
 extern unsigned char ucTargetDirection;
 extern unsigned char ucTargetGear;

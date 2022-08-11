@@ -19,7 +19,12 @@ extern "C" {
 #define CLUTCH_INTRAVEL    3
 #define CLUTCH_ERROR       4
 #define CLUTCH_CORRUPT     5
-
+    
+//CLUTCH ACTIONS
+#define NO_MOVE_CLUTCH     0
+#define ENGAGE_CLUTCH      1
+#define DISENGAGE_CLUTCH   2
+#define CLUTCH_TO_CERO     3
     
     
 //VARIABLES

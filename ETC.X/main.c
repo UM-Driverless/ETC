@@ -101,7 +101,8 @@ void main(void)
             ETCMove(ucTargetAccelerator,ASMode);
             //GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
             ucCLUTCHState = CLUTCH_NONE;
-            GPIO_PWM1_Control(ucTargetClutch, 300);
+            //GPIO_PWM1_Control(ucTargetClutch, 300);
+            CLUTCH_HighLevelMovements(ucTargetClutch);
         }
         
         

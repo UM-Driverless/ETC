@@ -26,6 +26,35 @@ void CLUTCH_Init (void)
     ucCLUTCHState = CLUTCH_NONE;
 }
 
+void CLUTCH_HighLevelMovements (unsigned char ucClutchAction)
+{
+    unsigned char ucIndex;
+    
+    if (ucTargetClutch_PREV != ucTargetClutch)
+    {
+        switch (ucClutchAction)
+        {
+            case CLUTCH_TO_CERO:
+                CLUTCH_Move(0, ASMode);
+                break;
+            case ENGAGE_CLUTCH:
+                 for (ucIndex = 60; ucIndex > 0 ; ucIndex--)
+                 {
+                    CLUTCH_Move(ucIndex, ASMode);
+                    __delay_ms(8); //desembrague completo en 500ms
+                 }
+                break;
+            case DISENGAGE_CLUTCH:
+                CLUTCH_Move(60, ASMode);
+                break;
+            case NO_MOVE_CLUTCH:
+            default:
+                //DONT MOVE
+                break;
+        }
+        ucTargetClutch_PREV = ucTargetClutch;
+    }
+}
 
 
 void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)

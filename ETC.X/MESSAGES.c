@@ -18,6 +18,7 @@ uint8_t CANDATAdata[8];
 //TRAJECTORY_ACT
 unsigned char ucTargetAccelerator;
 unsigned char ucTargetClutch;
+unsigned char ucTargetClutch_PREV;
 unsigned char ucTargetBrake;
 unsigned char ucTargetDirection;
 unsigned char ucTargetGear;

@@ -41,7 +41,7 @@ void CLUTCH_HighLevelMovements (unsigned char ucClutchAction)
                  for (ucIndex = 60; ucIndex > 0 ; ucIndex--)
                  {
                     CLUTCH_Move(ucIndex, ASMode);
-                    __delay_ms(8); //desembrague completo en 500ms
+                    __delay_ms(DesembragueTime_ms/60); //desembrague completo en 500ms
                  }
                 break;
             case DISENGAGE_CLUTCH:

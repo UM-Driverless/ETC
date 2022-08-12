@@ -26,6 +26,7 @@ extern "C" {
 #define TPSRulesPercent 20
 #define APPSRulesPercent 20
 #define ActiveRules 0
+#define DesembragueTime_ms 500
     
 extern signed long sl_K;
 extern signed long sl_K_P;

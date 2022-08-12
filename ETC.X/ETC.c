@@ -328,10 +328,10 @@ void TPSAnalysis(void)
     }*/
     
     
-    /*ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
-    ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);*/
-    ucTPS1Perc = ETCPercentMultiCalcTPS1 (uiTPS1, uiTPS1TableIn, ucTPS1TableOut, TPS_ADJ_TAB_SIZE);
-    ucTPS2Perc = ETCPercentMultiCalcTPS2 (uiTPS2, uiTPS2TableIn, ucTPS2TableOut, TPS_ADJ_TAB_SIZE);
+    ucTPS1Perc = ETCPercentCalc (uiTPS1, uiTPS1min, uiTPS1max);
+    ucTPS2Perc = ETCPercentCalc (uiTPS2, uiTPS2min, uiTPS2max);
+    /*ucTPS1Perc = ETCPercentMultiCalcTPS1 (uiTPS1, uiTPS1TableIn, ucTPS1TableOut, TPS_ADJ_TAB_SIZE);
+    ucTPS2Perc = ETCPercentMultiCalcTPS2 (uiTPS2, uiTPS2TableIn, ucTPS2TableOut, TPS_ADJ_TAB_SIZE);*/
     ucTPS = ( ( ucTPS1Perc + ucTPS2Perc ) / 2 );
     Nop();
     

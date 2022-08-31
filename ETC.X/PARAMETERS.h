@@ -23,9 +23,9 @@ extern "C" {
 #define APPSMARGEN 100
 #define APPS1max 1990 //0.001v
 #define APPS2max 160 //0.001v
-#define TPSRulesPercent 20
-#define APPSRulesPercent 20
-#define ActiveRules 0
+#define TPSRulesPercent 30
+#define APPSRulesPercent 30
+#define ActiveRules 1
 #define DesembragueTime_ms 500
     
 extern signed long sl_K;

@@ -19,14 +19,19 @@ unsigned char ucCount1s;
 unsigned char ucCount10s;
 unsigned int uiCount30s;
 unsigned int uiCount1min;
+unsigned char ucCount50ms;
 
 
 //FUNCIONES
 void TEMPORIZATION_10ms (void)
 {
     //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
-    //TPSAnalysis();
-    //APPSAnalysis();
+    if (ucCount50ms++ == 5 )
+    {
+        TPSAnalysis();
+        APPSAnalysis();
+        ucCount50ms = 0;
+    }
 }
 
 void TEMPORIZATION_100ms (void)

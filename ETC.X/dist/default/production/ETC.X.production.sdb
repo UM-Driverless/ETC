@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F26Q84 ]
 [d frameptr 1249 ]
-"34 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
+"34 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
 [e E360 . `uc
 I2C1_STOP 1
 I2C1_RESTART_READ 2
@@ -17,7 +17,7 @@ I2C1_NOERR 0
 I2C1_BUSY 1
 I2C1_FAIL 2
 ]
-"67 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
+"67 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
 [e E355 . `uc
 I2C1_NOERR 0
 I2C1_BUSY 1
@@ -31,7 +31,7 @@ I2C1_RESTART_WRITE 3
 I2C1_CONTINUE 4
 I2C1_RESET_LINK 5
 ]
-"103 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"103 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [e E22386 . `uc
 FIFO1 1
 ]
@@ -111,7 +111,7 @@ CAN_FD_FORMAT 1
 [e E22383 . `uc
 TXQ 0
 ]
-"159 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+"159 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
 [e E22532 . `uc
 I2C1_IDLE 0
 I2C1_SEND_ADR_READ 1
@@ -155,7 +155,7 @@ I2C1_DATA_NACK 3
 I2C1_TIMEOUT 4
 I2C1_NULL 5
 ]
-"455 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
+"455 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
 [e E22154 . `uc
 CONTEXT_TPS1 0
 CONTEXT_TPS2 1
@@ -174,7 +174,7 @@ channel_DAC1 61
 channel_FVR_Buffer1 62
 channel_FVR_Buffer2 63
 ]
-"68 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
+"68 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [e E22718 . `uc
 CAN_2_0_FORMAT 0
 CAN_FD_FORMAT 1
@@ -209,7 +209,7 @@ CAN_TX_MSG_REQUEST_DLC_EXCEED_ERROR 1
 CAN_TX_MSG_REQUEST_BRS_ERROR 2
 CAN_TX_MSG_REQUEST_FIFO_FULL 3
 ]
-"25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
+"25 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ANALOG.c
 [e E22267 . `uc
 CONTEXT_TPS1 0
 CONTEXT_TPS2 1
@@ -232,58 +232,59 @@ channel_FVR_Buffer2 63
 [v _ANALOG_GetVoltage ANALOG_GetVoltage `(ui  1 e 2 0 ]
 "89
 [v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 [v i2___aldiv __aldiv `(l  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fleq.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flneg.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\float.c
+"62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
-"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 [v i2___fltol __fltol `(l  1 e 4 0 ]
-"86 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftadd.c
+"86 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftadd.c
 [v ___ftadd __ftadd `(f  1 e 4 0 ]
-"54 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftdiv.c
+"54 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 4 0 ]
-"62 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftmul.c
+"62 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftmul.c
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
-"19 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\ftsub.c
+"19 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 [v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcpy.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
 [v i2_memcpy memcpy `(*.39v  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\printf.c
+"5 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\printf.c
 [v _printf printf `(i  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 [v i2___fladd __fladd `(d  1 e 4 0 ]
 "245
 [v ___flsub __flsub `(d  1 e 4 0 ]
-"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+"11 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
-"91 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul64.c
+[v i2___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
-"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"23 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_Init CLUTCH_Init `(v  1 e 1 0 ]
 "29
 [v _CLUTCH_HighLevelMovements CLUTCH_HighLevelMovements `(v  1 e 1 0 ]
@@ -291,7 +292,7 @@ channel_FVR_Buffer2 63
 [v _CLUTCH_Move CLUTCH_Move `(v  1 e 1 0 ]
 "112
 [v _CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
-"72 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"72 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCInit ETCInit `(v  1 e 1 0 ]
 "97
 [v _APPSReadmin APPSReadmin `(v  1 e 1 0 ]
@@ -301,29 +302,32 @@ channel_FVR_Buffer2 63
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 "131
 [v _ETCRulesSensorsSupervision ETCRulesSensorsSupervision `(v  1 e 1 0 ]
-"163
+"167
 [v _ETC100msSupervisor ETC100msSupervisor `(v  1 e 1 0 ]
-"205
+"198
 [v _ETCRulesMotorSupervisor ETCRulesMotorSupervisor `(v  1 e 1 0 ]
-"234
+"227
 [v _ETC500msSupervisor ETC500msSupervisor `(v  1 e 1 0 ]
-"273
+"266
 [v _ETCCalibrate ETCCalibrate `(v  1 e 1 0 ]
-"312
+"305
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
-"398
+[v i2_TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
+"391
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
-"426
+[v i2_APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
+"419
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
-"474
+"458
 [v _ETCXavierSupervisor ETCXavierSupervisor `(v  1 e 1 0 ]
-"509
+"493
 [v _ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
-"588
+[v i2_ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
+"572
 [v _PIDController_Init PIDController_Init `(v  1 e 1 0 ]
-"601
+"585
 [v _PIDController_Update PIDController_Update `(f  1 e 4 0 ]
-"24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"24 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
 "43
 [v _GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
@@ -331,9 +335,9 @@ channel_FVR_Buffer2 63
 "64
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
-"54 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
+"54 C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"71 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
+"71 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 "445
 [v _ADC_DisableChannelSequencer ADC_DisableChannelSequencer `T(v  1 e 1 0 ]
@@ -365,7 +369,7 @@ channel_FVR_Buffer2 63
 [v _ADC_DefaultContext4Threshold_ISR ADC_DefaultContext4Threshold_ISR `(v  1 s 1 ADC_DefaultContext4Threshold_ISR ]
 "779
 [v _ADC_DefaultActiveClockTuning_ISR ADC_DefaultActiveClockTuning_ISR `(v  1 s 1 ADC_DefaultActiveClockTuning_ISR ]
-"120 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"120 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _DefaultFIFO1NotEmptyHandler DefaultFIFO1NotEmptyHandler `(v  1 s 1 DefaultFIFO1NotEmptyHandler ]
 "125
 [v _DefaultInvalidMessageHandler DefaultInvalidMessageHandler `(v  1 s 1 DefaultInvalidMessageHandler ]
@@ -464,15 +468,15 @@ channel_FVR_Buffer2 63
 [v _CAN1_SetFIFO1NotEmptyHandler CAN1_SetFIFO1NotEmptyHandler `(v  1 e 1 0 ]
 "741
 [v _CAN1_RXI_ISR CAN1_RXI_ISR `(v  1 e 1 0 ]
-"26 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3.c
+"26 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3.c
 [v _DAC3_Set DAC3_Set `(v  1 e 1 0 ]
 "31
 [v _DAC3_SetNonvolatile DAC3_SetNonvolatile `(v  1 e 1 0 ]
 "36
 [v _DAC3_Read DAC3_Read `(us  1 e 2 0 ]
-"28 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3_example.c
+"28 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/DAC3_example.c
 [v _DAC3_example DAC3_example `(v  1 e 1 0 ]
-"34 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
+"34 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/drivers/i2c_simple_master.c
 [v _wr1RegCompleteHandler wr1RegCompleteHandler `(E360  1 s 1 wr1RegCompleteHandler ]
 "51
 [v _i2c_write1ByteRegister i2c_write1ByteRegister `(v  1 e 1 0 ]
@@ -488,7 +492,7 @@ channel_FVR_Buffer2 63
 [v _rdBlkRegCompleteHandler rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
 "228
 [v _i2c_readNBytes i2c_readNBytes `(v  1 e 1 0 ]
-"142 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
+"142 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/examples/i2c1_master_example.c
 [v _rd1RegCompleteHandler@i2c1_master_example$F145 rd1RegCompleteHandler `(E360  1 s 1 rd1RegCompleteHandler ]
 "149
 [v _rd2RegCompleteHandler@i2c1_master_example$F156 rd2RegCompleteHandler `(E360  1 s 1 rd2RegCompleteHandler ]
@@ -498,7 +502,7 @@ channel_FVR_Buffer2 63
 [v _wr2RegCompleteHandler@i2c1_master_example$F168 wr2RegCompleteHandler `(E360  1 s 1 wr2RegCompleteHandler ]
 "170
 [v _rdBlkRegCompleteHandler@i2c1_master_example$F179 rdBlkRegCompleteHandler `(E360  1 s 1 rdBlkRegCompleteHandler ]
-"183 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+"183 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 "207
 [v _I2C1_Open I2C1_Open `(E355  1 e 1 0 ]
@@ -618,19 +622,19 @@ channel_FVR_Buffer2 63
 [v _I2C1_MasterClearIrq I2C1_MasterClearIrq `T(v  1 s 1 I2C1_MasterClearIrq ]
 "816
 [v _I2C1_MasterWaitForEvent I2C1_MasterWaitForEvent `T(v  1 s 1 I2C1_MasterWaitForEvent ]
-"52 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+"52 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 "58
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
-"50 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+"50 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "65
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "79
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+"63 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v _PWM1_16BIT_Initialize PWM1_16BIT_Initialize `(v  1 e 1 0 ]
 "144
 [v _PWM1_16BIT_WritePeriodRegister PWM1_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
@@ -653,7 +657,7 @@ channel_FVR_Buffer2 63
 [v _PWM1_16BIT_Slice1Output2_DefaultInterruptHandler PWM1_16BIT_Slice1Output2_DefaultInterruptHandler `(v  1 s 1 PWM1_16BIT_Slice1Output2_DefaultInterruptHandler ]
 "219
 [v _PWM1_16BIT_Period_DefaultInterruptHandler PWM1_16BIT_Period_DefaultInterruptHandler `(v  1 s 1 PWM1_16BIT_Period_DefaultInterruptHandler ]
-"63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+"63 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_Initialize PWM2_16BIT_Initialize `(v  1 e 1 0 ]
 "144
 [v _PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
@@ -676,7 +680,7 @@ channel_FVR_Buffer2 63
 [v _PWM2_16BIT_Slice1Output2_DefaultInterruptHandler PWM2_16BIT_Slice1Output2_DefaultInterruptHandler `(v  1 s 1 PWM2_16BIT_Slice1Output2_DefaultInterruptHandler ]
 "219
 [v _PWM2_16BIT_Period_DefaultInterruptHandler PWM2_16BIT_Period_DefaultInterruptHandler `(v  1 s 1 PWM2_16BIT_Period_DefaultInterruptHandler ]
-"62 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
+"62 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "122
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
@@ -686,7 +690,7 @@ channel_FVR_Buffer2 63
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 "156
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"65 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
+"65 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "128
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
@@ -698,28 +702,28 @@ channel_FVR_Buffer2 63
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 "227
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"56 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
+"56 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v _CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
 [v i2_CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
 "101
 [v _CANReadMessage CANReadMessage `(v  1 e 1 0 ]
 "196
 [v _CANDisableErrorInterrupt CANDisableErrorInterrupt `(v  1 e 1 0 ]
-"25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"25 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_10ms TEMPORIZATION_10ms `(v  1 e 1 0 ]
-"33
+"32
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]
-"44
+"43
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
-"55
+"54
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
-"61
+"60
 [v _TEMPORIZATION_10s TEMPORIZATION_10s `(v  1 e 1 0 ]
-"66
+"65
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
-"71
+"70
 [v _TEMPORIZATION_1mins TEMPORIZATION_1mins `(v  1 e 1 0 ]
-"65 C:\Users\ruben\Documents\GitHub\ETC\ETC.X/ETC.h
+"65 C:\Users\panze\Documents\GitHub\ETC\ETC.X/ETC.h
 [v _uiTPS1TableIn uiTPS1TableIn `[21]ui  1 e 42 0 ]
 "67
 [v _uiTPS2TableIn uiTPS2TableIn `[21]ui  1 e 42 0 ]
@@ -732,7 +736,7 @@ channel_FVR_Buffer2 63
 `uc 1 formatType 1 0 :1:6 
 `uc 1 brs 1 0 :1:7 
 ]
-"22 C:\Users\ruben\Documents\GitHub\ETC\ETC.X/MESSAGES.h
+"22 C:\Users\panze\Documents\GitHub\ETC\ETC.X/MESSAGES.h
 [u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
 [s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
 [v _msgTransmit msgTransmit `S243  1 e 7 0 ]
@@ -749,7 +753,7 @@ channel_FVR_Buffer2 63
 `uc 1 CANIF 1 0 :1:6 
 `uc 1 IOCIF 1 0 :1:7 
 ]
-"506 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic18f26q84.h
+"506 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h
 [u S409 . 1 `S400 1 . 1 0 ]
 [v _PIR0bits PIR0bits `VES409  1 e 1 @1198 ]
 [s S2534 . 1 `uc 1 INT0IF 1 0 :1:0 
@@ -834,7 +838,7 @@ channel_FVR_Buffer2 63
 [v _PMD2 PMD2 `VEuc  1 e 1 @98 ]
 "1474
 [v _LATA LATA `VEuc  1 e 1 @1214 ]
-[s S4243 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S4163 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -844,8 +848,8 @@ channel_FVR_Buffer2 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "1491
-[u S4252 . 1 `S4243 1 . 1 0 ]
-[v _LATAbits LATAbits `VES4252  1 e 1 @1214 ]
+[u S4172 . 1 `S4163 1 . 1 0 ]
+[v _LATAbits LATAbits `VES4172  1 e 1 @1214 ]
 "1514
 [v _PMD3 PMD3 `VEuc  1 e 1 @99 ]
 "1536
@@ -866,7 +870,7 @@ channel_FVR_Buffer2 63
 [v _PMD4 PMD4 `VEuc  1 e 1 @100 ]
 "1598
 [v _LATC LATC `VEuc  1 e 1 @1216 ]
-[s S4211 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S4241 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -876,13 +880,13 @@ channel_FVR_Buffer2 63
 `uc 1 LATC7 1 0 :1:7 
 ]
 "1615
-[u S4220 . 1 `S4211 1 . 1 0 ]
-[v _LATCbits LATCbits `VES4220  1 e 1 @1216 ]
+[u S4250 . 1 `S4241 1 . 1 0 ]
+[v _LATCbits LATCbits `VES4250  1 e 1 @1216 ]
 "1621
 [v _PMD5 PMD5 `VEuc  1 e 1 @101 ]
 "1660
 [v _TRISA TRISA `VEuc  1 e 1 @1222 ]
-[s S3992 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S3991 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -892,8 +896,8 @@ channel_FVR_Buffer2 63
 `uc 1 TRISA7 1 0 :1:7 
 ]
 "1677
-[u S4001 . 1 `S3992 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES4001  1 e 1 @1222 ]
+[u S4000 . 1 `S3991 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES4000  1 e 1 @1222 ]
 "1678
 [v _PMD6 PMD6 `VEuc  1 e 1 @102 ]
 "1722
@@ -914,7 +918,7 @@ channel_FVR_Buffer2 63
 [v _PMD7 PMD7 `VEuc  1 e 1 @103 ]
 "1784
 [v _TRISC TRISC `VEuc  1 e 1 @1224 ]
-[s S4025 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S4024 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -924,13 +928,13 @@ channel_FVR_Buffer2 63
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "1801
-[u S4034 . 1 `S4025 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES4034  1 e 1 @1224 ]
+[u S4033 . 1 `S4024 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES4033  1 e 1 @1224 ]
 "1802
 [v _PMD8 PMD8 `VEuc  1 e 1 @104 ]
 "1846
 [v _TRISE TRISE `VEuc  1 e 1 @1226 ]
-[s S3929 . 1 `uc 1 RA0 1 0 :1:0 
+[s S3928 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -940,9 +944,9 @@ channel_FVR_Buffer2 63
 `uc 1 RA7 1 0 :1:7 
 ]
 "1884
-[u S3938 . 1 `S3929 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES3938  1 e 1 @1230 ]
-[s S3908 . 1 `uc 1 RB0 1 0 :1:0 
+[u S3937 . 1 `S3928 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES3937  1 e 1 @1230 ]
+[s S3907 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -952,8 +956,8 @@ channel_FVR_Buffer2 63
 `uc 1 RB7 1 0 :1:7 
 ]
 "1946
-[u S3917 . 1 `S3908 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES3917  1 e 1 @1231 ]
+[u S3916 . 1 `S3907 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3916  1 e 1 @1231 ]
 [s S1119 . 1 `uc 1 INT0EDG 1 0 :1:0 
 `uc 1 INT1EDG 1 0 :1:1 
 `uc 1 INT2EDG 1 0 :1:2 
@@ -1878,9 +1882,9 @@ channel_FVR_Buffer2 63
 "65499
 "65499
 [v _PIE7bits PIE7bits `VES1851  1 e 1 @1189 ]
-"19 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"19 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _uiCLUTCHDuty uiCLUTCHDuty `ui  1 e 2 0 ]
-"18 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"18 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _uiAPPS1min uiAPPS1min `ui  1 e 2 0 ]
 "19
 [v _uiAPPS1max uiAPPS1max `ui  1 e 2 0 ]
@@ -1912,6 +1916,10 @@ channel_FVR_Buffer2 63
 [v _uiTPS1 uiTPS1 `ui  1 e 2 0 ]
 "35
 [v _uiTPS2 uiTPS2 `ui  1 e 2 0 ]
+"36
+[v _ulTPS1calc ulTPS1calc `l  1 e 4 0 ]
+"37
+[v _ulTPS2calc ulTPS2calc `l  1 e 4 0 ]
 "38
 [v _ucTPS1Perc ucTPS1Perc `ui  1 e 2 0 ]
 "39
@@ -1920,6 +1928,8 @@ channel_FVR_Buffer2 63
 [v _ucTPS ucTPS `ui  1 e 2 0 ]
 "41
 [v _ucTPS_STATE ucTPS_STATE `uc  1 e 1 0 ]
+"44
+[v _ucTPS_Volts_STATE ucTPS_Volts_STATE `uc  1 e 1 0 ]
 "45
 [v _uiETCDuty uiETCDuty `ui  1 e 2 0 ]
 "46
@@ -1950,7 +1960,7 @@ channel_FVR_Buffer2 63
 [v _ucCount500msResolveNotCloseError ucCount500msResolveNotCloseError `uc  1 e 1 0 ]
 "69
 [v _ucAPPSTargetPruebas ucAPPSTargetPruebas `ui  1 e 2 0 ]
-"17 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"17 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _ucCLUTCHlmin ucCLUTCHlmin `uc  1 e 1 0 ]
 "18
 [v _ucCLUTCHlmax ucCLUTCHlmax `uc  1 e 1 0 ]
@@ -1958,7 +1968,7 @@ channel_FVR_Buffer2 63
 [v _ucCLUTCHDuty ucCLUTCHDuty `uc  1 e 1 0 ]
 "20
 [v _ucCLUTCHState ucCLUTCHState `uc  1 e 1 0 ]
-"56 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
+"56 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
 [v _ADC_ConversionComplete_ISR ADC_ConversionComplete_ISR `*.37(v  1 s 2 ADC_ConversionComplete_ISR ]
 "57
 [v _ADC_Context1Thereshld_ISR ADC_Context1Thereshld_ISR `*.37(v  1 s 2 ADC_Context1Thereshld_ISR ]
@@ -1970,7 +1980,7 @@ channel_FVR_Buffer2 63
 [v _ADC_Context4Thereshld_ISR ADC_Context4Thereshld_ISR `*.37(v  1 s 2 ADC_Context4Thereshld_ISR ]
 "61
 [v _ADC_ActiveClockTuning_ISR ADC_ActiveClockTuning_ISR `*.37(v  1 s 2 ADC_ActiveClockTuning_ISR ]
-"101 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"101 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _rxMsgData rxMsgData `VE[8]uc  1 s 8 rxMsgData ]
 [s S249 CAN1_RX_FIFO 2 `E22386 1 channel 1 0 `VEuc 1 fifoHead 1 1 ]
 "103
@@ -1993,7 +2003,7 @@ channel_FVR_Buffer2 63
 [v _CAN1_TxAttemptHandler CAN1_TxAttemptHandler `*.37(v  1 s 2 CAN1_TxAttemptHandler ]
 "118
 [v _CAN1_RxBufferOverflowHandler CAN1_RxBufferOverflowHandler `*.37(v  1 s 2 CAN1_RxBufferOverflowHandler ]
-"159 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+"159 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
 [v _i2c1_fsmStateTable i2c1_fsmStateTable `C[19]*.37(E22532  1 e 38 0 ]
 [s S1476 . 36 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.39v 1 callbackPayload 12 12 `us 1 time_out 2 24 `us 1 time_out_value 2 26 `uc 1 address 1 28 `*.39uc 1 data_ptr 2 29 `ui 1 data_length 2 31 `E22532 1 state 1 33 `E355 1 error 1 34 `uc 1 addressNackCheck 1 35 :2:0 
 `uc 1 busy 1 35 :1:2 
@@ -2002,25 +2012,25 @@ channel_FVR_Buffer2 63
 ]
 "181
 [v _I2C1_Status I2C1_Status `S1476  1 e 36 0 ]
-"56 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+"56 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v _PWM1_16BIT_Slice1Output1_InterruptHandler PWM1_16BIT_Slice1Output1_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output1_InterruptHandler ]
 "57
 [v _PWM1_16BIT_Slice1Output2_InterruptHandler PWM1_16BIT_Slice1Output2_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output2_InterruptHandler ]
 "58
 [v _PWM1_16BIT_Period_InterruptHandler PWM1_16BIT_Period_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Period_InterruptHandler ]
-"56 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+"56 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_Slice1Output1_InterruptHandler PWM2_16BIT_Slice1Output1_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Slice1Output1_InterruptHandler ]
 "57
 [v _PWM2_16BIT_Slice1Output2_InterruptHandler PWM2_16BIT_Slice1Output2_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Slice1Output2_InterruptHandler ]
 "58
 [v _PWM2_16BIT_Period_InterruptHandler PWM2_16BIT_Period_InterruptHandler `*.37(v  1 s 2 PWM2_16BIT_Period_InterruptHandler ]
-"60 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
+"60 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
+"58 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "59
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"19 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
+"19 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v _ucTargetAccelerator ucTargetAccelerator `uc  1 e 1 0 ]
 "20
 [v _ucTargetClutch ucTargetClutch `uc  1 e 1 0 ]
@@ -2064,7 +2074,7 @@ channel_FVR_Buffer2 63
 [v _ucASMode ucASMode `uc  1 e 1 0 ]
 "53
 [v _ucSTEER_WH_Clutch ucSTEER_WH_Clutch `uc  1 e 1 0 ]
-"17 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"17 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _ucCount500ms ucCount500ms `uc  1 e 1 0 ]
 "18
 [v _ucCount1s ucCount1s `uc  1 e 1 0 ]
@@ -2074,22 +2084,22 @@ channel_FVR_Buffer2 63
 [v _uiCount30s uiCount30s `ui  1 e 2 0 ]
 "21
 [v _uiCount1min uiCount1min `ui  1 e 2 0 ]
-"54 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\main.c
+"54 C:\Users\panze\Documents\GitHub\ETC\ETC.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"114
+"113
 } 0
-"312 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"305 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
 {
-"396
+"389
 } 0
-"50 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+"50 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "63
 } 0
-"65 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
+"65 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "98
@@ -2100,7 +2110,7 @@ channel_FVR_Buffer2 63
 [v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "225
 } 0
-"62 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
+"62 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
 "86
@@ -2111,7 +2121,7 @@ channel_FVR_Buffer2 63
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "154
 } 0
-"63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+"63 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_Initialize PWM2_16BIT_Initialize `(v  1 e 1 0 ]
 {
 "132
@@ -2134,7 +2144,7 @@ channel_FVR_Buffer2 63
 [v PWM2_16BIT_Period_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "205
 } 0
-"63 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+"63 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v _PWM1_16BIT_Initialize PWM1_16BIT_Initialize `(v  1 e 1 0 ]
 {
 "132
@@ -2157,32 +2167,32 @@ channel_FVR_Buffer2 63
 [v PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "205
 } 0
-"79 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+"79 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 {
 "99
 } 0
-"55 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
+"55 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "125
 } 0
-"65 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
+"65 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "77
 } 0
-"52 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+"52 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
 {
 "56
 } 0
-"183 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
+"183 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/i2c1_master.c
 [v _I2C1_Initialize I2C1_Initialize `(v  1 e 1 0 ]
 {
 "205
 } 0
-"269 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"269 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_Initialize CAN1_Initialize `(v  1 e 1 0 ]
 {
 "300
@@ -2281,7 +2291,7 @@ channel_FVR_Buffer2 63
 {
 "241
 } 0
-"71 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
+"71 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "438
@@ -2322,67 +2332,67 @@ channel_FVR_Buffer2 63
 [v ADC_SetADIInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "721
 } 0
-"24 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"24 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIOInit GPIOInit `(v  1 e 1 0 ]
 {
 "36
 } 0
-"131 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"131 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCRulesSensorsSupervision ETCRulesSensorsSupervision `(v  1 e 1 0 ]
 {
-"161
+"165
 } 0
-"426
+"419
 [v _ETCMove ETCMove `(v  1 e 1 0 ]
 {
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 wreg ]
 [v ETCMove@ucMode ucMode `uc  1 p 1 150 ]
-"428
+"421
 [v ETCMove@ucTargetMove ucTargetMove `uc  1 a 1 153 ]
-"472
+"456
 } 0
-"601
+"585
 [v _PIDController_Update PIDController_Update `(f  1 e 4 0 ]
 {
-"606
+"590
 [v PIDController_Update@error error `f  1 a 4 126 ]
-"612
+"596
 [v PIDController_Update@proportional proportional `f  1 a 4 102 ]
 [s S3582 . 56 `f 1 Kp 4 0 `f 1 Ki 4 4 `f 1 Kd 4 8 `f 1 tau 4 12 `f 1 limMin 4 16 `f 1 limMax 4 20 `f 1 limMinInt 4 24 `f 1 limMaxInt 4 28 `f 1 T 4 32 `f 1 integrator 4 36 `f 1 prevError 4 40 `f 1 differentiator 4 44 `f 1 prevMeasurement 4 48 `f 1 out 4 52 ]
-"601
+"585
 [v PIDController_Update@pid pid `*.39S3582  1 p 2 92 ]
 [v PIDController_Update@setpoint setpoint `f  1 p 4 94 ]
 [v PIDController_Update@measurement measurement `f  1 p 4 98 ]
-"669
+"653
 } 0
-"245 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+"245 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v ___flsub __flsub `(d  1 e 4 0 ]
 {
 [v ___flsub@b b `d  1 p 4 55 ]
 [v ___flsub@a a `d  1 p 4 59 ]
 "250
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flneg.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\flneg.c
 [v ___flneg __flneg `(d  1 e 4 0 ]
 {
 [v ___flneg@f1 f1 `d  1 p 4 63 ]
 "20
 } 0
-"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
+"8 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S4801 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S4814 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S4806 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S4809 . 4 `l 1 i 4 0 `d 1 f 4 0 `S4801 1 fAsBytes 4 0 `S4806 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S4809  1 a 4 49 ]
+[s S4819 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S4822 . 4 `l 1 i 4 0 `d 1 f 4 0 `S4814 1 fAsBytes 4 0 `S4819 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S4822  1 a 4 49 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 43 ]
-[s S4877 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S4890 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S4880 . 2 `s 1 i 2 0 `us 1 n 2 0 `S4877 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S4880  1 a 2 53 ]
+[u S4893 . 2 `s 1 i 2 0 `us 1 n 2 0 `S4890 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S4893  1 a 2 53 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 48 ]
 "11
@@ -2394,14 +2404,14 @@ channel_FVR_Buffer2 63
 [v ___flmul@a a `d  1 p 4 34 ]
 "205
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\flge.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
 {
 [v ___flge@ff1 ff1 `d  1 p 4 0 ]
 [v ___flge@ff2 ff2 `d  1 p 4 4 ]
 "19
 } 0
-"11 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+"11 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
@@ -2421,32 +2431,32 @@ channel_FVR_Buffer2 63
 [v ___fldiv@a a `d  1 p 4 71 ]
 "185
 } 0
-"205 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"198 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCRulesMotorSupervisor ETCRulesMotorSupervisor `(v  1 e 1 0 ]
 {
 [v ETCRulesMotorSupervisor@ucTPStarget ucTPStarget `uc  1 a 1 wreg ]
 [v ETCRulesMotorSupervisor@ucTPStarget ucTPStarget `uc  1 a 1 wreg ]
-[v ETCRulesMotorSupervisor@ucTPSactual ucTPSactual `uc  1 p 1 42 ]
-"207
-[v ETCRulesMotorSupervisor@ucTPStarget ucTPStarget `uc  1 a 1 48 ]
-"233
+[v ETCRulesMotorSupervisor@ucTPSactual ucTPSactual `uc  1 p 1 43 ]
+"200
+[v ETCRulesMotorSupervisor@ucTPStarget ucTPStarget `uc  1 a 1 44 ]
+"226
 } 0
-"56 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
+"56 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v _CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
 {
-[v CANWriteMessage@id id `ul  1 p 4 28 ]
-[v CANWriteMessage@dataLength dataLength `uc  1 p 1 32 ]
-[v CANWriteMessage@data1 data1 `uc  1 p 1 33 ]
-[v CANWriteMessage@data2 data2 `uc  1 p 1 34 ]
-[v CANWriteMessage@data3 data3 `uc  1 p 1 35 ]
-[v CANWriteMessage@data4 data4 `uc  1 p 1 36 ]
-[v CANWriteMessage@data5 data5 `uc  1 p 1 37 ]
-[v CANWriteMessage@data6 data6 `uc  1 p 1 38 ]
-[v CANWriteMessage@data7 data7 `uc  1 p 1 39 ]
-[v CANWriteMessage@data8 data8 `uc  1 p 1 40 ]
+[v CANWriteMessage@id id `ul  1 p 4 29 ]
+[v CANWriteMessage@dataLength dataLength `uc  1 p 1 33 ]
+[v CANWriteMessage@data1 data1 `uc  1 p 1 34 ]
+[v CANWriteMessage@data2 data2 `uc  1 p 1 35 ]
+[v CANWriteMessage@data3 data3 `uc  1 p 1 36 ]
+[v CANWriteMessage@data4 data4 `uc  1 p 1 37 ]
+[v CANWriteMessage@data5 data5 `uc  1 p 1 38 ]
+[v CANWriteMessage@data6 data6 `uc  1 p 1 39 ]
+[v CANWriteMessage@data7 data7 `uc  1 p 1 40 ]
+[v CANWriteMessage@data8 data8 `uc  1 p 1 41 ]
 "97
 } 0
-"592 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"592 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_TransmitFIFOStatusGet CAN1_TransmitFIFOStatusGet `(E22361  1 e 1 0 ]
 {
 [v CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
@@ -2463,9 +2473,9 @@ channel_FVR_Buffer2 63
 {
 [v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
 "579
-[v CAN1_Transmit@txFifoObj txFifoObj `*.39uc  1 a 2 25 ]
+[v CAN1_Transmit@txFifoObj txFifoObj `*.39uc  1 a 2 26 ]
 "572
-[v CAN1_Transmit@status status `E22340  1 a 1 24 ]
+[v CAN1_Transmit@status status `E22340  1 a 1 25 ]
 "570
 [v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
@@ -2476,8 +2486,8 @@ channel_FVR_Buffer2 63
 ]
 [u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
 [s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
-[v CAN1_Transmit@txCanMsg txCanMsg `*.39S243  1 p 2 22 ]
-[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 27 ]
+[v CAN1_Transmit@txCanMsg txCanMsg `*.39S243  1 p 2 23 ]
+[v CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 28 ]
 "590
 } 0
 "490
@@ -2493,9 +2503,9 @@ channel_FVR_Buffer2 63
 [v _WriteMessageToFifo WriteMessageToFifo `(v  1 s 1 WriteMessageToFifo ]
 {
 "502
-[v WriteMessageToFifo@msgId msgId `ul  1 a 4 18 ]
+[v WriteMessageToFifo@msgId msgId `ul  1 a 4 19 ]
 "503
-[v WriteMessageToFifo@status status `uc  1 a 1 17 ]
+[v WriteMessageToFifo@status status `uc  1 a 1 18 ]
 "500
 [v WriteMessageToFifo@txFifoObj txFifoObj `*.39uc  1 p 2 11 ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
@@ -2509,7 +2519,7 @@ channel_FVR_Buffer2 63
 [v WriteMessageToFifo@txCanMsg txCanMsg `*.39S243  1 p 2 13 ]
 "539
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcpy.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.39v  1 e 2 0 ]
 {
 "8
@@ -2524,7 +2534,7 @@ channel_FVR_Buffer2 63
 [v memcpy@n n `ui  1 p 2 4 ]
 "18
 } 0
-"541 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"541 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _ValidateTransmission ValidateTransmission `(E22340  1 s 1 ValidateTransmission ]
 {
 [v ValidateTransmission@validChannel validChannel `uc  1 a 1 wreg ]
@@ -2536,9 +2546,9 @@ channel_FVR_Buffer2 63
 ]
 "544
 [u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
-[v ValidateTransmission@field field `S240  1 a 1 8 ]
+[v ValidateTransmission@field field `S240  1 a 1 9 ]
 "543
-[v ValidateTransmission@txMsgStatus txMsgStatus `E22340  1 a 1 7 ]
+[v ValidateTransmission@txMsgStatus txMsgStatus `E22340  1 a 1 8 ]
 "541
 [v ValidateTransmission@validChannel validChannel `uc  1 a 1 wreg ]
 [s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
@@ -2581,24 +2591,24 @@ channel_FVR_Buffer2 63
 {
 "607
 } 0
-"72 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"72 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCInit ETCInit `(v  1 e 1 0 ]
 {
 "78
 } 0
-"588
+"572
 [v _PIDController_Init PIDController_Init `(v  1 e 1 0 ]
 {
 [s S3582 . 56 `f 1 Kp 4 0 `f 1 Ki 4 4 `f 1 Kd 4 8 `f 1 tau 4 12 `f 1 limMin 4 16 `f 1 limMax 4 20 `f 1 limMinInt 4 24 `f 1 limMaxInt 4 28 `f 1 T 4 32 `f 1 integrator 4 36 `f 1 prevError 4 40 `f 1 differentiator 4 44 `f 1 prevMeasurement 4 48 `f 1 out 4 52 ]
 [v PIDController_Init@pid pid `*.39S3582  1 p 2 0 ]
-"599
+"583
 } 0
-"273
+"266
 [v _ETCCalibrate ETCCalibrate `(v  1 e 1 0 ]
 {
-"310
+"303
 } 0
-"64 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"64 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 {
 "67
@@ -2610,7 +2620,7 @@ channel_FVR_Buffer2 63
 [v GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 142 ]
 "79
 } 0
-"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+"144 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v _PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
 {
 [v PWM2_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
@@ -2627,7 +2637,7 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"89 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ANALOG.c
+"89 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ANALOG.c
 [v _ANALOGRead ANALOGRead `(v  1 e 1 0 ]
 {
 "96
@@ -2647,7 +2657,7 @@ channel_FVR_Buffer2 63
 [v ANALOG_GetVoltage@ucEntradaAnalogica ucEntradaAnalogica `uc  1 a 1 9 ]
 "86
 } 0
-"455 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
+"455 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/adc.c
 [v _ADC_SelectContext ADC_SelectContext `T(v  1 e 1 0 ]
 {
 [v ADC_SelectContext@context context `E22154  1 a 1 wreg ]
@@ -2670,7 +2680,7 @@ channel_FVR_Buffer2 63
 {
 "448
 } 0
-"23 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"23 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_Init CLUTCH_Init `(v  1 e 1 0 ]
 {
 "27
@@ -2697,7 +2707,7 @@ channel_FVR_Buffer2 63
 [v CLUTCH_Move@ucTargetMove ucTargetMove `uc  1 a 1 151 ]
 "109
 } 0
-"43 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"43 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v _GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
 {
 "46
@@ -2709,7 +2719,7 @@ channel_FVR_Buffer2 63
 [v GPIO_PWM1_Control@uiFreq uiFreq `ui  1 p 2 142 ]
 "58
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -2724,7 +2734,7 @@ channel_FVR_Buffer2 63
 [v ___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -2734,7 +2744,7 @@ channel_FVR_Buffer2 63
 [v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -2746,7 +2756,7 @@ channel_FVR_Buffer2 63
 [v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
@@ -2756,7 +2766,7 @@ channel_FVR_Buffer2 63
 [v ___fltol@f1 f1 `d  1 p 4 130 ]
 "70
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
@@ -2772,7 +2782,7 @@ channel_FVR_Buffer2 63
 [v ___fladd@a a `d  1 p 4 18 ]
 "237
 } 0
-"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+"144 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v _PWM1_16BIT_WritePeriodRegister PWM1_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
 {
 [v PWM1_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
@@ -2789,7 +2799,7 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"196 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
+"196 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v _CANDisableErrorInterrupt CANDisableErrorInterrupt `(v  1 e 1 0 ]
 {
 [v CANDisableErrorInterrupt@ucInterruptSet ucInterruptSet `uc  1 a 1 wreg ]
@@ -2798,7 +2808,7 @@ channel_FVR_Buffer2 63
 [v CANDisableErrorInterrupt@ucInterruptSet ucInterruptSet `uc  1 a 1 0 ]
 "207
 } 0
-"97 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"97 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _APPSReadmin APPSReadmin `(v  1 e 1 0 ]
 {
 "102
@@ -2808,20 +2818,20 @@ channel_FVR_Buffer2 63
 {
 "109
 } 0
-"398
+"391
 [v _APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
 {
-"423
+"416
 } 0
-"509
+"493
 [v _ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
 {
 [v ETCPercentCalc@val val `l  1 p 4 26 ]
 [v ETCPercentCalc@min min `l  1 p 4 30 ]
 [v ETCPercentCalc@max max `l  1 p 4 34 ]
-"528
+"512
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul32.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 {
 "17
@@ -2831,7 +2841,7 @@ channel_FVR_Buffer2 63
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aldiv.c
 [v ___aldiv __aldiv `(l  1 e 4 0 ]
 {
 "10
@@ -2844,12 +2854,12 @@ channel_FVR_Buffer2 63
 [v ___aldiv@divisor divisor `l  1 p 4 16 ]
 "41
 } 0
-"58 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
+"58 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 {
 "81
 } 0
-"165 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
+"165 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
 "167
@@ -2872,17 +2882,17 @@ channel_FVR_Buffer2 63
 {
 "230
 } 0
-"44 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"43 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_500ms TEMPORIZATION_500ms `(v  1 e 1 0 ]
 {
-"53
+"52
 } 0
-"474 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"458 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCXavierSupervisor ETCXavierSupervisor `(v  1 e 1 0 ]
 {
-"496
+"480
 } 0
-"64 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"64 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM2_Control GPIO_PWM2_Control `(v  1 e 1 0 ]
 {
 "67
@@ -2894,7 +2904,7 @@ channel_FVR_Buffer2 63
 [v i2GPIO_PWM2_Control@uiFreq uiFreq `ui  1 p 2 42 ]
 "79
 } 0
-"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
+"144 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm2_16bit.c
 [v i2_PWM2_16BIT_WritePeriodRegister PWM2_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
 {
 [v i2PWM2_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
@@ -2911,7 +2921,7 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"43 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\GPIO.c
+"43 C:\Users\panze\Documents\GitHub\ETC\ETC.X\GPIO.c
 [v i2_GPIO_PWM1_Control GPIO_PWM1_Control `(v  1 e 1 0 ]
 {
 "46
@@ -2923,7 +2933,7 @@ channel_FVR_Buffer2 63
 [v i2GPIO_PWM1_Control@uiFreq uiFreq `ui  1 p 2 42 ]
 "58
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\xxtofl.c
 [v i2___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v i2___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -2938,7 +2948,7 @@ channel_FVR_Buffer2 63
 [v i2___xxtofl@sign sign `uc  1 a 1 8 ]
 "44
 } 0
-"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul16.c
 [v i2___wmul __wmul `(ui  1 e 2 0 ]
 {
 "17
@@ -2948,7 +2958,7 @@ channel_FVR_Buffer2 63
 [v i2___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
 "53
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\lwdiv.c
 [v i2___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -2960,7 +2970,7 @@ channel_FVR_Buffer2 63
 [v i2___lwdiv@divisor divisor `ui  1 p 2 2 ]
 "30
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\fltol.c
 [v i2___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
@@ -2970,7 +2980,7 @@ channel_FVR_Buffer2 63
 [v i2___fltol@f1 f1 `d  1 p 4 30 ]
 "70
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\sprcadd.c
 [v i2___fladd __fladd `(d  1 e 4 0 ]
 {
 "17
@@ -2986,20 +2996,7 @@ channel_FVR_Buffer2 63
 [v i2___fladd@a a `d  1 p 4 18 ]
 "237
 } 0
-"7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aldiv.c
-[v i2___aldiv __aldiv `(l  1 e 4 0 ]
-{
-"10
-[v i2___aldiv@quotient quotient `l  1 a 4 10 ]
-"11
-[v i2___aldiv@sign sign `uc  1 a 1 9 ]
-[v i2___aldiv@counter counter `uc  1 a 1 8 ]
-"7
-[v i2___aldiv@dividend dividend `l  1 p 4 0 ]
-[v i2___aldiv@divisor divisor `l  1 p 4 4 ]
-"41
-} 0
-"144 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
+"144 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/pwm1_16bit.c
 [v i2_PWM1_16BIT_WritePeriodRegister PWM1_16BIT_WritePeriodRegister `(v  1 e 1 0 ]
 {
 [v i2PWM1_16BIT_WritePeriodRegister@periodCount periodCount `us  1 p 2 0 ]
@@ -3016,12 +3013,12 @@ channel_FVR_Buffer2 63
 {
 "166
 } 0
-"234 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"227 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETC500msSupervisor ETC500msSupervisor `(v  1 e 1 0 ]
 {
-"271
+"264
 } 0
-"112 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\CLUTCH.c
+"112 C:\Users\panze\Documents\GitHub\ETC\ETC.X\CLUTCH.c
 [v _CLUTCH_AnalyseState CLUTCH_AnalyseState `(v  1 e 1 0 ]
 {
 "115
@@ -3030,47 +3027,47 @@ channel_FVR_Buffer2 63
 [v CLUTCH_AnalyseState@ucFDC1 ucFDC1 `uc  1 a 1 0 ]
 "145
 } 0
-"66 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"65 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_30s TEMPORIZATION_30s `(v  1 e 1 0 ]
 {
-"69
+"68
 } 0
-"55
+"54
 [v _TEMPORIZATION_1s TEMPORIZATION_1s `(v  1 e 1 0 ]
 {
-"59
+"58
 } 0
-"71
+"70
 [v _TEMPORIZATION_1mins TEMPORIZATION_1mins `(v  1 e 1 0 ]
 {
-"74
+"73
 } 0
-"61
+"60
 [v _TEMPORIZATION_10s TEMPORIZATION_10s `(v  1 e 1 0 ]
 {
-"64
+"63
 } 0
-"33
+"32
 [v _TEMPORIZATION_100ms TEMPORIZATION_100ms `(v  1 e 1 0 ]
 {
-"42
+"41
 } 0
-"56 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
+"56 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v i2_CANWriteMessage CANWriteMessage `(v  1 e 1 0 ]
 {
-[v i2CANWriteMessage@id id `ul  1 p 4 28 ]
-[v i2CANWriteMessage@dataLength dataLength `uc  1 p 1 32 ]
-[v i2CANWriteMessage@data1 data1 `uc  1 p 1 33 ]
-[v i2CANWriteMessage@data2 data2 `uc  1 p 1 34 ]
-[v i2CANWriteMessage@data3 data3 `uc  1 p 1 35 ]
-[v i2CANWriteMessage@data4 data4 `uc  1 p 1 36 ]
-[v i2CANWriteMessage@data5 data5 `uc  1 p 1 37 ]
-[v i2CANWriteMessage@data6 data6 `uc  1 p 1 38 ]
-[v i2CANWriteMessage@data7 data7 `uc  1 p 1 39 ]
-[v i2CANWriteMessage@data8 data8 `uc  1 p 1 40 ]
+[v i2CANWriteMessage@id id `ul  1 p 4 29 ]
+[v i2CANWriteMessage@dataLength dataLength `uc  1 p 1 33 ]
+[v i2CANWriteMessage@data1 data1 `uc  1 p 1 34 ]
+[v i2CANWriteMessage@data2 data2 `uc  1 p 1 35 ]
+[v i2CANWriteMessage@data3 data3 `uc  1 p 1 36 ]
+[v i2CANWriteMessage@data4 data4 `uc  1 p 1 37 ]
+[v i2CANWriteMessage@data5 data5 `uc  1 p 1 38 ]
+[v i2CANWriteMessage@data6 data6 `uc  1 p 1 39 ]
+[v i2CANWriteMessage@data7 data7 `uc  1 p 1 40 ]
+[v i2CANWriteMessage@data8 data8 `uc  1 p 1 41 ]
 "97
 } 0
-"592 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"592 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v i2_CAN1_TransmitFIFOStatusGet CAN1_TransmitFIFOStatusGet `(E22361  1 e 1 0 ]
 {
 [v i2CAN1_TransmitFIFOStatusGet@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
@@ -3087,9 +3084,9 @@ channel_FVR_Buffer2 63
 {
 [v i2CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
 "579
-[v i2CAN1_Transmit@txFifoObj txFifoObj `*.39uc  1 a 2 25 ]
+[v i2CAN1_Transmit@txFifoObj txFifoObj `*.39uc  1 a 2 26 ]
 "572
-[v i2CAN1_Transmit@status status `E22340  1 a 1 24 ]
+[v i2CAN1_Transmit@status status `E22340  1 a 1 25 ]
 "570
 [v i2CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 wreg ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
@@ -3100,8 +3097,8 @@ channel_FVR_Buffer2 63
 ]
 [u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
 [s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
-[v i2CAN1_Transmit@txCanMsg txCanMsg `*.39S243  1 p 2 22 ]
-[v i2CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 27 ]
+[v i2CAN1_Transmit@txCanMsg txCanMsg `*.39S243  1 p 2 23 ]
+[v i2CAN1_Transmit@fifoChannel fifoChannel `CE22383  1 a 1 28 ]
 "590
 } 0
 "490
@@ -3117,9 +3114,9 @@ channel_FVR_Buffer2 63
 [v i2_WriteMessageToFifo WriteMessageToFifo `(v  1 s 1 i2_WriteMessageToFifo ]
 {
 "502
-[v i2WriteMessageToFifo@msgId msgId `ul  1 a 4 18 ]
+[v i2WriteMessageToFifo@msgId msgId `ul  1 a 4 19 ]
 "503
-[v i2WriteMessageToFifo@status status `uc  1 a 1 17 ]
+[v i2WriteMessageToFifo@status status `uc  1 a 1 18 ]
 "500
 [v i2WriteMessageToFifo@txFifoObj txFifoObj `*.39uc  1 p 2 11 ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
@@ -3145,9 +3142,9 @@ channel_FVR_Buffer2 63
 ]
 "544
 [u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
-[v i2ValidateTransmission@field field `S240  1 a 1 8 ]
+[v i2ValidateTransmission@field field `S240  1 a 1 9 ]
 "543
-[v i2ValidateTransmission@txMsgStatus txMsgStatus `E22340  1 a 1 7 ]
+[v i2ValidateTransmission@txMsgStatus txMsgStatus `E22340  1 a 1 8 ]
 "541
 [v i2ValidateTransmission@validChannel validChannel `uc  1 a 1 wreg ]
 [s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
@@ -3190,12 +3187,12 @@ channel_FVR_Buffer2 63
 {
 "607
 } 0
-"163 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"167 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETC100msSupervisor ETC100msSupervisor `(v  1 e 1 0 ]
 {
-"203
+"196
 } 0
-"122 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
+"122 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
 "124
@@ -3212,12 +3209,53 @@ channel_FVR_Buffer2 63
 {
 "159
 } 0
-"25 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
+"25 C:\Users\panze\Documents\GitHub\ETC\ETC.X\TEMPORIZATIONS.c
 [v _TEMPORIZATION_10ms TEMPORIZATION_10ms `(v  1 e 1 0 ]
 {
-"31
+"30
 } 0
-"741 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"305 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
+[v i2_TPSAnalysis TPSAnalysis `(v  1 e 1 0 ]
+{
+"389
+} 0
+"391
+[v i2_APPSAnalysis APPSAnalysis `(v  1 e 1 0 ]
+{
+"416
+} 0
+"493
+[v i2_ETCPercentCalc ETCPercentCalc `(ui  1 e 2 0 ]
+{
+[v i2ETCPercentCalc@val val `l  1 p 4 26 ]
+[v i2ETCPercentCalc@min min `l  1 p 4 30 ]
+[v i2ETCPercentCalc@max max `l  1 p 4 34 ]
+"512
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul32.c
+[v i2___lmul __lmul `(ul  1 e 4 0 ]
+{
+"17
+[v i2___lmul@product product `ul  1 a 4 8 ]
+"15
+[v i2___lmul@multiplier multiplier `ul  1 p 4 0 ]
+[v i2___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
+"129
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\aldiv.c
+[v i2___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v i2___aldiv@quotient quotient `l  1 a 4 22 ]
+"11
+[v i2___aldiv@sign sign `uc  1 a 1 21 ]
+[v i2___aldiv@counter counter `uc  1 a 1 20 ]
+"7
+[v i2___aldiv@dividend dividend `l  1 p 4 12 ]
+[v i2___aldiv@divisor divisor `l  1 p 4 16 ]
+"41
+} 0
+"741 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_RXI_ISR CAN1_RXI_ISR `(v  1 e 1 0 ]
 {
 "749
@@ -3227,30 +3265,30 @@ channel_FVR_Buffer2 63
 {
 "123
 } 0
-"101 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\MESSAGES.C
+"101 C:\Users\panze\Documents\GitHub\ETC\ETC.X\MESSAGES.C
 [v _CANReadMessage CANReadMessage `(v  1 e 1 0 ]
 {
 "103
-[v CANReadMessage@id id `ul  1 a 4 40 ]
+[v CANReadMessage@id id `ul  1 a 4 43 ]
 "106
-[v CANReadMessage@data1 data1 `uc  1 a 1 51 ]
+[v CANReadMessage@data1 data1 `uc  1 a 1 54 ]
 "107
-[v CANReadMessage@data2 data2 `uc  1 a 1 50 ]
+[v CANReadMessage@data2 data2 `uc  1 a 1 53 ]
 "110
-[v CANReadMessage@data5 data5 `uc  1 a 1 49 ]
+[v CANReadMessage@data5 data5 `uc  1 a 1 52 ]
 "109
-[v CANReadMessage@data4 data4 `uc  1 a 1 48 ]
+[v CANReadMessage@data4 data4 `uc  1 a 1 51 ]
 "108
-[v CANReadMessage@data3 data3 `uc  1 a 1 47 ]
+[v CANReadMessage@data3 data3 `uc  1 a 1 50 ]
 "113
-[v CANReadMessage@data8 data8 `uc  1 a 1 46 ]
+[v CANReadMessage@data8 data8 `uc  1 a 1 49 ]
 "112
-[v CANReadMessage@data7 data7 `uc  1 a 1 45 ]
+[v CANReadMessage@data7 data7 `uc  1 a 1 48 ]
 "111
-[v CANReadMessage@data6 data6 `uc  1 a 1 44 ]
+[v CANReadMessage@data6 data6 `uc  1 a 1 47 ]
 "193
 } 0
-"112 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\ETC.c
+"112 C:\Users\panze\Documents\GitHub\ETC\ETC.X\ETC.c
 [v _ETCModeSelect ETCModeSelect `(v  1 e 1 0 ]
 {
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 wreg ]
@@ -3258,7 +3296,7 @@ channel_FVR_Buffer2 63
 [v ETCModeSelect@ucModeSelect ucModeSelect `uc  1 a 1 2 ]
 "128
 } 0
-"447 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"447 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _CAN1_ReceivedMessageCountGet CAN1_ReceivedMessageCountGet `(uc  1 e 1 0 ]
 {
 "467
@@ -3281,9 +3319,9 @@ channel_FVR_Buffer2 63
 [v _CAN1_Receive CAN1_Receive `(a  1 e 1 0 ]
 {
 "414
-[v CAN1_Receive@index index `uc  1 a 1 35 ]
+[v CAN1_Receive@index index `uc  1 a 1 36 ]
 "415
-[v CAN1_Receive@status status `a  1 a 1 34 ]
+[v CAN1_Receive@status status `a  1 a 1 35 ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
 `uc 1 frameType 1 0 :1:1 
 `uc 1 dlc 1 0 :4:2 
@@ -3293,7 +3331,7 @@ channel_FVR_Buffer2 63
 "412
 [u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
 [s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
-[v CAN1_Receive@rxCanMsg rxCanMsg `*.39S243  1 p 2 32 ]
+[v CAN1_Receive@rxCanMsg rxCanMsg `*.39S243  1 p 2 33 ]
 "428
 } 0
 "380
@@ -3301,14 +3339,14 @@ channel_FVR_Buffer2 63
 {
 [v Receive@index index `uc  1 a 1 wreg ]
 "387
-[v Receive@rxFifoObj rxFifoObj `*.39uc  1 a 2 28 ]
+[v Receive@rxFifoObj rxFifoObj `*.39uc  1 a 2 29 ]
 "383
-[v Receive@rxMsgStatus rxMsgStatus `E23140  1 a 1 30 ]
+[v Receive@rxMsgStatus rxMsgStatus `E23140  1 a 1 31 ]
 "382
-[v Receive@status status `a  1 a 1 27 ]
+[v Receive@status status `a  1 a 1 28 ]
 "380
 [v Receive@index index `uc  1 a 1 wreg ]
-[v Receive@channel channel `E22386  1 p 1 22 ]
+[v Receive@channel channel `E22386  1 p 1 23 ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
 `uc 1 frameType 1 0 :1:1 
 `uc 1 dlc 1 0 :4:2 
@@ -3317,18 +3355,18 @@ channel_FVR_Buffer2 63
 ]
 [u S240 . 1 `uc 1 msgfields 1 0 `S234 1 . 1 0 ]
 [s S243 . 7 `ul 1 msgId 4 0 `S240 1 field 1 4 `*.39uc 1 data 2 5 ]
-[v Receive@rxCanMsg rxCanMsg `*.39S243  1 p 2 23 ]
+[v Receive@rxCanMsg rxCanMsg `*.39S243  1 p 2 24 ]
 "382
-[v Receive@index index `uc  1 a 1 31 ]
+[v Receive@index index `uc  1 a 1 32 ]
 "410
 } 0
 "346
 [v _ReadMessageFromFifo ReadMessageFromFifo `(v  1 s 1 ReadMessageFromFifo ]
 {
 "348
-[v ReadMessageFromFifo@msgId msgId `ul  1 a 4 17 ]
+[v ReadMessageFromFifo@msgId msgId `ul  1 a 4 18 ]
 "349
-[v ReadMessageFromFifo@status status `uc  1 a 1 21 ]
+[v ReadMessageFromFifo@status status `uc  1 a 1 22 ]
 "346
 [v ReadMessageFromFifo@rxFifoObj rxFifoObj `*.39uc  1 p 2 11 ]
 [s S234 . 1 `uc 1 idType 1 0 :1:0 
@@ -3342,7 +3380,7 @@ channel_FVR_Buffer2 63
 [v ReadMessageFromFifo@rxCanMsg rxCanMsg `*.39S243  1 p 2 13 ]
 "378
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\memcpy.c
+"4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memcpy.c
 [v i2_memcpy memcpy `(*.39v  1 e 2 0 ]
 {
 "8
@@ -3357,7 +3395,7 @@ channel_FVR_Buffer2 63
 [v i2memcpy@n n `ui  1 p 2 4 ]
 "18
 } 0
-"341 C:\Users\ruben\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
+"341 C:\Users\panze\Documents\GitHub\ETC\ETC.X\mcc_generated_files/can1.c
 [v _GetRxFifoStatus GetRxFifoStatus `(E23140  1 s 1 GetRxFifoStatus ]
 {
 [v GetRxFifoStatus@validChannel validChannel `uc  1 a 1 wreg ]

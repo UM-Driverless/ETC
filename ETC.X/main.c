@@ -88,7 +88,6 @@ void main(void)
         TPSAnalysis();
         APPSAnalysis();
         ETCRulesSensorsSupervision(); //justo despues de analizar porcentajes debe ir la supervision
-        Nop();
         //ETC_PID(ucAPPS, ManualMode);
         
         if (ucASMode == ManualMode)

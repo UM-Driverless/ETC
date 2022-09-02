@@ -448,9 +448,11 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
         {
             //generar error movimiento impedido por modo de conduccion
         }
+        LED_SetLow();
     } 
     else 
     {
+        LED_SetHigh();
         GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
     }
 }

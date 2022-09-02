@@ -21,9 +21,9 @@ extern "C" {
 //PARAMETROS CONSTANTES    
 #define TPSMARGEN 50
 #define APPSMARGEN 100
-#define APPS1max 1990 //0.001v
-#define APPS2max 160 //0.001v
-#define TPSRulesPercent 30
+#define APPS1max 2320 //0.001v
+#define APPS2max 240 //0.001v
+#define TPSRulesPercent 19 //19
 #define APPSRulesPercent 30
 #define ActiveRules 1
 #define DesembragueTime_ms 500

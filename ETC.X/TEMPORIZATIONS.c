@@ -25,15 +25,16 @@ unsigned int uiCount1min;
 void TEMPORIZATION_10ms (void)
 {
     //CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
-    TPSAnalysis();
-    APPSAnalysis();
+    //TPSAnalysis();
+    //APPSAnalysis();
+    //ETC100msSupervisor(); // At 10ms it doesn't work. The error always trips.
 }
 
 void TEMPORIZATION_100ms (void)
 {
     /*ANALOGRead();
-    //TPSAnalysis();
-    //APPSAnalysis();
+    TPSAnalysis();
+    APPSAnalysis();
     ETCManual(ucAPPSManual);*/
     ETC100msSupervisor();
     CANWriteMessage(ETC_SIGNAL, DataLength_6, ucAPPS1Perc, ucAPPS2Perc, ucTPS1Perc, ucTPS2Perc, ucAPPS, ucTPS, 0, 0);    //Falta meter los APPS target
@@ -54,7 +55,7 @@ void TEMPORIZATION_500ms (void)
 void TEMPORIZATION_1s (void)
 {
     CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
-    LED_Toggle();
+   // LED_Toggle();
 }
 
 void TEMPORIZATION_10s (void)

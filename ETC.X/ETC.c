@@ -133,11 +133,11 @@ void ETCRulesSensorsSupervision(void) //ejecutar a 20Hz min o en cada porcentaje
     if ( ActiveRules == 1 )
     {
         //Supervision TPS
-        if (ucTPS1Perc>ucTPS2Perc+TPSRulesPercent)
+        if (ucTPS1Perc > (ucTPS2Perc+TPSRulesPercent))
         {
             ucETCTimerRuleTPS = FALSE; 
         }
-        else if (ucTPS2Perc>ucTPS1Perc+TPSRulesPercent)
+        else if (ucTPS2Perc > (ucTPS1Perc+TPSRulesPercent))
         {
             ucETCTimerRuleTPS = FALSE; 
         }
@@ -147,20 +147,16 @@ void ETCRulesSensorsSupervision(void) //ejecutar a 20Hz min o en cada porcentaje
             ucCount100msTPSError = 0;
         }
 
-        //Supervision APPS
-        if (ucAPPS1Perc>ucAPPS2Perc+APPSRulesPercent)
-        {
-            ucETCTimerRuleAPPS = FALSE; 
-        }
-        else if (ucAPPS2Perc>ucAPPS1Perc+APPSRulesPercent)
-        {
-            ucETCTimerRuleAPPS = FALSE; 
+        // Supervision APPS
+        if ( ((ucAPPS1Perc - ucAPPS2Perc) > APPSRulesPercent) || ((ucAPPS2Perc - ucAPPS1Perc) > APPSRulesPercent) ) {
+            ucETCTimerRuleAPPS = FALSE;
         }
         else 
         {
-            ucETCTimerRuleAPPS = TRUE; 
+            ucETCTimerRuleAPPS = TRUE;
             ucCount100msAPPSError = 0;
         }
+        Nop();
     }
 }
 
@@ -168,6 +164,7 @@ void ETC100msSupervisor (void)
 {
     if ( ActiveRules == 1 )
     {
+        // TPS
         if ( ucETCTimerRuleTPS == FALSE )
         {
             if ( ucCount100msTPSError < 255 )
@@ -175,23 +172,33 @@ void ETC100msSupervisor (void)
                 ucCount100msTPSError++;
             }
         }
+        
+        // APPS
         if ( ucETCTimerRuleAPPS == FALSE )
         {
-            if ( ucCount100msTPSError < 255 )
+            if ( ucCount100msAPPSError < 255 )
             {
                 ucCount100msAPPSError++;
             }
-        }
-        if ( ucCount100msTPSError >= 2 )
-        {
-            ucTPS_STATE |= TPS1_TPS2_DIFF;
-            ucETCRuleSupervisor = FALSE;
         }
         if ( ucCount100msAPPSError >= 2 )
         {
             ucTPS_STATE |= TPS1_TPS2_DIFF;
             ucETCRuleSupervisor = FALSE;
+            
         }
+        
+        /// ETC
+        /*if ( ucCount100msTPSError >= 250 ) // here it's the count of error delay
+        {
+            ucTPS_STATE |= TPS1_TPS2_DIFF;
+            ucETCRuleSupervisor = FALSE;
+        }
+         */
+        ucETCRuleSupervisor = TRUE;
+        ucETCTimerRuleTPS = TRUE; 
+        ucCount100msTPSError = 0;
+        
     }
 }
 
@@ -423,6 +430,7 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
     if ( ( ucETCFlagSupervisor == TRUE ) && ( ucETCRuleSupervisor == TRUE ) )
     {
         //HACER CONVERSION DE 0-100% A 2-12 DUTY
+        LED_SetLow();
         uiETCDuty = ucTargetMove;
         //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
         if ( ucMode == ucASMode )
@@ -435,12 +443,19 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
             }
             else if ( ucASMode == ManualMode )
             {
-                //hay que ver como meter aqui la conexion con TPS y APPS
-                //GPIO_PWM2_Control(uiETCDuty, 600); //lo muevo sin comprobar nada
-                GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
+                
+                               //hay que ver como meter aqui la conexion con TPS y APPS
+                /*if ((ucTPS1Perc < 5) || (ucTPS2Perc < 5) || (ucAPPS1Perc < 5) || (ucAPPS2Perc < 5))
+                {
+                    GPIO_PWM2_Control(0,600);
+                    
+                } else {*/
+                    GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetMove), (float)(ucTPS)), 600);
+                //}
             }
             else
             {
+                
                 //la variable ucMode esta corrupto
             }
         }
@@ -451,6 +466,7 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
     } 
     else 
     {
+        LED_SetHigh ();
         GPIO_PWM2_Control(0, 600); //lo muevo sin comprobar nada
     }
 }

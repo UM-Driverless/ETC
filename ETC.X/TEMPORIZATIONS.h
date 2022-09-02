@@ -25,6 +25,7 @@ extern unsigned char ucCount1s;
 extern unsigned char ucCount10s;
 extern unsigned int uiCount30s;
 extern unsigned int uiCount1min;
+extern unsigned char ucCount50ms;
 
 
 //FUNCIONES

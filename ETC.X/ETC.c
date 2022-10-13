@@ -125,7 +125,7 @@ void ETCModeSelect (unsigned char ucModeSelect)
             APPSMODE_SetLow();
             break;
     }
-}
+} 
 
 //Funcion supervision de normativa
 void ETCRulesSensorsSupervision(void) //ejecutar a 20Hz min o en cada porcentaje calculado 

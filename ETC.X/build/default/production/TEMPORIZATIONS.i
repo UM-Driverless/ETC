@@ -37519,6 +37519,7 @@ extern unsigned char ucCount1s;
 extern unsigned char ucCount10s;
 extern unsigned int uiCount30s;
 extern unsigned int uiCount1min;
+extern unsigned char ucCount50ms;
 
 
 
@@ -38488,14 +38489,19 @@ unsigned char ucCount1s;
 unsigned char ucCount10s;
 unsigned int uiCount30s;
 unsigned int uiCount1min;
+unsigned char ucCount50ms;
 
 
 
 void TEMPORIZATION_10ms (void)
 {
 
-    TPSAnalysis();
-    APPSAnalysis();
+    if (ucCount50ms++ == 5 )
+    {
+        TPSAnalysis();
+        APPSAnalysis();
+        ucCount50ms = 0;
+    }
 }
 
 void TEMPORIZATION_100ms (void)
@@ -38523,7 +38529,7 @@ void TEMPORIZATION_500ms (void)
 void TEMPORIZATION_1s (void)
 {
     CANWriteMessage(0x331, 4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);
-    do { LATAbits.LATA0 = ~LATAbits.LATA0; } while(0);
+
 }
 
 void TEMPORIZATION_10s (void)

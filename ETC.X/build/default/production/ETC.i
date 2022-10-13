@@ -38589,14 +38589,14 @@ void ETCModeSelect (unsigned char ucModeSelect)
 
 void ETCRulesSensorsSupervision(void)
 {
-    if ( 0 == 1 )
+    if ( 1 == 1 )
     {
 
-        if (ucTPS1Perc>ucTPS2Perc+20)
+        if (ucTPS1Perc>ucTPS2Perc+30)
         {
             ucETCTimerRuleTPS = 0x00;
         }
-        else if (ucTPS2Perc>ucTPS1Perc+20)
+        else if (ucTPS2Perc>ucTPS1Perc+30)
         {
             ucETCTimerRuleTPS = 0x00;
         }
@@ -38607,11 +38607,11 @@ void ETCRulesSensorsSupervision(void)
         }
 
 
-        if (ucAPPS1Perc>ucAPPS2Perc+20)
+        if (ucAPPS1Perc>ucAPPS2Perc+30)
         {
             ucETCTimerRuleAPPS = 0x00;
         }
-        else if (ucAPPS2Perc>ucAPPS1Perc+20)
+        else if (ucAPPS2Perc>ucAPPS1Perc+30)
         {
             ucETCTimerRuleAPPS = 0x00;
         }
@@ -38625,7 +38625,7 @@ void ETCRulesSensorsSupervision(void)
 
 void ETC100msSupervisor (void)
 {
-    if ( 0 == 1 )
+    if ( 1 == 1 )
     {
         if ( ucETCTimerRuleTPS == 0x00 )
         {
@@ -38657,13 +38657,13 @@ void ETC100msSupervisor (void)
 void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual)
 {
     CANWriteMessage(0x500, 6, ucTPStarget, ucTPSactual, ucTPS, ucAPPS, ucTPS_STATE, 0, 0, 0);
-    if ( 0 == 1 )
+    if ( 1 == 1 )
     {
-        if (ucTPStarget>ucTPSactual+20)
+        if (ucTPStarget>ucTPSactual+30)
         {
             ucETCTargetTPSDiff = 0x00;
         }
-        else if (ucTPSactual>ucTPStarget+20)
+        else if (ucTPSactual>ucTPStarget+30)
         {
             ucETCTargetTPSDiff = 0x00;
         }
@@ -38685,7 +38685,7 @@ void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactu
 }
 void ETC500msSupervisor (void)
 {
-    if ( 0 == 1 )
+    if ( 1 == 1 )
     {
         if ( ucETCTargetTPSDiff == 0x00 )
         {
@@ -38866,9 +38866,11 @@ void ETCMove(unsigned char ucTargetMove, unsigned char ucMode)
         {
 
         }
+        do { LATAbits.LATA0 = 0; } while(0);
     }
     else
     {
+        do { LATAbits.LATA0 = 1; } while(0);
         GPIO_PWM2_Control(0, 600);
     }
 }
@@ -39018,7 +39020,7 @@ float PIDController_Update(PIDController *pid, float setpoint, float measurement
 
 
     pid->integrator = pid->integrator + 0.5f * pid->Ki * pid->T * (error + pid->prevError);
-# 622 "ETC.c"
+# 624 "ETC.c"
     pid->differentiator = -(2.0f * pid->Kd * (measurement - pid->prevMeasurement)
                         + (2.0f * pid->tau - pid->T) * pid->differentiator)
                         / (2.0f * pid->tau + pid->T);

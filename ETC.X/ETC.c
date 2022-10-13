@@ -411,7 +411,8 @@ void APPSAnalysis (void)
     
     ucAPPS1Perc = ETCPercentCalc(uiAPPS1, uiAPPS1min, uiAPPS1max);
     ucAPPS2Perc = ETCPercentCalc(uiAPPS2, uiAPPS2min, uiAPPS2max);
-    ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
+    //ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
+    ucAPPS = ucAPPS1Perc;
     Nop();
 }
 

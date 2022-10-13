@@ -38563,8 +38563,8 @@ void APPSReadmin (void)
 void APPSReadmax (void)
 {
 
-    uiAPPS1max = 1990 - 100;
-    uiAPPS2max = 160 + 100;
+    uiAPPS1max = 2670 - 100;
+    uiAPPS2max = 4600 + 100;
 }
 
 
@@ -38589,7 +38589,7 @@ void ETCModeSelect (unsigned char ucModeSelect)
 
 void ETCRulesSensorsSupervision(void)
 {
-    if ( 1 == 1 )
+    if ( 0 == 1 )
     {
 
         if (ucTPS1Perc>ucTPS2Perc+30)
@@ -38625,7 +38625,7 @@ void ETCRulesSensorsSupervision(void)
 
 void ETC100msSupervisor (void)
 {
-    if ( 1 == 1 )
+    if ( 0 == 1 )
     {
         if ( ucETCTimerRuleTPS == 0x00 )
         {
@@ -38657,7 +38657,7 @@ void ETC100msSupervisor (void)
 void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactual)
 {
     CANWriteMessage(0x500, 6, ucTPStarget, ucTPSactual, ucTPS, ucAPPS, ucTPS_STATE, 0, 0, 0);
-    if ( 1 == 1 )
+    if ( 0 == 1 )
     {
         if (ucTPStarget>ucTPSactual+30)
         {
@@ -38685,7 +38685,7 @@ void ETCRulesMotorSupervisor (unsigned char ucTPStarget, unsigned char ucTPSactu
 }
 void ETC500msSupervisor (void)
 {
-    if ( 1 == 1 )
+    if ( 0 == 1 )
     {
         if ( ucETCTargetTPSDiff == 0x00 )
         {
@@ -38829,7 +38829,8 @@ void APPSAnalysis (void)
 # 412 "ETC.c"
     ucAPPS1Perc = ETCPercentCalc(uiAPPS1, uiAPPS1min, uiAPPS1max);
     ucAPPS2Perc = ETCPercentCalc(uiAPPS2, uiAPPS2min, uiAPPS2max);
-    ucAPPS = ( ( ucAPPS1Perc + ucAPPS2Perc ) / 2 );
+
+    ucAPPS = ucAPPS1Perc;
     __nop();
 }
 
@@ -39020,7 +39021,7 @@ float PIDController_Update(PIDController *pid, float setpoint, float measurement
 
 
     pid->integrator = pid->integrator + 0.5f * pid->Ki * pid->T * (error + pid->prevError);
-# 624 "ETC.c"
+# 625 "ETC.c"
     pid->differentiator = -(2.0f * pid->Kd * (measurement - pid->prevMeasurement)
                         + (2.0f * pid->tau - pid->T) * pid->differentiator)
                         / (2.0f * pid->tau + pid->T);

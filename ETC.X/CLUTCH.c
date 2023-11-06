@@ -74,7 +74,6 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
         // map % of ucTargetMove to duty cycle
         //uiCLUTCHDuty = (800. + (2100. - 800.)/100. * ucTargetMove) / 20000; // active time in microseconds / total period of 2e4 us
         
-        
         //nos tenemos que asegurar antes de mover que aceptamos ordenes de manual o autonomo
         if ( ucMode == ucASMode ) 
         {
@@ -99,6 +98,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode)
         else
         {
             //generar error movimiento impedido por modo de conduccion
+            GPIO_PWM1_Control(uiCLUTCHDuty, 300);
         }
     }
     else
@@ -171,4 +171,20 @@ void CLUTCHInitMove(void)
         //__delay_ms(200);
         CLUTCH_Move(0, ASMode);
     }
+}
+
+void CLUTCHTestMove(void)
+{
+    ucETCFlagSupervisor = TRUE;
+    CLUTCH_Move(0, ManualMode);
+    __delay_ms(200);
+    CLUTCH_Move(30, ManualMode);
+    __delay_ms(200);
+    CLUTCH_Move(50, ManualMode);
+    __delay_ms(200);
+    CLUTCH_Move(70, ManualMode);
+    __delay_ms(200);
+    CLUTCH_Move(100, ManualMode);
+    __delay_ms(150);
+    CLUTCH_Move(0, ManualMode);
 }

@@ -79,6 +79,8 @@ void main(void)
     //CLUTCHInitMove();
     ucAPPSTargetPruebas=0;
     
+    CLUTCHTestMove();
+    
     while (1)
     {
         // Add your application code

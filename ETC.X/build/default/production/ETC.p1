@@ -51,9 +51,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18 ./GPIO.h
 [; ;./GPIO.h: 18: void GPIO_PWM2_Control (unsigned int uiDutyCycle, unsigned int uiFreq);
 [v _GPIO_PWM2_Control `(v ~T0 @X0 0 ef2`ui`ui ]
-[v F606 `(v ~T0 @X0 1 tf1`ul ]
+[v F628 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\builtins.h
-[v __delay `JF606 ~T0 @X0 0 e ]
+[v __delay `JF628 ~T0 @X0 0 e ]
 [p i __delay ]
 "23 ./ANALOG.h
 [; ;./ANALOG.h: 23: void ANALOGRead (void);

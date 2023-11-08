@@ -54,7 +54,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "153 ./ETC.h
 [; ;./ETC.h: 153: extern unsigned int ucAPPSTargetPruebas;
 [v _ucAPPSTargetPruebas `ui ~T0 @X0 0 e ]
-"164
+"43 ./CLUTCH.h
+[; ;./CLUTCH.h: 43: void CLUTCHTestMove(void);
+[v _CLUTCHTestMove `(v ~T0 @X0 0 ef ]
+"164 ./ETC.h
 [; ;./ETC.h: 164: void TPSAnalysis (void);
 [v _TPSAnalysis `(v ~T0 @X0 0 ef ]
 "165
@@ -3685,67 +3688,70 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 80:     ucAPPSTargetPruebas=0;
 [e = _ucAPPSTargetPruebas -> -> 0 `i `ui ]
 "82
-[; ;main.c: 82:     while (1)
+[; ;main.c: 82:     CLUTCHTestMove();
+[e ( _CLUTCHTestMove ..  ]
+"84
+[; ;main.c: 84:     while (1)
 [e :U 3184 ]
-"83
-[; ;main.c: 83:     {
+"85
+[; ;main.c: 85:     {
 {
-"87
-[; ;main.c: 87:         ANALOGRead();
-[e ( _ANALOGRead ..  ]
-"88
-[; ;main.c: 88:         TPSAnalysis();
-[e ( _TPSAnalysis ..  ]
 "89
-[; ;main.c: 89:         APPSAnalysis();
-[e ( _APPSAnalysis ..  ]
+[; ;main.c: 89:         ANALOGRead();
+[e ( _ANALOGRead ..  ]
 "90
-[; ;main.c: 90:         ETCRulesSensorsSupervision();
+[; ;main.c: 90:         TPSAnalysis();
+[e ( _TPSAnalysis ..  ]
+"91
+[; ;main.c: 91:         APPSAnalysis();
+[e ( _APPSAnalysis ..  ]
+"92
+[; ;main.c: 92:         ETCRulesSensorsSupervision();
 [e ( _ETCRulesSensorsSupervision ..  ]
-"93
-[; ;main.c: 93:         if (ucASMode == 0)
-[e $ ! == -> _ucASMode `i -> 0 `i 3186  ]
-"94
-[; ;main.c: 94:         {
-{
 "95
-[; ;main.c: 95:             ETCMove(ucAPPS,0);
-[e ( _ETCMove (2 , -> _ucAPPS `uc -> -> 0 `i `uc ]
+[; ;main.c: 95:         if (ucASMode == 0)
+[e $ ! == -> _ucASMode `i -> 0 `i 3186  ]
+"96
+[; ;main.c: 96:         {
+{
 "97
-[; ;main.c: 97:             CLUTCH_Move(ucSTEER_WH_Clutch, 0);
+[; ;main.c: 97:             ETCMove(ucAPPS,0);
+[e ( _ETCMove (2 , -> _ucAPPS `uc -> -> 0 `i `uc ]
+"99
+[; ;main.c: 99:             CLUTCH_Move(ucSTEER_WH_Clutch, 0);
 [e ( _CLUTCH_Move (2 , _ucSTEER_WH_Clutch -> -> 0 `i `uc ]
-"98
-[; ;main.c: 98:         }
+"100
+[; ;main.c: 100:         }
 }
 [e $U 3187  ]
-"99
-[; ;main.c: 99:         else if (ucASMode == 1)
+"101
+[; ;main.c: 101:         else if (ucASMode == 1)
 [e :U 3186 ]
 [e $ ! == -> _ucASMode `i -> 1 `i 3188  ]
-"100
-[; ;main.c: 100:         {
+"102
+[; ;main.c: 102:         {
 {
-"101
-[; ;main.c: 101:             ETCMove(ucTargetAccelerator,1);
-[e ( _ETCMove (2 , _ucTargetAccelerator -> -> 1 `i `uc ]
 "103
-[; ;main.c: 103:             ucCLUTCHState = 0;
-[e = _ucCLUTCHState -> -> 0 `i `uc ]
+[; ;main.c: 103:             ETCMove(ucTargetAccelerator,1);
+[e ( _ETCMove (2 , _ucTargetAccelerator -> -> 1 `i `uc ]
 "105
-[; ;main.c: 105:             CLUTCH_HighLevelMovements(ucTargetClutch);
+[; ;main.c: 105:             ucCLUTCHState = 0;
+[e = _ucCLUTCHState -> -> 0 `i `uc ]
+"107
+[; ;main.c: 107:             CLUTCH_HighLevelMovements(ucTargetClutch);
 [e ( _CLUTCH_HighLevelMovements (1 _ucTargetClutch ]
-"106
-[; ;main.c: 106:         }
+"108
+[; ;main.c: 108:         }
 }
 [e :U 3188 ]
 [e :U 3187 ]
-"112
-[; ;main.c: 112:     }
+"114
+[; ;main.c: 114:     }
 }
 [e :U 3183 ]
 [e $U 3184  ]
 [e :U 3185 ]
-"113
-[; ;main.c: 113: }
+"115
+[; ;main.c: 115: }
 [e :UE 3182 ]
 }

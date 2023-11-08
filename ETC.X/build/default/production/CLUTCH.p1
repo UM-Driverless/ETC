@@ -27,9 +27,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 ./CLUTCH.h
 [; ;./CLUTCH.h: 39: void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 [v _CLUTCH_Move `(v ~T0 @X0 0 ef2`uc`uc ]
-[v F195 `(v ~T0 @X0 1 tf1`ul ]
+[v F215 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\builtins.h
-[v __delay `JF195 ~T0 @X0 0 e ]
+[v __delay `JF215 ~T0 @X0 0 e ]
 [p i __delay ]
 "140 ./ETC.h
 [; ;./ETC.h: 140: extern unsigned char ucETCFlagSupervisor;
@@ -3785,35 +3785,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "72
 [; ;CLUTCH.c: 72:         uiCLUTCHDuty = (uiCLUTCHDuty & 0xFF);
 [e = _uiCLUTCHDuty & _uiCLUTCHDuty -> -> 255 `i `ui ]
-"79
-[; ;CLUTCH.c: 79:         if ( ucMode == ucASMode )
+"78
+[; ;CLUTCH.c: 78:         if ( ucMode == ucASMode )
 [e $ ! == -> _ucMode `i -> _ucASMode `i 3197  ]
-"80
-[; ;CLUTCH.c: 80:         {
+"79
+[; ;CLUTCH.c: 79:         {
 {
-"94
-[; ;CLUTCH.c: 94:             if ( ucCLUTCHState < 4 )
+"93
+[; ;CLUTCH.c: 93:             if ( ucCLUTCHState < 4 )
 [e $ ! < -> _ucCLUTCHState `i -> 4 `i 3198  ]
-"95
-[; ;CLUTCH.c: 95:             {
+"94
+[; ;CLUTCH.c: 94:             {
 {
-"96
-[; ;CLUTCH.c: 96:                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
+"95
+[; ;CLUTCH.c: 95:                 GPIO_PWM1_Control(uiCLUTCHDuty, 300);
 [e ( _GPIO_PWM1_Control (2 , _uiCLUTCHDuty -> -> 300 `i `ui ]
-"97
-[; ;CLUTCH.c: 97:             }
+"96
+[; ;CLUTCH.c: 96:             }
 }
 [e :U 3198 ]
-"98
-[; ;CLUTCH.c: 98:         }
+"97
+[; ;CLUTCH.c: 97:         }
 }
 [e $U 3199  ]
-"99
-[; ;CLUTCH.c: 99:         else
+"98
+[; ;CLUTCH.c: 98:         else
 [e :U 3197 ]
-"100
-[; ;CLUTCH.c: 100:         {
+"99
+[; ;CLUTCH.c: 99:         {
 {
+"101
+[; ;CLUTCH.c: 101:             GPIO_PWM1_Control(uiCLUTCHDuty, 300);
+[e ( _GPIO_PWM1_Control (2 , _uiCLUTCHDuty -> -> 300 `i `ui ]
 "102
 [; ;CLUTCH.c: 102:         }
 }
@@ -4023,4 +4026,52 @@ Version 4.0 HI-TECH Software Intermediate Code
 "174
 [; ;CLUTCH.c: 174: }
 [e :UE 3210 ]
+}
+"176
+[; ;CLUTCH.c: 176: void CLUTCHTestMove(void)
+[v _CLUTCHTestMove `(v ~T0 @X0 1 ef ]
+"177
+[; ;CLUTCH.c: 177: {
+{
+[e :U _CLUTCHTestMove ]
+[f ]
+"178
+[; ;CLUTCH.c: 178:     ucETCFlagSupervisor = 0x01;
+[e = _ucETCFlagSupervisor -> -> 1 `i `uc ]
+"179
+[; ;CLUTCH.c: 179:     CLUTCH_Move(0, 0);
+[e ( _CLUTCH_Move (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"180
+[; ;CLUTCH.c: 180:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"181
+[; ;CLUTCH.c: 181:     CLUTCH_Move(30, 0);
+[e ( _CLUTCH_Move (2 , -> -> 30 `i `uc -> -> 0 `i `uc ]
+"182
+[; ;CLUTCH.c: 182:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"183
+[; ;CLUTCH.c: 183:     CLUTCH_Move(50, 0);
+[e ( _CLUTCH_Move (2 , -> -> 50 `i `uc -> -> 0 `i `uc ]
+"184
+[; ;CLUTCH.c: 184:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"185
+[; ;CLUTCH.c: 185:     CLUTCH_Move(70, 0);
+[e ( _CLUTCH_Move (2 , -> -> 70 `i `uc -> -> 0 `i `uc ]
+"186
+[; ;CLUTCH.c: 186:     _delay((unsigned long)((200)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"187
+[; ;CLUTCH.c: 187:     CLUTCH_Move(100, 0);
+[e ( _CLUTCH_Move (2 , -> -> 100 `i `uc -> -> 0 `i `uc ]
+"188
+[; ;CLUTCH.c: 188:     _delay((unsigned long)((150)*(10000000/4000.0)));
+[e ( __delay (1 -> * -> -> 150 `i `d / -> -> 10000000 `l `d .4000.0 `ul ]
+"189
+[; ;CLUTCH.c: 189:     CLUTCH_Move(0, 0);
+[e ( _CLUTCH_Move (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"190
+[; ;CLUTCH.c: 190: }
+[e :UE 3214 ]
 }

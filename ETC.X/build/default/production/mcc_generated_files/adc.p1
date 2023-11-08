@@ -1,10 +1,10 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F22251 `(v ~T0 @X0 0 tf ]
-[v F22253 `(v ~T0 @X0 0 tf ]
-[v F22255 `(v ~T0 @X0 0 tf ]
-[v F22257 `(v ~T0 @X0 0 tf ]
-[v F22259 `(v ~T0 @X0 0 tf ]
-[v F22261 `(v ~T0 @X0 0 tf ]
+[v F22270 `(v ~T0 @X0 0 tf ]
+[v F22272 `(v ~T0 @X0 0 tf ]
+[v F22274 `(v ~T0 @X0 0 tf ]
+[v F22276 `(v ~T0 @X0 0 tf ]
+[v F22278 `(v ~T0 @X0 0 tf ]
+[v F22280 `(v ~T0 @X0 0 tf ]
 "58039 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h: 58039: extern volatile unsigned char ADACT __attribute__((address(0x3F9)));
 [v _ADACT `Vuc ~T0 @X0 0 e@1017 ]
@@ -126,45 +126,45 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S3031 . . . ]
 "633
 [v _PIR2bits `VS3031 ~T0 @X0 0 e@1200 ]
-[v F22222 `(v ~T0 @X0 0 tf ]
+[v F22241 `(v ~T0 @X0 0 tf ]
 "999 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 999: void ADC_SetADIInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F22222 ]
+[v _ADC_SetADIInterruptHandler `(v ~T0 @X0 0 ef1`*F22241 ]
 "63 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 63: static void ADC_DefaultADI_ISR(void);
 [v _ADC_DefaultADI_ISR `(v ~T0 @X0 0 sf ]
-[v F22232 `(v ~T0 @X0 0 tf ]
+[v F22251 `(v ~T0 @X0 0 tf ]
 "1071 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 1071: void ADC_SetContext1ThresholdInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetContext1ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22232 ]
+[v _ADC_SetContext1ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22251 ]
 "64 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 64: static void ADC_DefaultContext1Threshold_ISR(void);
 [v _ADC_DefaultContext1Threshold_ISR `(v ~T0 @X0 0 sf ]
-[v F22237 `(v ~T0 @X0 0 tf ]
+[v F22256 `(v ~T0 @X0 0 tf ]
 "1107 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 1107: void ADC_SetContext2ThresholdInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetContext2ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22237 ]
+[v _ADC_SetContext2ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22256 ]
 "65 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 65: static void ADC_DefaultContext2Threshold_ISR(void);
 [v _ADC_DefaultContext2Threshold_ISR `(v ~T0 @X0 0 sf ]
-[v F22242 `(v ~T0 @X0 0 tf ]
+[v F22261 `(v ~T0 @X0 0 tf ]
 "1143 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 1143: void ADC_SetContext3ThresholdInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetContext3ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22242 ]
+[v _ADC_SetContext3ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22261 ]
 "66 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 66: static void ADC_DefaultContext3Threshold_ISR(void);
 [v _ADC_DefaultContext3Threshold_ISR `(v ~T0 @X0 0 sf ]
-[v F22247 `(v ~T0 @X0 0 tf ]
+[v F22266 `(v ~T0 @X0 0 tf ]
 "1179 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 1179: void ADC_SetContext4ThresholdInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetContext4ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22247 ]
+[v _ADC_SetContext4ThresholdInterruptHandler `(v ~T0 @X0 0 ef1`*F22266 ]
 "67 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 67: static void ADC_DefaultContext4Threshold_ISR(void);
 [v _ADC_DefaultContext4Threshold_ISR `(v ~T0 @X0 0 sf ]
-[v F22227 `(v ~T0 @X0 0 tf ]
+[v F22246 `(v ~T0 @X0 0 tf ]
 "1035 mcc_generated_files/adc.h
 [; ;mcc_generated_files/adc.h: 1035: void ADC_SetActiveClockTuningInterruptHandler(void (* InterruptHandler)(void));
-[v _ADC_SetActiveClockTuningInterruptHandler `(v ~T0 @X0 0 ef1`*F22227 ]
+[v _ADC_SetActiveClockTuningInterruptHandler `(v ~T0 @X0 0 ef1`*F22246 ]
 "68 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 68: static void ADC_DefaultActiveClockTuning_ISR(void);
 [v _ADC_DefaultActiveClockTuning_ISR `(v ~T0 @X0 0 sf ]
@@ -197,8 +197,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ADCON0bits `VS2623 ~T0 @X0 0 e@1011 ]
 "455 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 455: __attribute__((inline)) void ADC_SelectContext(ADC_context_t context)
-[c E22154 0 1 2 3 .. ]
-[n E22154 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
+[c E22173 0 1 2 3 .. ]
+[n E22173 . CONTEXT_TPS1 CONTEXT_TPS2 CONTEXT_APPS1 CONTEXT_APPS2  ]
 "58323 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h: 58323:     struct {
 [s S2671 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -245,8 +245,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _ADCSEL4bits `VS2676 ~T0 @X0 0 e@1023 ]
 "502 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 502: void ADC_StartConversion(ADC_channel_t channel)
-[c E22143 4 16 17 18 59 60 61 62 63 .. ]
-[n E22143 . TPS2 TPS1 APPS2 APPS1 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
+[c E22162 4 16 17 18 59 60 61 62 63 .. ]
+[n E22162 . TPS2 TPS1 APPS2 APPS1 channel_VSS channel_Temp channel_DAC1 channel_FVR_Buffer1 channel_FVR_Buffer2  ]
 "57708 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h: 57708:     struct {
 [s S2641 :3 `uc 1 :1 `uc 1 :3 `uc 1 ]
@@ -380,24 +380,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54326
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h: 54326: extern volatile ADCPbits_t ADCPbits __attribute__((address(0x3D8)));
 [v _ADCPbits `VS2499 ~T0 @X0 0 e@984 ]
-[v F22335 `(v ~T0 @X0 0 tf ]
-[v F22337 `(v ~T0 @X0 0 tf ]
-[v F22339 `(v ~T0 @X0 0 tf ]
-[v F22341 `(v ~T0 @X0 0 tf ]
-[v F22343 `(v ~T0 @X0 0 tf ]
-[v F22345 `(v ~T0 @X0 0 tf ]
-[v F22347 `(v ~T0 @X0 0 tf ]
-[v F22349 `(v ~T0 @X0 0 tf ]
-[v F22352 `(v ~T0 @X0 0 tf ]
 [v F22354 `(v ~T0 @X0 0 tf ]
-[v F22357 `(v ~T0 @X0 0 tf ]
-[v F22359 `(v ~T0 @X0 0 tf ]
+[v F22356 `(v ~T0 @X0 0 tf ]
+[v F22358 `(v ~T0 @X0 0 tf ]
+[v F22360 `(v ~T0 @X0 0 tf ]
 [v F22362 `(v ~T0 @X0 0 tf ]
 [v F22364 `(v ~T0 @X0 0 tf ]
-[v F22367 `(v ~T0 @X0 0 tf ]
-[v F22369 `(v ~T0 @X0 0 tf ]
-[v F22372 `(v ~T0 @X0 0 tf ]
-[v F22374 `(v ~T0 @X0 0 tf ]
+[v F22366 `(v ~T0 @X0 0 tf ]
+[v F22368 `(v ~T0 @X0 0 tf ]
+[v F22371 `(v ~T0 @X0 0 tf ]
+[v F22373 `(v ~T0 @X0 0 tf ]
+[v F22376 `(v ~T0 @X0 0 tf ]
+[v F22378 `(v ~T0 @X0 0 tf ]
+[v F22381 `(v ~T0 @X0 0 tf ]
+[v F22383 `(v ~T0 @X0 0 tf ]
+[v F22386 `(v ~T0 @X0 0 tf ]
+[v F22388 `(v ~T0 @X0 0 tf ]
+[v F22391 `(v ~T0 @X0 0 tf ]
+[v F22393 `(v ~T0 @X0 0 tf ]
 "363 C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h
 [; ;C:/Users/panze/.mchp_packs/Microchip/PIC18F-Q_DFP/1.13.211/xc8\pic\include\proc\pic18f26q84.h: 363: __asm("BOOTREG equ 038h");
 [; <" BOOTREG equ 038h ;# ">
@@ -3916,22 +3916,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; <" TOSU equ 04FFh ;# ">
 "56 mcc_generated_files/adc.c
 [; ;mcc_generated_files/adc.c: 56: static void (*ADC_ConversionComplete_ISR)(void);
-[v _ADC_ConversionComplete_ISR `*F22251 ~T0 @X0 1 s ]
+[v _ADC_ConversionComplete_ISR `*F22270 ~T0 @X0 1 s ]
 "57
 [; ;mcc_generated_files/adc.c: 57: static void (*ADC_Context1Thereshld_ISR)(void);
-[v _ADC_Context1Thereshld_ISR `*F22253 ~T0 @X0 1 s ]
+[v _ADC_Context1Thereshld_ISR `*F22272 ~T0 @X0 1 s ]
 "58
 [; ;mcc_generated_files/adc.c: 58: static void (*ADC_Context2Thereshld_ISR)(void);
-[v _ADC_Context2Thereshld_ISR `*F22255 ~T0 @X0 1 s ]
+[v _ADC_Context2Thereshld_ISR `*F22274 ~T0 @X0 1 s ]
 "59
 [; ;mcc_generated_files/adc.c: 59: static void (*ADC_Context3Thereshld_ISR)(void);
-[v _ADC_Context3Thereshld_ISR `*F22257 ~T0 @X0 1 s ]
+[v _ADC_Context3Thereshld_ISR `*F22276 ~T0 @X0 1 s ]
 "60
 [; ;mcc_generated_files/adc.c: 60: static void (*ADC_Context4Thereshld_ISR)(void);
-[v _ADC_Context4Thereshld_ISR `*F22259 ~T0 @X0 1 s ]
+[v _ADC_Context4Thereshld_ISR `*F22278 ~T0 @X0 1 s ]
 "61
 [; ;mcc_generated_files/adc.c: 61: static void (*ADC_ActiveClockTuning_ISR)(void);
-[v _ADC_ActiveClockTuning_ISR `*F22261 ~T0 @X0 1 s ]
+[v _ADC_ActiveClockTuning_ISR `*F22280 ~T0 @X0 1 s ]
 "71
 [; ;mcc_generated_files/adc.c: 71: void ADC_Initialize(void)
 [v _ADC_Initialize `(v ~T0 @X0 1 ef ]
@@ -4316,10 +4316,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 438: }
 [e :UE 3176 ]
 }
-[v F22276 `(v ~T0 @X0 1 tf ]
+[v F22295 `(v ~T0 @X0 1 tf ]
 "440
 [; ;mcc_generated_files/adc.c: 440: __attribute__((inline)) void ADC_EnableChannelSequencer(void)
-[v _ADC_EnableChannelSequencer `TF22276 ~T0 @X0 1 e ]
+[v _ADC_EnableChannelSequencer `TF22295 ~T0 @X0 1 e ]
 "441
 [; ;mcc_generated_files/adc.c: 441: {
 {
@@ -4332,10 +4332,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 443: }
 [e :UE 3177 ]
 }
-[v F22278 `(v ~T0 @X0 1 tf ]
+[v F22297 `(v ~T0 @X0 1 tf ]
 "445
 [; ;mcc_generated_files/adc.c: 445: __attribute__((inline)) void ADC_DisableChannelSequencer(void)
-[v _ADC_DisableChannelSequencer `TF22278 ~T0 @X0 1 e ]
+[v _ADC_DisableChannelSequencer `TF22297 ~T0 @X0 1 e ]
 "446
 [; ;mcc_generated_files/adc.c: 446: {
 {
@@ -4348,10 +4348,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 448: }
 [e :UE 3178 ]
 }
-[v F22280 `(v ~T0 @X0 1 tf ]
+[v F22299 `(v ~T0 @X0 1 tf ]
 "450
 [; ;mcc_generated_files/adc.c: 450: __attribute__((inline)) void ADC_StartChannelSequencer(void)
-[v _ADC_StartChannelSequencer `TF22280 ~T0 @X0 1 e ]
+[v _ADC_StartChannelSequencer `TF22299 ~T0 @X0 1 e ]
 "451
 [; ;mcc_generated_files/adc.c: 451: {
 {
@@ -4364,17 +4364,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 453: }
 [e :UE 3179 ]
 }
-[v F22282 `(v ~T0 @X0 1 tf1`E22154 ]
+[v F22301 `(v ~T0 @X0 1 tf1`E22173 ]
 "455
 [; ;mcc_generated_files/adc.c: 455: __attribute__((inline)) void ADC_SelectContext(ADC_context_t context)
-[v _ADC_SelectContext `TF22282 ~T0 @X0 1 e ]
+[v _ADC_SelectContext `TF22301 ~T0 @X0 1 e ]
 "456
 [; ;mcc_generated_files/adc.c: 456: {
 {
 [e :U _ADC_SelectContext ]
 "455
 [; ;mcc_generated_files/adc.c: 455: __attribute__((inline)) void ADC_SelectContext(ADC_context_t context)
-[v _context `E22154 ~T0 @X0 1 r1 ]
+[v _context `E22173 ~T0 @X0 1 r1 ]
 "456
 [; ;mcc_generated_files/adc.c: 456: {
 [f ]
@@ -4387,14 +4387,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "460
 [; ;mcc_generated_files/adc.c: 460: void ADC_EnableChannelScan(ADC_context_t context)
-[v _ADC_EnableChannelScan `(v ~T0 @X0 1 ef1`E22154 ]
+[v _ADC_EnableChannelScan `(v ~T0 @X0 1 ef1`E22173 ]
 "461
 [; ;mcc_generated_files/adc.c: 461: {
 {
 [e :U _ADC_EnableChannelScan ]
 "460
 [; ;mcc_generated_files/adc.c: 460: void ADC_EnableChannelScan(ADC_context_t context)
-[v _context `E22154 ~T0 @X0 1 r1 ]
+[v _context `E22173 ~T0 @X0 1 r1 ]
 "461
 [; ;mcc_generated_files/adc.c: 461: {
 [f ]
@@ -4451,10 +4451,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 3182  ]
 [e :U 3183 ]
-[e [\ -> _context `ui , $ -> . `E22154 0 `ui 3184
- , $ -> . `E22154 1 `ui 3185
- , $ -> . `E22154 2 `ui 3186
- , $ -> . `E22154 3 `ui 3187
+[e [\ -> _context `ui , $ -> . `E22173 0 `ui 3184
+ , $ -> . `E22173 1 `ui 3185
+ , $ -> . `E22173 2 `ui 3186
+ , $ -> . `E22173 3 `ui 3187
  3188 ]
 [e :U 3182 ]
 "479
@@ -4463,14 +4463,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "481
 [; ;mcc_generated_files/adc.c: 481: void ADC_DisableChannelScan(ADC_context_t context)
-[v _ADC_DisableChannelScan `(v ~T0 @X0 1 ef1`E22154 ]
+[v _ADC_DisableChannelScan `(v ~T0 @X0 1 ef1`E22173 ]
 "482
 [; ;mcc_generated_files/adc.c: 482: {
 {
 [e :U _ADC_DisableChannelScan ]
 "481
 [; ;mcc_generated_files/adc.c: 481: void ADC_DisableChannelScan(ADC_context_t context)
-[v _context `E22154 ~T0 @X0 1 r1 ]
+[v _context `E22173 ~T0 @X0 1 r1 ]
 "482
 [; ;mcc_generated_files/adc.c: 482: {
 [f ]
@@ -4527,10 +4527,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e $U 3190  ]
 [e :U 3191 ]
-[e [\ -> _context `ui , $ -> . `E22154 0 `ui 3192
- , $ -> . `E22154 1 `ui 3193
- , $ -> . `E22154 2 `ui 3194
- , $ -> . `E22154 3 `ui 3195
+[e [\ -> _context `ui , $ -> . `E22173 0 `ui 3192
+ , $ -> . `E22173 1 `ui 3193
+ , $ -> . `E22173 2 `ui 3194
+ , $ -> . `E22173 3 `ui 3195
  3196 ]
 [e :U 3190 ]
 "500
@@ -4539,14 +4539,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "502
 [; ;mcc_generated_files/adc.c: 502: void ADC_StartConversion(ADC_channel_t channel)
-[v _ADC_StartConversion `(v ~T0 @X0 1 ef1`E22143 ]
+[v _ADC_StartConversion `(v ~T0 @X0 1 ef1`E22162 ]
 "503
 [; ;mcc_generated_files/adc.c: 503: {
 {
 [e :U _ADC_StartConversion ]
 "502
 [; ;mcc_generated_files/adc.c: 502: void ADC_StartConversion(ADC_channel_t channel)
-[v _channel `E22143 ~T0 @X0 1 r1 ]
+[v _channel `E22162 ~T0 @X0 1 r1 ]
 "503
 [; ;mcc_generated_files/adc.c: 503: {
 [f ]
@@ -4597,14 +4597,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "525
 [; ;mcc_generated_files/adc.c: 525: adc_result_t ADC_GetSingleConversion(ADC_channel_t channel)
-[v _ADC_GetSingleConversion `(us ~T0 @X0 1 ef1`E22143 ]
+[v _ADC_GetSingleConversion `(us ~T0 @X0 1 ef1`E22162 ]
 "526
 [; ;mcc_generated_files/adc.c: 526: {
 {
 [e :U _ADC_GetSingleConversion ]
 "525
 [; ;mcc_generated_files/adc.c: 525: adc_result_t ADC_GetSingleConversion(ADC_channel_t channel)
-[v _channel `E22143 ~T0 @X0 1 r1 ]
+[v _channel `E22162 ~T0 @X0 1 r1 ]
 "526
 [; ;mcc_generated_files/adc.c: 526: {
 [f ]
@@ -4643,10 +4643,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 546: }
 [e :UE 3200 ]
 }
-[v F22295 `(v ~T0 @X0 1 tf ]
+[v F22314 `(v ~T0 @X0 1 tf ]
 "548
 [; ;mcc_generated_files/adc.c: 548: __attribute__((inline)) void ADC_StopConversion(void)
-[v _ADC_StopConversion `TF22295 ~T0 @X0 1 e ]
+[v _ADC_StopConversion `TF22314 ~T0 @X0 1 e ]
 "549
 [; ;mcc_generated_files/adc.c: 549: {
 {
@@ -4659,10 +4659,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 552: }
 [e :UE 3204 ]
 }
-[v F22297 `(v ~T0 @X0 1 tf ]
+[v F22316 `(v ~T0 @X0 1 tf ]
 "554
 [; ;mcc_generated_files/adc.c: 554: __attribute__((inline)) void ADC_SetStopOnInterrupt(void)
-[v _ADC_SetStopOnInterrupt `TF22297 ~T0 @X0 1 e ]
+[v _ADC_SetStopOnInterrupt `TF22316 ~T0 @X0 1 e ]
 "555
 [; ;mcc_generated_files/adc.c: 555: {
 {
@@ -4675,10 +4675,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 557: }
 [e :UE 3205 ]
 }
-[v F22299 `(v ~T0 @X0 1 tf ]
+[v F22318 `(v ~T0 @X0 1 tf ]
 "559
 [; ;mcc_generated_files/adc.c: 559: __attribute__((inline)) void ADC_DischargeSampleCapacitor(void)
-[v _ADC_DischargeSampleCapacitor `TF22299 ~T0 @X0 1 e ]
+[v _ADC_DischargeSampleCapacitor `TF22318 ~T0 @X0 1 e ]
 "560
 [; ;mcc_generated_files/adc.c: 560: {
 {
@@ -4737,10 +4737,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 575: }
 [e :UE 3208 ]
 }
-[v F22305 `(v ~T0 @X0 1 tf1`uc ]
+[v F22324 `(v ~T0 @X0 1 tf1`uc ]
 "577
 [; ;mcc_generated_files/adc.c: 577: __attribute__((inline)) void ADC_SetRepeatCount(uint8_t repeatCount)
-[v _ADC_SetRepeatCount `TF22305 ~T0 @X0 1 e ]
+[v _ADC_SetRepeatCount `TF22324 ~T0 @X0 1 e ]
 "578
 [; ;mcc_generated_files/adc.c: 578: {
 {
@@ -4774,10 +4774,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 585: }
 [e :UE 3210 ]
 }
-[v F22309 `(v ~T0 @X0 1 tf ]
+[v F22328 `(v ~T0 @X0 1 tf ]
 "587
 [; ;mcc_generated_files/adc.c: 587: __attribute__((inline)) void ADC_ClearAccumulator(void)
-[v _ADC_ClearAccumulator `TF22309 ~T0 @X0 1 e ]
+[v _ADC_ClearAccumulator `TF22328 ~T0 @X0 1 e ]
 "588
 [; ;mcc_generated_files/adc.c: 588: {
 {
@@ -4939,10 +4939,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 633: }
 [e :UE 3219 ]
 }
-[v F22322 `(v ~T0 @X0 1 tf ]
+[v F22341 `(v ~T0 @X0 1 tf ]
 "635
 [; ;mcc_generated_files/adc.c: 635: __attribute__((inline)) void ADC_EnableDoubleSampling(void)
-[v _ADC_EnableDoubleSampling `TF22322 ~T0 @X0 1 e ]
+[v _ADC_EnableDoubleSampling `TF22341 ~T0 @X0 1 e ]
 "636
 [; ;mcc_generated_files/adc.c: 636: {
 {
@@ -4955,10 +4955,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 638: }
 [e :UE 3220 ]
 }
-[v F22324 `(v ~T0 @X0 1 tf ]
+[v F22343 `(v ~T0 @X0 1 tf ]
 "640
 [; ;mcc_generated_files/adc.c: 640: __attribute__((inline)) void ADC_EnableContinuousConversion(void)
-[v _ADC_EnableContinuousConversion `TF22324 ~T0 @X0 1 e ]
+[v _ADC_EnableContinuousConversion `TF22343 ~T0 @X0 1 e ]
 "641
 [; ;mcc_generated_files/adc.c: 641: {
 {
@@ -4971,10 +4971,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 643: }
 [e :UE 3221 ]
 }
-[v F22326 `(v ~T0 @X0 1 tf ]
+[v F22345 `(v ~T0 @X0 1 tf ]
 "645
 [; ;mcc_generated_files/adc.c: 645: __attribute__((inline)) void ADC_DisableContinuousConversion(void)
-[v _ADC_DisableContinuousConversion `TF22326 ~T0 @X0 1 e ]
+[v _ADC_DisableContinuousConversion `TF22345 ~T0 @X0 1 e ]
 "646
 [; ;mcc_generated_files/adc.c: 646: {
 {
@@ -5035,10 +5035,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 663: }
 [e :UE 3225 ]
 }
-[v F22331 `(v ~T0 @X0 1 tf ]
+[v F22350 `(v ~T0 @X0 1 tf ]
 "665
 [; ;mcc_generated_files/adc.c: 665: __attribute__((inline)) void ADC_EnableChargePump(void)
-[v _ADC_EnableChargePump `TF22331 ~T0 @X0 1 e ]
+[v _ADC_EnableChargePump `TF22350 ~T0 @X0 1 e ]
 "666
 [; ;mcc_generated_files/adc.c: 666: {
 {
@@ -5051,10 +5051,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/adc.c: 668: }
 [e :UE 3226 ]
 }
-[v F22333 `(v ~T0 @X0 1 tf ]
+[v F22352 `(v ~T0 @X0 1 tf ]
 "670
 [; ;mcc_generated_files/adc.c: 670: __attribute__((inline)) void ADC_DisableChargePump(void)
-[v _ADC_DisableChargePump `TF22333 ~T0 @X0 1 e ]
+[v _ADC_DisableChargePump `TF22352 ~T0 @X0 1 e ]
 "671
 [; ;mcc_generated_files/adc.c: 671: {
 {
@@ -5080,7 +5080,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 2 -> -> 0 `i `uc ]
 "678
 [; ;mcc_generated_files/adc.c: 678:     if (ADC_ConversionComplete_ISR != ((void*)0))
-[e $ ! != _ADC_ConversionComplete_ISR -> -> -> 0 `i `*v `*F22335 3229  ]
+[e $ ! != _ADC_ConversionComplete_ISR -> -> -> 0 `i `*v `*F22354 3229  ]
 "679
 [; ;mcc_generated_files/adc.c: 679:         ADC_ConversionComplete_ISR();
 [e ( *U _ADC_ConversionComplete_ISR ..  ]
@@ -5102,7 +5102,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "685
 [; ;mcc_generated_files/adc.c: 685:     if (ADC_ActiveClockTuning_ISR != ((void*)0))
-[e $ ! != _ADC_ActiveClockTuning_ISR -> -> -> 0 `i `*v `*F22337 3231  ]
+[e $ ! != _ADC_ActiveClockTuning_ISR -> -> -> 0 `i `*v `*F22356 3231  ]
 "686
 [; ;mcc_generated_files/adc.c: 686:         ADC_ActiveClockTuning_ISR();
 [e ( *U _ADC_ActiveClockTuning_ISR ..  ]
@@ -5124,7 +5124,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR2bits 1 0 -> -> 0 `i `uc ]
 "693
 [; ;mcc_generated_files/adc.c: 693:     if (ADC_Context1Thereshld_ISR != ((void*)0))
-[e $ ! != _ADC_Context1Thereshld_ISR -> -> -> 0 `i `*v `*F22339 3233  ]
+[e $ ! != _ADC_Context1Thereshld_ISR -> -> -> 0 `i `*v `*F22358 3233  ]
 "694
 [; ;mcc_generated_files/adc.c: 694:         ADC_Context1Thereshld_ISR();
 [e ( *U _ADC_Context1Thereshld_ISR ..  ]
@@ -5146,7 +5146,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR2bits 0 1 -> -> 0 `i `uc ]
 "700
 [; ;mcc_generated_files/adc.c: 700:     if (ADC_Context2Thereshld_ISR != ((void*)0))
-[e $ ! != _ADC_Context2Thereshld_ISR -> -> -> 0 `i `*v `*F22341 3235  ]
+[e $ ! != _ADC_Context2Thereshld_ISR -> -> -> 0 `i `*v `*F22360 3235  ]
 "701
 [; ;mcc_generated_files/adc.c: 701:         ADC_Context2Thereshld_ISR();
 [e ( *U _ADC_Context2Thereshld_ISR ..  ]
@@ -5168,7 +5168,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR2bits 0 2 -> -> 0 `i `uc ]
 "707
 [; ;mcc_generated_files/adc.c: 707:     if (ADC_Context3Thereshld_ISR != ((void*)0))
-[e $ ! != _ADC_Context3Thereshld_ISR -> -> -> 0 `i `*v `*F22343 3237  ]
+[e $ ! != _ADC_Context3Thereshld_ISR -> -> -> 0 `i `*v `*F22362 3237  ]
 "708
 [; ;mcc_generated_files/adc.c: 708:         ADC_Context3Thereshld_ISR();
 [e ( *U _ADC_Context3Thereshld_ISR ..  ]
@@ -5190,7 +5190,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PIR2bits 0 3 -> -> 0 `i `uc ]
 "714
 [; ;mcc_generated_files/adc.c: 714:     if (ADC_Context4Thereshld_ISR != ((void*)0))
-[e $ ! != _ADC_Context4Thereshld_ISR -> -> -> 0 `i `*v `*F22345 3239  ]
+[e $ ! != _ADC_Context4Thereshld_ISR -> -> -> 0 `i `*v `*F22364 3239  ]
 "715
 [; ;mcc_generated_files/adc.c: 715:         ADC_Context4Thereshld_ISR();
 [e ( *U _ADC_Context4Thereshld_ISR ..  ]
@@ -5201,14 +5201,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "718
 [; ;mcc_generated_files/adc.c: 718: void ADC_SetADIInterruptHandler(void (* InterruptHandler)(void))
-[v _ADC_SetADIInterruptHandler `(v ~T0 @X0 1 ef1`*F22347 ]
+[v _ADC_SetADIInterruptHandler `(v ~T0 @X0 1 ef1`*F22366 ]
 "719
 [; ;mcc_generated_files/adc.c: 719: {
 {
 [e :U _ADC_SetADIInterruptHandler ]
 "718
 [; ;mcc_generated_files/adc.c: 718: void ADC_SetADIInterruptHandler(void (* InterruptHandler)(void))
-[v _InterruptHandler `*F22349 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22368 ~T0 @X0 1 r1 ]
 "719
 [; ;mcc_generated_files/adc.c: 719: {
 [f ]
@@ -5221,14 +5221,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "723
 [; ;mcc_generated_files/adc.c: 723: void ADC_SetContext1ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _ADC_SetContext1ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22352 ]
+[v _ADC_SetContext1ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22371 ]
 "724
 [; ;mcc_generated_files/adc.c: 724: {
 {
 [e :U _ADC_SetContext1ThresholdInterruptHandler ]
 "723
 [; ;mcc_generated_files/adc.c: 723: void ADC_SetContext1ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _InterruptHandler `*F22354 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22373 ~T0 @X0 1 r1 ]
 "724
 [; ;mcc_generated_files/adc.c: 724: {
 [f ]
@@ -5241,14 +5241,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "728
 [; ;mcc_generated_files/adc.c: 728: void ADC_SetContext2ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _ADC_SetContext2ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22357 ]
+[v _ADC_SetContext2ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22376 ]
 "729
 [; ;mcc_generated_files/adc.c: 729: {
 {
 [e :U _ADC_SetContext2ThresholdInterruptHandler ]
 "728
 [; ;mcc_generated_files/adc.c: 728: void ADC_SetContext2ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _InterruptHandler `*F22359 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22378 ~T0 @X0 1 r1 ]
 "729
 [; ;mcc_generated_files/adc.c: 729: {
 [f ]
@@ -5261,14 +5261,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "733
 [; ;mcc_generated_files/adc.c: 733: void ADC_SetContext3ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _ADC_SetContext3ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22362 ]
+[v _ADC_SetContext3ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22381 ]
 "734
 [; ;mcc_generated_files/adc.c: 734: {
 {
 [e :U _ADC_SetContext3ThresholdInterruptHandler ]
 "733
 [; ;mcc_generated_files/adc.c: 733: void ADC_SetContext3ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _InterruptHandler `*F22364 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22383 ~T0 @X0 1 r1 ]
 "734
 [; ;mcc_generated_files/adc.c: 734: {
 [f ]
@@ -5281,14 +5281,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "738
 [; ;mcc_generated_files/adc.c: 738: void ADC_SetContext4ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _ADC_SetContext4ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22367 ]
+[v _ADC_SetContext4ThresholdInterruptHandler `(v ~T0 @X0 1 ef1`*F22386 ]
 "739
 [; ;mcc_generated_files/adc.c: 739: {
 {
 [e :U _ADC_SetContext4ThresholdInterruptHandler ]
 "738
 [; ;mcc_generated_files/adc.c: 738: void ADC_SetContext4ThresholdInterruptHandler(void (* InterruptHandler)(void))
-[v _InterruptHandler `*F22369 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22388 ~T0 @X0 1 r1 ]
 "739
 [; ;mcc_generated_files/adc.c: 739: {
 [f ]
@@ -5301,14 +5301,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 "743
 [; ;mcc_generated_files/adc.c: 743: void ADC_SetActiveClockTuningInterruptHandler(void (* InterruptHandler)(void))
-[v _ADC_SetActiveClockTuningInterruptHandler `(v ~T0 @X0 1 ef1`*F22372 ]
+[v _ADC_SetActiveClockTuningInterruptHandler `(v ~T0 @X0 1 ef1`*F22391 ]
 "744
 [; ;mcc_generated_files/adc.c: 744: {
 {
 [e :U _ADC_SetActiveClockTuningInterruptHandler ]
 "743
 [; ;mcc_generated_files/adc.c: 743: void ADC_SetActiveClockTuningInterruptHandler(void (* InterruptHandler)(void))
-[v _InterruptHandler `*F22374 ~T0 @X0 1 r1 ]
+[v _InterruptHandler `*F22393 ~T0 @X0 1 r1 ]
 "744
 [; ;mcc_generated_files/adc.c: 744: {
 [f ]

@@ -79,38 +79,31 @@ void main(void)
     //CLUTCHInitMove();
     ucAPPSTargetPruebas=0;
     
-    CLUTCHTestMove();
+    CLUTCHTestMove(ASMode);
     
     while (1)
     {
         // Add your application code
         //CANWriteMessage(0, DataLength_1, 10, 0, 0, 0, 0, 0, 0, 0);
-        //LED_Toggle();
+        /*
         ANALOGRead();
         TPSAnalysis();
         APPSAnalysis();
         ETCRulesSensorsSupervision(); //justo despues de analizar porcentajes debe ir la supervision
-        //ETC_PID(ucAPPS, ManualMode);
+        */
         
         if (ucASMode == ManualMode)
         {
-            ETCMove(ucAPPS,ManualMode);
-            //GPIO_PWM2_Control(ucAPPS, 600);
+            //ETCMove(ucAPPS,ManualMode);
             CLUTCH_Move(ucSTEER_WH_Clutch, ManualMode);
         }
         else if (ucASMode == ASMode)
         {
-            ETCMove(ucTargetAccelerator,ASMode);
-            //GPIO_PWM2_Control(PIDController_Update(&pid, (float)(ucTargetAccelerator), (float)(ucTPS)), 600);
+            //ETCMove(ucTargetAccelerator,ASMode);
             ucCLUTCHState = CLUTCH_NONE;
-            //GPIO_PWM1_Control(ucTargetClutch, 300);
             CLUTCH_HighLevelMovements(ucTargetClutch);
         }
         
-        
-        /*ANALOGRead();
-        TPSAnalysis();
-        APPSAnalysis();*/
     }
 }
 /**

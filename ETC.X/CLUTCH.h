@@ -40,7 +40,7 @@ void CLUTCH_Move (unsigned char ucTargetMove, unsigned char ucMode);
 void CLUTCH_AnalyseState (void);
 void CLUTCHInitMove(void);
 void CLUTCH_HighLevelMovements (unsigned char ucClutchAction);
-void CLUTCHTestMove(void);
+void CLUTCHTestMove(unsigned char ucMode);
 
 #ifdef	__cplusplus
 }

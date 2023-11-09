@@ -173,18 +173,18 @@ void CLUTCHInitMove(void)
     }
 }
 
-void CLUTCHTestMove(void)
+void CLUTCHTestMove(unsigned char ucMode)
 {
     ucETCFlagSupervisor = TRUE;
-    CLUTCH_Move(0, ManualMode);
+    CLUTCH_Move(0, ucMode);
     __delay_ms(200);
-    CLUTCH_Move(30, ManualMode);
+    CLUTCH_Move(30, ucMode);
     __delay_ms(200);
-    CLUTCH_Move(50, ManualMode);
+    CLUTCH_Move(50, ucMode);
     __delay_ms(200);
-    CLUTCH_Move(70, ManualMode);
+    CLUTCH_Move(70, ucMode);
     __delay_ms(200);
-    CLUTCH_Move(100, ManualMode);
+    CLUTCH_Move(100,ucMode);
     __delay_ms(150);
-    CLUTCH_Move(0, ManualMode);
+    CLUTCH_Move(0, ucMode);
 }

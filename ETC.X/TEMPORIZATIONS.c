@@ -59,7 +59,7 @@ void TEMPORIZATION_500ms (void)
 void TEMPORIZATION_1s (void)
 {
     CANWriteMessage(ETC_STATE, DataLength_4, ucTPS_STATE, ucAPPS_STATE, ucCLUTCHState, ucETB_STATE, 0, 0, 0, 0);  
-    //LED_Toggle();
+    LED_Toggle();
 }
 
 void TEMPORIZATION_10s (void)
